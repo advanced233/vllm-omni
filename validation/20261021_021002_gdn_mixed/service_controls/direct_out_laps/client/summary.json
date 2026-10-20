@@ -1,0 +1,185 @@
+{
+  "label": "gdn-direct_out_laps",
+  "concurrency": 16,
+  "started_at": "2026-10-21T02:36:48+0800",
+  "requests": 256,
+  "succeeded": 256,
+  "failed": 0,
+  "failure_examples": [],
+  "segments": 1,
+  "duration_s": 34.818,
+  "audio_s_total": 1076.896,
+  "throughput_audio_s_per_s": 30.93,
+  "full_concurrency_window": {
+    "seconds": 31.222,
+    "throughput_audio_s_per_s": 32.35
+  },
+  "ttfa_ms": {
+    "mean": 219.4,
+    "p50": 209.0,
+    "p90": 258.2,
+    "p95": 360.8,
+    "p99": 368.2,
+    "max": 369.5
+  },
+  "rtf": {
+    "mean": 0.4899,
+    "p50": 0.4884,
+    "p90": 0.5189,
+    "p95": 0.5338,
+    "p99": 0.5494,
+    "max": 0.5777
+  },
+  "audio_s": {
+    "mean": 4.207,
+    "p50": 3.831,
+    "p90": 6.084,
+    "p95": 7.152,
+    "p99": 13.442,
+    "max": 23.22
+  },
+  "underrun_s_total": 0.0,
+  "longest_wait_ms": {
+    "mean": 0.0,
+    "p50": 0.0,
+    "p90": 0.0,
+    "p95": 0.0,
+    "p99": 0.0,
+    "max": 0.0
+  },
+  "stall": {
+    "0ms": {
+      "streams_stalled": 0,
+      "streams_stalled_pct": 0.0,
+      "events": 0
+    },
+    "100ms": {
+      "streams_stalled": 0,
+      "streams_stalled_pct": 0.0,
+      "events": 0
+    }
+  },
+  "steady": {
+    "requests": 225,
+    "ttfa_ms": {
+      "mean": 210.5,
+      "p50": 205.8,
+      "p90": 246.6,
+      "p95": 256.7,
+      "p99": 272.1,
+      "max": 369.5
+    },
+    "rtf": {
+      "mean": 0.4936,
+      "p50": 0.4907,
+      "p90": 0.5207,
+      "p95": 0.5351,
+      "p99": 0.5501,
+      "max": 0.5777
+    },
+    "stall": {
+      "0ms": {
+        "streams_stalled": 0,
+        "streams_stalled_pct": 0.0,
+        "events": 0
+      },
+      "100ms": {
+        "streams_stalled": 0,
+        "streams_stalled_pct": 0.0,
+        "events": 0
+      }
+    }
+  },
+  "long_takes": {
+    "at_least_20s": 1,
+    "at_least_20s_pct": 0.39,
+    "at_frame_cap": 1,
+    "audio_share_pct": 2.16
+  },
+  "client": {
+    "loop_lag_ms": {
+      "mean": 0.16,
+      "p50": 0.15,
+      "p90": 0.45,
+      "p95": 0.67,
+      "p99": 0.98,
+      "max": 1.43
+    },
+    "event_loop": "uvloop",
+    "hostname": "HOST_REDACTED",
+    "python": "3.12.13",
+    "aiohttp": "3.14.5"
+  },
+  "workload": {
+    "codes_file": "${NVME_WORKDIR}/bench-validation/20261020_165001_49599d4/ref_codes_en.jsonl",
+    "codes_meta": {
+      "model": "${NVME_WORKDIR}/models/fishaudio/drama-3",
+      "codec_sha256": "74fc41c5a7151c6f350af8bd7e5d6e3accfcc7f3dfbfac23afd35af07052bb2f",
+      "locale": "en",
+      "meta_lst_sha256": "7cd29f701743e6c7033edbca764ddc0b979de8c4f4907eff5e5454682114661f",
+      "rows_written": 1088,
+      "device_name": "NVIDIA A100 80GB PCIe",
+      "vllm_omni_commit": "da572cddb38383deae9caef33b8d490e292ef071"
+    },
+    "ref_mode": "codes",
+    "rows_timed": 256,
+    "warmups": 8,
+    "shuffle_seed": null,
+    "seed": null,
+    "extra_body": {},
+    "stream": "raw pcm (stream_format=audio)",
+    "sampling": "server defaults unless set in extra_body"
+  },
+  "server": {
+    "base_url": "http://127.0.0.1:8091",
+    "models": {
+      "object": "list",
+      "data": [
+        {
+          "id": "fishaudio/drama-3",
+          "object": "model",
+          "created": 1792521402,
+          "owned_by": "vllm",
+          "root": "${NVME_WORKDIR}/models/fishaudio/drama-3",
+          "parent": null,
+          "max_model_len": 8192,
+          "permission": [
+            {
+              "id": "modelperm-86d9bfff7f51d95b",
+              "object": "model_permission",
+              "created": 1792521402,
+              "allow_create_engine": false,
+              "allow_sampling": true,
+              "allow_logprobs": true,
+              "allow_search_indices": false,
+              "allow_view": true,
+              "allow_fine_tuning": false,
+              "organization": "*",
+              "group": null,
+              "is_blocking": false
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "thermal_gate": null,
+  "meta": {},
+  "argv": [
+    "${NVME_WORKDIR}/gdn-mixed/20261021_021002/tool_snapshot/drama3_bench/stream_bench.py",
+    "--codes",
+    "${NVME_WORKDIR}/bench-validation/20261020_165001_49599d4/ref_codes_en.jsonl",
+    "--ref-mode",
+    "codes",
+    "--num-prompts",
+    "256",
+    "--concurrency",
+    "16",
+    "--num-warmups",
+    "8",
+    "--label",
+    "gdn-direct_out_laps",
+    "--out",
+    "${NVME_WORKDIR}/gdn-mixed/20261021_021002/service_controls/direct_out_laps/client"
+  ]
+}

@@ -1,0 +1,278 @@
+{
+  "mode": "baseline_no_laps",
+  "stage0_pid": 1894002,
+  "valid": true,
+  "requests": 256,
+  "failed": 0,
+  "loop_lag_p99_ms": 0.97,
+  "actual_HTTP_window_estimate": [
+    1792520776.4551337,
+    1792520808.667219
+  ],
+  "official_conservative_window": [
+    1792520777.0,
+    1792520808.212
+  ],
+  "clock_offset_change_s": -2.384185791015625e-07,
+  "performance": {
+    "duration_s": 32.212,
+    "throughput_audio_s_per_s": 33.18,
+    "ttfa_ms": {
+      "mean": 213.0,
+      "p50": 202.6,
+      "p90": 245.4,
+      "p95": 355.6,
+      "p99": 368.5,
+      "max": 368.7
+    },
+    "rtf": {
+      "mean": 0.4739,
+      "p50": 0.4755,
+      "p90": 0.4966,
+      "p95": 0.5083,
+      "p99": 0.5327,
+      "max": 0.5526
+    },
+    "stall": {
+      "0ms": {
+        "streams_stalled": 0,
+        "streams_stalled_pct": 0.0,
+        "events": 0
+      },
+      "100ms": {
+        "streams_stalled": 0,
+        "streams_stalled_pct": 0.0,
+        "events": 0
+      }
+    },
+    "long_takes": {
+      "at_least_20s": 1,
+      "at_least_20s_pct": 0.39,
+      "at_frame_cap": 1,
+      "audio_share_pct": 2.17
+    }
+  },
+  "p50_method": "Nearest order statistic, matching user summarize_probe; not interpolated percentile.",
+  "boundary_note": "Probe t precedes the first perf_counter timestamp slightly; t+span is an estimated scope end. Actual-window subset uses1ms interior guard; official conservative subset additionally verifies t+span <= hi.",
+  "expected_variant": "baseline",
+  "expected_laps": false,
+  "original_official_summary_independently_reproduced": true,
+  "all_stage0_records": 337,
+  "other_PID_records": 0,
+  "official_start_only": {
+    "steps": 219,
+    "calls_per_step": [
+      30
+    ],
+    "mixed_steps": 219,
+    "prefill_only_steps": 0,
+    "GDN_host_ms": {
+      "n": 219,
+      "mean": 29.581009995433792,
+      "p50": 29.092934,
+      "p90": 31.445833,
+      "min": 27.421756,
+      "max": 39.238623
+    },
+    "first_to_last_GDN_call_host_span_ms": {
+      "n": 219,
+      "mean": 32.59134029223744,
+      "p50": 32.040848,
+      "p90": 34.700703,
+      "min": 30.162983,
+      "max": 43.24574
+    },
+    "GDN_sum_over_first_to_last_call_host_span_pct": {
+      "n": 219,
+      "mean": 90.76144645104887,
+      "p50": 90.79127973465049,
+      "p90": 91.24284536334176,
+      "min": 88.60027015749527,
+      "max": 91.68055389603813
+    },
+    "decode_tokens": {
+      "n": 219,
+      "mean": 14.67579908675799,
+      "p50": 15,
+      "p90": 15,
+      "min": 12,
+      "max": 15
+    },
+    "prefill_tokens": {
+      "n": 219,
+      "mean": 182.40182648401827,
+      "p50": 167,
+      "p90": 243,
+      "min": 125,
+      "max": 453
+    },
+    "prefill_requests": {
+      "n": 219,
+      "mean": 1.095890410958904,
+      "p50": 1,
+      "p90": 1,
+      "min": 1,
+      "max": 2
+    },
+    "sections_mean_ms": {}
+  },
+  "official_complete_scope": {
+    "steps": 219,
+    "calls_per_step": [
+      30
+    ],
+    "mixed_steps": 219,
+    "prefill_only_steps": 0,
+    "GDN_host_ms": {
+      "n": 219,
+      "mean": 29.581009995433792,
+      "p50": 29.092934,
+      "p90": 31.445833,
+      "min": 27.421756,
+      "max": 39.238623
+    },
+    "first_to_last_GDN_call_host_span_ms": {
+      "n": 219,
+      "mean": 32.59134029223744,
+      "p50": 32.040848,
+      "p90": 34.700703,
+      "min": 30.162983,
+      "max": 43.24574
+    },
+    "GDN_sum_over_first_to_last_call_host_span_pct": {
+      "n": 219,
+      "mean": 90.76144645104887,
+      "p50": 90.79127973465049,
+      "p90": 91.24284536334176,
+      "min": 88.60027015749527,
+      "max": 91.68055389603813
+    },
+    "decode_tokens": {
+      "n": 219,
+      "mean": 14.67579908675799,
+      "p50": 15,
+      "p90": 15,
+      "min": 12,
+      "max": 15
+    },
+    "prefill_tokens": {
+      "n": 219,
+      "mean": 182.40182648401827,
+      "p50": 167,
+      "p90": 243,
+      "min": 125,
+      "max": 453
+    },
+    "prefill_requests": {
+      "n": 219,
+      "mean": 1.095890410958904,
+      "p50": 1,
+      "p90": 1,
+      "min": 1,
+      "max": 2
+    },
+    "sections_mean_ms": {}
+  },
+  "actual_complete_scope": {
+    "steps": 221,
+    "calls_per_step": [
+      30
+    ],
+    "mixed_steps": 220,
+    "prefill_only_steps": 1,
+    "GDN_host_ms": {
+      "n": 221,
+      "mean": 29.578288484162897,
+      "p50": 29.092934,
+      "p90": 31.445833,
+      "min": 27.421756,
+      "max": 39.238623
+    },
+    "first_to_last_GDN_call_host_span_ms": {
+      "n": 221,
+      "mean": 32.59031353393665,
+      "p50": 32.040848,
+      "p90": 34.700703,
+      "min": 30.162983,
+      "max": 43.24574
+    },
+    "GDN_sum_over_first_to_last_call_host_span_pct": {
+      "n": 221,
+      "mean": 90.75608573973838,
+      "p50": 90.79049366263003,
+      "p90": 91.24284536334176,
+      "min": 88.60027015749527,
+      "max": 91.68055389603813
+    },
+    "decode_tokens": {
+      "n": 221,
+      "mean": 14.547511312217194,
+      "p50": 15,
+      "p90": 15,
+      "min": 0,
+      "max": 15
+    },
+    "prefill_tokens": {
+      "n": 221,
+      "mean": 194.00904977375566,
+      "p50": 167,
+      "p90": 260,
+      "min": 125,
+      "max": 2780
+    },
+    "prefill_requests": {
+      "n": 221,
+      "mean": 1.158371040723982,
+      "p50": 1,
+      "p90": 1,
+      "min": 1,
+      "max": 15
+    },
+    "sections_mean_ms": {}
+  },
+  "official_boundary_crossing_scopes": 0,
+  "persisted_post_client_completion_records": 33,
+  "drain_batches": [
+    "flush_drain_1"
+  ],
+  "flush_proof": "Sequential stage0 append contains complete records after main client completion, proving main-window buffered records crossed a flush boundary. Drain's entire tail need not be persisted.",
+  "timed_hardware": {
+    "samples": 32,
+    "SM_MHz": {
+      "n": 32,
+      "mean": 1369.21875,
+      "p50": 1380.0,
+      "p90": 1395.0,
+      "min": 1260.0,
+      "max": 1410.0
+    },
+    "core_C": {
+      "n": 32,
+      "mean": 75.9375,
+      "p50": 76.0,
+      "p90": 81.0,
+      "min": 69.0,
+      "max": 82.0
+    },
+    "HBM_C": {
+      "n": 32,
+      "mean": 80.6875,
+      "p50": 81.0,
+      "p90": 84.0,
+      "min": 75.0,
+      "max": 85.0
+    },
+    "sw_thermal_slowdown": {
+      "active_samples": 0,
+      "sample_pct": 0.0
+    },
+    "hw_thermal_slowdown": {
+      "active_samples": 0,
+      "sample_pct": 0.0
+    },
+    "sw_power_cap": {
+      "active_samples": 31,
+      "sample_pct": 96.875
+    }
+  }
+}

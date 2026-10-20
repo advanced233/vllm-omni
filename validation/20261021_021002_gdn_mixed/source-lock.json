@@ -1,0 +1,30 @@
+{
+  "tool_commit": "7aeaa5b46ec1cdbdb7e5d43b396b4d05af87fa37",
+  "server_commit": "da572cddb38383deae9caef33b8d490e292ef071",
+  "snapshot_sha256": {
+    "tool_snapshot/drama3_bench/README.md": "8fe59fa5ec7329722d8076579d38e105106dbaf9184cc41a1dffc1b548e40c81",
+    "tool_snapshot/drama3_bench/aggregate_results.py": "1dd3ccf49c1a1bd091430fe4a99f758d19c843cfc7385a0001c810b35740303a",
+    "tool_snapshot/drama3_bench/analyze_audio.py": "e737c0ae476189cf888242c9cc7854430483e132808c59dab2c6b5308c53bfca",
+    "tool_snapshot/drama3_bench/encode_ref_codes.py": "5f2b0b6c18356886c6d095b991ab3ef40910cb5553ed277b8d56a944e89dee53",
+    "tool_snapshot/drama3_bench/eval_quality.py": "2acae7400ac0f3c7f7eaec133f6aed0ea26302c5434437f1cb07a0d14649203f",
+    "tool_snapshot/drama3_bench/gdn_mixed/README.md": "5a4ba6ac95cdb2310f363a0bec0a6602813b8a2c68fa9bd67b18cd4e0a4daf1d",
+    "tool_snapshot/drama3_bench/gdn_mixed/bench_mixed_core.py": "bc2c986980a1be803ea98d3305586481b5cc3c4bd1f6dd12bbd5fc1137ccbbb4",
+    "tool_snapshot/drama3_bench/gdn_mixed/drama3_gdn_harness.py": "3cf95fc79ba9641e44141c400da37d2b0640b5ed5016e85ea7d4bdecebc27378",
+    "tool_snapshot/drama3_bench/gdn_mixed/drama3_gdn_probe.py": "8035a95018a47514850dfe2d258ca3407c821d2b67217ea2f8b83bd0b992b79f",
+    "tool_snapshot/drama3_bench/gdn_mixed/drama3_gdn_variants.py": "ffd30eb7955c84fa3642957324d79336b2800439ed5a0b46fa7321806172fac5",
+    "tool_snapshot/drama3_bench/gdn_mixed/probe_site/sitecustomize.py": "ad461d2ee2a13e1d629a8e1ad04bb69851aa7cf5f3be01f52a5335c6b728852d",
+    "tool_snapshot/drama3_bench/gdn_mixed/summarize_probe.py": "7e9aa90cccaab56e5567c173743df5b575197d0bc19cafb2b67d0f0a2a5c2a9c",
+    "tool_snapshot/drama3_bench/gdn_mixed/test_mixed_core_variants.py": "d8fed5906ec461480e209c7590ee847724cf1df22eadeb4a1aaeb81bf1da7be9",
+    "tool_snapshot/drama3_bench/run_sweep.sh": "bd88765137d21a79d342dc6a915cf3e7e474d635662a76447fcaca9cb292c9ed",
+    "tool_snapshot/drama3_bench/stream_bench.py": "8e984163ec3ffcd4413099ded46320b3e7332d4928173a00e2834edf1fecec04",
+    "tool_snapshot/drama3_bench/thermal_gate.py": "4c6f61860d055bbf43be34151d37a4232a89a7cc586303c01b667a106d1e6a4b"
+  },
+  "symlink": "${WORKSPACE}/vllm-omni/tools/drama3_bench",
+  "previous_symlink_target": "${NVME_WORKDIR}/gdn-mixed/20261021_014640/tool_snapshot/drama3_bench",
+  "symlink_target": "${NVME_WORKDIR}/gdn-mixed/20261021_021002/tool_snapshot/drama3_bench",
+  "local_exclude_entry": "/tools/drama3_bench",
+  "local_exclude_entry_already_present": true,
+  "previous_failed_run_preserved": "${NVME_WORKDIR}/gdn-mixed/20261021_014640",
+  "created": "2026-10-21T02:10:24+0800",
+  "original_tool_files_edited": false
+}

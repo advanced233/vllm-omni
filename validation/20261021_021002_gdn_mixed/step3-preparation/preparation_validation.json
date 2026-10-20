@@ -1,0 +1,14 @@
+{
+  "helper_sha256": {
+    "server_supervisor.py": "950ed934109a2deea47fb4ecb5c207bec1f7fc42474d57c1db4cc80d84b87748",
+    "run_service_controls.py": "aa31dca909270ed6b69ed547b37bbe872a4f40886b9b5788df1159f31c96d2e4",
+    "validate_probe.py": "139e6cb4dab00eace4a0ac6a5934ab4bdf82d9019f8a6a9e0708c44addd69797",
+    "validate_flush_cpu.py": "771faf8a52ae61be0e6c8c2ccc39b1cb318c3cd32bb07dbb9e1f5732aac13251",
+    "run.sh": "22afd9d5fc5af0eecb793d89101d7e819f04e21ffda378b1b9f233ab543be681"
+  },
+  "static_function_source_sha256": "9af0a98c23727bea4e7f34c1cf3283d838ad7a84a741b2fa8f946d823a4292a9",
+  "static_function_matches_user_expected": true,
+  "source_commit": "7aeaa5b46ec1cdbdb7e5d43b396b4d05af87fa37",
+  "service_started": false,
+  "gpu_used_by_preparation": false
+}

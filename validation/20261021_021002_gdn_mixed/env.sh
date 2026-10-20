@@ -1,0 +1,6 @@
+source ${NVME_WORKDIR}/venvs/vllm-omni-cu129/bin/activate
+source ${PERSONAL_WORKDIR}/activate_cuda129.sh
+export CUDA_DEVICE_ORDER=PCI_BUS_ID CUDA_VISIBLE_DEVICES=1
+export GDN_ROOT=${NVME_WORKDIR}/gdn-mixed/20261021_021002
+export TMPDIR="$GDN_ROOT/tmp"
+export OMP_NUM_THREADS=8 MAX_JOBS=4 PYTHONUNBUFFERED=1

@@ -1,0 +1,12 @@
+{
+  "time": 1792520941.3428204,
+  "stage0_pid": 1895068,
+  "create_time": 1792520864.44,
+  "DRAMA3_GDN_environment": {},
+  "PYTHONPATH": null,
+  "profiling_scopes_env": {
+    "VLLM_CUSTOM_SCOPES_FOR_PROFILING": null,
+    "VLLM_NVTX_SCOPES_FOR_PROFILING": null
+  },
+  "probe_absent_in_actual_stage0_environment": true
+}

@@ -1,0 +1,21 @@
+[
+  {
+    "run": "${NVME_WORKDIR}/gdn-mixed/20261021_021002/service_controls/installed/probe",
+    "steps": 0,
+    "variants": [],
+    "laps": [],
+    "calls_per_step": [],
+    "gdn_ms_per_step": {
+      "mean": null,
+      "p50": null,
+      "p90": null
+    },
+    "span_ms_per_step": {
+      "mean": null,
+      "p50": null
+    },
+    "prefill_tokens_p50": null,
+    "decode_tokens_p50": null,
+    "prefills_p50": null
+  }
+]

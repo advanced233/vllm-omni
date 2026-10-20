@@ -1,0 +1,3 @@
+| run | variant | steps | calls/step | GDN host ms/step p50 (p90) | span ms p50 | prefill tok p50 | decode tok p50 |
+| --- | --- | ---: | --- | ---: | ---: | ---: | ---: |
+| probe | - | 0 | [] | - (-) | - | - | - |

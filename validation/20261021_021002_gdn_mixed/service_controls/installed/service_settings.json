@@ -1,0 +1,13 @@
+{
+  "mode": "installed",
+  "service_only_environment": {},
+  "deploy_config": "${NVME_WORKDIR}/baseline/20261020_194158/deploy_config.yaml",
+  "static_installed_function_sha256": "9af0a98c23727bea4e7f34c1cf3283d838ad7a84a741b2fa8f946d823a4292a9",
+  "probe_enabled": false,
+  "main_requests": 256,
+  "main_concurrency": 16,
+  "drain_requests_per_batch": 33,
+  "drain_concurrency": 1,
+  "no_torch_profiler": true,
+  "no_thermal_gate": true
+}

@@ -1,0 +1,58 @@
+installed mixed_forward_core sha256 9af0a98c23727bea4e7f34c1cf3283d838ad7a84a741b2fa8f946d823a4292a9: matches the copy
+GPU NVIDIA A100 80GB PCIe, torch 2.13.0+cu129
+USDT:2026-10-21 02:13:42 1891942:1891942 SyncActivityProfilerHandler.cpp:52] profiler_start
+USDT:2026-10-21 02:13:42 1891942:1891942 SyncActivityProfilerHandler.cpp:59] profiler_stop
+USDT:2026-10-21 02:13:42 1891942:1891942 SyncActivityProfilerHandler.cpp:52] profiler_start
+USDT:2026-10-21 02:13:42 1891942:1891942 SyncActivityProfilerHandler.cpp:59] profiler_stop
+USDT:2026-10-21 02:13:42 1891942:1891942 SyncActivityProfilerHandler.cpp:52] profiler_start
+USDT:2026-10-21 02:13:42 1891942:1891942 SyncActivityProfilerHandler.cpp:59] profiler_stop
+USDT:2026-10-21 02:13:42 1891942:1891942 SyncActivityProfilerHandler.cpp:52] profiler_start
+USDT:2026-10-21 02:13:42 1891942:1891942 SyncActivityProfilerHandler.cpp:59] profiler_stop
+USDT:2026-10-21 02:13:42 1891942:1891942 SyncActivityProfilerHandler.cpp:52] profiler_start
+USDT:2026-10-21 02:13:42 1891942:1891942 SyncActivityProfilerHandler.cpp:59] profiler_stop
+USDT:2026-10-21 02:13:42 1891942:1891942 SyncActivityProfilerHandler.cpp:52] profiler_start
+USDT:2026-10-21 02:13:42 1891942:1891942 SyncActivityProfilerHandler.cpp:59] profiler_stop
+USDT:2026-10-21 02:13:43 1891942:1891942 SyncActivityProfilerHandler.cpp:52] profiler_start
+USDT:2026-10-21 02:13:43 1891942:1891942 SyncActivityProfilerHandler.cpp:59] profiler_stop
+USDT:2026-10-21 02:13:44 1891942:1891942 SyncActivityProfilerHandler.cpp:52] profiler_start
+USDT:2026-10-21 02:13:44 1891942:1891942 SyncActivityProfilerHandler.cpp:59] profiler_stop
+USDT:2026-10-21 02:13:44 1891942:1891942 SyncActivityProfilerHandler.cpp:52] profiler_start
+USDT:2026-10-21 02:13:44 1891942:1891942 SyncActivityProfilerHandler.cpp:59] profiler_stop
+USDT:2026-10-21 02:13:44 1891942:1891942 SyncActivityProfilerHandler.cpp:52] profiler_start
+USDT:2026-10-21 02:13:44 1891942:1891942 SyncActivityProfilerHandler.cpp:59] profiler_stop
+USDT:2026-10-21 02:13:44 1891942:1891942 SyncActivityProfilerHandler.cpp:52] profiler_start
+USDT:2026-10-21 02:13:44 1891942:1891942 SyncActivityProfilerHandler.cpp:59] profiler_stop
+USDT:2026-10-21 02:13:44 1891942:1891942 SyncActivityProfilerHandler.cpp:52] profiler_start
+USDT:2026-10-21 02:13:44 1891942:1891942 SyncActivityProfilerHandler.cpp:59] profiler_stop
+USDT:2026-10-21 02:13:45 1891942:1891942 SyncActivityProfilerHandler.cpp:52] profiler_start
+USDT:2026-10-21 02:13:45 1891942:1891942 SyncActivityProfilerHandler.cpp:59] profiler_stop
+USDT:2026-10-21 02:13:45 1891942:1891942 SyncActivityProfilerHandler.cpp:52] profiler_start
+USDT:2026-10-21 02:13:45 1891942:1891942 SyncActivityProfilerHandler.cpp:59] profiler_stop
+USDT:2026-10-21 02:13:45 1891942:1891942 SyncActivityProfilerHandler.cpp:52] profiler_start
+USDT:2026-10-21 02:13:45 1891942:1891942 SyncActivityProfilerHandler.cpp:59] profiler_stop
+USDT:2026-10-21 02:13:46 1891942:1891942 SyncActivityProfilerHandler.cpp:52] profiler_start
+USDT:2026-10-21 02:13:46 1891942:1891942 SyncActivityProfilerHandler.cpp:59] profiler_stop
+USDT:2026-10-21 02:13:46 1891942:1891942 SyncActivityProfilerHandler.cpp:52] profiler_start
+USDT:2026-10-21 02:13:46 1891942:1891942 SyncActivityProfilerHandler.cpp:59] profiler_stop
+USDT:2026-10-21 02:13:46 1891942:1891942 SyncActivityProfilerHandler.cpp:52] profiler_start
+USDT:2026-10-21 02:13:46 1891942:1891942 SyncActivityProfilerHandler.cpp:59] profiler_stop
+
+| case | state | variant | host us p50 (p90) | GPU span us p50 | kernel us | host ms x30 |
+| --- | --- | --- | ---: | ---: | ---: | ---: |
+| c8 (7+170) | bfloat16 | installed | 888 (905) | 907 | 131 | 26.65 |
+| c8 (7+170) | bfloat16 | baseline | 889 (906) | 907 | 131 | 26.66 |
+| c8 (7+170) | bfloat16 | direct_out | 890 (904) | 908 | 127 | 26.70 |
+| c16 (15+176) | bfloat16 | installed | 998 (1019) | 1019 | 135 | 29.95 |
+| c16 (15+176) | bfloat16 | baseline | 1001 (1021) | 1022 | 135 | 30.02 |
+| c16 (15+176) | bfloat16 | direct_out | 997 (1018) | 1018 | 132 | 29.90 |
+| c64 (60+358) | bfloat16 | installed | 1003 (1022) | 1024 | 232 | 30.08 |
+| c64 (60+358) | bfloat16 | baseline | 1004 (1022) | 1025 | 232 | 30.12 |
+| c64 (60+358) | bfloat16 | direct_out | 1001 (1017) | 1022 | 227 | 30.02 |
+
+host us per section (p50), instrumented copy
+  c8 bfloat16 baseline: setup 17, conv 96, decode 82, prep 82, gather 72, chunk 466, scatter 50, copy 23
+  c8 bfloat16 direct_out: setup 18, conv 95, decode 82, prep 82, gather 71, chunk 483, scatter 49, copy 1
+  c16 bfloat16 baseline: setup 19, conv 104, decode 90, prep 95, gather 87, chunk 508, scatter 61, copy 27
+  c16 bfloat16 direct_out: setup 20, conv 102, decode 90, prep 95, gather 87, chunk 532, scatter 60, copy 1
+  c64 bfloat16 baseline: setup 19, conv 104, decode 90, prep 95, gather 88, chunk 512, scatter 58, copy 27
+  c64 bfloat16 direct_out: setup 20, conv 103, decode 90, prep 96, gather 88, chunk 535, scatter 58, copy 1

@@ -1,0 +1,88 @@
+{
+  "checked_at": "2026-10-21T02:15:34.881947+08:00",
+  "step1_gate_pass": true,
+  "step2_structure_valid": true,
+  "rows": 9,
+  "cases": [
+    "c8",
+    "c16",
+    "c64"
+  ],
+  "variants": [
+    "installed",
+    "baseline",
+    "direct_out"
+  ],
+  "iters": 200,
+  "state_dtype": "bf16",
+  "source_json_sha256": "283176983db93b2625bad890c54e0829724e9c6c0f1b48e4ca77872c23c9b107",
+  "comparisons": [
+    {
+      "case": "c8",
+      "installed_host_us_p50": 888.2655,
+      "baseline_host_us_p50": 888.5705,
+      "direct_host_us_p50": 890.0505,
+      "baseline_minus_installed_host_us": 0.30500000000006366,
+      "baseline_over_installed_host_pct": 0.0343365806732443,
+      "direct_minus_baseline_host_us": 1.4800000000000182,
+      "direct_over_baseline_host_pct": 0.1665596595880725,
+      "direct_minus_baseline_gpu_span_us": 1.024007797241211,
+      "direct_minus_baseline_profiler_device_estimate_us": -4.07184000000035,
+      "section_copy_delta_us": -21.9555,
+      "section_chunk_delta_us": 17.561499999999967,
+      "baseline_host_times_30_ms_not_service_measurement": 26.657115
+    },
+    {
+      "case": "c16",
+      "installed_host_us_p50": 998.183,
+      "baseline_host_us_p50": 1000.678,
+      "direct_host_us_p50": 996.7785,
+      "baseline_minus_installed_host_us": 2.4950000000000045,
+      "baseline_over_installed_host_pct": 0.24995416672093373,
+      "direct_minus_baseline_host_us": -3.899499999999989,
+      "direct_over_baseline_host_pct": -0.38968579303232387,
+      "direct_minus_baseline_gpu_span_us": -3.8399696350097656,
+      "direct_minus_baseline_profiler_device_estimate_us": -3.6238999999994803,
+      "section_copy_delta_us": -26.110500000000002,
+      "section_chunk_delta_us": 23.591000000000122,
+      "baseline_host_times_30_ms_not_service_measurement": 30.02034
+    },
+    {
+      "case": "c64",
+      "installed_host_us_p50": 1002.7885,
+      "baseline_host_us_p50": 1003.8985,
+      "direct_host_us_p50": 1000.598,
+      "baseline_minus_installed_host_us": 1.1100000000000136,
+      "baseline_over_installed_host_pct": 0.1106913372062035,
+      "direct_minus_baseline_host_us": -3.3005000000000564,
+      "direct_over_baseline_host_pct": -0.3287682967949457,
+      "direct_minus_baseline_gpu_span_us": -3.1999945640563965,
+      "direct_minus_baseline_profiler_device_estimate_us": -4.8537200000024825,
+      "section_copy_delta_us": -26.6005,
+      "section_chunk_delta_us": 22.756000000000085,
+      "baseline_host_times_30_ms_not_service_measurement": 30.116955
+    }
+  ],
+  "telemetry_whole_process_window": {
+    "samples": 18,
+    "core_min": 38.0,
+    "core_max": 40.0,
+    "HBM_min": 52.0,
+    "HBM_max": 55.0,
+    "sw_thermal_slowdown_active_samples": 0,
+    "hw_thermal_slowdown_active_samples": 0
+  },
+  "findings": [
+    "The copied baseline has no large observed host discrepancy: median differences from installed are below0.26% in this run. This is descriptive, not a statistical equivalence test.",
+    "Direct output has no consistently favorable host direction across the three cases; no stable host speedup established.",
+    "Copy-section host time decreases while the chunk interval increases; that interval also contains direct-output view/argument preparation, so this is not proof the FLA GPU kernels became slower."
+  ],
+  "timing_limits": [
+    "Host is unsynchronized CPU dispatch latency after each restored pool is synchronized. Each variant uses a seeded random order per iteration.",
+    "CUDA-event span includes GPU idle gaps and event enqueue gaps. Near equality with host suggests host-launch limitation but is not an absolute causal diagnosis.",
+    "kernel_us is a separate CUDA-profiler device-time difference after subtracting another restore-only pass; it is not an exact uninstrumented kernel measurement and may include device copies.",
+    "Per-section measurements are separate sequential passes, not the main no-laps samples. Their medians cannot be added into a median total.",
+    "Only medians/p90 are saved, not iteration samples; no confidence interval or paired significance is recoverable.",
+    "host median times30 is a serial one-layer extrapolation, not measured service latency or throughput gain."
+  ]
+}

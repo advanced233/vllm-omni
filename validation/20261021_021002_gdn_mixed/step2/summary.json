@@ -1,0 +1,253 @@
+{
+  "timestamp": "2026-10-21T02:14:32+0800",
+  "step2_complete": true,
+  "validation": {
+    "valid": true,
+    "rows": 9,
+    "fingerprint_matches": true,
+    "runtime_exit": 0,
+    "step3_started": false
+  },
+  "rows": [
+    {
+      "case": "c8",
+      "step": "7:170f",
+      "state_dtype": "bfloat16",
+      "variant": "installed",
+      "decode_tokens": 7,
+      "prefill_tokens": 170,
+      "host_us_p50": 888.2655,
+      "host_us_p90": 904.841,
+      "gpu_span_us_p50": 907.263994216919,
+      "sections_host_us_p50": null,
+      "kernel_us": 130.92012000000148
+    },
+    {
+      "case": "c8",
+      "step": "7:170f",
+      "state_dtype": "bfloat16",
+      "variant": "baseline",
+      "decode_tokens": 7,
+      "prefill_tokens": 170,
+      "host_us_p50": 888.5705,
+      "host_us_p90": 905.811,
+      "gpu_span_us_p50": 907.263994216919,
+      "sections_host_us_p50": {
+        "setup": 16.621,
+        "conv": 95.72200000000001,
+        "decode": 82.122,
+        "prep": 82.2465,
+        "gather": 71.566,
+        "chunk": 465.67,
+        "scatter": 49.516,
+        "copy": 22.7455
+      },
+      "kernel_us": 130.89721999999938
+    },
+    {
+      "case": "c8",
+      "step": "7:170f",
+      "state_dtype": "bfloat16",
+      "variant": "direct_out",
+      "decode_tokens": 7,
+      "prefill_tokens": 170,
+      "host_us_p50": 890.0505,
+      "host_us_p90": 903.65,
+      "gpu_span_us_p50": 908.2880020141602,
+      "sections_host_us_p50": {
+        "setup": 17.610500000000002,
+        "conv": 94.682,
+        "decode": 81.6265,
+        "prep": 81.56700000000001,
+        "gather": 70.9765,
+        "chunk": 483.2315,
+        "scatter": 49.111,
+        "copy": 0.79
+      },
+      "kernel_us": 126.82537999999903
+    },
+    {
+      "case": "c16",
+      "step": "15:176f",
+      "state_dtype": "bfloat16",
+      "variant": "installed",
+      "decode_tokens": 15,
+      "prefill_tokens": 176,
+      "host_us_p50": 998.183,
+      "host_us_p90": 1019.263,
+      "gpu_span_us_p50": 1018.9119577407837,
+      "sections_host_us_p50": null,
+      "kernel_us": 134.71914000000186
+    },
+    {
+      "case": "c16",
+      "step": "15:176f",
+      "state_dtype": "bfloat16",
+      "variant": "baseline",
+      "decode_tokens": 15,
+      "prefill_tokens": 176,
+      "host_us_p50": 1000.678,
+      "host_us_p90": 1021.163,
+      "gpu_span_us_p50": 1021.6959714889526,
+      "sections_host_us_p50": {
+        "setup": 18.700499999999998,
+        "conv": 103.54750000000001,
+        "decode": 89.777,
+        "prep": 95.25800000000001,
+        "gather": 86.962,
+        "chunk": 508.49649999999997,
+        "scatter": 60.522,
+        "copy": 27.000500000000002
+      },
+      "kernel_us": 135.2296999999996
+    },
+    {
+      "case": "c16",
+      "step": "15:176f",
+      "state_dtype": "bfloat16",
+      "variant": "direct_out",
+      "decode_tokens": 15,
+      "prefill_tokens": 176,
+      "host_us_p50": 996.7785,
+      "host_us_p90": 1018.124,
+      "gpu_span_us_p50": 1017.8560018539429,
+      "sections_host_us_p50": {
+        "setup": 20.011,
+        "conv": 102.457,
+        "decode": 89.71199999999999,
+        "prep": 95.02199999999999,
+        "gather": 86.572,
+        "chunk": 532.0875000000001,
+        "scatter": 60.2415,
+        "copy": 0.89
+      },
+      "kernel_us": 131.60580000000013
+    },
+    {
+      "case": "c64",
+      "step": "60:180f,178f",
+      "state_dtype": "bfloat16",
+      "variant": "installed",
+      "decode_tokens": 60,
+      "prefill_tokens": 358,
+      "host_us_p50": 1002.7885,
+      "host_us_p90": 1022.084,
+      "gpu_span_us_p50": 1023.5520005226135,
+      "sections_host_us_p50": null,
+      "kernel_us": 232.0324000000007
+    },
+    {
+      "case": "c64",
+      "step": "60:180f,178f",
+      "state_dtype": "bfloat16",
+      "variant": "baseline",
+      "decode_tokens": 60,
+      "prefill_tokens": 358,
+      "host_us_p50": 1003.8985,
+      "host_us_p90": 1022.454,
+      "gpu_span_us_p50": 1024.7519612312317,
+      "sections_host_us_p50": {
+        "setup": 18.7805,
+        "conv": 104.05250000000001,
+        "decode": 90.052,
+        "prep": 95.497,
+        "gather": 87.977,
+        "chunk": 511.99649999999997,
+        "scatter": 57.851,
+        "copy": 27.4705
+      },
+      "kernel_us": 231.89428000000117
+    },
+    {
+      "case": "c64",
+      "step": "60:180f,178f",
+      "state_dtype": "bfloat16",
+      "variant": "direct_out",
+      "decode_tokens": 60,
+      "prefill_tokens": 358,
+      "host_us_p50": 1000.598,
+      "host_us_p90": 1017.083,
+      "gpu_span_us_p50": 1021.5519666671753,
+      "sections_host_us_p50": {
+        "setup": 20.21,
+        "conv": 103.18700000000001,
+        "decode": 90.1125,
+        "prep": 95.5325,
+        "gather": 88.017,
+        "chunk": 534.7525,
+        "scatter": 58.176,
+        "copy": 0.87
+      },
+      "kernel_us": 227.0405599999987
+    }
+  ],
+  "comparison": {
+    "c8": {
+      "baseline_minus_installed_host_us": 0.30500000000006366,
+      "baseline_vs_installed_host_pct": 0.0343365806732443,
+      "direct_out_minus_baseline_host_us": 1.4800000000000182,
+      "direct_out_vs_baseline_host_pct": 0.1665596595880725,
+      "direct_out_minus_baseline_kernel_us": -4.07184000000035,
+      "installed_host_ms_x30": 26.647965
+    },
+    "c16": {
+      "baseline_minus_installed_host_us": 2.4950000000000045,
+      "baseline_vs_installed_host_pct": 0.24995416672093373,
+      "direct_out_minus_baseline_host_us": -3.899499999999989,
+      "direct_out_vs_baseline_host_pct": -0.38968579303232387,
+      "direct_out_minus_baseline_kernel_us": -3.6238999999994803,
+      "installed_host_ms_x30": 29.94549
+    },
+    "c64": {
+      "baseline_minus_installed_host_us": 1.1100000000000136,
+      "baseline_vs_installed_host_pct": 0.1106913372062035,
+      "direct_out_minus_baseline_host_us": -3.3005000000000564,
+      "direct_out_vs_baseline_host_pct": -0.3287682967949457,
+      "direct_out_minus_baseline_kernel_us": -4.8537200000024825,
+      "installed_host_ms_x30": 30.083655
+    }
+  },
+  "telemetry": {
+    "samples": 18,
+    "core_min": 38,
+    "core_max": 40,
+    "hbm_min": 52,
+    "hbm_max": 55,
+    "sw_thermal_active_samples": 0,
+    "hw_thermal_active_samples": 0
+  },
+  "source_hashes_match": {
+    "tool_snapshot/drama3_bench/README.md": true,
+    "tool_snapshot/drama3_bench/aggregate_results.py": true,
+    "tool_snapshot/drama3_bench/analyze_audio.py": true,
+    "tool_snapshot/drama3_bench/encode_ref_codes.py": true,
+    "tool_snapshot/drama3_bench/eval_quality.py": true,
+    "tool_snapshot/drama3_bench/gdn_mixed/README.md": true,
+    "tool_snapshot/drama3_bench/gdn_mixed/bench_mixed_core.py": true,
+    "tool_snapshot/drama3_bench/gdn_mixed/drama3_gdn_harness.py": true,
+    "tool_snapshot/drama3_bench/gdn_mixed/drama3_gdn_probe.py": true,
+    "tool_snapshot/drama3_bench/gdn_mixed/drama3_gdn_variants.py": true,
+    "tool_snapshot/drama3_bench/gdn_mixed/probe_site/sitecustomize.py": true,
+    "tool_snapshot/drama3_bench/gdn_mixed/summarize_probe.py": true,
+    "tool_snapshot/drama3_bench/gdn_mixed/test_mixed_core_variants.py": true,
+    "tool_snapshot/drama3_bench/run_sweep.sh": true,
+    "tool_snapshot/drama3_bench/stream_bench.py": true,
+    "tool_snapshot/drama3_bench/thermal_gate.py": true
+  },
+  "cleanup": {
+    "bench_exit": 0,
+    "monitor_exit": 0,
+    "gpu_after": "2026/10/21 02:13:48.886, GPU_PHYSICAL_1, 39, 53, 1410 MHz, 1512 MHz, 62.98 W, 300.00 W, 0 %, 15 MiB, 0x0000000000000000, Not Active, Not Active, Not Active, Not Active",
+    "gpu_compute_apps_after": "",
+    "failure": null,
+    "timestamp": "2026-10-21T02:13:48+0800"
+  },
+  "step3_started": false,
+  "interpretation": [
+    "Installed and baseline host medians are close in this microbenchmark.",
+    "Direct-output host changes are small and mixed in sign across cases; no stable host speedup is established.",
+    "kernel_us uses separate torch.profiler passes and restore subtraction; it is not GPU-span time.",
+    "Host x30 is an isolated-layer extrapolation, not the measured service mixed-step host sum.",
+    "Section medians need not add to the whole-call median; times exclude profiler for host/span measurements."
+  ]
+}

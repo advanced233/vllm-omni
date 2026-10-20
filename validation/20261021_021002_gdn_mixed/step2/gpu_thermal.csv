@@ -1,0 +1,19 @@
+timestamp, uuid, temperature.gpu, temperature.memory, clocks.current.sm [MHz], clocks.current.memory [MHz], power.draw [W], power.limit [W], utilization.gpu [%], memory.used [MiB], clocks_event_reasons.active, clocks_event_reasons.sw_thermal_slowdown, clocks_event_reasons.hw_thermal_slowdown, clocks_event_reasons.sw_power_cap, clocks_event_reasons.hw_power_brake_slowdown
+2026/10/21 02:13:30.751, GPU_PHYSICAL_1, 38, 53, 210 MHz, 1512 MHz, 43.54 W, 300.00 W, 0 %, 15 MiB, 0x0000000000000001, Not Active, Not Active, Not Active, Not Active
+2026/10/21 02:13:31.762, GPU_PHYSICAL_1, 38, 53, 210 MHz, 1512 MHz, 43.54 W, 300.00 W, 0 %, 15 MiB, 0x0000000000000001, Not Active, Not Active, Not Active, Not Active
+2026/10/21 02:13:32.763, GPU_PHYSICAL_1, 38, 53, 210 MHz, 1512 MHz, 43.54 W, 300.00 W, 0 %, 18 MiB, 0x0000000000000001, Not Active, Not Active, Not Active, Not Active
+2026/10/21 02:13:33.765, GPU_PHYSICAL_1, 38, 53, 210 MHz, 1512 MHz, 43.64 W, 300.00 W, 0 %, 18 MiB, 0x0000000000000001, Not Active, Not Active, Not Active, Not Active
+2026/10/21 02:13:34.766, GPU_PHYSICAL_1, 38, 53, 210 MHz, 1512 MHz, 43.54 W, 300.00 W, 0 %, 18 MiB, 0x0000000000000001, Not Active, Not Active, Not Active, Not Active
+2026/10/21 02:13:35.767, GPU_PHYSICAL_1, 38, 53, 210 MHz, 1512 MHz, 43.64 W, 300.00 W, 0 %, 18 MiB, 0x0000000000000001, Not Active, Not Active, Not Active, Not Active
+2026/10/21 02:13:36.770, GPU_PHYSICAL_1, 38, 53, 210 MHz, 1512 MHz, 43.54 W, 300.00 W, 0 %, 18 MiB, 0x0000000000000001, Not Active, Not Active, Not Active, Not Active
+2026/10/21 02:13:37.772, GPU_PHYSICAL_1, 38, 53, 210 MHz, 1512 MHz, 43.54 W, 300.00 W, 0 %, 18 MiB, 0x0000000000000001, Not Active, Not Active, Not Active, Not Active
+2026/10/21 02:13:38.773, GPU_PHYSICAL_1, 38, 53, 210 MHz, 1512 MHz, 43.54 W, 300.00 W, 0 %, 18 MiB, 0x0000000000000001, Not Active, Not Active, Not Active, Not Active
+2026/10/21 02:13:39.773, GPU_PHYSICAL_1, 38, 53, 210 MHz, 1512 MHz, 43.54 W, 300.00 W, 0 %, 18 MiB, 0x0000000000000001, Not Active, Not Active, Not Active, Not Active
+2026/10/21 02:13:40.774, GPU_PHYSICAL_1, 38, 53, 1410 MHz, 1512 MHz, 68.58 W, 300.00 W, 0 %, 437 MiB, 0x0000000000000000, Not Active, Not Active, Not Active, Not Active
+2026/10/21 02:13:41.775, GPU_PHYSICAL_1, 39, 52, 1410 MHz, 1512 MHz, 77.45 W, 300.00 W, 12 %, 567 MiB, 0x0000000000000000, Not Active, Not Active, Not Active, Not Active
+2026/10/21 02:13:42.776, GPU_PHYSICAL_1, 39, 53, 1410 MHz, 1512 MHz, 63.27 W, 300.00 W, 7 %, 579 MiB, 0x0000000000000000, Not Active, Not Active, Not Active, Not Active
+2026/10/21 02:13:43.779, GPU_PHYSICAL_1, 39, 54, 1410 MHz, 1512 MHz, 81.46 W, 300.00 W, 17 %, 625 MiB, 0x0000000000000000, Not Active, Not Active, Not Active, Not Active
+2026/10/21 02:13:44.780, GPU_PHYSICAL_1, 39, 54, 1410 MHz, 1512 MHz, 116.39 W, 300.00 W, 16 %, 761 MiB, 0x0000000000000000, Not Active, Not Active, Not Active, Not Active
+2026/10/21 02:13:45.781, GPU_PHYSICAL_1, 40, 55, 1410 MHz, 1512 MHz, 109.99 W, 300.00 W, 30 %, 761 MiB, 0x0000000000000000, Not Active, Not Active, Not Active, Not Active
+2026/10/21 02:13:46.784, GPU_PHYSICAL_1, 40, 53, 1410 MHz, 1512 MHz, 63.57 W, 300.00 W, 14 %, 761 MiB, 0x0000000000000000, Not Active, Not Active, Not Active, Not Active
+2026/10/21 02:13:47.784, GPU_PHYSICAL_1, 39, 53, 1410 MHz, 1512 MHz, 63.46 W, 300.00 W, 0 %, 761 MiB, 0x0000000000000000, Not Active, Not Active, Not Active, Not Active

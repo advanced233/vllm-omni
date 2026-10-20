@@ -1,0 +1,10 @@
+{
+  "time": 1792520541.2389767,
+  "changes": [
+    "Stop current startup/client as soon as supervisor reports foreign GPU process (not only next group)",
+    "Automatically persist official summarize_probe stdout and JSON after each group"
+  ],
+  "user_tools_modified": false,
+  "server_sources_modified": false,
+  "measured_computation_changed": false
+}

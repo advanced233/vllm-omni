@@ -18,7 +18,9 @@
 
 ## 工具实机验证
 
-最新：[GDN mixed 工具正确性门禁](validation/20261021_014640_gdn_mixed/README.md)：指纹匹配，但37项中26通过、11失败；已停止微基准和服务内对照。
+最新：[GDN mixed 修复后完整三步实验](validation/20261021_021002_gdn_mixed/README.md)：37项全部通过，微基准与四组服务对照完成；无profiler的GDN host仍约29 ms，direct_out尚无稳定净host收益证据。
+
+此前：[GDN mixed 工具正确性门禁](validation/20261021_014640_gdn_mixed/README.md)：指纹匹配，但37项中26通过、11失败；该次停止了微基准和服务内对照，失败证据完整保留。
 
 此前：[GPU 2 冷态 C1 温度实验](validation/20261021_002746_gpu2_thermal/README.md)：1088条全部成功，正式计时约130秒后仍出现持续热降频；附核心/HBM温度、频率和风扇权限检查。
 

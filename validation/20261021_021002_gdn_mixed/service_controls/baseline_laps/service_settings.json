@@ -1,0 +1,18 @@
+{
+  "mode": "baseline_laps",
+  "service_only_environment": {
+    "DRAMA3_GDN_PROBE": "1",
+    "DRAMA3_GDN_VARIANT": "baseline",
+    "DRAMA3_GDN_PROBE_DIR": "${NVME_WORKDIR}/gdn-mixed/20261021_021002/service_controls/baseline_laps/probe",
+    "PYTHONPATH": "${NVME_WORKDIR}/gdn-mixed/20261021_021002/tool_snapshot/drama3_bench/gdn_mixed/probe_site"
+  },
+  "deploy_config": "${NVME_WORKDIR}/baseline/20261020_194158/deploy_config.yaml",
+  "static_installed_function_sha256": "9af0a98c23727bea4e7f34c1cf3283d838ad7a84a741b2fa8f946d823a4292a9",
+  "probe_enabled": true,
+  "main_requests": 256,
+  "main_concurrency": 16,
+  "drain_requests_per_batch": 33,
+  "drain_concurrency": 1,
+  "no_torch_profiler": true,
+  "no_thermal_gate": true
+}

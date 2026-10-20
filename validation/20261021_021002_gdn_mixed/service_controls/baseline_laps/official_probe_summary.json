@@ -1,0 +1,37 @@
+[
+  {
+    "run": "${NVME_WORKDIR}/gdn-mixed/20261021_021002/service_controls/baseline_laps/probe",
+    "steps": 220,
+    "variants": [
+      "baseline"
+    ],
+    "laps": [
+      true
+    ],
+    "calls_per_step": [
+      30
+    ],
+    "gdn_ms_per_step": {
+      "mean": 29.075222404545453,
+      "p50": 28.969131,
+      "p90": 30.664136
+    },
+    "span_ms_per_step": {
+      "mean": 32.49235666818182,
+      "p50": 32.297653
+    },
+    "prefill_tokens_p50": 168,
+    "decode_tokens_p50": 15,
+    "prefills_p50": 1,
+    "section_ms_per_step": {
+      "setup": 0.43564681818181816,
+      "conv": 3.7036027272727274,
+      "decode": 2.693717590909091,
+      "prep": 2.7109742136363635,
+      "gather": 2.295063990909091,
+      "chunk": 15.204263418181819,
+      "scatter": 1.4745922272727272,
+      "copy": 0.5573614181818182
+    }
+  }
+]

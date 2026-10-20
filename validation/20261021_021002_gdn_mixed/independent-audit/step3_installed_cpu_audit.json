@@ -1,0 +1,101 @@
+{
+  "mode": "installed",
+  "stage0_pid": 1895068,
+  "valid": true,
+  "requests": 256,
+  "failed": 0,
+  "loop_lag_p99_ms": 0.95,
+  "actual_HTTP_window_estimate": [
+    1792521090.8338196,
+    1792521126.784579
+  ],
+  "official_conservative_window": [
+    1792521091.0,
+    1792521125.951
+  ],
+  "clock_offset_change_s": -2.384185791015625e-07,
+  "performance": {
+    "duration_s": 35.951,
+    "throughput_audio_s_per_s": 31.07,
+    "ttfa_ms": {
+      "mean": 214.9,
+      "p50": 204.8,
+      "p90": 245.0,
+      "p95": 360.2,
+      "p99": 373.3,
+      "max": 374.9
+    },
+    "rtf": {
+      "mean": 0.4833,
+      "p50": 0.4843,
+      "p90": 0.5084,
+      "p95": 0.5146,
+      "p99": 0.5454,
+      "max": 0.5738
+    },
+    "stall": {
+      "0ms": {
+        "streams_stalled": 0,
+        "streams_stalled_pct": 0.0,
+        "events": 0
+      },
+      "100ms": {
+        "streams_stalled": 0,
+        "streams_stalled_pct": 0.0,
+        "events": 0
+      }
+    },
+    "long_takes": {
+      "at_least_20s": 3,
+      "at_least_20s_pct": 1.17,
+      "at_frame_cap": 1,
+      "audio_share_pct": 5.84
+    }
+  },
+  "p50_method": "Nearest order statistic, matching user summarize_probe; not interpolated percentile.",
+  "boundary_note": "Probe t precedes the first perf_counter timestamp slightly; t+span is an estimated scope end. Actual-window subset uses1ms interior guard; official conservative subset additionally verifies t+span <= hi.",
+  "unpatched_control_verified": true,
+  "actual_stage0_environment_no_probe_verified": true,
+  "drain_batches": [
+    "flush_drain_1"
+  ],
+  "timed_hardware": {
+    "samples": 36,
+    "SM_MHz": {
+      "n": 36,
+      "mean": 1273.3333333333333,
+      "p50": 1305.0,
+      "p90": 1395.0,
+      "min": 1005.0,
+      "max": 1395.0
+    },
+    "core_C": {
+      "n": 36,
+      "mean": 82.75,
+      "p50": 84.0,
+      "p90": 84.0,
+      "min": 78.0,
+      "max": 85.0
+    },
+    "HBM_C": {
+      "n": 36,
+      "mean": 86.38888888888889,
+      "p50": 87.0,
+      "p90": 89.0,
+      "min": 82.0,
+      "max": 89.0
+    },
+    "sw_thermal_slowdown": {
+      "active_samples": 18,
+      "sample_pct": 50.0
+    },
+    "hw_thermal_slowdown": {
+      "active_samples": 0,
+      "sample_pct": 0.0
+    },
+    "sw_power_cap": {
+      "active_samples": 18,
+      "sample_pct": 50.0
+    }
+  }
+}

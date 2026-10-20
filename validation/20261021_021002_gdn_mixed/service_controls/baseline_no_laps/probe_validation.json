@@ -1,0 +1,45 @@
+{
+  "ok": true,
+  "mode": "baseline_no_laps",
+  "stage0_pid": 1894002,
+  "expected_variant": "baseline",
+  "expected_laps": false,
+  "window": [
+    1792520777.0,
+    1792520808.212
+  ],
+  "all_stage0_steps": 337,
+  "timed_steps": 219,
+  "calls_per_step": [
+    30
+  ],
+  "outside_window_incomplete_records": 0,
+  "persisted_post_main": true,
+  "main_client_completed_wall_s": 1792520808.7590377,
+  "last_persisted_t": 1792520836.1570866,
+  "timed_summary": {
+    "steps": 219,
+    "variants": [
+      "baseline"
+    ],
+    "laps": [
+      false
+    ],
+    "calls_per_step": [
+      30
+    ],
+    "gdn_ms_per_step": {
+      "mean": 29.581009995433792,
+      "p50": 29.092934,
+      "p90": 31.445833
+    },
+    "span_ms_per_step": {
+      "mean": 32.59134029223744,
+      "p50": 32.040848
+    },
+    "prefill_tokens_p50": 167,
+    "decode_tokens_p50": 15,
+    "prefills_p50": 1
+  },
+  "flush_rationale": "Sequential append contains records later than the actual main client completion; therefore main-window buffered records were flushed before shutdown."
+}

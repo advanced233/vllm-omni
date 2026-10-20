@@ -1,0 +1,8 @@
+{
+  "step1_all_37_passed": true,
+  "step2_completed": true,
+  "root_gpu_handover": true,
+  "step1_evidence": "${NVME_WORKDIR}/gdn-mixed/20261021_021002/step1/summary.json",
+  "step2_evidence": "${NVME_WORKDIR}/gdn-mixed/20261021_021002/step2/gdn_bench_bf16.json",
+  "basis": "Root independently checked 37 pass/0 skip, benchmark exit0, fingerprint and all9 finite rows. User authorizes original sequential four-control experiment."
+}

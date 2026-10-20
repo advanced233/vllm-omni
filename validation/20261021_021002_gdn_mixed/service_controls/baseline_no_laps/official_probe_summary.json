@@ -1,0 +1,27 @@
+[
+  {
+    "run": "${NVME_WORKDIR}/gdn-mixed/20261021_021002/service_controls/baseline_no_laps/probe",
+    "steps": 219,
+    "variants": [
+      "baseline"
+    ],
+    "laps": [
+      false
+    ],
+    "calls_per_step": [
+      30
+    ],
+    "gdn_ms_per_step": {
+      "mean": 29.581009995433792,
+      "p50": 29.092934,
+      "p90": 31.445833
+    },
+    "span_ms_per_step": {
+      "mean": 32.59134029223744,
+      "p50": 32.040848
+    },
+    "prefill_tokens_p50": 167,
+    "decode_tokens_p50": 15,
+    "prefills_p50": 1
+  }
+]

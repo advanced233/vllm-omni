@@ -1,0 +1,56 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.13, pytest-9.1.1, pluggy-1.7.0 -- ${WORKSPACE}/.venvs/vllm-omni-cu129/bin/python
+cachedir: .pytest_cache
+rootdir: ${WORKSPACE}/vllm-omni
+configfile: pyproject.toml
+plugins: platformdirs-4.13.5, shard-0.1.2, mock-3.15.1, hydra-core-1.3.7, xdist-3.8.0, asyncio-1.4.0, typeguard-4.6.0, cov-7.1.0, anyio-4.15.1
+asyncio: mode=Mode.AUTO, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+collecting ... collected 37 items
+Running 37 items in this shard: tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_copy_is_the_installed_version, tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variant_equals_installed_bit_for_bit[baseline-upstream-fp32], tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variant_equals_installed_bit_for_bit[baseline-upstream-bf16], tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variant_equals_installed_bit_for_bit[baseline-prefill_only-fp32], tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variant_equals_installed_bit_for_bit[baseline-prefill_only-bf16], tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variant_equals_installed_bit_for_bit[baseline-c16-fp32], tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variant_equals_installed_bit_for_bit[baseline-c16-bf16], tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variant_equals_installed_bit_for_bit[baseline-c64-fp32], tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variant_equals_installed_bit_for_bit[baseline-c64-bf16], tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variant_equals_installed_bit_for_bit[baseline-long_continued-fp32], tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variant_equals_installed_bit_for_bit[baseline-long_continued-bf16], tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variant_equals_installed_bit_for_bit[direct_out-upstream-fp32], tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variant_equals_installed_bit_for_bit[direct_out-upstream-bf16], tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variant_equals_installed_bit_for_bit[direct_out-prefill_only-fp32], tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variant_equals_installed_bit_for_bit[direct_out-prefill_only-bf16], tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variant_equals_installed_bit_for_bit[direct_out-c16-fp32], tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variant_equals_installed_bit_for_bit[direct_out-c16-bf16], tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variant_equals_installed_bit_for_bit[direct_out-c64-fp32], tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variant_equals_installed_bit_for_bit[direct_out-c64-bf16], tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variant_equals_installed_bit_for_bit[direct_out-long_continued-fp32], tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variant_equals_installed_bit_for_bit[direct_out-long_continued-bf16], tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variants_match_vllm_standard_path[upstream-fp32], tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variants_match_vllm_standard_path[upstream-bf16], tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variants_match_vllm_standard_path[prefill_only-fp32], tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variants_match_vllm_standard_path[prefill_only-bf16], tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variants_match_vllm_standard_path[c16-fp32], tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variants_match_vllm_standard_path[c16-bf16], tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variants_match_vllm_standard_path[c64-fp32], tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variants_match_vllm_standard_path[c64-bf16], tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variants_match_vllm_standard_path[long_continued-fp32], tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variants_match_vllm_standard_path[long_continued-bf16], tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_non_contiguous_output_takes_the_copy[fp32], tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_non_contiguous_output_takes_the_copy[bf16], tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_prompt_split_over_two_steps[baseline-fp32], tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_prompt_split_over_two_steps[baseline-bf16], tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_prompt_split_over_two_steps[direct_out-fp32], tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_prompt_split_over_two_steps[direct_out-bf16]
+
+tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_copy_is_the_installed_version PASSED [  2%]
+tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variant_equals_installed_bit_for_bit[baseline-upstream-fp32] PASSED [  5%]
+tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variant_equals_installed_bit_for_bit[baseline-upstream-bf16] PASSED [  8%]
+tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variant_equals_installed_bit_for_bit[baseline-prefill_only-fp32] PASSED [ 10%]
+tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variant_equals_installed_bit_for_bit[baseline-prefill_only-bf16] PASSED [ 13%]
+tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variant_equals_installed_bit_for_bit[baseline-c16-fp32] PASSED [ 16%]
+tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variant_equals_installed_bit_for_bit[baseline-c16-bf16] PASSED [ 18%]
+tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variant_equals_installed_bit_for_bit[baseline-c64-fp32] PASSED [ 21%]
+tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variant_equals_installed_bit_for_bit[baseline-c64-bf16] PASSED [ 24%]
+tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variant_equals_installed_bit_for_bit[baseline-long_continued-fp32] PASSED [ 27%]
+tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variant_equals_installed_bit_for_bit[baseline-long_continued-bf16] PASSED [ 29%]
+tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variant_equals_installed_bit_for_bit[direct_out-upstream-fp32] PASSED [ 32%]
+tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variant_equals_installed_bit_for_bit[direct_out-upstream-bf16] PASSED [ 35%]
+tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variant_equals_installed_bit_for_bit[direct_out-prefill_only-fp32] PASSED [ 37%]
+tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variant_equals_installed_bit_for_bit[direct_out-prefill_only-bf16] PASSED [ 40%]
+tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variant_equals_installed_bit_for_bit[direct_out-c16-fp32] PASSED [ 43%]
+tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variant_equals_installed_bit_for_bit[direct_out-c16-bf16] PASSED [ 45%]
+tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variant_equals_installed_bit_for_bit[direct_out-c64-fp32] PASSED [ 48%]
+tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variant_equals_installed_bit_for_bit[direct_out-c64-bf16] PASSED [ 51%]
+tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variant_equals_installed_bit_for_bit[direct_out-long_continued-fp32] PASSED [ 54%]
+tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variant_equals_installed_bit_for_bit[direct_out-long_continued-bf16] PASSED [ 56%]
+tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variants_match_vllm_standard_path[upstream-fp32] PASSED [ 59%]
+tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variants_match_vllm_standard_path[upstream-bf16] PASSED [ 62%]
+tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variants_match_vllm_standard_path[prefill_only-fp32] PASSED [ 64%]
+tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variants_match_vllm_standard_path[prefill_only-bf16] PASSED [ 67%]
+tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variants_match_vllm_standard_path[c16-fp32] PASSED [ 70%]
+tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variants_match_vllm_standard_path[c16-bf16] PASSED [ 72%]
+tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variants_match_vllm_standard_path[c64-fp32] PASSED [ 75%]
+tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variants_match_vllm_standard_path[c64-bf16] PASSED [ 78%]
+tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variants_match_vllm_standard_path[long_continued-fp32] PASSED [ 81%]
+tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variants_match_vllm_standard_path[long_continued-bf16] PASSED [ 83%]
+tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_non_contiguous_output_takes_the_copy[fp32] PASSED [ 86%]
+tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_non_contiguous_output_takes_the_copy[bf16] PASSED [ 89%]
+tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_prompt_split_over_two_steps[baseline-fp32] PASSED [ 91%]
+tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_prompt_split_over_two_steps[baseline-bf16] PASSED [ 94%]
+tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_prompt_split_over_two_steps[direct_out-fp32] PASSED [ 97%]
+tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_prompt_split_over_two_steps[direct_out-bf16] PASSED [100%]
+
+=============================== warnings summary ===============================
+tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py: 14 warnings
+  ${WORKSPACE}/.venvs/vllm-omni-cu129/lib/python3.12/site-packages/torch/jit/_script.py:365: DeprecationWarning: `torch.jit.script_method` is deprecated. Please switch to `torch.compile` or `torch.export`.
+    warnings.warn(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+- generated xml file: ${NVME_WORKDIR}/gdn-mixed/20261021_021002/step1/full_tests.junit.xml -
+======================= 37 passed, 14 warnings in 21.19s =======================

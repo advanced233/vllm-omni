@@ -1,0 +1,160 @@
+{
+  "timestamp": "2026-10-21T02:41:13+0800",
+  "runner_exits": {
+    "step3-rest-runner.exit": 0,
+    "step3-baseline-runner.exit": 0
+  },
+  "gpu": "GPU_PHYSICAL_1, 15, 0",
+  "gpu_compute_apps": [],
+  "port_8091_free": true,
+  "recorded_server_processes_remaining": [],
+  "recorded_helper_pids": [
+    {
+      "mode": "baseline_laps",
+      "kind": "supervisor.pid",
+      "pid": 1892611,
+      "exists": false
+    },
+    {
+      "mode": "baseline_laps",
+      "kind": "gpu-monitor.pid",
+      "pid": 1892610,
+      "exists": false
+    },
+    {
+      "mode": "baseline_no_laps",
+      "kind": "supervisor.pid",
+      "pid": 1893877,
+      "exists": false
+    },
+    {
+      "mode": "baseline_no_laps",
+      "kind": "gpu-monitor.pid",
+      "pid": 1893876,
+      "exists": false
+    },
+    {
+      "mode": "installed",
+      "kind": "supervisor.pid",
+      "pid": 1894973,
+      "exists": false
+    },
+    {
+      "mode": "installed",
+      "kind": "gpu-monitor.pid",
+      "pid": 1894972,
+      "exists": false
+    },
+    {
+      "mode": "direct_out_laps",
+      "kind": "supervisor.pid",
+      "pid": 1896159,
+      "exists": false
+    },
+    {
+      "mode": "direct_out_laps",
+      "kind": "gpu-monitor.pid",
+      "pid": 1896158,
+      "exists": false
+    }
+  ],
+  "locked_hashes_match": {
+    "${NVME_WORKDIR}/baseline/20261020_194158/deploy_config.yaml": true,
+    "${NVME_WORKDIR}/bench-validation/20261020_165001_49599d4/ref_codes_en.jsonl": true,
+    "${NVME_WORKDIR}/gdn-mixed/20261021_021002/tool_snapshot/drama3_bench/stream_bench.py": true,
+    "${NVME_WORKDIR}/gdn-mixed/20261021_021002/tool_snapshot/drama3_bench/gdn_mixed/bench_mixed_core.py": true,
+    "${NVME_WORKDIR}/gdn-mixed/20261021_021002/tool_snapshot/drama3_bench/gdn_mixed/drama3_gdn_harness.py": true,
+    "${NVME_WORKDIR}/gdn-mixed/20261021_021002/tool_snapshot/drama3_bench/gdn_mixed/drama3_gdn_probe.py": true,
+    "${NVME_WORKDIR}/gdn-mixed/20261021_021002/tool_snapshot/drama3_bench/gdn_mixed/drama3_gdn_variants.py": true,
+    "${NVME_WORKDIR}/gdn-mixed/20261021_021002/tool_snapshot/drama3_bench/gdn_mixed/probe_site/sitecustomize.py": true,
+    "${NVME_WORKDIR}/gdn-mixed/20261021_021002/tool_snapshot/drama3_bench/gdn_mixed/summarize_probe.py": true,
+    "${NVME_WORKDIR}/gdn-mixed/20261021_021002/tool_snapshot/drama3_bench/gdn_mixed/test_mixed_core_variants.py": true,
+    "${NVME_WORKDIR}/gdn-mixed/20261021_021002/step3-preparation/run_service_controls.py": true,
+    "${NVME_WORKDIR}/gdn-mixed/20261021_021002/step3-preparation/server_supervisor.py": true,
+    "${NVME_WORKDIR}/gdn-mixed/20261021_021002/step3-preparation/validate_flush_cpu.py": true,
+    "${NVME_WORKDIR}/gdn-mixed/20261021_021002/step3-preparation/validate_probe.py": true
+  },
+  "server_tracked_clean": true,
+  "tool_commit": "7aeaa5b46ec1cdbdb7e5d43b396b4d05af87fa37",
+  "all_four_main_requests": 1024,
+  "all_four_drain_requests": 132,
+  "all_requests_successful": true,
+  "probe_records_flush_verified_before_shutdown": true,
+  "source_user_tools_or_system_cuda_modified": false,
+  "clean": true,
+  "snapshot_files_verified": 16,
+  "snapshot_sha256_matches": {
+    "tool_snapshot/drama3_bench/README.md": true,
+    "tool_snapshot/drama3_bench/aggregate_results.py": true,
+    "tool_snapshot/drama3_bench/analyze_audio.py": true,
+    "tool_snapshot/drama3_bench/encode_ref_codes.py": true,
+    "tool_snapshot/drama3_bench/eval_quality.py": true,
+    "tool_snapshot/drama3_bench/gdn_mixed/README.md": true,
+    "tool_snapshot/drama3_bench/gdn_mixed/bench_mixed_core.py": true,
+    "tool_snapshot/drama3_bench/gdn_mixed/drama3_gdn_harness.py": true,
+    "tool_snapshot/drama3_bench/gdn_mixed/drama3_gdn_probe.py": true,
+    "tool_snapshot/drama3_bench/gdn_mixed/drama3_gdn_variants.py": true,
+    "tool_snapshot/drama3_bench/gdn_mixed/probe_site/sitecustomize.py": true,
+    "tool_snapshot/drama3_bench/gdn_mixed/summarize_probe.py": true,
+    "tool_snapshot/drama3_bench/gdn_mixed/test_mixed_core_variants.py": true,
+    "tool_snapshot/drama3_bench/run_sweep.sh": true,
+    "tool_snapshot/drama3_bench/stream_bench.py": true,
+    "tool_snapshot/drama3_bench/thermal_gate.py": true
+  },
+  "step_sequence": {
+    "step1_all_37_passed": true,
+    "step2_complete_valid": true,
+    "step3_authorization": {
+      "step1_all_37_passed": true,
+      "step2_completed": true,
+      "root_gpu_handover": true,
+      "step1_evidence": "${NVME_WORKDIR}/gdn-mixed/20261021_021002/step1/summary.json",
+      "step2_evidence": "${NVME_WORKDIR}/gdn-mixed/20261021_021002/step2/gdn_bench_bf16.json",
+      "basis": "Root independently checked 37 pass/0 skip, benchmark exit0, fingerprint and all9 finite rows. User authorizes original sequential four-control experiment."
+    },
+    "chronological_timestamps_epoch_s": {
+      "step1_completed": 1792519917.0,
+      "step2_completed": 1792520072.0,
+      "step3_authorization_file_mtime": 1792520136.8424025,
+      "first_service_launch_metadata": 1792520160.0
+    },
+    "chronological_gate_order_valid": true
+  },
+  "probe_group_integrity": {
+    "baseline_laps": {
+      "ok": true,
+      "timed_steps": 220,
+      "calls_per_step": [
+        30
+      ],
+      "post_main_persisted": true,
+      "unpatched_installed_control": null
+    },
+    "baseline_no_laps": {
+      "ok": true,
+      "timed_steps": 219,
+      "calls_per_step": [
+        30
+      ],
+      "post_main_persisted": true,
+      "unpatched_installed_control": null
+    },
+    "installed": {
+      "ok": true,
+      "timed_steps": null,
+      "calls_per_step": null,
+      "post_main_persisted": null,
+      "unpatched_installed_control": true
+    },
+    "direct_out_laps": {
+      "ok": true,
+      "timed_steps": 217,
+      "calls_per_step": [
+        30
+      ],
+      "post_main_persisted": true,
+      "unpatched_installed_control": null
+    }
+  },
+  "service_and_preparation_files_frozen": true
+}

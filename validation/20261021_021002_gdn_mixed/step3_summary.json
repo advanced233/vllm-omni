@@ -1,0 +1,352 @@
+{
+  "tool_commit": "7aeaa5b46ec1cdbdb7e5d43b396b4d05af87fa37",
+  "groups": [
+    {
+      "mode": "baseline_laps",
+      "main_requests": 256,
+      "failed": 0,
+      "drains": [
+        {
+          "directory": "flush_drain_1",
+          "requests": 33,
+          "failed": 0
+        }
+      ],
+      "cleanup_clean": true,
+      "probe_validation": {
+        "ok": true,
+        "mode": "baseline_laps",
+        "stage0_pid": 1892698,
+        "expected_variant": "baseline",
+        "expected_laps": true,
+        "window": [
+          1792520396.0,
+          1792520429.212
+        ],
+        "all_stage0_steps": 338,
+        "timed_steps": 220,
+        "calls_per_step": [
+          30
+        ],
+        "outside_window_incomplete_records": 0,
+        "persisted_post_main": true,
+        "main_client_completed_wall_s": 1792520430.4519403,
+        "last_persisted_t": 1792520457.950097,
+        "timed_summary": {
+          "steps": 220,
+          "variants": [
+            "baseline"
+          ],
+          "laps": [
+            true
+          ],
+          "calls_per_step": [
+            30
+          ],
+          "gdn_ms_per_step": {
+            "mean": 29.075222404545453,
+            "p50": 28.969131,
+            "p90": 30.664136
+          },
+          "span_ms_per_step": {
+            "mean": 32.49235666818182,
+            "p50": 32.297653
+          },
+          "prefill_tokens_p50": 168,
+          "decode_tokens_p50": 15,
+          "prefills_p50": 1,
+          "section_ms_per_step": {
+            "setup": 0.43564681818181816,
+            "conv": 3.7036027272727274,
+            "decode": 2.693717590909091,
+            "prep": 2.7109742136363635,
+            "gather": 2.295063990909091,
+            "chunk": 15.204263418181819,
+            "scatter": 1.4745922272727272,
+            "copy": 0.5573614181818182
+          }
+        },
+        "flush_rationale": "Sequential append contains records later than the actual main client completion; therefore main-window buffered records were flushed before shutdown."
+      },
+      "official_probe_summary": [
+        {
+          "run": "${NVME_WORKDIR}/gdn-mixed/20261021_021002/service_controls/baseline_laps/probe",
+          "steps": 220,
+          "variants": [
+            "baseline"
+          ],
+          "laps": [
+            true
+          ],
+          "calls_per_step": [
+            30
+          ],
+          "gdn_ms_per_step": {
+            "mean": 29.075222404545453,
+            "p50": 28.969131,
+            "p90": 30.664136
+          },
+          "span_ms_per_step": {
+            "mean": 32.49235666818182,
+            "p50": 32.297653
+          },
+          "prefill_tokens_p50": 168,
+          "decode_tokens_p50": 15,
+          "prefills_p50": 1,
+          "section_ms_per_step": {
+            "setup": 0.43564681818181816,
+            "conv": 3.7036027272727274,
+            "decode": 2.693717590909091,
+            "prep": 2.7109742136363635,
+            "gather": 2.295063990909091,
+            "chunk": 15.204263418181819,
+            "scatter": 1.4745922272727272,
+            "copy": 0.5573614181818182
+          }
+        }
+      ],
+      "bench_summary_path": "service_controls/baseline_laps/client/summary.json"
+    },
+    {
+      "mode": "baseline_no_laps",
+      "main_requests": 256,
+      "failed": 0,
+      "drains": [
+        {
+          "directory": "flush_drain_1",
+          "requests": 33,
+          "failed": 0
+        }
+      ],
+      "cleanup_clean": true,
+      "probe_validation": {
+        "ok": true,
+        "mode": "baseline_no_laps",
+        "stage0_pid": 1894002,
+        "expected_variant": "baseline",
+        "expected_laps": false,
+        "window": [
+          1792520777.0,
+          1792520808.212
+        ],
+        "all_stage0_steps": 337,
+        "timed_steps": 219,
+        "calls_per_step": [
+          30
+        ],
+        "outside_window_incomplete_records": 0,
+        "persisted_post_main": true,
+        "main_client_completed_wall_s": 1792520808.7590377,
+        "last_persisted_t": 1792520836.1570866,
+        "timed_summary": {
+          "steps": 219,
+          "variants": [
+            "baseline"
+          ],
+          "laps": [
+            false
+          ],
+          "calls_per_step": [
+            30
+          ],
+          "gdn_ms_per_step": {
+            "mean": 29.581009995433792,
+            "p50": 29.092934,
+            "p90": 31.445833
+          },
+          "span_ms_per_step": {
+            "mean": 32.59134029223744,
+            "p50": 32.040848
+          },
+          "prefill_tokens_p50": 167,
+          "decode_tokens_p50": 15,
+          "prefills_p50": 1
+        },
+        "flush_rationale": "Sequential append contains records later than the actual main client completion; therefore main-window buffered records were flushed before shutdown."
+      },
+      "official_probe_summary": [
+        {
+          "run": "${NVME_WORKDIR}/gdn-mixed/20261021_021002/service_controls/baseline_no_laps/probe",
+          "steps": 219,
+          "variants": [
+            "baseline"
+          ],
+          "laps": [
+            false
+          ],
+          "calls_per_step": [
+            30
+          ],
+          "gdn_ms_per_step": {
+            "mean": 29.581009995433792,
+            "p50": 29.092934,
+            "p90": 31.445833
+          },
+          "span_ms_per_step": {
+            "mean": 32.59134029223744,
+            "p50": 32.040848
+          },
+          "prefill_tokens_p50": 167,
+          "decode_tokens_p50": 15,
+          "prefills_p50": 1
+        }
+      ],
+      "bench_summary_path": "service_controls/baseline_no_laps/client/summary.json"
+    },
+    {
+      "mode": "installed",
+      "main_requests": 256,
+      "failed": 0,
+      "drains": [
+        {
+          "directory": "flush_drain_1",
+          "requests": 33,
+          "failed": 0
+        }
+      ],
+      "cleanup_clean": true,
+      "probe_validation": {
+        "mode": "installed",
+        "stage0_pid": 1895068,
+        "unpatched_installed_control": true,
+        "ok": true
+      },
+      "official_probe_summary": [
+        {
+          "run": "${NVME_WORKDIR}/gdn-mixed/20261021_021002/service_controls/installed/probe",
+          "steps": 0,
+          "variants": [],
+          "laps": [],
+          "calls_per_step": [],
+          "gdn_ms_per_step": {
+            "mean": null,
+            "p50": null,
+            "p90": null
+          },
+          "span_ms_per_step": {
+            "mean": null,
+            "p50": null
+          },
+          "prefill_tokens_p50": null,
+          "decode_tokens_p50": null,
+          "prefills_p50": null
+        }
+      ],
+      "bench_summary_path": "service_controls/installed/client/summary.json"
+    },
+    {
+      "mode": "direct_out_laps",
+      "main_requests": 256,
+      "failed": 0,
+      "drains": [
+        {
+          "directory": "flush_drain_1",
+          "requests": 33,
+          "failed": 0
+        }
+      ],
+      "cleanup_clean": true,
+      "probe_validation": {
+        "ok": true,
+        "mode": "direct_out_laps",
+        "stage0_pid": 1896265,
+        "expected_variant": "direct_out",
+        "expected_laps": true,
+        "window": [
+          1792521409.0,
+          1792521442.818
+        ],
+        "all_stage0_steps": 335,
+        "timed_steps": 217,
+        "calls_per_step": [
+          30
+        ],
+        "outside_window_incomplete_records": 0,
+        "persisted_post_main": true,
+        "main_client_completed_wall_s": 1792521443.8580344,
+        "last_persisted_t": 1792521473.7142143,
+        "timed_summary": {
+          "steps": 217,
+          "variants": [
+            "direct_out"
+          ],
+          "laps": [
+            true
+          ],
+          "calls_per_step": [
+            30
+          ],
+          "gdn_ms_per_step": {
+            "mean": 29.217450202764976,
+            "p50": 28.821778,
+            "p90": 31.398084
+          },
+          "span_ms_per_step": {
+            "mean": 32.59530903686636,
+            "p50": 32.20028
+          },
+          "prefill_tokens_p50": 168,
+          "decode_tokens_p50": 15,
+          "prefills_p50": 1,
+          "section_ms_per_step": {
+            "setup": 0.44949112442396316,
+            "conv": 3.7134032488479263,
+            "decode": 2.703061612903226,
+            "prep": 2.760824396313364,
+            "gather": 2.315741211981567,
+            "chunk": 15.75213071889401,
+            "scatter": 1.4963378940092167,
+            "copy": 0.026459995391705068
+          }
+        },
+        "flush_rationale": "Sequential append contains records later than the actual main client completion; therefore main-window buffered records were flushed before shutdown."
+      },
+      "official_probe_summary": [
+        {
+          "run": "${NVME_WORKDIR}/gdn-mixed/20261021_021002/service_controls/direct_out_laps/probe",
+          "steps": 217,
+          "variants": [
+            "direct_out"
+          ],
+          "laps": [
+            true
+          ],
+          "calls_per_step": [
+            30
+          ],
+          "gdn_ms_per_step": {
+            "mean": 29.217450202764976,
+            "p50": 28.821778,
+            "p90": 31.398084
+          },
+          "span_ms_per_step": {
+            "mean": 32.59530903686636,
+            "p50": 32.20028
+          },
+          "prefill_tokens_p50": 168,
+          "decode_tokens_p50": 15,
+          "prefills_p50": 1,
+          "section_ms_per_step": {
+            "setup": 0.44949112442396316,
+            "conv": 3.7134032488479263,
+            "decode": 2.703061612903226,
+            "prep": 2.760824396313364,
+            "gather": 2.315741211981567,
+            "chunk": 15.75213071889401,
+            "scatter": 1.4963378940092167,
+            "copy": 0.026459995391705068
+          }
+        }
+      ],
+      "bench_summary_path": "service_controls/direct_out_laps/client/summary.json"
+    }
+  ],
+  "completed": true,
+  "clean": true,
+  "limits": [
+    "Single run per group, fixed order, no thermal gate; hardware clocks/temperature differ.",
+    "Installed no-probe endpoint metrics cannot identify probe overhead without controlling hardware state.",
+    "Probe host time is asynchronous CPU issue time and may include GPU queue backpressure.",
+    "33 post-main C1 requests per group are flush validation only and excluded from main metrics."
+  ]
+}

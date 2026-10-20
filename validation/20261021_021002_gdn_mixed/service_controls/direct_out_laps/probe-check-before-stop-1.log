@@ -1,0 +1,55 @@
+{
+  "ok": true,
+  "mode": "direct_out_laps",
+  "stage0_pid": 1896265,
+  "expected_variant": "direct_out",
+  "expected_laps": true,
+  "window": [
+    1792521409.0,
+    1792521442.818
+  ],
+  "all_stage0_steps": 320,
+  "timed_steps": 217,
+  "calls_per_step": [
+    30
+  ],
+  "outside_window_incomplete_records": 0,
+  "persisted_post_main": true,
+  "main_client_completed_wall_s": 1792521443.8580344,
+  "last_persisted_t": 1792521460.061485,
+  "timed_summary": {
+    "steps": 217,
+    "variants": [
+      "direct_out"
+    ],
+    "laps": [
+      true
+    ],
+    "calls_per_step": [
+      30
+    ],
+    "gdn_ms_per_step": {
+      "mean": 29.217450202764976,
+      "p50": 28.821778,
+      "p90": 31.398084
+    },
+    "span_ms_per_step": {
+      "mean": 32.59530903686636,
+      "p50": 32.20028
+    },
+    "prefill_tokens_p50": 168,
+    "decode_tokens_p50": 15,
+    "prefills_p50": 1,
+    "section_ms_per_step": {
+      "setup": 0.44949112442396316,
+      "conv": 3.7134032488479263,
+      "decode": 2.703061612903226,
+      "prep": 2.760824396313364,
+      "gather": 2.315741211981567,
+      "chunk": 15.75213071889401,
+      "scatter": 1.4963378940092167,
+      "copy": 0.026459995391705068
+    }
+  },
+  "flush_rationale": "Sequential append contains records later than the actual main client completion; therefore main-window buffered records were flushed before shutdown."
+}

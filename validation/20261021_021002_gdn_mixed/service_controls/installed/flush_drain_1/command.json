@@ -1,0 +1,27 @@
+{
+  "argv": [
+    "taskset",
+    "-c",
+    "60-63",
+    "${WORKSPACE}/.venvs/vllm-omni-cu129/bin/python",
+    "${NVME_WORKDIR}/gdn-mixed/20261021_021002/tool_snapshot/drama3_bench/stream_bench.py",
+    "--codes",
+    "${NVME_WORKDIR}/bench-validation/20261020_165001_49599d4/ref_codes_en.jsonl",
+    "--ref-mode",
+    "codes",
+    "--num-prompts",
+    "33",
+    "--concurrency",
+    "1",
+    "--num-warmups",
+    "0",
+    "--label",
+    "gdn-installed",
+    "--out",
+    "${NVME_WORKDIR}/gdn-mixed/20261021_021002/service_controls/installed/flush_drain_1"
+  ],
+  "probe_environment_absent": true,
+  "no_explicit_seed": true,
+  "no_audio": true,
+  "thermal_gate": false
+}

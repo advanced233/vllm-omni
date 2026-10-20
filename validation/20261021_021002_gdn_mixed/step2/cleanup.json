@@ -1,0 +1,8 @@
+{
+  "bench_exit": 0,
+  "monitor_exit": 0,
+  "gpu_after": "2026/10/21 02:13:48.886, GPU_PHYSICAL_1, 39, 53, 1410 MHz, 1512 MHz, 62.98 W, 300.00 W, 0 %, 15 MiB, 0x0000000000000000, Not Active, Not Active, Not Active, Not Active",
+  "gpu_compute_apps_after": "",
+  "failure": null,
+  "timestamp": "2026-10-21T02:13:48+0800"
+}

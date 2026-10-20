@@ -1,0 +1,56 @@
+{
+  "checked_at": "2026-10-21T02:12:46.206980+08:00",
+  "tool_commit": "7aeaa5b46ec1cdbdb7e5d43b396b4d05af87fa37",
+  "gate_pass": true,
+  "results": {
+    "fingerprint": {
+      "tests": 1,
+      "passed": 1,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "exit_code": 0,
+      "groups": {
+        "test_copy_is_the_installed_version": 1
+      },
+      "junit_sha256": "c81b4149f91e69d920957ab622ebac9a1d86bd957549512483aba7bc48030357"
+    },
+    "full_tests": {
+      "tests": 37,
+      "passed": 37,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "exit_code": 0,
+      "groups": {
+        "test_copy_is_the_installed_version": 1,
+        "test_variant_equals_installed_bit_for_bit": 20,
+        "test_variants_match_vllm_standard_path": 10,
+        "test_non_contiguous_output_takes_the_copy": 2,
+        "test_prompt_split_over_two_steps": 4
+      },
+      "junit_sha256": "098fbe73e7532654d3a4411741f2228a658bb36d5c48eeb3964be6c1ecc5196a"
+    }
+  },
+  "diff_review": {
+    "variant_algorithm_changed": false,
+    "tolerances_relaxed": false,
+    "tests_removed_or_skipped": false,
+    "slot0_excluded_from_real_requests": true,
+    "null_row_and_spare_rows_guarded_unchanged": true,
+    "finite_output_checks_added": true,
+    "assert_close_details_preserved": true,
+    "fixture_uses_real_fla_triton_adapter": true
+  },
+  "null_block_source_evidence": [
+    "vllm/v1/attention/backends/utils.py:52 NULL_BLOCK_ID=0",
+    "vllm/v1/core/block_pool.py:187 reserves the first block as null",
+    "vllm/model_executor/layers/mamba/ops/causal_conv1d.py:144 skips null state row",
+    "vllm/third_party/flash_linear_attention/ops/fused_recurrent.py:299 packed decode writes zero for state_idx<=0"
+  ],
+  "limits": [
+    "Tests establish the specified 37-case gate, not a speedup.",
+    "torch.equal is exact element equality; numeric assertions and finite-output guards are retained.",
+    "Previous failed run remains separate; this is a fresh run of the user-corrected fixture."
+  ]
+}

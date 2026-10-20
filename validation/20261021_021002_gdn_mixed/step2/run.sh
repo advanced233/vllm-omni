@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+set -euo pipefail
+source ${NVME_WORKDIR}/gdn-mixed/20261021_021002/env.sh
+unset PYTHONPATH PROBE_FORCE DRAMA3_GDN_PROBE DRAMA3_GDN_VARIANT DRAMA3_GDN_PROBE_DIR DRAMA3_GDN_PROBE_LAPS DRAMA3_GDN_PROBE_FORCE
+cd ${WORKSPACE}/vllm-omni
+exec python "$GDN_ROOT/step2/run.py"

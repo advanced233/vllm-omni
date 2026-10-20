@@ -1,0 +1,1496 @@
+{
+  "common_shape_count": 87,
+  "coverage": {
+    "baseline_laps": {
+      "steps_common": 166,
+      "steps_total": 220
+    },
+    "baseline_no_laps": {
+      "steps_common": 172,
+      "steps_total": 219
+    }
+  },
+  "shape_rows": [
+    {
+      "shape": [
+        1,
+        125,
+        15
+      ],
+      "groups": {
+        "baseline_laps": {
+          "n": 3,
+          "host_ms_p50": 29.738886
+        },
+        "baseline_no_laps": {
+          "n": 2,
+          "host_ms_p50": 29.189956
+        }
+      }
+    },
+    {
+      "shape": [
+        1,
+        126,
+        15
+      ],
+      "groups": {
+        "baseline_laps": {
+          "n": 1,
+          "host_ms_p50": 27.870719
+        },
+        "baseline_no_laps": {
+          "n": 1,
+          "host_ms_p50": 27.696932
+        }
+      }
+    },
+    {
+      "shape": [
+        1,
+        127,
+        15
+      ],
+      "groups": {
+        "baseline_laps": {
+          "n": 1,
+          "host_ms_p50": 27.702405
+        },
+        "baseline_no_laps": {
+          "n": 1,
+          "host_ms_p50": 27.838026
+        }
+      }
+    },
+    {
+      "shape": [
+        1,
+        128,
+        15
+      ],
+      "groups": {
+        "baseline_laps": {
+          "n": 2,
+          "host_ms_p50": 28.049652
+        },
+        "baseline_no_laps": {
+          "n": 1,
+          "host_ms_p50": 28.777288
+        }
+      }
+    },
+    {
+      "shape": [
+        1,
+        129,
+        15
+      ],
+      "groups": {
+        "baseline_laps": {
+          "n": 1,
+          "host_ms_p50": 30.084106
+        },
+        "baseline_no_laps": {
+          "n": 2,
+          "host_ms_p50": 28.086985
+        }
+      }
+    },
+    {
+      "shape": [
+        1,
+        130,
+        15
+      ],
+      "groups": {
+        "baseline_laps": {
+          "n": 3,
+          "host_ms_p50": 29.032604
+        },
+        "baseline_no_laps": {
+          "n": 1,
+          "host_ms_p50": 28.749687
+        }
+      }
+    },
+    {
+      "shape": [
+        1,
+        131,
+        15
+      ],
+      "groups": {
+        "baseline_laps": {
+          "n": 2,
+          "host_ms_p50": 27.758601
+        },
+        "baseline_no_laps": {
+          "n": 1,
+          "host_ms_p50": 31.485933
+        }
+      }
+    },
+    {
+      "shape": [
+        1,
+        132,
+        15
+      ],
+      "groups": {
+        "baseline_laps": {
+          "n": 1,
+          "host_ms_p50": 29.726441
+        },
+        "baseline_no_laps": {
+          "n": 1,
+          "host_ms_p50": 27.790326
+        }
+      }
+    },
+    {
+      "shape": [
+        1,
+        133,
+        15
+      ],
+      "groups": {
+        "baseline_laps": {
+          "n": 2,
+          "host_ms_p50": 27.97908
+        },
+        "baseline_no_laps": {
+          "n": 4,
+          "host_ms_p50": 30.648654
+        }
+      }
+    },
+    {
+      "shape": [
+        1,
+        134,
+        15
+      ],
+      "groups": {
+        "baseline_laps": {
+          "n": 2,
+          "host_ms_p50": 28.519243
+        },
+        "baseline_no_laps": {
+          "n": 1,
+          "host_ms_p50": 32.516169
+        }
+      }
+    },
+    {
+      "shape": [
+        1,
+        135,
+        15
+      ],
+      "groups": {
+        "baseline_laps": {
+          "n": 1,
+          "host_ms_p50": 30.6349
+        },
+        "baseline_no_laps": {
+          "n": 1,
+          "host_ms_p50": 28.068413
+        }
+      }
+    },
+    {
+      "shape": [
+        1,
+        137,
+        14
+      ],
+      "groups": {
+        "baseline_laps": {
+          "n": 1,
+          "host_ms_p50": 29.203992
+        },
+        "baseline_no_laps": {
+          "n": 1,
+          "host_ms_p50": 29.742034
+        }
+      }
+    },
+    {
+      "shape": [
+        1,
+        137,
+        15
+      ],
+      "groups": {
+        "baseline_laps": {
+          "n": 3,
+          "host_ms_p50": 28.258897
+        },
+        "baseline_no_laps": {
+          "n": 4,
+          "host_ms_p50": 30.357697
+        }
+      }
+    },
+    {
+      "shape": [
+        1,
+        138,
+        15
+      ],
+      "groups": {
+        "baseline_laps": {
+          "n": 1,
+          "host_ms_p50": 29.320181
+        },
+        "baseline_no_laps": {
+          "n": 1,
+          "host_ms_p50": 31.086265
+        }
+      }
+    },
+    {
+      "shape": [
+        1,
+        139,
+        14
+      ],
+      "groups": {
+        "baseline_laps": {
+          "n": 2,
+          "host_ms_p50": 28.499892
+        },
+        "baseline_no_laps": {
+          "n": 1,
+          "host_ms_p50": 28.265235
+        }
+      }
+    },
+    {
+      "shape": [
+        1,
+        139,
+        15
+      ],
+      "groups": {
+        "baseline_laps": {
+          "n": 1,
+          "host_ms_p50": 29.089248
+        },
+        "baseline_no_laps": {
+          "n": 3,
+          "host_ms_p50": 27.723503
+        }
+      }
+    },
+    {
+      "shape": [
+        1,
+        140,
+        15
+      ],
+      "groups": {
+        "baseline_laps": {
+          "n": 2,
+          "host_ms_p50": 28.990087
+        },
+        "baseline_no_laps": {
+          "n": 1,
+          "host_ms_p50": 28.103759
+        }
+      }
+    },
+    {
+      "shape": [
+        1,
+        141,
+        15
+      ],
+      "groups": {
+        "baseline_laps": {
+          "n": 1,
+          "host_ms_p50": 33.774644
+        },
+        "baseline_no_laps": {
+          "n": 4,
+          "host_ms_p50": 29.658434
+        }
+      }
+    },
+    {
+      "shape": [
+        1,
+        142,
+        15
+      ],
+      "groups": {
+        "baseline_laps": {
+          "n": 2,
+          "host_ms_p50": 28.137141
+        },
+        "baseline_no_laps": {
+          "n": 2,
+          "host_ms_p50": 28.640826
+        }
+      }
+    },
+    {
+      "shape": [
+        1,
+        143,
+        15
+      ],
+      "groups": {
+        "baseline_laps": {
+          "n": 1,
+          "host_ms_p50": 29.267225
+        },
+        "baseline_no_laps": {
+          "n": 1,
+          "host_ms_p50": 28.782088
+        }
+      }
+    },
+    {
+      "shape": [
+        1,
+        144,
+        15
+      ],
+      "groups": {
+        "baseline_laps": {
+          "n": 2,
+          "host_ms_p50": 27.490257
+        },
+        "baseline_no_laps": {
+          "n": 3,
+          "host_ms_p50": 29.851127
+        }
+      }
+    },
+    {
+      "shape": [
+        1,
+        145,
+        14
+      ],
+      "groups": {
+        "baseline_laps": {
+          "n": 1,
+          "host_ms_p50": 30.263255
+        },
+        "baseline_no_laps": {
+          "n": 1,
+          "host_ms_p50": 29.068336
+        }
+      }
+    },
+    {
+      "shape": [
+        1,
+        145,
+        15
+      ],
+      "groups": {
+        "baseline_laps": {
+          "n": 2,
+          "host_ms_p50": 28.177593
+        },
+        "baseline_no_laps": {
+          "n": 1,
+          "host_ms_p50": 31.123764
+        }
+      }
+    },
+    {
+      "shape": [
+        1,
+        146,
+        15
+      ],
+      "groups": {
+        "baseline_laps": {
+          "n": 1,
+          "host_ms_p50": 29.751702
+        },
+        "baseline_no_laps": {
+          "n": 2,
+          "host_ms_p50": 30.159624
+        }
+      }
+    },
+    {
+      "shape": [
+        1,
+        147,
+        14
+      ],
+      "groups": {
+        "baseline_laps": {
+          "n": 2,
+          "host_ms_p50": 28.862472
+        },
+        "baseline_no_laps": {
+          "n": 1,
+          "host_ms_p50": 33.708231
+        }
+      }
+    },
+    {
+      "shape": [
+        1,
+        147,
+        15
+      ],
+      "groups": {
+        "baseline_laps": {
+          "n": 1,
+          "host_ms_p50": 28.440171
+        },
+        "baseline_no_laps": {
+          "n": 1,
+          "host_ms_p50": 29.445265
+        }
+      }
+    },
+    {
+      "shape": [
+        1,
+        148,
+        15
+      ],
+      "groups": {
+        "baseline_laps": {
+          "n": 1,
+          "host_ms_p50": 28.229109
+        },
+        "baseline_no_laps": {
+          "n": 3,
+          "host_ms_p50": 29.365813
+        }
+      }
+    },
+    {
+      "shape": [
+        1,
+        149,
+        15
+      ],
+      "groups": {
+        "baseline_laps": {
+          "n": 1,
+          "host_ms_p50": 29.030534
+        },
+        "baseline_no_laps": {
+          "n": 1,
+          "host_ms_p50": 28.922291
+        }
+      }
+    },
+    {
+      "shape": [
+        1,
+        150,
+        14
+      ],
+      "groups": {
+        "baseline_laps": {
+          "n": 1,
+          "host_ms_p50": 28.541236
+        },
+        "baseline_no_laps": {
+          "n": 1,
+          "host_ms_p50": 29.398923
+        }
+      }
+    },
+    {
+      "shape": [
+        1,
+        150,
+        15
+      ],
+      "groups": {
+        "baseline_laps": {
+          "n": 2,
+          "host_ms_p50": 27.683125
+        },
+        "baseline_no_laps": {
+          "n": 3,
+          "host_ms_p50": 29.793503
+        }
+      }
+    },
+    {
+      "shape": [
+        1,
+        152,
+        15
+      ],
+      "groups": {
+        "baseline_laps": {
+          "n": 4,
+          "host_ms_p50": 29.653399
+        },
+        "baseline_no_laps": {
+          "n": 5,
+          "host_ms_p50": 29.515568
+        }
+      }
+    },
+    {
+      "shape": [
+        1,
+        154,
+        15
+      ],
+      "groups": {
+        "baseline_laps": {
+          "n": 3,
+          "host_ms_p50": 29.977791
+        },
+        "baseline_no_laps": {
+          "n": 2,
+          "host_ms_p50": 28.950673
+        }
+      }
+    },
+    {
+      "shape": [
+        1,
+        155,
+        15
+      ],
+      "groups": {
+        "baseline_laps": {
+          "n": 3,
+          "host_ms_p50": 29.361326
+        },
+        "baseline_no_laps": {
+          "n": 3,
+          "host_ms_p50": 31.180507
+        }
+      }
+    },
+    {
+      "shape": [
+        1,
+        156,
+        14
+      ],
+      "groups": {
+        "baseline_laps": {
+          "n": 1,
+          "host_ms_p50": 30.666004
+        },
+        "baseline_no_laps": {
+          "n": 1,
+          "host_ms_p50": 28.269937
+        }
+      }
+    },
+    {
+      "shape": [
+        1,
+        156,
+        15
+      ],
+      "groups": {
+        "baseline_laps": {
+          "n": 1,
+          "host_ms_p50": 29.302701
+        },
+        "baseline_no_laps": {
+          "n": 4,
+          "host_ms_p50": 28.706417
+        }
+      }
+    },
+    {
+      "shape": [
+        1,
+        157,
+        15
+      ],
+      "groups": {
+        "baseline_laps": {
+          "n": 3,
+          "host_ms_p50": 29.081852
+        },
+        "baseline_no_laps": {
+          "n": 3,
+          "host_ms_p50": 28.399089
+        }
+      }
+    },
+    {
+      "shape": [
+        1,
+        158,
+        15
+      ],
+      "groups": {
+        "baseline_laps": {
+          "n": 3,
+          "host_ms_p50": 28.983099
+        },
+        "baseline_no_laps": {
+          "n": 3,
+          "host_ms_p50": 28.391061
+        }
+      }
+    },
+    {
+      "shape": [
+        1,
+        159,
+        15
+      ],
+      "groups": {
+        "baseline_laps": {
+          "n": 3,
+          "host_ms_p50": 28.393979
+        },
+        "baseline_no_laps": {
+          "n": 3,
+          "host_ms_p50": 28.154413
+        }
+      }
+    },
+    {
+      "shape": [
+        1,
+        160,
+        15
+      ],
+      "groups": {
+        "baseline_laps": {
+          "n": 4,
+          "host_ms_p50": 30.517999
+        },
+        "baseline_no_laps": {
+          "n": 4,
+          "host_ms_p50": 28.90227
+        }
+      }
+    },
+    {
+      "shape": [
+        1,
+        161,
+        15
+      ],
+      "groups": {
+        "baseline_laps": {
+          "n": 3,
+          "host_ms_p50": 27.950328
+        },
+        "baseline_no_laps": {
+          "n": 1,
+          "host_ms_p50": 28.911612
+        }
+      }
+    },
+    {
+      "shape": [
+        1,
+        162,
+        15
+      ],
+      "groups": {
+        "baseline_laps": {
+          "n": 5,
+          "host_ms_p50": 28.599768
+        },
+        "baseline_no_laps": {
+          "n": 4,
+          "host_ms_p50": 29.170698
+        }
+      }
+    },
+    {
+      "shape": [
+        1,
+        163,
+        15
+      ],
+      "groups": {
+        "baseline_laps": {
+          "n": 3,
+          "host_ms_p50": 30.087378
+        },
+        "baseline_no_laps": {
+          "n": 1,
+          "host_ms_p50": 27.56651
+        }
+      }
+    },
+    {
+      "shape": [
+        1,
+        164,
+        14
+      ],
+      "groups": {
+        "baseline_laps": {
+          "n": 1,
+          "host_ms_p50": 28.742988
+        },
+        "baseline_no_laps": {
+          "n": 3,
+          "host_ms_p50": 28.004481
+        }
+      }
+    },
+    {
+      "shape": [
+        1,
+        164,
+        15
+      ],
+      "groups": {
+        "baseline_laps": {
+          "n": 3,
+          "host_ms_p50": 28.473678
+        },
+        "baseline_no_laps": {
+          "n": 1,
+          "host_ms_p50": 31.397273
+        }
+      }
+    },
+    {
+      "shape": [
+        1,
+        165,
+        14
+      ],
+      "groups": {
+        "baseline_laps": {
+          "n": 1,
+          "host_ms_p50": 29.41413
+        },
+        "baseline_no_laps": {
+          "n": 1,
+          "host_ms_p50": 28.240815
+        }
+      }
+    },
+    {
+      "shape": [
+        1,
+        165,
+        15
+      ],
+      "groups": {
+        "baseline_laps": {
+          "n": 4,
+          "host_ms_p50": 28.77056
+        },
+        "baseline_no_laps": {
+          "n": 4,
+          "host_ms_p50": 29.090807
+        }
+      }
+    },
+    {
+      "shape": [
+        1,
+        166,
+        15
+      ],
+      "groups": {
+        "baseline_laps": {
+          "n": 2,
+          "host_ms_p50": 27.66438
+        },
+        "baseline_no_laps": {
+          "n": 3,
+          "host_ms_p50": 29.011853
+        }
+      }
+    },
+    {
+      "shape": [
+        1,
+        167,
+        14
+      ],
+      "groups": {
+        "baseline_laps": {
+          "n": 1,
+          "host_ms_p50": 28.125343
+        },
+        "baseline_no_laps": {
+          "n": 1,
+          "host_ms_p50": 33.021683
+        }
+      }
+    },
+    {
+      "shape": [
+        1,
+        167,
+        15
+      ],
+      "groups": {
+        "baseline_laps": {
+          "n": 3,
+          "host_ms_p50": 29.06239
+        },
+        "baseline_no_laps": {
+          "n": 2,
+          "host_ms_p50": 28.36483
+        }
+      }
+    },
+    {
+      "shape": [
+        1,
+        168,
+        14
+      ],
+      "groups": {
+        "baseline_laps": {
+          "n": 1,
+          "host_ms_p50": 29.130526
+        },
+        "baseline_no_laps": {
+          "n": 1,
+          "host_ms_p50": 30.658943
+        }
+      }
+    },
+    {
+      "shape": [
+        1,
+        168,
+        15
+      ],
+      "groups": {
+        "baseline_laps": {
+          "n": 1,
+          "host_ms_p50": 29.175523
+        },
+        "baseline_no_laps": {
+          "n": 2,
+          "host_ms_p50": 28.193873
+        }
+      }
+    },
+    {
+      "shape": [
+        1,
+        170,
+        14
+      ],
+      "groups": {
+        "baseline_laps": {
+          "n": 1,
+          "host_ms_p50": 28.338538
+        },
+        "baseline_no_laps": {
+          "n": 2,
+          "host_ms_p50": 30.455819
+        }
+      }
+    },
+    {
+      "shape": [
+        1,
+        170,
+        15
+      ],
+      "groups": {
+        "baseline_laps": {
+          "n": 3,
+          "host_ms_p50": 28.306451
+        },
+        "baseline_no_laps": {
+          "n": 1,
+          "host_ms_p50": 27.700775
+        }
+      }
+    },
+    {
+      "shape": [
+        1,
+        171,
+        14
+      ],
+      "groups": {
+        "baseline_laps": {
+          "n": 1,
+          "host_ms_p50": 27.657338
+        },
+        "baseline_no_laps": {
+          "n": 2,
+          "host_ms_p50": 28.726998
+        }
+      }
+    },
+    {
+      "shape": [
+        1,
+        171,
+        15
+      ],
+      "groups": {
+        "baseline_laps": {
+          "n": 3,
+          "host_ms_p50": 27.641484
+        },
+        "baseline_no_laps": {
+          "n": 2,
+          "host_ms_p50": 28.114253
+        }
+      }
+    },
+    {
+      "shape": [
+        1,
+        172,
+        14
+      ],
+      "groups": {
+        "baseline_laps": {
+          "n": 1,
+          "host_ms_p50": 29.283094
+        },
+        "baseline_no_laps": {
+          "n": 1,
+          "host_ms_p50": 28.224377
+        }
+      }
+    },
+    {
+      "shape": [
+        1,
+        172,
+        15
+      ],
+      "groups": {
+        "baseline_laps": {
+          "n": 4,
+          "host_ms_p50": 29.434846
+        },
+        "baseline_no_laps": {
+          "n": 3,
+          "host_ms_p50": 29.074177
+        }
+      }
+    },
+    {
+      "shape": [
+        1,
+        173,
+        15
+      ],
+      "groups": {
+        "baseline_laps": {
+          "n": 1,
+          "host_ms_p50": 30.15608
+        },
+        "baseline_no_laps": {
+          "n": 1,
+          "host_ms_p50": 32.328335
+        }
+      }
+    },
+    {
+      "shape": [
+        1,
+        174,
+        15
+      ],
+      "groups": {
+        "baseline_laps": {
+          "n": 2,
+          "host_ms_p50": 27.538364
+        },
+        "baseline_no_laps": {
+          "n": 3,
+          "host_ms_p50": 28.88881
+        }
+      }
+    },
+    {
+      "shape": [
+        1,
+        175,
+        14
+      ],
+      "groups": {
+        "baseline_laps": {
+          "n": 1,
+          "host_ms_p50": 29.599794
+        },
+        "baseline_no_laps": {
+          "n": 1,
+          "host_ms_p50": 36.358633
+        }
+      }
+    },
+    {
+      "shape": [
+        1,
+        175,
+        15
+      ],
+      "groups": {
+        "baseline_laps": {
+          "n": 4,
+          "host_ms_p50": 28.558707
+        },
+        "baseline_no_laps": {
+          "n": 6,
+          "host_ms_p50": 29.501745
+        }
+      }
+    },
+    {
+      "shape": [
+        1,
+        176,
+        14
+      ],
+      "groups": {
+        "baseline_laps": {
+          "n": 1,
+          "host_ms_p50": 29.007207
+        },
+        "baseline_no_laps": {
+          "n": 1,
+          "host_ms_p50": 29.665611
+        }
+      }
+    },
+    {
+      "shape": [
+        1,
+        176,
+        15
+      ],
+      "groups": {
+        "baseline_laps": {
+          "n": 3,
+          "host_ms_p50": 28.211165
+        },
+        "baseline_no_laps": {
+          "n": 3,
+          "host_ms_p50": 30.783668
+        }
+      }
+    },
+    {
+      "shape": [
+        1,
+        177,
+        15
+      ],
+      "groups": {
+        "baseline_laps": {
+          "n": 6,
+          "host_ms_p50": 28.840278
+        },
+        "baseline_no_laps": {
+          "n": 5,
+          "host_ms_p50": 31.014103
+        }
+      }
+    },
+    {
+      "shape": [
+        1,
+        178,
+        15
+      ],
+      "groups": {
+        "baseline_laps": {
+          "n": 1,
+          "host_ms_p50": 27.473239
+        },
+        "baseline_no_laps": {
+          "n": 2,
+          "host_ms_p50": 27.738021
+        }
+      }
+    },
+    {
+      "shape": [
+        1,
+        179,
+        15
+      ],
+      "groups": {
+        "baseline_laps": {
+          "n": 3,
+          "host_ms_p50": 27.795384
+        },
+        "baseline_no_laps": {
+          "n": 4,
+          "host_ms_p50": 29.069574
+        }
+      }
+    },
+    {
+      "shape": [
+        1,
+        180,
+        15
+      ],
+      "groups": {
+        "baseline_laps": {
+          "n": 1,
+          "host_ms_p50": 29.899632
+        },
+        "baseline_no_laps": {
+          "n": 2,
+          "host_ms_p50": 29.312531
+        }
+      }
+    },
+    {
+      "shape": [
+        1,
+        181,
+        15
+      ],
+      "groups": {
+        "baseline_laps": {
+          "n": 2,
+          "host_ms_p50": 27.892581
+        },
+        "baseline_no_laps": {
+          "n": 5,
+          "host_ms_p50": 29.772964
+        }
+      }
+    },
+    {
+      "shape": [
+        1,
+        182,
+        15
+      ],
+      "groups": {
+        "baseline_laps": {
+          "n": 2,
+          "host_ms_p50": 28.116722
+        },
+        "baseline_no_laps": {
+          "n": 2,
+          "host_ms_p50": 27.834307
+        }
+      }
+    },
+    {
+      "shape": [
+        1,
+        186,
+        15
+      ],
+      "groups": {
+        "baseline_laps": {
+          "n": 1,
+          "host_ms_p50": 27.498757
+        },
+        "baseline_no_laps": {
+          "n": 2,
+          "host_ms_p50": 27.583929
+        }
+      }
+    },
+    {
+      "shape": [
+        1,
+        188,
+        14
+      ],
+      "groups": {
+        "baseline_laps": {
+          "n": 1,
+          "host_ms_p50": 28.981999
+        },
+        "baseline_no_laps": {
+          "n": 1,
+          "host_ms_p50": 28.549434
+        }
+      }
+    },
+    {
+      "shape": [
+        1,
+        190,
+        15
+      ],
+      "groups": {
+        "baseline_laps": {
+          "n": 2,
+          "host_ms_p50": 28.371356
+        },
+        "baseline_no_laps": {
+          "n": 1,
+          "host_ms_p50": 28.594375
+        }
+      }
+    },
+    {
+      "shape": [
+        1,
+        201,
+        14
+      ],
+      "groups": {
+        "baseline_laps": {
+          "n": 1,
+          "host_ms_p50": 29.714205
+        },
+        "baseline_no_laps": {
+          "n": 1,
+          "host_ms_p50": 30.229531
+        }
+      }
+    },
+    {
+      "shape": [
+        1,
+        201,
+        15
+      ],
+      "groups": {
+        "baseline_laps": {
+          "n": 1,
+          "host_ms_p50": 27.904862
+        },
+        "baseline_no_laps": {
+          "n": 1,
+          "host_ms_p50": 30.312735
+        }
+      }
+    },
+    {
+      "shape": [
+        1,
+        202,
+        15
+      ],
+      "groups": {
+        "baseline_laps": {
+          "n": 3,
+          "host_ms_p50": 30.731891
+        },
+        "baseline_no_laps": {
+          "n": 2,
+          "host_ms_p50": 27.808105
+        }
+      }
+    },
+    {
+      "shape": [
+        1,
+        203,
+        15
+      ],
+      "groups": {
+        "baseline_laps": {
+          "n": 2,
+          "host_ms_p50": 27.537401
+        },
+        "baseline_no_laps": {
+          "n": 1,
+          "host_ms_p50": 30.787538
+        }
+      }
+    },
+    {
+      "shape": [
+        1,
+        204,
+        15
+      ],
+      "groups": {
+        "baseline_laps": {
+          "n": 1,
+          "host_ms_p50": 30.636992
+        },
+        "baseline_no_laps": {
+          "n": 1,
+          "host_ms_p50": 34.309435
+        }
+      }
+    },
+    {
+      "shape": [
+        1,
+        207,
+        14
+      ],
+      "groups": {
+        "baseline_laps": {
+          "n": 2,
+          "host_ms_p50": 28.036078
+        },
+        "baseline_no_laps": {
+          "n": 1,
+          "host_ms_p50": 34.818208
+        }
+      }
+    },
+    {
+      "shape": [
+        1,
+        207,
+        15
+      ],
+      "groups": {
+        "baseline_laps": {
+          "n": 3,
+          "host_ms_p50": 27.70639
+        },
+        "baseline_no_laps": {
+          "n": 3,
+          "host_ms_p50": 28.561523
+        }
+      }
+    },
+    {
+      "shape": [
+        1,
+        209,
+        15
+      ],
+      "groups": {
+        "baseline_laps": {
+          "n": 2,
+          "host_ms_p50": 28.320582
+        },
+        "baseline_no_laps": {
+          "n": 1,
+          "host_ms_p50": 29.176818
+        }
+      }
+    },
+    {
+      "shape": [
+        1,
+        210,
+        15
+      ],
+      "groups": {
+        "baseline_laps": {
+          "n": 1,
+          "host_ms_p50": 27.445517
+        },
+        "baseline_no_laps": {
+          "n": 1,
+          "host_ms_p50": 30.394949
+        }
+      }
+    },
+    {
+      "shape": [
+        1,
+        211,
+        15
+      ],
+      "groups": {
+        "baseline_laps": {
+          "n": 1,
+          "host_ms_p50": 30.329024
+        },
+        "baseline_no_laps": {
+          "n": 1,
+          "host_ms_p50": 31.970535
+        }
+      }
+    },
+    {
+      "shape": [
+        1,
+        215,
+        15
+      ],
+      "groups": {
+        "baseline_laps": {
+          "n": 1,
+          "host_ms_p50": 29.839221
+        },
+        "baseline_no_laps": {
+          "n": 2,
+          "host_ms_p50": 28.140171
+        }
+      }
+    },
+    {
+      "shape": [
+        1,
+        222,
+        15
+      ],
+      "groups": {
+        "baseline_laps": {
+          "n": 1,
+          "host_ms_p50": 29.500081
+        },
+        "baseline_no_laps": {
+          "n": 1,
+          "host_ms_p50": 28.034359
+        }
+      }
+    },
+    {
+      "shape": [
+        1,
+        231,
+        15
+      ],
+      "groups": {
+        "baseline_laps": {
+          "n": 1,
+          "host_ms_p50": 29.331662
+        },
+        "baseline_no_laps": {
+          "n": 1,
+          "host_ms_p50": 28.937243
+        }
+      }
+    },
+    {
+      "shape": [
+        1,
+        243,
+        14
+      ],
+      "groups": {
+        "baseline_laps": {
+          "n": 1,
+          "host_ms_p50": 31.312458
+        },
+        "baseline_no_laps": {
+          "n": 1,
+          "host_ms_p50": 39.238623
+        }
+      }
+    },
+    {
+      "shape": [
+        2,
+        342,
+        14
+      ],
+      "groups": {
+        "baseline_laps": {
+          "n": 1,
+          "host_ms_p50": 29.563197
+        },
+        "baseline_no_laps": {
+          "n": 1,
+          "host_ms_p50": 30.785507
+        }
+      }
+    }
+  ],
+  "sparse_any_n_below3": 72,
+  "interpretation": "Single runs; matching shape is not identical request/seed/clock pairing. No significance or zero-overhead claim. p50 uses nearest order statistic like original summarize_probe."
+}

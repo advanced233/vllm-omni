@@ -1,0 +1,8 @@
+| run | variant | steps | calls/step | GDN host ms/step p50 (p90) | span ms p50 | prefill tok p50 | decode tok p50 |
+| --- | --- | ---: | --- | ---: | ---: | ---: | ---: |
+| probe | direct_out | 217 | [30] | 28.82 (31.40) | 32.20 | 168 | 15 |
+
+mean host ms per mixed step, by section
+| run | setup | conv | decode | prep | gather | chunk | scatter | copy |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| probe | 0.45 | 3.71 | 2.70 | 2.76 | 2.32 | 15.75 | 1.50 | 0.03 |
