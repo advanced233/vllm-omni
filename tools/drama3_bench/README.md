@@ -7,6 +7,7 @@
 | `encode_ref_codes.py` | 把 Seed-TTS-Eval 每行的参考音频离线编码成 `ref_audio_codes` | vLLM-Omni 环境 + CUDA GPU |
 | `stream_bench.py` | 闭环流式压测一个并发档位，输出 `summary.json` / `requests.jsonl`；可选热降频分段模式（第 8 节） | 只需要 `aiohttp`、`numpy`（vLLM 环境里都有；有 `uvloop` 会自动使用） |
 | `thermal_gate.py` | 分段模式用的 GPU 温度与降频原因监视器（`stream_bench.py` 自动调用） | `nvidia-smi` |
+| `gdn_mixed/` | GDN 混合步的 CPU 开销：服务内低开销探针、单层微基准、候选改动的正确性测试（见 [gdn_mixed/README.md](gdn_mixed/README.md)） | vLLM-Omni 环境 + CUDA GPU |
 | `run_sweep.sh` | 多档并发扫描，每次都重启服务，同时记录 GPU 时钟、功耗和降频原因 | bash、curl、nvidia-smi |
 | `aggregate_results.py` | 把多次运行汇总成 #8933 那样的表格，重复运行取平均 | Python 3.10+ |
 | `analyze_audio.py` | 排查音频：卡死（持续底噪）、语速、句中停顿，以及停顿是否落在 codec 窗口边界上 | `numpy` |
