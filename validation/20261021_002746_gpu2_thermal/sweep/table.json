@@ -1,0 +1,17 @@
+[
+  {
+    "label": "a100-gpu2-cold-c1",
+    "concurrency": 1,
+    "runs": 1,
+    "Audio s/s": "4.3",
+    "Audio s/s (full window)": "4.3",
+    "TTFA p50 (ms)": "124",
+    "TTFA p95 (ms)": "136",
+    "RTF (mean)": "0.232",
+    "Stall % (>0 ms)": "0.00",
+    "Stall % (>100 ms)": "0.00",
+    "Takes >= 20 s": "6",
+    "Their audio %": "2.9",
+    "Failed": "0"
+  }
+]

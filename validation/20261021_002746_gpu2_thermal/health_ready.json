@@ -1,0 +1,6 @@
+{
+  "epoch_s": 1792514023.42106,
+  "monotonic_s": 7657133.61851022,
+  "gpu_thermal": "2026/10/21 00:33:43.864, 51, 62, 1410 MHz, 1512 MHz, 87.28 W, 300.00 W, 0 %, 73262 MiB, 0x0000000000000000, Not Active, Not Active, Not Active, Not Active",
+  "poll_interval_s": 1
+}

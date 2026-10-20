@@ -1,0 +1,4 @@
+[00:29:41] c=1 r=1: starting server
+[00:33:41] c=1 r=1: ready after 240s, benchmarking
+[00:52:13] c=1 r=1: client exit 0, stopping server
+[00:52:26] done: ${NVME_WORKDIR}/gpu2-thermal/20261021_002746/sweep/table.md

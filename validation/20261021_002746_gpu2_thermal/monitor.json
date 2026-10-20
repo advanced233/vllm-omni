@@ -1,0 +1,6 @@
+{
+  "pid": 1879284,
+  "started_epoch_s": 1792513781.508679,
+  "fields": "timestamp,temperature.gpu,temperature.memory,clocks.sm,clocks.mem,power.draw,power.limit,utilization.gpu,memory.used,clocks_event_reasons.active,clocks_event_reasons.sw_thermal_slowdown,clocks_event_reasons.hw_thermal_slowdown,clocks_event_reasons.sw_power_cap,clocks_event_reasons.hw_power_brake_slowdown",
+  "interval_s": 1
+}

@@ -1,0 +1,7 @@
+{
+  "monitor_pid": 1879284,
+  "monitor_exit": 0,
+  "epoch_s": 1792515147.393267,
+  "gpu_thermal_after": "2026/10/21 00:52:27.479, 80, 86, 300 MHz, 1512 MHz, 75.07 W, 300.00 W, 0 %, 14 MiB, 0x0000000000000001, Not Active, Not Active, Not Active, Not Active",
+  "sweep_exit": 0
+}

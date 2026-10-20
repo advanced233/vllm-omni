@@ -1,0 +1,34 @@
+{
+  "captured_at": "2026-10-21T00:39:36.241239+08:00",
+  "api_and_stage_processes": [
+    {
+      "pid": 1879327,
+      "own_uid": true,
+      "cpu_allowed": "0-27,32-59"
+    },
+    {
+      "pid": 1879482,
+      "own_uid": true,
+      "cpu_allowed": "0-27,32-59"
+    },
+    {
+      "pid": 1881051,
+      "own_uid": true,
+      "cpu_allowed": "0-27,32-59"
+    }
+  ],
+  "scope": "Live /proc affinity for our known API/stage PIDs only; no other-user process inspection.",
+  "benchmark_client_processes": [
+    {
+      "pid": 1881913,
+      "own_uid": true,
+      "role": "benchmark_client",
+      "allowed_cpus": [
+        60,
+        61,
+        62,
+        63
+      ]
+    }
+  ]
+}

@@ -1,0 +1,3 @@
+{"event": "warmup_print_observed", "clock_anchor": {"wall_before_ns": 1792514021527963151, "perf_counter_ns": 7657131725413313, "wall_after_ns": 1792514021527964941}, "poll_interval_s": 0.1, "note": "Log observation, not exact run_phase boundary"}
+{"event": "timed_print_before_gc_observed", "clock_anchor": {"wall_before_ns": 1792514032458548353, "perf_counter_ns": 7657142655998295, "wall_after_ns": 1792514032458549803}, "poll_interval_s": 0.1, "note": "Log observation, not exact run_phase boundary"}
+{"event": "client_exit_observed", "clock_anchor": {"wall_before_ns": 1792515133365144563, "perf_counter_ns": 7658243562594465, "wall_after_ns": 1792515133365145903}, "poll_interval_s": 0.1, "note": "Log observation, not exact run_phase boundary"}

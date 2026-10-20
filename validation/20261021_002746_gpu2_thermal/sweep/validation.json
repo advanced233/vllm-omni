@@ -1,0 +1,148 @@
+{
+  "valid": true,
+  "completed_runs": 1,
+  "runs": [
+    {
+      "path": "${NVME_WORKDIR}/gpu2-thermal/20261021_002746/sweep/c1/r1",
+      "concurrency": 1,
+      "repeat": 1,
+      "requests": 1088,
+      "succeeded": 1088,
+      "failed": 0,
+      "loop_lag_p99_ms": 0.64,
+      "startup_s": 240.0,
+      "duration_s": 1100.819,
+      "throughput_audio_s_per_s": 4.34,
+      "ttfa_ms": {
+        "mean": 123.3,
+        "p50": 124.5,
+        "p90": 133.8,
+        "p95": 136.3,
+        "p99": 141.1,
+        "max": 348.2
+      },
+      "rtf": {
+        "mean": 0.2322,
+        "p50": 0.2333,
+        "p90": 0.2454,
+        "p95": 0.2501,
+        "p99": 0.2592,
+        "max": 0.4374
+      },
+      "long_takes": {
+        "at_least_20s": 6,
+        "at_least_20s_pct": 0.55,
+        "at_frame_cap": 4,
+        "audio_share_pct": 2.85
+      },
+      "full_concurrency_window": {
+        "seconds": 1100.186,
+        "throughput_audio_s_per_s": 4.34
+      },
+      "max_client_inflight_lower_bound": 1,
+      "seconds_at_requested_client_inflight_lower_bound": 1099.976,
+      "inflight_method": "Intervals sent_s to last audio arrival (e2e_s rounded to 0.1 ms). Client HTTP in-flight lower bound, not number scheduled on GPU.",
+      "key_lines": [
+        "(StageEngineCoreProc_stage0_replica0 pid=1879482) INFO 10-21 00:31:46 [kv_cache_utils.py:2327] GPU KV cache size: 326,716 tokens, Maximum concurrency for 8,192 tokens per request: 39.88x"
+      ],
+      "preemption_oom_cuda_lines": [],
+      "cleanup": {
+        "tracked_processes": [
+          {
+            "pid": 1879327,
+            "create_time": 1792513781.37,
+            "name": "vllm"
+          },
+          {
+            "pid": 1879412,
+            "create_time": 1792513790.78,
+            "name": "python"
+          },
+          {
+            "pid": 1879414,
+            "create_time": 1792513790.81,
+            "name": "python"
+          },
+          {
+            "pid": 1879481,
+            "create_time": 1792513795.25,
+            "name": "python"
+          },
+          {
+            "pid": 1879482,
+            "create_time": 1792513795.25,
+            "name": "VLLM::StageEngineCoreProc_stage0_replica0_DP0"
+          },
+          {
+            "pid": 1879475,
+            "create_time": 1792513795.21,
+            "name": "nvidia-cuda-mps-control"
+          },
+          {
+            "pid": 1879575,
+            "create_time": 1792513805.51,
+            "name": "python"
+          },
+          {
+            "pid": 1879577,
+            "create_time": 1792513805.55,
+            "name": "python"
+          },
+          {
+            "pid": 1879580,
+            "create_time": 1792513805.71,
+            "name": "nvidia-cuda-mps-server"
+          },
+          {
+            "pid": 1879684,
+            "create_time": 1792513809.76,
+            "name": "python"
+          },
+          {
+            "pid": 1879691,
+            "create_time": 1792513809.97,
+            "name": "python"
+          },
+          {
+            "pid": 1881051,
+            "create_time": 1792513928.67,
+            "name": "VLLM::StageEngineCoreProc_stage1_replica0_DP0"
+          },
+          {
+            "pid": 1881161,
+            "create_time": 1792513938.86,
+            "name": "python"
+          },
+          {
+            "pid": 1881163,
+            "create_time": 1792513938.9,
+            "name": "python"
+          },
+          {
+            "pid": 1881292,
+            "create_time": 1792513943.74,
+            "name": "python"
+          },
+          {
+            "pid": 1881299,
+            "create_time": 1792513943.95,
+            "name": "python"
+          }
+        ],
+        "signals": [
+          {
+            "pid": 1879327,
+            "signal": "SIGINT"
+          }
+        ],
+        "server_exit": 0,
+        "gpu_after": "GPU_PHYSICAL_2, NVIDIA A100 80GB PCIe, 14, 81920, 0",
+        "apps_after": [],
+        "port_free": true,
+        "own_processes_remaining": [],
+        "clean": true
+      },
+      "errors": []
+    }
+  ]
+}

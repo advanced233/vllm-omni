@@ -1,0 +1,5 @@
+{
+  "epoch_s": 1792513781.4261491,
+  "gpu_thermal": "2026/10/21 00:29:41.488, 36, 50, 210 MHz, 1512 MHz, 46.56 W, 300.00 W, 0 %, 14 MiB, 0x0000000000000001, Not Active, Not Active, Not Active, Not Active",
+  "fields": "timestamp,temperature.gpu,temperature.memory,clocks.sm,clocks.mem,power.draw,power.limit,utilization.gpu,memory.used,clocks_event_reasons.active,clocks_event_reasons.sw_thermal_slowdown,clocks_event_reasons.hw_thermal_slowdown,clocks_event_reasons.sw_power_cap,clocks_event_reasons.hw_power_brake_slowdown"
+}
