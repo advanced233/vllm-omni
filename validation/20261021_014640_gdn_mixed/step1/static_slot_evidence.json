@@ -1,0 +1,65 @@
+{
+  "scope": "Read-only diagnostic clue; no fixture change, no GPU rerun, no proof that it explains all failures.",
+  "evidence": [
+    {
+      "path": "${NVME_WORKDIR}/gdn-mixed/20261021_014640/tool_snapshot/drama3_bench/gdn_mixed/drama3_gdn_harness.py",
+      "sha256": "08685d6a377b7d52460f97b7030f4943bfef8bb2bf4c9d3d80d07d6f088bb42c",
+      "lines": [
+        125,
+        129
+      ],
+      "note": "Fixture allocates real requests starting at slot 0",
+      "excerpt": "125: \n126: def slots_for(step: Step) -> list[int]:\n127:     \"\"\"Decodes on rows 0..D-1, prefills on the next rows (all holding stale state); the rest stay unused.\"\"\"\n128:     return list(range(step.decodes + len(step.prefills)))\n129: "
+    },
+    {
+      "path": "${NVME_WORKDIR}/gdn-mixed/20261021_014640/tool_snapshot/drama3_bench/gdn_mixed/test_mixed_core_variants.py",
+      "sha256": "7f58fe64236438bd951008ec57ffd5326a16755c8028055191a6a6b0ec2c9feb",
+      "lines": [
+        145,
+        151
+      ],
+      "note": "Split-prompt fixture explicitly uses slots 0,1,2",
+      "excerpt": "145:     def run(fn):\n146:         conv0, ssm0 = harness.make_pools(device, rows, state_dtype)\n147:         pools = (conv0.clone(), ssm0.clone())\n148:         layer, dim = harness.make_layer(device, pools)\n149:         outs = []\n150:         for i, step in enumerate((first, second)):\n151:             md = harness.make_metadata(device, step, slots=[0, 1, 2])"
+    },
+    {
+      "path": "${NVME_WORKDIR}/venvs/vllm-omni-cu129/lib/python3.12/site-packages/vllm/v1/attention/backends/utils.py",
+      "sha256": "948d12a45b4b58452af69a629de4ceae37f35aff5057f338acb13fcc8e0c71e4",
+      "lines": [
+        49,
+        54
+      ],
+      "note": "Installed NULL_BLOCK_ID is zero",
+      "excerpt": "49: logger = init_logger(__name__)\n50: \n51: PAD_SLOT_ID = -1\n52: NULL_BLOCK_ID = 0\n53: \n54: "
+    },
+    {
+      "path": "${NVME_WORKDIR}/venvs/vllm-omni-cu129/lib/python3.12/site-packages/vllm/third_party/flash_linear_attention/ops/fused_recurrent.py",
+      "sha256": "fe6f1311014809040497aa0a623e7fa97f4b3457cdc7ee1f1f8aed21f326f755",
+      "lines": [
+        295,
+        305
+      ],
+      "note": "Packed recurrent decode writes zeros and returns for state index <=0",
+      "excerpt": "295: \n296:     state_idx = tl.load(ssm_state_indices + i_n * stride_indices_seq).to(tl.int64)\n297:     p_o = o + (i_n * HV + i_hv) * V + o_v\n298: \n299:     # Skip if state index is invalid (NULL_BLOCK_ID=0)\n300:     if state_idx <= 0:\n301:         zero = tl.zeros([BV], dtype=tl.float32).to(p_o.dtype.element_ty)\n302:         tl.store(p_o, zero, mask=mask_v)\n303:         return\n304: \n305:     p_h0 = h0 + state_idx * stride_init_state_token"
+    },
+    {
+      "path": "${NVME_WORKDIR}/venvs/vllm-omni-cu129/lib/python3.12/site-packages/vllm/model_executor/layers/mamba/ops/causal_conv1d.py",
+      "sha256": "cb16cc9250c4195c09d6d83b43bba607c2d749b621d8d135a920443d1577265f",
+      "lines": [
+        138,
+        150
+      ],
+      "note": "Convolution skips null-block slots",
+      "excerpt": "138:     # cache_idx\n139:     conv_states_input_coord = tl.load(\n140:         conv_state_indices_ptr + idx_seq * stride_cache_indices + conv_state_init_index\n141:     ).to(tl.int64)\n142: \n143:     if HAS_NULL_BLOCK:  # noqa\n144:         if conv_states_input_coord == null_block_id:\n145:             # not processing as this is a null block (padding)\n146:             if launch_pdl:\n147:                 tl.extra.cuda.gdc_launch_dependents()\n148:             return\n149:     conv_states_base = (\n150:         conv_states_ptr"
+    },
+    {
+      "path": "${WORKSPACE}/vllm-omni/tests/model_executor/models/fish_omni/test_fish_omni_gdn.py",
+      "sha256": "76fb98210889fa3ea573d23828f0a802609ac28c6e01ae9eea11ca6b1374893b",
+      "lines": [
+        130,
+        137
+      ],
+      "note": "Existing upstream fixture uses nonzero slots",
+      "excerpt": "130:     conv_pool = (torch.randn(pool_rows, *conv_shape, generator=g) * 0.5).to(device, torch.bfloat16)\n131:     ssm_pool = (torch.randn(pool_rows, *ssm_shape, generator=g) * 0.05).to(device, state_dtype)\n132:     # Fresh prefill in slot 6 sits on stale state; continued prefill in slot 2.\n133:     prefill = [(37, False), (70, True)]\n134:     slots = [1, 4, 7][:decodes] + [6, 2]\n135:     md = _metadata(device, decodes, prefill, slots)\n136:     tokens = md.num_actual_tokens\n137: "
+    }
+  ]
+}

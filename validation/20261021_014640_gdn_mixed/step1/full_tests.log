@@ -1,0 +1,346 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.13, pytest-9.1.1, pluggy-1.7.0 -- ${WORKSPACE}/.venvs/vllm-omni-cu129/bin/python
+cachedir: .pytest_cache
+rootdir: ${WORKSPACE}/vllm-omni
+configfile: pyproject.toml
+plugins: platformdirs-4.13.5, shard-0.1.2, mock-3.15.1, hydra-core-1.3.7, xdist-3.8.0, asyncio-1.4.0, typeguard-4.6.0, cov-7.1.0, anyio-4.15.1
+asyncio: mode=Mode.AUTO, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+collecting ... collected 37 items
+Running 37 items in this shard: tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_copy_is_the_installed_version, tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variant_equals_installed_bit_for_bit[baseline-upstream-fp32], tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variant_equals_installed_bit_for_bit[baseline-upstream-bf16], tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variant_equals_installed_bit_for_bit[baseline-prefill_only-fp32], tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variant_equals_installed_bit_for_bit[baseline-prefill_only-bf16], tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variant_equals_installed_bit_for_bit[baseline-c16-fp32], tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variant_equals_installed_bit_for_bit[baseline-c16-bf16], tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variant_equals_installed_bit_for_bit[baseline-c64-fp32], tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variant_equals_installed_bit_for_bit[baseline-c64-bf16], tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variant_equals_installed_bit_for_bit[baseline-long_continued-fp32], tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variant_equals_installed_bit_for_bit[baseline-long_continued-bf16], tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variant_equals_installed_bit_for_bit[direct_out-upstream-fp32], tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variant_equals_installed_bit_for_bit[direct_out-upstream-bf16], tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variant_equals_installed_bit_for_bit[direct_out-prefill_only-fp32], tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variant_equals_installed_bit_for_bit[direct_out-prefill_only-bf16], tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variant_equals_installed_bit_for_bit[direct_out-c16-fp32], tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variant_equals_installed_bit_for_bit[direct_out-c16-bf16], tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variant_equals_installed_bit_for_bit[direct_out-c64-fp32], tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variant_equals_installed_bit_for_bit[direct_out-c64-bf16], tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variant_equals_installed_bit_for_bit[direct_out-long_continued-fp32], tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variant_equals_installed_bit_for_bit[direct_out-long_continued-bf16], tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variants_match_vllm_standard_path[upstream-fp32], tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variants_match_vllm_standard_path[upstream-bf16], tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variants_match_vllm_standard_path[prefill_only-fp32], tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variants_match_vllm_standard_path[prefill_only-bf16], tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variants_match_vllm_standard_path[c16-fp32], tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variants_match_vllm_standard_path[c16-bf16], tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variants_match_vllm_standard_path[c64-fp32], tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variants_match_vllm_standard_path[c64-bf16], tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variants_match_vllm_standard_path[long_continued-fp32], tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variants_match_vllm_standard_path[long_continued-bf16], tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_non_contiguous_output_takes_the_copy[fp32], tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_non_contiguous_output_takes_the_copy[bf16], tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_prompt_split_over_two_steps[baseline-fp32], tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_prompt_split_over_two_steps[baseline-bf16], tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_prompt_split_over_two_steps[direct_out-fp32], tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_prompt_split_over_two_steps[direct_out-bf16]
+
+tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_copy_is_the_installed_version PASSED [  2%]
+tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variant_equals_installed_bit_for_bit[baseline-upstream-fp32] PASSED [  5%]
+tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variant_equals_installed_bit_for_bit[baseline-upstream-bf16] PASSED [  8%]
+tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variant_equals_installed_bit_for_bit[baseline-prefill_only-fp32] FAILED [ 10%]
+tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variant_equals_installed_bit_for_bit[baseline-prefill_only-bf16] FAILED [ 13%]
+tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variant_equals_installed_bit_for_bit[baseline-c16-fp32] PASSED [ 16%]
+tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variant_equals_installed_bit_for_bit[baseline-c16-bf16] PASSED [ 18%]
+tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variant_equals_installed_bit_for_bit[baseline-c64-fp32] PASSED [ 21%]
+tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variant_equals_installed_bit_for_bit[baseline-c64-bf16] PASSED [ 24%]
+tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variant_equals_installed_bit_for_bit[baseline-long_continued-fp32] PASSED [ 27%]
+tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variant_equals_installed_bit_for_bit[baseline-long_continued-bf16] PASSED [ 29%]
+tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variant_equals_installed_bit_for_bit[direct_out-upstream-fp32] PASSED [ 32%]
+tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variant_equals_installed_bit_for_bit[direct_out-upstream-bf16] PASSED [ 35%]
+tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variant_equals_installed_bit_for_bit[direct_out-prefill_only-fp32] PASSED [ 37%]
+tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variant_equals_installed_bit_for_bit[direct_out-prefill_only-bf16] PASSED [ 40%]
+tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variant_equals_installed_bit_for_bit[direct_out-c16-fp32] PASSED [ 43%]
+tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variant_equals_installed_bit_for_bit[direct_out-c16-bf16] PASSED [ 45%]
+tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variant_equals_installed_bit_for_bit[direct_out-c64-fp32] PASSED [ 48%]
+tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variant_equals_installed_bit_for_bit[direct_out-c64-bf16] PASSED [ 51%]
+tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variant_equals_installed_bit_for_bit[direct_out-long_continued-fp32] PASSED [ 54%]
+tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variant_equals_installed_bit_for_bit[direct_out-long_continued-bf16] PASSED [ 56%]
+tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variants_match_vllm_standard_path[upstream-fp32] FAILED [ 59%]
+tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variants_match_vllm_standard_path[upstream-bf16] FAILED [ 62%]
+tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variants_match_vllm_standard_path[prefill_only-fp32] FAILED [ 64%]
+tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variants_match_vllm_standard_path[prefill_only-bf16] FAILED [ 67%]
+tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variants_match_vllm_standard_path[c16-fp32] FAILED [ 70%]
+tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variants_match_vllm_standard_path[c16-bf16] FAILED [ 72%]
+tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variants_match_vllm_standard_path[c64-fp32] FAILED [ 75%]
+tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variants_match_vllm_standard_path[c64-bf16] PASSED [ 78%]
+tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variants_match_vllm_standard_path[long_continued-fp32] FAILED [ 81%]
+tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variants_match_vllm_standard_path[long_continued-bf16] FAILED [ 83%]
+tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_non_contiguous_output_takes_the_copy[fp32] PASSED [ 86%]
+tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_non_contiguous_output_takes_the_copy[bf16] PASSED [ 89%]
+tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_prompt_split_over_two_steps[baseline-fp32] PASSED [ 91%]
+tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_prompt_split_over_two_steps[baseline-bf16] PASSED [ 94%]
+tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_prompt_split_over_two_steps[direct_out-fp32] PASSED [ 97%]
+tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_prompt_split_over_two_steps[direct_out-bf16] PASSED [100%]
+
+=================================== FAILURES ===================================
+____ test_variant_equals_installed_bit_for_bit[baseline-prefill_only-fp32] _____
+
+variant = 'baseline', case = 'prefill_only', state_dtype = torch.float32
+
+    @pytest.mark.parametrize("state_dtype", STATE_DTYPES, ids=["fp32", "bf16"])
+    @pytest.mark.parametrize("case", CASES)
+    @pytest.mark.parametrize("variant", sorted(VARIANTS))
+    def test_variant_equals_installed_bit_for_bit(variant, case, state_dtype):
+        ref_out, ref_pools, (conv0, ssm0), step = _run(_installed(), case, state_dtype)
+        out, pools, _, _ = _run(VARIANTS[variant](), case, state_dtype)
+    
+>       assert torch.equal(out, ref_out)
+E       AssertionError: assert False
+E        +  where False = <built-in method equal of type object at 0x7fd17a9d2f20>(tensor([[[nan, nan, nan,  ..., nan, nan, nan],\n         [nan, nan, nan,  ..., nan, nan, nan],\n         [nan, nan, nan,  ..., nan, nan, nan],\n         ...,\n         [nan, nan, nan,  ..., nan, nan, nan],\n         [nan, nan, nan,  ..., nan, nan, nan],\n         [nan, nan, nan,  ..., nan, nan, nan]],\n\n        [[nan, nan, nan,  ..., nan, nan, nan],\n         [nan, nan, nan,  ..., nan, nan, nan],\n         [nan, nan, nan,  ..., nan, nan, nan],\n         ...,\n         [nan, nan, nan,  ..., nan, nan, nan],\n         [nan, nan, nan,  ..., nan, nan, nan],\n         [nan, nan, nan,  ..., nan, nan, nan]],\n\n        [[nan, nan, nan,  ..., nan, nan, nan],\n         [nan, nan, nan,  ..., nan, nan, nan],\n         [nan, nan, nan,  ..., nan, nan, nan],\n         ...,\n         [nan, nan, nan,  ..., nan, nan, nan],\n         [nan, nan, nan,  ..., nan, nan, nan],\n         [nan, nan, nan,  ..., nan, nan, nan]],\n\n        ...,\n\n        [[7., 7., 7.,  ..., 7., 7., 7.],\n         [7., 7., 7.,  ..., 7., 7., 7.],\n         [7., 7., 7.,  ..., 7., 7., 7.],\n         ...,\n         [7., 7., 7.,  ..., 7., 7., 7.],\n         [7., 7., 7.,  ..., 7., 7., 7.],\n         [7., 7., 7.,  ..., 7., 7., 7.]],\n\n        [[7., 7., 7.,  ..., 7., 7., 7.],\n         [7., 7., 7.,  ..., 7., 7., 7.],\n         [7., 7., 7.,  ..., 7., 7., 7.],\n         ...,\n         [7., 7., 7.,  ..., 7., 7., 7.],\n         [7., 7., 7.,  ..., 7., 7., 7.],\n         [7., 7., 7.,  ..., 7., 7., 7.]],\n\n        [[7., 7., 7.,  ..., 7., 7., 7.],\n         [7., 7., 7.,  ..., 7., 7., 7.],\n         [7., 7., 7.,  ..., 7., 7., 7.],\n         ...,\n         [7., 7., 7.,  ..., 7., 7., 7.],\n         [7., 7., 7.,  ..., 7., 7., 7.],\n         [7., 7., 7.,  ..., 7., 7., 7.]]], device='cuda:0',\n       dtype=torch.bfloat16), tensor([[[nan, nan, nan,  ..., nan, nan, nan],\n         [nan, nan, nan,  ..., nan, nan, nan],\n         [nan, nan, nan,  ..., nan, nan, nan],\n         ...,\n         [nan, nan, nan,  ..., nan, nan, nan],\n         [nan, nan, nan,  ..., nan, nan, nan],\n         [nan, nan, nan,  ..., nan, nan, nan]],\n\n        [[nan, nan, nan,  ..., nan, nan, nan],\n         [nan, nan, nan,  ..., nan, nan, nan],\n         [nan, nan, nan,  ..., nan, nan, nan],\n         ...,\n         [nan, nan, nan,  ..., nan, nan, nan],\n         [nan, nan, nan,  ..., nan, nan, nan],\n         [nan, nan, nan,  ..., nan, nan, nan]],\n\n        [[nan, nan, nan,  ..., nan, nan, nan],\n         [nan, nan, nan,  ..., nan, nan, nan],\n         [nan, nan, nan,  ..., nan, nan, nan],\n         ...,\n         [nan, nan, nan,  ..., nan, nan, nan],\n         [nan, nan, nan,  ..., nan, nan, nan],\n         [nan, nan, nan,  ..., nan, nan, nan]],\n\n        ...,\n\n        [[7., 7., 7.,  ..., 7., 7., 7.],\n         [7., 7., 7.,  ..., 7., 7., 7.],\n         [7., 7., 7.,  ..., 7., 7., 7.],\n         ...,\n         [7., 7., 7.,  ..., 7., 7., 7.],\n         [7., 7., 7.,  ..., 7., 7., 7.],\n         [7., 7., 7.,  ..., 7., 7., 7.]],\n\n        [[7., 7., 7.,  ..., 7., 7., 7.],\n         [7., 7., 7.,  ..., 7., 7., 7.],\n         [7., 7., 7.,  ..., 7., 7., 7.],\n         ...,\n         [7., 7., 7.,  ..., 7., 7., 7.],\n         [7., 7., 7.,  ..., 7., 7., 7.],\n         [7., 7., 7.,  ..., 7., 7., 7.]],\n\n        [[7., 7., 7.,  ..., 7., 7., 7.],\n         [7., 7., 7.,  ..., 7., 7., 7.],\n         [7., 7., 7.,  ..., 7., 7., 7.],\n         ...,\n         [7., 7., 7.,  ..., 7., 7., 7.],\n         [7., 7., 7.,  ..., 7., 7., 7.],\n         [7., 7., 7.,  ..., 7., 7., 7.]]], device='cuda:0',\n       dtype=torch.bfloat16))
+E        +    where <built-in method equal of type object at 0x7fd17a9d2f20> = torch.equal
+
+tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py:87: AssertionError
+____ test_variant_equals_installed_bit_for_bit[baseline-prefill_only-bf16] _____
+
+variant = 'baseline', case = 'prefill_only', state_dtype = torch.bfloat16
+
+    @pytest.mark.parametrize("state_dtype", STATE_DTYPES, ids=["fp32", "bf16"])
+    @pytest.mark.parametrize("case", CASES)
+    @pytest.mark.parametrize("variant", sorted(VARIANTS))
+    def test_variant_equals_installed_bit_for_bit(variant, case, state_dtype):
+        ref_out, ref_pools, (conv0, ssm0), step = _run(_installed(), case, state_dtype)
+        out, pools, _, _ = _run(VARIANTS[variant](), case, state_dtype)
+    
+>       assert torch.equal(out, ref_out)
+E       AssertionError: assert False
+E        +  where False = <built-in method equal of type object at 0x7fd17a9d2f20>(tensor([[[nan, nan, nan,  ..., nan, nan, nan],\n         [nan, nan, nan,  ..., nan, nan, nan],\n         [nan, nan, nan,  ..., nan, nan, nan],\n         ...,\n         [nan, nan, nan,  ..., nan, nan, nan],\n         [nan, nan, nan,  ..., nan, nan, nan],\n         [nan, nan, nan,  ..., nan, nan, nan]],\n\n        [[nan, nan, nan,  ..., nan, nan, nan],\n         [nan, nan, nan,  ..., nan, nan, nan],\n         [nan, nan, nan,  ..., nan, nan, nan],\n         ...,\n         [nan, nan, nan,  ..., nan, nan, nan],\n         [nan, nan, nan,  ..., nan, nan, nan],\n         [nan, nan, nan,  ..., nan, nan, nan]],\n\n        [[nan, nan, nan,  ..., nan, nan, nan],\n         [nan, nan, nan,  ..., nan, nan, nan],\n         [nan, nan, nan,  ..., nan, nan, nan],\n         ...,\n         [nan, nan, nan,  ..., nan, nan, nan],\n         [nan, nan, nan,  ..., nan, nan, nan],\n         [nan, nan, nan,  ..., nan, nan, nan]],\n\n        ...,\n\n        [[7., 7., 7.,  ..., 7., 7., 7.],\n         [7., 7., 7.,  ..., 7., 7., 7.],\n         [7., 7., 7.,  ..., 7., 7., 7.],\n         ...,\n         [7., 7., 7.,  ..., 7., 7., 7.],\n         [7., 7., 7.,  ..., 7., 7., 7.],\n         [7., 7., 7.,  ..., 7., 7., 7.]],\n\n        [[7., 7., 7.,  ..., 7., 7., 7.],\n         [7., 7., 7.,  ..., 7., 7., 7.],\n         [7., 7., 7.,  ..., 7., 7., 7.],\n         ...,\n         [7., 7., 7.,  ..., 7., 7., 7.],\n         [7., 7., 7.,  ..., 7., 7., 7.],\n         [7., 7., 7.,  ..., 7., 7., 7.]],\n\n        [[7., 7., 7.,  ..., 7., 7., 7.],\n         [7., 7., 7.,  ..., 7., 7., 7.],\n         [7., 7., 7.,  ..., 7., 7., 7.],\n         ...,\n         [7., 7., 7.,  ..., 7., 7., 7.],\n         [7., 7., 7.,  ..., 7., 7., 7.],\n         [7., 7., 7.,  ..., 7., 7., 7.]]], device='cuda:0',\n       dtype=torch.bfloat16), tensor([[[nan, nan, nan,  ..., nan, nan, nan],\n         [nan, nan, nan,  ..., nan, nan, nan],\n         [nan, nan, nan,  ..., nan, nan, nan],\n         ...,\n         [nan, nan, nan,  ..., nan, nan, nan],\n         [nan, nan, nan,  ..., nan, nan, nan],\n         [nan, nan, nan,  ..., nan, nan, nan]],\n\n        [[nan, nan, nan,  ..., nan, nan, nan],\n         [nan, nan, nan,  ..., nan, nan, nan],\n         [nan, nan, nan,  ..., nan, nan, nan],\n         ...,\n         [nan, nan, nan,  ..., nan, nan, nan],\n         [nan, nan, nan,  ..., nan, nan, nan],\n         [nan, nan, nan,  ..., nan, nan, nan]],\n\n        [[nan, nan, nan,  ..., nan, nan, nan],\n         [nan, nan, nan,  ..., nan, nan, nan],\n         [nan, nan, nan,  ..., nan, nan, nan],\n         ...,\n         [nan, nan, nan,  ..., nan, nan, nan],\n         [nan, nan, nan,  ..., nan, nan, nan],\n         [nan, nan, nan,  ..., nan, nan, nan]],\n\n        ...,\n\n        [[7., 7., 7.,  ..., 7., 7., 7.],\n         [7., 7., 7.,  ..., 7., 7., 7.],\n         [7., 7., 7.,  ..., 7., 7., 7.],\n         ...,\n         [7., 7., 7.,  ..., 7., 7., 7.],\n         [7., 7., 7.,  ..., 7., 7., 7.],\n         [7., 7., 7.,  ..., 7., 7., 7.]],\n\n        [[7., 7., 7.,  ..., 7., 7., 7.],\n         [7., 7., 7.,  ..., 7., 7., 7.],\n         [7., 7., 7.,  ..., 7., 7., 7.],\n         ...,\n         [7., 7., 7.,  ..., 7., 7., 7.],\n         [7., 7., 7.,  ..., 7., 7., 7.],\n         [7., 7., 7.,  ..., 7., 7., 7.]],\n\n        [[7., 7., 7.,  ..., 7., 7., 7.],\n         [7., 7., 7.,  ..., 7., 7., 7.],\n         [7., 7., 7.,  ..., 7., 7., 7.],\n         ...,\n         [7., 7., 7.,  ..., 7., 7., 7.],\n         [7., 7., 7.,  ..., 7., 7., 7.],\n         [7., 7., 7.,  ..., 7., 7., 7.]]], device='cuda:0',\n       dtype=torch.bfloat16))
+E        +    where <built-in method equal of type object at 0x7fd17a9d2f20> = torch.equal
+
+tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py:87: AssertionError
+____________ test_variants_match_vllm_standard_path[upstream-fp32] _____________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7fcff85be5d0>
+case = 'upstream', state_dtype = torch.float32
+
+    @pytest.mark.parametrize("state_dtype", STATE_DTYPES, ids=["fp32", "bf16"])
+    @pytest.mark.parametrize("case", CASES)
+    def test_variants_match_vllm_standard_path(monkeypatch, case, state_dtype):
+        from vllm.model_executor.layers.mamba.gdn import qwen_gdn_linear_attn as gdn_module
+        from vllm.model_executor.layers.mamba.gdn.qwen_gdn_linear_attn import QwenGatedDeltaNetAttention
+    
+        def standard(layer, mixed_qkv, b, a, out, _md):
+            QwenGatedDeltaNetAttention._forward_core(layer, mixed_qkv, b, a, out)
+    
+        def bind(md):
+            monkeypatch.setattr(gdn_module, "get_forward_context", lambda: types.SimpleNamespace(attn_metadata={"gdn": md}))
+    
+        ref_out, ref_pools, _, step = _run(standard, case, state_dtype, before_call=bind)
+        tol = 2e-3 if state_dtype == torch.float32 else 1e-2  # one bf16 ulp on a bf16 pool, as upstream
+        for name, make in VARIANTS.items():
+            out, pools, _, _ = _run(make(), case, state_dtype)
+>           torch.testing.assert_close(
+                out[: step.tokens].float(), ref_out[: step.tokens].float(), atol=2e-2, rtol=2e-2, msg=name
+            )
+E           AssertionError: baseline
+
+tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py:114: AssertionError
+____________ test_variants_match_vllm_standard_path[upstream-bf16] _____________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7fcff85ff710>
+case = 'upstream', state_dtype = torch.bfloat16
+
+    @pytest.mark.parametrize("state_dtype", STATE_DTYPES, ids=["fp32", "bf16"])
+    @pytest.mark.parametrize("case", CASES)
+    def test_variants_match_vllm_standard_path(monkeypatch, case, state_dtype):
+        from vllm.model_executor.layers.mamba.gdn import qwen_gdn_linear_attn as gdn_module
+        from vllm.model_executor.layers.mamba.gdn.qwen_gdn_linear_attn import QwenGatedDeltaNetAttention
+    
+        def standard(layer, mixed_qkv, b, a, out, _md):
+            QwenGatedDeltaNetAttention._forward_core(layer, mixed_qkv, b, a, out)
+    
+        def bind(md):
+            monkeypatch.setattr(gdn_module, "get_forward_context", lambda: types.SimpleNamespace(attn_metadata={"gdn": md}))
+    
+        ref_out, ref_pools, _, step = _run(standard, case, state_dtype, before_call=bind)
+        tol = 2e-3 if state_dtype == torch.float32 else 1e-2  # one bf16 ulp on a bf16 pool, as upstream
+        for name, make in VARIANTS.items():
+            out, pools, _, _ = _run(make(), case, state_dtype)
+>           torch.testing.assert_close(
+                out[: step.tokens].float(), ref_out[: step.tokens].float(), atol=2e-2, rtol=2e-2, msg=name
+            )
+E           AssertionError: baseline
+
+tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py:114: AssertionError
+__________ test_variants_match_vllm_standard_path[prefill_only-fp32] ___________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7fcff85ff800>
+case = 'prefill_only', state_dtype = torch.float32
+
+    @pytest.mark.parametrize("state_dtype", STATE_DTYPES, ids=["fp32", "bf16"])
+    @pytest.mark.parametrize("case", CASES)
+    def test_variants_match_vllm_standard_path(monkeypatch, case, state_dtype):
+        from vllm.model_executor.layers.mamba.gdn import qwen_gdn_linear_attn as gdn_module
+        from vllm.model_executor.layers.mamba.gdn.qwen_gdn_linear_attn import QwenGatedDeltaNetAttention
+    
+        def standard(layer, mixed_qkv, b, a, out, _md):
+            QwenGatedDeltaNetAttention._forward_core(layer, mixed_qkv, b, a, out)
+    
+        def bind(md):
+            monkeypatch.setattr(gdn_module, "get_forward_context", lambda: types.SimpleNamespace(attn_metadata={"gdn": md}))
+    
+        ref_out, ref_pools, _, step = _run(standard, case, state_dtype, before_call=bind)
+        tol = 2e-3 if state_dtype == torch.float32 else 1e-2  # one bf16 ulp on a bf16 pool, as upstream
+        for name, make in VARIANTS.items():
+            out, pools, _, _ = _run(make(), case, state_dtype)
+>           torch.testing.assert_close(
+                out[: step.tokens].float(), ref_out[: step.tokens].float(), atol=2e-2, rtol=2e-2, msg=name
+            )
+E           AssertionError: baseline
+
+tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py:114: AssertionError
+__________ test_variants_match_vllm_standard_path[prefill_only-bf16] ___________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7fcff865e0f0>
+case = 'prefill_only', state_dtype = torch.bfloat16
+
+    @pytest.mark.parametrize("state_dtype", STATE_DTYPES, ids=["fp32", "bf16"])
+    @pytest.mark.parametrize("case", CASES)
+    def test_variants_match_vllm_standard_path(monkeypatch, case, state_dtype):
+        from vllm.model_executor.layers.mamba.gdn import qwen_gdn_linear_attn as gdn_module
+        from vllm.model_executor.layers.mamba.gdn.qwen_gdn_linear_attn import QwenGatedDeltaNetAttention
+    
+        def standard(layer, mixed_qkv, b, a, out, _md):
+            QwenGatedDeltaNetAttention._forward_core(layer, mixed_qkv, b, a, out)
+    
+        def bind(md):
+            monkeypatch.setattr(gdn_module, "get_forward_context", lambda: types.SimpleNamespace(attn_metadata={"gdn": md}))
+    
+        ref_out, ref_pools, _, step = _run(standard, case, state_dtype, before_call=bind)
+        tol = 2e-3 if state_dtype == torch.float32 else 1e-2  # one bf16 ulp on a bf16 pool, as upstream
+        for name, make in VARIANTS.items():
+            out, pools, _, _ = _run(make(), case, state_dtype)
+>           torch.testing.assert_close(
+                out[: step.tokens].float(), ref_out[: step.tokens].float(), atol=2e-2, rtol=2e-2, msg=name
+            )
+E           AssertionError: baseline
+
+tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py:114: AssertionError
+_______________ test_variants_match_vllm_standard_path[c16-fp32] _______________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7fcff865c500>
+case = 'c16', state_dtype = torch.float32
+
+    @pytest.mark.parametrize("state_dtype", STATE_DTYPES, ids=["fp32", "bf16"])
+    @pytest.mark.parametrize("case", CASES)
+    def test_variants_match_vllm_standard_path(monkeypatch, case, state_dtype):
+        from vllm.model_executor.layers.mamba.gdn import qwen_gdn_linear_attn as gdn_module
+        from vllm.model_executor.layers.mamba.gdn.qwen_gdn_linear_attn import QwenGatedDeltaNetAttention
+    
+        def standard(layer, mixed_qkv, b, a, out, _md):
+            QwenGatedDeltaNetAttention._forward_core(layer, mixed_qkv, b, a, out)
+    
+        def bind(md):
+            monkeypatch.setattr(gdn_module, "get_forward_context", lambda: types.SimpleNamespace(attn_metadata={"gdn": md}))
+    
+        ref_out, ref_pools, _, step = _run(standard, case, state_dtype, before_call=bind)
+        tol = 2e-3 if state_dtype == torch.float32 else 1e-2  # one bf16 ulp on a bf16 pool, as upstream
+        for name, make in VARIANTS.items():
+            out, pools, _, _ = _run(make(), case, state_dtype)
+>           torch.testing.assert_close(
+                out[: step.tokens].float(), ref_out[: step.tokens].float(), atol=2e-2, rtol=2e-2, msg=name
+            )
+E           AssertionError: baseline
+
+tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py:114: AssertionError
+_______________ test_variants_match_vllm_standard_path[c16-bf16] _______________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7fcff865dc70>
+case = 'c16', state_dtype = torch.bfloat16
+
+    @pytest.mark.parametrize("state_dtype", STATE_DTYPES, ids=["fp32", "bf16"])
+    @pytest.mark.parametrize("case", CASES)
+    def test_variants_match_vllm_standard_path(monkeypatch, case, state_dtype):
+        from vllm.model_executor.layers.mamba.gdn import qwen_gdn_linear_attn as gdn_module
+        from vllm.model_executor.layers.mamba.gdn.qwen_gdn_linear_attn import QwenGatedDeltaNetAttention
+    
+        def standard(layer, mixed_qkv, b, a, out, _md):
+            QwenGatedDeltaNetAttention._forward_core(layer, mixed_qkv, b, a, out)
+    
+        def bind(md):
+            monkeypatch.setattr(gdn_module, "get_forward_context", lambda: types.SimpleNamespace(attn_metadata={"gdn": md}))
+    
+        ref_out, ref_pools, _, step = _run(standard, case, state_dtype, before_call=bind)
+        tol = 2e-3 if state_dtype == torch.float32 else 1e-2  # one bf16 ulp on a bf16 pool, as upstream
+        for name, make in VARIANTS.items():
+            out, pools, _, _ = _run(make(), case, state_dtype)
+>           torch.testing.assert_close(
+                out[: step.tokens].float(), ref_out[: step.tokens].float(), atol=2e-2, rtol=2e-2, msg=name
+            )
+E           AssertionError: baseline
+
+tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py:114: AssertionError
+_______________ test_variants_match_vllm_standard_path[c64-fp32] _______________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7fcff865c590>
+case = 'c64', state_dtype = torch.float32
+
+    @pytest.mark.parametrize("state_dtype", STATE_DTYPES, ids=["fp32", "bf16"])
+    @pytest.mark.parametrize("case", CASES)
+    def test_variants_match_vllm_standard_path(monkeypatch, case, state_dtype):
+        from vllm.model_executor.layers.mamba.gdn import qwen_gdn_linear_attn as gdn_module
+        from vllm.model_executor.layers.mamba.gdn.qwen_gdn_linear_attn import QwenGatedDeltaNetAttention
+    
+        def standard(layer, mixed_qkv, b, a, out, _md):
+            QwenGatedDeltaNetAttention._forward_core(layer, mixed_qkv, b, a, out)
+    
+        def bind(md):
+            monkeypatch.setattr(gdn_module, "get_forward_context", lambda: types.SimpleNamespace(attn_metadata={"gdn": md}))
+    
+        ref_out, ref_pools, _, step = _run(standard, case, state_dtype, before_call=bind)
+        tol = 2e-3 if state_dtype == torch.float32 else 1e-2  # one bf16 ulp on a bf16 pool, as upstream
+        for name, make in VARIANTS.items():
+            out, pools, _, _ = _run(make(), case, state_dtype)
+>           torch.testing.assert_close(
+                out[: step.tokens].float(), ref_out[: step.tokens].float(), atol=2e-2, rtol=2e-2, msg=name
+            )
+E           AssertionError: baseline
+
+tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py:114: AssertionError
+_________ test_variants_match_vllm_standard_path[long_continued-fp32] __________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7fcff865f920>
+case = 'long_continued', state_dtype = torch.float32
+
+    @pytest.mark.parametrize("state_dtype", STATE_DTYPES, ids=["fp32", "bf16"])
+    @pytest.mark.parametrize("case", CASES)
+    def test_variants_match_vllm_standard_path(monkeypatch, case, state_dtype):
+        from vllm.model_executor.layers.mamba.gdn import qwen_gdn_linear_attn as gdn_module
+        from vllm.model_executor.layers.mamba.gdn.qwen_gdn_linear_attn import QwenGatedDeltaNetAttention
+    
+        def standard(layer, mixed_qkv, b, a, out, _md):
+            QwenGatedDeltaNetAttention._forward_core(layer, mixed_qkv, b, a, out)
+    
+        def bind(md):
+            monkeypatch.setattr(gdn_module, "get_forward_context", lambda: types.SimpleNamespace(attn_metadata={"gdn": md}))
+    
+        ref_out, ref_pools, _, step = _run(standard, case, state_dtype, before_call=bind)
+        tol = 2e-3 if state_dtype == torch.float32 else 1e-2  # one bf16 ulp on a bf16 pool, as upstream
+        for name, make in VARIANTS.items():
+            out, pools, _, _ = _run(make(), case, state_dtype)
+>           torch.testing.assert_close(
+                out[: step.tokens].float(), ref_out[: step.tokens].float(), atol=2e-2, rtol=2e-2, msg=name
+            )
+E           AssertionError: baseline
+
+tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py:114: AssertionError
+_________ test_variants_match_vllm_standard_path[long_continued-bf16] __________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7fcff85bd670>
+case = 'long_continued', state_dtype = torch.bfloat16
+
+    @pytest.mark.parametrize("state_dtype", STATE_DTYPES, ids=["fp32", "bf16"])
+    @pytest.mark.parametrize("case", CASES)
+    def test_variants_match_vllm_standard_path(monkeypatch, case, state_dtype):
+        from vllm.model_executor.layers.mamba.gdn import qwen_gdn_linear_attn as gdn_module
+        from vllm.model_executor.layers.mamba.gdn.qwen_gdn_linear_attn import QwenGatedDeltaNetAttention
+    
+        def standard(layer, mixed_qkv, b, a, out, _md):
+            QwenGatedDeltaNetAttention._forward_core(layer, mixed_qkv, b, a, out)
+    
+        def bind(md):
+            monkeypatch.setattr(gdn_module, "get_forward_context", lambda: types.SimpleNamespace(attn_metadata={"gdn": md}))
+    
+        ref_out, ref_pools, _, step = _run(standard, case, state_dtype, before_call=bind)
+        tol = 2e-3 if state_dtype == torch.float32 else 1e-2  # one bf16 ulp on a bf16 pool, as upstream
+        for name, make in VARIANTS.items():
+            out, pools, _, _ = _run(make(), case, state_dtype)
+>           torch.testing.assert_close(
+                out[: step.tokens].float(), ref_out[: step.tokens].float(), atol=2e-2, rtol=2e-2, msg=name
+            )
+E           AssertionError: baseline
+
+tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py:114: AssertionError
+=============================== warnings summary ===============================
+tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py: 14 warnings
+  ${WORKSPACE}/.venvs/vllm-omni-cu129/lib/python3.12/site-packages/torch/jit/_script.py:365: DeprecationWarning: `torch.jit.script_method` is deprecated. Please switch to `torch.compile` or `torch.export`.
+    warnings.warn(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+- generated xml file: ${NVME_WORKDIR}/gdn-mixed/20261021_014640/step1/full_tests.junit.xml -
+=========================== short test summary info ============================
+FAILED tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variant_equals_installed_bit_for_bit[baseline-prefill_only-fp32]
+FAILED tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variant_equals_installed_bit_for_bit[baseline-prefill_only-bf16]
+FAILED tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variants_match_vllm_standard_path[upstream-fp32]
+FAILED tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variants_match_vllm_standard_path[upstream-bf16]
+FAILED tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variants_match_vllm_standard_path[prefill_only-fp32]
+FAILED tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variants_match_vllm_standard_path[prefill_only-bf16]
+FAILED tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variants_match_vllm_standard_path[c16-fp32]
+FAILED tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variants_match_vllm_standard_path[c16-bf16]
+FAILED tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variants_match_vllm_standard_path[c64-fp32]
+FAILED tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variants_match_vllm_standard_path[long_continued-fp32]
+FAILED tools/drama3_bench/gdn_mixed/test_mixed_core_variants.py::test_variants_match_vllm_standard_path[long_continued-bf16]
+================= 11 failed, 26 passed, 14 warnings in 19.77s ==================

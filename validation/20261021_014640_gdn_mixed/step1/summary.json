@@ -1,0 +1,269 @@
+{
+  "timestamp": "2026-10-21T01:49:48+0800",
+  "fingerprint_gate_passed": true,
+  "fingerprint_sha256": "9af0a98c23727bea4e7f34c1cf3283d838ad7a84a741b2fa8f946d823a4292a9",
+  "full_pytest_exit": 1,
+  "collected": 37,
+  "counts": {
+    "passed": 26,
+    "failed": 11
+  },
+  "groups": {
+    "test_copy_is_the_installed_version": {
+      "passed": 1
+    },
+    "test_variant_equals_installed_bit_for_bit": {
+      "passed": 18,
+      "failed": 2
+    },
+    "test_variants_match_vllm_standard_path": {
+      "failed": 9,
+      "passed": 1
+    },
+    "test_non_contiguous_output_takes_the_copy": {
+      "passed": 2
+    },
+    "test_prompt_split_over_two_steps": {
+      "passed": 4
+    }
+  },
+  "step1_gate_passed": false,
+  "step2_started": false,
+  "step3_started": false,
+  "failures_interpretation": [
+    "Two baseline-vs-installed prefill_only cases fail torch.equal at output assertion; failure repr includes NaNs on both sides. Do not treat equal-NaN as a passing correctness check.",
+    "Nine standard-path comparison cases fail baseline output assert_close at line114 before later assertions/direct_out in those tests. The custom msg=baseline suppresses numerical-error detail.",
+    "These logs alone do not establish a production model bug or prove direct_out safe; no source/fixture/tolerance changes or reruns were performed."
+  ],
+  "snapshot_hashes_match": {
+    "tool_snapshot/drama3_bench/README.md": true,
+    "tool_snapshot/drama3_bench/aggregate_results.py": true,
+    "tool_snapshot/drama3_bench/analyze_audio.py": true,
+    "tool_snapshot/drama3_bench/encode_ref_codes.py": true,
+    "tool_snapshot/drama3_bench/eval_quality.py": true,
+    "tool_snapshot/drama3_bench/gdn_mixed/README.md": true,
+    "tool_snapshot/drama3_bench/gdn_mixed/bench_mixed_core.py": true,
+    "tool_snapshot/drama3_bench/gdn_mixed/drama3_gdn_harness.py": true,
+    "tool_snapshot/drama3_bench/gdn_mixed/drama3_gdn_probe.py": true,
+    "tool_snapshot/drama3_bench/gdn_mixed/drama3_gdn_variants.py": true,
+    "tool_snapshot/drama3_bench/gdn_mixed/probe_site/sitecustomize.py": true,
+    "tool_snapshot/drama3_bench/gdn_mixed/summarize_probe.py": true,
+    "tool_snapshot/drama3_bench/gdn_mixed/test_mixed_core_variants.py": true,
+    "tool_snapshot/drama3_bench/run_sweep.sh": true,
+    "tool_snapshot/drama3_bench/stream_bench.py": true,
+    "tool_snapshot/drama3_bench/thermal_gate.py": true
+  },
+  "server_head_after": "da572cddb38383deae9caef33b8d490e292ef071",
+  "server_tracked_status_after": "",
+  "gpu1_compute_apps_after": "",
+  "cleanup_complete": true,
+  "cases": [
+    {
+      "name": "test_copy_is_the_installed_version",
+      "status": "passed",
+      "duration_s": 8.871
+    },
+    {
+      "name": "test_variant_equals_installed_bit_for_bit[baseline-upstream-fp32]",
+      "status": "passed",
+      "duration_s": 0.866
+    },
+    {
+      "name": "test_variant_equals_installed_bit_for_bit[baseline-upstream-bf16]",
+      "status": "passed",
+      "duration_s": 0.098
+    },
+    {
+      "name": "test_variant_equals_installed_bit_for_bit[baseline-prefill_only-fp32]",
+      "status": "failed",
+      "duration_s": 0.138,
+      "message": "AssertionError: assert False\n +  where False = <built-in method equal of type object at 0x7fd17a9d2f20>(tensor([[[nan, nan, nan,  ..., nan, nan, nan],\\n         [nan, nan, nan,  ..., nan, nan, nan],\\n         [nan, nan, nan,  ..., nan, nan, nan],\\n         ...,\\n         [nan, nan, nan,  ..., nan, nan, nan],\\n         [nan, nan, nan,  ..., nan, nan, nan],\\n         [nan, nan, nan,  ..., nan, nan, nan]],\\n\\n        [[nan, nan, nan,  ..., nan, nan, nan],\\n         [nan, nan, nan,  ..., nan, nan, nan],\\n         [nan, nan, nan,  ..., nan, nan, nan],\\n         ...,\\n         [nan, nan, nan,  ..., nan, nan, nan],\\n         [nan, nan, nan,  ..., nan, nan, nan],\\n         [nan, nan, nan,  ..., nan, nan, nan]],\\n\\n        [[nan, nan, nan,  ..., nan, nan, nan],\\n         [nan, nan, nan,  ..., nan, nan, nan],\\n         [nan, nan, nan,  ..., nan, nan, nan],\\n         ...,\\n         [nan, nan, nan,  ..., nan, nan, nan],\\n         [nan, nan, nan,  ..., nan, nan, nan],\\n         [nan, nan, nan,  ..., nan, nan, nan]],\\n\\n        ...,\\n\\n        [[7., 7., 7.,  ..., 7., 7., 7.],\\n         [7., 7., 7.,  ..., 7., 7., 7.],\\n         [7., 7., 7.,  ..., 7., 7., 7.],\\n         ...,\\n         [7., 7., 7.,  ..., 7., 7., 7.],\\n         [7., 7., 7.,  ..., 7., 7., 7.],\\n         [7., 7., 7.,  ..., 7., 7., 7.]],\\n\\n        [[7., 7., 7.,  ..., 7., 7., 7.],\\n         [7., 7., 7.,  ..., 7., 7., 7.],\\n         [7., 7., 7.,  ..., 7., 7., 7.],\\n         ...,\\n         [7., 7., 7.,  ..., 7., 7., 7.],\\n         [7., 7., 7.,  ..., 7., 7., 7.],\\n         [7., 7., 7.,  ..., 7., 7., 7.]],\\n\\n        [[7., 7., 7.,  ..., 7., 7., 7.],\\n         [7., 7., 7.,  ..., 7., 7., 7.],\\n         [7., 7., 7.,  ..., 7., 7., 7.],\\n         ...,\\n         [7., 7., 7.,  ..., 7., 7., 7.],\\n         [7., 7., 7.,  ..., 7., 7., 7.],\\n         [7., 7., 7.,  ..., 7., 7., 7.]]], device='cuda:0',\\n       dtype=torch.bfloat16), tensor([[[nan, nan, nan,  ..., nan, nan, nan],\\n         [nan, nan, nan,  ..., nan, nan, nan],\\n         [nan, nan, nan,  ..., nan, nan, nan],\\n         ...,\\n         [nan, nan, nan,  ..., nan, nan, nan],\\n         [nan, nan, nan,  ..., nan, nan, nan],\\n         [nan, nan, nan,  ..., nan, nan, nan]],\\n\\n        [[nan, nan, nan,  ..., nan, nan, nan],\\n         [nan, nan, nan,  ..., nan, nan, nan],\\n         [nan, nan, nan,  ..., nan, nan, nan],\\n         ...,\\n         [nan, nan, nan,  ..., nan, nan, nan],\\n         [nan, nan, nan,  ..., nan, nan, nan],\\n         [nan, nan, nan,  ..., nan, nan, nan]],\\n\\n        [[nan, nan, nan,  ..., nan, nan, nan],\\n         [nan, nan, nan,  ..., nan, nan, nan],\\n         [nan, nan, nan,  ..., nan, nan, nan],\\n         ...,\\n         [nan, nan, nan,  ..., nan, nan, nan],\\n         [nan, nan, nan,  ..., nan, nan, nan],\\n         [nan, nan, nan,  ..., nan, nan, nan]],\\n\\n        ...,\\n\\n        [[7., 7., 7.,  ..., 7., 7., 7.],\\n         [7., 7., 7.,  ..., 7., 7., 7.],\\n         [7., 7., 7.,  ..., 7., 7., 7.],\\n         ...,\\n         [7., 7., 7.,  ..., 7., 7., 7.],\\n         [7., 7., 7.,  ..., 7., 7., 7.],\\n         [7., 7., 7.,  ..., 7., 7., 7.]],\\n\\n        [[7., 7., 7.,  ..., 7., 7., 7.],\\n         [7., 7., 7.,  ..., 7., 7., 7.],\\n         [7., 7., 7.,  ..., 7., 7., 7.],\\n         ...,\\n         [7., 7., 7.,  ..., 7., 7., 7.],\\n         [7., 7., 7.,  ..., 7., 7., 7.],\\n         [7., 7., 7.,  ..., 7., 7., 7.]],\\n\\n        [[7., 7., 7.,  ..., 7., 7., 7.],\\n         [7., 7., 7.,  ..., 7., 7., 7.],\\n         [7., 7., 7.,  ..., 7., 7., 7.],\\n         ...,\\n         [7., 7., 7.,  ..., 7., 7., 7.],\\n         [7., 7., 7.,  ..., 7., 7., 7.],\\n         [7., 7., 7.,  ..., 7., 7., 7.]]], device='cuda:0',\\n       dtype=torch.bfloat16))\n +    where <built-in method equal of type object at 0x7fd17a9d2f20> = torch.equal",
+      "failure_text": "variant = 'baseline', case = 'prefill_only', state_dtype = torch.float32\n\n    @pytest.mark.parametrize(\"state_dtype\", STATE_DTYPES, ids=[\"fp32\", \"bf16\"])\n    @pytest.mark.parametrize(\"case\", CASES)\n    @pytest.mark.parametrize(\"variant\", sorted(VARIANTS))\n    def test_variant_equals_installed_bit_for_bit(variant, case, state_dtype):\n        ref_out, ref_pools, (conv0, ssm0), step = _run(_installed(), case, state_dtype)\n        out, pools, _, _ = _run(VARIANTS[variant](), case, state_dtype)\n    \n>       assert torch.equal(out, ref_out)\nE       AssertionError: assert False\nE        +  where False = <built-in method equal of type object at 0x7fd17a9d2f20>(tensor([[[nan, nan, nan,  ..., nan, nan, nan],\\n         [nan, nan, nan,  ..., nan, nan, nan],\\n         [nan, nan, nan,  ..., nan, nan, nan],\\n         ...,\\n         [nan, nan, nan,  ..., nan, nan, nan],\\n         [nan, nan, nan,  ..., nan, nan, nan],\\n         [nan, nan, nan,  ..., nan, nan, nan]],\\n\\n        [[nan, nan, nan,  ..., nan, nan, nan],\\n         [nan, nan, nan,  ..., nan, nan, nan],\\n         [nan, nan, nan,  ..., nan, nan, nan],\\n         ...,\\n         [nan, nan, nan,  ..., nan, nan, nan],\\n         [nan, nan, nan,  ..., nan, nan, nan],\\n         [nan, nan, nan,  ..., nan, nan, nan]],\\n\\n        [[nan, nan, nan,  ..., nan, nan, nan],\\n         [nan, nan, nan,  ..., nan, nan, nan],\\n         [nan, nan, nan,  ..., nan, nan, nan],\\n         ...,\\n         [nan, nan, nan,  ..., nan, nan, nan],\\n         [nan, nan, nan,  ..., nan, nan, nan],\\n         [nan, nan, nan,  ..., nan, nan, nan]],\\n\\n        ...,\\n\\n        [[7., 7., 7.,  ..., 7., 7., 7.],\\n         [7., 7., 7.,  ..., 7., 7., 7.],\\n         [7., 7., 7.,  ..., 7., 7., 7.],\\n         ...,\\n         [7., 7., 7.,  ..., 7., 7., 7.],\\n         [7., 7., 7.,  ..., 7., 7., 7.],\\n         [7., 7., 7.,  ..., 7., 7., 7.]],\\n\\n        [[7., 7., 7.,  ..., 7., 7., 7.],\\n         [7., 7., 7.,  ..., 7., 7., 7.],\\n         [7., 7., 7.,  ..., 7., 7., 7.],\\n         ...,\\n         [7., 7., 7.,  ..., 7., 7., 7.],\\n         [7., 7., 7.,  ..., 7., 7., 7.],\\n         [7., 7., 7.,  ..., 7., 7., 7.]],\\n\\n        [[7., 7., 7.,  ..., 7., 7., 7.],\\n         [7., 7., 7.,  ..., 7., 7., 7.],\\n         [7., 7., 7.,  ..., 7., 7., 7.],\\n         ...,\\n         [7., 7., 7.,  ..., 7., 7., 7.],\\n         [7., 7., 7.,  ..., 7., 7., 7.],\\n         [7., 7., 7.,  ..., 7., 7., 7.]]], device='cuda:0',\\n       dtype=torch.bfloat16), tensor([[[nan, nan, nan,  ..., nan, nan, nan],\\n         [nan, nan, nan,  ..., nan, nan, nan],\\n         [nan, nan, nan,  ..., nan, nan, nan],\\n         ...,\\n         [nan, nan, nan,  ..., nan, nan, nan],\\n         [nan, nan, nan,  ..., nan, nan, nan],\\n         [nan, nan, nan,  ..., nan, nan, nan]],\\n\\n        [[nan, nan, nan,  ..., nan, nan, nan],\\n         [nan, nan, nan,  ..., nan, nan, nan],\\n         [nan, nan, nan,  ..., nan, nan, nan],\\n         ...,\\n         [nan, nan, nan,  ..., nan, nan, nan],\\n         [nan, nan, nan,  ..., nan, nan, nan],\\n         [nan, nan, nan,  ..., nan, nan, nan]],\\n\\n        [[nan, nan, nan,  ..., nan, nan, nan],\\n         [nan, nan, nan,  ..., nan, nan, nan],\\n         [nan, nan, nan,  ..., nan, nan, nan],\\n         ...,\\n         [nan, nan, nan,  ..., nan, nan, nan],\\n         [nan, nan, nan,  ..., nan, nan, nan],\\n         [nan, nan, nan,  ..., nan, nan, nan]],\\n\\n        ...,\\n\\n        [[7., 7., 7.,  ..., 7., 7., 7.],\\n         [7., 7., 7.,  ..., 7., 7., 7.],\\n         [7., 7., 7.,  ..., 7., 7., 7.],\\n         ...,\\n         [7., 7., 7.,  ..., 7., 7., 7.],\\n         [7., 7., 7.,  ..., 7., 7., 7.],\\n         [7., 7., 7.,  ..., 7., 7., 7.]],\\n\\n        [[7., 7., 7.,  ..., 7., 7., 7.],\\n         [7., 7., 7.,  ..., 7., 7., 7.],\\n         [7., 7., 7.,  ..., 7., 7., 7.],\\n         ...,\\n         [7., 7., 7.,  ..., 7., 7., 7.],\\n         [7., 7., 7.,  ..., 7., 7., 7.],\\n         [7., 7., 7.,  ..., 7., 7., 7.]],\\n\\n        [[7., 7., 7.,  ..., 7., 7., 7.],\\n         [7., 7., 7.,  ..., 7., 7., 7.],\\n         [7., 7., 7.,  ..., 7., 7., 7.],\\n         ...,\\n         [7., 7., 7.,  ..., 7., 7., 7.],\\n         [7., 7., 7.,  ..., 7., 7., 7.],\\n         [7., 7., 7.,  ..., 7., 7., 7.]]], device='cuda:0',\\n       dtype=torch.bfloat16))\nE        +    where <built-in method equal of type object at 0x7fd17a9d2f20> = torch.equal\n\ntools/drama3_bench/gdn_mixed/test_mixed_core_variants.py:87: AssertionError"
+    },
+    {
+      "name": "test_variant_equals_installed_bit_for_bit[baseline-prefill_only-bf16]",
+      "status": "failed",
+      "duration_s": 0.094,
+      "message": "AssertionError: assert False\n +  where False = <built-in method equal of type object at 0x7fd17a9d2f20>(tensor([[[nan, nan, nan,  ..., nan, nan, nan],\\n         [nan, nan, nan,  ..., nan, nan, nan],\\n         [nan, nan, nan,  ..., nan, nan, nan],\\n         ...,\\n         [nan, nan, nan,  ..., nan, nan, nan],\\n         [nan, nan, nan,  ..., nan, nan, nan],\\n         [nan, nan, nan,  ..., nan, nan, nan]],\\n\\n        [[nan, nan, nan,  ..., nan, nan, nan],\\n         [nan, nan, nan,  ..., nan, nan, nan],\\n         [nan, nan, nan,  ..., nan, nan, nan],\\n         ...,\\n         [nan, nan, nan,  ..., nan, nan, nan],\\n         [nan, nan, nan,  ..., nan, nan, nan],\\n         [nan, nan, nan,  ..., nan, nan, nan]],\\n\\n        [[nan, nan, nan,  ..., nan, nan, nan],\\n         [nan, nan, nan,  ..., nan, nan, nan],\\n         [nan, nan, nan,  ..., nan, nan, nan],\\n         ...,\\n         [nan, nan, nan,  ..., nan, nan, nan],\\n         [nan, nan, nan,  ..., nan, nan, nan],\\n         [nan, nan, nan,  ..., nan, nan, nan]],\\n\\n        ...,\\n\\n        [[7., 7., 7.,  ..., 7., 7., 7.],\\n         [7., 7., 7.,  ..., 7., 7., 7.],\\n         [7., 7., 7.,  ..., 7., 7., 7.],\\n         ...,\\n         [7., 7., 7.,  ..., 7., 7., 7.],\\n         [7., 7., 7.,  ..., 7., 7., 7.],\\n         [7., 7., 7.,  ..., 7., 7., 7.]],\\n\\n        [[7., 7., 7.,  ..., 7., 7., 7.],\\n         [7., 7., 7.,  ..., 7., 7., 7.],\\n         [7., 7., 7.,  ..., 7., 7., 7.],\\n         ...,\\n         [7., 7., 7.,  ..., 7., 7., 7.],\\n         [7., 7., 7.,  ..., 7., 7., 7.],\\n         [7., 7., 7.,  ..., 7., 7., 7.]],\\n\\n        [[7., 7., 7.,  ..., 7., 7., 7.],\\n         [7., 7., 7.,  ..., 7., 7., 7.],\\n         [7., 7., 7.,  ..., 7., 7., 7.],\\n         ...,\\n         [7., 7., 7.,  ..., 7., 7., 7.],\\n         [7., 7., 7.,  ..., 7., 7., 7.],\\n         [7., 7., 7.,  ..., 7., 7., 7.]]], device='cuda:0',\\n       dtype=torch.bfloat16), tensor([[[nan, nan, nan,  ..., nan, nan, nan],\\n         [nan, nan, nan,  ..., nan, nan, nan],\\n         [nan, nan, nan,  ..., nan, nan, nan],\\n         ...,\\n         [nan, nan, nan,  ..., nan, nan, nan],\\n         [nan, nan, nan,  ..., nan, nan, nan],\\n         [nan, nan, nan,  ..., nan, nan, nan]],\\n\\n        [[nan, nan, nan,  ..., nan, nan, nan],\\n         [nan, nan, nan,  ..., nan, nan, nan],\\n         [nan, nan, nan,  ..., nan, nan, nan],\\n         ...,\\n         [nan, nan, nan,  ..., nan, nan, nan],\\n         [nan, nan, nan,  ..., nan, nan, nan],\\n         [nan, nan, nan,  ..., nan, nan, nan]],\\n\\n        [[nan, nan, nan,  ..., nan, nan, nan],\\n         [nan, nan, nan,  ..., nan, nan, nan],\\n         [nan, nan, nan,  ..., nan, nan, nan],\\n         ...,\\n         [nan, nan, nan,  ..., nan, nan, nan],\\n         [nan, nan, nan,  ..., nan, nan, nan],\\n         [nan, nan, nan,  ..., nan, nan, nan]],\\n\\n        ...,\\n\\n        [[7., 7., 7.,  ..., 7., 7., 7.],\\n         [7., 7., 7.,  ..., 7., 7., 7.],\\n         [7., 7., 7.,  ..., 7., 7., 7.],\\n         ...,\\n         [7., 7., 7.,  ..., 7., 7., 7.],\\n         [7., 7., 7.,  ..., 7., 7., 7.],\\n         [7., 7., 7.,  ..., 7., 7., 7.]],\\n\\n        [[7., 7., 7.,  ..., 7., 7., 7.],\\n         [7., 7., 7.,  ..., 7., 7., 7.],\\n         [7., 7., 7.,  ..., 7., 7., 7.],\\n         ...,\\n         [7., 7., 7.,  ..., 7., 7., 7.],\\n         [7., 7., 7.,  ..., 7., 7., 7.],\\n         [7., 7., 7.,  ..., 7., 7., 7.]],\\n\\n        [[7., 7., 7.,  ..., 7., 7., 7.],\\n         [7., 7., 7.,  ..., 7., 7., 7.],\\n         [7., 7., 7.,  ..., 7., 7., 7.],\\n         ...,\\n         [7., 7., 7.,  ..., 7., 7., 7.],\\n         [7., 7., 7.,  ..., 7., 7., 7.],\\n         [7., 7., 7.,  ..., 7., 7., 7.]]], device='cuda:0',\\n       dtype=torch.bfloat16))\n +    where <built-in method equal of type object at 0x7fd17a9d2f20> = torch.equal",
+      "failure_text": "variant = 'baseline', case = 'prefill_only', state_dtype = torch.bfloat16\n\n    @pytest.mark.parametrize(\"state_dtype\", STATE_DTYPES, ids=[\"fp32\", \"bf16\"])\n    @pytest.mark.parametrize(\"case\", CASES)\n    @pytest.mark.parametrize(\"variant\", sorted(VARIANTS))\n    def test_variant_equals_installed_bit_for_bit(variant, case, state_dtype):\n        ref_out, ref_pools, (conv0, ssm0), step = _run(_installed(), case, state_dtype)\n        out, pools, _, _ = _run(VARIANTS[variant](), case, state_dtype)\n    \n>       assert torch.equal(out, ref_out)\nE       AssertionError: assert False\nE        +  where False = <built-in method equal of type object at 0x7fd17a9d2f20>(tensor([[[nan, nan, nan,  ..., nan, nan, nan],\\n         [nan, nan, nan,  ..., nan, nan, nan],\\n         [nan, nan, nan,  ..., nan, nan, nan],\\n         ...,\\n         [nan, nan, nan,  ..., nan, nan, nan],\\n         [nan, nan, nan,  ..., nan, nan, nan],\\n         [nan, nan, nan,  ..., nan, nan, nan]],\\n\\n        [[nan, nan, nan,  ..., nan, nan, nan],\\n         [nan, nan, nan,  ..., nan, nan, nan],\\n         [nan, nan, nan,  ..., nan, nan, nan],\\n         ...,\\n         [nan, nan, nan,  ..., nan, nan, nan],\\n         [nan, nan, nan,  ..., nan, nan, nan],\\n         [nan, nan, nan,  ..., nan, nan, nan]],\\n\\n        [[nan, nan, nan,  ..., nan, nan, nan],\\n         [nan, nan, nan,  ..., nan, nan, nan],\\n         [nan, nan, nan,  ..., nan, nan, nan],\\n         ...,\\n         [nan, nan, nan,  ..., nan, nan, nan],\\n         [nan, nan, nan,  ..., nan, nan, nan],\\n         [nan, nan, nan,  ..., nan, nan, nan]],\\n\\n        ...,\\n\\n        [[7., 7., 7.,  ..., 7., 7., 7.],\\n         [7., 7., 7.,  ..., 7., 7., 7.],\\n         [7., 7., 7.,  ..., 7., 7., 7.],\\n         ...,\\n         [7., 7., 7.,  ..., 7., 7., 7.],\\n         [7., 7., 7.,  ..., 7., 7., 7.],\\n         [7., 7., 7.,  ..., 7., 7., 7.]],\\n\\n        [[7., 7., 7.,  ..., 7., 7., 7.],\\n         [7., 7., 7.,  ..., 7., 7., 7.],\\n         [7., 7., 7.,  ..., 7., 7., 7.],\\n         ...,\\n         [7., 7., 7.,  ..., 7., 7., 7.],\\n         [7., 7., 7.,  ..., 7., 7., 7.],\\n         [7., 7., 7.,  ..., 7., 7., 7.]],\\n\\n        [[7., 7., 7.,  ..., 7., 7., 7.],\\n         [7., 7., 7.,  ..., 7., 7., 7.],\\n         [7., 7., 7.,  ..., 7., 7., 7.],\\n         ...,\\n         [7., 7., 7.,  ..., 7., 7., 7.],\\n         [7., 7., 7.,  ..., 7., 7., 7.],\\n         [7., 7., 7.,  ..., 7., 7., 7.]]], device='cuda:0',\\n       dtype=torch.bfloat16), tensor([[[nan, nan, nan,  ..., nan, nan, nan],\\n         [nan, nan, nan,  ..., nan, nan, nan],\\n         [nan, nan, nan,  ..., nan, nan, nan],\\n         ...,\\n         [nan, nan, nan,  ..., nan, nan, nan],\\n         [nan, nan, nan,  ..., nan, nan, nan],\\n         [nan, nan, nan,  ..., nan, nan, nan]],\\n\\n        [[nan, nan, nan,  ..., nan, nan, nan],\\n         [nan, nan, nan,  ..., nan, nan, nan],\\n         [nan, nan, nan,  ..., nan, nan, nan],\\n         ...,\\n         [nan, nan, nan,  ..., nan, nan, nan],\\n         [nan, nan, nan,  ..., nan, nan, nan],\\n         [nan, nan, nan,  ..., nan, nan, nan]],\\n\\n        [[nan, nan, nan,  ..., nan, nan, nan],\\n         [nan, nan, nan,  ..., nan, nan, nan],\\n         [nan, nan, nan,  ..., nan, nan, nan],\\n         ...,\\n         [nan, nan, nan,  ..., nan, nan, nan],\\n         [nan, nan, nan,  ..., nan, nan, nan],\\n         [nan, nan, nan,  ..., nan, nan, nan]],\\n\\n        ...,\\n\\n        [[7., 7., 7.,  ..., 7., 7., 7.],\\n         [7., 7., 7.,  ..., 7., 7., 7.],\\n         [7., 7., 7.,  ..., 7., 7., 7.],\\n         ...,\\n         [7., 7., 7.,  ..., 7., 7., 7.],\\n         [7., 7., 7.,  ..., 7., 7., 7.],\\n         [7., 7., 7.,  ..., 7., 7., 7.]],\\n\\n        [[7., 7., 7.,  ..., 7., 7., 7.],\\n         [7., 7., 7.,  ..., 7., 7., 7.],\\n         [7., 7., 7.,  ..., 7., 7., 7.],\\n         ...,\\n         [7., 7., 7.,  ..., 7., 7., 7.],\\n         [7., 7., 7.,  ..., 7., 7., 7.],\\n         [7., 7., 7.,  ..., 7., 7., 7.]],\\n\\n        [[7., 7., 7.,  ..., 7., 7., 7.],\\n         [7., 7., 7.,  ..., 7., 7., 7.],\\n         [7., 7., 7.,  ..., 7., 7., 7.],\\n         ...,\\n         [7., 7., 7.,  ..., 7., 7., 7.],\\n         [7., 7., 7.,  ..., 7., 7., 7.],\\n         [7., 7., 7.,  ..., 7., 7., 7.]]], device='cuda:0',\\n       dtype=torch.bfloat16))\nE        +    where <built-in method equal of type object at 0x7fd17a9d2f20> = torch.equal\n\ntools/drama3_bench/gdn_mixed/test_mixed_core_variants.py:87: AssertionError"
+    },
+    {
+      "name": "test_variant_equals_installed_bit_for_bit[baseline-c16-fp32]",
+      "status": "passed",
+      "duration_s": 0.427
+    },
+    {
+      "name": "test_variant_equals_installed_bit_for_bit[baseline-c16-bf16]",
+      "status": "passed",
+      "duration_s": 0.196
+    },
+    {
+      "name": "test_variant_equals_installed_bit_for_bit[baseline-c64-fp32]",
+      "status": "passed",
+      "duration_s": 0.617
+    },
+    {
+      "name": "test_variant_equals_installed_bit_for_bit[baseline-c64-bf16]",
+      "status": "passed",
+      "duration_s": 0.634
+    },
+    {
+      "name": "test_variant_equals_installed_bit_for_bit[baseline-long_continued-fp32]",
+      "status": "passed",
+      "duration_s": 0.178
+    },
+    {
+      "name": "test_variant_equals_installed_bit_for_bit[baseline-long_continued-bf16]",
+      "status": "passed",
+      "duration_s": 0.206
+    },
+    {
+      "name": "test_variant_equals_installed_bit_for_bit[direct_out-upstream-fp32]",
+      "status": "passed",
+      "duration_s": 0.079
+    },
+    {
+      "name": "test_variant_equals_installed_bit_for_bit[direct_out-upstream-bf16]",
+      "status": "passed",
+      "duration_s": 0.117
+    },
+    {
+      "name": "test_variant_equals_installed_bit_for_bit[direct_out-prefill_only-fp32]",
+      "status": "passed",
+      "duration_s": 0.073
+    },
+    {
+      "name": "test_variant_equals_installed_bit_for_bit[direct_out-prefill_only-bf16]",
+      "status": "passed",
+      "duration_s": 0.076
+    },
+    {
+      "name": "test_variant_equals_installed_bit_for_bit[direct_out-c16-fp32]",
+      "status": "passed",
+      "duration_s": 0.201
+    },
+    {
+      "name": "test_variant_equals_installed_bit_for_bit[direct_out-c16-bf16]",
+      "status": "passed",
+      "duration_s": 0.204
+    },
+    {
+      "name": "test_variant_equals_installed_bit_for_bit[direct_out-c64-fp32]",
+      "status": "passed",
+      "duration_s": 0.602
+    },
+    {
+      "name": "test_variant_equals_installed_bit_for_bit[direct_out-c64-bf16]",
+      "status": "passed",
+      "duration_s": 0.616
+    },
+    {
+      "name": "test_variant_equals_installed_bit_for_bit[direct_out-long_continued-fp32]",
+      "status": "passed",
+      "duration_s": 0.178
+    },
+    {
+      "name": "test_variant_equals_installed_bit_for_bit[direct_out-long_continued-bf16]",
+      "status": "passed",
+      "duration_s": 0.227
+    },
+    {
+      "name": "test_variants_match_vllm_standard_path[upstream-fp32]",
+      "status": "failed",
+      "duration_s": 0.101,
+      "message": "AssertionError: baseline",
+      "failure_text": "monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7fcff85be5d0>\ncase = 'upstream', state_dtype = torch.float32\n\n    @pytest.mark.parametrize(\"state_dtype\", STATE_DTYPES, ids=[\"fp32\", \"bf16\"])\n    @pytest.mark.parametrize(\"case\", CASES)\n    def test_variants_match_vllm_standard_path(monkeypatch, case, state_dtype):\n        from vllm.model_executor.layers.mamba.gdn import qwen_gdn_linear_attn as gdn_module\n        from vllm.model_executor.layers.mamba.gdn.qwen_gdn_linear_attn import QwenGatedDeltaNetAttention\n    \n        def standard(layer, mixed_qkv, b, a, out, _md):\n            QwenGatedDeltaNetAttention._forward_core(layer, mixed_qkv, b, a, out)\n    \n        def bind(md):\n            monkeypatch.setattr(gdn_module, \"get_forward_context\", lambda: types.SimpleNamespace(attn_metadata={\"gdn\": md}))\n    \n        ref_out, ref_pools, _, step = _run(standard, case, state_dtype, before_call=bind)\n        tol = 2e-3 if state_dtype == torch.float32 else 1e-2  # one bf16 ulp on a bf16 pool, as upstream\n        for name, make in VARIANTS.items():\n            out, pools, _, _ = _run(make(), case, state_dtype)\n>           torch.testing.assert_close(\n                out[: step.tokens].float(), ref_out[: step.tokens].float(), atol=2e-2, rtol=2e-2, msg=name\n            )\nE           AssertionError: baseline\n\ntools/drama3_bench/gdn_mixed/test_mixed_core_variants.py:114: AssertionError"
+    },
+    {
+      "name": "test_variants_match_vllm_standard_path[upstream-bf16]",
+      "status": "failed",
+      "duration_s": 0.104,
+      "message": "AssertionError: baseline",
+      "failure_text": "monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7fcff85ff710>\ncase = 'upstream', state_dtype = torch.bfloat16\n\n    @pytest.mark.parametrize(\"state_dtype\", STATE_DTYPES, ids=[\"fp32\", \"bf16\"])\n    @pytest.mark.parametrize(\"case\", CASES)\n    def test_variants_match_vllm_standard_path(monkeypatch, case, state_dtype):\n        from vllm.model_executor.layers.mamba.gdn import qwen_gdn_linear_attn as gdn_module\n        from vllm.model_executor.layers.mamba.gdn.qwen_gdn_linear_attn import QwenGatedDeltaNetAttention\n    \n        def standard(layer, mixed_qkv, b, a, out, _md):\n            QwenGatedDeltaNetAttention._forward_core(layer, mixed_qkv, b, a, out)\n    \n        def bind(md):\n            monkeypatch.setattr(gdn_module, \"get_forward_context\", lambda: types.SimpleNamespace(attn_metadata={\"gdn\": md}))\n    \n        ref_out, ref_pools, _, step = _run(standard, case, state_dtype, before_call=bind)\n        tol = 2e-3 if state_dtype == torch.float32 else 1e-2  # one bf16 ulp on a bf16 pool, as upstream\n        for name, make in VARIANTS.items():\n            out, pools, _, _ = _run(make(), case, state_dtype)\n>           torch.testing.assert_close(\n                out[: step.tokens].float(), ref_out[: step.tokens].float(), atol=2e-2, rtol=2e-2, msg=name\n            )\nE           AssertionError: baseline\n\ntools/drama3_bench/gdn_mixed/test_mixed_core_variants.py:114: AssertionError"
+    },
+    {
+      "name": "test_variants_match_vllm_standard_path[prefill_only-fp32]",
+      "status": "failed",
+      "duration_s": 0.082,
+      "message": "AssertionError: baseline",
+      "failure_text": "monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7fcff85ff800>\ncase = 'prefill_only', state_dtype = torch.float32\n\n    @pytest.mark.parametrize(\"state_dtype\", STATE_DTYPES, ids=[\"fp32\", \"bf16\"])\n    @pytest.mark.parametrize(\"case\", CASES)\n    def test_variants_match_vllm_standard_path(monkeypatch, case, state_dtype):\n        from vllm.model_executor.layers.mamba.gdn import qwen_gdn_linear_attn as gdn_module\n        from vllm.model_executor.layers.mamba.gdn.qwen_gdn_linear_attn import QwenGatedDeltaNetAttention\n    \n        def standard(layer, mixed_qkv, b, a, out, _md):\n            QwenGatedDeltaNetAttention._forward_core(layer, mixed_qkv, b, a, out)\n    \n        def bind(md):\n            monkeypatch.setattr(gdn_module, \"get_forward_context\", lambda: types.SimpleNamespace(attn_metadata={\"gdn\": md}))\n    \n        ref_out, ref_pools, _, step = _run(standard, case, state_dtype, before_call=bind)\n        tol = 2e-3 if state_dtype == torch.float32 else 1e-2  # one bf16 ulp on a bf16 pool, as upstream\n        for name, make in VARIANTS.items():\n            out, pools, _, _ = _run(make(), case, state_dtype)\n>           torch.testing.assert_close(\n                out[: step.tokens].float(), ref_out[: step.tokens].float(), atol=2e-2, rtol=2e-2, msg=name\n            )\nE           AssertionError: baseline\n\ntools/drama3_bench/gdn_mixed/test_mixed_core_variants.py:114: AssertionError"
+    },
+    {
+      "name": "test_variants_match_vllm_standard_path[prefill_only-bf16]",
+      "status": "failed",
+      "duration_s": 0.095,
+      "message": "AssertionError: baseline",
+      "failure_text": "monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7fcff865e0f0>\ncase = 'prefill_only', state_dtype = torch.bfloat16\n\n    @pytest.mark.parametrize(\"state_dtype\", STATE_DTYPES, ids=[\"fp32\", \"bf16\"])\n    @pytest.mark.parametrize(\"case\", CASES)\n    def test_variants_match_vllm_standard_path(monkeypatch, case, state_dtype):\n        from vllm.model_executor.layers.mamba.gdn import qwen_gdn_linear_attn as gdn_module\n        from vllm.model_executor.layers.mamba.gdn.qwen_gdn_linear_attn import QwenGatedDeltaNetAttention\n    \n        def standard(layer, mixed_qkv, b, a, out, _md):\n            QwenGatedDeltaNetAttention._forward_core(layer, mixed_qkv, b, a, out)\n    \n        def bind(md):\n            monkeypatch.setattr(gdn_module, \"get_forward_context\", lambda: types.SimpleNamespace(attn_metadata={\"gdn\": md}))\n    \n        ref_out, ref_pools, _, step = _run(standard, case, state_dtype, before_call=bind)\n        tol = 2e-3 if state_dtype == torch.float32 else 1e-2  # one bf16 ulp on a bf16 pool, as upstream\n        for name, make in VARIANTS.items():\n            out, pools, _, _ = _run(make(), case, state_dtype)\n>           torch.testing.assert_close(\n                out[: step.tokens].float(), ref_out[: step.tokens].float(), atol=2e-2, rtol=2e-2, msg=name\n            )\nE           AssertionError: baseline\n\ntools/drama3_bench/gdn_mixed/test_mixed_core_variants.py:114: AssertionError"
+    },
+    {
+      "name": "test_variants_match_vllm_standard_path[c16-fp32]",
+      "status": "failed",
+      "duration_s": 0.211,
+      "message": "AssertionError: baseline",
+      "failure_text": "monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7fcff865c500>\ncase = 'c16', state_dtype = torch.float32\n\n    @pytest.mark.parametrize(\"state_dtype\", STATE_DTYPES, ids=[\"fp32\", \"bf16\"])\n    @pytest.mark.parametrize(\"case\", CASES)\n    def test_variants_match_vllm_standard_path(monkeypatch, case, state_dtype):\n        from vllm.model_executor.layers.mamba.gdn import qwen_gdn_linear_attn as gdn_module\n        from vllm.model_executor.layers.mamba.gdn.qwen_gdn_linear_attn import QwenGatedDeltaNetAttention\n    \n        def standard(layer, mixed_qkv, b, a, out, _md):\n            QwenGatedDeltaNetAttention._forward_core(layer, mixed_qkv, b, a, out)\n    \n        def bind(md):\n            monkeypatch.setattr(gdn_module, \"get_forward_context\", lambda: types.SimpleNamespace(attn_metadata={\"gdn\": md}))\n    \n        ref_out, ref_pools, _, step = _run(standard, case, state_dtype, before_call=bind)\n        tol = 2e-3 if state_dtype == torch.float32 else 1e-2  # one bf16 ulp on a bf16 pool, as upstream\n        for name, make in VARIANTS.items():\n            out, pools, _, _ = _run(make(), case, state_dtype)\n>           torch.testing.assert_close(\n                out[: step.tokens].float(), ref_out[: step.tokens].float(), atol=2e-2, rtol=2e-2, msg=name\n            )\nE           AssertionError: baseline\n\ntools/drama3_bench/gdn_mixed/test_mixed_core_variants.py:114: AssertionError"
+    },
+    {
+      "name": "test_variants_match_vllm_standard_path[c16-bf16]",
+      "status": "failed",
+      "duration_s": 0.209,
+      "message": "AssertionError: baseline",
+      "failure_text": "monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7fcff865dc70>\ncase = 'c16', state_dtype = torch.bfloat16\n\n    @pytest.mark.parametrize(\"state_dtype\", STATE_DTYPES, ids=[\"fp32\", \"bf16\"])\n    @pytest.mark.parametrize(\"case\", CASES)\n    def test_variants_match_vllm_standard_path(monkeypatch, case, state_dtype):\n        from vllm.model_executor.layers.mamba.gdn import qwen_gdn_linear_attn as gdn_module\n        from vllm.model_executor.layers.mamba.gdn.qwen_gdn_linear_attn import QwenGatedDeltaNetAttention\n    \n        def standard(layer, mixed_qkv, b, a, out, _md):\n            QwenGatedDeltaNetAttention._forward_core(layer, mixed_qkv, b, a, out)\n    \n        def bind(md):\n            monkeypatch.setattr(gdn_module, \"get_forward_context\", lambda: types.SimpleNamespace(attn_metadata={\"gdn\": md}))\n    \n        ref_out, ref_pools, _, step = _run(standard, case, state_dtype, before_call=bind)\n        tol = 2e-3 if state_dtype == torch.float32 else 1e-2  # one bf16 ulp on a bf16 pool, as upstream\n        for name, make in VARIANTS.items():\n            out, pools, _, _ = _run(make(), case, state_dtype)\n>           torch.testing.assert_close(\n                out[: step.tokens].float(), ref_out[: step.tokens].float(), atol=2e-2, rtol=2e-2, msg=name\n            )\nE           AssertionError: baseline\n\ntools/drama3_bench/gdn_mixed/test_mixed_core_variants.py:114: AssertionError"
+    },
+    {
+      "name": "test_variants_match_vllm_standard_path[c64-fp32]",
+      "status": "failed",
+      "duration_s": 0.621,
+      "message": "AssertionError: baseline",
+      "failure_text": "monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7fcff865c590>\ncase = 'c64', state_dtype = torch.float32\n\n    @pytest.mark.parametrize(\"state_dtype\", STATE_DTYPES, ids=[\"fp32\", \"bf16\"])\n    @pytest.mark.parametrize(\"case\", CASES)\n    def test_variants_match_vllm_standard_path(monkeypatch, case, state_dtype):\n        from vllm.model_executor.layers.mamba.gdn import qwen_gdn_linear_attn as gdn_module\n        from vllm.model_executor.layers.mamba.gdn.qwen_gdn_linear_attn import QwenGatedDeltaNetAttention\n    \n        def standard(layer, mixed_qkv, b, a, out, _md):\n            QwenGatedDeltaNetAttention._forward_core(layer, mixed_qkv, b, a, out)\n    \n        def bind(md):\n            monkeypatch.setattr(gdn_module, \"get_forward_context\", lambda: types.SimpleNamespace(attn_metadata={\"gdn\": md}))\n    \n        ref_out, ref_pools, _, step = _run(standard, case, state_dtype, before_call=bind)\n        tol = 2e-3 if state_dtype == torch.float32 else 1e-2  # one bf16 ulp on a bf16 pool, as upstream\n        for name, make in VARIANTS.items():\n            out, pools, _, _ = _run(make(), case, state_dtype)\n>           torch.testing.assert_close(\n                out[: step.tokens].float(), ref_out[: step.tokens].float(), atol=2e-2, rtol=2e-2, msg=name\n            )\nE           AssertionError: baseline\n\ntools/drama3_bench/gdn_mixed/test_mixed_core_variants.py:114: AssertionError"
+    },
+    {
+      "name": "test_variants_match_vllm_standard_path[c64-bf16]",
+      "status": "passed",
+      "duration_s": 0.967
+    },
+    {
+      "name": "test_variants_match_vllm_standard_path[long_continued-fp32]",
+      "status": "failed",
+      "duration_s": 0.211,
+      "message": "AssertionError: baseline",
+      "failure_text": "monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7fcff865f920>\ncase = 'long_continued', state_dtype = torch.float32\n\n    @pytest.mark.parametrize(\"state_dtype\", STATE_DTYPES, ids=[\"fp32\", \"bf16\"])\n    @pytest.mark.parametrize(\"case\", CASES)\n    def test_variants_match_vllm_standard_path(monkeypatch, case, state_dtype):\n        from vllm.model_executor.layers.mamba.gdn import qwen_gdn_linear_attn as gdn_module\n        from vllm.model_executor.layers.mamba.gdn.qwen_gdn_linear_attn import QwenGatedDeltaNetAttention\n    \n        def standard(layer, mixed_qkv, b, a, out, _md):\n            QwenGatedDeltaNetAttention._forward_core(layer, mixed_qkv, b, a, out)\n    \n        def bind(md):\n            monkeypatch.setattr(gdn_module, \"get_forward_context\", lambda: types.SimpleNamespace(attn_metadata={\"gdn\": md}))\n    \n        ref_out, ref_pools, _, step = _run(standard, case, state_dtype, before_call=bind)\n        tol = 2e-3 if state_dtype == torch.float32 else 1e-2  # one bf16 ulp on a bf16 pool, as upstream\n        for name, make in VARIANTS.items():\n            out, pools, _, _ = _run(make(), case, state_dtype)\n>           torch.testing.assert_close(\n                out[: step.tokens].float(), ref_out[: step.tokens].float(), atol=2e-2, rtol=2e-2, msg=name\n            )\nE           AssertionError: baseline\n\ntools/drama3_bench/gdn_mixed/test_mixed_core_variants.py:114: AssertionError"
+    },
+    {
+      "name": "test_variants_match_vllm_standard_path[long_continued-bf16]",
+      "status": "failed",
+      "duration_s": 0.228,
+      "message": "AssertionError: baseline",
+      "failure_text": "monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7fcff85bd670>\ncase = 'long_continued', state_dtype = torch.bfloat16\n\n    @pytest.mark.parametrize(\"state_dtype\", STATE_DTYPES, ids=[\"fp32\", \"bf16\"])\n    @pytest.mark.parametrize(\"case\", CASES)\n    def test_variants_match_vllm_standard_path(monkeypatch, case, state_dtype):\n        from vllm.model_executor.layers.mamba.gdn import qwen_gdn_linear_attn as gdn_module\n        from vllm.model_executor.layers.mamba.gdn.qwen_gdn_linear_attn import QwenGatedDeltaNetAttention\n    \n        def standard(layer, mixed_qkv, b, a, out, _md):\n            QwenGatedDeltaNetAttention._forward_core(layer, mixed_qkv, b, a, out)\n    \n        def bind(md):\n            monkeypatch.setattr(gdn_module, \"get_forward_context\", lambda: types.SimpleNamespace(attn_metadata={\"gdn\": md}))\n    \n        ref_out, ref_pools, _, step = _run(standard, case, state_dtype, before_call=bind)\n        tol = 2e-3 if state_dtype == torch.float32 else 1e-2  # one bf16 ulp on a bf16 pool, as upstream\n        for name, make in VARIANTS.items():\n            out, pools, _, _ = _run(make(), case, state_dtype)\n>           torch.testing.assert_close(\n                out[: step.tokens].float(), ref_out[: step.tokens].float(), atol=2e-2, rtol=2e-2, msg=name\n            )\nE           AssertionError: baseline\n\ntools/drama3_bench/gdn_mixed/test_mixed_core_variants.py:114: AssertionError"
+    },
+    {
+      "name": "test_non_contiguous_output_takes_the_copy[fp32]",
+      "status": "passed",
+      "duration_s": 0.081
+    },
+    {
+      "name": "test_non_contiguous_output_takes_the_copy[bf16]",
+      "status": "passed",
+      "duration_s": 0.08
+    },
+    {
+      "name": "test_prompt_split_over_two_steps[baseline-fp32]",
+      "status": "passed",
+      "duration_s": 0.116
+    },
+    {
+      "name": "test_prompt_split_over_two_steps[baseline-bf16]",
+      "status": "passed",
+      "duration_s": 0.13
+    },
+    {
+      "name": "test_prompt_split_over_two_steps[direct_out-fp32]",
+      "status": "passed",
+      "duration_s": 0.129
+    },
+    {
+      "name": "test_prompt_split_over_two_steps[direct_out-bf16]",
+      "status": "passed",
+      "duration_s": 0.128
+    }
+  ]
+}
