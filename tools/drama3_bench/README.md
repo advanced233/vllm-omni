@@ -5,7 +5,8 @@
 | 文件 | 作用 | 运行环境 |
 | --- | --- | --- |
 | `encode_ref_codes.py` | 把 Seed-TTS-Eval 每行的参考音频离线编码成 `ref_audio_codes` | vLLM-Omni 环境 + CUDA GPU |
-| `stream_bench.py` | 闭环流式压测一个并发档位，输出 `summary.json` / `requests.jsonl` | 只需要 `aiohttp`、`numpy`（vLLM 环境里都有；有 `uvloop` 会自动使用） |
+| `stream_bench.py` | 闭环流式压测一个并发档位，输出 `summary.json` / `requests.jsonl`；可选热降频分段模式（第 8 节） | 只需要 `aiohttp`、`numpy`（vLLM 环境里都有；有 `uvloop` 会自动使用） |
+| `thermal_gate.py` | 分段模式用的 GPU 温度与降频原因监视器（`stream_bench.py` 自动调用） | `nvidia-smi` |
 | `run_sweep.sh` | 多档并发扫描，每次都重启服务，同时记录 GPU 时钟、功耗和降频原因 | bash、curl、nvidia-smi |
 | `aggregate_results.py` | 把多次运行汇总成 #8933 那样的表格，重复运行取平均 | Python 3.10+ |
 | `analyze_audio.py` | 排查音频：卡死（持续底噪）、语速、句中停顿，以及停顿是否落在 codec 窗口边界上 | `numpy` |
@@ -132,6 +133,32 @@ profile 和正式性能数据分开跑：profiler 本身有开销，profile 运�
    ```
 3. 先用 `stream_bench.py` 以目标并发持续压测，等 20–30 s 进入稳态，再执行 `curl -X POST localhost:8091/start_profile -H 'Content-Type: application/json' -d '{"stages":[0,1]}'`，采 5–10 s 后 `/stop_profile`。trace 文件很大，不要采整轮。
 4. 看什么：stage 0 一个纯 decode 步的总时长，以及其中 Marlin MoE、GDN（decode 递推、因果卷积）、full attention、codebook tower、采样各占多少；含 prefill 的混合步多长、多频繁；stage 1 DAC 的 kernel 和 stage 0 重叠时，stage 0 的 kernel 被拖慢了多少；还有 CPU 侧有没有空隙。
+
+## 8. 热降频时分段测（thermal gate）
+
+散热解决不了时，用分段模式只在 GPU 没有降频的时间里测量：
+
+```bash
+python tools/drama3_bench/stream_bench.py --codes ${WORKDIR}/ref_codes_en.jsonl --concurrency 16 \
+    --thermal-gate --gpu-index 1 --pause-temp 80 --resume-temp 60 --ramp-s 3 \
+    --label gated-default --out results/gated_c16
+# 扫描时通过 BENCH_ARGS 传入
+BENCH_ARGS="--thermal-gate --gpu-index 1 --pause-temp 80 --resume-temp 60 --ramp-s 3" ... bash tools/drama3_bench/run_sweep.sh
+```
+
+- **运行方式**：
+  - GPU 降到 `--resume-temp` 以下、并且连续 `--cool-hold-s`（默认 3 s）没有降频原因，才开始一段。
+  - 温度到 `--pause-temp`，或出现被监视的降频原因时，整段停止派发新请求（所有 worker 一起停，不会以更少的并发继续跑），在途请求跑完，然后等降温，再接着发剩下的行。
+- **漏网的降频**：如果一段里还是出现了降频，这一段在降频开始的时刻截止。截止前已完成的请求保留；当时还在途的请求作废，记入 `requests_discarded.jsonl`，之后在新的一段里重跑。之后的段会把暂停温度调低 2°C。
+- **结果怎么看**：
+  - 冷却等待不计入任何时长。
+  - 每段都有起步和收尾，全程吞吐会偏低，比较时请用 `full_concurrency_window` 的吞吐；延迟用 `steady` 一栏，只统计整个生命周期都处在满并发窗口里的请求。
+  - `summary.json` 的 `thermal_gate` 里有每一段的请求数、时长、窗口、温度范围、SM 频率中位数、出现过的降频原因、功耗封顶的采样比例，以及结束原因。
+- **温度怎么设**：先看 `nvidia-smi -q -d TEMPERATURE` 里本卡的 "GPU Max Operating Temp" / "GPU Slowdown Temp"。B1 里软件热降频大约在 84–86°C 出现，所以默认在 80°C 暂停、60°C 恢复。跑完第一次后看每段日志，调整这两个值。
+- **起步错峰**：`--ramp-s` 让 worker 在这么多秒内依次开始，避免每段一开头就同时涌入 C 个 prefill。建议设成该并发下一条请求的典型时长（几秒）。
+- **降频原因**：`--gate-reasons` 默认 `0x68`（软件热降频、硬件热降频、硬件降速）。A100 PCIe 的功耗上限是 300 W，如果也要排除功耗封顶，用 `0x6c`。
+- **可比性**：分段模式和一次跑完是两种测法。分段测的结果只和分段测的结果比较，交替运行对照组和实验组时也一样。
+- **校验范围**：用模拟负载和温度的假 `nvidia-smi` 测过（升温、暂停、降温、恢复，降频截断和重跑，所有行恰好各保留一次），**还没在真实 GPU 上跑过**。
 
 ## 口径（和 #8933 对照）
 
