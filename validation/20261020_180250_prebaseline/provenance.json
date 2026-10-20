@@ -1,0 +1,33 @@
+{
+  "created": "2026-10-20T18:05:55.868551+08:00",
+  "tool_commit": "eaaee46077a352ba7a56a0de5e30ef7049e208c4",
+  "server_commit": "da572cddb38383deae9caef33b8d490e292ef071",
+  "rows": [
+    18,
+    14
+  ],
+  "seed_bases": [
+    0,
+    100,
+    200,
+    300,
+    400
+  ],
+  "actual_request_seed": "base + row",
+  "request_count": 20,
+  "concurrency": 1,
+  "warmups": 0,
+  "gpu_physical_index": 1,
+  "gpu_uuid": "GPU_PHYSICAL_1",
+  "official_cu130_r580_compliant": false,
+  "reused_codes": "${NVME_WORKDIR}/bench-validation/20261020_165001_49599d4/ref_codes_en.jsonl",
+  "analyzer_defaults": {
+    "frame_ms": 10,
+    "rel_db": 17,
+    "long_pause": 0.7
+  },
+  "env.sh_sha256": "6da14b957aed42ef141c83be2ff8c3ae3b342cac17b03c807cc78ceb94ba1a58",
+  "serve.sh_sha256": "f0be93c8e9bc8cfb68be06a0bea27871d6d14ebd2e8798735c7c2d3994f2ddb3",
+  "run_b.sh_sha256": "1600b5a72cae14a3fd2b32b75a85a8f25d4f18636e4fb7ee09e73deede1bb68b",
+  "deploy_config.yaml_sha256": "b99113e6b2344169a9431686271d2ae9bbaf68b9679347435ad97f44eb3d28f3"
+}

@@ -1,0 +1,11 @@
+{
+  "time": "2026-10-20T18:11:40.772166+08:00",
+  "server_exit": "0",
+  "remaining_recorded_processes": [],
+  "monitor_pid": 1729607,
+  "monitor_exists": false,
+  "port8091_open": false,
+  "gpu": "memory.used [MiB], utilization.gpu [%]\n15 MiB, 0 %\n",
+  "compute_processes": "gpu_uuid, pid, process_name\n",
+  "shutdown_warning": "resource_tracker reported 1 leaked semaphore; no own remaining processes observed"
+}

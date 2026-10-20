@@ -1,0 +1,495 @@
+{
+  "purpose": "CPU auxiliary ASR on four low-energy duration outliers plus one normal-duration control; not human listening, speaker similarity, official WER or definitive proof of absence of speech.",
+  "model": "Whisper small",
+  "checkpoint": "${USER_HOME}/.cache/whisper/small.pt",
+  "checkpoint_sha256": "9ecf779972d90ba49c06d968637d720dd632c55bbf19d441fb42bf17a411e794",
+  "script_sha256": "efb31843f33b9085e415e344b0a74c7e778e7df77e1edd71e5550739f4429c9e",
+  "whisper_transcribe_source_sha256": "848b82877500d6fb8f0b91bee7a08ac67ef670a113591d11b494848d263ad0f6",
+  "versions": {
+    "openai-whisper": "20250625",
+    "torch": "2.13.0+cu129",
+    "numpy": "2.3.5"
+  },
+  "device": "cpu",
+  "torch_num_threads": 8,
+  "environment": {
+    "CUDA_VISIBLE_DEVICES": "",
+    "OMP_NUM_THREADS": "8",
+    "MKL_NUM_THREADS": "8"
+  },
+  "transcribe_explicit_options": {
+    "language": "en",
+    "fp16": false,
+    "temperature": 0
+  },
+  "transcribe_signature_including_defaults": "(model: 'Whisper', audio: Union[str, numpy.ndarray, torch.Tensor], *, verbose: Optional[bool] = None, temperature: Union[float, Tuple[float, ...]] = (0.0, 0.2, 0.4, 0.6, 0.8, 1.0), compression_ratio_threshold: Optional[float] = 2.4, logprob_threshold: Optional[float] = -1.0, no_speech_threshold: Optional[float] = 0.6, condition_on_previous_text: bool = True, initial_prompt: Optional[str] = None, carry_initial_prompt: bool = False, word_timestamps: bool = False, prepend_punctuations: str = '\"\\'“¿([{-', append_punctuations: str = '\"\\'.。,，!！?？:：”)]}、', clip_timestamps: Union[str, List[float]] = '0', hallucination_silence_threshold: Optional[float] = None, **decode_options)",
+  "normalization": "Lowercase; curly apostrophe to ASCII; regex [a-z0-9]+(?:'[a-z0-9]+)?; punctuation ignored; no number expansion.",
+  "caveat": "Whisper can hallucinate on noise or miss quiet speech. Empty or wrong ASR alone cannot establish no speech; compare with measured energy and control. No timbre or human listening claim.",
+  "results": [
+    {
+      "run": "row18_codes_s300",
+      "role": "low_energy_duration_outlier",
+      "wav": "${NVME_WORKDIR}/prebaseline/20261020_180250/check_b/row18_codes_s300/audio/0018_common_voice_en_15265-common_voice_en_15266.wav",
+      "wav_sha256": "128fe00de5d41a2d461d04484c3065577296665fac618fee4584f89fe0d18bdf",
+      "target_text": "Large brown dog walks up a blue staircase.",
+      "transcribed_text": " Thank you.",
+      "cpu_transcribe_seconds": 1.5064653949812055,
+      "segments": [
+        {
+          "start": 0.0,
+          "end": 23.2,
+          "text": " Thank you.",
+          "avg_logprob": -1.410885175069173,
+          "no_speech_prob": 0.5404186844825745,
+          "compression_ratio": 0.5555555555555556,
+          "temperature": 0
+        }
+      ],
+      "audio_observations": {
+        "audio_s": 23.219954648526077,
+        "sample_rate": 44100,
+        "rms_dbfs": -39.58547767441867,
+        "last_1s_rms_dbfs": -38.06661595615268,
+        "last_250ms_rms_dbfs": -38.17481781179877,
+        "low_energy_below_-50_dbfs": {
+          "window_s": 0.02,
+          "total_s_approx": 0.32,
+          "trailing_s_approx": 0.0,
+          "fraction_of_windows": 0.013781223083548665
+        },
+        "low_energy_below_-40_dbfs": {
+          "window_s": 0.02,
+          "total_s_approx": 9.48,
+          "trailing_s_approx": 0.0,
+          "fraction_of_windows": 0.4082687338501292
+        }
+      },
+      "alignment": {
+        "target_tokens": [
+          "large",
+          "brown",
+          "dog",
+          "walks",
+          "up",
+          "a",
+          "blue",
+          "staircase"
+        ],
+        "asr_tokens": [
+          "thank",
+          "you"
+        ],
+        "word_edit_distance": 8,
+        "target_word_count": 8,
+        "word_edit_ratio": 1.0,
+        "edit_operations": [
+          {
+            "op": "delete",
+            "target": "large"
+          },
+          {
+            "op": "delete",
+            "target": "brown"
+          },
+          {
+            "op": "delete",
+            "target": "dog"
+          },
+          {
+            "op": "delete",
+            "target": "walks"
+          },
+          {
+            "op": "delete",
+            "target": "up"
+          },
+          {
+            "op": "delete",
+            "target": "a"
+          },
+          {
+            "op": "substitute",
+            "target": "blue",
+            "asr": "thank"
+          },
+          {
+            "op": "substitute",
+            "target": "staircase",
+            "asr": "you"
+          }
+        ]
+      }
+    },
+    {
+      "run": "row14_audio_s0",
+      "role": "low_energy_duration_outlier",
+      "wav": "${NVME_WORKDIR}/prebaseline/20261020_180250/check_b/row14_audio_s0/audio/0014_common_voice_en_137148-common_voice_en_137152.wav",
+      "wav_sha256": "bdb199fced3ae3ca98c5fd8b2b9e16a9f40ad40b00ddf244bafa1f035999e99d",
+      "target_text": "Elvis Presley is often called the \"King of Rock and Roll\".",
+      "transcribed_text": " Elvis Presley is often called.",
+      "cpu_transcribe_seconds": 1.425883379764855,
+      "segments": [
+        {
+          "start": 0.0,
+          "end": 1.76,
+          "text": " Elvis Presley is often called.",
+          "avg_logprob": -0.283831262588501,
+          "no_speech_prob": 0.0041365972720086575,
+          "compression_ratio": 0.8333333333333334,
+          "temperature": 0
+        }
+      ],
+      "audio_observations": {
+        "audio_s": 19.690521541950112,
+        "sample_rate": 44100,
+        "rms_dbfs": -37.92435748522435,
+        "last_1s_rms_dbfs": -49.89865471649274,
+        "last_250ms_rms_dbfs": -49.75626934505628,
+        "low_energy_below_-50_dbfs": {
+          "window_s": 0.02,
+          "total_s_approx": 5.84,
+          "trailing_s_approx": 0.0,
+          "fraction_of_windows": 0.29644670050761424
+        },
+        "low_energy_below_-40_dbfs": {
+          "window_s": 0.02,
+          "total_s_approx": 18.28,
+          "trailing_s_approx": 13.2,
+          "fraction_of_windows": 0.9279187817258884
+        }
+      },
+      "alignment": {
+        "target_tokens": [
+          "elvis",
+          "presley",
+          "is",
+          "often",
+          "called",
+          "the",
+          "king",
+          "of",
+          "rock",
+          "and",
+          "roll"
+        ],
+        "asr_tokens": [
+          "elvis",
+          "presley",
+          "is",
+          "often",
+          "called"
+        ],
+        "word_edit_distance": 6,
+        "target_word_count": 11,
+        "word_edit_ratio": 0.5454545454545454,
+        "edit_operations": [
+          {
+            "op": "delete",
+            "target": "the"
+          },
+          {
+            "op": "delete",
+            "target": "king"
+          },
+          {
+            "op": "delete",
+            "target": "of"
+          },
+          {
+            "op": "delete",
+            "target": "rock"
+          },
+          {
+            "op": "delete",
+            "target": "and"
+          },
+          {
+            "op": "delete",
+            "target": "roll"
+          }
+        ]
+      }
+    },
+    {
+      "run": "row14_audio_s400",
+      "role": "low_energy_duration_outlier",
+      "wav": "${NVME_WORKDIR}/prebaseline/20261020_180250/check_b/row14_audio_s400/audio/0014_common_voice_en_137148-common_voice_en_137152.wav",
+      "wav_sha256": "7afb154bf551371f5ff3d8d58bc5c1509ed819757d406b4c794206eacd1bc473",
+      "target_text": "Elvis Presley is often called the \"King of Rock and Roll\".",
+      "transcribed_text": " Thank you.",
+      "cpu_transcribe_seconds": 1.2215192094445229,
+      "segments": [
+        {
+          "start": 0.0,
+          "end": 7.0,
+          "text": " Thank you.",
+          "avg_logprob": -1.4694528579711914,
+          "no_speech_prob": 0.5425674915313721,
+          "compression_ratio": 0.5555555555555556,
+          "temperature": 0
+        }
+      ],
+      "audio_observations": {
+        "audio_s": 16.718367346938777,
+        "sample_rate": 44100,
+        "rms_dbfs": -51.01063334433411,
+        "last_1s_rms_dbfs": -50.06960927367117,
+        "last_250ms_rms_dbfs": -50.036018293378525,
+        "low_energy_below_-50_dbfs": {
+          "window_s": 0.02,
+          "total_s_approx": 13.88,
+          "trailing_s_approx": 0.08,
+          "fraction_of_windows": 0.8301435406698564
+        },
+        "low_energy_below_-40_dbfs": {
+          "window_s": 0.02,
+          "total_s_approx": 16.72,
+          "trailing_s_approx": 16.718367346938777,
+          "fraction_of_windows": 1.0
+        }
+      },
+      "alignment": {
+        "target_tokens": [
+          "elvis",
+          "presley",
+          "is",
+          "often",
+          "called",
+          "the",
+          "king",
+          "of",
+          "rock",
+          "and",
+          "roll"
+        ],
+        "asr_tokens": [
+          "thank",
+          "you"
+        ],
+        "word_edit_distance": 11,
+        "target_word_count": 11,
+        "word_edit_ratio": 1.0,
+        "edit_operations": [
+          {
+            "op": "delete",
+            "target": "elvis"
+          },
+          {
+            "op": "delete",
+            "target": "presley"
+          },
+          {
+            "op": "delete",
+            "target": "is"
+          },
+          {
+            "op": "delete",
+            "target": "often"
+          },
+          {
+            "op": "delete",
+            "target": "called"
+          },
+          {
+            "op": "delete",
+            "target": "the"
+          },
+          {
+            "op": "delete",
+            "target": "king"
+          },
+          {
+            "op": "delete",
+            "target": "of"
+          },
+          {
+            "op": "delete",
+            "target": "rock"
+          },
+          {
+            "op": "substitute",
+            "target": "and",
+            "asr": "thank"
+          },
+          {
+            "op": "substitute",
+            "target": "roll",
+            "asr": "you"
+          }
+        ]
+      }
+    },
+    {
+      "run": "row14_codes_s400",
+      "role": "low_energy_duration_outlier",
+      "wav": "${NVME_WORKDIR}/prebaseline/20261020_180250/check_b/row14_codes_s400/audio/0014_common_voice_en_137148-common_voice_en_137152.wav",
+      "wav_sha256": "fb644eaf06bcb6c8ed923b58c794a2a1bce593b2e4f15e402d8692bb647f5725",
+      "target_text": "Elvis Presley is often called the \"King of Rock and Roll\".",
+      "transcribed_text": " Elvis Presley.",
+      "cpu_transcribe_seconds": 1.274419754743576,
+      "segments": [
+        {
+          "start": 0.0,
+          "end": 1.0,
+          "text": " Elvis Presley.",
+          "avg_logprob": -0.5662600994110107,
+          "no_speech_prob": 0.05874777212738991,
+          "compression_ratio": 0.6363636363636364,
+          "temperature": 0
+        }
+      ],
+      "audio_observations": {
+        "audio_s": 17.925804988662133,
+        "sample_rate": 44100,
+        "rms_dbfs": -40.187211327629846,
+        "last_1s_rms_dbfs": -45.98356551542636,
+        "last_250ms_rms_dbfs": -45.571706567776616,
+        "low_energy_below_-50_dbfs": {
+          "window_s": 0.02,
+          "total_s_approx": 0.14,
+          "trailing_s_approx": 0.0,
+          "fraction_of_windows": 0.007803790412486065
+        },
+        "low_energy_below_-40_dbfs": {
+          "window_s": 0.02,
+          "total_s_approx": 17.0,
+          "trailing_s_approx": 16.8,
+          "fraction_of_windows": 0.947603121516165
+        }
+      },
+      "alignment": {
+        "target_tokens": [
+          "elvis",
+          "presley",
+          "is",
+          "often",
+          "called",
+          "the",
+          "king",
+          "of",
+          "rock",
+          "and",
+          "roll"
+        ],
+        "asr_tokens": [
+          "elvis",
+          "presley"
+        ],
+        "word_edit_distance": 9,
+        "target_word_count": 11,
+        "word_edit_ratio": 0.8181818181818182,
+        "edit_operations": [
+          {
+            "op": "delete",
+            "target": "is"
+          },
+          {
+            "op": "delete",
+            "target": "often"
+          },
+          {
+            "op": "delete",
+            "target": "called"
+          },
+          {
+            "op": "delete",
+            "target": "the"
+          },
+          {
+            "op": "delete",
+            "target": "king"
+          },
+          {
+            "op": "delete",
+            "target": "of"
+          },
+          {
+            "op": "delete",
+            "target": "rock"
+          },
+          {
+            "op": "delete",
+            "target": "and"
+          },
+          {
+            "op": "delete",
+            "target": "roll"
+          }
+        ]
+      }
+    },
+    {
+      "run": "row18_codes_s0",
+      "role": "normal_duration_control",
+      "wav": "${NVME_WORKDIR}/prebaseline/20261020_180250/check_b/row18_codes_s0/audio/0018_common_voice_en_15265-common_voice_en_15266.wav",
+      "wav_sha256": "68b2ac14776a7e4d85f0b2659e346a415f8984b248bd6ae9a47a25e971a20a8f",
+      "target_text": "Large brown dog walks up a blue staircase.",
+      "transcribed_text": " Large brown dog walks up a blue staircase.",
+      "cpu_transcribe_seconds": 1.5159284211695194,
+      "segments": [
+        {
+          "start": 0.0,
+          "end": 6.0,
+          "text": " Large brown dog walks up a blue staircase.",
+          "avg_logprob": -0.36397139231363934,
+          "no_speech_prob": 0.01273880060762167,
+          "compression_ratio": 0.84,
+          "temperature": 0
+        }
+      ],
+      "audio_observations": {
+        "audio_s": 5.015510204081632,
+        "sample_rate": 44100,
+        "rms_dbfs": -22.923385649341157,
+        "last_1s_rms_dbfs": -33.14397112591162,
+        "last_250ms_rms_dbfs": -90.06207584349741,
+        "low_energy_below_-50_dbfs": {
+          "window_s": 0.02,
+          "total_s_approx": 0.44,
+          "trailing_s_approx": 0.34,
+          "fraction_of_windows": 0.08764940239043825
+        },
+        "low_energy_below_-40_dbfs": {
+          "window_s": 0.02,
+          "total_s_approx": 1.44,
+          "trailing_s_approx": 0.56,
+          "fraction_of_windows": 0.2868525896414343
+        }
+      },
+      "alignment": {
+        "target_tokens": [
+          "large",
+          "brown",
+          "dog",
+          "walks",
+          "up",
+          "a",
+          "blue",
+          "staircase"
+        ],
+        "asr_tokens": [
+          "large",
+          "brown",
+          "dog",
+          "walks",
+          "up",
+          "a",
+          "blue",
+          "staircase"
+        ],
+        "word_edit_distance": 0,
+        "target_word_count": 8,
+        "word_edit_ratio": 0.0,
+        "edit_operations": []
+      }
+    }
+  ],
+  "model_load_s": 1.8386770747601986,
+  "cuda_context_initialized": false,
+  "interpretation": {
+    "control": "Normal-duration row18_codes_s0 is recognized exactly (0/8 word edits), establishing the same ASR invocation can recognize this target and voice in at least one sample.",
+    "outliers": "All four selected low-energy long outputs fail to reproduce the complete expected target in CPU ASR: 8/8, 6/11, 11/11 and 9/11 word edits respectively. Two preserve only a prefix; two produce unrelated Thank you, which may be a noise hallucination.",
+    "scope": "Combined with independently measured low energy, these results support a generated-audio quality anomaly in both codes and audio modes. They do not prove exact acoustic content, establish speaker identity, establish the model-side root cause, or substitute for listening.",
+    "gate": "Zero long pauses reported by the relative energy analyzer should not be treated as evidence of healthy speech for these outliers; retain all four as review failures/anomalies."
+  }
+}

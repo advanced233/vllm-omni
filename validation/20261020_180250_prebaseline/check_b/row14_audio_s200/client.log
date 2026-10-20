@@ -1,0 +1,4 @@
+timed: 1 requests at concurrency 1
+| Concurrency | Audio s/s | TTFA p50 | TTFA p95 | RTF (mean) | Streams that stall | Failed |
+| ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| 1 | 4.43 | 157.4 ms | 157.4 ms | 0.2248 | 0.0% (>0ms) / 0.0% (>100ms) | 0 |

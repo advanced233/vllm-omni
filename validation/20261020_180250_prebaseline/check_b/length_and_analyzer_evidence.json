@@ -1,0 +1,24 @@
+{
+  "stage0_deploy": {
+    "file": "${WORKSPACE}/vllm-omni/vllm_omni/deploy/fish_omni.yaml",
+    "line": 73,
+    "text": "max_tokens: 500"
+  },
+  "request_construction": {
+    "file": "tools/drama3_bench/stream_bench.py",
+    "function": "build_requests",
+    "max_tokens_override": false,
+    "max_new_tokens_override": false
+  },
+  "finish_reason_search": {
+    "patterns": [
+      "finish_reason",
+      "max_tokens",
+      "seed318"
+    ],
+    "per_request_matches": 0,
+    "scope": "serve-before-shutdown.log and four request records",
+    "interpretation": "Not logged; exact 500 frame duration is circumstantial evidence of configured cap."
+  },
+  "slow_flag_limitation": "analyze_audio computes median words/s independently within each run directory; with one request, rate equals its own median and cannot be below 0.65 times that median. words/s is target word count divided by detected span, not measured transcription rate."
+}

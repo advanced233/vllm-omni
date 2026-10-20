@@ -1,0 +1,44 @@
+CPU auxiliary ASR on four low-energy duration outliers plus one normal-duration control; not human listening, speaker similarity, official WER or definitive proof of absence of speech.
+CPU only; Whisper small, English, fp32, temperature=0, 8 threads.
+Whisper can hallucinate on noise or miss quiet speech. Empty or wrong ASR alone cannot establish no speech; compare with measured energy and control. No timbre or human listening claim.
+
+row18_codes_s300 (low_energy_duration_outlier)
+Target: Large brown dog walks up a blue staircase.
+ASR: ' Thank you.'
+Word edits: 8 / 8
+Energy: -39.58547767441867 dBFS
+
+row14_audio_s0 (low_energy_duration_outlier)
+Target: Elvis Presley is often called the "King of Rock and Roll".
+ASR: ' Elvis Presley is often called.'
+Word edits: 6 / 11
+Energy: -37.92435748522435 dBFS
+
+row14_audio_s400 (low_energy_duration_outlier)
+Target: Elvis Presley is often called the "King of Rock and Roll".
+ASR: ' Thank you.'
+Word edits: 11 / 11
+Energy: -51.01063334433411 dBFS
+
+row14_codes_s400 (low_energy_duration_outlier)
+Target: Elvis Presley is often called the "King of Rock and Roll".
+ASR: ' Elvis Presley.'
+Word edits: 9 / 11
+Energy: -40.187211327629846 dBFS
+
+row18_codes_s0 (normal_duration_control)
+Target: Large brown dog walks up a blue staircase.
+ASR: ' Large brown dog walks up a blue staircase.'
+Word edits: 0 / 8
+Energy: -22.923385649341157 dBFS
+
+Interpretation: Compare individual results against energy and the control. Incorrect/empty recognition is supportive evidence of a quality anomaly, not a standalone proof of absent speech.
+CUDA context initialized: False
+
+control: Normal-duration row18_codes_s0 is recognized exactly (0/8 word edits), establishing the same ASR invocation can recognize this target and voice in at least one sample.
+
+outliers: All four selected low-energy long outputs fail to reproduce the complete expected target in CPU ASR: 8/8, 6/11, 11/11 and 9/11 word edits respectively. Two preserve only a prefix; two produce unrelated Thank you, which may be a noise hallucination.
+
+scope: Combined with independently measured low energy, these results support a generated-audio quality anomaly in both codes and audio modes. They do not prove exact acoustic content, establish speaker identity, establish the model-side root cause, or substitute for listening.
+
+gate: Zero long pauses reported by the relative energy analyzer should not be treated as evidence of healthy speech for these outliers; retain all four as review failures/anomalies.

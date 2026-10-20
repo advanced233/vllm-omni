@@ -1,0 +1,47 @@
+{
+  "status": "hold_baseline_due_to_output_quality_anomalies",
+  "check_a": "passed_sorted_32_frame_counts",
+  "check_b_transport_successes": 20,
+  "check_b_transport_failures": 0,
+  "long_pause_runs_by_analyzer": {
+    "row18_codes": "0/5",
+    "row18_audio": "0/5",
+    "row14_codes": "0/5",
+    "row14_audio": "0/5"
+  },
+  "low_energy_duration_outlier_runs": [
+    "row18_codes_s300",
+    "row14_audio_s0",
+    "row14_audio_s400",
+    "row14_codes_s400"
+  ],
+  "auxiliary_asr": "All 4 outliers lack a complete target transcript; normal control matches. This is auxiliary evidence, not human listening or formal WER.",
+  "analyzer_limitations": [
+    "Relative energy threshold can classify sustained low-energy/noise content as voiced.",
+    "One-sample run median equals the sample, so within-run slow flag cannot trigger.",
+    "words/s uses target word count, not observed spoken words."
+  ],
+  "c128_short_run_started": false,
+  "b1_started": false,
+  "b1_plan": {
+    "concurrency": [
+      1,
+      16,
+      32,
+      48,
+      64,
+      96,
+      128
+    ],
+    "repeats_at": {
+      "64": 3,
+      "128": 5
+    },
+    "label": "a100-main",
+    "total_runs": 13,
+    "rows_per_run": 1088,
+    "server_restart_each_run": true,
+    "save_audio": false
+  },
+  "source_and_tool_code_modified": false
+}
