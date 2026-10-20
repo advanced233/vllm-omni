@@ -1,0 +1,42 @@
+Drama 3 real-model benchmark tool validation
+
+Run: ${NVME_WORKDIR}/bench-validation/20261020_165001_49599d4
+Tool commit: 49599d4a438062da8c7799243a1291fc52c9b3d0
+Server commit: da572cddb38383deae9caef33b8d490e292ef071
+Environment: A100 80GB PCIe GPU1; torch 2.13.0+cu129; vLLM 0.32.0+cu129; driver 550.127.05. Not the official cu130/R580 stack.
+Source, driver and system CUDA were not changed. Dataset/model/outputs and runtime caches are private NVMe paths.
+
+Result: numeric/data-consistency checks passed. Listening and duration-outlier review remain pending; no formal baseline run.
+Preencoding: 1088/1088 rows, skipped=[], exit 0, elapsed 51 s.
+Server: /health 200 after 357.952 s; model weights 45.73 s; MARLIN and Triton/FLA; private MPS matched GPU1.
+Client order: codes then audio; each same first32 rows, C4, request seed=0+row index, 8 unmeasured warmups, save_audio=true.
+Server logs contain 80 speech HTTP200 responses (16 warmups +64 timed), no ERROR or Traceback before shutdown.
+
+Mode | success | loop-lag p99 | audio mean/p50/p95 | TTFA p50/p95 | mean RTF
+codes | 32/32, failed=0 | 0.85 ms | 3.844/3.599/5.821 s | 134.3/184.4 ms | 0.2837
+audio | 32/32, failed=0 | 0.87 ms | 4.229/3.46/8.306 s | 211.0/369.6 ms | 0.3359
+
+Independent validation: 664 checks passed; raw PCM byte counts match 44.1kHz mono int16 WAV frames; derived durations/RTF/summary aggregates/counts consistent; all RMS >= -50 dBFS.
+Limitations: saved records do not retain all arrival timestamp arrays; exact arrival timing/full-concurrency throughput cannot be independently reconstructed. Loop-lag is read from tool output, not an independent timestamp-error measurement.
+Duration review: means differ by about 10%; p95 and individual pairs differ materially. Do not claim the distributions or generated utterances are identical.
+Largest paired duration differences (codes seconds / audio seconds):
+  index 18 (common_voice_en_15265-common_voice_en_15266): 4.133 / 9.799; absolute difference 5.666; codes/audio ratio 0.422
+  index 14 (common_voice_en_137148-common_voice_en_137152): 2.786 / 5.480; absolute difference 2.694; codes/audio ratio 0.508
+  index 2 (common_voice_en_103675-common_voice_en_103676): 5.898 / 8.034; absolute difference 2.136; codes/audio ratio 0.734
+  index 11 (common_voice_en_123125-common_voice_en_123127): 5.759 / 7.477; absolute difference 1.718; codes/audio ratio 0.770
+  index 22 (common_voice_en_155313-common_voice_en_155315): 5.341 / 6.873; absolute difference 1.533; codes/audio ratio 0.777
+
+Human listening is required for reference timbre, intelligibility/completeness and absence of noise; RMS/HTTP/duration alone do not establish those properties. Include duration outliers in four reviewed pairs. The fixed initial validator selection is 0/10/20/31, and root will augment/replace publication listening selection with outliers.
+
+KV log:
+(StageEngineCoreProc_stage0_replica0 pid=1660077) INFO 10-20 17:12:33 [kv_cache_utils.py:2327] GPU KV cache size: 326,716 tokens, Maximum concurrency for 8,192 tokens per request: 39.88x
+Default max_num_seqs=128; 1088 exact prompt lengths 121–264 rows, plus max_tokens500 yields621–764. CPU estimator cross-checked with actual prompt-frame assembly, no CUDA context.
+39.88x is based on8192 tokens/request and is not a verdict that C128 cannot run. Hybrid Mamba/KV groups and page rounding mean simple token-capacity division is not an exact capacity proof. No C128 test or deploy-config change performed.
+
+Peak monitored GPU1 memory: 79020 MiB.
+Cleanup: verified-owned API server received SIGINT; exit0; its stage/MPS/monitor processes gone; port8091 free; GPU1 back15MiB/0%.
+Shutdown notes: service internally force-killed remaining stage0; resource_tracker emitted one semaphore-cleanup warning. No runtime ERROR/Traceback before shutdown.
+
+Artifacts: check_codes/summary.json, check_audio/summary.json, requests.jsonl and all64WAV; ref_codes_en.jsonl.meta.json; kv_cache_lines.txt; key_lines.txt; independent_validation.json; prompt_capacity.json; duration-outliers.json; cleanup.json.
+
+Publication supplement: selected listening indices are 0,2,14,18, including duration outliers. Auxiliary Whisper small transcripts match all 8 targets; long intra-utterance low-energy intervals remain for listening review. See README and selected_asr_checks.json. Only selected evidence files and all64 generated WAVs are published; the full server log remains local.

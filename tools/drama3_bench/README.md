@@ -85,3 +85,9 @@ python tools/drama3_bench/aggregate_results.py results/sweep_a/ results/sweep_b/
 - **seed 不能复现输出**：`--seed` 会给每个请求设 `seed = 基数 + 行号`，但 bf16 logits 随 batch 组成而变（#8933 评审里提到过），并发下同一个 seed 也不保证输出相同。评估质量时应该用多次运行看方差。
 - **WER / SIM 还没有包含**：加 `--save-audio` 会把每条回复存成 WAV，同时写出 `audio/manifest.jsonl`（含目标文本和参考 wav 路径）。之后可以写一个评测脚本复用 `vllm_omni/benchmarks/data_modules/seed_tts_eval.py`（Whisper-large-v3 WER、WavLM SIM）。保存音频会占用客户端的 IO，只建议在测质量的那次运行里打开，不要在纯测性能的运行里用。
 - **校验范围**：这些脚本在本地用一个模拟服务器验证过，覆盖了吞吐、窗口内的音频计算、卡顿判定（人为制造的卡顿）、500 错误和流中途断开、warmup 排除、扫描时的进程启停和信号升级。`encode_ref_codes.py` 的数据解析、去重、跳过逻辑和输出格式用假编码器测过。**两者都还没在真实模型和 GPU 上跑过**。第一次正式运行前，先用 `--num-prompts 32` 小规模跑一次，核对 `summary.json`。
+
+## 实机验证记录
+
+2026-10-20，工具执行版本 `49599d4` 已在A100/cu129/R550上完成预编码1088条和codes/audio各C4 × 32验证。两组failed=0，loop-lag p99=0.85/0.87ms，664项数据一致性检查通过。音色和时长长尾仍待人工听检，尚未进入正式基线。上面的“只在模拟服务器验证”描述的是本次实机运行前的状态。
+
+[实机结果与试听样本](../../validation/20261020_165001_49599d4/README.md)

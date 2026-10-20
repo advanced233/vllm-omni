@@ -1,0 +1,74 @@
+[
+  {
+    "check_codes": {
+      "wav": "check_codes/audio/0000_common_voice_en_10119832-common_voice_en_10119840.wav",
+      "audio_s": 2.1827
+    },
+    "index": 0,
+    "utt_id": "common_voice_en_10119832-common_voice_en_10119840",
+    "target_text": "Get the trust fund to the bank early.",
+    "ref_text": "We asked over twenty different people, and they all said it was his.",
+    "prompt_wav": "prompt-wavs/common_voice_en_10119832.wav",
+    "check_audio": {
+      "wav": "check_audio/audio/0000_common_voice_en_10119832-common_voice_en_10119840.wav",
+      "audio_s": 2.2756
+    },
+    "reference_wav": "listening/reference_0000.wav",
+    "reference_sha256": "af3ac928e98cdb171c9abdc611813f2cc40c52b71167790b785628104f81f389",
+    "human_review": "pending"
+  },
+  {
+    "check_codes": {
+      "wav": "check_codes/audio/0002_common_voice_en_103675-common_voice_en_103676.wav",
+      "audio_s": 5.8979
+    },
+    "index": 2,
+    "utt_id": "common_voice_en_103675-common_voice_en_103676",
+    "target_text": "One by one, the campfires were extinguished, and the oasis fell as quiet as the desert.",
+    "ref_text": "I'm never more aware of a room's acoustics than when I'm trying to enjoy a snack I have no intention of sharing.",
+    "prompt_wav": "prompt-wavs/common_voice_en_103675.wav",
+    "check_audio": {
+      "wav": "check_audio/audio/0002_common_voice_en_103675-common_voice_en_103676.wav",
+      "audio_s": 8.0341
+    },
+    "reference_wav": "listening/reference_0002.wav",
+    "reference_sha256": "1559628954a0117c81775b1a730ee46dd1c40ce099baaf1cc958bac6dd210330",
+    "human_review": "pending"
+  },
+  {
+    "check_codes": {
+      "wav": "check_codes/audio/0014_common_voice_en_137148-common_voice_en_137152.wav",
+      "audio_s": 2.7864
+    },
+    "index": 14,
+    "utt_id": "common_voice_en_137148-common_voice_en_137152",
+    "target_text": "Elvis Presley is often called the \"King of Rock and Roll\".",
+    "ref_text": "She walked across the street wearing stereo headphones and staring at her smartphone.",
+    "prompt_wav": "prompt-wavs/common_voice_en_137148.wav",
+    "check_audio": {
+      "wav": "check_audio/audio/0014_common_voice_en_137148-common_voice_en_137152.wav",
+      "audio_s": 5.4799
+    },
+    "reference_wav": "listening/reference_0014.wav",
+    "reference_sha256": "f92d2c69aa3756fb12ca1d44caae8e472e57f06e8d544d0e61758d2bf63225a2",
+    "human_review": "pending"
+  },
+  {
+    "check_codes": {
+      "wav": "check_codes/audio/0018_common_voice_en_15265-common_voice_en_15266.wav",
+      "audio_s": 4.1332
+    },
+    "index": 18,
+    "utt_id": "common_voice_en_15265-common_voice_en_15266",
+    "target_text": "Large brown dog walks up a blue staircase.",
+    "ref_text": "Man with guitar holding a microphone in one hand and extending his other arm.",
+    "prompt_wav": "prompt-wavs/common_voice_en_15265.wav",
+    "check_audio": {
+      "wav": "check_audio/audio/0018_common_voice_en_15265-common_voice_en_15266.wav",
+      "audio_s": 9.7988
+    },
+    "reference_wav": "listening/reference_0018.wav",
+    "reference_sha256": "e9b755e301f5659e48c3f268880a336200437f19e206bd8a21fb5e51b78d26f0",
+    "human_review": "pending"
+  }
+]

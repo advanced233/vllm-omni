@@ -1,0 +1,261 @@
+{
+  "ranked_by_absolute_difference": [
+    {
+      "index": 18,
+      "utt_id": "common_voice_en_15265-common_voice_en_15266",
+      "codes_audio_s": 4.133151927437642,
+      "audio_audio_s": 9.798820861678005,
+      "codes_over_audio_duration": 0.4218009478672986,
+      "absolute_difference_s": 5.6656689342403626
+    },
+    {
+      "index": 14,
+      "utt_id": "common_voice_en_137148-common_voice_en_137152",
+      "codes_audio_s": 2.786394557823129,
+      "audio_audio_s": 5.479909297052155,
+      "codes_over_audio_duration": 0.5084745762711864,
+      "absolute_difference_s": 2.6935147392290255
+    },
+    {
+      "index": 2,
+      "utt_id": "common_voice_en_103675-common_voice_en_103676",
+      "codes_audio_s": 5.897868480725624,
+      "audio_audio_s": 8.034104308390022,
+      "codes_over_audio_duration": 0.7341040462427746,
+      "absolute_difference_s": 2.1362358276643985
+    },
+    {
+      "index": 11,
+      "utt_id": "common_voice_en_123125-common_voice_en_123127",
+      "codes_audio_s": 5.758548752834467,
+      "audio_audio_s": 7.476825396825397,
+      "codes_over_audio_duration": 0.7701863354037266,
+      "absolute_difference_s": 1.7182766439909303
+    },
+    {
+      "index": 22,
+      "utt_id": "common_voice_en_155313-common_voice_en_155315",
+      "codes_audio_s": 5.340589569160998,
+      "audio_audio_s": 6.873106575963718,
+      "codes_over_audio_duration": 0.7770270270270271,
+      "absolute_difference_s": 1.5325170068027205
+    },
+    {
+      "index": 7,
+      "utt_id": "common_voice_en_120405-common_voice_en_120406",
+      "codes_audio_s": 4.133151927437642,
+      "audio_audio_s": 5.294149659863946,
+      "codes_over_audio_duration": 0.780701754385965,
+      "absolute_difference_s": 1.1609977324263037
+    },
+    {
+      "index": 15,
+      "utt_id": "common_voice_en_13900-common_voice_en_13901",
+      "codes_audio_s": 5.294149659863946,
+      "audio_audio_s": 4.272471655328798,
+      "codes_over_audio_duration": 1.2391304347826089,
+      "absolute_difference_s": 1.021678004535148
+    },
+    {
+      "index": 28,
+      "utt_id": "common_voice_en_167249-common_voice_en_167246",
+      "codes_audio_s": 3.575873015873016,
+      "audio_audio_s": 2.5541950113378684,
+      "codes_over_audio_duration": 1.4000000000000001,
+      "absolute_difference_s": 1.0216780045351475
+    },
+    {
+      "index": 8,
+      "utt_id": "common_voice_en_1205005-common_voice_en_1205007",
+      "codes_audio_s": 3.575873015873016,
+      "audio_audio_s": 2.972154195011338,
+      "codes_over_audio_duration": 1.203125,
+      "absolute_difference_s": 0.6037188208616779
+    },
+    {
+      "index": 23,
+      "utt_id": "common_voice_en_15734837-common_voice_en_15734838",
+      "codes_audio_s": 3.622312925170068,
+      "audio_audio_s": 4.08671201814059,
+      "codes_over_audio_duration": 0.8863636363636364,
+      "absolute_difference_s": 0.46439909297052173
+    },
+    {
+      "index": 19,
+      "utt_id": "common_voice_en_15265-common_voice_en_15268",
+      "codes_audio_s": 4.504671201814059,
+      "audio_audio_s": 4.96907029478458,
+      "codes_over_audio_duration": 0.9065420560747663,
+      "absolute_difference_s": 0.4643990929705213
+    },
+    {
+      "index": 21,
+      "utt_id": "common_voice_en_153872-common_voice_en_153874",
+      "codes_audio_s": 4.551111111111111,
+      "audio_audio_s": 4.08671201814059,
+      "codes_over_audio_duration": 1.1136363636363635,
+      "absolute_difference_s": 0.4643990929705213
+    },
+    {
+      "index": 27,
+      "utt_id": "common_voice_en_16666041-common_voice_en_16666040",
+      "codes_audio_s": 3.0650340136054424,
+      "audio_audio_s": 3.5294331065759637,
+      "codes_over_audio_duration": 0.868421052631579,
+      "absolute_difference_s": 0.4643990929705213
+    },
+    {
+      "index": 29,
+      "utt_id": "common_voice_en_167249-common_voice_en_167247",
+      "codes_audio_s": 3.7616326530612243,
+      "audio_audio_s": 3.3436734693877552,
+      "codes_over_audio_duration": 1.125,
+      "absolute_difference_s": 0.41795918367346907
+    },
+    {
+      "index": 3,
+      "utt_id": "common_voice_en_103675-common_voice_en_103677",
+      "codes_audio_s": 2.8328344671201813,
+      "audio_audio_s": 2.461315192743764,
+      "codes_over_audio_duration": 1.150943396226415,
+      "absolute_difference_s": 0.3715192743764173
+    },
+    {
+      "index": 30,
+      "utt_id": "common_voice_en_17147545-common_voice_en_17147546",
+      "codes_audio_s": 4.922630385487528,
+      "audio_audio_s": 5.2477097505668935,
+      "codes_over_audio_duration": 0.9380530973451326,
+      "absolute_difference_s": 0.3250793650793655
+    },
+    {
+      "index": 25,
+      "utt_id": "common_voice_en_15903802-common_voice_en_15903807",
+      "codes_audio_s": 3.7151927437641725,
+      "audio_audio_s": 3.3901133786848074,
+      "codes_over_audio_duration": 1.095890410958904,
+      "absolute_difference_s": 0.3250793650793651
+    },
+    {
+      "index": 6,
+      "utt_id": "common_voice_en_120405-common_voice_en_120402",
+      "codes_audio_s": 8.916462585034013,
+      "audio_audio_s": 8.6378231292517,
+      "codes_over_audio_duration": 1.032258064516129,
+      "absolute_difference_s": 0.2786394557823133
+    },
+    {
+      "index": 16,
+      "utt_id": "common_voice_en_1416089-common_voice_en_1416090",
+      "codes_audio_s": 2.972154195011338,
+      "audio_audio_s": 3.250793650793651,
+      "codes_over_audio_duration": 0.9142857142857143,
+      "absolute_difference_s": 0.27863945578231286
+    },
+    {
+      "index": 10,
+      "utt_id": "common_voice_en_123125-common_voice_en_123126",
+      "codes_audio_s": 4.133151927437642,
+      "audio_audio_s": 4.4117913832199545,
+      "codes_over_audio_duration": 0.936842105263158,
+      "absolute_difference_s": 0.2786394557823124
+    },
+    {
+      "index": 12,
+      "utt_id": "common_voice_en_125386-common_voice_en_125388",
+      "codes_audio_s": 4.829750566893424,
+      "audio_audio_s": 4.597551020408163,
+      "codes_over_audio_duration": 1.0505050505050506,
+      "absolute_difference_s": 0.2321995464852611
+    },
+    {
+      "index": 9,
+      "utt_id": "common_voice_en_1205005-common_voice_en_1205008",
+      "codes_audio_s": 2.6006349206349206,
+      "audio_audio_s": 2.414875283446712,
+      "codes_over_audio_duration": 1.0769230769230769,
+      "absolute_difference_s": 0.18575963718820843
+    },
+    {
+      "index": 31,
+      "utt_id": "common_voice_en_17161-common_voice_en_17159",
+      "codes_audio_s": 3.111473922902494,
+      "audio_audio_s": 2.9257142857142857,
+      "codes_over_audio_duration": 1.0634920634920635,
+      "absolute_difference_s": 0.18575963718820843
+    },
+    {
+      "index": 4,
+      "utt_id": "common_voice_en_10933823-common_voice_en_10933822",
+      "codes_audio_s": 4.4117913832199545,
+      "audio_audio_s": 4.551111111111111,
+      "codes_over_audio_duration": 0.9693877551020408,
+      "absolute_difference_s": 0.13931972789115665
+    },
+    {
+      "index": 24,
+      "utt_id": "common_voice_en_15735839-common_voice_en_15735837",
+      "codes_audio_s": 1.1145578231292517,
+      "audio_audio_s": 1.253877551020408,
+      "codes_over_audio_duration": 0.888888888888889,
+      "absolute_difference_s": 0.13931972789115643
+    },
+    {
+      "index": 17,
+      "utt_id": "common_voice_en_1416089-common_voice_en_1416093",
+      "codes_audio_s": 3.2043537414965986,
+      "audio_audio_s": 3.0650340136054424,
+      "codes_over_audio_duration": 1.0454545454545454,
+      "absolute_difference_s": 0.1393197278911562
+    },
+    {
+      "index": 0,
+      "utt_id": "common_voice_en_10119832-common_voice_en_10119840",
+      "codes_audio_s": 2.182675736961451,
+      "audio_audio_s": 2.2755555555555556,
+      "codes_over_audio_duration": 0.9591836734693877,
+      "absolute_difference_s": 0.09287981859410444
+    },
+    {
+      "index": 1,
+      "utt_id": "common_voice_en_10119832-common_voice_en_10119847",
+      "codes_audio_s": 2.8792743764172335,
+      "audio_audio_s": 2.786394557823129,
+      "codes_over_audio_duration": 1.0333333333333334,
+      "absolute_difference_s": 0.09287981859410444
+    },
+    {
+      "index": 26,
+      "utt_id": "common_voice_en_15903802-common_voice_en_15903815",
+      "codes_audio_s": 2.972154195011338,
+      "audio_audio_s": 3.0650340136054424,
+      "codes_over_audio_duration": 0.9696969696969696,
+      "absolute_difference_s": 0.09287981859410444
+    },
+    {
+      "index": 13,
+      "utt_id": "common_voice_en_125386-common_voice_en_125389",
+      "codes_audio_s": 3.297233560090703,
+      "audio_audio_s": 3.3436734693877552,
+      "codes_over_audio_duration": 0.986111111111111,
+      "absolute_difference_s": 0.04643990929705222
+    },
+    {
+      "index": 20,
+      "utt_id": "common_voice_en_153872-common_voice_en_153873",
+      "codes_audio_s": 2.2291156462585033,
+      "audio_audio_s": 2.182675736961451,
+      "codes_over_audio_duration": 1.0212765957446808,
+      "absolute_difference_s": 0.04643990929705222
+    },
+    {
+      "index": 5,
+      "utt_id": "common_voice_en_10933823-common_voice_en_10933825",
+      "codes_audio_s": 2.693514739229025,
+      "audio_audio_s": 2.693514739229025,
+      "codes_over_audio_duration": 1.0,
+      "absolute_difference_s": 0.0
+    }
+  ],
+  "not_a_failure_threshold": true
+}

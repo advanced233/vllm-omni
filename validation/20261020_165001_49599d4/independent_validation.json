@@ -1,0 +1,6313 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "name": "codes.actual_rows_1088",
+      "ok": true,
+      "actual": 1088,
+      "expected": 1088
+    },
+    {
+      "name": "codes.metadata_rows_written_1088",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.metadata_rows_skipped_empty",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.rows_requested_1088",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.requests_count",
+      "ok": true,
+      "actual": 32,
+      "expected": 32
+    },
+    {
+      "name": "codes.unique_indices",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.first_32_indices",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.summary_counts",
+      "ok": true,
+      "actual": {
+        "requests": 32,
+        "succeeded": 32,
+        "failed": 0
+      },
+      "expected": null
+    },
+    {
+      "name": "codes.all_requests_ok",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.reference_mode",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.concurrency",
+      "ok": true,
+      "actual": 4,
+      "expected": 4
+    },
+    {
+      "name": "codes.loop_lag_p99_under_10ms",
+      "ok": true,
+      "actual": 0.85,
+      "expected": "<10 ms"
+    },
+    {
+      "name": "codes.wav_count_and_names",
+      "ok": true,
+      "actual": [
+        "0000_common_voice_en_10119832-common_voice_en_10119840.wav",
+        "0001_common_voice_en_10119832-common_voice_en_10119847.wav",
+        "0002_common_voice_en_103675-common_voice_en_103676.wav",
+        "0003_common_voice_en_103675-common_voice_en_103677.wav",
+        "0004_common_voice_en_10933823-common_voice_en_10933822.wav",
+        "0005_common_voice_en_10933823-common_voice_en_10933825.wav",
+        "0006_common_voice_en_120405-common_voice_en_120402.wav",
+        "0007_common_voice_en_120405-common_voice_en_120406.wav",
+        "0008_common_voice_en_1205005-common_voice_en_1205007.wav",
+        "0009_common_voice_en_1205005-common_voice_en_1205008.wav",
+        "0010_common_voice_en_123125-common_voice_en_123126.wav",
+        "0011_common_voice_en_123125-common_voice_en_123127.wav",
+        "0012_common_voice_en_125386-common_voice_en_125388.wav",
+        "0013_common_voice_en_125386-common_voice_en_125389.wav",
+        "0014_common_voice_en_137148-common_voice_en_137152.wav",
+        "0015_common_voice_en_13900-common_voice_en_13901.wav",
+        "0016_common_voice_en_1416089-common_voice_en_1416090.wav",
+        "0017_common_voice_en_1416089-common_voice_en_1416093.wav",
+        "0018_common_voice_en_15265-common_voice_en_15266.wav",
+        "0019_common_voice_en_15265-common_voice_en_15268.wav",
+        "0020_common_voice_en_153872-common_voice_en_153873.wav",
+        "0021_common_voice_en_153872-common_voice_en_153874.wav",
+        "0022_common_voice_en_155313-common_voice_en_155315.wav",
+        "0023_common_voice_en_15734837-common_voice_en_15734838.wav",
+        "0024_common_voice_en_15735839-common_voice_en_15735837.wav",
+        "0025_common_voice_en_15903802-common_voice_en_15903807.wav",
+        "0026_common_voice_en_15903802-common_voice_en_15903815.wav",
+        "0027_common_voice_en_16666041-common_voice_en_16666040.wav",
+        "0028_common_voice_en_167249-common_voice_en_167246.wav",
+        "0029_common_voice_en_167249-common_voice_en_167247.wav",
+        "0030_common_voice_en_17147545-common_voice_en_17147546.wav",
+        "0031_common_voice_en_17161-common_voice_en_17159.wav"
+      ],
+      "expected": [
+        "0000_common_voice_en_10119832-common_voice_en_10119840.wav",
+        "0001_common_voice_en_10119832-common_voice_en_10119847.wav",
+        "0002_common_voice_en_103675-common_voice_en_103676.wav",
+        "0003_common_voice_en_103675-common_voice_en_103677.wav",
+        "0004_common_voice_en_10933823-common_voice_en_10933822.wav",
+        "0005_common_voice_en_10933823-common_voice_en_10933825.wav",
+        "0006_common_voice_en_120405-common_voice_en_120402.wav",
+        "0007_common_voice_en_120405-common_voice_en_120406.wav",
+        "0008_common_voice_en_1205005-common_voice_en_1205007.wav",
+        "0009_common_voice_en_1205005-common_voice_en_1205008.wav",
+        "0010_common_voice_en_123125-common_voice_en_123126.wav",
+        "0011_common_voice_en_123125-common_voice_en_123127.wav",
+        "0012_common_voice_en_125386-common_voice_en_125388.wav",
+        "0013_common_voice_en_125386-common_voice_en_125389.wav",
+        "0014_common_voice_en_137148-common_voice_en_137152.wav",
+        "0015_common_voice_en_13900-common_voice_en_13901.wav",
+        "0016_common_voice_en_1416089-common_voice_en_1416090.wav",
+        "0017_common_voice_en_1416089-common_voice_en_1416093.wav",
+        "0018_common_voice_en_15265-common_voice_en_15266.wav",
+        "0019_common_voice_en_15265-common_voice_en_15268.wav",
+        "0020_common_voice_en_153872-common_voice_en_153873.wav",
+        "0021_common_voice_en_153872-common_voice_en_153874.wav",
+        "0022_common_voice_en_155313-common_voice_en_155315.wav",
+        "0023_common_voice_en_15734837-common_voice_en_15734838.wav",
+        "0024_common_voice_en_15735839-common_voice_en_15735837.wav",
+        "0025_common_voice_en_15903802-common_voice_en_15903807.wav",
+        "0026_common_voice_en_15903802-common_voice_en_15903815.wav",
+        "0027_common_voice_en_16666041-common_voice_en_16666040.wav",
+        "0028_common_voice_en_167249-common_voice_en_167246.wav",
+        "0029_common_voice_en_167249-common_voice_en_167247.wav",
+        "0030_common_voice_en_17147545-common_voice_en_17147546.wav",
+        "0031_common_voice_en_17161-common_voice_en_17159.wav"
+      ]
+    },
+    {
+      "name": "codes.manifest_count",
+      "ok": true,
+      "actual": 32,
+      "expected": 32
+    },
+    {
+      "name": "codes.0.utt_id_matches_codes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.0.manifest_matches_row",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.0.wav_format",
+      "ok": true,
+      "actual": {
+        "sr": 44100,
+        "channels": 1,
+        "width": 2
+      },
+      "expected": null
+    },
+    {
+      "name": "codes.0.wav_matches_response_format",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.0.wav_complete_and_response_bytes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.0.audio_seconds",
+      "ok": true,
+      "actual": 2.1827,
+      "expected": {
+        "value": 2.182675736961451,
+        "absolute_tolerance": 5.1e-05
+      }
+    },
+    {
+      "name": "codes.0.non_silent_rms",
+      "ok": true,
+      "actual": -24.195420195839286,
+      "expected": ">= -50 dBFS"
+    },
+    {
+      "name": "codes.0.ttfa_within_e2e",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.0.rtf",
+      "ok": true,
+      "actual": 0.2969,
+      "expected": {
+        "value": 0.29692912649601066,
+        "absolute_tolerance": 7.43658161569149e-05
+      }
+    },
+    {
+      "name": "codes.1.utt_id_matches_codes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.1.manifest_matches_row",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.1.wav_format",
+      "ok": true,
+      "actual": {
+        "sr": 44100,
+        "channels": 1,
+        "width": 2
+      },
+      "expected": null
+    },
+    {
+      "name": "codes.1.wav_matches_response_format",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.1.wav_complete_and_response_bytes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.1.audio_seconds",
+      "ok": true,
+      "actual": 2.8793,
+      "expected": {
+        "value": 2.8792743764172335,
+        "absolute_tolerance": 5.1e-05
+      }
+    },
+    {
+      "name": "codes.1.non_silent_rms",
+      "ok": true,
+      "actual": -22.890289138622748,
+      "expected": ">= -50 dBFS"
+    },
+    {
+      "name": "codes.1.ttfa_within_e2e",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.1.rtf",
+      "ok": true,
+      "actual": 0.297,
+      "expected": {
+        "value": 0.2969845482610887,
+        "absolute_tolerance": 6.871279611895161e-05
+      }
+    },
+    {
+      "name": "codes.2.utt_id_matches_codes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.2.manifest_matches_row",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.2.wav_format",
+      "ok": true,
+      "actual": {
+        "sr": 44100,
+        "channels": 1,
+        "width": 2
+      },
+      "expected": null
+    },
+    {
+      "name": "codes.2.wav_matches_response_format",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.2.wav_complete_and_response_bytes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.2.audio_seconds",
+      "ok": true,
+      "actual": 5.8979,
+      "expected": {
+        "value": 5.897868480725624,
+        "absolute_tolerance": 5.1e-05
+      }
+    },
+    {
+      "name": "codes.2.non_silent_rms",
+      "ok": true,
+      "actual": -29.37373063966756,
+      "expected": ">= -50 dBFS"
+    },
+    {
+      "name": "codes.2.ttfa_within_e2e",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.2.rtf",
+      "ok": true,
+      "actual": 0.2838,
+      "expected": {
+        "value": 0.2838143992987205,
+        "absolute_tolerance": 5.964719180610236e-05
+      }
+    },
+    {
+      "name": "codes.3.utt_id_matches_codes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.3.manifest_matches_row",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.3.wav_format",
+      "ok": true,
+      "actual": {
+        "sr": 44100,
+        "channels": 1,
+        "width": 2
+      },
+      "expected": null
+    },
+    {
+      "name": "codes.3.wav_matches_response_format",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.3.wav_complete_and_response_bytes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.3.audio_seconds",
+      "ok": true,
+      "actual": 2.8328,
+      "expected": {
+        "value": 2.8328344671201813,
+        "absolute_tolerance": 5.1e-05
+      }
+    },
+    {
+      "name": "codes.3.non_silent_rms",
+      "ok": true,
+      "actual": -29.01841591929267,
+      "expected": ">= -50 dBFS"
+    },
+    {
+      "name": "codes.3.ttfa_within_e2e",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.3.rtf",
+      "ok": true,
+      "actual": 0.2977,
+      "expected": {
+        "value": 0.2976877081198771,
+        "absolute_tolerance": 6.900316982581967e-05
+      }
+    },
+    {
+      "name": "codes.4.utt_id_matches_codes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.4.manifest_matches_row",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.4.wav_format",
+      "ok": true,
+      "actual": {
+        "sr": 44100,
+        "channels": 1,
+        "width": 2
+      },
+      "expected": null
+    },
+    {
+      "name": "codes.4.wav_matches_response_format",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.4.wav_complete_and_response_bytes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.4.audio_seconds",
+      "ok": true,
+      "actual": 4.4118,
+      "expected": {
+        "value": 4.4117913832199545,
+        "absolute_tolerance": 5.1e-05
+      }
+    },
+    {
+      "name": "codes.4.non_silent_rms",
+      "ok": true,
+      "actual": -35.93428778140194,
+      "expected": ">= -50 dBFS"
+    },
+    {
+      "name": "codes.4.ttfa_within_e2e",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.4.rtf",
+      "ok": true,
+      "actual": 0.2848,
+      "expected": {
+        "value": 0.2847822779605263,
+        "absolute_tolerance": 6.255993009868421e-05
+      }
+    },
+    {
+      "name": "codes.5.utt_id_matches_codes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.5.manifest_matches_row",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.5.wav_format",
+      "ok": true,
+      "actual": {
+        "sr": 44100,
+        "channels": 1,
+        "width": 2
+      },
+      "expected": null
+    },
+    {
+      "name": "codes.5.wav_matches_response_format",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.5.wav_complete_and_response_bytes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.5.audio_seconds",
+      "ok": true,
+      "actual": 2.6935,
+      "expected": {
+        "value": 2.693514739229025,
+        "absolute_tolerance": 5.1e-05
+      }
+    },
+    {
+      "name": "codes.5.non_silent_rms",
+      "ok": true,
+      "actual": -38.782149313977854,
+      "expected": ">= -50 dBFS"
+    },
+    {
+      "name": "codes.5.ttfa_within_e2e",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.5.rtf",
+      "ok": true,
+      "actual": 0.2797,
+      "expected": {
+        "value": 0.2796717571390086,
+        "absolute_tolerance": 6.99343682650862e-05
+      }
+    },
+    {
+      "name": "codes.6.utt_id_matches_codes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.6.manifest_matches_row",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.6.wav_format",
+      "ok": true,
+      "actual": {
+        "sr": 44100,
+        "channels": 1,
+        "width": 2
+      },
+      "expected": null
+    },
+    {
+      "name": "codes.6.wav_matches_response_format",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.6.wav_complete_and_response_bytes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.6.audio_seconds",
+      "ok": true,
+      "actual": 8.9165,
+      "expected": {
+        "value": 8.916462585034013,
+        "absolute_tolerance": 5.1e-05
+      }
+    },
+    {
+      "name": "codes.6.non_silent_rms",
+      "ok": true,
+      "actual": -16.43153911743656,
+      "expected": ">= -50 dBFS"
+    },
+    {
+      "name": "codes.6.ttfa_within_e2e",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.6.rtf",
+      "ok": true,
+      "actual": 0.2744,
+      "expected": {
+        "value": 0.2744249725341797,
+        "absolute_tolerance": 5.671975708007812e-05
+      }
+    },
+    {
+      "name": "codes.7.utt_id_matches_codes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.7.manifest_matches_row",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.7.wav_format",
+      "ok": true,
+      "actual": {
+        "sr": 44100,
+        "channels": 1,
+        "width": 2
+      },
+      "expected": null
+    },
+    {
+      "name": "codes.7.wav_matches_response_format",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.7.wav_complete_and_response_bytes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.7.audio_seconds",
+      "ok": true,
+      "actual": 4.1332,
+      "expected": {
+        "value": 4.133151927437642,
+        "absolute_tolerance": 5.1e-05
+      }
+    },
+    {
+      "name": "codes.7.non_silent_rms",
+      "ok": true,
+      "actual": -15.102900011401312,
+      "expected": ">= -50 dBFS"
+    },
+    {
+      "name": "codes.7.ttfa_within_e2e",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.7.rtf",
+      "ok": true,
+      "actual": 0.2897,
+      "expected": {
+        "value": 0.2897062631671348,
+        "absolute_tolerance": 6.333925122893258e-05
+      }
+    },
+    {
+      "name": "codes.8.utt_id_matches_codes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.8.manifest_matches_row",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.8.wav_format",
+      "ok": true,
+      "actual": {
+        "sr": 44100,
+        "channels": 1,
+        "width": 2
+      },
+      "expected": null
+    },
+    {
+      "name": "codes.8.wav_matches_response_format",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.8.wav_complete_and_response_bytes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.8.audio_seconds",
+      "ok": true,
+      "actual": 3.5759,
+      "expected": {
+        "value": 3.575873015873016,
+        "absolute_tolerance": 5.1e-05
+      }
+    },
+    {
+      "name": "codes.8.non_silent_rms",
+      "ok": true,
+      "actual": -20.92208632569409,
+      "expected": ">= -50 dBFS"
+    },
+    {
+      "name": "codes.8.ttfa_within_e2e",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.8.rtf",
+      "ok": true,
+      "actual": 0.2815,
+      "expected": {
+        "value": 0.28149769176136363,
+        "absolute_tolerance": 6.526225142045455e-05
+      }
+    },
+    {
+      "name": "codes.9.utt_id_matches_codes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.9.manifest_matches_row",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.9.wav_format",
+      "ok": true,
+      "actual": {
+        "sr": 44100,
+        "channels": 1,
+        "width": 2
+      },
+      "expected": null
+    },
+    {
+      "name": "codes.9.wav_matches_response_format",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.9.wav_complete_and_response_bytes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.9.audio_seconds",
+      "ok": true,
+      "actual": 2.6006,
+      "expected": {
+        "value": 2.6006349206349206,
+        "absolute_tolerance": 5.1e-05
+      }
+    },
+    {
+      "name": "codes.9.non_silent_rms",
+      "ok": true,
+      "actual": -21.44984756823256,
+      "expected": ">= -50 dBFS"
+    },
+    {
+      "name": "codes.9.ttfa_within_e2e",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.9.rtf",
+      "ok": true,
+      "actual": 0.2706,
+      "expected": {
+        "value": 0.270626220703125,
+        "absolute_tolerance": 7.0610595703125e-05
+      }
+    },
+    {
+      "name": "codes.10.utt_id_matches_codes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.10.manifest_matches_row",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.10.wav_format",
+      "ok": true,
+      "actual": {
+        "sr": 44100,
+        "channels": 1,
+        "width": 2
+      },
+      "expected": null
+    },
+    {
+      "name": "codes.10.wav_matches_response_format",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.10.wav_complete_and_response_bytes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.10.audio_seconds",
+      "ok": true,
+      "actual": 4.1332,
+      "expected": {
+        "value": 4.133151927437642,
+        "absolute_tolerance": 5.1e-05
+      }
+    },
+    {
+      "name": "codes.10.non_silent_rms",
+      "ok": true,
+      "actual": -31.780252999103947,
+      "expected": ">= -50 dBFS"
+    },
+    {
+      "name": "codes.10.ttfa_within_e2e",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.10.rtf",
+      "ok": true,
+      "actual": 0.2828,
+      "expected": {
+        "value": 0.28278660463483146,
+        "absolute_tolerance": 6.333925122893258e-05
+      }
+    },
+    {
+      "name": "codes.11.utt_id_matches_codes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.11.manifest_matches_row",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.11.wav_format",
+      "ok": true,
+      "actual": {
+        "sr": 44100,
+        "channels": 1,
+        "width": 2
+      },
+      "expected": null
+    },
+    {
+      "name": "codes.11.wav_matches_response_format",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.11.wav_complete_and_response_bytes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.11.audio_seconds",
+      "ok": true,
+      "actual": 5.7585,
+      "expected": {
+        "value": 5.758548752834467,
+        "absolute_tolerance": 5.1e-05
+      }
+    },
+    {
+      "name": "codes.11.non_silent_rms",
+      "ok": true,
+      "actual": -31.273367000988287,
+      "expected": ">= -50 dBFS"
+    },
+    {
+      "name": "codes.11.ttfa_within_e2e",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.11.rtf",
+      "ok": true,
+      "actual": 0.2847,
+      "expected": {
+        "value": 0.28474188035534276,
+        "absolute_tolerance": 5.985639805947581e-05
+      }
+    },
+    {
+      "name": "codes.12.utt_id_matches_codes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.12.manifest_matches_row",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.12.wav_format",
+      "ok": true,
+      "actual": {
+        "sr": 44100,
+        "channels": 1,
+        "width": 2
+      },
+      "expected": null
+    },
+    {
+      "name": "codes.12.wav_matches_response_format",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.12.wav_complete_and_response_bytes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.12.audio_seconds",
+      "ok": true,
+      "actual": 4.8298,
+      "expected": {
+        "value": 4.829750566893424,
+        "absolute_tolerance": 5.1e-05
+      }
+    },
+    {
+      "name": "codes.12.non_silent_rms",
+      "ok": true,
+      "actual": -26.93576036491452,
+      "expected": ">= -50 dBFS"
+    },
+    {
+      "name": "codes.12.ttfa_within_e2e",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.12.rtf",
+      "ok": true,
+      "actual": 0.2712,
+      "expected": {
+        "value": 0.27117342435396635,
+        "absolute_tolerance": 6.155955153245192e-05
+      }
+    },
+    {
+      "name": "codes.13.utt_id_matches_codes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.13.manifest_matches_row",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.13.wav_format",
+      "ok": true,
+      "actual": {
+        "sr": 44100,
+        "channels": 1,
+        "width": 2
+      },
+      "expected": null
+    },
+    {
+      "name": "codes.13.wav_matches_response_format",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.13.wav_complete_and_response_bytes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.13.audio_seconds",
+      "ok": true,
+      "actual": 3.2972,
+      "expected": {
+        "value": 3.297233560090703,
+        "absolute_tolerance": 5.1e-05
+      }
+    },
+    {
+      "name": "codes.13.non_silent_rms",
+      "ok": true,
+      "actual": -27.208602041939642,
+      "expected": ">= -50 dBFS"
+    },
+    {
+      "name": "codes.13.ttfa_within_e2e",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.13.rtf",
+      "ok": true,
+      "actual": 0.2841,
+      "expected": {
+        "value": 0.28408663897447184,
+        "absolute_tolerance": 6.646751210387324e-05
+      }
+    },
+    {
+      "name": "codes.14.utt_id_matches_codes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.14.manifest_matches_row",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.14.wav_format",
+      "ok": true,
+      "actual": {
+        "sr": 44100,
+        "channels": 1,
+        "width": 2
+      },
+      "expected": null
+    },
+    {
+      "name": "codes.14.wav_matches_response_format",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.14.wav_complete_and_response_bytes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.14.audio_seconds",
+      "ok": true,
+      "actual": 2.7864,
+      "expected": {
+        "value": 2.786394557823129,
+        "absolute_tolerance": 5.1e-05
+      }
+    },
+    {
+      "name": "codes.14.non_silent_rms",
+      "ok": true,
+      "actual": -31.04491254779844,
+      "expected": ">= -50 dBFS"
+    },
+    {
+      "name": "codes.14.ttfa_within_e2e",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.14.rtf",
+      "ok": true,
+      "actual": 0.3036,
+      "expected": {
+        "value": 0.303582275390625,
+        "absolute_tolerance": 6.930322265625e-05
+      }
+    },
+    {
+      "name": "codes.15.utt_id_matches_codes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.15.manifest_matches_row",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.15.wav_format",
+      "ok": true,
+      "actual": {
+        "sr": 44100,
+        "channels": 1,
+        "width": 2
+      },
+      "expected": null
+    },
+    {
+      "name": "codes.15.wav_matches_response_format",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.15.wav_complete_and_response_bytes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.15.audio_seconds",
+      "ok": true,
+      "actual": 5.2941,
+      "expected": {
+        "value": 5.294149659863946,
+        "absolute_tolerance": 5.1e-05
+      }
+    },
+    {
+      "name": "codes.15.non_silent_rms",
+      "ok": true,
+      "actual": -19.985515491524627,
+      "expected": ">= -50 dBFS"
+    },
+    {
+      "name": "codes.15.ttfa_within_e2e",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.15.rtf",
+      "ok": true,
+      "actual": 0.2845,
+      "expected": {
+        "value": 0.2844838353207237,
+        "absolute_tolerance": 6.063327508223684e-05
+      }
+    },
+    {
+      "name": "codes.16.utt_id_matches_codes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.16.manifest_matches_row",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.16.wav_format",
+      "ok": true,
+      "actual": {
+        "sr": 44100,
+        "channels": 1,
+        "width": 2
+      },
+      "expected": null
+    },
+    {
+      "name": "codes.16.wav_matches_response_format",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.16.wav_complete_and_response_bytes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.16.audio_seconds",
+      "ok": true,
+      "actual": 2.9722,
+      "expected": {
+        "value": 2.972154195011338,
+        "absolute_tolerance": 5.1e-05
+      }
+    },
+    {
+      "name": "codes.16.non_silent_rms",
+      "ok": true,
+      "actual": -31.227804723634335,
+      "expected": ">= -50 dBFS"
+    },
+    {
+      "name": "codes.16.ttfa_within_e2e",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.16.rtf",
+      "ok": true,
+      "actual": 0.2905,
+      "expected": {
+        "value": 0.2904627227783203,
+        "absolute_tolerance": 6.815927124023437e-05
+      }
+    },
+    {
+      "name": "codes.17.utt_id_matches_codes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.17.manifest_matches_row",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.17.wav_format",
+      "ok": true,
+      "actual": {
+        "sr": 44100,
+        "channels": 1,
+        "width": 2
+      },
+      "expected": null
+    },
+    {
+      "name": "codes.17.wav_matches_response_format",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.17.wav_complete_and_response_bytes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.17.audio_seconds",
+      "ok": true,
+      "actual": 3.2044,
+      "expected": {
+        "value": 3.2043537414965986,
+        "absolute_tolerance": 5.1e-05
+      }
+    },
+    {
+      "name": "codes.17.non_silent_rms",
+      "ok": true,
+      "actual": -31.991480540664657,
+      "expected": ">= -50 dBFS"
+    },
+    {
+      "name": "codes.17.ttfa_within_e2e",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.17.rtf",
+      "ok": true,
+      "actual": 0.2845,
+      "expected": {
+        "value": 0.28445673403532606,
+        "absolute_tolerance": 6.691584578804348e-05
+      }
+    },
+    {
+      "name": "codes.18.utt_id_matches_codes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.18.manifest_matches_row",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.18.wav_format",
+      "ok": true,
+      "actual": {
+        "sr": 44100,
+        "channels": 1,
+        "width": 2
+      },
+      "expected": null
+    },
+    {
+      "name": "codes.18.wav_matches_response_format",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.18.wav_complete_and_response_bytes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.18.audio_seconds",
+      "ok": true,
+      "actual": 4.1332,
+      "expected": {
+        "value": 4.133151927437642,
+        "absolute_tolerance": 5.1e-05
+      }
+    },
+    {
+      "name": "codes.18.non_silent_rms",
+      "ok": true,
+      "actual": -27.23499029531758,
+      "expected": ">= -50 dBFS"
+    },
+    {
+      "name": "codes.18.ttfa_within_e2e",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.18.rtf",
+      "ok": true,
+      "actual": 0.2823,
+      "expected": {
+        "value": 0.28227851781952246,
+        "absolute_tolerance": 6.333925122893258e-05
+      }
+    },
+    {
+      "name": "codes.19.utt_id_matches_codes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.19.manifest_matches_row",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.19.wav_format",
+      "ok": true,
+      "actual": {
+        "sr": 44100,
+        "channels": 1,
+        "width": 2
+      },
+      "expected": null
+    },
+    {
+      "name": "codes.19.wav_matches_response_format",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.19.wav_complete_and_response_bytes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.19.audio_seconds",
+      "ok": true,
+      "actual": 4.5047,
+      "expected": {
+        "value": 4.504671201814059,
+        "absolute_tolerance": 5.1e-05
+      }
+    },
+    {
+      "name": "codes.19.non_silent_rms",
+      "ok": true,
+      "actual": -27.442642812651265,
+      "expected": ">= -50 dBFS"
+    },
+    {
+      "name": "codes.19.ttfa_within_e2e",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.19.rtf",
+      "ok": true,
+      "actual": 0.2829,
+      "expected": {
+        "value": 0.2829285297197165,
+        "absolute_tolerance": 6.232158102448454e-05
+      }
+    },
+    {
+      "name": "codes.20.utt_id_matches_codes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.20.manifest_matches_row",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.20.wav_format",
+      "ok": true,
+      "actual": {
+        "sr": 44100,
+        "channels": 1,
+        "width": 2
+      },
+      "expected": null
+    },
+    {
+      "name": "codes.20.wav_matches_response_format",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.20.wav_complete_and_response_bytes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.20.audio_seconds",
+      "ok": true,
+      "actual": 2.2291,
+      "expected": {
+        "value": 2.2291156462585033,
+        "absolute_tolerance": 5.1e-05
+      }
+    },
+    {
+      "name": "codes.20.non_silent_rms",
+      "ok": true,
+      "actual": -22.518997189305246,
+      "expected": ">= -50 dBFS"
+    },
+    {
+      "name": "codes.20.ttfa_within_e2e",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.20.rtf",
+      "ok": true,
+      "actual": 0.297,
+      "expected": {
+        "value": 0.2970236206054688,
+        "absolute_tolerance": 7.38790283203125e-05
+      }
+    },
+    {
+      "name": "codes.21.utt_id_matches_codes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.21.manifest_matches_row",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.21.wav_format",
+      "ok": true,
+      "actual": {
+        "sr": 44100,
+        "channels": 1,
+        "width": 2
+      },
+      "expected": null
+    },
+    {
+      "name": "codes.21.wav_matches_response_format",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.21.wav_complete_and_response_bytes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.21.audio_seconds",
+      "ok": true,
+      "actual": 4.5511,
+      "expected": {
+        "value": 4.551111111111111,
+        "absolute_tolerance": 5.1e-05
+      }
+    },
+    {
+      "name": "codes.21.non_silent_rms",
+      "ok": true,
+      "actual": -29.803782765390064,
+      "expected": ">= -50 dBFS"
+    },
+    {
+      "name": "codes.21.ttfa_within_e2e",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.21.rtf",
+      "ok": true,
+      "actual": 0.2789,
+      "expected": {
+        "value": 0.27889892578125003,
+        "absolute_tolerance": 6.22060546875e-05
+      }
+    },
+    {
+      "name": "codes.22.utt_id_matches_codes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.22.manifest_matches_row",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.22.wav_format",
+      "ok": true,
+      "actual": {
+        "sr": 44100,
+        "channels": 1,
+        "width": 2
+      },
+      "expected": null
+    },
+    {
+      "name": "codes.22.wav_matches_response_format",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.22.wav_complete_and_response_bytes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.22.audio_seconds",
+      "ok": true,
+      "actual": 5.3406,
+      "expected": {
+        "value": 5.340589569160998,
+        "absolute_tolerance": 5.1e-05
+      }
+    },
+    {
+      "name": "codes.22.non_silent_rms",
+      "ok": true,
+      "actual": -31.68584443823987,
+      "expected": ">= -50 dBFS"
+    },
+    {
+      "name": "codes.22.ttfa_within_e2e",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.22.rtf",
+      "ok": true,
+      "actual": 0.283,
+      "expected": {
+        "value": 0.2829650135869565,
+        "absolute_tolerance": 6.054950747282608e-05
+      }
+    },
+    {
+      "name": "codes.23.utt_id_matches_codes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.23.manifest_matches_row",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.23.wav_format",
+      "ok": true,
+      "actual": {
+        "sr": 44100,
+        "channels": 1,
+        "width": 2
+      },
+      "expected": null
+    },
+    {
+      "name": "codes.23.wav_matches_response_format",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.23.wav_complete_and_response_bytes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.23.audio_seconds",
+      "ok": true,
+      "actual": 3.6223,
+      "expected": {
+        "value": 3.622312925170068,
+        "absolute_tolerance": 5.1e-05
+      }
+    },
+    {
+      "name": "codes.23.non_silent_rms",
+      "ok": true,
+      "actual": -24.776644848394987,
+      "expected": ">= -50 dBFS"
+    },
+    {
+      "name": "codes.23.ttfa_within_e2e",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.23.rtf",
+      "ok": true,
+      "actual": 0.2778,
+      "expected": {
+        "value": 0.27783353365384617,
+        "absolute_tolerance": 6.507940204326923e-05
+      }
+    },
+    {
+      "name": "codes.24.utt_id_matches_codes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.24.manifest_matches_row",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.24.wav_format",
+      "ok": true,
+      "actual": {
+        "sr": 44100,
+        "channels": 1,
+        "width": 2
+      },
+      "expected": null
+    },
+    {
+      "name": "codes.24.wav_matches_response_format",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.24.wav_complete_and_response_bytes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.24.audio_seconds",
+      "ok": true,
+      "actual": 1.1146,
+      "expected": {
+        "value": 1.1145578231292517,
+        "absolute_tolerance": 5.1e-05
+      }
+    },
+    {
+      "name": "codes.24.non_silent_rms",
+      "ok": true,
+      "actual": -31.831084123873502,
+      "expected": ">= -50 dBFS"
+    },
+    {
+      "name": "codes.24.ttfa_within_e2e",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.24.rtf",
+      "ok": true,
+      "actual": 0.3029,
+      "expected": {
+        "value": 0.302900390625,
+        "absolute_tolerance": 9.675805664062501e-05
+      }
+    },
+    {
+      "name": "codes.25.utt_id_matches_codes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.25.manifest_matches_row",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.25.wav_format",
+      "ok": true,
+      "actual": {
+        "sr": 44100,
+        "channels": 1,
+        "width": 2
+      },
+      "expected": null
+    },
+    {
+      "name": "codes.25.wav_matches_response_format",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.25.wav_complete_and_response_bytes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.25.audio_seconds",
+      "ok": true,
+      "actual": 3.7152,
+      "expected": {
+        "value": 3.7151927437641725,
+        "absolute_tolerance": 5.1e-05
+      }
+    },
+    {
+      "name": "codes.25.non_silent_rms",
+      "ok": true,
+      "actual": -32.67365328244486,
+      "expected": ">= -50 dBFS"
+    },
+    {
+      "name": "codes.25.ttfa_within_e2e",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.25.rtf",
+      "ok": true,
+      "actual": 0.2937,
+      "expected": {
+        "value": 0.29365905761718747,
+        "absolute_tolerance": 6.47274169921875e-05
+      }
+    },
+    {
+      "name": "codes.26.utt_id_matches_codes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.26.manifest_matches_row",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.26.wav_format",
+      "ok": true,
+      "actual": {
+        "sr": 44100,
+        "channels": 1,
+        "width": 2
+      },
+      "expected": null
+    },
+    {
+      "name": "codes.26.wav_matches_response_format",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.26.wav_complete_and_response_bytes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.26.audio_seconds",
+      "ok": true,
+      "actual": 2.9722,
+      "expected": {
+        "value": 2.972154195011338,
+        "absolute_tolerance": 5.1e-05
+      }
+    },
+    {
+      "name": "codes.26.non_silent_rms",
+      "ok": true,
+      "actual": -33.43647527405006,
+      "expected": ">= -50 dBFS"
+    },
+    {
+      "name": "codes.26.ttfa_within_e2e",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.26.rtf",
+      "ok": true,
+      "actual": 0.2863,
+      "expected": {
+        "value": 0.28635795593261715,
+        "absolute_tolerance": 6.815927124023437e-05
+      }
+    },
+    {
+      "name": "codes.27.utt_id_matches_codes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.27.manifest_matches_row",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.27.wav_format",
+      "ok": true,
+      "actual": {
+        "sr": 44100,
+        "channels": 1,
+        "width": 2
+      },
+      "expected": null
+    },
+    {
+      "name": "codes.27.wav_matches_response_format",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.27.wav_complete_and_response_bytes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.27.audio_seconds",
+      "ok": true,
+      "actual": 3.065,
+      "expected": {
+        "value": 3.0650340136054424,
+        "absolute_tolerance": 5.1e-05
+      }
+    },
+    {
+      "name": "codes.27.non_silent_rms",
+      "ok": true,
+      "actual": -24.029717959224428,
+      "expected": ">= -50 dBFS"
+    },
+    {
+      "name": "codes.27.ttfa_within_e2e",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.27.rtf",
+      "ok": true,
+      "actual": 0.2792,
+      "expected": {
+        "value": 0.2791812411221591,
+        "absolute_tolerance": 6.763929332386363e-05
+      }
+    },
+    {
+      "name": "codes.28.utt_id_matches_codes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.28.manifest_matches_row",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.28.wav_format",
+      "ok": true,
+      "actual": {
+        "sr": 44100,
+        "channels": 1,
+        "width": 2
+      },
+      "expected": null
+    },
+    {
+      "name": "codes.28.wav_matches_response_format",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.28.wav_complete_and_response_bytes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.28.audio_seconds",
+      "ok": true,
+      "actual": 3.5759,
+      "expected": {
+        "value": 3.575873015873016,
+        "absolute_tolerance": 5.1e-05
+      }
+    },
+    {
+      "name": "codes.28.non_silent_rms",
+      "ok": true,
+      "actual": -42.57492519176678,
+      "expected": ">= -50 dBFS"
+    },
+    {
+      "name": "codes.28.ttfa_within_e2e",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.28.rtf",
+      "ok": true,
+      "actual": 0.2869,
+      "expected": {
+        "value": 0.2869229403409091,
+        "absolute_tolerance": 6.526225142045455e-05
+      }
+    },
+    {
+      "name": "codes.29.utt_id_matches_codes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.29.manifest_matches_row",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.29.wav_format",
+      "ok": true,
+      "actual": {
+        "sr": 44100,
+        "channels": 1,
+        "width": 2
+      },
+      "expected": null
+    },
+    {
+      "name": "codes.29.wav_matches_response_format",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.29.wav_complete_and_response_bytes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.29.audio_seconds",
+      "ok": true,
+      "actual": 3.7616,
+      "expected": {
+        "value": 3.7616326530612243,
+        "absolute_tolerance": 5.1e-05
+      }
+    },
+    {
+      "name": "codes.29.non_silent_rms",
+      "ok": true,
+      "actual": -38.170223658902614,
+      "expected": ">= -50 dBFS"
+    },
+    {
+      "name": "codes.29.ttfa_within_e2e",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.29.rtf",
+      "ok": true,
+      "actual": 0.2691,
+      "expected": {
+        "value": 0.26911187065972225,
+        "absolute_tolerance": 6.455794270833334e-05
+      }
+    },
+    {
+      "name": "codes.30.utt_id_matches_codes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.30.manifest_matches_row",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.30.wav_format",
+      "ok": true,
+      "actual": {
+        "sr": 44100,
+        "channels": 1,
+        "width": 2
+      },
+      "expected": null
+    },
+    {
+      "name": "codes.30.wav_matches_response_format",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.30.wav_complete_and_response_bytes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.30.audio_seconds",
+      "ok": true,
+      "actual": 4.9226,
+      "expected": {
+        "value": 4.922630385487528,
+        "absolute_tolerance": 5.1e-05
+      }
+    },
+    {
+      "name": "codes.30.non_silent_rms",
+      "ok": true,
+      "actual": -27.7960629230148,
+      "expected": ">= -50 dBFS"
+    },
+    {
+      "name": "codes.30.ttfa_within_e2e",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.30.rtf",
+      "ok": true,
+      "actual": 0.2453,
+      "expected": {
+        "value": 0.2452753721992925,
+        "absolute_tolerance": 6.13603147110849e-05
+      }
+    },
+    {
+      "name": "codes.31.utt_id_matches_codes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.31.manifest_matches_row",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.31.wav_format",
+      "ok": true,
+      "actual": {
+        "sr": 44100,
+        "channels": 1,
+        "width": 2
+      },
+      "expected": null
+    },
+    {
+      "name": "codes.31.wav_matches_response_format",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.31.wav_complete_and_response_bytes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.31.audio_seconds",
+      "ok": true,
+      "actual": 3.1115,
+      "expected": {
+        "value": 3.111473922902494,
+        "absolute_tolerance": 5.1e-05
+      }
+    },
+    {
+      "name": "codes.31.non_silent_rms",
+      "ok": true,
+      "actual": -21.91038137607824,
+      "expected": ">= -50 dBFS"
+    },
+    {
+      "name": "codes.31.ttfa_within_e2e",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.31.rtf",
+      "ok": true,
+      "actual": 0.2708,
+      "expected": {
+        "value": 0.27080413362873135,
+        "absolute_tolerance": 6.739094566231343e-05
+      }
+    },
+    {
+      "name": "codes.summary.ttfa_ms.mean",
+      "ok": true,
+      "actual": 144.3,
+      "expected": {
+        "value": 144.27249999999998,
+        "absolute_tolerance": 0.051
+      }
+    },
+    {
+      "name": "codes.summary.ttfa_ms.p50",
+      "ok": true,
+      "actual": 134.3,
+      "expected": {
+        "value": 134.325,
+        "absolute_tolerance": 0.051
+      }
+    },
+    {
+      "name": "codes.summary.ttfa_ms.p90",
+      "ok": true,
+      "actual": 183.1,
+      "expected": {
+        "value": 183.11100000000002,
+        "absolute_tolerance": 0.051
+      }
+    },
+    {
+      "name": "codes.summary.ttfa_ms.p95",
+      "ok": true,
+      "actual": 184.4,
+      "expected": {
+        "value": 184.4495,
+        "absolute_tolerance": 0.051
+      }
+    },
+    {
+      "name": "codes.summary.ttfa_ms.p99",
+      "ok": true,
+      "actual": 185.6,
+      "expected": {
+        "value": 185.6209,
+        "absolute_tolerance": 0.051
+      }
+    },
+    {
+      "name": "codes.summary.ttfa_ms.max",
+      "ok": true,
+      "actual": 186.1,
+      "expected": {
+        "value": 186.12,
+        "absolute_tolerance": 0.051
+      }
+    },
+    {
+      "name": "codes.summary.rtf.mean",
+      "ok": true,
+      "actual": 0.2837,
+      "expected": {
+        "value": 0.283690625,
+        "absolute_tolerance": 5.1e-05
+      }
+    },
+    {
+      "name": "codes.summary.rtf.p50",
+      "ok": true,
+      "actual": 0.284,
+      "expected": {
+        "value": 0.28395000000000004,
+        "absolute_tolerance": 5.1e-05
+      }
+    },
+    {
+      "name": "codes.summary.rtf.p90",
+      "ok": true,
+      "actual": 0.297,
+      "expected": {
+        "value": 0.297,
+        "absolute_tolerance": 5.1e-05
+      }
+    },
+    {
+      "name": "codes.summary.rtf.p95",
+      "ok": true,
+      "actual": 0.3,
+      "expected": {
+        "value": 0.30004000000000003,
+        "absolute_tolerance": 5.1e-05
+      }
+    },
+    {
+      "name": "codes.summary.rtf.p99",
+      "ok": true,
+      "actual": 0.3034,
+      "expected": {
+        "value": 0.303383,
+        "absolute_tolerance": 5.1e-05
+      }
+    },
+    {
+      "name": "codes.summary.rtf.max",
+      "ok": true,
+      "actual": 0.3036,
+      "expected": {
+        "value": 0.3036,
+        "absolute_tolerance": 5.1e-05
+      }
+    },
+    {
+      "name": "codes.summary.audio_s.mean",
+      "ok": true,
+      "actual": 3.844,
+      "expected": {
+        "value": 3.8443625000000003,
+        "absolute_tolerance": 0.00051
+      }
+    },
+    {
+      "name": "codes.summary.audio_s.p50",
+      "ok": true,
+      "actual": 3.599,
+      "expected": {
+        "value": 3.5991,
+        "absolute_tolerance": 0.00051
+      }
+    },
+    {
+      "name": "codes.summary.audio_s.p90",
+      "ok": true,
+      "actual": 5.336,
+      "expected": {
+        "value": 5.33595,
+        "absolute_tolerance": 0.00051
+      }
+    },
+    {
+      "name": "codes.summary.audio_s.p95",
+      "ok": true,
+      "actual": 5.821,
+      "expected": {
+        "value": 5.82123,
+        "absolute_tolerance": 0.00051
+      }
+    },
+    {
+      "name": "codes.summary.audio_s.p99",
+      "ok": true,
+      "actual": 7.981,
+      "expected": {
+        "value": 7.9807340000000035,
+        "absolute_tolerance": 0.00051
+      }
+    },
+    {
+      "name": "codes.summary.audio_s.max",
+      "ok": true,
+      "actual": 8.916,
+      "expected": {
+        "value": 8.9165,
+        "absolute_tolerance": 0.00051
+      }
+    },
+    {
+      "name": "codes.summary.audio_s_total",
+      "ok": true,
+      "actual": 123.02,
+      "expected": {
+        "value": 123.0196,
+        "absolute_tolerance": 0.00051
+      }
+    },
+    {
+      "name": "codes.summary.throughput",
+      "ok": true,
+      "actual": 13.64,
+      "expected": {
+        "value": 13.64307419319064,
+        "absolute_tolerance": 0.005871693623408581
+      }
+    },
+    {
+      "name": "codes.summary.underrun_s_total",
+      "ok": true,
+      "actual": 0.0,
+      "expected": {
+        "value": 0.0,
+        "absolute_tolerance": 0.00051
+      }
+    },
+    {
+      "name": "codes.summary.longest_wait_ms.mean",
+      "ok": true,
+      "actual": 0.0,
+      "expected": {
+        "value": 0.0,
+        "absolute_tolerance": 0.051
+      }
+    },
+    {
+      "name": "codes.summary.longest_wait_ms.p50",
+      "ok": true,
+      "actual": 0.0,
+      "expected": {
+        "value": 0.0,
+        "absolute_tolerance": 0.051
+      }
+    },
+    {
+      "name": "codes.summary.longest_wait_ms.p90",
+      "ok": true,
+      "actual": 0.0,
+      "expected": {
+        "value": 0.0,
+        "absolute_tolerance": 0.051
+      }
+    },
+    {
+      "name": "codes.summary.longest_wait_ms.p95",
+      "ok": true,
+      "actual": 0.0,
+      "expected": {
+        "value": 0.0,
+        "absolute_tolerance": 0.051
+      }
+    },
+    {
+      "name": "codes.summary.longest_wait_ms.p99",
+      "ok": true,
+      "actual": 0.0,
+      "expected": {
+        "value": 0.0,
+        "absolute_tolerance": 0.051
+      }
+    },
+    {
+      "name": "codes.summary.longest_wait_ms.max",
+      "ok": true,
+      "actual": 0.0,
+      "expected": {
+        "value": 0.0,
+        "absolute_tolerance": 0.051
+      }
+    },
+    {
+      "name": "codes.summary.stall.0ms.counts",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.summary.stall.0ms.percent",
+      "ok": true,
+      "actual": 0.0,
+      "expected": {
+        "value": 0.0,
+        "absolute_tolerance": 0.0051
+      }
+    },
+    {
+      "name": "codes.summary.stall.100ms.counts",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "codes.summary.stall.100ms.percent",
+      "ok": true,
+      "actual": 0.0,
+      "expected": {
+        "value": 0.0,
+        "absolute_tolerance": 0.0051
+      }
+    },
+    {
+      "name": "audio.requests_count",
+      "ok": true,
+      "actual": 32,
+      "expected": 32
+    },
+    {
+      "name": "audio.unique_indices",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.first_32_indices",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.summary_counts",
+      "ok": true,
+      "actual": {
+        "requests": 32,
+        "succeeded": 32,
+        "failed": 0
+      },
+      "expected": null
+    },
+    {
+      "name": "audio.all_requests_ok",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.reference_mode",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.concurrency",
+      "ok": true,
+      "actual": 4,
+      "expected": 4
+    },
+    {
+      "name": "audio.loop_lag_p99_under_10ms",
+      "ok": true,
+      "actual": 0.87,
+      "expected": "<10 ms"
+    },
+    {
+      "name": "audio.wav_count_and_names",
+      "ok": true,
+      "actual": [
+        "0000_common_voice_en_10119832-common_voice_en_10119840.wav",
+        "0001_common_voice_en_10119832-common_voice_en_10119847.wav",
+        "0002_common_voice_en_103675-common_voice_en_103676.wav",
+        "0003_common_voice_en_103675-common_voice_en_103677.wav",
+        "0004_common_voice_en_10933823-common_voice_en_10933822.wav",
+        "0005_common_voice_en_10933823-common_voice_en_10933825.wav",
+        "0006_common_voice_en_120405-common_voice_en_120402.wav",
+        "0007_common_voice_en_120405-common_voice_en_120406.wav",
+        "0008_common_voice_en_1205005-common_voice_en_1205007.wav",
+        "0009_common_voice_en_1205005-common_voice_en_1205008.wav",
+        "0010_common_voice_en_123125-common_voice_en_123126.wav",
+        "0011_common_voice_en_123125-common_voice_en_123127.wav",
+        "0012_common_voice_en_125386-common_voice_en_125388.wav",
+        "0013_common_voice_en_125386-common_voice_en_125389.wav",
+        "0014_common_voice_en_137148-common_voice_en_137152.wav",
+        "0015_common_voice_en_13900-common_voice_en_13901.wav",
+        "0016_common_voice_en_1416089-common_voice_en_1416090.wav",
+        "0017_common_voice_en_1416089-common_voice_en_1416093.wav",
+        "0018_common_voice_en_15265-common_voice_en_15266.wav",
+        "0019_common_voice_en_15265-common_voice_en_15268.wav",
+        "0020_common_voice_en_153872-common_voice_en_153873.wav",
+        "0021_common_voice_en_153872-common_voice_en_153874.wav",
+        "0022_common_voice_en_155313-common_voice_en_155315.wav",
+        "0023_common_voice_en_15734837-common_voice_en_15734838.wav",
+        "0024_common_voice_en_15735839-common_voice_en_15735837.wav",
+        "0025_common_voice_en_15903802-common_voice_en_15903807.wav",
+        "0026_common_voice_en_15903802-common_voice_en_15903815.wav",
+        "0027_common_voice_en_16666041-common_voice_en_16666040.wav",
+        "0028_common_voice_en_167249-common_voice_en_167246.wav",
+        "0029_common_voice_en_167249-common_voice_en_167247.wav",
+        "0030_common_voice_en_17147545-common_voice_en_17147546.wav",
+        "0031_common_voice_en_17161-common_voice_en_17159.wav"
+      ],
+      "expected": [
+        "0000_common_voice_en_10119832-common_voice_en_10119840.wav",
+        "0001_common_voice_en_10119832-common_voice_en_10119847.wav",
+        "0002_common_voice_en_103675-common_voice_en_103676.wav",
+        "0003_common_voice_en_103675-common_voice_en_103677.wav",
+        "0004_common_voice_en_10933823-common_voice_en_10933822.wav",
+        "0005_common_voice_en_10933823-common_voice_en_10933825.wav",
+        "0006_common_voice_en_120405-common_voice_en_120402.wav",
+        "0007_common_voice_en_120405-common_voice_en_120406.wav",
+        "0008_common_voice_en_1205005-common_voice_en_1205007.wav",
+        "0009_common_voice_en_1205005-common_voice_en_1205008.wav",
+        "0010_common_voice_en_123125-common_voice_en_123126.wav",
+        "0011_common_voice_en_123125-common_voice_en_123127.wav",
+        "0012_common_voice_en_125386-common_voice_en_125388.wav",
+        "0013_common_voice_en_125386-common_voice_en_125389.wav",
+        "0014_common_voice_en_137148-common_voice_en_137152.wav",
+        "0015_common_voice_en_13900-common_voice_en_13901.wav",
+        "0016_common_voice_en_1416089-common_voice_en_1416090.wav",
+        "0017_common_voice_en_1416089-common_voice_en_1416093.wav",
+        "0018_common_voice_en_15265-common_voice_en_15266.wav",
+        "0019_common_voice_en_15265-common_voice_en_15268.wav",
+        "0020_common_voice_en_153872-common_voice_en_153873.wav",
+        "0021_common_voice_en_153872-common_voice_en_153874.wav",
+        "0022_common_voice_en_155313-common_voice_en_155315.wav",
+        "0023_common_voice_en_15734837-common_voice_en_15734838.wav",
+        "0024_common_voice_en_15735839-common_voice_en_15735837.wav",
+        "0025_common_voice_en_15903802-common_voice_en_15903807.wav",
+        "0026_common_voice_en_15903802-common_voice_en_15903815.wav",
+        "0027_common_voice_en_16666041-common_voice_en_16666040.wav",
+        "0028_common_voice_en_167249-common_voice_en_167246.wav",
+        "0029_common_voice_en_167249-common_voice_en_167247.wav",
+        "0030_common_voice_en_17147545-common_voice_en_17147546.wav",
+        "0031_common_voice_en_17161-common_voice_en_17159.wav"
+      ]
+    },
+    {
+      "name": "audio.manifest_count",
+      "ok": true,
+      "actual": 32,
+      "expected": 32
+    },
+    {
+      "name": "audio.0.utt_id_matches_codes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.0.manifest_matches_row",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.0.wav_format",
+      "ok": true,
+      "actual": {
+        "sr": 44100,
+        "channels": 1,
+        "width": 2
+      },
+      "expected": null
+    },
+    {
+      "name": "audio.0.wav_matches_response_format",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.0.wav_complete_and_response_bytes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.0.audio_seconds",
+      "ok": true,
+      "actual": 2.2756,
+      "expected": {
+        "value": 2.2755555555555556,
+        "absolute_tolerance": 5.1e-05
+      }
+    },
+    {
+      "name": "audio.0.non_silent_rms",
+      "ok": true,
+      "actual": -23.07299917016359,
+      "expected": ">= -50 dBFS"
+    },
+    {
+      "name": "audio.0.ttfa_within_e2e",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.0.rtf",
+      "ok": true,
+      "actual": 0.3775,
+      "expected": {
+        "value": 0.3774462890625,
+        "absolute_tolerance": 7.341210937499999e-05
+      }
+    },
+    {
+      "name": "audio.1.utt_id_matches_codes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.1.manifest_matches_row",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.1.wav_format",
+      "ok": true,
+      "actual": {
+        "sr": 44100,
+        "channels": 1,
+        "width": 2
+      },
+      "expected": null
+    },
+    {
+      "name": "audio.1.wav_matches_response_format",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.1.wav_complete_and_response_bytes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.1.audio_seconds",
+      "ok": true,
+      "actual": 2.7864,
+      "expected": {
+        "value": 2.786394557823129,
+        "absolute_tolerance": 5.1e-05
+      }
+    },
+    {
+      "name": "audio.1.non_silent_rms",
+      "ok": true,
+      "actual": -23.327173179740043,
+      "expected": ">= -50 dBFS"
+    },
+    {
+      "name": "audio.1.ttfa_within_e2e",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.1.rtf",
+      "ok": true,
+      "actual": 0.4156,
+      "expected": {
+        "value": 0.4155908203125,
+        "absolute_tolerance": 6.930322265625e-05
+      }
+    },
+    {
+      "name": "audio.2.utt_id_matches_codes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.2.manifest_matches_row",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.2.wav_format",
+      "ok": true,
+      "actual": {
+        "sr": 44100,
+        "channels": 1,
+        "width": 2
+      },
+      "expected": null
+    },
+    {
+      "name": "audio.2.wav_matches_response_format",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.2.wav_complete_and_response_bytes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.2.audio_seconds",
+      "ok": true,
+      "actual": 8.0341,
+      "expected": {
+        "value": 8.034104308390022,
+        "absolute_tolerance": 5.1e-05
+      }
+    },
+    {
+      "name": "audio.2.non_silent_rms",
+      "ok": true,
+      "actual": -35.654330264694266,
+      "expected": ">= -50 dBFS"
+    },
+    {
+      "name": "audio.2.ttfa_within_e2e",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.2.rtf",
+      "ok": true,
+      "actual": 0.3336,
+      "expected": {
+        "value": 0.33362773211705204,
+        "absolute_tolerance": 5.7347938493497114e-05
+      }
+    },
+    {
+      "name": "audio.3.utt_id_matches_codes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.3.manifest_matches_row",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.3.wav_format",
+      "ok": true,
+      "actual": {
+        "sr": 44100,
+        "channels": 1,
+        "width": 2
+      },
+      "expected": null
+    },
+    {
+      "name": "audio.3.wav_matches_response_format",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.3.wav_complete_and_response_bytes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.3.audio_seconds",
+      "ok": true,
+      "actual": 2.4613,
+      "expected": {
+        "value": 2.461315192743764,
+        "absolute_tolerance": 5.1e-05
+      }
+    },
+    {
+      "name": "audio.3.non_silent_rms",
+      "ok": true,
+      "actual": -30.119083032859205,
+      "expected": ">= -50 dBFS"
+    },
+    {
+      "name": "audio.3.ttfa_within_e2e",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.3.rtf",
+      "ok": true,
+      "actual": 0.4058,
+      "expected": {
+        "value": 0.40579930719339624,
+        "absolute_tolerance": 7.172062942216982e-05
+      }
+    },
+    {
+      "name": "audio.4.utt_id_matches_codes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.4.manifest_matches_row",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.4.wav_format",
+      "ok": true,
+      "actual": {
+        "sr": 44100,
+        "channels": 1,
+        "width": 2
+      },
+      "expected": null
+    },
+    {
+      "name": "audio.4.wav_matches_response_format",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.4.wav_complete_and_response_bytes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.4.audio_seconds",
+      "ok": true,
+      "actual": 4.5511,
+      "expected": {
+        "value": 4.551111111111111,
+        "absolute_tolerance": 5.1e-05
+      }
+    },
+    {
+      "name": "audio.4.non_silent_rms",
+      "ok": true,
+      "actual": -38.26581000794856,
+      "expected": ">= -50 dBFS"
+    },
+    {
+      "name": "audio.4.ttfa_within_e2e",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.4.rtf",
+      "ok": true,
+      "actual": 0.3246,
+      "expected": {
+        "value": 0.32464599609375,
+        "absolute_tolerance": 6.22060546875e-05
+      }
+    },
+    {
+      "name": "audio.5.utt_id_matches_codes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.5.manifest_matches_row",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.5.wav_format",
+      "ok": true,
+      "actual": {
+        "sr": 44100,
+        "channels": 1,
+        "width": 2
+      },
+      "expected": null
+    },
+    {
+      "name": "audio.5.wav_matches_response_format",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.5.wav_complete_and_response_bytes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.5.audio_seconds",
+      "ok": true,
+      "actual": 2.6935,
+      "expected": {
+        "value": 2.693514739229025,
+        "absolute_tolerance": 5.1e-05
+      }
+    },
+    {
+      "name": "audio.5.non_silent_rms",
+      "ok": true,
+      "actual": -35.77376741990743,
+      "expected": ">= -50 dBFS"
+    },
+    {
+      "name": "audio.5.ttfa_within_e2e",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.5.rtf",
+      "ok": true,
+      "actual": 0.3265,
+      "expected": {
+        "value": 0.32645078461745686,
+        "absolute_tolerance": 6.99343682650862e-05
+      }
+    },
+    {
+      "name": "audio.6.utt_id_matches_codes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.6.manifest_matches_row",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.6.wav_format",
+      "ok": true,
+      "actual": {
+        "sr": 44100,
+        "channels": 1,
+        "width": 2
+      },
+      "expected": null
+    },
+    {
+      "name": "audio.6.wav_matches_response_format",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.6.wav_complete_and_response_bytes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.6.audio_seconds",
+      "ok": true,
+      "actual": 8.6378,
+      "expected": {
+        "value": 8.6378231292517,
+        "absolute_tolerance": 5.1e-05
+      }
+    },
+    {
+      "name": "audio.6.non_silent_rms",
+      "ok": true,
+      "actual": -19.30445938647569,
+      "expected": ">= -50 dBFS"
+    },
+    {
+      "name": "audio.6.ttfa_within_e2e",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.6.rtf",
+      "ok": true,
+      "actual": 0.3152,
+      "expected": {
+        "value": 0.3152183089717742,
+        "absolute_tolerance": 5.690426537298387e-05
+      }
+    },
+    {
+      "name": "audio.7.utt_id_matches_codes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.7.manifest_matches_row",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.7.wav_format",
+      "ok": true,
+      "actual": {
+        "sr": 44100,
+        "channels": 1,
+        "width": 2
+      },
+      "expected": null
+    },
+    {
+      "name": "audio.7.wav_matches_response_format",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.7.wav_complete_and_response_bytes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.7.audio_seconds",
+      "ok": true,
+      "actual": 5.2941,
+      "expected": {
+        "value": 5.294149659863946,
+        "absolute_tolerance": 5.1e-05
+      }
+    },
+    {
+      "name": "audio.7.non_silent_rms",
+      "ok": true,
+      "actual": -16.62279821836541,
+      "expected": ">= -50 dBFS"
+    },
+    {
+      "name": "audio.7.ttfa_within_e2e",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.7.rtf",
+      "ok": true,
+      "actual": 0.3305,
+      "expected": {
+        "value": 0.33051577919407893,
+        "absolute_tolerance": 6.063327508223684e-05
+      }
+    },
+    {
+      "name": "audio.8.utt_id_matches_codes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.8.manifest_matches_row",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.8.wav_format",
+      "ok": true,
+      "actual": {
+        "sr": 44100,
+        "channels": 1,
+        "width": 2
+      },
+      "expected": null
+    },
+    {
+      "name": "audio.8.wav_matches_response_format",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.8.wav_complete_and_response_bytes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.8.audio_seconds",
+      "ok": true,
+      "actual": 2.9722,
+      "expected": {
+        "value": 2.972154195011338,
+        "absolute_tolerance": 5.1e-05
+      }
+    },
+    {
+      "name": "audio.8.non_silent_rms",
+      "ok": true,
+      "actual": -22.360920173956295,
+      "expected": ">= -50 dBFS"
+    },
+    {
+      "name": "audio.8.ttfa_within_e2e",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.8.rtf",
+      "ok": true,
+      "actual": 0.3164,
+      "expected": {
+        "value": 0.31640350341796875,
+        "absolute_tolerance": 6.815927124023437e-05
+      }
+    },
+    {
+      "name": "audio.9.utt_id_matches_codes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.9.manifest_matches_row",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.9.wav_format",
+      "ok": true,
+      "actual": {
+        "sr": 44100,
+        "channels": 1,
+        "width": 2
+      },
+      "expected": null
+    },
+    {
+      "name": "audio.9.wav_matches_response_format",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.9.wav_complete_and_response_bytes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.9.audio_seconds",
+      "ok": true,
+      "actual": 2.4149,
+      "expected": {
+        "value": 2.414875283446712,
+        "absolute_tolerance": 5.1e-05
+      }
+    },
+    {
+      "name": "audio.9.non_silent_rms",
+      "ok": true,
+      "actual": -23.981080198777423,
+      "expected": ">= -50 dBFS"
+    },
+    {
+      "name": "audio.9.ttfa_within_e2e",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.9.rtf",
+      "ok": true,
+      "actual": 0.3309,
+      "expected": {
+        "value": 0.33090735802283655,
+        "absolute_tolerance": 7.211910306490384e-05
+      }
+    },
+    {
+      "name": "audio.10.utt_id_matches_codes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.10.manifest_matches_row",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.10.wav_format",
+      "ok": true,
+      "actual": {
+        "sr": 44100,
+        "channels": 1,
+        "width": 2
+      },
+      "expected": null
+    },
+    {
+      "name": "audio.10.wav_matches_response_format",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.10.wav_complete_and_response_bytes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.10.audio_seconds",
+      "ok": true,
+      "actual": 4.4118,
+      "expected": {
+        "value": 4.4117913832199545,
+        "absolute_tolerance": 5.1e-05
+      }
+    },
+    {
+      "name": "audio.10.non_silent_rms",
+      "ok": true,
+      "actual": -31.161968056784733,
+      "expected": ">= -50 dBFS"
+    },
+    {
+      "name": "audio.10.ttfa_within_e2e",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.10.rtf",
+      "ok": true,
+      "actual": 0.332,
+      "expected": {
+        "value": 0.3320419921875,
+        "absolute_tolerance": 6.255993009868421e-05
+      }
+    },
+    {
+      "name": "audio.11.utt_id_matches_codes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.11.manifest_matches_row",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.11.wav_format",
+      "ok": true,
+      "actual": {
+        "sr": 44100,
+        "channels": 1,
+        "width": 2
+      },
+      "expected": null
+    },
+    {
+      "name": "audio.11.wav_matches_response_format",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.11.wav_complete_and_response_bytes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.11.audio_seconds",
+      "ok": true,
+      "actual": 7.4768,
+      "expected": {
+        "value": 7.476825396825397,
+        "absolute_tolerance": 5.1e-05
+      }
+    },
+    {
+      "name": "audio.11.non_silent_rms",
+      "ok": true,
+      "actual": -36.35259128568112,
+      "expected": ">= -50 dBFS"
+    },
+    {
+      "name": "audio.11.ttfa_within_e2e",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.11.rtf",
+      "ok": true,
+      "actual": 0.3184,
+      "expected": {
+        "value": 0.3183704144021739,
+        "absolute_tolerance": 5.7821076766304347e-05
+      }
+    },
+    {
+      "name": "audio.12.utt_id_matches_codes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.12.manifest_matches_row",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.12.wav_format",
+      "ok": true,
+      "actual": {
+        "sr": 44100,
+        "channels": 1,
+        "width": 2
+      },
+      "expected": null
+    },
+    {
+      "name": "audio.12.wav_matches_response_format",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.12.wav_complete_and_response_bytes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.12.audio_seconds",
+      "ok": true,
+      "actual": 4.5976,
+      "expected": {
+        "value": 4.597551020408163,
+        "absolute_tolerance": 5.1e-05
+      }
+    },
+    {
+      "name": "audio.12.non_silent_rms",
+      "ok": true,
+      "actual": -27.74646205995775,
+      "expected": ">= -50 dBFS"
+    },
+    {
+      "name": "audio.12.ttfa_within_e2e",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.12.rtf",
+      "ok": true,
+      "actual": 0.332,
+      "expected": {
+        "value": 0.3320028409090909,
+        "absolute_tolerance": 6.209286221590909e-05
+      }
+    },
+    {
+      "name": "audio.13.utt_id_matches_codes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.13.manifest_matches_row",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.13.wav_format",
+      "ok": true,
+      "actual": {
+        "sr": 44100,
+        "channels": 1,
+        "width": 2
+      },
+      "expected": null
+    },
+    {
+      "name": "audio.13.wav_matches_response_format",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.13.wav_complete_and_response_bytes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.13.audio_seconds",
+      "ok": true,
+      "actual": 3.3437,
+      "expected": {
+        "value": 3.3436734693877552,
+        "absolute_tolerance": 5.1e-05
+      }
+    },
+    {
+      "name": "audio.13.non_silent_rms",
+      "ok": true,
+      "actual": -30.16148485993925,
+      "expected": ">= -50 dBFS"
+    },
+    {
+      "name": "audio.13.ttfa_within_e2e",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.13.rtf",
+      "ok": true,
+      "actual": 0.3071,
+      "expected": {
+        "value": 0.30711730957031247,
+        "absolute_tolerance": 6.6252685546875e-05
+      }
+    },
+    {
+      "name": "audio.14.utt_id_matches_codes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.14.manifest_matches_row",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.14.wav_format",
+      "ok": true,
+      "actual": {
+        "sr": 44100,
+        "channels": 1,
+        "width": 2
+      },
+      "expected": null
+    },
+    {
+      "name": "audio.14.wav_matches_response_format",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.14.wav_complete_and_response_bytes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.14.audio_seconds",
+      "ok": true,
+      "actual": 5.4799,
+      "expected": {
+        "value": 5.479909297052155,
+        "absolute_tolerance": 5.1e-05
+      }
+    },
+    {
+      "name": "audio.14.non_silent_rms",
+      "ok": true,
+      "actual": -31.677245579162644,
+      "expected": ">= -50 dBFS"
+    },
+    {
+      "name": "audio.14.ttfa_within_e2e",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.14.rtf",
+      "ok": true,
+      "actual": 0.3488,
+      "expected": {
+        "value": 0.348837890625,
+        "absolute_tolerance": 6.0306723384533896e-05
+      }
+    },
+    {
+      "name": "audio.15.utt_id_matches_codes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.15.manifest_matches_row",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.15.wav_format",
+      "ok": true,
+      "actual": {
+        "sr": 44100,
+        "channels": 1,
+        "width": 2
+      },
+      "expected": null
+    },
+    {
+      "name": "audio.15.wav_matches_response_format",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.15.wav_complete_and_response_bytes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.15.audio_seconds",
+      "ok": true,
+      "actual": 4.2725,
+      "expected": {
+        "value": 4.272471655328798,
+        "absolute_tolerance": 5.1e-05
+      }
+    },
+    {
+      "name": "audio.15.non_silent_rms",
+      "ok": true,
+      "actual": -22.26546675897284,
+      "expected": ">= -50 dBFS"
+    },
+    {
+      "name": "audio.15.ttfa_within_e2e",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.15.rtf",
+      "ok": true,
+      "actual": 0.3396,
+      "expected": {
+        "value": 0.33959265667459243,
+        "absolute_tolerance": 6.293688434103261e-05
+      }
+    },
+    {
+      "name": "audio.16.utt_id_matches_codes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.16.manifest_matches_row",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.16.wav_format",
+      "ok": true,
+      "actual": {
+        "sr": 44100,
+        "channels": 1,
+        "width": 2
+      },
+      "expected": null
+    },
+    {
+      "name": "audio.16.wav_matches_response_format",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.16.wav_complete_and_response_bytes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.16.audio_seconds",
+      "ok": true,
+      "actual": 3.2508,
+      "expected": {
+        "value": 3.250793650793651,
+        "absolute_tolerance": 5.1e-05
+      }
+    },
+    {
+      "name": "audio.16.non_silent_rms",
+      "ok": true,
+      "actual": -30.999461638419348,
+      "expected": ">= -50 dBFS"
+    },
+    {
+      "name": "audio.16.ttfa_within_e2e",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.16.rtf",
+      "ok": true,
+      "actual": 0.3134,
+      "expected": {
+        "value": 0.31340039062499997,
+        "absolute_tolerance": 6.66884765625e-05
+      }
+    },
+    {
+      "name": "audio.17.utt_id_matches_codes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.17.manifest_matches_row",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.17.wav_format",
+      "ok": true,
+      "actual": {
+        "sr": 44100,
+        "channels": 1,
+        "width": 2
+      },
+      "expected": null
+    },
+    {
+      "name": "audio.17.wav_matches_response_format",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.17.wav_complete_and_response_bytes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.17.audio_seconds",
+      "ok": true,
+      "actual": 3.065,
+      "expected": {
+        "value": 3.0650340136054424,
+        "absolute_tolerance": 5.1e-05
+      }
+    },
+    {
+      "name": "audio.17.non_silent_rms",
+      "ok": true,
+      "actual": -36.28246086887633,
+      "expected": ">= -50 dBFS"
+    },
+    {
+      "name": "audio.17.ttfa_within_e2e",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.17.rtf",
+      "ok": true,
+      "actual": 0.3628,
+      "expected": {
+        "value": 0.36283447265625,
+        "absolute_tolerance": 6.763929332386363e-05
+      }
+    },
+    {
+      "name": "audio.18.utt_id_matches_codes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.18.manifest_matches_row",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.18.wav_format",
+      "ok": true,
+      "actual": {
+        "sr": 44100,
+        "channels": 1,
+        "width": 2
+      },
+      "expected": null
+    },
+    {
+      "name": "audio.18.wav_matches_response_format",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.18.wav_complete_and_response_bytes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.18.audio_seconds",
+      "ok": true,
+      "actual": 9.7988,
+      "expected": {
+        "value": 9.798820861678005,
+        "absolute_tolerance": 5.1e-05
+      }
+    },
+    {
+      "name": "audio.18.non_silent_rms",
+      "ok": true,
+      "actual": -29.68065516928146,
+      "expected": ">= -50 dBFS"
+    },
+    {
+      "name": "audio.18.ttfa_within_e2e",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.18.rtf",
+      "ok": true,
+      "actual": 0.3182,
+      "expected": {
+        "value": 0.3181607301540284,
+        "absolute_tolerance": 5.6204707864336495e-05
+      }
+    },
+    {
+      "name": "audio.19.utt_id_matches_codes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.19.manifest_matches_row",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.19.wav_format",
+      "ok": true,
+      "actual": {
+        "sr": 44100,
+        "channels": 1,
+        "width": 2
+      },
+      "expected": null
+    },
+    {
+      "name": "audio.19.wav_matches_response_format",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.19.wav_complete_and_response_bytes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.19.audio_seconds",
+      "ok": true,
+      "actual": 4.9691,
+      "expected": {
+        "value": 4.96907029478458,
+        "absolute_tolerance": 5.1e-05
+      }
+    },
+    {
+      "name": "audio.19.non_silent_rms",
+      "ok": true,
+      "actual": -27.873647121420326,
+      "expected": ">= -50 dBFS"
+    },
+    {
+      "name": "audio.19.ttfa_within_e2e",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.19.rtf",
+      "ok": true,
+      "actual": 0.3214,
+      "expected": {
+        "value": 0.32142833674065424,
+        "absolute_tolerance": 6.126348933995327e-05
+      }
+    },
+    {
+      "name": "audio.20.utt_id_matches_codes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.20.manifest_matches_row",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.20.wav_format",
+      "ok": true,
+      "actual": {
+        "sr": 44100,
+        "channels": 1,
+        "width": 2
+      },
+      "expected": null
+    },
+    {
+      "name": "audio.20.wav_matches_response_format",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.20.wav_complete_and_response_bytes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.20.audio_seconds",
+      "ok": true,
+      "actual": 2.1827,
+      "expected": {
+        "value": 2.182675736961451,
+        "absolute_tolerance": 5.1e-05
+      }
+    },
+    {
+      "name": "audio.20.non_silent_rms",
+      "ok": true,
+      "actual": -21.231410523978155,
+      "expected": ">= -50 dBFS"
+    },
+    {
+      "name": "audio.20.ttfa_within_e2e",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.20.rtf",
+      "ok": true,
+      "actual": 0.3389,
+      "expected": {
+        "value": 0.33889596492686175,
+        "absolute_tolerance": 7.43658161569149e-05
+      }
+    },
+    {
+      "name": "audio.21.utt_id_matches_codes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.21.manifest_matches_row",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.21.wav_format",
+      "ok": true,
+      "actual": {
+        "sr": 44100,
+        "channels": 1,
+        "width": 2
+      },
+      "expected": null
+    },
+    {
+      "name": "audio.21.wav_matches_response_format",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.21.wav_complete_and_response_bytes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.21.audio_seconds",
+      "ok": true,
+      "actual": 4.0867,
+      "expected": {
+        "value": 4.08671201814059,
+        "absolute_tolerance": 5.1e-05
+      }
+    },
+    {
+      "name": "audio.21.non_silent_rms",
+      "ok": true,
+      "actual": -26.5689672032008,
+      "expected": ">= -50 dBFS"
+    },
+    {
+      "name": "audio.21.ttfa_within_e2e",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.21.rtf",
+      "ok": true,
+      "actual": 0.3152,
+      "expected": {
+        "value": 0.3152411998401988,
+        "absolute_tolerance": 6.347946999289773e-05
+      }
+    },
+    {
+      "name": "audio.22.utt_id_matches_codes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.22.manifest_matches_row",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.22.wav_format",
+      "ok": true,
+      "actual": {
+        "sr": 44100,
+        "channels": 1,
+        "width": 2
+      },
+      "expected": null
+    },
+    {
+      "name": "audio.22.wav_matches_response_format",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.22.wav_complete_and_response_bytes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.22.audio_seconds",
+      "ok": true,
+      "actual": 6.8731,
+      "expected": {
+        "value": 6.873106575963718,
+        "absolute_tolerance": 5.1e-05
+      }
+    },
+    {
+      "name": "audio.22.non_silent_rms",
+      "ok": true,
+      "actual": -35.99327410755357,
+      "expected": ">= -50 dBFS"
+    },
+    {
+      "name": "audio.22.ttfa_within_e2e",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.22.rtf",
+      "ok": true,
+      "actual": 0.3273,
+      "expected": {
+        "value": 0.3273337864231419,
+        "absolute_tolerance": 5.842022540118243e-05
+      }
+    },
+    {
+      "name": "audio.23.utt_id_matches_codes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.23.manifest_matches_row",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.23.wav_format",
+      "ok": true,
+      "actual": {
+        "sr": 44100,
+        "channels": 1,
+        "width": 2
+      },
+      "expected": null
+    },
+    {
+      "name": "audio.23.wav_matches_response_format",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.23.wav_complete_and_response_bytes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.23.audio_seconds",
+      "ok": true,
+      "actual": 4.0867,
+      "expected": {
+        "value": 4.08671201814059,
+        "absolute_tolerance": 5.1e-05
+      }
+    },
+    {
+      "name": "audio.23.non_silent_rms",
+      "ok": true,
+      "actual": -23.229590459285614,
+      "expected": ">= -50 dBFS"
+    },
+    {
+      "name": "audio.23.ttfa_within_e2e",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.23.rtf",
+      "ok": true,
+      "actual": 0.3197,
+      "expected": {
+        "value": 0.3197191273082386,
+        "absolute_tolerance": 6.347946999289773e-05
+      }
+    },
+    {
+      "name": "audio.24.utt_id_matches_codes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.24.manifest_matches_row",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.24.wav_format",
+      "ok": true,
+      "actual": {
+        "sr": 44100,
+        "channels": 1,
+        "width": 2
+      },
+      "expected": null
+    },
+    {
+      "name": "audio.24.wav_matches_response_format",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.24.wav_complete_and_response_bytes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.24.audio_seconds",
+      "ok": true,
+      "actual": 1.2539,
+      "expected": {
+        "value": 1.253877551020408,
+        "absolute_tolerance": 5.1e-05
+      }
+    },
+    {
+      "name": "audio.24.non_silent_rms",
+      "ok": true,
+      "actual": -30.333185658535115,
+      "expected": ">= -50 dBFS"
+    },
+    {
+      "name": "audio.24.ttfa_within_e2e",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.24.rtf",
+      "ok": true,
+      "actual": 0.3412,
+      "expected": {
+        "value": 0.341181640625,
+        "absolute_tolerance": 9.1673828125e-05
+      }
+    },
+    {
+      "name": "audio.25.utt_id_matches_codes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.25.manifest_matches_row",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.25.wav_format",
+      "ok": true,
+      "actual": {
+        "sr": 44100,
+        "channels": 1,
+        "width": 2
+      },
+      "expected": null
+    },
+    {
+      "name": "audio.25.wav_matches_response_format",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.25.wav_complete_and_response_bytes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.25.audio_seconds",
+      "ok": true,
+      "actual": 3.3901,
+      "expected": {
+        "value": 3.3901133786848074,
+        "absolute_tolerance": 5.1e-05
+      }
+    },
+    {
+      "name": "audio.25.non_silent_rms",
+      "ok": true,
+      "actual": -31.16321356034726,
+      "expected": ">= -50 dBFS"
+    },
+    {
+      "name": "audio.25.ttfa_within_e2e",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.25.rtf",
+      "ok": true,
+      "actual": 0.3643,
+      "expected": {
+        "value": 0.36435359589041094,
+        "absolute_tolerance": 6.60437446489726e-05
+      }
+    },
+    {
+      "name": "audio.26.utt_id_matches_codes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.26.manifest_matches_row",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.26.wav_format",
+      "ok": true,
+      "actual": {
+        "sr": 44100,
+        "channels": 1,
+        "width": 2
+      },
+      "expected": null
+    },
+    {
+      "name": "audio.26.wav_matches_response_format",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.26.wav_complete_and_response_bytes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.26.audio_seconds",
+      "ok": true,
+      "actual": 3.065,
+      "expected": {
+        "value": 3.0650340136054424,
+        "absolute_tolerance": 5.1e-05
+      }
+    },
+    {
+      "name": "audio.26.non_silent_rms",
+      "ok": true,
+      "actual": -32.62564529681179,
+      "expected": ">= -50 dBFS"
+    },
+    {
+      "name": "audio.26.ttfa_within_e2e",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.26.rtf",
+      "ok": true,
+      "actual": 0.367,
+      "expected": {
+        "value": 0.36701060901988636,
+        "absolute_tolerance": 6.763929332386363e-05
+      }
+    },
+    {
+      "name": "audio.27.utt_id_matches_codes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.27.manifest_matches_row",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.27.wav_format",
+      "ok": true,
+      "actual": {
+        "sr": 44100,
+        "channels": 1,
+        "width": 2
+      },
+      "expected": null
+    },
+    {
+      "name": "audio.27.wav_matches_response_format",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.27.wav_complete_and_response_bytes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.27.audio_seconds",
+      "ok": true,
+      "actual": 3.5294,
+      "expected": {
+        "value": 3.5294331065759637,
+        "absolute_tolerance": 5.1e-05
+      }
+    },
+    {
+      "name": "audio.27.non_silent_rms",
+      "ok": true,
+      "actual": -24.24346315912766,
+      "expected": ">= -50 dBFS"
+    },
+    {
+      "name": "audio.27.ttfa_within_e2e",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.27.rtf",
+      "ok": true,
+      "actual": 0.3756,
+      "expected": {
+        "value": 0.37561272872121715,
+        "absolute_tolerance": 6.544991262335527e-05
+      }
+    },
+    {
+      "name": "audio.28.utt_id_matches_codes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.28.manifest_matches_row",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.28.wav_format",
+      "ok": true,
+      "actual": {
+        "sr": 44100,
+        "channels": 1,
+        "width": 2
+      },
+      "expected": null
+    },
+    {
+      "name": "audio.28.wav_matches_response_format",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.28.wav_complete_and_response_bytes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.28.audio_seconds",
+      "ok": true,
+      "actual": 2.5542,
+      "expected": {
+        "value": 2.5541950113378684,
+        "absolute_tolerance": 5.1e-05
+      }
+    },
+    {
+      "name": "audio.28.non_silent_rms",
+      "ok": true,
+      "actual": -42.37438608780679,
+      "expected": ">= -50 dBFS"
+    },
+    {
+      "name": "audio.28.ttfa_within_e2e",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.28.rtf",
+      "ok": true,
+      "actual": 0.3685,
+      "expected": {
+        "value": 0.3684526811079546,
+        "absolute_tolerance": 7.096715198863637e-05
+      }
+    },
+    {
+      "name": "audio.29.utt_id_matches_codes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.29.manifest_matches_row",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.29.wav_format",
+      "ok": true,
+      "actual": {
+        "sr": 44100,
+        "channels": 1,
+        "width": 2
+      },
+      "expected": null
+    },
+    {
+      "name": "audio.29.wav_matches_response_format",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.29.wav_complete_and_response_bytes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.29.audio_seconds",
+      "ok": true,
+      "actual": 3.3437,
+      "expected": {
+        "value": 3.3436734693877552,
+        "absolute_tolerance": 5.1e-05
+      }
+    },
+    {
+      "name": "audio.29.non_silent_rms",
+      "ok": true,
+      "actual": -41.9099158864781,
+      "expected": ">= -50 dBFS"
+    },
+    {
+      "name": "audio.29.ttfa_within_e2e",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.29.rtf",
+      "ok": true,
+      "actual": 0.3292,
+      "expected": {
+        "value": 0.32921875,
+        "absolute_tolerance": 6.6252685546875e-05
+      }
+    },
+    {
+      "name": "audio.30.utt_id_matches_codes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.30.manifest_matches_row",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.30.wav_format",
+      "ok": true,
+      "actual": {
+        "sr": 44100,
+        "channels": 1,
+        "width": 2
+      },
+      "expected": null
+    },
+    {
+      "name": "audio.30.wav_matches_response_format",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.30.wav_complete_and_response_bytes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.30.audio_seconds",
+      "ok": true,
+      "actual": 5.2477,
+      "expected": {
+        "value": 5.2477097505668935,
+        "absolute_tolerance": 5.1e-05
+      }
+    },
+    {
+      "name": "audio.30.non_silent_rms",
+      "ok": true,
+      "actual": -28.129072375994255,
+      "expected": ">= -50 dBFS"
+    },
+    {
+      "name": "audio.30.ttfa_within_e2e",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.30.rtf",
+      "ok": true,
+      "actual": 0.259,
+      "expected": {
+        "value": 0.2590082273230088,
+        "absolute_tolerance": 6.071852530420354e-05
+      }
+    },
+    {
+      "name": "audio.31.utt_id_matches_codes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.31.manifest_matches_row",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.31.wav_format",
+      "ok": true,
+      "actual": {
+        "sr": 44100,
+        "channels": 1,
+        "width": 2
+      },
+      "expected": null
+    },
+    {
+      "name": "audio.31.wav_matches_response_format",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.31.wav_complete_and_response_bytes",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.31.audio_seconds",
+      "ok": true,
+      "actual": 2.9257,
+      "expected": {
+        "value": 2.9257142857142857,
+        "absolute_tolerance": 5.1e-05
+      }
+    },
+    {
+      "name": "audio.31.non_silent_rms",
+      "ok": true,
+      "actual": -25.069437308702863,
+      "expected": ">= -50 dBFS"
+    },
+    {
+      "name": "audio.31.ttfa_within_e2e",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.31.rtf",
+      "ok": true,
+      "actual": 0.2729,
+      "expected": {
+        "value": 0.272890625,
+        "absolute_tolerance": 6.8431640625e-05
+      }
+    },
+    {
+      "name": "audio.summary.ttfa_ms.mean",
+      "ok": true,
+      "actual": 232.7,
+      "expected": {
+        "value": 232.72781249999997,
+        "absolute_tolerance": 0.051
+      }
+    },
+    {
+      "name": "audio.summary.ttfa_ms.p50",
+      "ok": true,
+      "actual": 211.0,
+      "expected": {
+        "value": 210.95499999999998,
+        "absolute_tolerance": 0.051
+      }
+    },
+    {
+      "name": "audio.summary.ttfa_ms.p90",
+      "ok": true,
+      "actual": 353.7,
+      "expected": {
+        "value": 353.70100000000014,
+        "absolute_tolerance": 0.051
+      }
+    },
+    {
+      "name": "audio.summary.ttfa_ms.p95",
+      "ok": true,
+      "actual": 369.6,
+      "expected": {
+        "value": 369.6055,
+        "absolute_tolerance": 0.051
+      }
+    },
+    {
+      "name": "audio.summary.ttfa_ms.p99",
+      "ok": true,
+      "actual": 371.4,
+      "expected": {
+        "value": 371.3807,
+        "absolute_tolerance": 0.051
+      }
+    },
+    {
+      "name": "audio.summary.ttfa_ms.max",
+      "ok": true,
+      "actual": 371.4,
+      "expected": {
+        "value": 371.39,
+        "absolute_tolerance": 0.051
+      }
+    },
+    {
+      "name": "audio.summary.rtf.mean",
+      "ok": true,
+      "actual": 0.3359,
+      "expected": {
+        "value": 0.33590937499999995,
+        "absolute_tolerance": 5.1e-05
+      }
+    },
+    {
+      "name": "audio.summary.rtf.p50",
+      "ok": true,
+      "actual": 0.3307,
+      "expected": {
+        "value": 0.3307,
+        "absolute_tolerance": 5.1e-05
+      }
+    },
+    {
+      "name": "audio.summary.rtf.p90",
+      "ok": true,
+      "actual": 0.3749,
+      "expected": {
+        "value": 0.37489,
+        "absolute_tolerance": 5.1e-05
+      }
+    },
+    {
+      "name": "audio.summary.rtf.p95",
+      "ok": true,
+      "actual": 0.3902,
+      "expected": {
+        "value": 0.390235,
+        "absolute_tolerance": 5.1e-05
+      }
+    },
+    {
+      "name": "audio.summary.rtf.p99",
+      "ok": true,
+      "actual": 0.4126,
+      "expected": {
+        "value": 0.41256200000000004,
+        "absolute_tolerance": 5.1e-05
+      }
+    },
+    {
+      "name": "audio.summary.rtf.max",
+      "ok": true,
+      "actual": 0.4156,
+      "expected": {
+        "value": 0.4156,
+        "absolute_tolerance": 5.1e-05
+      }
+    },
+    {
+      "name": "audio.summary.audio_s.mean",
+      "ok": true,
+      "actual": 4.229,
+      "expected": {
+        "value": 4.228934375000001,
+        "absolute_tolerance": 0.00051
+      }
+    },
+    {
+      "name": "audio.summary.audio_s.p50",
+      "ok": true,
+      "actual": 3.46,
+      "expected": {
+        "value": 3.4597499999999997,
+        "absolute_tolerance": 0.00051
+      }
+    },
+    {
+      "name": "audio.summary.audio_s.p90",
+      "ok": true,
+      "actual": 7.416,
+      "expected": {
+        "value": 7.416430000000001,
+        "absolute_tolerance": 0.00051
+      }
+    },
+    {
+      "name": "audio.summary.audio_s.p95",
+      "ok": true,
+      "actual": 8.306,
+      "expected": {
+        "value": 8.305765,
+        "absolute_tolerance": 0.00051
+      }
+    },
+    {
+      "name": "audio.summary.audio_s.p99",
+      "ok": true,
+      "actual": 9.439,
+      "expected": {
+        "value": 9.43889,
+        "absolute_tolerance": 0.00051
+      }
+    },
+    {
+      "name": "audio.summary.audio_s.max",
+      "ok": true,
+      "actual": 9.799,
+      "expected": {
+        "value": 9.7988,
+        "absolute_tolerance": 0.00051
+      }
+    },
+    {
+      "name": "audio.summary.audio_s_total",
+      "ok": true,
+      "actual": 135.326,
+      "expected": {
+        "value": 135.3259,
+        "absolute_tolerance": 0.00051
+      }
+    },
+    {
+      "name": "audio.summary.throughput",
+      "ok": true,
+      "actual": 11.49,
+      "expected": {
+        "value": 11.488742677646659,
+        "absolute_tolerance": 0.005597454152917717
+      }
+    },
+    {
+      "name": "audio.summary.underrun_s_total",
+      "ok": true,
+      "actual": 0.0,
+      "expected": {
+        "value": 0.0,
+        "absolute_tolerance": 0.00051
+      }
+    },
+    {
+      "name": "audio.summary.longest_wait_ms.mean",
+      "ok": true,
+      "actual": 0.0,
+      "expected": {
+        "value": 0.0,
+        "absolute_tolerance": 0.051
+      }
+    },
+    {
+      "name": "audio.summary.longest_wait_ms.p50",
+      "ok": true,
+      "actual": 0.0,
+      "expected": {
+        "value": 0.0,
+        "absolute_tolerance": 0.051
+      }
+    },
+    {
+      "name": "audio.summary.longest_wait_ms.p90",
+      "ok": true,
+      "actual": 0.0,
+      "expected": {
+        "value": 0.0,
+        "absolute_tolerance": 0.051
+      }
+    },
+    {
+      "name": "audio.summary.longest_wait_ms.p95",
+      "ok": true,
+      "actual": 0.0,
+      "expected": {
+        "value": 0.0,
+        "absolute_tolerance": 0.051
+      }
+    },
+    {
+      "name": "audio.summary.longest_wait_ms.p99",
+      "ok": true,
+      "actual": 0.0,
+      "expected": {
+        "value": 0.0,
+        "absolute_tolerance": 0.051
+      }
+    },
+    {
+      "name": "audio.summary.longest_wait_ms.max",
+      "ok": true,
+      "actual": 0.0,
+      "expected": {
+        "value": 0.0,
+        "absolute_tolerance": 0.051
+      }
+    },
+    {
+      "name": "audio.summary.stall.0ms.counts",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.summary.stall.0ms.percent",
+      "ok": true,
+      "actual": 0.0,
+      "expected": {
+        "value": 0.0,
+        "absolute_tolerance": 0.0051
+      }
+    },
+    {
+      "name": "audio.summary.stall.100ms.counts",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "audio.summary.stall.100ms.percent",
+      "ok": true,
+      "actual": 0.0,
+      "expected": {
+        "value": 0.0,
+        "absolute_tolerance": 0.0051
+      }
+    },
+    {
+      "name": "paired.same_indices_utt_ids",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "name": "paired.same_request_seeds",
+      "ok": true,
+      "actual": null,
+      "expected": null
+    }
+  ],
+  "failed_checks": [],
+  "source": {
+    "codes_sha256": "4be960b12e0984673a8f2058e6508d07a5bc5ab3cb7e27e10e1b8be4241262b9",
+    "codes_out": "${NVME_WORKDIR}/bench-validation/20261020_165001_49599d4/check_codes",
+    "audio_out": "${NVME_WORKDIR}/bench-validation/20261020_165001_49599d4/check_audio"
+  },
+  "duration_distributions": {
+    "codes": {
+      "mean": 3.8443537414965983,
+      "min": 1.1145578231292517,
+      "max": 8.916462585034013,
+      "p50": 3.599092970521542,
+      "p90": 5.335945578231293,
+      "p95": 5.821242630385488,
+      "p99": 7.980698412698416
+    },
+    "audio": {
+      "mean": 4.228934240362811,
+      "min": 1.253877551020408,
+      "max": 9.798820861678005,
+      "p50": 3.4597732426303853,
+      "p90": 7.4164535147392305,
+      "p95": 8.305777777777777,
+      "p99": 9.438911564625851
+    }
+  },
+  "paired_durations": [
+    {
+      "index": 0,
+      "utt_id": "common_voice_en_10119832-common_voice_en_10119840",
+      "codes_audio_s": 2.182675736961451,
+      "audio_audio_s": 2.2755555555555556,
+      "codes_over_audio_duration": 0.9591836734693877
+    },
+    {
+      "index": 1,
+      "utt_id": "common_voice_en_10119832-common_voice_en_10119847",
+      "codes_audio_s": 2.8792743764172335,
+      "audio_audio_s": 2.786394557823129,
+      "codes_over_audio_duration": 1.0333333333333334
+    },
+    {
+      "index": 2,
+      "utt_id": "common_voice_en_103675-common_voice_en_103676",
+      "codes_audio_s": 5.897868480725624,
+      "audio_audio_s": 8.034104308390022,
+      "codes_over_audio_duration": 0.7341040462427746
+    },
+    {
+      "index": 3,
+      "utt_id": "common_voice_en_103675-common_voice_en_103677",
+      "codes_audio_s": 2.8328344671201813,
+      "audio_audio_s": 2.461315192743764,
+      "codes_over_audio_duration": 1.150943396226415
+    },
+    {
+      "index": 4,
+      "utt_id": "common_voice_en_10933823-common_voice_en_10933822",
+      "codes_audio_s": 4.4117913832199545,
+      "audio_audio_s": 4.551111111111111,
+      "codes_over_audio_duration": 0.9693877551020408
+    },
+    {
+      "index": 5,
+      "utt_id": "common_voice_en_10933823-common_voice_en_10933825",
+      "codes_audio_s": 2.693514739229025,
+      "audio_audio_s": 2.693514739229025,
+      "codes_over_audio_duration": 1.0
+    },
+    {
+      "index": 6,
+      "utt_id": "common_voice_en_120405-common_voice_en_120402",
+      "codes_audio_s": 8.916462585034013,
+      "audio_audio_s": 8.6378231292517,
+      "codes_over_audio_duration": 1.032258064516129
+    },
+    {
+      "index": 7,
+      "utt_id": "common_voice_en_120405-common_voice_en_120406",
+      "codes_audio_s": 4.133151927437642,
+      "audio_audio_s": 5.294149659863946,
+      "codes_over_audio_duration": 0.780701754385965
+    },
+    {
+      "index": 8,
+      "utt_id": "common_voice_en_1205005-common_voice_en_1205007",
+      "codes_audio_s": 3.575873015873016,
+      "audio_audio_s": 2.972154195011338,
+      "codes_over_audio_duration": 1.203125
+    },
+    {
+      "index": 9,
+      "utt_id": "common_voice_en_1205005-common_voice_en_1205008",
+      "codes_audio_s": 2.6006349206349206,
+      "audio_audio_s": 2.414875283446712,
+      "codes_over_audio_duration": 1.0769230769230769
+    },
+    {
+      "index": 10,
+      "utt_id": "common_voice_en_123125-common_voice_en_123126",
+      "codes_audio_s": 4.133151927437642,
+      "audio_audio_s": 4.4117913832199545,
+      "codes_over_audio_duration": 0.936842105263158
+    },
+    {
+      "index": 11,
+      "utt_id": "common_voice_en_123125-common_voice_en_123127",
+      "codes_audio_s": 5.758548752834467,
+      "audio_audio_s": 7.476825396825397,
+      "codes_over_audio_duration": 0.7701863354037266
+    },
+    {
+      "index": 12,
+      "utt_id": "common_voice_en_125386-common_voice_en_125388",
+      "codes_audio_s": 4.829750566893424,
+      "audio_audio_s": 4.597551020408163,
+      "codes_over_audio_duration": 1.0505050505050506
+    },
+    {
+      "index": 13,
+      "utt_id": "common_voice_en_125386-common_voice_en_125389",
+      "codes_audio_s": 3.297233560090703,
+      "audio_audio_s": 3.3436734693877552,
+      "codes_over_audio_duration": 0.986111111111111
+    },
+    {
+      "index": 14,
+      "utt_id": "common_voice_en_137148-common_voice_en_137152",
+      "codes_audio_s": 2.786394557823129,
+      "audio_audio_s": 5.479909297052155,
+      "codes_over_audio_duration": 0.5084745762711864
+    },
+    {
+      "index": 15,
+      "utt_id": "common_voice_en_13900-common_voice_en_13901",
+      "codes_audio_s": 5.294149659863946,
+      "audio_audio_s": 4.272471655328798,
+      "codes_over_audio_duration": 1.2391304347826089
+    },
+    {
+      "index": 16,
+      "utt_id": "common_voice_en_1416089-common_voice_en_1416090",
+      "codes_audio_s": 2.972154195011338,
+      "audio_audio_s": 3.250793650793651,
+      "codes_over_audio_duration": 0.9142857142857143
+    },
+    {
+      "index": 17,
+      "utt_id": "common_voice_en_1416089-common_voice_en_1416093",
+      "codes_audio_s": 3.2043537414965986,
+      "audio_audio_s": 3.0650340136054424,
+      "codes_over_audio_duration": 1.0454545454545454
+    },
+    {
+      "index": 18,
+      "utt_id": "common_voice_en_15265-common_voice_en_15266",
+      "codes_audio_s": 4.133151927437642,
+      "audio_audio_s": 9.798820861678005,
+      "codes_over_audio_duration": 0.4218009478672986
+    },
+    {
+      "index": 19,
+      "utt_id": "common_voice_en_15265-common_voice_en_15268",
+      "codes_audio_s": 4.504671201814059,
+      "audio_audio_s": 4.96907029478458,
+      "codes_over_audio_duration": 0.9065420560747663
+    },
+    {
+      "index": 20,
+      "utt_id": "common_voice_en_153872-common_voice_en_153873",
+      "codes_audio_s": 2.2291156462585033,
+      "audio_audio_s": 2.182675736961451,
+      "codes_over_audio_duration": 1.0212765957446808
+    },
+    {
+      "index": 21,
+      "utt_id": "common_voice_en_153872-common_voice_en_153874",
+      "codes_audio_s": 4.551111111111111,
+      "audio_audio_s": 4.08671201814059,
+      "codes_over_audio_duration": 1.1136363636363635
+    },
+    {
+      "index": 22,
+      "utt_id": "common_voice_en_155313-common_voice_en_155315",
+      "codes_audio_s": 5.340589569160998,
+      "audio_audio_s": 6.873106575963718,
+      "codes_over_audio_duration": 0.7770270270270271
+    },
+    {
+      "index": 23,
+      "utt_id": "common_voice_en_15734837-common_voice_en_15734838",
+      "codes_audio_s": 3.622312925170068,
+      "audio_audio_s": 4.08671201814059,
+      "codes_over_audio_duration": 0.8863636363636364
+    },
+    {
+      "index": 24,
+      "utt_id": "common_voice_en_15735839-common_voice_en_15735837",
+      "codes_audio_s": 1.1145578231292517,
+      "audio_audio_s": 1.253877551020408,
+      "codes_over_audio_duration": 0.888888888888889
+    },
+    {
+      "index": 25,
+      "utt_id": "common_voice_en_15903802-common_voice_en_15903807",
+      "codes_audio_s": 3.7151927437641725,
+      "audio_audio_s": 3.3901133786848074,
+      "codes_over_audio_duration": 1.095890410958904
+    },
+    {
+      "index": 26,
+      "utt_id": "common_voice_en_15903802-common_voice_en_15903815",
+      "codes_audio_s": 2.972154195011338,
+      "audio_audio_s": 3.0650340136054424,
+      "codes_over_audio_duration": 0.9696969696969696
+    },
+    {
+      "index": 27,
+      "utt_id": "common_voice_en_16666041-common_voice_en_16666040",
+      "codes_audio_s": 3.0650340136054424,
+      "audio_audio_s": 3.5294331065759637,
+      "codes_over_audio_duration": 0.868421052631579
+    },
+    {
+      "index": 28,
+      "utt_id": "common_voice_en_167249-common_voice_en_167246",
+      "codes_audio_s": 3.575873015873016,
+      "audio_audio_s": 2.5541950113378684,
+      "codes_over_audio_duration": 1.4000000000000001
+    },
+    {
+      "index": 29,
+      "utt_id": "common_voice_en_167249-common_voice_en_167247",
+      "codes_audio_s": 3.7616326530612243,
+      "audio_audio_s": 3.3436734693877552,
+      "codes_over_audio_duration": 1.125
+    },
+    {
+      "index": 30,
+      "utt_id": "common_voice_en_17147545-common_voice_en_17147546",
+      "codes_audio_s": 4.922630385487528,
+      "audio_audio_s": 5.2477097505668935,
+      "codes_over_audio_duration": 0.9380530973451326
+    },
+    {
+      "index": 31,
+      "utt_id": "common_voice_en_17161-common_voice_en_17159",
+      "codes_audio_s": 3.111473922902494,
+      "audio_audio_s": 2.9257142857142857,
+      "codes_over_audio_duration": 1.0634920634920635
+    }
+  ],
+  "paired_duration_ratio_distribution": {
+    "mean": 0.9645949713438604,
+    "min": 0.4218009478672986,
+    "max": 1.4000000000000001,
+    "p50": 0.9779040404040403,
+    "p90": 1.1483490566037735,
+    "p95": 1.2193274456521739,
+    "p99": 1.350130434782609
+  },
+  "wav_observations": {
+    "codes": [
+      {
+        "index": 0,
+        "utt_id": "common_voice_en_10119832-common_voice_en_10119840",
+        "wav": "${NVME_WORKDIR}/bench-validation/20261020_165001_49599d4/check_codes/audio/0000_common_voice_en_10119832-common_voice_en_10119840.wav",
+        "wav_sha256": "b2a5dac87cf8be444ef3fc3a399fb735d59ce722fc2b3704c3938f87ff284f0d",
+        "frames": 96256,
+        "sample_rate": 44100,
+        "channels": 1,
+        "audio_s_from_wav": 2.182675736961451,
+        "rms_dbfs": -24.195420195839286,
+        "peak": 0.41748046875,
+        "prompt_wav": "prompt-wavs/common_voice_en_10119832.wav",
+        "target_text": "Get the trust fund to the bank early.",
+        "ref_text": "We asked over twenty different people, and they all said it was his."
+      },
+      {
+        "index": 1,
+        "utt_id": "common_voice_en_10119832-common_voice_en_10119847",
+        "wav": "${NVME_WORKDIR}/bench-validation/20261020_165001_49599d4/check_codes/audio/0001_common_voice_en_10119832-common_voice_en_10119847.wav",
+        "wav_sha256": "5b2015ce3708b286558b47bc9d66c19c3a933672c4995d64603e81b1ade4e2b5",
+        "frames": 126976,
+        "sample_rate": 44100,
+        "channels": 1,
+        "audio_s_from_wav": 2.8792743764172335,
+        "rms_dbfs": -22.890289138622748,
+        "peak": 0.5595703125,
+        "prompt_wav": "prompt-wavs/common_voice_en_10119832.wav",
+        "target_text": "The stained glass offered a hypnotic atmosphere.",
+        "ref_text": "We asked over twenty different people, and they all said it was his."
+      },
+      {
+        "index": 2,
+        "utt_id": "common_voice_en_103675-common_voice_en_103676",
+        "wav": "${NVME_WORKDIR}/bench-validation/20261020_165001_49599d4/check_codes/audio/0002_common_voice_en_103675-common_voice_en_103676.wav",
+        "wav_sha256": "c9b08947eec7664ecfa90d90e7d58ea09aa30533883b3bff25f035e4f5710595",
+        "frames": 260096,
+        "sample_rate": 44100,
+        "channels": 1,
+        "audio_s_from_wav": 5.897868480725624,
+        "rms_dbfs": -29.37373063966756,
+        "peak": 0.209228515625,
+        "prompt_wav": "prompt-wavs/common_voice_en_103675.wav",
+        "target_text": "One by one, the campfires were extinguished, and the oasis fell as quiet as the desert.",
+        "ref_text": "I'm never more aware of a room's acoustics than when I'm trying to enjoy a snack I have no intention of sharing."
+      },
+      {
+        "index": 3,
+        "utt_id": "common_voice_en_103675-common_voice_en_103677",
+        "wav": "${NVME_WORKDIR}/bench-validation/20261020_165001_49599d4/check_codes/audio/0003_common_voice_en_103675-common_voice_en_103677.wav",
+        "wav_sha256": "8c21b8a05799fbac1b0eb8d99c88a942731f8aa26461239de0c1846d9dbfe0f0",
+        "frames": 124928,
+        "sample_rate": 44100,
+        "channels": 1,
+        "audio_s_from_wav": 2.8328344671201813,
+        "rms_dbfs": -29.01841591929267,
+        "peak": 0.158935546875,
+        "prompt_wav": "prompt-wavs/common_voice_en_103675.wav",
+        "target_text": "The boy knew the desert sensed his fear.",
+        "ref_text": "I'm never more aware of a room's acoustics than when I'm trying to enjoy a snack I have no intention of sharing."
+      },
+      {
+        "index": 4,
+        "utt_id": "common_voice_en_10933823-common_voice_en_10933822",
+        "wav": "${NVME_WORKDIR}/bench-validation/20261020_165001_49599d4/check_codes/audio/0004_common_voice_en_10933823-common_voice_en_10933822.wav",
+        "wav_sha256": "87976b65c30cab744c441e8d913ec72272c73c11414d55343463f21dec74e2b2",
+        "frames": 194560,
+        "sample_rate": 44100,
+        "channels": 1,
+        "audio_s_from_wav": 4.4117913832199545,
+        "rms_dbfs": -35.93428778140194,
+        "peak": 0.1580810546875,
+        "prompt_wav": "prompt-wavs/common_voice_en_10933823.wav",
+        "target_text": "When it comes to the crunch, our company will become insolvent.",
+        "ref_text": "Sometimes I overthink things which leads me to postpone and ultimately never achieve the goal I had in mind."
+      },
+      {
+        "index": 5,
+        "utt_id": "common_voice_en_10933823-common_voice_en_10933825",
+        "wav": "${NVME_WORKDIR}/bench-validation/20261020_165001_49599d4/check_codes/audio/0005_common_voice_en_10933823-common_voice_en_10933825.wav",
+        "wav_sha256": "dc5d96aa801817d44500db78d541b4ef747c939e371741f2c8da6459612e72f6",
+        "frames": 118784,
+        "sample_rate": 44100,
+        "channels": 1,
+        "audio_s_from_wav": 2.693514739229025,
+        "rms_dbfs": -38.782149313977854,
+        "peak": 0.08355712890625,
+        "prompt_wav": "prompt-wavs/common_voice_en_10933823.wav",
+        "target_text": "The primary coil has fifty turns.",
+        "ref_text": "Sometimes I overthink things which leads me to postpone and ultimately never achieve the goal I had in mind."
+      },
+      {
+        "index": 6,
+        "utt_id": "common_voice_en_120405-common_voice_en_120402",
+        "wav": "${NVME_WORKDIR}/bench-validation/20261020_165001_49599d4/check_codes/audio/0006_common_voice_en_120405-common_voice_en_120402.wav",
+        "wav_sha256": "74734278b5c819ba0f929ce96fd1f6d59a21e4fe4cd17cb232ad896f2ba900f9",
+        "frames": 393216,
+        "sample_rate": 44100,
+        "channels": 1,
+        "audio_s_from_wav": 8.916462585034013,
+        "rms_dbfs": -16.43153911743656,
+        "peak": 0.81005859375,
+        "prompt_wav": "prompt-wavs/common_voice_en_120405.wav",
+        "target_text": "I'm never more aware of a room's acoustics than when I'm trying to enjoy a snack I have no intention of sharing.",
+        "ref_text": "He approached the mass and was surprised at the size and the shape."
+      },
+      {
+        "index": 7,
+        "utt_id": "common_voice_en_120405-common_voice_en_120406",
+        "wav": "${NVME_WORKDIR}/bench-validation/20261020_165001_49599d4/check_codes/audio/0007_common_voice_en_120405-common_voice_en_120406.wav",
+        "wav_sha256": "0858ae97c047f13bcba03d4eb9209df922b800d5e001638cb122e07d0150727c",
+        "frames": 182272,
+        "sample_rate": 44100,
+        "channels": 1,
+        "audio_s_from_wav": 4.133151927437642,
+        "rms_dbfs": -15.102900011401312,
+        "peak": 0.80810546875,
+        "prompt_wav": "prompt-wavs/common_voice_en_120405.wav",
+        "target_text": "The only shadow was that of the few scattered pine trees.",
+        "ref_text": "He approached the mass and was surprised at the size and the shape."
+      },
+      {
+        "index": 8,
+        "utt_id": "common_voice_en_1205005-common_voice_en_1205007",
+        "wav": "${NVME_WORKDIR}/bench-validation/20261020_165001_49599d4/check_codes/audio/0008_common_voice_en_1205005-common_voice_en_1205007.wav",
+        "wav_sha256": "4e3978fbac6786ada7f9176d268a04c0e2ec2a0b31b959448099a89a16d334dc",
+        "frames": 157696,
+        "sample_rate": 44100,
+        "channels": 1,
+        "audio_s_from_wav": 3.575873015873016,
+        "rms_dbfs": -20.92208632569409,
+        "peak": 0.75537109375,
+        "prompt_wav": "prompt-wavs/common_voice_en_1205005.wav",
+        "target_text": "The work of the tailor is seen on each side.",
+        "ref_text": "Roaming endlessly around the park, she wants to go home."
+      },
+      {
+        "index": 9,
+        "utt_id": "common_voice_en_1205005-common_voice_en_1205008",
+        "wav": "${NVME_WORKDIR}/bench-validation/20261020_165001_49599d4/check_codes/audio/0009_common_voice_en_1205005-common_voice_en_1205008.wav",
+        "wav_sha256": "4760a71de1fcdc7f2f31da3f4927a75a4e3c7dfa936204cdd14b42d5fb3dbe86",
+        "frames": 114688,
+        "sample_rate": 44100,
+        "channels": 1,
+        "audio_s_from_wav": 2.6006349206349206,
+        "rms_dbfs": -21.44984756823256,
+        "peak": 0.414306640625,
+        "prompt_wav": "prompt-wavs/common_voice_en_1205005.wav",
+        "target_text": "NASA plans to launch the rocket tomorrow.",
+        "ref_text": "Roaming endlessly around the park, she wants to go home."
+      },
+      {
+        "index": 10,
+        "utt_id": "common_voice_en_123125-common_voice_en_123126",
+        "wav": "${NVME_WORKDIR}/bench-validation/20261020_165001_49599d4/check_codes/audio/0010_common_voice_en_123125-common_voice_en_123126.wav",
+        "wav_sha256": "48e977bd607940988575aba17200b12a847905d1f5ca26b7eada92e55acec9b5",
+        "frames": 182272,
+        "sample_rate": 44100,
+        "channels": 1,
+        "audio_s_from_wav": 4.133151927437642,
+        "rms_dbfs": -31.780252999103947,
+        "peak": 0.409423828125,
+        "prompt_wav": "prompt-wavs/common_voice_en_123125.wav",
+        "target_text": "After all, who doesn’t want to overcome new challenges and achieve great heights?",
+        "ref_text": "\"There's no danger,\" the boy said, when they had moved on past the encampment."
+      },
+      {
+        "index": 11,
+        "utt_id": "common_voice_en_123125-common_voice_en_123127",
+        "wav": "${NVME_WORKDIR}/bench-validation/20261020_165001_49599d4/check_codes/audio/0011_common_voice_en_123125-common_voice_en_123127.wav",
+        "wav_sha256": "7efd1b118a2f2586619added444c9297ba64474157f8ea2a78a20102180a4569",
+        "frames": 253952,
+        "sample_rate": 44100,
+        "channels": 1,
+        "audio_s_from_wav": 5.758548752834467,
+        "rms_dbfs": -31.273367000988287,
+        "peak": 0.352294921875,
+        "prompt_wav": "prompt-wavs/common_voice_en_123125.wav",
+        "target_text": "Later, we simply let life proceed, in its own direction, toward its own fate.",
+        "ref_text": "\"There's no danger,\" the boy said, when they had moved on past the encampment."
+      },
+      {
+        "index": 12,
+        "utt_id": "common_voice_en_125386-common_voice_en_125388",
+        "wav": "${NVME_WORKDIR}/bench-validation/20261020_165001_49599d4/check_codes/audio/0012_common_voice_en_125386-common_voice_en_125388.wav",
+        "wav_sha256": "8c2f8c9c5a1af027efd3632c32a02947512d782956709ce334bc1fed7a11c753",
+        "frames": 212992,
+        "sample_rate": 44100,
+        "channels": 1,
+        "audio_s_from_wav": 4.829750566893424,
+        "rms_dbfs": -26.93576036491452,
+        "peak": 0.62353515625,
+        "prompt_wav": "prompt-wavs/common_voice_en_125386.wav",
+        "target_text": "The two men hurried back and found the cylinder still lying in the same position.",
+        "ref_text": "It was, however, still so hot from its flight through the air."
+      },
+      {
+        "index": 13,
+        "utt_id": "common_voice_en_125386-common_voice_en_125389",
+        "wav": "${NVME_WORKDIR}/bench-validation/20261020_165001_49599d4/check_codes/audio/0013_common_voice_en_125386-common_voice_en_125389.wav",
+        "wav_sha256": "3ec675415950ce2b6005715d4e2c85a3c2f484acf46c3eaea1148899a4fef743",
+        "frames": 145408,
+        "sample_rate": 44100,
+        "channels": 1,
+        "audio_s_from_wav": 3.297233560090703,
+        "rms_dbfs": -27.208602041939642,
+        "peak": 0.560546875,
+        "prompt_wav": "prompt-wavs/common_voice_en_125386.wav",
+        "target_text": "I thought about the difficulties in translation that might arise.",
+        "ref_text": "It was, however, still so hot from its flight through the air."
+      },
+      {
+        "index": 14,
+        "utt_id": "common_voice_en_137148-common_voice_en_137152",
+        "wav": "${NVME_WORKDIR}/bench-validation/20261020_165001_49599d4/check_codes/audio/0014_common_voice_en_137148-common_voice_en_137152.wav",
+        "wav_sha256": "80fa46ec0d755607d721a0496d4ab88f577b0db2775b8c0cbd904d202a634e74",
+        "frames": 122880,
+        "sample_rate": 44100,
+        "channels": 1,
+        "audio_s_from_wav": 2.786394557823129,
+        "rms_dbfs": -31.04491254779844,
+        "peak": 0.216552734375,
+        "prompt_wav": "prompt-wavs/common_voice_en_137148.wav",
+        "target_text": "Elvis Presley is often called the \"King of Rock and Roll\".",
+        "ref_text": "She walked across the street wearing stereo headphones and staring at her smartphone."
+      },
+      {
+        "index": 15,
+        "utt_id": "common_voice_en_13900-common_voice_en_13901",
+        "wav": "${NVME_WORKDIR}/bench-validation/20261020_165001_49599d4/check_codes/audio/0015_common_voice_en_13900-common_voice_en_13901.wav",
+        "wav_sha256": "cc96de8534c2fc3640a2ca0b74d7bb6f5809675ca501df1675d0ba9883cf5b95",
+        "frames": 233472,
+        "sample_rate": 44100,
+        "channels": 1,
+        "audio_s_from_wav": 5.294149659863946,
+        "rms_dbfs": -19.985515491524627,
+        "peak": 0.7138671875,
+        "prompt_wav": "prompt-wavs/common_voice_en_13900.wav",
+        "target_text": "We don't have the budget to produce it in studio quality.",
+        "ref_text": "Television can make you dumb, but it can also be good education."
+      },
+      {
+        "index": 16,
+        "utt_id": "common_voice_en_1416089-common_voice_en_1416090",
+        "wav": "${NVME_WORKDIR}/bench-validation/20261020_165001_49599d4/check_codes/audio/0016_common_voice_en_1416089-common_voice_en_1416090.wav",
+        "wav_sha256": "7d9eff20ebdc49baf135697a35ed5fc8f38ad02371f2c3bafea9d37aad0a8765",
+        "frames": 131072,
+        "sample_rate": 44100,
+        "channels": 1,
+        "audio_s_from_wav": 2.972154195011338,
+        "rms_dbfs": -31.227804723634335,
+        "peak": 0.179443359375,
+        "prompt_wav": "prompt-wavs/common_voice_en_1416089.wav",
+        "target_text": "Also, will numbers be written as digits or as words?",
+        "ref_text": "\"Jellyfish can cause serious injuries\", the physician explained to the patient."
+      },
+      {
+        "index": 17,
+        "utt_id": "common_voice_en_1416089-common_voice_en_1416093",
+        "wav": "${NVME_WORKDIR}/bench-validation/20261020_165001_49599d4/check_codes/audio/0017_common_voice_en_1416089-common_voice_en_1416093.wav",
+        "wav_sha256": "315dbc6ddfc179f27d186460a0d80351f2a4d61a201d6100cefbd8bf36539edf",
+        "frames": 141312,
+        "sample_rate": 44100,
+        "channels": 1,
+        "audio_s_from_wav": 3.2043537414965986,
+        "rms_dbfs": -31.991480540664657,
+        "peak": 0.1436767578125,
+        "prompt_wav": "prompt-wavs/common_voice_en_1416089.wav",
+        "target_text": "I do not like sushi, so I did not really enjoy the meal.",
+        "ref_text": "\"Jellyfish can cause serious injuries\", the physician explained to the patient."
+      },
+      {
+        "index": 18,
+        "utt_id": "common_voice_en_15265-common_voice_en_15266",
+        "wav": "${NVME_WORKDIR}/bench-validation/20261020_165001_49599d4/check_codes/audio/0018_common_voice_en_15265-common_voice_en_15266.wav",
+        "wav_sha256": "2d0f3ac35ddbc014762ae8c15f4ca5dce6bed73d19fc86851a32733d7a37ec03",
+        "frames": 182272,
+        "sample_rate": 44100,
+        "channels": 1,
+        "audio_s_from_wav": 4.133151927437642,
+        "rms_dbfs": -27.23499029531758,
+        "peak": 0.29052734375,
+        "prompt_wav": "prompt-wavs/common_voice_en_15265.wav",
+        "target_text": "Large brown dog walks up a blue staircase.",
+        "ref_text": "Man with guitar holding a microphone in one hand and extending his other arm."
+      },
+      {
+        "index": 19,
+        "utt_id": "common_voice_en_15265-common_voice_en_15268",
+        "wav": "${NVME_WORKDIR}/bench-validation/20261020_165001_49599d4/check_codes/audio/0019_common_voice_en_15265-common_voice_en_15268.wav",
+        "wav_sha256": "b8ef099a37477c39fcc445d21a52fc8c7e53cf9d970f245faa848e39df2b9352",
+        "frames": 198656,
+        "sample_rate": 44100,
+        "channels": 1,
+        "audio_s_from_wav": 4.504671201814059,
+        "rms_dbfs": -27.442642812651265,
+        "peak": 0.481201171875,
+        "prompt_wav": "prompt-wavs/common_voice_en_15265.wav",
+        "target_text": "A sky jumper falls toward the sea and the earth.",
+        "ref_text": "Man with guitar holding a microphone in one hand and extending his other arm."
+      },
+      {
+        "index": 20,
+        "utt_id": "common_voice_en_153872-common_voice_en_153873",
+        "wav": "${NVME_WORKDIR}/bench-validation/20261020_165001_49599d4/check_codes/audio/0020_common_voice_en_153872-common_voice_en_153873.wav",
+        "wav_sha256": "b4e00b99864de722145e7c73199ca9a847bf56d695928b3def07809fadff3030",
+        "frames": 98304,
+        "sample_rate": 44100,
+        "channels": 1,
+        "audio_s_from_wav": 2.2291156462585033,
+        "rms_dbfs": -22.518997189305246,
+        "peak": 0.650390625,
+        "prompt_wav": "prompt-wavs/common_voice_en_153872.wav",
+        "target_text": "They set off running wildly into the trees.",
+        "ref_text": "Hundreds must have seen it, and taken it for a falling star."
+      },
+      {
+        "index": 21,
+        "utt_id": "common_voice_en_153872-common_voice_en_153874",
+        "wav": "${NVME_WORKDIR}/bench-validation/20261020_165001_49599d4/check_codes/audio/0021_common_voice_en_153872-common_voice_en_153874.wav",
+        "wav_sha256": "4319f65622e51e6c30be38fe779df2d7ce52509f0b3250b3b89de9d4f3bfb7fb",
+        "frames": 200704,
+        "sample_rate": 44100,
+        "channels": 1,
+        "audio_s_from_wav": 4.551111111111111,
+        "rms_dbfs": -29.803782765390064,
+        "peak": 0.361572265625,
+        "prompt_wav": "prompt-wavs/common_voice_en_153872.wav",
+        "target_text": "A thin circle of bright metal showed between the top and the body of the cylinder.",
+        "ref_text": "Hundreds must have seen it, and taken it for a falling star."
+      },
+      {
+        "index": 22,
+        "utt_id": "common_voice_en_155313-common_voice_en_155315",
+        "wav": "${NVME_WORKDIR}/bench-validation/20261020_165001_49599d4/check_codes/audio/0022_common_voice_en_155313-common_voice_en_155315.wav",
+        "wav_sha256": "0cf0aabbeae710a57797840ab240c5cbdb6c5ea7a1a775b747cd508ac22b6f19",
+        "frames": 235520,
+        "sample_rate": 44100,
+        "channels": 1,
+        "audio_s_from_wav": 5.340589569160998,
+        "rms_dbfs": -31.68584443823987,
+        "peak": 0.1778564453125,
+        "prompt_wav": "prompt-wavs/common_voice_en_155313.wav",
+        "target_text": "Replace the Ts in Tim Tebow's name with any other consonant to get a Star Wars character",
+        "ref_text": "Revenge is not my style, but obviously accidents will happen."
+      },
+      {
+        "index": 23,
+        "utt_id": "common_voice_en_15734837-common_voice_en_15734838",
+        "wav": "${NVME_WORKDIR}/bench-validation/20261020_165001_49599d4/check_codes/audio/0023_common_voice_en_15734837-common_voice_en_15734838.wav",
+        "wav_sha256": "ba83b95baedc146fdc36e7cacfe29ba2bc2d69d9b76c03ca22673c2238f02446",
+        "frames": 159744,
+        "sample_rate": 44100,
+        "channels": 1,
+        "audio_s_from_wav": 3.622312925170068,
+        "rms_dbfs": -24.776644848394987,
+        "peak": 0.71630859375,
+        "prompt_wav": "prompt-wavs/common_voice_en_15734837.wav",
+        "target_text": "Tyler, Lucy, Michelle, we're going to space!",
+        "ref_text": "I shall be neither more nor less meritorious."
+      },
+      {
+        "index": 24,
+        "utt_id": "common_voice_en_15735839-common_voice_en_15735837",
+        "wav": "${NVME_WORKDIR}/bench-validation/20261020_165001_49599d4/check_codes/audio/0024_common_voice_en_15735839-common_voice_en_15735837.wav",
+        "wav_sha256": "56c58eb4434f4da628f599e40e22cffe036e298db286b78e650854c87393ee55",
+        "frames": 49152,
+        "sample_rate": 44100,
+        "channels": 1,
+        "audio_s_from_wav": 1.1145578231292517,
+        "rms_dbfs": -31.831084123873502,
+        "peak": 0.173583984375,
+        "prompt_wav": "prompt-wavs/common_voice_en_15735839.wav",
+        "target_text": "Get out of this!",
+        "ref_text": "She didn't like the trend of nylon stockings."
+      },
+      {
+        "index": 25,
+        "utt_id": "common_voice_en_15903802-common_voice_en_15903807",
+        "wav": "${NVME_WORKDIR}/bench-validation/20261020_165001_49599d4/check_codes/audio/0025_common_voice_en_15903802-common_voice_en_15903807.wav",
+        "wav_sha256": "7abd568d6515d2ca3a0849bc24d4649f5a591c16347fd733af0da84ea3c0769b",
+        "frames": 163840,
+        "sample_rate": 44100,
+        "channels": 1,
+        "audio_s_from_wav": 3.7151927437641725,
+        "rms_dbfs": -32.67365328244486,
+        "peak": 0.2418212890625,
+        "prompt_wav": "prompt-wavs/common_voice_en_15903802.wav",
+        "target_text": "Thousands of people die every year as a consequence of air pollution.",
+        "ref_text": "Experts of geology agree: Yesterday's tsunami was just a herald of the imminent apocalypse."
+      },
+      {
+        "index": 26,
+        "utt_id": "common_voice_en_15903802-common_voice_en_15903815",
+        "wav": "${NVME_WORKDIR}/bench-validation/20261020_165001_49599d4/check_codes/audio/0026_common_voice_en_15903802-common_voice_en_15903815.wav",
+        "wav_sha256": "caff65b51a1fdac56da97f1e7b6231895d87026bd4ed094fae1cf77af98a7172",
+        "frames": 131072,
+        "sample_rate": 44100,
+        "channels": 1,
+        "audio_s_from_wav": 2.972154195011338,
+        "rms_dbfs": -33.43647527405006,
+        "peak": 0.12158203125,
+        "prompt_wav": "prompt-wavs/common_voice_en_15903802.wav",
+        "target_text": "History teaches us that humans do not learn from history.",
+        "ref_text": "Experts of geology agree: Yesterday's tsunami was just a herald of the imminent apocalypse."
+      },
+      {
+        "index": 27,
+        "utt_id": "common_voice_en_16666041-common_voice_en_16666040",
+        "wav": "${NVME_WORKDIR}/bench-validation/20261020_165001_49599d4/check_codes/audio/0027_common_voice_en_16666041-common_voice_en_16666040.wav",
+        "wav_sha256": "806e9a955bffecdd2dfa84d4d1cdc049e1ca8805a8712186aa2f4a65b461f666",
+        "frames": 135168,
+        "sample_rate": 44100,
+        "channels": 1,
+        "audio_s_from_wav": 3.0650340136054424,
+        "rms_dbfs": -24.029717959224428,
+        "peak": 0.318359375,
+        "prompt_wav": "prompt-wavs/common_voice_en_16666041.wav",
+        "target_text": "I was well, but I'm all the better for being here.",
+        "ref_text": "Birds feed their offspring with spiders, worms, slugs and bugs."
+      },
+      {
+        "index": 28,
+        "utt_id": "common_voice_en_167249-common_voice_en_167246",
+        "wav": "${NVME_WORKDIR}/bench-validation/20261020_165001_49599d4/check_codes/audio/0028_common_voice_en_167249-common_voice_en_167246.wav",
+        "wav_sha256": "283ed2a82b9d5a45bfe47a02d401b86d515ba4c1d231337c0857b001cee2caa5",
+        "frames": 157696,
+        "sample_rate": 44100,
+        "channels": 1,
+        "audio_s_from_wav": 3.575873015873016,
+        "rms_dbfs": -42.57492519176678,
+        "peak": 0.06689453125,
+        "prompt_wav": "prompt-wavs/common_voice_en_167249.wav",
+        "target_text": "what is the forecast for California for rain",
+        "ref_text": "Play the song from the genre Sunshine Reggae that appeals to me."
+      },
+      {
+        "index": 29,
+        "utt_id": "common_voice_en_167249-common_voice_en_167247",
+        "wav": "${NVME_WORKDIR}/bench-validation/20261020_165001_49599d4/check_codes/audio/0029_common_voice_en_167249-common_voice_en_167247.wav",
+        "wav_sha256": "ac0bb58e4feaa2412644abbc5ba9660657bb8b60b93d56886599d436040e36d2",
+        "frames": 165888,
+        "sample_rate": 44100,
+        "channels": 1,
+        "audio_s_from_wav": 3.7616326530612243,
+        "rms_dbfs": -38.170223658902614,
+        "peak": 0.169189453125,
+        "prompt_wav": "prompt-wavs/common_voice_en_167249.wav",
+        "target_text": "Take these capsules over to Mrs. David's house.",
+        "ref_text": "Play the song from the genre Sunshine Reggae that appeals to me."
+      },
+      {
+        "index": 30,
+        "utt_id": "common_voice_en_17147545-common_voice_en_17147546",
+        "wav": "${NVME_WORKDIR}/bench-validation/20261020_165001_49599d4/check_codes/audio/0030_common_voice_en_17147545-common_voice_en_17147546.wav",
+        "wav_sha256": "4ac683eeeffec49e605eca987bc29aa2bf7652cb41f16685080b3e7d0ad91ad5",
+        "frames": 217088,
+        "sample_rate": 44100,
+        "channels": 1,
+        "audio_s_from_wav": 4.922630385487528,
+        "rms_dbfs": -27.7960629230148,
+        "peak": 0.25830078125,
+        "prompt_wav": "prompt-wavs/common_voice_en_17147545.wav",
+        "target_text": "Lions hunt their prey with sprints, whereas wolves take advantage of their stamina.",
+        "ref_text": "It's probably a good idea to merge the two subsections in the synopsis."
+      },
+      {
+        "index": 31,
+        "utt_id": "common_voice_en_17161-common_voice_en_17159",
+        "wav": "${NVME_WORKDIR}/bench-validation/20261020_165001_49599d4/check_codes/audio/0031_common_voice_en_17161-common_voice_en_17159.wav",
+        "wav_sha256": "e1c0de578445f6f06f16a71ae3da8877cd0ea85bc375a8fa291aec7bd4d71f4d",
+        "frames": 137216,
+        "sample_rate": 44100,
+        "channels": 1,
+        "audio_s_from_wav": 3.111473922902494,
+        "rms_dbfs": -21.91038137607824,
+        "peak": 0.59375,
+        "prompt_wav": "prompt-wavs/common_voice_en_17161.wav",
+        "target_text": "He must be disguised to avoid encounters with thieves.",
+        "ref_text": "On the second day, the boy climbed to the top of a cliff near the camp."
+      }
+    ],
+    "audio": [
+      {
+        "index": 0,
+        "utt_id": "common_voice_en_10119832-common_voice_en_10119840",
+        "wav": "${NVME_WORKDIR}/bench-validation/20261020_165001_49599d4/check_audio/audio/0000_common_voice_en_10119832-common_voice_en_10119840.wav",
+        "wav_sha256": "1ed0b2d396398409aa43d7acbc8eded26030b7f92e9e536bbe04922f31341c0b",
+        "frames": 100352,
+        "sample_rate": 44100,
+        "channels": 1,
+        "audio_s_from_wav": 2.2755555555555556,
+        "rms_dbfs": -23.07299917016359,
+        "peak": 0.59912109375,
+        "prompt_wav": "prompt-wavs/common_voice_en_10119832.wav",
+        "target_text": "Get the trust fund to the bank early.",
+        "ref_text": "We asked over twenty different people, and they all said it was his."
+      },
+      {
+        "index": 1,
+        "utt_id": "common_voice_en_10119832-common_voice_en_10119847",
+        "wav": "${NVME_WORKDIR}/bench-validation/20261020_165001_49599d4/check_audio/audio/0001_common_voice_en_10119832-common_voice_en_10119847.wav",
+        "wav_sha256": "784a9d1da860bcdd689f56d027e340cc156463e1f01977a95dd16c08ba2bd2a6",
+        "frames": 122880,
+        "sample_rate": 44100,
+        "channels": 1,
+        "audio_s_from_wav": 2.786394557823129,
+        "rms_dbfs": -23.327173179740043,
+        "peak": 0.474609375,
+        "prompt_wav": "prompt-wavs/common_voice_en_10119832.wav",
+        "target_text": "The stained glass offered a hypnotic atmosphere.",
+        "ref_text": "We asked over twenty different people, and they all said it was his."
+      },
+      {
+        "index": 2,
+        "utt_id": "common_voice_en_103675-common_voice_en_103676",
+        "wav": "${NVME_WORKDIR}/bench-validation/20261020_165001_49599d4/check_audio/audio/0002_common_voice_en_103675-common_voice_en_103676.wav",
+        "wav_sha256": "c600dd01b8bd6d2ab22488e12c86ed8dbc0428fd6277a6df4f6053177d33bb20",
+        "frames": 354304,
+        "sample_rate": 44100,
+        "channels": 1,
+        "audio_s_from_wav": 8.034104308390022,
+        "rms_dbfs": -35.654330264694266,
+        "peak": 0.0828857421875,
+        "prompt_wav": "prompt-wavs/common_voice_en_103675.wav",
+        "target_text": "One by one, the campfires were extinguished, and the oasis fell as quiet as the desert.",
+        "ref_text": "I'm never more aware of a room's acoustics than when I'm trying to enjoy a snack I have no intention of sharing."
+      },
+      {
+        "index": 3,
+        "utt_id": "common_voice_en_103675-common_voice_en_103677",
+        "wav": "${NVME_WORKDIR}/bench-validation/20261020_165001_49599d4/check_audio/audio/0003_common_voice_en_103675-common_voice_en_103677.wav",
+        "wav_sha256": "77496eb70022fca06f2aa92313a37a1f53daffc80316c0bf962cad2f07a8bf18",
+        "frames": 108544,
+        "sample_rate": 44100,
+        "channels": 1,
+        "audio_s_from_wav": 2.461315192743764,
+        "rms_dbfs": -30.119083032859205,
+        "peak": 0.130615234375,
+        "prompt_wav": "prompt-wavs/common_voice_en_103675.wav",
+        "target_text": "The boy knew the desert sensed his fear.",
+        "ref_text": "I'm never more aware of a room's acoustics than when I'm trying to enjoy a snack I have no intention of sharing."
+      },
+      {
+        "index": 4,
+        "utt_id": "common_voice_en_10933823-common_voice_en_10933822",
+        "wav": "${NVME_WORKDIR}/bench-validation/20261020_165001_49599d4/check_audio/audio/0004_common_voice_en_10933823-common_voice_en_10933822.wav",
+        "wav_sha256": "344585d1496330d00b8aab4a017d3273073e5df527c634f9ba6d6716bf763854",
+        "frames": 200704,
+        "sample_rate": 44100,
+        "channels": 1,
+        "audio_s_from_wav": 4.551111111111111,
+        "rms_dbfs": -38.26581000794856,
+        "peak": 0.0941162109375,
+        "prompt_wav": "prompt-wavs/common_voice_en_10933823.wav",
+        "target_text": "When it comes to the crunch, our company will become insolvent.",
+        "ref_text": "Sometimes I overthink things which leads me to postpone and ultimately never achieve the goal I had in mind."
+      },
+      {
+        "index": 5,
+        "utt_id": "common_voice_en_10933823-common_voice_en_10933825",
+        "wav": "${NVME_WORKDIR}/bench-validation/20261020_165001_49599d4/check_audio/audio/0005_common_voice_en_10933823-common_voice_en_10933825.wav",
+        "wav_sha256": "116e52b92c6e2868bde8890e293ece0b3711736d6faa5da6f2f9197c54396b18",
+        "frames": 118784,
+        "sample_rate": 44100,
+        "channels": 1,
+        "audio_s_from_wav": 2.693514739229025,
+        "rms_dbfs": -35.77376741990743,
+        "peak": 0.1300048828125,
+        "prompt_wav": "prompt-wavs/common_voice_en_10933823.wav",
+        "target_text": "The primary coil has fifty turns.",
+        "ref_text": "Sometimes I overthink things which leads me to postpone and ultimately never achieve the goal I had in mind."
+      },
+      {
+        "index": 6,
+        "utt_id": "common_voice_en_120405-common_voice_en_120402",
+        "wav": "${NVME_WORKDIR}/bench-validation/20261020_165001_49599d4/check_audio/audio/0006_common_voice_en_120405-common_voice_en_120402.wav",
+        "wav_sha256": "32103f2c79a314503857dbfaabea350dbf0db2759769131b8d447d88c1c61c94",
+        "frames": 380928,
+        "sample_rate": 44100,
+        "channels": 1,
+        "audio_s_from_wav": 8.6378231292517,
+        "rms_dbfs": -19.30445938647569,
+        "peak": 0.71728515625,
+        "prompt_wav": "prompt-wavs/common_voice_en_120405.wav",
+        "target_text": "I'm never more aware of a room's acoustics than when I'm trying to enjoy a snack I have no intention of sharing.",
+        "ref_text": "He approached the mass and was surprised at the size and the shape."
+      },
+      {
+        "index": 7,
+        "utt_id": "common_voice_en_120405-common_voice_en_120406",
+        "wav": "${NVME_WORKDIR}/bench-validation/20261020_165001_49599d4/check_audio/audio/0007_common_voice_en_120405-common_voice_en_120406.wav",
+        "wav_sha256": "42216bdadb12d311a3a88a4bdaa82585c1d9fe3717bf2ba608a9262568e76971",
+        "frames": 233472,
+        "sample_rate": 44100,
+        "channels": 1,
+        "audio_s_from_wav": 5.294149659863946,
+        "rms_dbfs": -16.62279821836541,
+        "peak": 0.83154296875,
+        "prompt_wav": "prompt-wavs/common_voice_en_120405.wav",
+        "target_text": "The only shadow was that of the few scattered pine trees.",
+        "ref_text": "He approached the mass and was surprised at the size and the shape."
+      },
+      {
+        "index": 8,
+        "utt_id": "common_voice_en_1205005-common_voice_en_1205007",
+        "wav": "${NVME_WORKDIR}/bench-validation/20261020_165001_49599d4/check_audio/audio/0008_common_voice_en_1205005-common_voice_en_1205007.wav",
+        "wav_sha256": "0a51ddfa74a78af8237cba3f8181feee48c74f0a9101197480654c353973490c",
+        "frames": 131072,
+        "sample_rate": 44100,
+        "channels": 1,
+        "audio_s_from_wav": 2.972154195011338,
+        "rms_dbfs": -22.360920173956295,
+        "peak": 0.380126953125,
+        "prompt_wav": "prompt-wavs/common_voice_en_1205005.wav",
+        "target_text": "The work of the tailor is seen on each side.",
+        "ref_text": "Roaming endlessly around the park, she wants to go home."
+      },
+      {
+        "index": 9,
+        "utt_id": "common_voice_en_1205005-common_voice_en_1205008",
+        "wav": "${NVME_WORKDIR}/bench-validation/20261020_165001_49599d4/check_audio/audio/0009_common_voice_en_1205005-common_voice_en_1205008.wav",
+        "wav_sha256": "0afef31cb41f3f002ef0a0c271de08b898bbc23c41f824d47a1a6b1666bf0b02",
+        "frames": 106496,
+        "sample_rate": 44100,
+        "channels": 1,
+        "audio_s_from_wav": 2.414875283446712,
+        "rms_dbfs": -23.981080198777423,
+        "peak": 0.373779296875,
+        "prompt_wav": "prompt-wavs/common_voice_en_1205005.wav",
+        "target_text": "NASA plans to launch the rocket tomorrow.",
+        "ref_text": "Roaming endlessly around the park, she wants to go home."
+      },
+      {
+        "index": 10,
+        "utt_id": "common_voice_en_123125-common_voice_en_123126",
+        "wav": "${NVME_WORKDIR}/bench-validation/20261020_165001_49599d4/check_audio/audio/0010_common_voice_en_123125-common_voice_en_123126.wav",
+        "wav_sha256": "eccb32e05573b863648633cbfad62241585a5ab8fc7ec2eafb10878d09d2c33b",
+        "frames": 194560,
+        "sample_rate": 44100,
+        "channels": 1,
+        "audio_s_from_wav": 4.4117913832199545,
+        "rms_dbfs": -31.161968056784733,
+        "peak": 0.2998046875,
+        "prompt_wav": "prompt-wavs/common_voice_en_123125.wav",
+        "target_text": "After all, who doesn’t want to overcome new challenges and achieve great heights?",
+        "ref_text": "\"There's no danger,\" the boy said, when they had moved on past the encampment."
+      },
+      {
+        "index": 11,
+        "utt_id": "common_voice_en_123125-common_voice_en_123127",
+        "wav": "${NVME_WORKDIR}/bench-validation/20261020_165001_49599d4/check_audio/audio/0011_common_voice_en_123125-common_voice_en_123127.wav",
+        "wav_sha256": "aa1126e90137bfafcdafe0907c1060d87bcb973963e764fea351e53e9cb66754",
+        "frames": 329728,
+        "sample_rate": 44100,
+        "channels": 1,
+        "audio_s_from_wav": 7.476825396825397,
+        "rms_dbfs": -36.35259128568112,
+        "peak": 0.16064453125,
+        "prompt_wav": "prompt-wavs/common_voice_en_123125.wav",
+        "target_text": "Later, we simply let life proceed, in its own direction, toward its own fate.",
+        "ref_text": "\"There's no danger,\" the boy said, when they had moved on past the encampment."
+      },
+      {
+        "index": 12,
+        "utt_id": "common_voice_en_125386-common_voice_en_125388",
+        "wav": "${NVME_WORKDIR}/bench-validation/20261020_165001_49599d4/check_audio/audio/0012_common_voice_en_125386-common_voice_en_125388.wav",
+        "wav_sha256": "31026f8f2bad5747aed0016b4809b9e5a07e1476599b27d17c671deac1efb45d",
+        "frames": 202752,
+        "sample_rate": 44100,
+        "channels": 1,
+        "audio_s_from_wav": 4.597551020408163,
+        "rms_dbfs": -27.74646205995775,
+        "peak": 0.6298828125,
+        "prompt_wav": "prompt-wavs/common_voice_en_125386.wav",
+        "target_text": "The two men hurried back and found the cylinder still lying in the same position.",
+        "ref_text": "It was, however, still so hot from its flight through the air."
+      },
+      {
+        "index": 13,
+        "utt_id": "common_voice_en_125386-common_voice_en_125389",
+        "wav": "${NVME_WORKDIR}/bench-validation/20261020_165001_49599d4/check_audio/audio/0013_common_voice_en_125386-common_voice_en_125389.wav",
+        "wav_sha256": "b407d8054a219b80e40ed575e7a9b757d562218eb8df69fc7c5c8d66742505ee",
+        "frames": 147456,
+        "sample_rate": 44100,
+        "channels": 1,
+        "audio_s_from_wav": 3.3436734693877552,
+        "rms_dbfs": -30.16148485993925,
+        "peak": 0.36669921875,
+        "prompt_wav": "prompt-wavs/common_voice_en_125386.wav",
+        "target_text": "I thought about the difficulties in translation that might arise.",
+        "ref_text": "It was, however, still so hot from its flight through the air."
+      },
+      {
+        "index": 14,
+        "utt_id": "common_voice_en_137148-common_voice_en_137152",
+        "wav": "${NVME_WORKDIR}/bench-validation/20261020_165001_49599d4/check_audio/audio/0014_common_voice_en_137148-common_voice_en_137152.wav",
+        "wav_sha256": "4d5757ac41f1471fc73bd22de6fa9f5edbb68110d4ebd94340a1f2b7edcd3367",
+        "frames": 241664,
+        "sample_rate": 44100,
+        "channels": 1,
+        "audio_s_from_wav": 5.479909297052155,
+        "rms_dbfs": -31.677245579162644,
+        "peak": 0.2783203125,
+        "prompt_wav": "prompt-wavs/common_voice_en_137148.wav",
+        "target_text": "Elvis Presley is often called the \"King of Rock and Roll\".",
+        "ref_text": "She walked across the street wearing stereo headphones and staring at her smartphone."
+      },
+      {
+        "index": 15,
+        "utt_id": "common_voice_en_13900-common_voice_en_13901",
+        "wav": "${NVME_WORKDIR}/bench-validation/20261020_165001_49599d4/check_audio/audio/0015_common_voice_en_13900-common_voice_en_13901.wav",
+        "wav_sha256": "9383217efc4333592e2a76573c3b49dd3b25fd8ad4b794c754e938fd9280d610",
+        "frames": 188416,
+        "sample_rate": 44100,
+        "channels": 1,
+        "audio_s_from_wav": 4.272471655328798,
+        "rms_dbfs": -22.26546675897284,
+        "peak": 0.52392578125,
+        "prompt_wav": "prompt-wavs/common_voice_en_13900.wav",
+        "target_text": "We don't have the budget to produce it in studio quality.",
+        "ref_text": "Television can make you dumb, but it can also be good education."
+      },
+      {
+        "index": 16,
+        "utt_id": "common_voice_en_1416089-common_voice_en_1416090",
+        "wav": "${NVME_WORKDIR}/bench-validation/20261020_165001_49599d4/check_audio/audio/0016_common_voice_en_1416089-common_voice_en_1416090.wav",
+        "wav_sha256": "891554ac49e05d480860a53af13d6f5b83f900e86627792c27a5f9401272f6b6",
+        "frames": 143360,
+        "sample_rate": 44100,
+        "channels": 1,
+        "audio_s_from_wav": 3.250793650793651,
+        "rms_dbfs": -30.999461638419348,
+        "peak": 0.188720703125,
+        "prompt_wav": "prompt-wavs/common_voice_en_1416089.wav",
+        "target_text": "Also, will numbers be written as digits or as words?",
+        "ref_text": "\"Jellyfish can cause serious injuries\", the physician explained to the patient."
+      },
+      {
+        "index": 17,
+        "utt_id": "common_voice_en_1416089-common_voice_en_1416093",
+        "wav": "${NVME_WORKDIR}/bench-validation/20261020_165001_49599d4/check_audio/audio/0017_common_voice_en_1416089-common_voice_en_1416093.wav",
+        "wav_sha256": "3f810dd5e7054ac2ed5b7f5f9a6cccfceff370cb95ac44551100404fc234e3a3",
+        "frames": 135168,
+        "sample_rate": 44100,
+        "channels": 1,
+        "audio_s_from_wav": 3.0650340136054424,
+        "rms_dbfs": -36.28246086887633,
+        "peak": 0.09600830078125,
+        "prompt_wav": "prompt-wavs/common_voice_en_1416089.wav",
+        "target_text": "I do not like sushi, so I did not really enjoy the meal.",
+        "ref_text": "\"Jellyfish can cause serious injuries\", the physician explained to the patient."
+      },
+      {
+        "index": 18,
+        "utt_id": "common_voice_en_15265-common_voice_en_15266",
+        "wav": "${NVME_WORKDIR}/bench-validation/20261020_165001_49599d4/check_audio/audio/0018_common_voice_en_15265-common_voice_en_15266.wav",
+        "wav_sha256": "9f4140e2407a526c7ebacdc050cd8e0d4ec60e83e2aa088742c73b3fbd89a505",
+        "frames": 432128,
+        "sample_rate": 44100,
+        "channels": 1,
+        "audio_s_from_wav": 9.798820861678005,
+        "rms_dbfs": -29.68065516928146,
+        "peak": 0.33837890625,
+        "prompt_wav": "prompt-wavs/common_voice_en_15265.wav",
+        "target_text": "Large brown dog walks up a blue staircase.",
+        "ref_text": "Man with guitar holding a microphone in one hand and extending his other arm."
+      },
+      {
+        "index": 19,
+        "utt_id": "common_voice_en_15265-common_voice_en_15268",
+        "wav": "${NVME_WORKDIR}/bench-validation/20261020_165001_49599d4/check_audio/audio/0019_common_voice_en_15265-common_voice_en_15268.wav",
+        "wav_sha256": "c6be5fcf4870cd79f6fa101634eaa4abced2515a70d75b049d30f3c3951e0364",
+        "frames": 219136,
+        "sample_rate": 44100,
+        "channels": 1,
+        "audio_s_from_wav": 4.96907029478458,
+        "rms_dbfs": -27.873647121420326,
+        "peak": 0.321044921875,
+        "prompt_wav": "prompt-wavs/common_voice_en_15265.wav",
+        "target_text": "A sky jumper falls toward the sea and the earth.",
+        "ref_text": "Man with guitar holding a microphone in one hand and extending his other arm."
+      },
+      {
+        "index": 20,
+        "utt_id": "common_voice_en_153872-common_voice_en_153873",
+        "wav": "${NVME_WORKDIR}/bench-validation/20261020_165001_49599d4/check_audio/audio/0020_common_voice_en_153872-common_voice_en_153873.wav",
+        "wav_sha256": "7cf0fd4e43d41a9ed7c8c6cb3f2cc9e0a5c27109c0128ce0addc8c89117525d8",
+        "frames": 96256,
+        "sample_rate": 44100,
+        "channels": 1,
+        "audio_s_from_wav": 2.182675736961451,
+        "rms_dbfs": -21.231410523978155,
+        "peak": 0.89501953125,
+        "prompt_wav": "prompt-wavs/common_voice_en_153872.wav",
+        "target_text": "They set off running wildly into the trees.",
+        "ref_text": "Hundreds must have seen it, and taken it for a falling star."
+      },
+      {
+        "index": 21,
+        "utt_id": "common_voice_en_153872-common_voice_en_153874",
+        "wav": "${NVME_WORKDIR}/bench-validation/20261020_165001_49599d4/check_audio/audio/0021_common_voice_en_153872-common_voice_en_153874.wav",
+        "wav_sha256": "c950da74e69b873a71d6ef7463964f0f4d2529a888d4dd70a690457910197f43",
+        "frames": 180224,
+        "sample_rate": 44100,
+        "channels": 1,
+        "audio_s_from_wav": 4.08671201814059,
+        "rms_dbfs": -26.5689672032008,
+        "peak": 0.496826171875,
+        "prompt_wav": "prompt-wavs/common_voice_en_153872.wav",
+        "target_text": "A thin circle of bright metal showed between the top and the body of the cylinder.",
+        "ref_text": "Hundreds must have seen it, and taken it for a falling star."
+      },
+      {
+        "index": 22,
+        "utt_id": "common_voice_en_155313-common_voice_en_155315",
+        "wav": "${NVME_WORKDIR}/bench-validation/20261020_165001_49599d4/check_audio/audio/0022_common_voice_en_155313-common_voice_en_155315.wav",
+        "wav_sha256": "9bdd801e0590b8d5c3504ab85d51ec512a821e3864f6da8a3c1709e39103b147",
+        "frames": 303104,
+        "sample_rate": 44100,
+        "channels": 1,
+        "audio_s_from_wav": 6.873106575963718,
+        "rms_dbfs": -35.99327410755357,
+        "peak": 0.13427734375,
+        "prompt_wav": "prompt-wavs/common_voice_en_155313.wav",
+        "target_text": "Replace the Ts in Tim Tebow's name with any other consonant to get a Star Wars character",
+        "ref_text": "Revenge is not my style, but obviously accidents will happen."
+      },
+      {
+        "index": 23,
+        "utt_id": "common_voice_en_15734837-common_voice_en_15734838",
+        "wav": "${NVME_WORKDIR}/bench-validation/20261020_165001_49599d4/check_audio/audio/0023_common_voice_en_15734837-common_voice_en_15734838.wav",
+        "wav_sha256": "fbe9899ed13ee50f790cfeb54cfb2d86d0ce18e0f96ceb8d2f43730391b3e056",
+        "frames": 180224,
+        "sample_rate": 44100,
+        "channels": 1,
+        "audio_s_from_wav": 4.08671201814059,
+        "rms_dbfs": -23.229590459285614,
+        "peak": 0.552734375,
+        "prompt_wav": "prompt-wavs/common_voice_en_15734837.wav",
+        "target_text": "Tyler, Lucy, Michelle, we're going to space!",
+        "ref_text": "I shall be neither more nor less meritorious."
+      },
+      {
+        "index": 24,
+        "utt_id": "common_voice_en_15735839-common_voice_en_15735837",
+        "wav": "${NVME_WORKDIR}/bench-validation/20261020_165001_49599d4/check_audio/audio/0024_common_voice_en_15735839-common_voice_en_15735837.wav",
+        "wav_sha256": "82fd349416ba4720c9e23d2fbc2ebb21605818857db86d4a11070a4b9edfa5e3",
+        "frames": 55296,
+        "sample_rate": 44100,
+        "channels": 1,
+        "audio_s_from_wav": 1.253877551020408,
+        "rms_dbfs": -30.333185658535115,
+        "peak": 0.200439453125,
+        "prompt_wav": "prompt-wavs/common_voice_en_15735839.wav",
+        "target_text": "Get out of this!",
+        "ref_text": "She didn't like the trend of nylon stockings."
+      },
+      {
+        "index": 25,
+        "utt_id": "common_voice_en_15903802-common_voice_en_15903807",
+        "wav": "${NVME_WORKDIR}/bench-validation/20261020_165001_49599d4/check_audio/audio/0025_common_voice_en_15903802-common_voice_en_15903807.wav",
+        "wav_sha256": "976c0a305fff682aefc505fff96ec6e058ecafcebaae9aa74cd0e3bc45e146d8",
+        "frames": 149504,
+        "sample_rate": 44100,
+        "channels": 1,
+        "audio_s_from_wav": 3.3901133786848074,
+        "rms_dbfs": -31.16321356034726,
+        "peak": 0.1822509765625,
+        "prompt_wav": "prompt-wavs/common_voice_en_15903802.wav",
+        "target_text": "Thousands of people die every year as a consequence of air pollution.",
+        "ref_text": "Experts of geology agree: Yesterday's tsunami was just a herald of the imminent apocalypse."
+      },
+      {
+        "index": 26,
+        "utt_id": "common_voice_en_15903802-common_voice_en_15903815",
+        "wav": "${NVME_WORKDIR}/bench-validation/20261020_165001_49599d4/check_audio/audio/0026_common_voice_en_15903802-common_voice_en_15903815.wav",
+        "wav_sha256": "69e0d92a05a431f60b08958e001ac16ec6c3ed98191d25df780eb87dbaf234c3",
+        "frames": 135168,
+        "sample_rate": 44100,
+        "channels": 1,
+        "audio_s_from_wav": 3.0650340136054424,
+        "rms_dbfs": -32.62564529681179,
+        "peak": 0.1568603515625,
+        "prompt_wav": "prompt-wavs/common_voice_en_15903802.wav",
+        "target_text": "History teaches us that humans do not learn from history.",
+        "ref_text": "Experts of geology agree: Yesterday's tsunami was just a herald of the imminent apocalypse."
+      },
+      {
+        "index": 27,
+        "utt_id": "common_voice_en_16666041-common_voice_en_16666040",
+        "wav": "${NVME_WORKDIR}/bench-validation/20261020_165001_49599d4/check_audio/audio/0027_common_voice_en_16666041-common_voice_en_16666040.wav",
+        "wav_sha256": "f42709387a79fc5140e0b2291e9ce9c38b556deb4171b5dabbf48acc235e7b5d",
+        "frames": 155648,
+        "sample_rate": 44100,
+        "channels": 1,
+        "audio_s_from_wav": 3.5294331065759637,
+        "rms_dbfs": -24.24346315912766,
+        "peak": 0.387939453125,
+        "prompt_wav": "prompt-wavs/common_voice_en_16666041.wav",
+        "target_text": "I was well, but I'm all the better for being here.",
+        "ref_text": "Birds feed their offspring with spiders, worms, slugs and bugs."
+      },
+      {
+        "index": 28,
+        "utt_id": "common_voice_en_167249-common_voice_en_167246",
+        "wav": "${NVME_WORKDIR}/bench-validation/20261020_165001_49599d4/check_audio/audio/0028_common_voice_en_167249-common_voice_en_167246.wav",
+        "wav_sha256": "a2f9a284569fdb65721d8fdcb718d8819dd430dacacb1acc37d65c728281634f",
+        "frames": 112640,
+        "sample_rate": 44100,
+        "channels": 1,
+        "audio_s_from_wav": 2.5541950113378684,
+        "rms_dbfs": -42.37438608780679,
+        "peak": 0.051422119140625,
+        "prompt_wav": "prompt-wavs/common_voice_en_167249.wav",
+        "target_text": "what is the forecast for California for rain",
+        "ref_text": "Play the song from the genre Sunshine Reggae that appeals to me."
+      },
+      {
+        "index": 29,
+        "utt_id": "common_voice_en_167249-common_voice_en_167247",
+        "wav": "${NVME_WORKDIR}/bench-validation/20261020_165001_49599d4/check_audio/audio/0029_common_voice_en_167249-common_voice_en_167247.wav",
+        "wav_sha256": "9aa35063526cbea67620e4ca6dd0ed3e8181814c68e39836b41e264c6993dfba",
+        "frames": 147456,
+        "sample_rate": 44100,
+        "channels": 1,
+        "audio_s_from_wav": 3.3436734693877552,
+        "rms_dbfs": -41.9099158864781,
+        "peak": 0.1292724609375,
+        "prompt_wav": "prompt-wavs/common_voice_en_167249.wav",
+        "target_text": "Take these capsules over to Mrs. David's house.",
+        "ref_text": "Play the song from the genre Sunshine Reggae that appeals to me."
+      },
+      {
+        "index": 30,
+        "utt_id": "common_voice_en_17147545-common_voice_en_17147546",
+        "wav": "${NVME_WORKDIR}/bench-validation/20261020_165001_49599d4/check_audio/audio/0030_common_voice_en_17147545-common_voice_en_17147546.wav",
+        "wav_sha256": "ad9eab28f649501c10394656fc211c45d1caec7ca9bb20e4124960997805f3a4",
+        "frames": 231424,
+        "sample_rate": 44100,
+        "channels": 1,
+        "audio_s_from_wav": 5.2477097505668935,
+        "rms_dbfs": -28.129072375994255,
+        "peak": 0.215087890625,
+        "prompt_wav": "prompt-wavs/common_voice_en_17147545.wav",
+        "target_text": "Lions hunt their prey with sprints, whereas wolves take advantage of their stamina.",
+        "ref_text": "It's probably a good idea to merge the two subsections in the synopsis."
+      },
+      {
+        "index": 31,
+        "utt_id": "common_voice_en_17161-common_voice_en_17159",
+        "wav": "${NVME_WORKDIR}/bench-validation/20261020_165001_49599d4/check_audio/audio/0031_common_voice_en_17161-common_voice_en_17159.wav",
+        "wav_sha256": "27251ca6878ac38d54585d7034ed0e94e33a4c8c7e73d130255b6165e6b692f5",
+        "frames": 129024,
+        "sample_rate": 44100,
+        "channels": 1,
+        "audio_s_from_wav": 2.9257142857142857,
+        "rms_dbfs": -25.069437308702863,
+        "peak": 0.483642578125,
+        "prompt_wav": "prompt-wavs/common_voice_en_17161.wav",
+        "target_text": "He must be disguised to avoid encounters with thieves.",
+        "ref_text": "On the second day, the boy climbed to the top of a cliff near the camp."
+      }
+    ]
+  },
+  "listening_status": "pending_human_review",
+  "listening_selection": [
+    {
+      "index": 0,
+      "codes": {
+        "index": 0,
+        "utt_id": "common_voice_en_10119832-common_voice_en_10119840",
+        "wav": "${NVME_WORKDIR}/bench-validation/20261020_165001_49599d4/check_codes/audio/0000_common_voice_en_10119832-common_voice_en_10119840.wav",
+        "wav_sha256": "b2a5dac87cf8be444ef3fc3a399fb735d59ce722fc2b3704c3938f87ff284f0d",
+        "frames": 96256,
+        "sample_rate": 44100,
+        "channels": 1,
+        "audio_s_from_wav": 2.182675736961451,
+        "rms_dbfs": -24.195420195839286,
+        "peak": 0.41748046875,
+        "prompt_wav": "prompt-wavs/common_voice_en_10119832.wav",
+        "target_text": "Get the trust fund to the bank early.",
+        "ref_text": "We asked over twenty different people, and they all said it was his."
+      },
+      "audio": {
+        "index": 0,
+        "utt_id": "common_voice_en_10119832-common_voice_en_10119840",
+        "wav": "${NVME_WORKDIR}/bench-validation/20261020_165001_49599d4/check_audio/audio/0000_common_voice_en_10119832-common_voice_en_10119840.wav",
+        "wav_sha256": "1ed0b2d396398409aa43d7acbc8eded26030b7f92e9e536bbe04922f31341c0b",
+        "frames": 100352,
+        "sample_rate": 44100,
+        "channels": 1,
+        "audio_s_from_wav": 2.2755555555555556,
+        "rms_dbfs": -23.07299917016359,
+        "peak": 0.59912109375,
+        "prompt_wav": "prompt-wavs/common_voice_en_10119832.wav",
+        "target_text": "Get the trust fund to the bank early.",
+        "ref_text": "We asked over twenty different people, and they all said it was his."
+      }
+    },
+    {
+      "index": 10,
+      "codes": {
+        "index": 10,
+        "utt_id": "common_voice_en_123125-common_voice_en_123126",
+        "wav": "${NVME_WORKDIR}/bench-validation/20261020_165001_49599d4/check_codes/audio/0010_common_voice_en_123125-common_voice_en_123126.wav",
+        "wav_sha256": "48e977bd607940988575aba17200b12a847905d1f5ca26b7eada92e55acec9b5",
+        "frames": 182272,
+        "sample_rate": 44100,
+        "channels": 1,
+        "audio_s_from_wav": 4.133151927437642,
+        "rms_dbfs": -31.780252999103947,
+        "peak": 0.409423828125,
+        "prompt_wav": "prompt-wavs/common_voice_en_123125.wav",
+        "target_text": "After all, who doesn’t want to overcome new challenges and achieve great heights?",
+        "ref_text": "\"There's no danger,\" the boy said, when they had moved on past the encampment."
+      },
+      "audio": {
+        "index": 10,
+        "utt_id": "common_voice_en_123125-common_voice_en_123126",
+        "wav": "${NVME_WORKDIR}/bench-validation/20261020_165001_49599d4/check_audio/audio/0010_common_voice_en_123125-common_voice_en_123126.wav",
+        "wav_sha256": "eccb32e05573b863648633cbfad62241585a5ab8fc7ec2eafb10878d09d2c33b",
+        "frames": 194560,
+        "sample_rate": 44100,
+        "channels": 1,
+        "audio_s_from_wav": 4.4117913832199545,
+        "rms_dbfs": -31.161968056784733,
+        "peak": 0.2998046875,
+        "prompt_wav": "prompt-wavs/common_voice_en_123125.wav",
+        "target_text": "After all, who doesn’t want to overcome new challenges and achieve great heights?",
+        "ref_text": "\"There's no danger,\" the boy said, when they had moved on past the encampment."
+      }
+    },
+    {
+      "index": 20,
+      "codes": {
+        "index": 20,
+        "utt_id": "common_voice_en_153872-common_voice_en_153873",
+        "wav": "${NVME_WORKDIR}/bench-validation/20261020_165001_49599d4/check_codes/audio/0020_common_voice_en_153872-common_voice_en_153873.wav",
+        "wav_sha256": "b4e00b99864de722145e7c73199ca9a847bf56d695928b3def07809fadff3030",
+        "frames": 98304,
+        "sample_rate": 44100,
+        "channels": 1,
+        "audio_s_from_wav": 2.2291156462585033,
+        "rms_dbfs": -22.518997189305246,
+        "peak": 0.650390625,
+        "prompt_wav": "prompt-wavs/common_voice_en_153872.wav",
+        "target_text": "They set off running wildly into the trees.",
+        "ref_text": "Hundreds must have seen it, and taken it for a falling star."
+      },
+      "audio": {
+        "index": 20,
+        "utt_id": "common_voice_en_153872-common_voice_en_153873",
+        "wav": "${NVME_WORKDIR}/bench-validation/20261020_165001_49599d4/check_audio/audio/0020_common_voice_en_153872-common_voice_en_153873.wav",
+        "wav_sha256": "7cf0fd4e43d41a9ed7c8c6cb3f2cc9e0a5c27109c0128ce0addc8c89117525d8",
+        "frames": 96256,
+        "sample_rate": 44100,
+        "channels": 1,
+        "audio_s_from_wav": 2.182675736961451,
+        "rms_dbfs": -21.231410523978155,
+        "peak": 0.89501953125,
+        "prompt_wav": "prompt-wavs/common_voice_en_153872.wav",
+        "target_text": "They set off running wildly into the trees.",
+        "ref_text": "Hundreds must have seen it, and taken it for a falling star."
+      }
+    },
+    {
+      "index": 31,
+      "codes": {
+        "index": 31,
+        "utt_id": "common_voice_en_17161-common_voice_en_17159",
+        "wav": "${NVME_WORKDIR}/bench-validation/20261020_165001_49599d4/check_codes/audio/0031_common_voice_en_17161-common_voice_en_17159.wav",
+        "wav_sha256": "e1c0de578445f6f06f16a71ae3da8877cd0ea85bc375a8fa291aec7bd4d71f4d",
+        "frames": 137216,
+        "sample_rate": 44100,
+        "channels": 1,
+        "audio_s_from_wav": 3.111473922902494,
+        "rms_dbfs": -21.91038137607824,
+        "peak": 0.59375,
+        "prompt_wav": "prompt-wavs/common_voice_en_17161.wav",
+        "target_text": "He must be disguised to avoid encounters with thieves.",
+        "ref_text": "On the second day, the boy climbed to the top of a cliff near the camp."
+      },
+      "audio": {
+        "index": 31,
+        "utt_id": "common_voice_en_17161-common_voice_en_17159",
+        "wav": "${NVME_WORKDIR}/bench-validation/20261020_165001_49599d4/check_audio/audio/0031_common_voice_en_17161-common_voice_en_17159.wav",
+        "wav_sha256": "27251ca6878ac38d54585d7034ed0e94e33a4c8c7e73d130255b6165e6b692f5",
+        "frames": 129024,
+        "sample_rate": 44100,
+        "channels": 1,
+        "audio_s_from_wav": 2.9257142857142857,
+        "rms_dbfs": -25.069437308702863,
+        "peak": 0.483642578125,
+        "prompt_wav": "prompt-wavs/common_voice_en_17161.wav",
+        "target_text": "He must be disguised to avoid encounters with thieves.",
+        "ref_text": "On the second day, the boy climbed to the top of a cliff near the camp."
+      }
+    }
+  ],
+  "limitations": [
+    "No perceptual listening was performed by this script. Voice similarity and acoustic quality remain unassessed.",
+    "Non-silent RMS does not establish intelligibility, correct words, good voice cloning, or freedom from noise.",
+    "Duration similarity is descriptive; no automatic acceptance threshold is imposed on duration differences.",
+    "Stream arrival arrays are not saved; full-concurrency throughput and exact unrounded timing cannot be independently reconstructed.",
+    "Loop-lag p99 is read from tool output; it is not independently remeasured and is not a strict timestamp error bound.",
+    "Save-audio runs include WAV-save delay before a worker dispatches its next request; this is validation, not the formal baseline."
+  ]
+}

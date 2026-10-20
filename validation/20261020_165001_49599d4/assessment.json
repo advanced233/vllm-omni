@@ -1,0 +1,24 @@
+{
+  "status": "numeric_checks_passed_listening_pending",
+  "preencoding_rows": 1088,
+  "codes_failed": 0,
+  "audio_failed": 0,
+  "loop_lag_p99_ms": {
+    "codes": 0.85,
+    "audio": 0.87
+  },
+  "independent_checks_passed": 664,
+  "auxiliary_asr_selected_outputs": 8,
+  "auxiliary_asr_word_edit_distance_zero": 8,
+  "listening_indices": [
+    0,
+    2,
+    14,
+    18
+  ],
+  "human_listening": "pending",
+  "duration_distribution_review": "mean differs about10%; audio long tail and index18/14 low-energy intervals require listening review",
+  "c128_tested": false,
+  "formal_baseline_run": false,
+  "ref_codes_sha256": "4be960b12e0984673a8f2058e6508d07a5bc5ab3cb7e27e10e1b8be4241262b9"
+}

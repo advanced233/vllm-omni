@@ -1,0 +1,1009 @@
+{
+  "purpose": "Auxiliary investigation of duration outliers; not formal Seed-TTS WER, human listening, speaker similarity or acoustic-quality validation.",
+  "model": "Whisper small",
+  "checkpoint": "${USER_HOME}/.cache/whisper/small.pt",
+  "checkpoint_sha256": "9ecf779972d90ba49c06d968637d720dd632c55bbf19d441fb42bf17a411e794",
+  "device": "cpu",
+  "torch_num_threads": 8,
+  "cuda_visible_devices": "",
+  "versions": {
+    "openai-whisper": "20250625",
+    "torch": "2.13.0+cu129",
+    "numpy": "2.3.5"
+  },
+  "transcribe_explicit_options": {
+    "language": "en",
+    "fp16": false,
+    "temperature": 0
+  },
+  "transcribe_signature_including_defaults": "(model: 'Whisper', audio: Union[str, numpy.ndarray, torch.Tensor], *, verbose: Optional[bool] = None, temperature: Union[float, Tuple[float, ...]] = (0.0, 0.2, 0.4, 0.6, 0.8, 1.0), compression_ratio_threshold: Optional[float] = 2.4, logprob_threshold: Optional[float] = -1.0, no_speech_threshold: Optional[float] = 0.6, condition_on_previous_text: bool = True, initial_prompt: Optional[str] = None, carry_initial_prompt: bool = False, word_timestamps: bool = False, prepend_punctuations: str = '\"\\'“¿([{-', append_punctuations: str = '\"\\'.。,，!！?？:：”)]}、', clip_timestamps: Union[str, List[float]] = '0', hallucination_silence_threshold: Optional[float] = None, **decode_options)",
+  "normalization": "Lowercase, curly apostrophe to ASCII, regex [a-z0-9]+(?:'[a-z0-9]+)?; punctuation ignored, no number expansion or linguistic normalization.",
+  "energy_caveat": "20 ms RMS thresholded low energy is only an acoustic diagnostic; quiet speech is possible and silence does not prove missing text. No voice identity inferred.",
+  "selected_indices": [
+    0,
+    2,
+    14,
+    18
+  ],
+  "results": [
+    {
+      "mode": "codes",
+      "index": 0,
+      "utt_id": "common_voice_en_10119832-common_voice_en_10119840",
+      "wav": "${NVME_WORKDIR}/bench-validation/20261020_165001_49599d4/check_codes/audio/0000_common_voice_en_10119832-common_voice_en_10119840.wav",
+      "target_text": "Get the trust fund to the bank early.",
+      "ref_text": "We asked over twenty different people, and they all said it was his.",
+      "prompt_wav": "prompt-wavs/common_voice_en_10119832.wav",
+      "transcribed_text": " get the trust fund to the bank early.",
+      "cpu_transcribe_seconds": 1.9144767709076405,
+      "segments": [
+        {
+          "start": 0.0,
+          "end": 2.12,
+          "text": " get the trust fund to the bank early.",
+          "avg_logprob": -0.24185834328333536,
+          "no_speech_prob": 0.0120835080742836,
+          "compression_ratio": 0.8809523809523809,
+          "temperature": 0
+        }
+      ],
+      "audio_observations": {
+        "audio_s": 2.182675736961451,
+        "sample_rate": 44100,
+        "rms_dbfs": -24.195420195839286,
+        "last_1s_rms_dbfs": -24.044535219509974,
+        "last_250ms_rms_dbfs": -31.63473058547251,
+        "low_energy_below_-50_dbfs": {
+          "window_s": 0.02,
+          "total_s_approx": 0.18,
+          "trailing_s_approx": 0.08,
+          "fraction_of_windows": 0.08181818181818182,
+          "longest_spans": [
+            {
+              "start_s": 2.12,
+              "end_s": 2.1827,
+              "duration_s": 0.0627
+            },
+            {
+              "start_s": 1.64,
+              "end_s": 1.7,
+              "duration_s": 0.06
+            },
+            {
+              "start_s": 0.0,
+              "end_s": 0.02,
+              "duration_s": 0.02
+            },
+            {
+              "start_s": 0.26,
+              "end_s": 0.28,
+              "duration_s": 0.02
+            }
+          ]
+        },
+        "low_energy_below_-40_dbfs": {
+          "window_s": 0.02,
+          "total_s_approx": 0.46,
+          "trailing_s_approx": 0.16,
+          "fraction_of_windows": 0.20909090909090908,
+          "longest_spans": [
+            {
+              "start_s": 2.04,
+              "end_s": 2.1827,
+              "duration_s": 0.1427
+            },
+            {
+              "start_s": 1.6,
+              "end_s": 1.7,
+              "duration_s": 0.1
+            },
+            {
+              "start_s": 0.78,
+              "end_s": 0.84,
+              "duration_s": 0.06
+            },
+            {
+              "start_s": 0.24,
+              "end_s": 0.28,
+              "duration_s": 0.04
+            },
+            {
+              "start_s": 0.36,
+              "end_s": 0.4,
+              "duration_s": 0.04
+            }
+          ]
+        }
+      },
+      "alignment": {
+        "target_tokens": [
+          "get",
+          "the",
+          "trust",
+          "fund",
+          "to",
+          "the",
+          "bank",
+          "early"
+        ],
+        "asr_tokens": [
+          "get",
+          "the",
+          "trust",
+          "fund",
+          "to",
+          "the",
+          "bank",
+          "early"
+        ],
+        "word_edit_distance": 0,
+        "target_word_count": 8,
+        "word_edit_ratio": 0.0,
+        "edit_operations": []
+      },
+      "asr_segments_extend_beyond_actual_audio": false
+    },
+    {
+      "mode": "codes",
+      "index": 2,
+      "utt_id": "common_voice_en_103675-common_voice_en_103676",
+      "wav": "${NVME_WORKDIR}/bench-validation/20261020_165001_49599d4/check_codes/audio/0002_common_voice_en_103675-common_voice_en_103676.wav",
+      "target_text": "One by one, the campfires were extinguished, and the oasis fell as quiet as the desert.",
+      "ref_text": "I'm never more aware of a room's acoustics than when I'm trying to enjoy a snack I have no intention of sharing.",
+      "prompt_wav": "prompt-wavs/common_voice_en_103675.wav",
+      "transcribed_text": " One by one the campfires were extinguished and the oasis fell as quiet as the desert.",
+      "cpu_transcribe_seconds": 2.2234847117215395,
+      "segments": [
+        {
+          "start": 0.0,
+          "end": 6.0,
+          "text": " One by one the campfires were extinguished and the oasis fell as quiet as the desert.",
+          "avg_logprob": -0.23236900568008423,
+          "no_speech_prob": 0.005860354285687208,
+          "compression_ratio": 1.103896103896104,
+          "temperature": 0
+        }
+      ],
+      "audio_observations": {
+        "audio_s": 5.897868480725624,
+        "sample_rate": 44100,
+        "rms_dbfs": -29.37373063966756,
+        "last_1s_rms_dbfs": -36.30487954845046,
+        "last_250ms_rms_dbfs": -39.1748595305601,
+        "low_energy_below_-50_dbfs": {
+          "window_s": 0.02,
+          "total_s_approx": 1.74,
+          "trailing_s_approx": 0.14,
+          "fraction_of_windows": 0.29491525423728815,
+          "longest_spans": [
+            {
+              "start_s": 2.82,
+              "end_s": 3.26,
+              "duration_s": 0.44
+            },
+            {
+              "start_s": 4.02,
+              "end_s": 4.16,
+              "duration_s": 0.14
+            },
+            {
+              "start_s": 5.76,
+              "end_s": 5.8979,
+              "duration_s": 0.1379
+            },
+            {
+              "start_s": 1.4,
+              "end_s": 1.52,
+              "duration_s": 0.12
+            },
+            {
+              "start_s": 2.68,
+              "end_s": 2.8,
+              "duration_s": 0.12
+            }
+          ]
+        },
+        "low_energy_below_-40_dbfs": {
+          "window_s": 0.02,
+          "total_s_approx": 2.48,
+          "trailing_s_approx": 0.16,
+          "fraction_of_windows": 0.42033898305084744,
+          "longest_spans": [
+            {
+              "start_s": 2.6,
+              "end_s": 3.28,
+              "duration_s": 0.68
+            },
+            {
+              "start_s": 4.36,
+              "end_s": 4.6,
+              "duration_s": 0.24
+            },
+            {
+              "start_s": 2.04,
+              "end_s": 2.26,
+              "duration_s": 0.22
+            },
+            {
+              "start_s": 3.96,
+              "end_s": 4.16,
+              "duration_s": 0.2
+            },
+            {
+              "start_s": 4.88,
+              "end_s": 5.08,
+              "duration_s": 0.2
+            }
+          ]
+        }
+      },
+      "alignment": {
+        "target_tokens": [
+          "one",
+          "by",
+          "one",
+          "the",
+          "campfires",
+          "were",
+          "extinguished",
+          "and",
+          "the",
+          "oasis",
+          "fell",
+          "as",
+          "quiet",
+          "as",
+          "the",
+          "desert"
+        ],
+        "asr_tokens": [
+          "one",
+          "by",
+          "one",
+          "the",
+          "campfires",
+          "were",
+          "extinguished",
+          "and",
+          "the",
+          "oasis",
+          "fell",
+          "as",
+          "quiet",
+          "as",
+          "the",
+          "desert"
+        ],
+        "word_edit_distance": 0,
+        "target_word_count": 16,
+        "word_edit_ratio": 0.0,
+        "edit_operations": []
+      },
+      "asr_segments_extend_beyond_actual_audio": true
+    },
+    {
+      "mode": "codes",
+      "index": 14,
+      "utt_id": "common_voice_en_137148-common_voice_en_137152",
+      "wav": "${NVME_WORKDIR}/bench-validation/20261020_165001_49599d4/check_codes/audio/0014_common_voice_en_137148-common_voice_en_137152.wav",
+      "target_text": "Elvis Presley is often called the \"King of Rock and Roll\".",
+      "ref_text": "She walked across the street wearing stereo headphones and staring at her smartphone.",
+      "prompt_wav": "prompt-wavs/common_voice_en_137148.wav",
+      "transcribed_text": " Elvis Presley is often called the King of Rock and Roll.",
+      "cpu_transcribe_seconds": 1.7139648720622063,
+      "segments": [
+        {
+          "start": 0.0,
+          "end": 2.68,
+          "text": " Elvis Presley is often called the King of Rock and Roll.",
+          "avg_logprob": -0.2570648193359375,
+          "no_speech_prob": 0.006076374556869268,
+          "compression_ratio": 0.9333333333333333,
+          "temperature": 0
+        }
+      ],
+      "audio_observations": {
+        "audio_s": 2.786394557823129,
+        "sample_rate": 44100,
+        "rms_dbfs": -31.04491254779844,
+        "last_1s_rms_dbfs": -30.633399449111565,
+        "last_250ms_rms_dbfs": -36.55703089611028,
+        "low_energy_below_-50_dbfs": {
+          "window_s": 0.02,
+          "total_s_approx": 0.0,
+          "trailing_s_approx": 0.0,
+          "fraction_of_windows": 0.0,
+          "longest_spans": []
+        },
+        "low_energy_below_-40_dbfs": {
+          "window_s": 0.02,
+          "total_s_approx": 0.5,
+          "trailing_s_approx": 0.1,
+          "fraction_of_windows": 0.17857142857142858,
+          "longest_spans": [
+            {
+              "start_s": 2.7,
+              "end_s": 2.7864,
+              "duration_s": 0.0864
+            },
+            {
+              "start_s": 0.36,
+              "end_s": 0.42,
+              "duration_s": 0.06
+            },
+            {
+              "start_s": 1.26,
+              "end_s": 1.32,
+              "duration_s": 0.06
+            },
+            {
+              "start_s": 0.0,
+              "end_s": 0.04,
+              "duration_s": 0.04
+            },
+            {
+              "start_s": 0.62,
+              "end_s": 0.66,
+              "duration_s": 0.04
+            }
+          ]
+        }
+      },
+      "alignment": {
+        "target_tokens": [
+          "elvis",
+          "presley",
+          "is",
+          "often",
+          "called",
+          "the",
+          "king",
+          "of",
+          "rock",
+          "and",
+          "roll"
+        ],
+        "asr_tokens": [
+          "elvis",
+          "presley",
+          "is",
+          "often",
+          "called",
+          "the",
+          "king",
+          "of",
+          "rock",
+          "and",
+          "roll"
+        ],
+        "word_edit_distance": 0,
+        "target_word_count": 11,
+        "word_edit_ratio": 0.0,
+        "edit_operations": []
+      },
+      "asr_segments_extend_beyond_actual_audio": false
+    },
+    {
+      "mode": "codes",
+      "index": 18,
+      "utt_id": "common_voice_en_15265-common_voice_en_15266",
+      "wav": "${NVME_WORKDIR}/bench-validation/20261020_165001_49599d4/check_codes/audio/0018_common_voice_en_15265-common_voice_en_15266.wav",
+      "target_text": "Large brown dog walks up a blue staircase.",
+      "ref_text": "Man with guitar holding a microphone in one hand and extending his other arm.",
+      "prompt_wav": "prompt-wavs/common_voice_en_15265.wav",
+      "transcribed_text": " Large brown dog walks up a blue staircase.",
+      "cpu_transcribe_seconds": 1.5051571289077401,
+      "segments": [
+        {
+          "start": 0.0,
+          "end": 5.8,
+          "text": " Large brown dog walks up a blue staircase.",
+          "avg_logprob": -0.3458114465077718,
+          "no_speech_prob": 0.01613663136959076,
+          "compression_ratio": 0.84,
+          "temperature": 0
+        }
+      ],
+      "audio_observations": {
+        "audio_s": 4.133151927437642,
+        "sample_rate": 44100,
+        "rms_dbfs": -27.23499029531758,
+        "last_1s_rms_dbfs": -29.135163707794764,
+        "last_250ms_rms_dbfs": -37.20963696664277,
+        "low_energy_below_-50_dbfs": {
+          "window_s": 0.02,
+          "total_s_approx": 0.32,
+          "trailing_s_approx": 0.0,
+          "fraction_of_windows": 0.07729468599033816,
+          "longest_spans": [
+            {
+              "start_s": 0.2,
+              "end_s": 0.32,
+              "duration_s": 0.12
+            },
+            {
+              "start_s": 0.0,
+              "end_s": 0.04,
+              "duration_s": 0.04
+            },
+            {
+              "start_s": 0.14,
+              "end_s": 0.18,
+              "duration_s": 0.04
+            },
+            {
+              "start_s": 0.34,
+              "end_s": 0.36,
+              "duration_s": 0.02
+            },
+            {
+              "start_s": 0.38,
+              "end_s": 0.4,
+              "duration_s": 0.02
+            }
+          ]
+        },
+        "low_energy_below_-40_dbfs": {
+          "window_s": 0.02,
+          "total_s_approx": 1.52,
+          "trailing_s_approx": 0.14,
+          "fraction_of_windows": 0.3671497584541063,
+          "longest_spans": [
+            {
+              "start_s": 0.0,
+              "end_s": 0.92,
+              "duration_s": 0.92
+            },
+            {
+              "start_s": 4.0,
+              "end_s": 4.1332,
+              "duration_s": 0.1332
+            },
+            {
+              "start_s": 1.26,
+              "end_s": 1.34,
+              "duration_s": 0.08
+            },
+            {
+              "start_s": 2.66,
+              "end_s": 2.74,
+              "duration_s": 0.08
+            },
+            {
+              "start_s": 3.2,
+              "end_s": 3.28,
+              "duration_s": 0.08
+            }
+          ]
+        }
+      },
+      "alignment": {
+        "target_tokens": [
+          "large",
+          "brown",
+          "dog",
+          "walks",
+          "up",
+          "a",
+          "blue",
+          "staircase"
+        ],
+        "asr_tokens": [
+          "large",
+          "brown",
+          "dog",
+          "walks",
+          "up",
+          "a",
+          "blue",
+          "staircase"
+        ],
+        "word_edit_distance": 0,
+        "target_word_count": 8,
+        "word_edit_ratio": 0.0,
+        "edit_operations": []
+      },
+      "asr_segments_extend_beyond_actual_audio": true
+    },
+    {
+      "mode": "audio",
+      "index": 0,
+      "utt_id": "common_voice_en_10119832-common_voice_en_10119840",
+      "wav": "${NVME_WORKDIR}/bench-validation/20261020_165001_49599d4/check_audio/audio/0000_common_voice_en_10119832-common_voice_en_10119840.wav",
+      "target_text": "Get the trust fund to the bank early.",
+      "ref_text": "We asked over twenty different people, and they all said it was his.",
+      "prompt_wav": "prompt-wavs/common_voice_en_10119832.wav",
+      "transcribed_text": " Get the trust fund to the bank early.",
+      "cpu_transcribe_seconds": 1.559019417501986,
+      "segments": [
+        {
+          "start": 0.0,
+          "end": 2.2,
+          "text": " Get the trust fund to the bank early.",
+          "avg_logprob": -0.25940507650375366,
+          "no_speech_prob": 0.009513018652796745,
+          "compression_ratio": 0.8809523809523809,
+          "temperature": 0
+        }
+      ],
+      "audio_observations": {
+        "audio_s": 2.2755555555555556,
+        "sample_rate": 44100,
+        "rms_dbfs": -23.07299917016359,
+        "last_1s_rms_dbfs": -24.784160700089572,
+        "last_250ms_rms_dbfs": -34.36838446690284,
+        "low_energy_below_-50_dbfs": {
+          "window_s": 0.02,
+          "total_s_approx": 0.26,
+          "trailing_s_approx": 0.12,
+          "fraction_of_windows": 0.11403508771929824,
+          "longest_spans": [
+            {
+              "start_s": 2.16,
+              "end_s": 2.2756,
+              "duration_s": 0.1156
+            },
+            {
+              "start_s": 1.14,
+              "end_s": 1.2,
+              "duration_s": 0.06
+            },
+            {
+              "start_s": 0.2,
+              "end_s": 0.24,
+              "duration_s": 0.04
+            },
+            {
+              "start_s": 0.0,
+              "end_s": 0.02,
+              "duration_s": 0.02
+            },
+            {
+              "start_s": 0.7,
+              "end_s": 0.72,
+              "duration_s": 0.02
+            }
+          ]
+        },
+        "low_energy_below_-40_dbfs": {
+          "window_s": 0.02,
+          "total_s_approx": 0.44,
+          "trailing_s_approx": 0.14,
+          "fraction_of_windows": 0.19298245614035087,
+          "longest_spans": [
+            {
+              "start_s": 2.14,
+              "end_s": 2.2756,
+              "duration_s": 0.1356
+            },
+            {
+              "start_s": 0.18,
+              "end_s": 0.26,
+              "duration_s": 0.08
+            },
+            {
+              "start_s": 1.14,
+              "end_s": 1.2,
+              "duration_s": 0.06
+            },
+            {
+              "start_s": 0.76,
+              "end_s": 0.8,
+              "duration_s": 0.04
+            },
+            {
+              "start_s": 1.7,
+              "end_s": 1.74,
+              "duration_s": 0.04
+            }
+          ]
+        }
+      },
+      "alignment": {
+        "target_tokens": [
+          "get",
+          "the",
+          "trust",
+          "fund",
+          "to",
+          "the",
+          "bank",
+          "early"
+        ],
+        "asr_tokens": [
+          "get",
+          "the",
+          "trust",
+          "fund",
+          "to",
+          "the",
+          "bank",
+          "early"
+        ],
+        "word_edit_distance": 0,
+        "target_word_count": 8,
+        "word_edit_ratio": 0.0,
+        "edit_operations": []
+      },
+      "asr_segments_extend_beyond_actual_audio": false
+    },
+    {
+      "mode": "audio",
+      "index": 2,
+      "utt_id": "common_voice_en_103675-common_voice_en_103676",
+      "wav": "${NVME_WORKDIR}/bench-validation/20261020_165001_49599d4/check_audio/audio/0002_common_voice_en_103675-common_voice_en_103676.wav",
+      "target_text": "One by one, the campfires were extinguished, and the oasis fell as quiet as the desert.",
+      "ref_text": "I'm never more aware of a room's acoustics than when I'm trying to enjoy a snack I have no intention of sharing.",
+      "prompt_wav": "prompt-wavs/common_voice_en_103675.wav",
+      "transcribed_text": " One by one, the campfires were extinguished and the oasis fell as quiet as the desert.",
+      "cpu_transcribe_seconds": 2.1844889102503657,
+      "segments": [
+        {
+          "start": 0.0,
+          "end": 8.0,
+          "text": " One by one, the campfires were extinguished and the oasis fell as quiet as the desert.",
+          "avg_logprob": -0.23394779205322266,
+          "no_speech_prob": 0.043912217020988464,
+          "compression_ratio": 1.0886075949367089,
+          "temperature": 0
+        }
+      ],
+      "audio_observations": {
+        "audio_s": 8.034104308390022,
+        "sample_rate": 44100,
+        "rms_dbfs": -35.654330264694266,
+        "last_1s_rms_dbfs": -37.02117492021855,
+        "last_250ms_rms_dbfs": -40.1015005878423,
+        "low_energy_below_-50_dbfs": {
+          "window_s": 0.02,
+          "total_s_approx": 2.88,
+          "trailing_s_approx": 0.12,
+          "fraction_of_windows": 0.3582089552238806,
+          "longest_spans": [
+            {
+              "start_s": 3.88,
+              "end_s": 4.66,
+              "duration_s": 0.78
+            },
+            {
+              "start_s": 1.34,
+              "end_s": 1.9,
+              "duration_s": 0.56
+            },
+            {
+              "start_s": 6.66,
+              "end_s": 7.02,
+              "duration_s": 0.36
+            },
+            {
+              "start_s": 6.5,
+              "end_s": 6.64,
+              "duration_s": 0.14
+            },
+            {
+              "start_s": 2.28,
+              "end_s": 2.4,
+              "duration_s": 0.12
+            }
+          ]
+        },
+        "low_energy_below_-40_dbfs": {
+          "window_s": 0.02,
+          "total_s_approx": 3.94,
+          "trailing_s_approx": 0.14,
+          "fraction_of_windows": 0.4900497512437811,
+          "longest_spans": [
+            {
+              "start_s": 3.58,
+              "end_s": 4.68,
+              "duration_s": 1.1
+            },
+            {
+              "start_s": 1.32,
+              "end_s": 1.9,
+              "duration_s": 0.58
+            },
+            {
+              "start_s": 6.5,
+              "end_s": 7.02,
+              "duration_s": 0.52
+            },
+            {
+              "start_s": 2.88,
+              "end_s": 3.12,
+              "duration_s": 0.24
+            },
+            {
+              "start_s": 5.82,
+              "end_s": 6.04,
+              "duration_s": 0.22
+            }
+          ]
+        }
+      },
+      "alignment": {
+        "target_tokens": [
+          "one",
+          "by",
+          "one",
+          "the",
+          "campfires",
+          "were",
+          "extinguished",
+          "and",
+          "the",
+          "oasis",
+          "fell",
+          "as",
+          "quiet",
+          "as",
+          "the",
+          "desert"
+        ],
+        "asr_tokens": [
+          "one",
+          "by",
+          "one",
+          "the",
+          "campfires",
+          "were",
+          "extinguished",
+          "and",
+          "the",
+          "oasis",
+          "fell",
+          "as",
+          "quiet",
+          "as",
+          "the",
+          "desert"
+        ],
+        "word_edit_distance": 0,
+        "target_word_count": 16,
+        "word_edit_ratio": 0.0,
+        "edit_operations": []
+      },
+      "asr_segments_extend_beyond_actual_audio": false
+    },
+    {
+      "mode": "audio",
+      "index": 14,
+      "utt_id": "common_voice_en_137148-common_voice_en_137152",
+      "wav": "${NVME_WORKDIR}/bench-validation/20261020_165001_49599d4/check_audio/audio/0014_common_voice_en_137148-common_voice_en_137152.wav",
+      "target_text": "Elvis Presley is often called the \"King of Rock and Roll\".",
+      "ref_text": "She walked across the street wearing stereo headphones and staring at her smartphone.",
+      "prompt_wav": "prompt-wavs/common_voice_en_137148.wav",
+      "transcribed_text": " Elvis Presley is often called the King of Rock and Roll.",
+      "cpu_transcribe_seconds": 1.7321650758385658,
+      "segments": [
+        {
+          "start": 0.0,
+          "end": 5.0,
+          "text": " Elvis Presley is often called the King of Rock and Roll.",
+          "avg_logprob": -0.23863530158996582,
+          "no_speech_prob": 0.011607804335653782,
+          "compression_ratio": 0.9333333333333333,
+          "temperature": 0
+        }
+      ],
+      "audio_observations": {
+        "audio_s": 5.479909297052155,
+        "sample_rate": 44100,
+        "rms_dbfs": -31.677245579162644,
+        "last_1s_rms_dbfs": -33.984308773854465,
+        "last_250ms_rms_dbfs": -47.76737839259681,
+        "low_energy_below_-50_dbfs": {
+          "window_s": 0.02,
+          "total_s_approx": 0.04,
+          "trailing_s_approx": 0.04,
+          "fraction_of_windows": 0.0072992700729927005,
+          "longest_spans": [
+            {
+              "start_s": 5.44,
+              "end_s": 5.4799,
+              "duration_s": 0.0399
+            }
+          ]
+        },
+        "low_energy_below_-40_dbfs": {
+          "window_s": 0.02,
+          "total_s_approx": 2.54,
+          "trailing_s_approx": 0.4,
+          "fraction_of_windows": 0.4635036496350365,
+          "longest_spans": [
+            {
+              "start_s": 3.46,
+              "end_s": 4.28,
+              "duration_s": 0.82
+            },
+            {
+              "start_s": 2.5,
+              "end_s": 2.94,
+              "duration_s": 0.44
+            },
+            {
+              "start_s": 5.08,
+              "end_s": 5.4799,
+              "duration_s": 0.3999
+            },
+            {
+              "start_s": 1.02,
+              "end_s": 1.24,
+              "duration_s": 0.22
+            },
+            {
+              "start_s": 1.74,
+              "end_s": 1.86,
+              "duration_s": 0.12
+            }
+          ]
+        }
+      },
+      "alignment": {
+        "target_tokens": [
+          "elvis",
+          "presley",
+          "is",
+          "often",
+          "called",
+          "the",
+          "king",
+          "of",
+          "rock",
+          "and",
+          "roll"
+        ],
+        "asr_tokens": [
+          "elvis",
+          "presley",
+          "is",
+          "often",
+          "called",
+          "the",
+          "king",
+          "of",
+          "rock",
+          "and",
+          "roll"
+        ],
+        "word_edit_distance": 0,
+        "target_word_count": 11,
+        "word_edit_ratio": 0.0,
+        "edit_operations": []
+      },
+      "asr_segments_extend_beyond_actual_audio": false
+    },
+    {
+      "mode": "audio",
+      "index": 18,
+      "utt_id": "common_voice_en_15265-common_voice_en_15266",
+      "wav": "${NVME_WORKDIR}/bench-validation/20261020_165001_49599d4/check_audio/audio/0018_common_voice_en_15265-common_voice_en_15266.wav",
+      "target_text": "Large brown dog walks up a blue staircase.",
+      "ref_text": "Man with guitar holding a microphone in one hand and extending his other arm.",
+      "prompt_wav": "prompt-wavs/common_voice_en_15265.wav",
+      "transcribed_text": " Large brown dog walks up a blue staircase.",
+      "cpu_transcribe_seconds": 1.5219009034335613,
+      "segments": [
+        {
+          "start": 0.0,
+          "end": 11.0,
+          "text": " Large brown dog walks up a blue staircase.",
+          "avg_logprob": -0.4137553771336873,
+          "no_speech_prob": 0.007167365401983261,
+          "compression_ratio": 0.84,
+          "temperature": 0
+        }
+      ],
+      "audio_observations": {
+        "audio_s": 9.798820861678005,
+        "sample_rate": 44100,
+        "rms_dbfs": -29.68065516928146,
+        "last_1s_rms_dbfs": -35.21947103070786,
+        "last_250ms_rms_dbfs": -44.965884570175604,
+        "low_energy_below_-50_dbfs": {
+          "window_s": 0.02,
+          "total_s_approx": 0.56,
+          "trailing_s_approx": 0.02,
+          "fraction_of_windows": 0.05714285714285714,
+          "longest_spans": [
+            {
+              "start_s": 0.14,
+              "end_s": 0.24,
+              "duration_s": 0.1
+            },
+            {
+              "start_s": 3.12,
+              "end_s": 3.2,
+              "duration_s": 0.08
+            },
+            {
+              "start_s": 3.46,
+              "end_s": 3.52,
+              "duration_s": 0.06
+            },
+            {
+              "start_s": 6.68,
+              "end_s": 6.74,
+              "duration_s": 0.06
+            },
+            {
+              "start_s": 0.0,
+              "end_s": 0.04,
+              "duration_s": 0.04
+            }
+          ]
+        },
+        "low_energy_below_-40_dbfs": {
+          "window_s": 0.02,
+          "total_s_approx": 6.14,
+          "trailing_s_approx": 0.52,
+          "fraction_of_windows": 0.6265306122448979,
+          "longest_spans": [
+            {
+              "start_s": 3.28,
+              "end_s": 7.58,
+              "duration_s": 4.3
+            },
+            {
+              "start_s": 9.28,
+              "end_s": 9.7988,
+              "duration_s": 0.5188
+            },
+            {
+              "start_s": 0.06,
+              "end_s": 0.48,
+              "duration_s": 0.42
+            },
+            {
+              "start_s": 3.02,
+              "end_s": 3.26,
+              "duration_s": 0.24
+            },
+            {
+              "start_s": 1.12,
+              "end_s": 1.3,
+              "duration_s": 0.18
+            }
+          ]
+        }
+      },
+      "alignment": {
+        "target_tokens": [
+          "large",
+          "brown",
+          "dog",
+          "walks",
+          "up",
+          "a",
+          "blue",
+          "staircase"
+        ],
+        "asr_tokens": [
+          "large",
+          "brown",
+          "dog",
+          "walks",
+          "up",
+          "a",
+          "blue",
+          "staircase"
+        ],
+        "word_edit_distance": 0,
+        "target_word_count": 8,
+        "word_edit_ratio": 0.0,
+        "edit_operations": []
+      },
+      "asr_segments_extend_beyond_actual_audio": true
+    }
+  ],
+  "cuda_context_initialized": false,
+  "diagnostic_conclusions": {
+    "all_eight_normalized_word_edit_distances_zero": true,
+    "interpretation": "All eight transcripts match target words under the stated simple normalization. This offers no positive ASR evidence of repeated or omitted words; it is not proof that those defects cannot be heard, and not formal WER or voice validation.",
+    "index18": "Audio-reference output is 9.799 s vs codes 4.133 s. Below -40 dBFS totals 6.14 vs 1.52 s, trailing 0.52 vs 0.14 s. Below -50 dBFS totals 0.56 vs 0.32 s. The 5.666 s difference is not explained by a long near-silent appended tail. Additional low-energy intervals are present; pauses, quieter delivery and slower/stretched speech cannot be reliably distinguished by these thresholds.",
+    "index14": "Audio-reference output is 5.480 s vs codes 2.786 s. Below -40 dBFS totals 2.54 vs 0.50 s, trailing 0.40 vs 0.10 s; below -50 dBFS totals 0.04 vs 0 s. No repeated words detected by ASR and no multi-second near-silent tail. Exact perceptual cause remains for listening.",
+    "timestamp_caveat": "Some default Whisper segment end timestamps exceed physical audio duration; do not use them to identify exact speech end or stretched words. Word timestamps were not enabled.",
+    "next_step": "Human comparison of generated audio against each corresponding reference; voice similarity and perceptual quality remain unassessed.",
+    "long_low_energy_interval_evidence": "Audio-reference index18 has a continuous 3.28-7.58 s interval (4.30 s) below -40 dBFS in every 20 ms frame. Index14 has 3.46-4.28 s (0.82 s) and 2.50-2.94 s (0.44 s) intervals. These are internal low-energy intervals, not multi-second trailing silence. Their audible content is not established by RMS."
+  }
+}

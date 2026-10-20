@@ -1,0 +1,140 @@
+{
+  "started_epoch": 1792487892.302086,
+  "server_identity": {
+    "pid": 1659770,
+    "create_time": 1792487405.99,
+    "uids": [
+      1038,
+      1038,
+      1038
+    ],
+    "cwd": "${WORKSPACE}/vllm-omni",
+    "cmdline": [
+      "${WORKSPACE}/.venvs/vllm-omni-cu129/bin/python",
+      "${WORKSPACE}/.venvs/vllm-omni-cu129/bin/vllm",
+      "serve",
+      "${NVME_WORKDIR}/models/fishaudio/drama-3",
+      "--omni",
+      "--served-model-name",
+      "fishaudio/drama-3",
+      "--host",
+      "127.0.0.1",
+      "--port",
+      "8091",
+      "--deploy-config",
+      "${NVME_WORKDIR}/bench-validation/20261020_165001_49599d4/deploy_config.yaml",
+      "--stage-init-timeout",
+      "1800"
+    ],
+    "recorded_epoch": 1792487418.798648
+  },
+  "children_before_stop": [
+    {
+      "pid": 1659771,
+      "create_time": 1792487406.0,
+      "uids": [
+        1038,
+        1038,
+        1038
+      ],
+      "name": "bash"
+    },
+    {
+      "pid": 1660076,
+      "create_time": 1792487422.97,
+      "uids": [
+        1038,
+        1038,
+        1038
+      ],
+      "name": "python"
+    },
+    {
+      "pid": 1660077,
+      "create_time": 1792487422.97,
+      "uids": [
+        1038,
+        1038,
+        1038
+      ],
+      "name": "VLLM::StageEngineCoreProc_stage0_replica0_DP0"
+    },
+    {
+      "pid": 1664198,
+      "create_time": 1792487670.03,
+      "uids": [
+        1038,
+        1038,
+        1038
+      ],
+      "name": "VLLM::StageEngineCoreProc_stage1_replica0_DP0"
+    },
+    {
+      "pid": 1659772,
+      "create_time": 1792487406.0,
+      "uids": [
+        1038,
+        1038,
+        1038
+      ],
+      "name": "tee"
+    }
+  ],
+  "signal": "SIGINT",
+  "signals_sent": [
+    {
+      "pid": 1659770,
+      "signal": "SIGINT",
+      "epoch": 1792487892.3021405
+    }
+  ],
+  "finished_epoch": 1792487930.727083,
+  "remaining_verified_processes": [
+    {
+      "pid": 1659770,
+      "same_process_still_live": false,
+      "status": "gone"
+    },
+    {
+      "pid": 1659771,
+      "same_process_still_live": false,
+      "status": "gone"
+    },
+    {
+      "pid": 1660076,
+      "same_process_still_live": false,
+      "status": "gone"
+    },
+    {
+      "pid": 1660077,
+      "same_process_still_live": false,
+      "status": "gone"
+    },
+    {
+      "pid": 1664198,
+      "same_process_still_live": false,
+      "status": "gone"
+    },
+    {
+      "pid": 1659772,
+      "same_process_still_live": false,
+      "status": "gone"
+    },
+    {
+      "pid": 1660072,
+      "same_process_still_live": false,
+      "status": "gone"
+    },
+    {
+      "pid": 1660266,
+      "same_process_still_live": false,
+      "status": "gone"
+    }
+  ],
+  "monitor_pid": 1659768,
+  "monitor_running": false,
+  "port_8091_listening": false,
+  "server_exit_code": 0,
+  "gpu_after_csv": "timestamp, memory.used [MiB], utilization.gpu [%]\n2026/10/20 17:18:50.713, 15 MiB, 0 %\n",
+  "cleanup_complete": true
+}

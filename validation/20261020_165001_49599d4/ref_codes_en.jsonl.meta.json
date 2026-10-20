@@ -1,0 +1,58 @@
+{
+  "created_at": "2026-10-20T17:09:10+0800",
+  "encode_seconds": 36.1,
+  "model": "${NVME_WORKDIR}/models/fishaudio/drama-3",
+  "codec_path": "${NVME_WORKDIR}/models/fishaudio/drama-3/codec.pth",
+  "codec_sha256": "74fc41c5a7151c6f350af8bd7e5d6e3accfcc7f3dfbfac23afd35af07052bb2f",
+  "seed_tts_root": "${NVME_WORKDIR}/datasets/seed-tts-eval",
+  "locale": "en",
+  "meta_lst_sha256": "7cd29f701743e6c7033edbca764ddc0b979de8c4f4907eff5e5454682114661f",
+  "rows_in_meta": 1088,
+  "rows_requested": 1088,
+  "rows_written": 1088,
+  "rows_skipped": [],
+  "frames": {
+    "total": 110478,
+    "min": 62,
+    "mean": 101.5,
+    "max": 190
+  },
+  "layout": "ref_audio_codes is [codebooks, frames]; codebook 0 is the semantic one",
+  "codebook_sizes": [
+    4096,
+    1024,
+    1024,
+    1024,
+    1024,
+    1024,
+    1024,
+    1024,
+    1024,
+    1024
+  ],
+  "encoder": "vllm_omni.model_executor.models.fish_speech.dac_encoder.encode_reference_audio_codes (fp32)",
+  "loader": "vllm.multimodal.media.MediaConnector.fetch_audio, mean over channels",
+  "device": "cuda",
+  "device_name": "NVIDIA A100 80GB PCIe",
+  "vllm_omni_commit": "da572cddb38383deae9caef33b8d490e292ef071",
+  "versions": {
+    "python": "3.12.13",
+    "torch": "2.13.0+cu129",
+    "torchaudio": "2.11.0+cu129",
+    "vllm": "0.32.0+cu129",
+    "vllm-omni": "0.32.0rc1",
+    "librosa": "1.0.0",
+    "soundfile": "0.14.0"
+  },
+  "argv": [
+    "tools/drama3_bench/encode_ref_codes.py",
+    "--model",
+    "${NVME_WORKDIR}/models/fishaudio/drama-3",
+    "--seed-tts-root",
+    "${NVME_WORKDIR}/datasets/seed-tts-eval",
+    "--locale",
+    "en",
+    "--out",
+    "${NVME_WORKDIR}/bench-validation/20261020_165001_49599d4/ref_codes_en.jsonl"
+  ]
+}

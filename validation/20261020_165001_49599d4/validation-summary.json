@@ -1,0 +1,190 @@
+{
+  "status": "numeric_checks_passed_listening_pending",
+  "purpose": "real-model benchmark tool validation; not formal baseline",
+  "tool_commit": "49599d4a438062da8c7799243a1291fc52c9b3d0",
+  "server_commit": "da572cddb38383deae9caef33b8d490e292ef071",
+  "preencode": {
+    "actual_rows": 1088,
+    "metadata_rows_written": 1088,
+    "rows_skipped": [],
+    "exit_code": 0,
+    "elapsed_seconds": 51
+  },
+  "startup_seconds": 357.952,
+  "weight_loading_seconds": 45.73,
+  "startup_checks": {
+    "health_200": true,
+    "marlin_fp8_moe": true,
+    "triton_fla_gdn": true,
+    "private_mps_gpu1_uuid_matches": true,
+    "traceback_before_shutdown": false,
+    "error_lines_before_shutdown": 0
+  },
+  "modes": {
+    "codes": {
+      "requests": 32,
+      "succeeded": 32,
+      "failed": 0,
+      "loop_lag_ms": {
+        "mean": 0.11,
+        "p50": 0.11,
+        "p90": 0.17,
+        "p95": 0.41,
+        "p99": 0.85,
+        "max": 1.24
+      },
+      "duration_s": 9.017,
+      "audio_s": {
+        "mean": 3.844,
+        "p50": 3.599,
+        "p90": 5.336,
+        "p95": 5.821,
+        "p99": 7.981,
+        "max": 8.916
+      },
+      "ttfa_ms": {
+        "mean": 144.3,
+        "p50": 134.3,
+        "p90": 183.1,
+        "p95": 184.4,
+        "p99": 185.6,
+        "max": 186.1
+      },
+      "rtf": {
+        "mean": 0.2837,
+        "p50": 0.284,
+        "p90": 0.297,
+        "p95": 0.3,
+        "p99": 0.3034,
+        "max": 0.3036
+      },
+      "throughput_audio_s_per_s": 13.64,
+      "warmups": 8,
+      "wav_files": 32
+    },
+    "audio": {
+      "requests": 32,
+      "succeeded": 32,
+      "failed": 0,
+      "loop_lag_ms": {
+        "mean": 0.12,
+        "p50": 0.11,
+        "p90": 0.15,
+        "p95": 0.44,
+        "p99": 0.87,
+        "max": 1.41
+      },
+      "duration_s": 11.779,
+      "audio_s": {
+        "mean": 4.229,
+        "p50": 3.46,
+        "p90": 7.416,
+        "p95": 8.306,
+        "p99": 9.439,
+        "max": 9.799
+      },
+      "ttfa_ms": {
+        "mean": 232.7,
+        "p50": 211.0,
+        "p90": 353.7,
+        "p95": 369.6,
+        "p99": 371.4,
+        "max": 371.4
+      },
+      "rtf": {
+        "mean": 0.3359,
+        "p50": 0.3307,
+        "p90": 0.3749,
+        "p95": 0.3902,
+        "p99": 0.4126,
+        "max": 0.4156
+      },
+      "throughput_audio_s_per_s": 11.49,
+      "warmups": 8,
+      "wav_files": 32
+    }
+  },
+  "independent_validation": {
+    "passed": true,
+    "checks": 664,
+    "failed_checks": []
+  },
+  "duration_comparison": {
+    "codes_mean_s": 3.844,
+    "audio_mean_s": 4.229,
+    "codes_over_audio_mean_ratio": 0.9089619295341688,
+    "codes_p95_s": 5.821,
+    "audio_p95_s": 8.306,
+    "paired_top5_by_absolute_difference": [
+      {
+        "index": 18,
+        "utt_id": "common_voice_en_15265-common_voice_en_15266",
+        "codes_audio_s": 4.133151927437642,
+        "audio_audio_s": 9.798820861678005,
+        "codes_over_audio_duration": 0.4218009478672986,
+        "absolute_difference_s": 5.6656689342403626
+      },
+      {
+        "index": 14,
+        "utt_id": "common_voice_en_137148-common_voice_en_137152",
+        "codes_audio_s": 2.786394557823129,
+        "audio_audio_s": 5.479909297052155,
+        "codes_over_audio_duration": 0.5084745762711864,
+        "absolute_difference_s": 2.6935147392290255
+      },
+      {
+        "index": 2,
+        "utt_id": "common_voice_en_103675-common_voice_en_103676",
+        "codes_audio_s": 5.897868480725624,
+        "audio_audio_s": 8.034104308390022,
+        "codes_over_audio_duration": 0.7341040462427746,
+        "absolute_difference_s": 2.1362358276643985
+      },
+      {
+        "index": 11,
+        "utt_id": "common_voice_en_123125-common_voice_en_123127",
+        "codes_audio_s": 5.758548752834467,
+        "audio_audio_s": 7.476825396825397,
+        "codes_over_audio_duration": 0.7701863354037266,
+        "absolute_difference_s": 1.7182766439909303
+      },
+      {
+        "index": 22,
+        "utt_id": "common_voice_en_155313-common_voice_en_155315",
+        "codes_audio_s": 5.340589569160998,
+        "audio_audio_s": 6.873106575963718,
+        "codes_over_audio_duration": 0.7770270270270271,
+        "absolute_difference_s": 1.5325170068027205
+      }
+    ],
+    "conclusion": "Typical lengths overlap, but tails and several pairs differ materially. Human review pending; no blanket duration-equivalence claim."
+  },
+  "kv_cache_log": "(StageEngineCoreProc_stage0_replica0 pid=1660077) INFO 10-20 17:12:33 [kv_cache_utils.py:2327] GPU KV cache size: 326,716 tokens, Maximum concurrency for 8,192 tokens per request: 39.88x",
+  "capacity": {
+    "configured_stage0_max_num_seqs": 128,
+    "all1088_prompt_rows_min": 121,
+    "all1088_prompt_rows_max": 264,
+    "prompt_plus_max_tokens_min": 621,
+    "prompt_plus_max_tokens_max": 764,
+    "generation_max_tokens": 500,
+    "all_fit_max_model_len_8192": true,
+    "c128_tested": false,
+    "conclusion": "Log is normalized to 8192 tokens/request; actual prompts are shorter. Hybrid Mamba/KV pools prevent reliable linear extrapolation. No claim that C128 is proven or impossible; no deploy YAML changed."
+  },
+  "peak_gpu_memory_mib": 79020.0,
+  "cleanup": {
+    "complete": true,
+    "server_exit_code": 0,
+    "gpu1_memory_mib": 15,
+    "gpu1_utilization_percent": 0,
+    "port_8091_listening": false,
+    "notes": [
+      "API server internally force-killed its remaining stage0 process during shutdown.",
+      "Python resource tracker warned of one semaphore to clean up.",
+      "No manual SIGTERM/SIGKILL escalation was needed."
+    ]
+  },
+  "listening_status": "pending_human_review",
+  "formal_baseline_run": false,
+  "official_cu130_r580_environment": false
+}
