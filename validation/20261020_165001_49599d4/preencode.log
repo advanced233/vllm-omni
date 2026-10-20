@@ -1,0 +1,15 @@
+1088 rows from ${NVME_WORKDIR}/datasets/seed-tts-eval/en/meta.lst
+${WORKSPACE}/.venvs/vllm-omni-cu129/lib/python3.12/site-packages/torch/nn/utils/weight_norm.py:144: FutureWarning: `torch.nn.utils.weight_norm` is deprecated in favor of `torch.nn.utils.parametrizations.weight_norm`.
+  WeightNorm.apply(module, name, dim)
+[100/1088] 0 skipped, 9.7 rows/s
+[200/1088] 0 skipped, 15.0 rows/s
+[300/1088] 0 skipped, 18.7 rows/s
+[400/1088] 0 skipped, 21.4 rows/s
+[500/1088] 0 skipped, 23.5 rows/s
+[600/1088] 0 skipped, 25.2 rows/s
+[700/1088] 0 skipped, 26.3 rows/s
+[800/1088] 0 skipped, 27.5 rows/s
+[900/1088] 0 skipped, 28.4 rows/s
+[1000/1088] 0 skipped, 29.2 rows/s
+[1088/1088] 0 skipped, 30.1 rows/s
+wrote 1088 rows to ${NVME_WORKDIR}/bench-validation/20261020_165001_49599d4/ref_codes_en.jsonl (0 skipped); provenance in ${NVME_WORKDIR}/bench-validation/20261020_165001_49599d4/ref_codes_en.jsonl.meta.json
