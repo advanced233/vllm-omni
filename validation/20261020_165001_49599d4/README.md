@@ -24,6 +24,8 @@ A100 80GB PCIe GPU 1，PyTorch 2.13.0+cu129 / vLLM 0.32.0+cu129 / 驱动550.127.
 
 ## 四组待听检样本
 
+[下载四组听检ZIP（12条音频）](listening/drama3-listening-4pairs.zip)：解压后按 **18 → 14 → 2 → 0** 顺序，每组先参考，再codes，最后audio。包内附目标文本、重点区间及校验值。
+
 先听参考，再比较codes和audio输出是否音色一致、内容完整、没有杂音或异常停顿。选择包含差异最大的18、14、2及常规样本0。全部64条生成WAV也保留在两组audio目录，可自由扩大抽查。
 
 | index | 参考音频 | codes输出 | audio输出 | 目标文本 |
