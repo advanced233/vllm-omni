@@ -4,6 +4,8 @@
 
 **状态：冒烟功能检查通过，用户初步听检通过。后续官方 E2E 为 5 passed。这些运行均不是正式性能基线。**
 
+正式实验用的预编码脚本和压测客户端（按 #8933 的测法）见 [tools/drama3_bench/](tools/drama3_bench/README.md)。
+
 ## 测试来源
 
 - 模型：`fishaudio/drama-3`，revision `b2b5ee998034b2975720906c815e7fb0e9f007bd`
