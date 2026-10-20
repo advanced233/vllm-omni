@@ -49,7 +49,8 @@ class Step:
 
     @property
     def rows(self) -> int:
-        return self.decodes + len(self.prefills) + SPARE_ROWS
+        # Row 0 is vLLM's NULL_BLOCK_ID: the scheduler never gives it to a request and the kernels skip it.
+        return 1 + self.decodes + len(self.prefills) + SPARE_ROWS
 
 
 def parse_step(spec: str) -> Step:
@@ -124,17 +125,25 @@ def make_layer(device: torch.device, pools, seed: int = 0):
 
 
 def slots_for(step: Step) -> list[int]:
-    """Decodes on rows 0..D-1, prefills on the next rows (all holding stale state); the rest stay unused."""
-    return list(range(step.decodes + len(step.prefills)))
+    """Decodes on rows 1..D, prefills on the next rows (all holding stale state); the rest stay unused."""
+    return list(range(1, 1 + step.decodes + len(step.prefills)))
+
+
+def unused_rows(step: Step, slots: list[int] | None = None) -> list[int]:
+    """Pool rows the step must leave untouched: the null block and the spare rows."""
+    used = set(slots_for(step) if slots is None else slots)
+    return [r for r in range(step.rows) if r not in used]
 
 
 def make_metadata(device: torch.device, step: Step, slots: list[int] | None = None):
     from vllm.third_party.flash_linear_attention.ops.index import prepare_chunk_indices, prepare_chunk_offsets
     from vllm.third_party.flash_linear_attention.ops.utils import FLA_CHUNK_SIZE
     from vllm.v1.attention.backends.gdn_attn import GDNAttentionMetadata
-    from vllm.v1.attention.backends.utils import compute_causal_conv1d_metadata
+    from vllm.v1.attention.backends.utils import NULL_BLOCK_ID, compute_causal_conv1d_metadata
 
     slots = slots_for(step) if slots is None else slots
+    if NULL_BLOCK_ID in slots:
+        raise ValueError(f"slot {NULL_BLOCK_ID} is vLLM's null block, never a request's state row")
     d = step.decodes
     lengths = [1] * d + [n for n, _ in step.prefills]
     starts = torch.tensor([0, *torch.tensor(lengths).cumsum(0).tolist()], dtype=torch.int32)

@@ -29,7 +29,7 @@ CUDA_VISIBLE_DEVICES=1 python -m pytest -v tools/drama3_bench/gdn_mixed/test_mix
 - **`test_non_contiguous_output_takes_the_copy`**（2 项）：输出缓冲不连续时，direct_out 必须退回复制，结果仍然一致。
 - **`test_prompt_split_over_two_steps`**（4 项）：同一个 prompt 分两步 prefill（先 fresh、再在同一行 continued），两步结束后结果一致。
 
-步形取自 profile 实测：C8 是 7 个 decode + 170 个 prefill token；C16 是 15 + 176；C64 是 60 + (180 + 178)；另有上游测试原样的步形、只有 prefill 的步，以及 8 + 512 个 continued token。fresh prefill 落在留有旧状态的行上，同时覆盖了"行被复用"的情况。
+步形取自 profile 实测：C8 是 7 个 decode + 170 个 prefill token；C16 是 15 + 176；C64 是 60 + (180 + 178)；另有上游测试原样的步形、只有 prefill 的步，以及 8 + 512 个 continued token。fresh prefill 落在留有旧状态的行上，同时覆盖了"行被复用"的情况。请求从状态池第 1 行开始分配：第 0 行是 vLLM 的 null block（`NULL_BLOCK_ID`），调度器从不把它分给请求，kernel 遇到它会跳过或直接写零；夹具若把它分给请求会直接报错。
 
 这里不涉及 CUDA graph 回放：混合步的 GDN 核心是 eager 执行的 custom op，本来就不在 graph 里。
 
