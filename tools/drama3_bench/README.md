@@ -8,6 +8,7 @@
 | `stream_bench.py` | 闭环流式压测一个并发档位，输出 `summary.json` / `requests.jsonl` | 只需要 `aiohttp`、`numpy`（vLLM 环境里都有；有 `uvloop` 会自动使用） |
 | `run_sweep.sh` | 多档并发扫描，每次都重启服务，同时记录 GPU 时钟、功耗和降频原因 | bash、curl、nvidia-smi |
 | `aggregate_results.py` | 把多次运行汇总成 #8933 那样的表格，重复运行取平均 | Python 3.10+ |
+| `analyze_audio.py` | 排查音频：语速、句中停顿，以及停顿是否落在 codec 窗口边界上 | `numpy` |
 
 ## 1. 预编码参考音频
 
@@ -63,6 +64,30 @@ python tools/drama3_bench/aggregate_results.py results/sweep_a/ results/sweep_b/
 ```
 
 每个（label, 并发）一行，重复运行取平均，括号里是 min–max。
+
+## 5. 排查个别样本（语速慢、停顿）
+
+```bash
+# 只重发第 18 行（即 WAV 文件名前缀 0018），并发 1，换几个 seed，两种参考方式都跑
+for seed in 0 100 200 300 400; do
+  python tools/drama3_bench/stream_bench.py --codes ${WORKDIR}/ref_codes_en.jsonl --concurrency 1 \
+      --rows 18 --seed $seed --num-warmups 0 --save-audio --out results/row18_codes_s$seed
+  python tools/drama3_bench/stream_bench.py --codes ${WORKDIR}/ref_codes_en.jsonl --concurrency 1 \
+      --rows 18 --seed $seed --num-warmups 0 --save-audio --ref-mode audio \
+      --seed-tts-root <seed-tts-eval 路径> --out results/row18_audio_s$seed
+done
+python tools/drama3_bench/analyze_audio.py results/check_codes results/check_audio results/row18_* \
+    --codes ${WORKDIR}/ref_codes_en.jsonl --seed-tts-root <seed-tts-eval 路径> --all
+```
+
+`analyze_audio.py` 对每条回复报告：
+- 语速：每秒词数，按去掉首尾静音后的语音时长计算；如果给了参考音频，也报参考音频的语速。
+- 句中停顿：默认 ≥ 0.25 s 才算停顿，≥ 0.7 s 标记为 long-pause。
+- 停顿两端到最近 codec 窗口边界的距离。`requests.jsonl` 里有 `chunk_log`（本版本起才记录）时，用实际收到的字节突发位置作为边界；没有时按 ramp 推算（6, 8, 12, 16, 24, 32, 之后每 64 帧，每帧 2048 个采样）。
+
+判读方法：
+- 语速慢不可能是 codec 造成的，每帧固定解码成 2048 个采样。语速只取决于 stage 0 每个词采样了多少帧，所以语速问题要到参考音频、采样或数值精度上找。
+- 停顿的边缘落在窗口边界附近（默认 25 ms 以内）时，会标记 on-boundary。单个样本这样可能只是巧合，因为窗口边界之间相隔 0.3–3 s；但如果多个样本都这样，问题就在 codec 的流式拼接上。
 
 ## 口径（和 #8933 对照）
 

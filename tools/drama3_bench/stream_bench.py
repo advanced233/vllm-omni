@@ -192,6 +192,12 @@ async def run_one(
     rec["e2e_s"] = round(arrival_s[-1] - sent, 4)
     rec["rtf"] = round((arrival_s[-1] - sent) / audio_s, 4)
     rec["waits_ms"] = [round(w * 1000, 2) for w in waits]
+    # [ms since sent, bytes so far] per read: bursts mark the codec windows (analyze_audio.py).
+    received = 0
+    rec["chunk_log"] = []
+    for t, n in zip(arrival_s, arrival_bytes):
+        received += n
+        rec["chunk_log"].append([round((t - sent) * 1000, 2), received])
     # Kept for the full-concurrency throughput window; dropped before writing requests.jsonl.
     rec["_arrivals"] = (arrival_s, added)
     if "error" not in rec:
@@ -308,7 +314,14 @@ async def run(args: argparse.Namespace) -> dict[str, Any]:
         raise SystemExit("--ref-mode audio needs --seed-tts-root to read the prompt wavs")
     if args.shuffle_seed is not None:
         random.Random(args.shuffle_seed).shuffle(rows)
-    timed_rows = rows[: args.num_prompts] if args.num_prompts else rows
+    timed_rows = rows
+    if args.rows:
+        missing = sorted(set(args.rows) - {row.index for row in rows})
+        if missing:
+            raise SystemExit(f"--rows {missing} not in {args.codes} ({len(rows)} rows)")
+        timed_rows = [row for row in rows if row.index in set(args.rows)]
+    if args.num_prompts:
+        timed_rows = timed_rows[: args.num_prompts]
     warmups = build_requests(rows[: args.num_warmups], args, seed_offset=1_000_000)
     timed = build_requests(timed_rows, args)
     if not timed:
@@ -434,6 +447,12 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     p.add_argument("--base-url", default="http://127.0.0.1:8091")
     p.add_argument("--model", default="fishaudio/drama-3", help="Served model name")
     p.add_argument("--num-prompts", type=int, default=None, help="Time only the first N rows (default: all)")
+    p.add_argument(
+        "--rows",
+        type=lambda v: [int(x) for x in v.split(",")],
+        default=None,
+        help="Time only these rows: 0-based line numbers of --codes, the prefix of --save-audio WAV names",
+    )
     p.add_argument("--num-warmups", type=int, default=8, help="Unmeasured requests before the timed run")
     p.add_argument(
         "--ref-mode",
