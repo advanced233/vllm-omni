@@ -44,7 +44,7 @@ from typing import Any
 import numpy as np
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from analyze_audio import noise_run  # noqa: E402
+from analyze_audio import noise_run, words  # noqa: E402
 
 PROTOCOL_HELPERS = (
     "_missing_deps_message",
@@ -113,6 +113,8 @@ def evaluate_run(run: Path, ev: Any, args: argparse.Namespace, ref_cache: dict[s
         item["frames"] = round(len(x) / args.hop)
         item["noise_run_s"] = round(noise_run(x, sr, args.flat_db)[0], 2)
         item["stuck"] = item["noise_run_s"] >= args.noise_run
+        item["words"] = words(entry["target_text"])
+        item["silence_run_s"] = round(silence_run(x, sr), 2)
         wav_16k = ev._pcm_s16le_to_f32_16k(pcm, pcm_sample_rate=sr, channels=channels)
         if len(wav_16k) == 0:
             item["error"] = "empty_audio"
@@ -149,6 +151,50 @@ def evaluate_run(run: Path, ev: Any, args: argparse.Namespace, ref_cache: dict[s
     return {"run": str(run), "totals": totals(items, args), "items": items}
 
 
+def silence_run(x: np.ndarray, sr: int, window_s: float = 0.05, rms: float = 1e-3) -> float:
+    """Longest run of 50 ms windows with RMS under 1e-3 (about -60 dBFS): #9044's silence."""
+    hop = max(1, int(sr * window_s))
+    n = len(x) // hop
+    if n == 0:
+        return 0.0
+    quiet = np.sqrt(np.mean(x[: n * hop].reshape(n, hop) ** 2, axis=1)) < rms
+    best = run = 0
+    for q in quiet:
+        run = run + 1 if q else 0
+        best = max(best, run)
+    return best * window_s
+
+
+def upstream_failures(items: list[dict[str, Any]], args: argparse.Namespace) -> dict[str, Any]:
+    """The run's failures counted the way #8933, #9157 and #9044 count them, for comparison."""
+    timed = [i for i in items if "audio_s" in i and i.get("words")]
+    n = len(timed)
+    # #9157: the median seconds per word of the run predicts each line's duration.
+    spw = statistics.median(i["audio_s"] / i["words"] for i in timed) if timed else None
+    issue_9157 = []
+    for i in timed:
+        ratio = i["audio_s"] / (i["words"] * spw)
+        i["duration_ratio"] = round(ratio, 2)
+        if i["frames"] >= args.max_frames or i.get("wer", 0.0) > 0.5 or not 0.3 <= ratio <= 3.0:
+            issue_9157.append(i)
+
+    def share(count: int) -> dict[str, Any]:
+        return {"count": count, "pct": round(100 * count / n, 2) if n else None}
+
+    return {
+        "takes": n,
+        "pr8933_at_least_20s": share(sum(i["audio_s"] >= 20.0 for i in timed)),
+        "issue9157_failed": share(len(issue_9157)),
+        "pr9044_silence_over_1s": share(sum(i["silence_run_s"] > 1.0 for i in timed)),
+        "definitions": {
+            "pr8933_at_least_20s": "generated audio of 20 s or more (#8933 description)",
+            "issue9157_failed": "ran to the frame cap, or WER over 50%, or duration outside 0.3-3x the "
+            "run's median seconds per word times the line's words (#9157, Seed-TTS rule)",
+            "pr9044_silence_over_1s": "longest run of 50 ms windows with RMS under 1e-3 over 1 s (#9044)",
+        },
+    }
+
+
 def mean(values: list[float]) -> float | None:
     return round(statistics.fmean(values), 4) if values else None
 
@@ -182,6 +228,7 @@ def totals(items: list[dict[str, Any]], args: argparse.Namespace) -> dict[str, A
         "stuck_pct": round(100 * len(stuck) / len(items), 2) if items else None,
         "stuck_scored_wer_mean": mean([i["wer"] for i in stuck if "wer" in i]),
         "at_frame_cap": sum(i.get("frames", 0) >= args.max_frames for i in items),
+        "upstream": upstream_failures(items, args),
     }
 
 
@@ -260,6 +307,15 @@ def main() -> int:
             f"| {t['wer_mean_without_stuck']} | {t['wer_over_0.5']} | {t['asr_empty']} | {t['sim_mean']} "
             f"| {t['stuck']} ({t['stuck_pct']}%) | {t['at_frame_cap']} | {t['errors'] or '-'} |"
         )
+    print(
+        "\n| run | takes | >= 20 s (#8933) | #9157 failed | silence > 1 s at -60 dBFS (#9044) |\n"
+        "| --- | ---: | ---: | ---: | ---: |"
+    )
+    for r in results:
+        u = r["totals"]["upstream"]
+        cells = [f"{u[k]['count']} ({u[k]['pct']}%)" for k in ("pr8933_at_least_20s", "issue9157_failed")]
+        cells.append(f"{u['pr9044_silence_over_1s']['count']} ({u['pr9044_silence_over_1s']['pct']}%)")
+        print(f"| {Path(r['run']).name} | {u['takes']} | " + " | ".join(cells) + " |")
     for r in results:
         worst = sorted((i for i in r["items"] if "wer" in i), key=lambda i: -i["wer"])[: args.worst]
         if worst:
