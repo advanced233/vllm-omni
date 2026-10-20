@@ -1,0 +1,55 @@
+发布说明：以下是原始自动检查阶段报告；其中“需听检”描述的是当时状态。
+后续用户已反馈初步听检通过，具体反馈见 listening_review.json。
+
+Drama 3 / A100 PCIe 冒烟结果
+
+结论：功能检查通过；部分克隆音频较参考时长短，需听检确认。
+本轮启动耗时：272 秒（复用了已有编译缓存，不是冷缓存基线）。
+版本：PyTorch 2.13.0+cu129 / vLLM 0.32.0+cu129 / vLLM-Omni 0.32.0rc1 / 驱动 550.127.05。
+GPU：物理 GPU 1，A100 80GB PCIe，UUID GPU_PHYSICAL_1
+模型、部署配置与客户端请求未因重试而修改。
+
+启动检查：/health 成功；MARLIN、Triton/FLA GDN、私有 MPS UUID 均符合要求。
+本次成功运行在停止服务前无 traceback。
+9 条正常请求均为 HTTP 200；缺少 ref_text 为 HTTP 400；4 路并发全部成功。
+非流式 WAV 的实际采样率均为 44100 Hz；流式原始 PCM 按协议假定 44100 Hz 保存。
+全部音频 RMS 在 -23.0 至 -16.0 dBFS 之间，高于 -50 dBFS。
+GPU 监控峰值：79482 MiB（77.62 GiB）。
+
+case | HTTP | audio_s | rms_dbfs | latency_s / total_s | TTFA_ms | RTF
+00_warmup_text | 200 | 3.622 | -16.1 | 7.125 | - | 1.967
+01_text | 200 | 4.04 | -16.0 | 0.853 | - | 0.211
+02_clone | 200 | 3.994 | -22.0 | 2.45 | - | 0.613
+03_clone_stream_seed0 | 200 | 3.297 | -19.3 | 0.785 | 290.8 | 0.238
+03_clone_stream_seed42 | 200 | 3.901 | -22.4 | 0.903 | 187.5 | 0.231
+04_concurrent_0 | 200 | 3.855 | -22.3 | 1.3 | - | 0.337
+04_concurrent_1 | 200 | 3.994 | -23.0 | 1.33 | - | 0.333
+04_concurrent_2 | 200 | 4.18 | -22.0 | 1.36 | - | 0.325
+04_concurrent_3 | 200 | 3.669 | -22.2 | 1.244 | - | 0.339
+05_missing_ref_text | 400 | - | - | - | - | -
+
+时长说明：纯文本 4.040 秒；克隆音频为 3.297–4.180 秒。
+其中 3.994 秒可视为约 4 秒；最短的 seed-0 流式结果为 3.297 秒，应优先听检。
+未仅根据时长判定音频截断，也未进行转写或主观语音质量评估。
+TTFA/RTF 只记录，没有设置通过阈值，也不与 H100 数值直接比较。
+
+两次启动失败及环境修复：
+1. results/smoke/20261020_040821_da572cdd：系统 nvcc 12.4 不支持 --compress-mode=size。
+   在个人目录安装 CUDA 12.9 编译组件，使用 venv 的 cuRAND 头文件。
+2. results/smoke/20261020_042155_da572cdd：系统旧 cuDNN 被 LD_LIBRARY_PATH 混入。
+   仅调整服务进程的库搜索路径，优先使用 venv 的 NVIDIA 库，排除 /usr/local/cuda* 路径。
+FlashInfer 采样及 cuDNN 卷积的独立预检查均通过，日志在本目录。
+
+后续启动除激活 venv 外，还需要：
+  source ${PERSONAL_WORKDIR}/activate_cuda129.sh
+服务启动脚本已自动执行这一行：${PERSONAL_WORKDIR}/run_smoke_server.sh
+客户端：${PERSONAL_WORKDIR}/smoke_client.py（保持用户给定逻辑，未放入仓库源码）。
+
+服务、监控及本次私有 MPS 已停止，GPU 1 已恢复到约 15 MiB / 0% 利用率。
+服务停止时内部进程管理器强制结束了一个残留 stage-0 进程，并有 semaphore 清理警告；详见 cleanup.json。
+系统驱动、/usr/local/cuda、GPU 功率和时钟设置均未更改。
+这是 cu129/R550 上的功能冒烟，不能作为官方 cu130/R580 环境的性能基线。
+
+后续独立验证：迁移到 NVMe 后，官方 advanced_model E2E 为 5 passed；见 e2e/。其耗时和数据不属于上述冒烟运行。
+
+Publication note: some auxiliary files named in this local report are not included in this export. See the root README for the published evidence index.

@@ -1,0 +1,54 @@
+Drama 3 official E2E after NVMe migration — PASS
+
+Repository: da572cddb38383deae9caef33b8d490e292ef071 (v0.32.0rc1)
+Command: python -m pytest tests/e2e/online_serving/test_drama_3.py -v -s --run-level advanced_model --junitxml=<RUN>/junit.xml
+Result: pytest exit 0; 5 passed, 0 errors, 0 failures, 0 skipped, 31 warnings.
+
+Five tests completed unchanged:
+- Text-to-audio WAV: passed.
+- Voice clone streaming seed 0: passed; HNR 1.54 dB (floor -1.0 dB).
+- Voice clone streaming seed 42: passed; HNR 1.65 dB (floor -1.0 dB).
+- Four concurrent voice-clone requests: all succeeded and passed transcription checks.
+- Missing ref_text: expected HTTP 400 and message assertion passed.
+Seven successful audio responses were checked with Whisper small on CPU/FP32.
+All seven transcript similarities were 1.000; text matched the requested sentences.
+The official helper removed all seven temporary WAVs on process exit; their paths and
+preservation status are recorded in audio-artifacts.json, and transcripts remain in
+pytest_e2e.log. No new E2E WAV artifacts are claimed to have been retained.
+
+Storage and timing:
+- Verified model path: ${NVME_WORKDIR}/models/fishaudio/drama-3.
+- Filesystem: /dev/nvme0n1p3, ext4 (NVMe). Old model alias and HF cache links resolve here.
+- All 18 model files passed official SHA256/Git blob checks before this run.
+- Checkpoint shards: 8/8 loaded in approximately 26 seconds.
+- Stage 0 Loading weights: 38.25 seconds; total model loading: 48.365169 seconds.
+- Server process creation to first /health HTTP 200: 344.925 seconds, 1-second polling.
+- Pytest reported duration: 630.057 seconds. Shell command wall time: 1374 seconds.
+- Pre-server wall time: 826.960 seconds, dominated by slow imports from the HDD venv.
+- Codec's logged Loading weights 7616334.53 seconds is an anomalous log value and
+  was not used as startup timing.
+Full model hash verification immediately preceded this run and populated filesystem
+cache; this is not a controlled cold-start or formal performance baseline.
+The previous 0/8 HDD load timeout did not recur in this NVMe run.
+
+Environment and backends:
+A100 80GB PCIe, physical GPU 1, UUID GPU_PHYSICAL_1.
+PyTorch 2.13.0+cu129; vLLM 0.32.0+cu129; vLLM-Omni 0.32.0rc1; pytest 9.1.1.
+Private CUDA 12.9 helper sourced. Host driver 550.127.05 and system CUDA 12.4 unchanged.
+MARLIN Fp8 MoE and Triton/FLA GDN confirmed; private MPS bound to the expected UUID.
+This passes the official repository tests on the current A100/cu129/R550 environment;
+it does not establish compliance with the official cu130/R580+ stack.
+No repository source, official test assertions, or thresholds were modified.
+
+Cleanup:
+No Traceback in this run. Teardown internally force-killed both stage processes after
+its grace period and reported one semaphore resource_tracker cleanup warning.
+Final verification: all 27 observed runner descendants gone, API port 60317 released,
+private MPS directory removed, monitor/observer/pytest/server gone, and GPU 1 back to
+15 MiB / 0%. No manual process kill was required. Tracked git worktree remains clean.
+
+Evidence: junit.xml, pytest_e2e.log, summary.json, key_lines.txt,
+startup_seconds.txt, health-ready.json, cleanup.json, manifest.json,
+model-realpath.txt, model-filesystem.txt, versions.json and gpu.csv.
+
+Publication note: some auxiliary files named in this local report are not included in this export. See the root README for the published evidence index.

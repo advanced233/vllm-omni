@@ -1,0 +1,34 @@
+89: (APIServer pid=1368224) INFO 10-20 13:10:40 [cuda_mps.py:77] Started private MPS for GPU_PHYSICAL_1 at ${PERSONAL_WORKDIR}/tmp/vllm-omni-mps-eai5uc72/pipe
+98: (StageEngineCoreProc_stage0_replica0 pid=1368780) INFO 10-20 13:10:56 [qwen_gdn_linear_attn.py:221] Using Triton/FLA GDN prefill kernel (requested=auto, head_k_dim=128).
+99: (StageEngineCoreProc_stage0_replica0 pid=1368780) INFO 10-20 13:10:56 [fp8.py:525] Using MARLIN Fp8 MoE backend out of potential backends: ['AITER', 'FLASHINFER_TRTLLM', 'FLASHINFER_CUTLASS', 'DEEPGEMM', 'TRITON', 'MARLIN', 'HUMMING', 'BATCHED_DEEPGEMM', 'BATCHED_TRITON', 'XPU', 'CPU_W8A8', 'CPU', 'HPC'].
+134: (StageEngineCoreProc_stage0_replica0 pid=1368780) INFO 10-20 13:11:39 [default_loader.py:501] Loading weights took 38.25 seconds
+137: (StageEngineCoreProc_stage0_replica0 pid=1368780) INFO 10-20 13:11:44 [model_runner.py:424] Model loading took 37.95 GiB memory and 48.365169 seconds
+301: (StageEngineCoreProc_stage1_replica0 pid=1371789) INFO 10-20 13:13:44 [default_loader.py:501] Loading weights took 7616334.53 seconds
+302: (StageEngineCoreProc_stage1_replica0 pid=1371789) INFO 10-20 13:13:46 [gpu_model_runner.py:5149] Model loading took 0.0 GiB memory and 1.129372 seconds
+420: OmniServer started successfully
+431: audio content is:  The weather is nice today, perfect for a walk in the park.
+434: Cosine similarity: 1.000
+440: PCM speech HNR: 1.54 dB (threshold: -1.0 dB, sr=44100)
+446: audio content is:  The quarterly report is due on Thursday, so please finish it by noon.
+449: Cosine similarity: 1.000
+455: PCM speech HNR: 1.65 dB (threshold: -1.0 dB, sr=44100)
+461: audio content is:  The quarterly report is due on Thursday, so please finish it by noon.
+464: Cosine similarity: 1.000
+481: audio content is:  The quarterly report is due on Thursday, so please finish it by noon.
+484: Cosine similarity: 1.000
+490: audio content is:  The quarterly report is due on Thursday, so please finish it by noon.
+493: Cosine similarity: 1.000
+499: audio content is:  The quarterly report is due on Thursday, so please finish it by noon.
+502: Cosine similarity: 1.000
+508: audio content is:  The quarterly report is due on Thursday, so please finish it by noon.
+511: Cosine similarity: 1.000
+515: INFO:     127.0.0.1:39164 - "POST /v1/audio/speech HTTP/1.1" 400 Bad Request
+526: (APIServer pid=1368224) WARNING 10-20 13:18:54 [utils.py:648] [shutdown] Process manager: force killing remaining processes count=1
+527: (APIServer pid=1368224) WARNING 10-20 13:18:54 [utils.py:653] [shutdown] Process manager: force killing remaining process StageEngineCoreProc_stage0_replica0 pid 1368780
+534: (APIServer pid=1368224) WARNING 10-20 13:18:59 [utils.py:648] [shutdown] Process manager: force killing remaining processes count=1
+535: (APIServer pid=1368224) WARNING 10-20 13:18:59 [utils.py:653] [shutdown] Process manager: force killing remaining process StageEngineCoreProc_stage1_replica0 pid 1371789
+664: ================== 5 passed, 31 warnings in 630.06s (0:10:30) ==================
+
+GPU after teardown:
+uuid, name, memory.used [MiB], utilization.gpu [%]
+GPU_PHYSICAL_1, NVIDIA A100 80GB PCIe, 15 MiB, 0 %

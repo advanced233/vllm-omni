@@ -1,0 +1,17 @@
+{
+  "status": "startup_failed",
+  "pytest_exit_code": 1,
+  "tests": 5,
+  "passed": 0,
+  "errors": 5,
+  "failures": 0,
+  "skipped": 0,
+  "health_ready": false,
+  "startup_seconds": null,
+  "stage_init_timeout_seconds": 900,
+  "failure": "LLM stage-0 replica-0 did not become ready within 900s; Orchestrator did not become ready within 900s",
+  "last_loading_progress": "0/8 checkpoint shards completed",
+  "audio_requests_executed": 0,
+  "whisper_checks_executed": 0,
+  "likely_contributing_factor": "Severe disk IO contention observed (sdb about 100% utilization, hundreds of milliseconds read wait); model process repeatedly observed in D state during first shard loading. This is evidence of storage waiting, not proof that every possible cause is excluded."
+}

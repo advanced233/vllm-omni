@@ -1,0 +1,141 @@
+{
+  "status": "passed",
+  "pytest_exit_code": 0,
+  "tests": 5,
+  "passed": 5,
+  "errors": 0,
+  "failures": 0,
+  "skipped": 0,
+  "warnings_reported": 31,
+  "run_level": "advanced_model",
+  "pytest_reported_seconds": 630.057,
+  "command_wall_seconds": 1374,
+  "server_startup_seconds": 344.925,
+  "startup_measurement_method": "server child process creation to first observer HTTP 200; polling 1 s",
+  "pre_server_wall_seconds": 826.96,
+  "health_ready": true,
+  "model_storage": "/dev/nvme0n1p3",
+  "model_realpath": "${NVME_WORKDIR}/models/fishaudio/drama-3",
+  "cache_state": "NVMe model files had just been fully hash-verified; not a cold-start measurement",
+  "stage0_weights_loading_seconds": 38.25,
+  "stage0_total_model_loading_seconds": 48.365169,
+  "checkpoint_shards_completed": 8,
+  "backend_checks": {
+    "marlin_fp8": true,
+    "triton_fla_gdn": true,
+    "mps_uuid": "GPU_PHYSICAL_1"
+  },
+  "audio_success_responses": 7,
+  "missing_ref_text_status": 400,
+  "whisper_transcripts_checked": 7,
+  "transcript_similarities": [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0
+  ],
+  "streaming_hnr_db": [
+    1.54,
+    1.65
+  ],
+  "streaming_hnr_threshold_db": -1.0,
+  "whisper_device": "cpu",
+  "whisper_dtype": "float32",
+  "traceback_in_log": false,
+  "core_versions": {
+    "torch": "2.13.0+cu129",
+    "vllm": "0.32.0+cu129",
+    "vllm-omni": "0.32.0rc1",
+    "pytest": "9.1.1",
+    "triton": "3.7.1",
+    "openai-whisper": "20250625"
+  },
+  "cases": [
+    {
+      "case": "test_text_to_audio_001[drama_3]",
+      "status": "passed",
+      "pytest_seconds_including_fixture": 400.86
+    },
+    {
+      "case": "test_voice_clone_streaming_002[seed0-drama_3]",
+      "status": "passed",
+      "pytest_seconds_including_fixture": 23.666
+    },
+    {
+      "case": "test_voice_clone_streaming_002[seed42-drama_3]",
+      "status": "passed",
+      "pytest_seconds_including_fixture": 20.706
+    },
+    {
+      "case": "test_voice_clone_concurrent_003[drama_3]",
+      "status": "passed",
+      "pytest_seconds_including_fixture": 84.863
+    },
+    {
+      "case": "test_voice_clone_requires_ref_text_004[drama_3]",
+      "status": "passed",
+      "pytest_seconds_including_fixture": 16.817
+    }
+  ],
+  "cleanup": {
+    "observed_processes_count": 27,
+    "observed_pids_still_present": [],
+    "port": 60317,
+    "port_released": true,
+    "private_mps_paths": [
+      {
+        "uuid": "GPU_PHYSICAL_1",
+        "pipe_path": "${PERSONAL_WORKDIR}/tmp/vllm-omni-mps-eai5uc72/pipe",
+        "directory_removed": true
+      }
+    ],
+    "gpu1_memory_mib": 15,
+    "gpu1_utilization_percent": 0,
+    "shutdown_force_kill_warning_present": true,
+    "shutdown_resource_tracker_warning_present": true,
+    "manual_process_kill_used": false
+  },
+  "official_cu130_r580_environment": false,
+  "source_and_assertions_changed": false,
+  "audio_artifacts": [
+    {
+      "case": "test_text_to_audio_001[drama_3]",
+      "original_path": "${PERSONAL_WORKDIR}/tmp/test_as9f8529.wav",
+      "preserved": false
+    },
+    {
+      "case": "test_voice_clone_streaming_002[seed0-drama_3]",
+      "original_path": "${PERSONAL_WORKDIR}/tmp/test_idtmzv58.wav",
+      "preserved": false
+    },
+    {
+      "case": "test_voice_clone_streaming_002[seed42-drama_3]",
+      "original_path": "${PERSONAL_WORKDIR}/tmp/test_haajpugy.wav",
+      "preserved": false
+    },
+    {
+      "case": "test_voice_clone_concurrent_003[drama_3]",
+      "original_path": "${PERSONAL_WORKDIR}/tmp/test_z0gspr20.wav",
+      "preserved": false
+    },
+    {
+      "case": "test_voice_clone_concurrent_003[drama_3]",
+      "original_path": "${PERSONAL_WORKDIR}/tmp/test_lmclvkkm.wav",
+      "preserved": false
+    },
+    {
+      "case": "test_voice_clone_concurrent_003[drama_3]",
+      "original_path": "${PERSONAL_WORKDIR}/tmp/test_4mydbvlm.wav",
+      "preserved": false
+    },
+    {
+      "case": "test_voice_clone_concurrent_003[drama_3]",
+      "original_path": "${PERSONAL_WORKDIR}/tmp/test_7f851q74.wav",
+      "preserved": false
+    }
+  ],
+  "audio_artifact_note": "Official test helpers register temporary WAV deletion at process exit (tests/helpers/media.py:964). All 7 temporary files were cleaned up before result collection; transcript evidence is retained in pytest log. No E2E WAVs are preserved."
+}

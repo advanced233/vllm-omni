@@ -1,0 +1,9 @@
+{
+  "status": "initial_listening_passed",
+  "reviewer": "user",
+  "evidence": "试听完了，大致没毛病。00和01是男声，其余的是女声且音色听起来差不多",
+  "scope": "User-reported informal listening review of the smoke outputs; not a standardized MOS or speaker-similarity evaluation.",
+  "duration_interpretation": "Approximate 4–7 s clone duration is advisory; shorter duration alone is not a failure.",
+  "automated_validation_file": "automated_validation.json",
+  "automated_validation_is_historical": true
+}

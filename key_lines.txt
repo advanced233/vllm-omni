@@ -1,0 +1,12 @@
+30: (APIServer pid=1190060) INFO 10-20 04:31:49 [cuda_mps.py:77] Started private MPS for GPU_PHYSICAL_1 at ${PERSONAL_WORKDIR}/tmp/vllm-omni-mps-ll3hy47h/pipe
+31: (APIServer pid=1190060) INFO 10-20 04:31:49 [stage_init_utils.py:1064] [stage_init] Stage-0 applied runtime env keys: ['CUDA_MPS_LOG_DIRECTORY', 'CUDA_MPS_PIPE_DIRECTORY', 'CUDA_VISIBLE_DEVICES']
+39: (StageEngineCoreProc_stage0_replica0 pid=1190424) INFO 10-20 04:32:02 [qwen_gdn_linear_attn.py:221] Using Triton/FLA GDN prefill kernel (requested=auto, head_k_dim=128).
+40: (StageEngineCoreProc_stage0_replica0 pid=1190424) INFO 10-20 04:32:02 [fp8.py:525] Using MARLIN Fp8 MoE backend out of potential backends: ['AITER', 'FLASHINFER_TRTLLM', 'FLASHINFER_CUTLASS', 'DEEPGEMM', 'TRITON', 'MARLIN', 'HUMMING', 'BATCHED_DEEPGEMM', 'BATCHED_TRITON', 'XPU', 'CPU_W8A8', 'CPU', 'HPC'].
+228: (APIServer pid=1190060) INFO 10-20 04:33:56 [stage_init_utils.py:1064] [stage_init] Stage-1 applied runtime env keys: ['CUDA_MPS_LOG_DIRECTORY', 'CUDA_MPS_PIPE_DIRECTORY', 'CUDA_VISIBLE_DEVICES']
+GPU 1: NVIDIA A100 80GB PCIe (UUID: GPU_PHYSICAL_1)
+
+GPU sample nearest readiness (from gpu.csv):
+{"timestamp": "2026/10/20 04:36:08.167", "memory.used [MiB]": "73262 MiB", "clocks.current.sm [MHz]": "1410 MHz", "power.draw [W]": "73.38 W", "temperature.gpu": "55", "utilization.gpu [%]": "0 %"}
+GPU after shutdown:
+uuid, name, memory.used [MiB], utilization.gpu [%]
+GPU_PHYSICAL_1, NVIDIA A100 80GB PCIe, 15 MiB, 0 %

@@ -1,0 +1,10 @@
+{"case": "00_warmup_text", "status": 200, "latency_s": 7.125, "sample_rate": 44100, "audio_s": 3.622, "rms_dbfs": -16.1, "last_1s_rms_dbfs": -16.3, "rtf": 1.967}
+{"case": "01_text", "status": 200, "latency_s": 0.853, "sample_rate": 44100, "audio_s": 4.04, "rms_dbfs": -16.0, "last_1s_rms_dbfs": -18.2, "rtf": 0.211}
+{"case": "02_clone", "status": 200, "latency_s": 2.45, "sample_rate": 44100, "audio_s": 3.994, "rms_dbfs": -22.0, "last_1s_rms_dbfs": -22.3, "rtf": 0.613}
+{"case": "03_clone_stream_seed0", "status": 200, "ttfa_ms": 290.8, "total_s": 0.785, "n_chunks": 6, "audio_s": 3.297, "rms_dbfs": -19.3, "last_1s_rms_dbfs": -19.2, "rtf": 0.238}
+{"case": "03_clone_stream_seed42", "status": 200, "ttfa_ms": 187.5, "total_s": 0.903, "n_chunks": 6, "audio_s": 3.901, "rms_dbfs": -22.4, "last_1s_rms_dbfs": -22.4, "rtf": 0.231}
+{"case": "04_concurrent_0", "status": 200, "latency_s": 1.3, "sample_rate": 44100, "audio_s": 3.855, "rms_dbfs": -22.3, "last_1s_rms_dbfs": -23.8, "rtf": 0.337}
+{"case": "04_concurrent_1", "status": 200, "latency_s": 1.33, "sample_rate": 44100, "audio_s": 3.994, "rms_dbfs": -23.0, "last_1s_rms_dbfs": -23.8, "rtf": 0.333}
+{"case": "04_concurrent_2", "status": 200, "latency_s": 1.36, "sample_rate": 44100, "audio_s": 4.18, "rms_dbfs": -22.0, "last_1s_rms_dbfs": -22.7, "rtf": 0.325}
+{"case": "04_concurrent_3", "status": 200, "latency_s": 1.244, "sample_rate": 44100, "audio_s": 3.669, "rms_dbfs": -22.2, "last_1s_rms_dbfs": -24.4, "rtf": 0.339}
+{"case": "05_missing_ref_text", "status": 400, "expected": "4xx", "ok": true}

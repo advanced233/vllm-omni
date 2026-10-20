@@ -1,0 +1,37 @@
+[
+  {
+    "case": "test_text_to_audio_001[drama_3]",
+    "original_path": "${PERSONAL_WORKDIR}/tmp/test_as9f8529.wav",
+    "preserved": false
+  },
+  {
+    "case": "test_voice_clone_streaming_002[seed0-drama_3]",
+    "original_path": "${PERSONAL_WORKDIR}/tmp/test_idtmzv58.wav",
+    "preserved": false
+  },
+  {
+    "case": "test_voice_clone_streaming_002[seed42-drama_3]",
+    "original_path": "${PERSONAL_WORKDIR}/tmp/test_haajpugy.wav",
+    "preserved": false
+  },
+  {
+    "case": "test_voice_clone_concurrent_003[drama_3]",
+    "original_path": "${PERSONAL_WORKDIR}/tmp/test_z0gspr20.wav",
+    "preserved": false
+  },
+  {
+    "case": "test_voice_clone_concurrent_003[drama_3]",
+    "original_path": "${PERSONAL_WORKDIR}/tmp/test_lmclvkkm.wav",
+    "preserved": false
+  },
+  {
+    "case": "test_voice_clone_concurrent_003[drama_3]",
+    "original_path": "${PERSONAL_WORKDIR}/tmp/test_4mydbvlm.wav",
+    "preserved": false
+  },
+  {
+    "case": "test_voice_clone_concurrent_003[drama_3]",
+    "original_path": "${PERSONAL_WORKDIR}/tmp/test_7f851q74.wav",
+    "preserved": false
+  }
+]

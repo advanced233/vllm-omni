@@ -1,0 +1,11 @@
+{
+  "server_exit_code": 0,
+  "server_process_gone": true,
+  "gpu_monitor_stopped": true,
+  "private_mps_directories_removed": true,
+  "gpu_after": "uuid, name, memory.used [MiB], utilization.gpu [%]\nGPU_PHYSICAL_1, NVIDIA A100 80GB PCIe, 15 MiB, 0 %\n",
+  "shutdown_warnings": [
+    "(APIServer pid=1190060) WARNING 10-20 04:38:24 [utils.py:653] [shutdown] Process manager: force killing remaining process StageEngineCoreProc_stage0_replica0 pid 1190424",
+    "${USER_HOME}/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/multiprocessing/resource_tracker.py:279: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown"
+  ]
+}

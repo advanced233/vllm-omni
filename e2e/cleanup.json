@@ -1,0 +1,18 @@
+{
+  "observed_processes_count": 27,
+  "observed_pids_still_present": [],
+  "port": 60317,
+  "port_released": true,
+  "private_mps_paths": [
+    {
+      "uuid": "GPU_PHYSICAL_1",
+      "pipe_path": "${PERSONAL_WORKDIR}/tmp/vllm-omni-mps-eai5uc72/pipe",
+      "directory_removed": true
+    }
+  ],
+  "gpu1_memory_mib": 15,
+  "gpu1_utilization_percent": 0,
+  "shutdown_force_kill_warning_present": true,
+  "shutdown_resource_tracker_warning_present": true,
+  "manual_process_kill_used": false
+}
