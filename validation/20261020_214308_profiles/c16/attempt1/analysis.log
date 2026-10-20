@@ -1,0 +1,188 @@
+{
+  "traces": [
+    {
+      "trace": "${NVME_WORKDIR}/profiling/20261020_214308/c16/attempt1/traces/20261020-225106_stage0_rank0_1792507866/trace_rank0.json.gz",
+      "baseTimeNanoseconds": 1790857026000000000,
+      "displayTimeUnit": "ms",
+      "steps_total": 225,
+      "phase_summary": {
+        "decode_only": {
+          "steps": 196,
+          "steps_with_correlated_kernels": 196,
+          "cpu_scope_us_p50": 6271.2395,
+          "cpu_scope_us_p95": 9009.8385,
+          "gpu_kernel_sum_us": 4007139.7510000006,
+          "gpu_step_span_us_p50": 18066.849487304688,
+          "gpu_step_span_us_p95": 23311.537963867188,
+          "generation_requests_histogram": {
+            "16": 148,
+            "15": 39,
+            "14": 6,
+            "13": 3
+          }
+        },
+        "mixed": {
+          "steps": 29,
+          "steps_with_correlated_kernels": 29,
+          "cpu_scope_us_p50": 58109.853,
+          "cpu_scope_us_p95": 61474.367,
+          "gpu_kernel_sum_us": 1190831.4199999995,
+          "gpu_step_span_us_p50": 46324.14599609375,
+          "gpu_step_span_us_p95": 59305.91699218749,
+          "generation_requests_histogram": {
+            "15": 20,
+            "14": 7,
+            "13": 2
+          }
+        },
+        "prefill_only": {
+          "steps": 0,
+          "steps_with_correlated_kernels": 0,
+          "cpu_scope_us_p50": null,
+          "cpu_scope_us_p95": null,
+          "gpu_kernel_sum_us": 0,
+          "gpu_step_span_us_p50": null,
+          "gpu_step_span_us_p95": null,
+          "generation_requests_histogram": {}
+        },
+        "empty": {
+          "steps": 0,
+          "steps_with_correlated_kernels": 0,
+          "cpu_scope_us_p50": null,
+          "cpu_scope_us_p95": null,
+          "gpu_kernel_sum_us": 0,
+          "gpu_step_span_us_p50": null,
+          "gpu_step_span_us_p95": null,
+          "generation_requests_histogram": {}
+        }
+      },
+      "kernel_events": 358645,
+      "graph_launch_events": 1762,
+      "kernel_total_us": 5202408.663,
+      "kernel_busy_union_us": 4617729.244628906,
+      "unattributed_kernel_reasons": {
+        "launch_outside_execute_scope": 1125
+      },
+      "phase_kernel_categories_heuristic_us": {
+        "decode_only": {
+          "elementwise_or_reduction": 680052.6500000724,
+          "gemm": 1190498.030000021,
+          "other": 287246.62199999916,
+          "sampling": 146591.66099999976,
+          "marlin": 1546804.2860000054,
+          "gdn_or_causal_conv": 155946.5020000006
+        },
+        "unattributed": {
+          "elementwise_or_reduction": 1225.804,
+          "sampling": 1329.393,
+          "other": 1882.2950000000008
+        },
+        "mixed": {
+          "elementwise_or_reduction": 98457.32299999993,
+          "other": 98622.366,
+          "sampling": 29061.48100000002,
+          "gemm": 308814.564,
+          "gdn_or_causal_conv": 57930.41899999995,
+          "convolution": 5413.826999999996,
+          "marlin": 592531.4399999991
+        }
+      },
+      "limitations": [
+        "CPU execute scope duration is dispatch time, not GPU latency; async work can outlive scope.",
+        "GPU sum double counts concurrent kernels; union is separate.",
+        "Phase comes only from native SchedulerOutput annotation. CUDA correlation required for phase-specific attribution.",
+        "Kernel-name category is heuristic and cannot separate backbone from codebook tower when names coincide.",
+        "Sampling outside execute scopes remains unattributed.",
+        "Profiler timings and counters are not B1 throughput measurements."
+      ]
+    },
+    {
+      "trace": "${NVME_WORKDIR}/profiling/20261020_214308/c16/attempt1/traces/20261020-225106_stage1_rank0_1792507866/trace_rank0.json.gz",
+      "baseTimeNanoseconds": 1790857026000000000,
+      "displayTimeUnit": "ms",
+      "steps_total": 4096,
+      "phase_summary": {
+        "decode_only": {
+          "steps": 0,
+          "steps_with_correlated_kernels": 0,
+          "cpu_scope_us_p50": null,
+          "cpu_scope_us_p95": null,
+          "gpu_kernel_sum_us": 0,
+          "gpu_step_span_us_p50": null,
+          "gpu_step_span_us_p95": null,
+          "generation_requests_histogram": {}
+        },
+        "mixed": {
+          "steps": 0,
+          "steps_with_correlated_kernels": 0,
+          "cpu_scope_us_p50": null,
+          "cpu_scope_us_p95": null,
+          "gpu_kernel_sum_us": 0,
+          "gpu_step_span_us_p50": null,
+          "gpu_step_span_us_p95": null,
+          "generation_requests_histogram": {}
+        },
+        "prefill_only": {
+          "steps": 174,
+          "steps_with_correlated_kernels": 174,
+          "cpu_scope_us_p50": 3429.9700000000003,
+          "cpu_scope_us_p95": 4786.3822,
+          "gpu_kernel_sum_us": 745119.388,
+          "gpu_step_span_us_p50": 7036.6375732421875,
+          "gpu_step_span_us_p95": 10333.49063720703,
+          "generation_requests_histogram": {
+            "0": 174
+          }
+        },
+        "empty": {
+          "steps": 3922,
+          "steps_with_correlated_kernels": 0,
+          "cpu_scope_us_p50": 178.675,
+          "cpu_scope_us_p95": 313.77155,
+          "gpu_kernel_sum_us": 0.0,
+          "gpu_step_span_us_p50": null,
+          "gpu_step_span_us_p95": null,
+          "generation_requests_histogram": {
+            "0": 3922
+          }
+        }
+      },
+      "kernel_events": 45836,
+      "graph_launch_events": 195,
+      "kernel_total_us": 745119.388,
+      "kernel_busy_union_us": 740683.0305175781,
+      "unattributed_kernel_reasons": {},
+      "phase_kernel_categories_heuristic_us": {
+        "prefill_only": {
+          "gemm": 210845.1409999995,
+          "attention": 12206.117999999953,
+          "other": 164746.49000000075,
+          "elementwise_or_reduction": 82464.76599999987,
+          "convolution": 274856.8729999997
+        }
+      },
+      "limitations": [
+        "CPU execute scope duration is dispatch time, not GPU latency; async work can outlive scope.",
+        "GPU sum double counts concurrent kernels; union is separate.",
+        "Phase comes only from native SchedulerOutput annotation. CUDA correlation required for phase-specific attribution.",
+        "Kernel-name category is heuristic and cannot separate backbone from codebook tower when names coincide.",
+        "Sampling outside execute scopes remains unattributed.",
+        "Profiler timings and counters are not B1 throughput measurements."
+      ]
+    }
+  ],
+  "cross_trace_overlap": [
+    {
+      "trace_a": 0,
+      "trace_b": 1,
+      "kernel_busy_overlap_us": 626445.0,
+      "clock_basis": "trace baseTimeNanoseconds + event ts * 1000; verify both traces same machine and overlapping capture",
+      "interpretation": "Observed concurrent device activity; does not prove how much MPS slows either stage."
+    }
+  ],
+  "stage0_minimum_evidence": {
+    "decode_steps_with_correlated_kernels": 5,
+    "mixed_steps_with_correlated_kernels": 3,
+    "instruction": "Check these thresholds on the stage 0 trace; collect another bounded window if either class is missing or insufficient. Also verify graph_internal_kernels_present in the probe and actual full-graph replay kernels in this trace."
+  }
+}

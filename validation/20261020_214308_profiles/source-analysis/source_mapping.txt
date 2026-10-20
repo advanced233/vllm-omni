@@ -1,0 +1,118 @@
+Source/trace mapping — selected C8attempt2 with C16/C64 corroboration; hypotheses untested
+No GPU work, source edits or optimizations performed.
+All percentages below are correlated kernel-duration sums, not walltime or speedup.
+
+Marlin routed-expert GEMMs
+Backbone MoE, supported by construction and exact count; the audio tower uses dense nn.Linear and no MoE.
+Confidence: high at family level; no per-launch w13 versus w2 attribution from the demangled kernel alone
+  decode_only: 18560 kernels, 1184671.928 us, 30.936%
+  mixed: 1760 kernels, 421323.898 us, 51.970%
+  ${WORKSPACE}/vllm-omni/vllm_omni/model_executor/models/fish_omni/fish_omni_model.py:205 — Constructs Qwen3_5Model backbone
+  ${NVME_WORKDIR}/venvs/vllm-omni-cu129/lib/python3.12/site-packages/vllm/model_executor/models/qwen3_5.py:173 — MoE layers use Qwen3NextSparseMoeBlock
+  ${NVME_WORKDIR}/venvs/vllm-omni-cu129/lib/python3.12/site-packages/vllm/model_executor/models/qwen3_next.py:223 — Constructs FusedMoEFactory for routed experts
+  ${NVME_WORKDIR}/venvs/vllm-omni-cu129/lib/python3.12/site-packages/vllm/model_executor/layers/fused_moe/oracle/fp8.py:192 — MARLIN backend maps to MarlinExperts
+  ${NVME_WORKDIR}/venvs/vllm-omni-cu129/lib/python3.12/site-packages/vllm/model_executor/layers/fused_moe/experts/marlin_moe.py:741 — MarlinExperts.apply invokes fused_marlin_moe
+  ${NVME_WORKDIR}/venvs/vllm-omni-cu129/lib/python3.12/site-packages/vllm/model_executor/layers/fused_moe/experts/marlin_moe.py:131 — First w13 Marlin GEMM
+  ${NVME_WORKDIR}/venvs/vllm-omni-cu129/lib/python3.12/site-packages/vllm/model_executor/layers/fused_moe/experts/marlin_moe.py:195 — Second w2 Marlin GEMM
+  ${NVME_WORKDIR}/venvs/vllm-omni-cu129/lib/python3.12/site-packages/vllm/_custom_ops.py:2431 — Python CUDA-op boundary, exposes thread_k/thread_n/blocks_per_sm overrides
+
+Dense GEMM/GEMV/reductions
+Unresolved aggregate: potentially backbone projections, shared experts/router, tower linears and semantic/codebook heads. Kernel names alone do not identify modules.
+Confidence: only family-level library operation identified
+  ${NVME_WORKDIR}/venvs/vllm-omni-cu129/lib/python3.12/site-packages/vllm/model_executor/layers/mamba/gdn/qwen_gdn_linear_attn.py:995 — GDN input qkvz and ba projections
+  ${NVME_WORKDIR}/venvs/vllm-omni-cu129/lib/python3.12/site-packages/vllm/model_executor/layers/mamba/gdn/qwen_gdn_linear_attn.py:1057 — GDN output projection
+  ${NVME_WORKDIR}/venvs/vllm-omni-cu129/lib/python3.12/site-packages/vllm/model_executor/models/qwen2_moe.py:115 — Shared-expert MLP projections and expert gate
+  ${WORKSPACE}/vllm-omni/vllm_omni/model_executor/models/fish_omni/codebook_tower.py:169 — Tower eh_proj
+  ${WORKSPACE}/vllm-omni/vllm_omni/model_executor/models/fish_omni/codebook_tower.py:187 — Tower qkv projection
+  ${WORKSPACE}/vllm-omni/vllm_omni/model_executor/models/fish_omni/codebook_tower.py:205 — Tower o_proj
+  ${WORKSPACE}/vllm-omni/vllm_omni/model_executor/models/fish_omni/codebook_tower.py:208 — Tower gate_up/down MLP projections
+  ${WORKSPACE}/vllm-omni/vllm_omni/model_executor/models/fish_omni/fish_omni_model.py:447 — Semantic head matmul
+  ${WORKSPACE}/vllm-omni/vllm_omni/model_executor/models/fish_omni/fish_omni_model.py:484 — Nine codebook head matmuls
+
+Packed GDN decode
+Backbone linear-attention layers
+Confidence: high: unique named kernel and actual call chain
+  decode_only: 6960 kernels, 97062.171 us, 2.535%
+  mixed: 660 kernels, 9006.609 us, 1.111%
+  ${WORKSPACE}/vllm-omni/vllm_omni/model_executor/models/fish_omni/gdn.py:277 — Pure decode delegates to installed Qwen standard path
+  ${NVME_WORKDIR}/venvs/vllm-omni-cu129/lib/python3.12/site-packages/vllm/model_executor/layers/mamba/gdn/qwen_gdn_linear_attn.py:1728 — Packed non-spec decode path
+  ${NVME_WORKDIR}/venvs/vllm-omni-cu129/lib/python3.12/site-packages/vllm/model_executor/layers/mamba/gdn/qwen_gdn_linear_attn.py:1756 — Causal convolution update
+  ${NVME_WORKDIR}/venvs/vllm-omni-cu129/lib/python3.12/site-packages/vllm/model_executor/layers/mamba/gdn/qwen_gdn_linear_attn.py:1766 — Packed recurrent attention call
+  ${NVME_WORKDIR}/venvs/vllm-omni-cu129/lib/python3.12/site-packages/vllm/third_party/flash_linear_attention/ops/fused_recurrent.py:256 — Actual Triton kernel; state load/update computes in fp32, final store rounds to pool dtype
+  ${WORKSPACE}/vllm-omni/vllm_omni/model_executor/models/fish_omni/gdn.py:181 — Mixed-step decode tokens reuse packed kernel
+
+A100 GDN prefill/FLA
+Backbone linear-attention prefill subset of mixed steps
+Confidence: high at named FLA kernels; generic index/copy kernels not individually attributed
+  decode_only: 0 kernels, 0.000 us, 0.000%
+  mixed: 3300 kernels, 39261.761 us, 4.843%
+  ${WORKSPACE}/vllm-omni/vllm_omni/model_executor/models/fish_omni/gdn.py:135 — Direct indexed state-pool path is FlashInfer-only
+  ${WORKSPACE}/vllm-omni/vllm_omni/model_executor/models/fish_omni/gdn.py:230 — A100 FLA fallback gathers state, zeroes fresh rows
+  ${WORKSPACE}/vllm-omni/vllm_omni/model_executor/models/fish_omni/gdn.py:232 — Calls layer.chunk_gated_delta_rule
+  ${WORKSPACE}/vllm-omni/vllm_omni/model_executor/models/fish_omni/gdn.py:245 — Scatters final state and copies output
+  ${NVME_WORKDIR}/venvs/vllm-omni-cu129/lib/python3.12/site-packages/vllm/model_executor/layers/mamba/gdn/qwen_gdn_linear_attn.py:344 — forward_native dispatches to FLA
+  ${NVME_WORKDIR}/venvs/vllm-omni-cu129/lib/python3.12/site-packages/vllm/third_party/flash_linear_attention/ops/chunk.py:23 — FLA chunk orchestration
+  ${NVME_WORKDIR}/venvs/vllm-omni-cu129/lib/python3.12/site-packages/vllm/third_party/flash_linear_attention/ops/solve_tril.py:227 — Named triangular solve kernel
+  ${NVME_WORKDIR}/venvs/vllm-omni-cu129/lib/python3.12/site-packages/vllm/third_party/flash_linear_attention/ops/chunk_delta_h.py:45 — Named recurrent chunk kernel
+  ${NVME_WORKDIR}/venvs/vllm-omni-cu129/lib/python3.12/site-packages/vllm/third_party/flash_linear_attention/ops/chunk_o.py:159 — Already supports supplied flattened output buffer; otherwise empty_like
+  ${NVME_WORKDIR}/venvs/vllm-omni-cu129/lib/python3.12/site-packages/vllm/third_party/flash_linear_attention/ops/utils.py:83 — Per-call input_guard contiguous checks and device context
+
+Tower-specific helper kernels
+Audio codebook tower
+Confidence: high for these exact unique kernel names; excludes generic dense GEMMs
+  decode_only: 15080 kernels, 50874.809 us, 1.329%
+  mixed: 1430 kernels, 6512.975 us, 0.803%
+  ${WORKSPACE}/vllm-omni/vllm_omni/model_executor/models/fish_omni/codebook_tower.py:159 — TowerLayer.forward uses these helpers around dense projections
+  ${WORKSPACE}/vllm-omni/vllm_omni/model_executor/models/fish_omni/kernels.py:1 — Helper kernel definitions
+  ${WORKSPACE}/vllm-omni/vllm_omni/model_executor/models/fish_omni/fish_omni_model.py:476 — Four shared tower layers
+  ${WORKSPACE}/vllm-omni/vllm_omni/model_executor/models/fish_omni/fish_omni_model.py:481 — Nine autoregressive codebook-specific layers
+
+Frame sampling top-k + sort + draw
+Semantic/codebook frame sampling, excluding MoE topkGating
+Confidence: high for _draw_kernel; topk/sort association supported by unique sampling calls and counts, requires attribution if other topk paths added
+  decode_only: 7192 kernels, 115062.867 us, 3.005%
+  mixed: 682 kernels, 15376.426 us, 1.897%
+  ${WORKSPACE}/vllm-omni/vllm_omni/model_executor/models/fish_omni/sampling.py:59 — Semantic torch.topk shared by first/RAS draws
+  ${WORKSPACE}/vllm-omni/vllm_omni/model_executor/models/fish_omni/sampling.py:63 — Second RAS draw
+  ${WORKSPACE}/vllm-omni/vllm_omni/model_executor/models/fish_omni/sampling.py:88 — Nine codebook draws
+  ${WORKSPACE}/vllm-omni/vllm_omni/model_executor/models/fish_omni/kernels.py:295 — Each head performs torch.topk if candidates not provided
+  ${WORKSPACE}/vllm-omni/vllm_omni/model_executor/models/fish_omni/kernels.py:251 — Draw still reads whole vocab for normalization
+  ${WORKSPACE}/vllm-omni/vllm_omni/model_executor/models/fish_omni/kernels.py:260 — Inclusive cumulative top-p mask plus always-keep-rank0 semantics
+  ${WORKSPACE}/vllm-omni/vllm_omni/model_executor/models/fish_omni/model_state.py:306 — Per-frame sampling noise generation; do not freeze RNG when graphing
+
+Unfused sigmoid/multiply candidate
+Possible shared-expert gate; not proven per-event by current trace
+Confidence: candidate locus, not a confirmed attribution
+  decode_only: 18560 kernels, 257703.017 us, 6.730%
+  mixed: 1760 kernels, 12987.785 us, 1.602%
+  ${NVME_WORKDIR}/venvs/vllm-omni-cu129/lib/python3.12/site-packages/vllm/model_executor/models/qwen3_next.py:211 — Shared expert passes expert_gate
+  ${NVME_WORKDIR}/venvs/vllm-omni-cu129/lib/python3.12/site-packages/vllm/model_executor/models/qwen2_moe.py:121 — F.sigmoid(expert_gate(x)[0]) * out
+
+1: first diagnostic and conditional Omni-side optimization: Reduce mixed-step GDN/FLA host dispatch and temporary-buffer work if lightweight measurements confirm it
+location: ['vllm_omni/model_executor/models/fish_omni/gdn.py:144', 'vllm_omni/model_executor/models/fish_omni/gdn.py:230', 'vllm_omni/model_executor/models/fish_omni/gdn.py:246', 'vllm/model_executor/layers/mamba/gdn/qwen_gdn_linear_attn.py:344', 'vllm/third_party/flash_linear_attention/ops/chunk.py:23', 'vllm/third_party/flash_linear_attention/ops/chunk_o.py:159', 'vllm/third_party/flash_linear_attention/ops/utils.py:83']
+current_behavior: A100 mixed_forward_core is an eager custom-op boundary, invoked30 times per mixed step. It performs convolution/prep, packed decode, state gather/zero, an autograd.Function FLA call chain with repeated Python/Triton launches and input_guard contiguous/device checks, final-state scatter and output copy. ChunkGatedDeltaRule.forward_native already accepts core_attn_out, and chunk_fwd_o supports a supplied flattened output buffer, but Omni gdn.py232-244 does not pass that buffer and246 copies the returned output.
+support: Selected C8 attempt2 CPU audit:22 mixed steps; vllm::qwen_gdn_attention_core660 calls with878322.525us inclusive total(39.923751ms/step), nested ChunkGatedDeltaRuleFunction384717.672us not additive. CPU scope p50=58.954110ms, CUDA runtime interval-union p50=8.097228ms;54 GraphLaunch calls sum to mean2.826880ms/step. No Synchronize API or correlated D2H was observed in these audited scopes. A small GDN GPU kernel-sum fraction does not exclude a costly GDN host path. Independent C16/C64 reproduce mixed CPU scope medians58.110/60.268ms and same-name GDN core interval-union medians38.297/39.611ms; runtime unions7.847/7.981ms and graph-launch sums means2.730/2.778ms. All three profiles show54 mixed graph launches; this does not make graph launches alone the dominant host cost.
+experiment: First run a short separate matched workload with torch.profiler disabled and minimal perf_counter_ns probes around aggregate mixed_forward_core and its gather/prep/chunk/scatter sections. Buffer counters in memory, emit only after the window; no per-layer print or synchronize. Repeat with probes disabled to bound instrumentation cost. Compare CPU enqueue durations with separately sampled GPU events and end-to-end TTFA/stall/RTF, controlling CPU affinity/thermal state. If material host cost persists, first prototype passing contiguous flattened core_attn_out[decode_tokens:tokens] through the existing FLA output-buffer API and remove only the redundant output allocation/copy; measure this isolated change. Then investigate scratch-buffer reuse or fused gather/zero/scatter only if evidence supports them. Do not promise the full39.9ms is removable.
+quality_validation: Use the real FLA/Triton path, not the original test fixture that dispatches FlashInfer. Cover fp32 and bf16 recurrent state, decode counts0/3 plus actual8/16/64, fresh/continuing/chunked prefills, differing reference lengths and slot reuse. Check every output/state against standard path with existing tolerances and no dtype change; test output aliasing/contiguity and graph replay. Then official E2E and fixed-seed1088 noise-run/capped-length/WER/SIM companion against control.
+capture_constraints: GDN backend declares UNIFORM_BATCH. Variable prefill cu_seqlens/chunk-count/state indexing and scratch lifetimes prevent treating forced FULL mixed capture or deleting splitting_ops as a safe configuration change. Any per-shape graph proposal needs bounded static buffers and updated metadata on replay, with capture/memory/startup costs measured.
+scope_note: Hypothesis based on profiled inclusive CPU scopes, which include instrumentation overhead. No unprofiled timing or implementation exists yet. span-busy is not all CPU idle; nested CPU durations must never be added. Output-buffer reuse is a concrete Omni-side candidate with likely limited payoff, not proof it fixes the whole mixed-step delay. All three selected profiles corroborate the profiled mixed host pattern. Priority is to establish its unprofiled size; no end-to-end CPU bottleneck or removable-time amount is proven.
+
+2: separate dependency-side kernel track: A100 Marlin launch/tile tuning for the measured routed-expert shapes
+location: ['${NVME_WORKDIR}/venvs/vllm-omni-cu129/lib/python3.12/site-packages/vllm/model_executor/layers/fused_moe/experts/marlin_moe.py:340', '${NVME_WORKDIR}/venvs/vllm-omni-cu129/lib/python3.12/site-packages/vllm/_custom_ops.py:2455']
+current_behavior: Block-M heuristic chooses among8/16/32/48/64 from M*topk/E; thread_k/thread_n/blocks_per_sm remain -1 at the Marlin callsites. Actual model E256/topk8/K2048/intermediate512, BF16 activations with FP8 expert weights.
+support: Marlin exact mapped30.936% decode and51.970% mixed kernel-duration sums in C8 attempt2.
+experiment: Using selected C8/C16/C64 actual token/request distributions, replay identical captured input/weights/router indices for decode M8/16/64 and observed mixed token M; benchmark only supported kernel tile/block-M choices. Keep FP8 weights, BF16 activation, use_fp32_reduce=True and use_atomic_add=False unchanged. Confirm standalone event timings then end-to-end C8/C16/C64 with matched thermal distribution and GPU sharing.
+quality_validation: Compare expert outputs to existing path with explicit errors/tolerances, then fixed-seed frame tests plus full1088 noise-run/WER/SIM and official E2E. Tile rounding may alter trajectories; distribution/quality tests required, not only allclose.
+scope_note: Implementation locus is installed vLLM dependency; do not present a vLLM-only patch as an Omni-only performance PR. No tuning or speedup measured yet.
+
+3: bounded configuration latency/fairness experiment: Batch arriving prefills earlier around C8/C16 to reduce mixed-step frequency
+location: ['${WORKSPACE}/vllm-omni/vllm_omni/core/sched/omni_ar_scheduler.py:347', '${WORKSPACE}/vllm-omni/vllm_omni/core/sched/omni_ar_scheduler.py:370']
+current_behavior: Default min_running32/min_batch6/max_wait100ms means admission batching inactive at C8/C16; small arriving prompts can each produce a mixed step.
+support: C8 attempt2 includes22 complete mixed steps, GPU-span median49.067ms vs decode13.744ms; one versus54 graph launches per step. C16/C64 also show54 mixed versus1 decode graph launches, while most profiled mixed CPU time is inside GDN custom-op scopes rather than graph-launch APIs. This is an association/optimization opportunity, not proof of causality or CPU bottleneck.
+experiment: Use separate deploy YAML and fresh service: change only min_running to4 for C8 (8 may not trigger when only7 requests remain running) or8 for C16 first, preserving min_batch6/max_wait100; then, if warranted, bounded sweep of min_batch2/4 and max_wait10/25/50ms. Measure mixed-step fraction, total GPU busy union, TTFA p95/p99, stall>100ms, RTF and throughput at same workload/thermal conditions; do not select on throughput alone.
+quality_validation: Same1088 rows and seeded quality companion, noise-run/capped duration/WER/SIM; admission changes batching/numerical trajectories even without changing model math.
+graph_path_evidence: piecewise_54_evidence.json parses the actual selected C8 attempt2 compiled cache:54 non-attention partitions,53 attention partitions(30 GDN+23 paired KV-update/full-attention).Compiled partitions straddle module boundaries, so54 is not literally54 full layers.
+capture_constraints: GDNAttentionMetadataBuilder declares UNIFORM_BATCH at gdn_attn.py93; mixed FLA uses variable cu_seqlens/chunk metadata and gathered state buffers. Removing split ops or forcing FULL mixed capture is not a configuration-only safe fix; capture-safe shapes/metadata/state handling and tests must be designed first.
+timing_limits: CPU execute_scope includes dispatch and runtime blocking; GPU span minus busy union includes waits/dependencies/stream scheduling/profiler effects, not solely CPU empty time.
+scope_note: Explicit TTFA latency/fairness tradeoff: waiting may outweigh saved mixed steps; verify admission bound and no request starvation. All three profiles are available in cross_profile_evidence.json; no improvement yet demonstrated.
+

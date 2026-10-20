@@ -1,0 +1,5361 @@
+{
+  "trace": "${NVME_WORKDIR}/profiling/20261020_214308/c8/attempt1/traces/20261020-223006_stage1_rank0_1792506606/trace_rank0.json.gz",
+  "sha256": "9a393cef8200a328a27fd7e9b5881060531e851f0058dd1ba06b266f3d13f8d3",
+  "host_name": "HOST_REDACTED",
+  "baseTimeNanoseconds": 1790857026000000000,
+  "deviceProperties": [
+    {
+      "id": 0,
+      "name": "NVIDIA A100 80GB PCIe",
+      "totalGlobalMem": 84974239744,
+      "computeMajor": 8,
+      "computeMinor": 0,
+      "maxThreadsPerBlock": 1024,
+      "maxThreadsPerMultiprocessor": 2048,
+      "regsPerBlock": 65536,
+      "warpSize": 32,
+      "sharedMemPerBlock": 49152,
+      "numSms": 108,
+      "regsPerMultiprocessor": 65536,
+      "sharedMemPerBlockOptin": 166912,
+      "sharedMemPerMultiprocessor": 167936
+    }
+  ],
+  "capture_local_us": [
+    1649580253535.182,
+    1649580700455.628
+  ],
+  "capture_epoch_us": [
+    1792506606253535.2,
+    1792506606700455.8
+  ],
+  "cpu_execute_scopes": 256,
+  "gpu_cloned_scopes_excluded": 0,
+  "boundary_exclusion_counts": {
+    "first_or_last_cpu_thread_scope_conservatively_excluded": 2,
+    "no_correlated_kernels": 243
+  },
+  "phase_summary": {
+    "decode_only": {
+      "all_cpu_scopes": 0,
+      "conservative_complete_interior_steps": 0,
+      "kernel_count": 0,
+      "kernel_sum_us": 0,
+      "gpu_span_us": {
+        "n": 0,
+        "p50": null,
+        "p95": null
+      },
+      "gpu_busy_union_us_per_step": {
+        "n": 0,
+        "p50": null,
+        "p95": null
+      },
+      "gpu_kernel_sum_us_per_step": {
+        "n": 0,
+        "p50": null,
+        "p95": null
+      },
+      "cpu_scope_us": {
+        "n": 0,
+        "p50": null,
+        "p95": null
+      },
+      "generation_request_histogram": {},
+      "context_request_histogram": {},
+      "graph_launches_per_step": {},
+      "raw_top10_kernel_time_coverage_pct": null
+    },
+    "mixed": {
+      "all_cpu_scopes": 0,
+      "conservative_complete_interior_steps": 0,
+      "kernel_count": 0,
+      "kernel_sum_us": 0,
+      "gpu_span_us": {
+        "n": 0,
+        "p50": null,
+        "p95": null
+      },
+      "gpu_busy_union_us_per_step": {
+        "n": 0,
+        "p50": null,
+        "p95": null
+      },
+      "gpu_kernel_sum_us_per_step": {
+        "n": 0,
+        "p50": null,
+        "p95": null
+      },
+      "cpu_scope_us": {
+        "n": 0,
+        "p50": null,
+        "p95": null
+      },
+      "generation_request_histogram": {},
+      "context_request_histogram": {},
+      "graph_launches_per_step": {},
+      "raw_top10_kernel_time_coverage_pct": null
+    },
+    "prefill_only": {
+      "all_cpu_scopes": 13,
+      "conservative_complete_interior_steps": 12,
+      "kernel_count": 3296,
+      "kernel_sum_us": 50458.627,
+      "gpu_span_us": {
+        "n": 12,
+        "p50": 6139.5194091796875,
+        "p95": 8442.292993164061,
+        "min": 3009.087158203125,
+        "max": 10123.197998046875
+      },
+      "gpu_busy_union_us_per_step": {
+        "n": 12,
+        "p50": 3908.9515380859375,
+        "p95": 6213.825671386719,
+        "min": 2755.3603515625,
+        "max": 6574.55517578125
+      },
+      "gpu_kernel_sum_us_per_step": {
+        "n": 12,
+        "p50": 3936.9385,
+        "p95": 6256.9985,
+        "min": 2769.857,
+        "max": 6621.401
+      },
+      "cpu_scope_us": {
+        "n": 12,
+        "p50": 3063.0555,
+        "p95": 4951.918949999999,
+        "min": 2388.702,
+        "max": 5436.772
+      },
+      "generation_request_histogram": {
+        "0": 12
+      },
+      "context_request_histogram": {
+        "1": 9,
+        "3": 2,
+        "2": 1
+      },
+      "graph_launches_per_step": {
+        "1": 10,
+        "2": 2
+      },
+      "raw_top10_kernel_time_coverage_pct": 52.091104262508004
+    },
+    "empty": {
+      "all_cpu_scopes": 243,
+      "conservative_complete_interior_steps": 0,
+      "kernel_count": 0,
+      "kernel_sum_us": 0,
+      "gpu_span_us": {
+        "n": 0,
+        "p50": null,
+        "p95": null
+      },
+      "gpu_busy_union_us_per_step": {
+        "n": 0,
+        "p50": null,
+        "p95": null
+      },
+      "gpu_kernel_sum_us_per_step": {
+        "n": 0,
+        "p50": null,
+        "p95": null
+      },
+      "cpu_scope_us": {
+        "n": 0,
+        "p50": null,
+        "p95": null
+      },
+      "generation_request_histogram": {},
+      "context_request_histogram": {},
+      "graph_launches_per_step": {},
+      "raw_top10_kernel_time_coverage_pct": null
+    }
+  },
+  "raw_kernel_tables_complete_interior_only": {
+    "decode_only": [],
+    "mixed": [],
+    "prefill_only": [
+      {
+        "name": "ampere_fp16_s16816gemm_fp16_64x64_sliced1x2_ldg8_f2f_stages_64x6_tn",
+        "count": 390,
+        "kernel_sum_us": 5784.704000000008
+      },
+      {
+        "name": "_snake_kernel",
+        "count": 406,
+        "kernel_sum_us": 5453.309000000002
+      },
+      {
+        "name": "void cutlass__5x_cudnn::Kernel<cutlass_tensorop_f16_s16816fprop_optimized_f16_128x128_32x3_nhwc_align8>(cutlass_tensorop_f16_s16816fprop_optimized_f16_128x128_32x3_nhwc_align8::Params)",
+        "count": 45,
+        "kernel_sum_us": 2476.864
+      },
+      {
+        "name": "void cutlass__5x_cudnn::Kernel<cutlass_tensorop_f16_s16816fprop_optimized_f16_128x256_32x3_nhwc_align8>(cutlass_tensorop_f16_s16816fprop_optimized_f16_128x256_32x3_nhwc_align8::Params)",
+        "count": 27,
+        "kernel_sum_us": 2238.8520000000003
+      },
+      {
+        "name": "sm80_xmma_dgrad_implicit_gemm_f16f16_f16f32_f32_nhwckrsc_nhwc_tilesize64x64x64_stage4_warpsize2x2x1_g1_tensor16x8x16_execute_kernel__5x_cudnn",
+        "count": 12,
+        "kernel_sum_us": 2204.094
+      },
+      {
+        "name": "ampere_fp16_s16816gemm_fp16_128x128_ldg8_f2f_stages_32x5_nn",
+        "count": 42,
+        "kernel_sum_us": 1707.743
+      },
+      {
+        "name": "_write_attend",
+        "count": 112,
+        "kernel_sum_us": 1689.7580000000003
+      },
+      {
+        "name": "_history_save_kernel",
+        "count": 280,
+        "kernel_sum_us": 1668.2360000000012
+      },
+      {
+        "name": "void cutlass__5x_cudnn::Kernel<cutlass_tensorop_f16_s16816fprop_optimized_f16_64x64_64x5_nhwc_align8>(cutlass_tensorop_f16_s16816fprop_optimized_f16_64x64_64x5_nhwc_align8::Params)",
+        "count": 28,
+        "kernel_sum_us": 1564.578
+      },
+      {
+        "name": "sm80_xmma_fprop_implicit_gemm_f16f16_f16f32_f32_nhwckrsc_nhwc_tilesize64x32x64_stage5_warpsize2x2x1_g1_tensor16x8x16_execute_kernel__5x_cudnn",
+        "count": 12,
+        "kernel_sum_us": 1496.318
+      },
+      {
+        "name": "void at::native::vectorized_elementwise_kernel<4, at::native::CUDAFunctor_add<float>, std::array<char*, 3ul> >(int, at::native::CUDAFunctor_add<float>, std::array<char*, 3ul>)",
+        "count": 168,
+        "kernel_sum_us": 1267.3319999999999
+      },
+      {
+        "name": "sm80_xmma_fprop_implicit_gemm_f16f16_f16f32_f32_nhwckrsc_nhwc_tilesize64x64x64_stage4_warpsize2x2x1_g1_tensor16x8x16_execute_kernel__5x_cudnn",
+        "count": 25,
+        "kernel_sum_us": 1201.1190000000004
+      },
+      {
+        "name": "void cutlass__5x_cudnn::Kernel<cutlass_tensorop_f16_s16816fprop_optimized_f16_64x128_64x3_nhwc_align8>(cutlass_tensorop_f16_s16816fprop_optimized_f16_64x128_64x3_nhwc_align8::Params)",
+        "count": 17,
+        "kernel_sum_us": 1194.4960000000005
+      },
+      {
+        "name": "ampere_fp16_s16816gemm_fp16_64x64_sliced1x2_ldg8_f2f_stages_64x5_tn",
+        "count": 69,
+        "kernel_sum_us": 1144.125
+      },
+      {
+        "name": "void cutlass::Kernel2<cutlass_80_wmma_tensorop_s161616gemm_f16_32x32_128x2_tn_align8>(cutlass_80_wmma_tensorop_s161616gemm_f16_32x32_128x2_tn_align8::Params)",
+        "count": 56,
+        "kernel_sum_us": 976.9270000000001
+      },
+      {
+        "name": "triton_poi_fused__to_copy__unsafe_view_add_moss_slot_ring_attention_rows_mul_select_split_with_sizes_stack_sub_transpose_unsqueeze_view_1",
+        "count": 112,
+        "kernel_sum_us": 898.0169999999997
+      },
+      {
+        "name": "void cutlass__5x_cudnn::Kernel<cutlass_tensorop_f16_s16816dgrad_optimized_f16_128x128_32x4_nhwc_align8>(cutlass_tensorop_f16_s16816dgrad_optimized_f16_128x128_32x4_nhwc_align8::Params)",
+        "count": 15,
+        "kernel_sum_us": 864.1590000000001
+      },
+      {
+        "name": "sm80_xmma_dgrad_implicit_gemm_f16f16_f16f32_f32_nhwckrsc_nhwc_tilesize128x64x32_stage5_warpsize2x2x1_g1_tensor16x8x16_execute_kernel__5x_cudnn",
+        "count": 2,
+        "kernel_sum_us": 806.591
+      },
+      {
+        "name": "triton_poi_fused__unsafe_view_mul_silu_3",
+        "count": 112,
+        "kernel_sum_us": 772.1890000000005
+      },
+      {
+        "name": "void cutlass__5x_cudnn::Kernel<cutlass_tensorop_f16_s16816dgrad_optimized_f16_64x64_64x5_nhwc_align8>(cutlass_tensorop_f16_s16816dgrad_optimized_f16_64x64_64x5_nhwc_align8::Params)",
+        "count": 13,
+        "kernel_sum_us": 710.1730000000001
+      },
+      {
+        "name": "ampere_s16816gemm_fp16_128x64_ldg8_stages_32x6_tn",
+        "count": 48,
+        "kernel_sum_us": 705.3409999999999
+      },
+      {
+        "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __half, float, __half, false, __half, __half, __half, true, false, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __half const*, __half*, __half*, float const*, float const*, __half const*, float const*, __half*, void*, long, float*, int*, float*, float*, float const*, float const*, float const*, float const*, float const*)",
+        "count": 104,
+        "kernel_sum_us": 702.3320000000002
+      },
+      {
+        "name": "void cutlass__5x_cudnn::Kernel<cutlass_tensorop_f16_s16816fprop_optimized_f16_64x256_32x4_nhwc_align8>(cutlass_tensorop_f16_s16816fprop_optimized_f16_64x256_32x4_nhwc_align8::Params)",
+        "count": 10,
+        "kernel_sum_us": 657.087
+      },
+      {
+        "name": "sm80_xmma_fprop_implicit_gemm_f16f16_f16f32_f32_nhwckrsc_nhwc_tilesize256x64x32_stage3_warpsize4x1x1_g1_tensor16x8x16_execute_kernel__5x_cudnn",
+        "count": 6,
+        "kernel_sum_us": 633.887
+      },
+      {
+        "name": "triton_per_fused__to_copy__unsafe_view_add_mean_mul_rsqrt_2",
+        "count": 112,
+        "kernel_sum_us": 627.8080000000003
+      },
+      {
+        "name": "ampere_fp16_s16816gemm_fp16_128x64_ldg8_f2f_stages_32x6_nn",
+        "count": 33,
+        "kernel_sum_us": 573.056
+      },
+      {
+        "name": "ampere_fp16_s16816gemm_fp16_128x256_ldg8_f2f_stages_64x3_nn",
+        "count": 18,
+        "kernel_sum_us": 521.438
+      },
+      {
+        "name": "void cutlass__5x_cudnn::Kernel<cutlass_tensorop_f16_s16816dgrad_optimized_f16_64x128_64x3_nhwc_align8>(cutlass_tensorop_f16_s16816dgrad_optimized_f16_64x128_64x3_nhwc_align8::Params)",
+        "count": 8,
+        "kernel_sum_us": 486.9749999999999
+      },
+      {
+        "name": "triton_per_fused__to_copy__unsafe_view_add_mean_mul_rsqrt_5",
+        "count": 84,
+        "kernel_sum_us": 479.67699999999996
+      },
+      {
+        "name": "void cutlass__5x_cudnn::Kernel<cutlass_tensorop_f16_s16816dgrad_optimized_f16_64x256_32x4_nhwc_align8>(cutlass_tensorop_f16_s16816dgrad_optimized_f16_64x256_32x4_nhwc_align8::Params)",
+        "count": 6,
+        "kernel_sum_us": 473.18499999999995
+      },
+      {
+        "name": "void cutlass::Kernel2<cutlass_80_tensorop_f16_s16816gemm_relu_f16_64x64_32x6_tn_align8>(cutlass_80_tensorop_f16_s16816gemm_relu_f16_64x64_32x6_tn_align8::Params)",
+        "count": 17,
+        "kernel_sum_us": 351.61699999999996
+      },
+      {
+        "name": "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#10}::operator()() const::{lambda(c10::Half)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#10}::operator()() const::{lambda(c10::Half)#1} const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#10}::operator()() const::{lambda(c10::Half)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#10}::operator()() const::{lambda(c10::Half)#1} const&)::{lambda(int)#1})",
+        "count": 21,
+        "kernel_sum_us": 301.40700000000004
+      },
+      {
+        "name": "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl_nocast<at::native::CUDAFunctor_add<c10::Half> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<c10::Half> const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::CUDAFunctor_add<c10::Half> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<c10::Half> const&)::{lambda(int)#1})",
+        "count": 42,
+        "kernel_sum_us": 298.2680000000001
+      },
+      {
+        "name": "ampere_fp16_s16816gemm_fp16_128x64_ldg8_relu_f2f_stages_64x4_tn",
+        "count": 6,
+        "kernel_sum_us": 286.56
+      },
+      {
+        "name": "void at::native::(anonymous namespace)::vectorized_layer_norm_kernel<c10::Half, float, false>(int, float, c10::Half const*, c10::Half const*, c10::Half const*, float*, float*, c10::Half*)",
+        "count": 28,
+        "kernel_sum_us": 284.73499999999996
+      },
+      {
+        "name": "conv1d_c1_k1_nhwc",
+        "count": 28,
+        "kernel_sum_us": 278.783
+      },
+      {
+        "name": "sm80_xmma_fprop_implicit_gemm_indexed_f16f16_f16f32_f32_nhwckrsc_nhwc_tilesize64x32x64_stage5_warpsize2x2x1_g1_tensor16x8x16_execute_kernel__5x_cudnn",
+        "count": 7,
+        "kernel_sum_us": 276.19
+      },
+      {
+        "name": "ampere_fp16_s16816gemm_fp16_128x64_ldg8_f2f_stages_64x3_nn",
+        "count": 12,
+        "kernel_sum_us": 265.50300000000004
+      },
+      {
+        "name": "ampere_fp16_s16816gemm_fp16_64x64_ldg8_f2f_stages_64x5_nn",
+        "count": 15,
+        "kernel_sum_us": 254.88099999999997
+      },
+      {
+        "name": "void at::native::vectorized_elementwise_kernel<4, at::native::GeluCUDAKernelImpl(at::TensorIteratorBase&, at::native::GeluType)::{lambda()#2}::operator()() const::{lambda()#3}::operator()() const::{lambda(c10::Half)#1}, std::array<char*, 2ul> >(int, at::native::GeluCUDAKernelImpl(at::TensorIteratorBase&, at::native::GeluType)::{lambda()#2}::operator()() const::{lambda()#3}::operator()() const::{lambda(c10::Half)#1}, std::array<char*, 2ul>)",
+        "count": 28,
+        "kernel_sum_us": 252.25599999999997
+      },
+      {
+        "name": "ampere_fp16_s1688gemm_fp16_128x64_sliced1x2_ldg8_f2f_nn",
+        "count": 12,
+        "kernel_sum_us": 246.336
+      },
+      {
+        "name": "void cublasLt::splitKreduce_kernel<32, 16, int, __half, __half, float, __half, false, __half, __half, __half, true, true, false, false>(cublasLt::cublasSplitKParams<float>, __half const*, __half const*, __half*, __half*, float const*, float const*, __half const*, __half const*, __half*, void*, long, float*, int*, float*, float*, float const*, float const*, float const*, float const*, float const*)",
+        "count": 22,
+        "kernel_sum_us": 231.78
+      },
+      {
+        "name": "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl_nocast<at::native::BinaryFunctor<c10::Half, c10::Half, c10::Half, at::native::binary_internal::MulFunctor<float> > >(at::TensorIteratorBase&, at::native::BinaryFunctor<c10::Half, c10::Half, c10::Half, at::native::binary_internal::MulFunctor<float> > const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::BinaryFunctor<c10::Half, c10::Half, c10::Half, at::native::binary_internal::MulFunctor<float> > >(at::TensorIteratorBase&, at::native::BinaryFunctor<c10::Half, c10::Half, c10::Half, at::native::binary_internal::MulFunctor<float> > const&)::{lambda(int)#1})",
+        "count": 28,
+        "kernel_sum_us": 229.98500000000004
+      },
+      {
+        "name": "ampere_fp16_s16816gemm_fp16_64x64_sliced1x2_ldg8_relu_f2f_stages_64x6_nn",
+        "count": 13,
+        "kernel_sum_us": 221.025
+      },
+      {
+        "name": "ampere_fp16_s1688gemm_fp16_128x128_ldg8_f2f_stages_32x1_nn",
+        "count": 15,
+        "kernel_sum_us": 210.62399999999997
+      },
+      {
+        "name": "sm80_xmma_fprop_implicit_gemm_indexed_wo_smem_f16f16_f16f32_f32_nhwckrsc_nhwc_tilesize128x16x64_stage1_warpsize4x1x1_g1_tensor16x8x16_alignc2_execute_kernel__5x_cudnn",
+        "count": 7,
+        "kernel_sum_us": 204.89600000000002
+      },
+      {
+        "name": "_history_fill_kernel",
+        "count": 42,
+        "kernel_sum_us": 197.88500000000005
+      },
+      {
+        "name": "void at::native::vectorized_elementwise_kernel<4, at::native::float16_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda(float)#1}, std::array<char*, 2ul> >(int, at::native::float16_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda(float)#1}, std::array<char*, 2ul>)",
+        "count": 28,
+        "kernel_sum_us": 179.074
+      },
+      {
+        "name": "ampere_fp16_s16816gemm_fp16_256x128_ldg8_f2f_stages_32x3_nn",
+        "count": 9,
+        "kernel_sum_us": 175.681
+      },
+      {
+        "name": "void at::native::vectorized_elementwise_kernel<4, at::native::FillFunctor<c10::Half>, std::array<char*, 1ul> >(int, at::native::FillFunctor<c10::Half>, std::array<char*, 1ul>)",
+        "count": 42,
+        "kernel_sum_us": 162.75200000000004
+      },
+      {
+        "name": "void at::native::vectorized_elementwise_kernel<2, at::native::(anonymous namespace)::launch_clamp_scalar(at::TensorIteratorBase&, c10::Scalar, c10::Scalar, at::native::detail::ClampLimits)::{lambda()#1}::operator()() const::{lambda()#4}::operator()() const::{lambda(long)#1}, std::array<char*, 2ul> >(int, at::native::(anonymous namespace)::launch_clamp_scalar(at::TensorIteratorBase&, c10::Scalar, c10::Scalar, at::native::detail::ClampLimits)::{lambda()#1}::operator()() const::{lambda()#4}::operator()() const::{lambda(long)#1}, std::array<char*, 2ul>)",
+        "count": 28,
+        "kernel_sum_us": 155.51999999999998
+      },
+      {
+        "name": "void cutlass__5x_cudnn::Kernel<cutlass_tensorop_f16_s16816fprop_optimized_f16_128x128_64x4_nhwc_align8>(cutlass_tensorop_f16_s16816fprop_optimized_f16_128x128_64x4_nhwc_align8::Params)",
+        "count": 5,
+        "kernel_sum_us": 154.432
+      },
+      {
+        "name": "void at::native::vectorized_elementwise_kernel<4, at::native::CUDAFunctor_add<c10::Half>, std::array<char*, 3ul> >(int, at::native::CUDAFunctor_add<c10::Half>, std::array<char*, 3ul>)",
+        "count": 28,
+        "kernel_sum_us": 149.60100000000006
+      },
+      {
+        "name": "void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#4}::operator()() const::{lambda(long)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#4}::operator()() const::{lambda(long)#1} const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#4}::operator()() const::{lambda(long)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#4}::operator()() const::{lambda(long)#1} const&)::{lambda(int)#1})",
+        "count": 27,
+        "kernel_sum_us": 148.7
+      },
+      {
+        "name": "void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl_nocast<at::native::CUDAFunctor_add<long> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<long> const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::CUDAFunctor_add<long> >(at::TensorIteratorBase&, at::native::CUDAFunctor_add<long> const&)::{lambda(int)#1})",
+        "count": 28,
+        "kernel_sum_us": 148.64000000000001
+      },
+      {
+        "name": "void cutlass::Kernel2<cutlass_80_wmma_tensorop_f16_s161616gemm_f16_32x32_128x2_tn_align8>(cutlass_80_wmma_tensorop_f16_s161616gemm_f16_32x32_128x2_tn_align8::Params)",
+        "count": 8,
+        "kernel_sum_us": 147.776
+      },
+      {
+        "name": "memcpy32_post",
+        "count": 33,
+        "kernel_sum_us": 147.42399999999998
+      },
+      {
+        "name": "void at::native::(anonymous namespace)::EmbeddingBag_updateOutputKernel_sum_mean<float, long>(long const*, long const*, float const*, float*, long*, long, long, long, long, long, int, long*, float const*, long, long, long)",
+        "count": 14,
+        "kernel_sum_us": 142.911
+      },
+      {
+        "name": "ampere_fp16_s16816gemm_fp16_128x64_ldg8_relu_f2f_stages_32x6_tn",
+        "count": 4,
+        "kernel_sum_us": 138.784
+      },
+      {
+        "name": "sm80_xmma_gemm_f16f16_f16f32_f32_nn_n_tilesize32x32x64_stage6_warpsize2x2x1_tensor16x8x16_execute_kernel__5x_cublas",
+        "count": 9,
+        "kernel_sum_us": 133.697
+      },
+      {
+        "name": "ampere_fp16_s16816gemm_fp16_64x64_ldg8_f2f_stages_64x6_tn",
+        "count": 9,
+        "kernel_sum_us": 130.017
+      },
+      {
+        "name": "sm80_xmma_fprop_implicit_gemm_indexed_wo_smem_f16f16_f16f32_f32_nhwckrsc_nhwc_tilesize128x32x64_stage1_warpsize4x1x1_g1_tensor16x8x16_alignc2_execute_kernel__5x_cudnn",
+        "count": 7,
+        "kernel_sum_us": 125.24900000000001
+      },
+      {
+        "name": "triton_per_fused__to_copy__unsafe_view_add_mean_mul_rsqrt_4",
+        "count": 14,
+        "kernel_sum_us": 122.33399999999999
+      },
+      {
+        "name": "void at::native::unrolled_elementwise_kernel<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#4}::operator()() const::{lambda(long)#1}, std::array<char*, 2ul>, 4, TrivialOffsetCalculator<1, unsigned int>, char*, at::native::memory::LoadWithCast<1>, std::array<char*, 2ul>::StoreWithCast<1> >(int, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#4}::operator()() const::{lambda(long)#1}, std::array<char*, 2ul>, TrivialOffsetCalculator<1, unsigned int>, char*, at::native::memory::LoadWithCast<1>, std::array<char*, 2ul>::StoreWithCast<1>)",
+        "count": 24,
+        "kernel_sum_us": 114.17800000000001
+      },
+      {
+        "name": "void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl_nocast<at::native::BinaryFunctor<long, long, long, at::native::minimum_kernel_cuda(at::TensorIteratorBase&)::{lambda()#1}::operator()() const::{lambda()#4}::operator()() const::{lambda(long, long)#1}> >(at::TensorIteratorBase&, at::native::BinaryFunctor<long, long, long, at::native::minimum_kernel_cuda(at::TensorIteratorBase&)::{lambda()#1}::operator()() const::{lambda()#4}::operator()() const::{lambda(long, long)#1}> const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::BinaryFunctor<long, long, long, at::native::minimum_kernel_cuda(at::TensorIteratorBase&)::{lambda()#1}::operator()() const::{lambda()#4}::operator()() const::{lambda(long, long)#1}> >(at::TensorIteratorBase&, at::native::BinaryFunctor<long, long, long, at::native::minimum_kernel_cuda(at::TensorIteratorBase&)::{lambda()#1}::operator()() const::{lambda()#4}::operator()() const::{lambda(long, long)#1}> const&)::{lambda(int)#1})",
+        "count": 14,
+        "kernel_sum_us": 111.77399999999997
+      },
+      {
+        "name": "void (anonymous namespace)::elementwise_kernel_with_index<int, at::native::arange_cuda_out(c10::Scalar const&, c10::Scalar const&, c10::Scalar const&, at::Tensor&)::{lambda()#1}::operator()() const::{lambda()#4}::operator()() const::{lambda(long)#1}>(int, at::native::arange_cuda_out(c10::Scalar const&, c10::Scalar const&, c10::Scalar const&, at::Tensor&)::{lambda()#1}::operator()() const::{lambda()#4}::operator()() const::{lambda(long)#1}, function_traits<{lambda(long)#1}>::result_type*)",
+        "count": 28,
+        "kernel_sum_us": 109.66200000000002
+      },
+      {
+        "name": "ampere_fp16_s16816gemm_fp16_64x64_sliced1x2_ldg8_relu_f2f_stages_64x5_nn",
+        "count": 6,
+        "kernel_sum_us": 102.368
+      },
+      {
+        "name": "void at::native::unrolled_elementwise_kernel<at::native::CUDAFunctorOnSelf_add<int>, std::array<char*, 2ul>, 4, TrivialOffsetCalculator<1, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithoutCast, at::native::memory::StoreWithoutCast>(int, at::native::CUDAFunctorOnSelf_add<int>, std::array<char*, 2ul>, TrivialOffsetCalculator<1, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithoutCast, at::native::memory::StoreWithoutCast)",
+        "count": 12,
+        "kernel_sum_us": 96.44699999999999
+      },
+      {
+        "name": "ampere_fp16_s1688gemm_fp16_128x256_ldg8_f2f_stages_32x1_nn",
+        "count": 6,
+        "kernel_sum_us": 96.03099999999999
+      },
+      {
+        "name": "void at::native::index_elementwise_kernel<128, 4, at::native::gpu_index_kernel<at::native::index_kernel_impl<at::native::OpaqueType<4> >(at::TensorIteratorBase&, c10::ArrayRef<long>, c10::ArrayRef<long>)::{lambda(char*, char const*, long)#1}>(at::TensorIteratorBase&, c10::ArrayRef<long>, c10::ArrayRef<long>, at::native::index_kernel_impl<at::native::OpaqueType<4> >(at::TensorIteratorBase&, c10::ArrayRef<long>, c10::ArrayRef<long>)::{lambda(char*, char const*, long)#1} const&, bool)::{lambda(int)#1}>(long, at::native::gpu_index_kernel<at::native::index_kernel_impl<at::native::OpaqueType<4> >(at::TensorIteratorBase&, c10::ArrayRef<long>, c10::ArrayRef<long>)::{lambda(char*, char const*, long)#1}>(at::TensorIteratorBase&, c10::ArrayRef<long>, c10::ArrayRef<long>, at::native::index_kernel_impl<at::native::OpaqueType<4> >(at::TensorIteratorBase&, c10::ArrayRef<long>, c10::ArrayRef<long>)::{lambda(char*, char const*, long)#1} const&, bool)::{lambda(int)#1})",
+        "count": 12,
+        "kernel_sum_us": 85.216
+      },
+      {
+        "name": "void at::native::unrolled_elementwise_kernel<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul>, 4, TrivialOffsetCalculator<1, unsigned int>, char*, at::native::memory::LoadWithCast<1>, std::array<char*, 2ul>::StoreWithCast<1> >(int, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul>, TrivialOffsetCalculator<1, unsigned int>, char*, at::native::memory::LoadWithCast<1>, std::array<char*, 2ul>::StoreWithCast<1>)",
+        "count": 14,
+        "kernel_sum_us": 84.159
+      },
+      {
+        "name": "triton_per_fused__to_copy__unsafe_view_add_mean_mul_rsqrt_6",
+        "count": 14,
+        "kernel_sum_us": 72.575
+      },
+      {
+        "name": "ampere_fp16_s16816gemm_fp16_128x64_ldg8_relu_f2f_stages_64x3_tn",
+        "count": 2,
+        "kernel_sum_us": 68.575
+      },
+      {
+        "name": "void at::native::vectorized_gather_kernel<16, long>(char*, char*, long*, int, long, long, long, long, bool)",
+        "count": 14,
+        "kernel_sum_us": 67.295
+      },
+      {
+        "name": "ampere_fp16_s16816gemm_fp16_64x64_ldg8_relu_f2f_stages_64x5_tn",
+        "count": 5,
+        "kernel_sum_us": 66.528
+      },
+      {
+        "name": "void at::native::unrolled_elementwise_kernel<at::native::FillFunctor<int>, std::array<char*, 1ul>, 4, TrivialOffsetCalculator<0, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithoutCast, at::native::memory::StoreWithoutCast>(int, at::native::FillFunctor<int>, std::array<char*, 1ul>, TrivialOffsetCalculator<0, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithoutCast, at::native::memory::StoreWithoutCast)",
+        "count": 11,
+        "kernel_sum_us": 65.758
+      },
+      {
+        "name": "sm80_xmma_gemm_f16f16_f16f32_f32_nn_n_tilesize192x128x32_stage3_warpsize4x2x1_tensor16x8x16_execute_kernel__5x_cublas",
+        "count": 3,
+        "kernel_sum_us": 55.80800000000001
+      },
+      {
+        "name": "void at::native::vectorized_elementwise_kernel<4, at::native::AUnaryFunctor<long, long, bool, at::native::(anonymous namespace)::CompareEqFunctor<long> >, std::array<char*, 2ul> >(int, at::native::AUnaryFunctor<long, long, bool, at::native::(anonymous namespace)::CompareEqFunctor<long> >, std::array<char*, 2ul>)",
+        "count": 14,
+        "kernel_sum_us": 55.650000000000006
+      },
+      {
+        "name": "void cublasLt::splitKreduce_kernel<32, 16, int, __half, __half, float, __half, false, __half, __half, __half, true, false, false, false>(cublasLt::cublasSplitKParams<float>, __half const*, __half const*, __half*, __half*, float const*, float const*, __half const*, __half const*, __half*, void*, long, float*, int*, float*, float*, float const*, float const*, float const*, float const*, float const*)",
+        "count": 8,
+        "kernel_sum_us": 54.976
+      },
+      {
+        "name": "void at::native::vectorized_elementwise_kernel<2, at::native::CUDAFunctor_add<long>, std::array<char*, 3ul> >(int, at::native::CUDAFunctor_add<long>, std::array<char*, 3ul>)",
+        "count": 12,
+        "kernel_sum_us": 52.254999999999995
+      },
+      {
+        "name": "sm80_xmma_gemm_f16f16_f16f32_f32_nn_n_tilesize96x128x32_stage4_warpsize2x2x1_tensor16x8x16_execute_kernel__5x_cublas",
+        "count": 3,
+        "kernel_sum_us": 48.352000000000004
+      },
+      {
+        "name": "void at::native::vectorized_elementwise_kernel<4, at::native::CUDAFunctor_add<int>, std::array<char*, 3ul> >(int, at::native::CUDAFunctor_add<int>, std::array<char*, 3ul>)",
+        "count": 12,
+        "kernel_sum_us": 47.68
+      },
+      {
+        "name": "void at::native::vectorized_elementwise_kernel<2, at::native::(anonymous namespace)::where_kernel_impl(at::TensorIterator&)::{lambda()#1}::operator()() const::{lambda()#4}::operator()() const::{lambda(bool, unsigned long, unsigned long)#1}, std::array<char*, 4ul> >(int, at::native::(anonymous namespace)::where_kernel_impl(at::TensorIterator&)::{lambda()#1}::operator()() const::{lambda()#4}::operator()() const::{lambda(bool, unsigned long, unsigned long)#1}, std::array<char*, 4ul>)",
+        "count": 14,
+        "kernel_sum_us": 47.041
+      },
+      {
+        "name": "triton_per_fused__to_copy_mean_mul_rsqrt_0",
+        "count": 14,
+        "kernel_sum_us": 46.17600000000001
+      },
+      {
+        "name": "void at::native::vectorized_elementwise_kernel<4, at::native::FillFunctor<int>, std::array<char*, 1ul> >(int, at::native::FillFunctor<int>, std::array<char*, 1ul>)",
+        "count": 12,
+        "kernel_sum_us": 44.832
+      },
+      {
+        "name": "void at::native::vectorized_elementwise_kernel<4, at::native::tanh_kernel_cuda(at::TensorIteratorBase&)::{lambda()#2}::operator()() const::{lambda()#3}::operator()() const::{lambda(c10::Half)#1}, std::array<char*, 2ul> >(int, at::native::tanh_kernel_cuda(at::TensorIteratorBase&)::{lambda()#2}::operator()() const::{lambda()#3}::operator()() const::{lambda(c10::Half)#1}, std::array<char*, 2ul>)",
+        "count": 14,
+        "kernel_sum_us": 38.88
+      },
+      {
+        "name": "void at::native::vectorized_elementwise_kernel<2, at::native::FillFunctor<long>, std::array<char*, 1ul> >(int, at::native::FillFunctor<long>, std::array<char*, 1ul>)",
+        "count": 14,
+        "kernel_sum_us": 30.589999999999996
+      },
+      {
+        "name": "ampere_fp16_s16816gemm_fp16_128x64_ldg8_f2f_stages_64x4_tn",
+        "count": 2,
+        "kernel_sum_us": 27.104
+      },
+      {
+        "name": "void at::native::(anonymous namespace)::CatArrayBatchedCopy<at::native::(anonymous namespace)::OpaqueType<8u>, unsigned int, 2, 64, 64>(at::native::(anonymous namespace)::OpaqueType<8u>*, at::native::(anonymous namespace)::CatArrInputTensorMetadata<at::native::(anonymous namespace)::OpaqueType<8u>, unsigned int, 64, 64>, at::native::(anonymous namespace)::TensorSizeStride<unsigned int, 4u>, int, unsigned int)",
+        "count": 2,
+        "kernel_sum_us": 22.880000000000003
+      },
+      {
+        "name": "void at::native::vectorized_elementwise_kernel<2, at::native::FillFunctor<int>, std::array<char*, 1ul> >(int, at::native::FillFunctor<int>, std::array<char*, 1ul>)",
+        "count": 1,
+        "kernel_sum_us": 6.72
+      },
+      {
+        "name": "void at::native::(anonymous namespace)::CatArrayBatchedCopy_vectorized<at::native::(anonymous namespace)::OpaqueType<8u>, unsigned int, 1, 128, 1, 16, 2>(char*, at::native::(anonymous namespace)::CatArrInputTensorMetadata<at::native::(anonymous namespace)::OpaqueType<8u>, unsigned int, 128, 1>, at::native::(anonymous namespace)::TensorSizeStride<unsigned int, 4u>, int, unsigned int)",
+        "count": 1,
+        "kernel_sum_us": 3.424
+      }
+    ],
+    "empty": []
+  },
+  "kernel_events": 3531,
+  "kernel_sum_us_all": 53705.49,
+  "gpu_busy_union_us_all": 53363.171875,
+  "unassigned_kernel_reasons": {},
+  "unassigned_kernel_sum_us": 0,
+  "exact_duplicate_kernel_records": 0,
+  "runtime_correlation_collisions": [],
+  "graph_launches": [
+    {
+      "correlation": 371,
+      "native_scope_index": 0,
+      "correlated_kernel_count": 225,
+      "distinct_graph_nodes": 225
+    },
+    {
+      "correlation": 887,
+      "native_scope_index": 2,
+      "correlated_kernel_count": 229,
+      "distinct_graph_nodes": 229
+    },
+    {
+      "correlation": 973,
+      "native_scope_index": 2,
+      "correlated_kernel_count": 226,
+      "distinct_graph_nodes": 226
+    },
+    {
+      "correlation": 1734,
+      "native_scope_index": 33,
+      "correlated_kernel_count": 226,
+      "distinct_graph_nodes": 226
+    },
+    {
+      "correlation": 2499,
+      "native_scope_index": 65,
+      "correlated_kernel_count": 226,
+      "distinct_graph_nodes": 226
+    },
+    {
+      "correlation": 3187,
+      "native_scope_index": 90,
+      "correlated_kernel_count": 225,
+      "distinct_graph_nodes": 225
+    },
+    {
+      "correlation": 3635,
+      "native_scope_index": 91,
+      "correlated_kernel_count": 226,
+      "distinct_graph_nodes": 226
+    },
+    {
+      "correlation": 4605,
+      "native_scope_index": 146,
+      "correlated_kernel_count": 225,
+      "distinct_graph_nodes": 225
+    },
+    {
+      "correlation": 5055,
+      "native_scope_index": 147,
+      "correlated_kernel_count": 225,
+      "distinct_graph_nodes": 225
+    },
+    {
+      "correlation": 5524,
+      "native_scope_index": 148,
+      "correlated_kernel_count": 226,
+      "distinct_graph_nodes": 226
+    },
+    {
+      "correlation": 6088,
+      "native_scope_index": 156,
+      "correlated_kernel_count": 230,
+      "distinct_graph_nodes": 230
+    },
+    {
+      "correlation": 6946,
+      "native_scope_index": 197,
+      "correlated_kernel_count": 226,
+      "distinct_graph_nodes": 226
+    },
+    {
+      "correlation": 7535,
+      "native_scope_index": 211,
+      "correlated_kernel_count": 226,
+      "distinct_graph_nodes": 226
+    },
+    {
+      "correlation": 8030,
+      "native_scope_index": 212,
+      "correlated_kernel_count": 225,
+      "distinct_graph_nodes": 225
+    },
+    {
+      "correlation": 8112,
+      "native_scope_index": 212,
+      "correlated_kernel_count": 229,
+      "distinct_graph_nodes": 229
+    }
+  ],
+  "steps": [
+    {
+      "ts": 1649580254220.488,
+      "end": 1649580257221.718,
+      "cpu_scope_us": 3001.23,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "prefill_only",
+      "context_requests": 1,
+      "context_tokens": 1,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [
+        371
+      ],
+      "excluded_reasons": [
+        "first_or_last_cpu_thread_scope_conservatively_excluded"
+      ],
+      "index": 0,
+      "kernel_count": 235
+    },
+    {
+      "ts": 1649580257639.003,
+      "end": 1649580257814.776,
+      "cpu_scope_us": 175.773,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 1,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580262530.969,
+      "end": 1649580267967.741,
+      "cpu_scope_us": 5436.772,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "prefill_only",
+      "context_requests": 3,
+      "context_tokens": 3,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [
+        887,
+        973
+      ],
+      "excluded_reasons": [],
+      "index": 2,
+      "kernel_count": 466
+    },
+    {
+      "ts": 1649580268988.165,
+      "end": 1649580269366.28,
+      "cpu_scope_us": 378.115,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 3,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580274813.102,
+      "end": 1649580274905.604,
+      "cpu_scope_us": 92.502,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 4,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580276083.809,
+      "end": 1649580276161.1401,
+      "cpu_scope_us": 77.331,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 5,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580277333.106,
+      "end": 1649580277406.5469,
+      "cpu_scope_us": 73.441,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 6,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580278581.453,
+      "end": 1649580278653.8838,
+      "cpu_scope_us": 72.431,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 7,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580279830.059,
+      "end": 1649580279902.31,
+      "cpu_scope_us": 72.251,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 8,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580281102.396,
+      "end": 1649580281203.448,
+      "cpu_scope_us": 101.052,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 9,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580282409.934,
+      "end": 1649580282510.595,
+      "cpu_scope_us": 100.661,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 10,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580283729.021,
+      "end": 1649580283830.113,
+      "cpu_scope_us": 101.092,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 11,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580285042.799,
+      "end": 1649580285195.261,
+      "cpu_scope_us": 152.462,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 12,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580286405.617,
+      "end": 1649580286509.5178,
+      "cpu_scope_us": 103.901,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 13,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580287728.805,
+      "end": 1649580287828.816,
+      "cpu_scope_us": 100.011,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 14,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580289044.972,
+      "end": 1649580289150.294,
+      "cpu_scope_us": 105.322,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 15,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580290419.071,
+      "end": 1649580290790.8062,
+      "cpu_scope_us": 371.735,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 16,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580292094.523,
+      "end": 1649580292352.7559,
+      "cpu_scope_us": 258.233,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 17,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580293651.434,
+      "end": 1649580293910.6072,
+      "cpu_scope_us": 259.173,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 18,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580295212.585,
+      "end": 1649580295529.659,
+      "cpu_scope_us": 317.074,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 19,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580296831.376,
+      "end": 1649580297151.95,
+      "cpu_scope_us": 320.574,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 20,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580298469.318,
+      "end": 1649580298764.422,
+      "cpu_scope_us": 295.104,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 21,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580300069.649,
+      "end": 1649580300327.013,
+      "cpu_scope_us": 257.364,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 22,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580301624.99,
+      "end": 1649580301889.314,
+      "cpu_scope_us": 264.324,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 23,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580303191.551,
+      "end": 1649580303481.285,
+      "cpu_scope_us": 289.734,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 24,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580304783.872,
+      "end": 1649580305086.446,
+      "cpu_scope_us": 302.574,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 25,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580306388.554,
+      "end": 1649580306901.15,
+      "cpu_scope_us": 512.596,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 26,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580308291.869,
+      "end": 1649580308503.3518,
+      "cpu_scope_us": 211.483,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 27,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580309842.8,
+      "end": 1649580310015.542,
+      "cpu_scope_us": 172.742,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 28,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580311333.32,
+      "end": 1649580311503.852,
+      "cpu_scope_us": 170.532,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 29,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580312816.169,
+      "end": 1649580313193.2239,
+      "cpu_scope_us": 377.055,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 30,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580314506.822,
+      "end": 1649580314717.395,
+      "cpu_scope_us": 210.573,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 31,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580316075.013,
+      "end": 1649580316376.407,
+      "cpu_scope_us": 301.394,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 32,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580317759.775,
+      "end": 1649580320776.2158,
+      "cpu_scope_us": 3016.441,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "prefill_only",
+      "context_requests": 1,
+      "context_tokens": 1,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [
+        1734
+      ],
+      "excluded_reasons": [],
+      "index": 33,
+      "kernel_count": 236
+    },
+    {
+      "ts": 1649580321342.943,
+      "end": 1649580321571.5261,
+      "cpu_scope_us": 228.583,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 34,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580326729.695,
+      "end": 1649580326864.8171,
+      "cpu_scope_us": 135.122,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 35,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580328088.803,
+      "end": 1649580328206.455,
+      "cpu_scope_us": 117.652,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 36,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580329417.091,
+      "end": 1649580329520.4421,
+      "cpu_scope_us": 103.351,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 37,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580330731.148,
+      "end": 1649580330839.67,
+      "cpu_scope_us": 108.522,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 38,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580332048.656,
+      "end": 1649580332185.308,
+      "cpu_scope_us": 136.652,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 39,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580333391.574,
+      "end": 1649580333533.876,
+      "cpu_scope_us": 142.302,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 40,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580334738.512,
+      "end": 1649580334886.064,
+      "cpu_scope_us": 147.552,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 41,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580336104.15,
+      "end": 1649580336253.8618,
+      "cpu_scope_us": 149.712,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 42,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580337540.599,
+      "end": 1649580337890.8142,
+      "cpu_scope_us": 350.215,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 43,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580339206.971,
+      "end": 1649580339480.665,
+      "cpu_scope_us": 273.694,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 44,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580340795.733,
+      "end": 1649580341140.4768,
+      "cpu_scope_us": 344.744,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 45,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580342454.005,
+      "end": 1649580342929.921,
+      "cpu_scope_us": 475.916,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 46,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580344260.239,
+      "end": 1649580344615.943,
+      "cpu_scope_us": 355.704,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 47,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580345932.271,
+      "end": 1649580346282.506,
+      "cpu_scope_us": 350.235,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 48,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580347595.583,
+      "end": 1649580347870.407,
+      "cpu_scope_us": 274.824,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 49,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580349183.954,
+      "end": 1649580349519.1692,
+      "cpu_scope_us": 335.215,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 50,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580350852.987,
+      "end": 1649580351130.12,
+      "cpu_scope_us": 277.133,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 51,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580352454.538,
+      "end": 1649580352776.5122,
+      "cpu_scope_us": 321.974,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 52,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580353990.389,
+      "end": 1649580354160.311,
+      "cpu_scope_us": 169.922,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 53,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580355368.677,
+      "end": 1649580355514.239,
+      "cpu_scope_us": 145.562,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 54,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580356724.075,
+      "end": 1649580356836.7559,
+      "cpu_scope_us": 112.681,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 55,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580358042.313,
+      "end": 1649580358168.994,
+      "cpu_scope_us": 126.681,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 56,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580359378.28,
+      "end": 1649580359490.502,
+      "cpu_scope_us": 112.222,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 57,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580360706.248,
+      "end": 1649580360892.871,
+      "cpu_scope_us": 186.623,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 58,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580362200.138,
+      "end": 1649580362479.6619,
+      "cpu_scope_us": 279.524,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 59,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580363789.269,
+      "end": 1649580364078.7231,
+      "cpu_scope_us": 289.454,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 60,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580365388.541,
+      "end": 1649580365679.754,
+      "cpu_scope_us": 291.213,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 61,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580366990.592,
+      "end": 1649580367248.0251,
+      "cpu_scope_us": 257.433,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 62,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580368558.303,
+      "end": 1649580368898.357,
+      "cpu_scope_us": 340.054,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 63,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580370222.445,
+      "end": 1649580370518.329,
+      "cpu_scope_us": 295.884,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 64,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580371940.528,
+      "end": 1649580376115.394,
+      "cpu_scope_us": 4174.866,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "prefill_only",
+      "context_requests": 1,
+      "context_tokens": 1,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [
+        2499
+      ],
+      "excluded_reasons": [],
+      "index": 65,
+      "kernel_count": 236
+    },
+    {
+      "ts": 1649580376898.314,
+      "end": 1649580377315.3,
+      "cpu_scope_us": 416.986,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 66,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580380597.043,
+      "end": 1649580380681.215,
+      "cpu_scope_us": 84.172,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 67,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580381853.38,
+      "end": 1649580381927.771,
+      "cpu_scope_us": 74.391,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 68,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580383098.587,
+      "end": 1649580383172.938,
+      "cpu_scope_us": 74.351,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 69,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580384343.963,
+      "end": 1649580384417.094,
+      "cpu_scope_us": 73.131,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 70,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580385586.02,
+      "end": 1649580385658.771,
+      "cpu_scope_us": 72.751,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 71,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580386842.727,
+      "end": 1649580386918.548,
+      "cpu_scope_us": 75.821,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 72,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580388179.245,
+      "end": 1649580388335.757,
+      "cpu_scope_us": 156.512,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 73,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580389625.894,
+      "end": 1649580389847.907,
+      "cpu_scope_us": 222.013,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 74,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580391149.854,
+      "end": 1649580391496.949,
+      "cpu_scope_us": 347.095,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 75,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580392803.416,
+      "end": 1649580393064.02,
+      "cpu_scope_us": 260.604,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 76,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580394365.187,
+      "end": 1649580394661.1511,
+      "cpu_scope_us": 295.964,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 77,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580395995.359,
+      "end": 1649580396255.1018,
+      "cpu_scope_us": 259.743,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 78,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580397548.049,
+      "end": 1649580397799.843,
+      "cpu_scope_us": 251.794,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 79,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580399095.72,
+      "end": 1649580399330.413,
+      "cpu_scope_us": 234.693,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 80,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580400625.351,
+      "end": 1649580400908.5142,
+      "cpu_scope_us": 283.163,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 81,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580402203.372,
+      "end": 1649580402462.945,
+      "cpu_scope_us": 259.573,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 82,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580403760.802,
+      "end": 1649580404019.706,
+      "cpu_scope_us": 258.904,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 83,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580405328.323,
+      "end": 1649580405587.577,
+      "cpu_scope_us": 259.254,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 84,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580406886.584,
+      "end": 1649580407182.028,
+      "cpu_scope_us": 295.444,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 85,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580408478.445,
+      "end": 1649580408795.1492,
+      "cpu_scope_us": 316.704,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 86,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580410099.507,
+      "end": 1649580410363.8801,
+      "cpu_scope_us": 264.373,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 87,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580411656.258,
+      "end": 1649580411954.372,
+      "cpu_scope_us": 298.114,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 88,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580413245.109,
+      "end": 1649580413479.1418,
+      "cpu_scope_us": 234.033,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 89,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580414877.491,
+      "end": 1649580417971.732,
+      "cpu_scope_us": 3094.241,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "prefill_only",
+      "context_requests": 1,
+      "context_tokens": 1,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [
+        3187
+      ],
+      "excluded_reasons": [],
+      "index": 90,
+      "kernel_count": 236
+    },
+    {
+      "ts": 1649580418438.878,
+      "end": 1649580420827.5798,
+      "cpu_scope_us": 2388.702,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "prefill_only",
+      "context_requests": 1,
+      "context_tokens": 1,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [
+        3635
+      ],
+      "excluded_reasons": [],
+      "index": 91,
+      "kernel_count": 236
+    },
+    {
+      "ts": 1649580421988.945,
+      "end": 1649580422341.72,
+      "cpu_scope_us": 352.775,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 92,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580426287.803,
+      "end": 1649580426713.088,
+      "cpu_scope_us": 425.285,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 93,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580427958.315,
+      "end": 1649580428204.498,
+      "cpu_scope_us": 246.183,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 94,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580429430.835,
+      "end": 1649580429542.776,
+      "cpu_scope_us": 111.941,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 95,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580430858.874,
+      "end": 1649580431089.837,
+      "cpu_scope_us": 230.963,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 96,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580432307.483,
+      "end": 1649580432414.785,
+      "cpu_scope_us": 107.302,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 97,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580433622.611,
+      "end": 1649580433725.2222,
+      "cpu_scope_us": 102.611,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 98,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580434931.228,
+      "end": 1649580435035.6091,
+      "cpu_scope_us": 104.381,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 99,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580436387.768,
+      "end": 1649580436548.77,
+      "cpu_scope_us": 161.002,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 100,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580437809.506,
+      "end": 1649580437987.489,
+      "cpu_scope_us": 177.983,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 101,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580439204.475,
+      "end": 1649580439316.957,
+      "cpu_scope_us": 112.482,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 102,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580440539.953,
+      "end": 1649580440642.044,
+      "cpu_scope_us": 102.091,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 103,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580441919.941,
+      "end": 1649580442154.814,
+      "cpu_scope_us": 234.873,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 104,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580443465.342,
+      "end": 1649580443737.906,
+      "cpu_scope_us": 272.564,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 105,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580445046.993,
+      "end": 1649580445362.0168,
+      "cpu_scope_us": 315.024,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 106,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580446680.935,
+      "end": 1649580446949.168,
+      "cpu_scope_us": 268.233,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 107,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580448253.006,
+      "end": 1649580448491.309,
+      "cpu_scope_us": 238.303,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 108,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580449810.637,
+      "end": 1649580450072.06,
+      "cpu_scope_us": 261.423,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 109,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580451378.067,
+      "end": 1649580451647.021,
+      "cpu_scope_us": 268.954,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 110,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580452953.278,
+      "end": 1649580453215.7422,
+      "cpu_scope_us": 262.464,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 111,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580454521.119,
+      "end": 1649580454744.982,
+      "cpu_scope_us": 223.863,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 112,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580456046.91,
+      "end": 1649580456301.473,
+      "cpu_scope_us": 254.563,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 113,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580457610.571,
+      "end": 1649580457891.2441,
+      "cpu_scope_us": 280.673,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 114,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580459132.351,
+      "end": 1649580459275.553,
+      "cpu_scope_us": 143.202,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 115,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580460488.899,
+      "end": 1649580460626.8708,
+      "cpu_scope_us": 137.972,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 116,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580461840.667,
+      "end": 1649580461977.909,
+      "cpu_scope_us": 137.242,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 117,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580463189.975,
+      "end": 1649580463328.927,
+      "cpu_scope_us": 138.952,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 118,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580464543.973,
+      "end": 1649580464681.7148,
+      "cpu_scope_us": 137.742,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 119,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580465895.911,
+      "end": 1649580466032.453,
+      "cpu_scope_us": 136.542,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 120,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580467257.449,
+      "end": 1649580467520.913,
+      "cpu_scope_us": 263.464,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 121,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580468808.35,
+      "end": 1649580469103.214,
+      "cpu_scope_us": 294.864,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 122,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580470412.561,
+      "end": 1649580470661.915,
+      "cpu_scope_us": 249.354,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 123,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580471968.922,
+      "end": 1649580472227.726,
+      "cpu_scope_us": 258.804,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 124,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580473532.133,
+      "end": 1649580473791.136,
+      "cpu_scope_us": 259.003,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 125,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580475097.834,
+      "end": 1649580475425.5679,
+      "cpu_scope_us": 327.734,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 126,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580476749.616,
+      "end": 1649580477030.3599,
+      "cpu_scope_us": 280.744,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 127,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580478338.547,
+      "end": 1649580478617.9512,
+      "cpu_scope_us": 279.404,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 128,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580479926.448,
+      "end": 1649580480185.992,
+      "cpu_scope_us": 259.544,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 129,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580481491.699,
+      "end": 1649580481750.013,
+      "cpu_scope_us": 258.314,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 130,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580483056.35,
+      "end": 1649580483377.664,
+      "cpu_scope_us": 321.314,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 131,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580484711.272,
+      "end": 1649580485023.436,
+      "cpu_scope_us": 312.164,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 132,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580486269.963,
+      "end": 1649580486414.8948,
+      "cpu_scope_us": 144.932,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 133,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580487632.561,
+      "end": 1649580487853.044,
+      "cpu_scope_us": 220.483,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 134,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580489070.24,
+      "end": 1649580489237.222,
+      "cpu_scope_us": 166.982,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 135,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580490453.339,
+      "end": 1649580490633.581,
+      "cpu_scope_us": 180.242,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 136,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580491848.377,
+      "end": 1649580492013.159,
+      "cpu_scope_us": 164.782,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 137,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580493237.616,
+      "end": 1649580493408.088,
+      "cpu_scope_us": 170.472,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 138,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580494701.195,
+      "end": 1649580494962.979,
+      "cpu_scope_us": 261.784,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 139,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580496268.086,
+      "end": 1649580496545.93,
+      "cpu_scope_us": 277.844,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 140,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580497854.257,
+      "end": 1649580498136.641,
+      "cpu_scope_us": 282.384,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 141,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580499442.799,
+      "end": 1649580499749.393,
+      "cpu_scope_us": 306.594,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 142,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580501054.01,
+      "end": 1649580501328.894,
+      "cpu_scope_us": 274.884,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 143,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580502574.37,
+      "end": 1649580502684.602,
+      "cpu_scope_us": 110.232,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 144,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580503895.598,
+      "end": 1649580503995.929,
+      "cpu_scope_us": 100.331,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 145,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580505266.276,
+      "end": 1649580508026.1729,
+      "cpu_scope_us": 2759.897,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "prefill_only",
+      "context_requests": 1,
+      "context_tokens": 1,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [
+        4605
+      ],
+      "excluded_reasons": [],
+      "index": 146,
+      "kernel_count": 235
+    },
+    {
+      "ts": 1649580508543.57,
+      "end": 1649580511575.4402,
+      "cpu_scope_us": 3031.87,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "prefill_only",
+      "context_requests": 1,
+      "context_tokens": 1,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [
+        5055
+      ],
+      "excluded_reasons": [],
+      "index": 147,
+      "kernel_count": 235
+    },
+    {
+      "ts": 1649580512981.369,
+      "end": 1649580517536.5898,
+      "cpu_scope_us": 4555.221,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "prefill_only",
+      "context_requests": 1,
+      "context_tokens": 1,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [
+        5524
+      ],
+      "excluded_reasons": [],
+      "index": 148,
+      "kernel_count": 236
+    },
+    {
+      "ts": 1649580518720.236,
+      "end": 1649580519046.27,
+      "cpu_scope_us": 326.034,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 149,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580522370.734,
+      "end": 1649580522454.625,
+      "cpu_scope_us": 83.891,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 150,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580523672.102,
+      "end": 1649580523786.543,
+      "cpu_scope_us": 114.441,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 151,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580524961.989,
+      "end": 1649580525049.02,
+      "cpu_scope_us": 87.031,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 152,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580526226.626,
+      "end": 1649580526301.2869,
+      "cpu_scope_us": 74.661,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 153,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580527482.683,
+      "end": 1649580527557.7542,
+      "cpu_scope_us": 75.071,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 154,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580528767.35,
+      "end": 1649580528872.081,
+      "cpu_scope_us": 104.731,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 155,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580530175.278,
+      "end": 1649580533063.957,
+      "cpu_scope_us": 2888.679,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "prefill_only",
+      "context_requests": 2,
+      "context_tokens": 2,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [
+        6088
+      ],
+      "excluded_reasons": [],
+      "index": 156,
+      "kernel_count": 240
+    },
+    {
+      "ts": 1649580533567.994,
+      "end": 1649580533811.2368,
+      "cpu_scope_us": 243.243,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 157,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580539344.731,
+      "end": 1649580539463.602,
+      "cpu_scope_us": 118.871,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 158,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580540687.129,
+      "end": 1649580540794.94,
+      "cpu_scope_us": 107.811,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 159,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580542014.896,
+      "end": 1649580542121.128,
+      "cpu_scope_us": 106.232,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 160,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580543338.934,
+      "end": 1649580543485.886,
+      "cpu_scope_us": 146.952,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 161,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580544707.092,
+      "end": 1649580544852.724,
+      "cpu_scope_us": 145.632,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 162,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580546072.85,
+      "end": 1649580546234.593,
+      "cpu_scope_us": 161.743,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 163,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580547529.02,
+      "end": 1649580547854.464,
+      "cpu_scope_us": 325.444,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 164,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580549176.222,
+      "end": 1649580549482.116,
+      "cpu_scope_us": 305.894,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 165,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580550756.543,
+      "end": 1649580551023.307,
+      "cpu_scope_us": 266.764,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 166,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580552340.394,
+      "end": 1649580552647.0781,
+      "cpu_scope_us": 306.684,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 167,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580553964.166,
+      "end": 1649580554233.129,
+      "cpu_scope_us": 268.963,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 168,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580555480.526,
+      "end": 1649580555629.2178,
+      "cpu_scope_us": 148.692,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 169,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580556847.804,
+      "end": 1649580557012.576,
+      "cpu_scope_us": 164.772,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 170,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580558233.983,
+      "end": 1649580558434.275,
+      "cpu_scope_us": 200.292,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 171,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580559659.992,
+      "end": 1649580559778.263,
+      "cpu_scope_us": 118.271,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 172,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580560995.85,
+      "end": 1649580561106.041,
+      "cpu_scope_us": 110.191,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 173,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580562361.578,
+      "end": 1649580562476.389,
+      "cpu_scope_us": 114.811,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 174,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580563710.116,
+      "end": 1649580563993.18,
+      "cpu_scope_us": 283.064,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 175,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580565313.877,
+      "end": 1649580565602.061,
+      "cpu_scope_us": 288.184,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 176,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580566919.009,
+      "end": 1649580567194.412,
+      "cpu_scope_us": 275.403,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 177,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580568507.5,
+      "end": 1649580568766.933,
+      "cpu_scope_us": 259.433,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 178,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580570091.531,
+      "end": 1649580570380.915,
+      "cpu_scope_us": 289.384,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 179,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580571692.252,
+      "end": 1649580571988.776,
+      "cpu_scope_us": 296.524,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 180,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580573314.814,
+      "end": 1649580573578.357,
+      "cpu_scope_us": 263.543,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 181,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580574903.715,
+      "end": 1649580575216.8691,
+      "cpu_scope_us": 313.154,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 182,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580576530.337,
+      "end": 1649580576799.51,
+      "cpu_scope_us": 269.173,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 183,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580578113.698,
+      "end": 1649580578384.581,
+      "cpu_scope_us": 270.883,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 184,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580579705.969,
+      "end": 1649580580021.303,
+      "cpu_scope_us": 315.334,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 185,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580581353.261,
+      "end": 1649580581618.355,
+      "cpu_scope_us": 265.094,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 186,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580582881.831,
+      "end": 1649580583029.403,
+      "cpu_scope_us": 147.572,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 187,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580584246.54,
+      "end": 1649580584410.922,
+      "cpu_scope_us": 164.382,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 188,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580585634.238,
+      "end": 1649580585804.42,
+      "cpu_scope_us": 170.182,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 189,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580587022.817,
+      "end": 1649580587193.5789,
+      "cpu_scope_us": 170.762,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 190,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580588410.885,
+      "end": 1649580588558.167,
+      "cpu_scope_us": 147.282,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 191,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580589800.824,
+      "end": 1649580589985.626,
+      "cpu_scope_us": 184.802,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 192,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580591276.753,
+      "end": 1649580591622.428,
+      "cpu_scope_us": 345.675,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 193,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580592937.596,
+      "end": 1649580593199.509,
+      "cpu_scope_us": 261.913,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 194,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580594510.237,
+      "end": 1649580594860.6912,
+      "cpu_scope_us": 350.454,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 195,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580596180.969,
+      "end": 1649580596450.852,
+      "cpu_scope_us": 269.883,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 196,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580597839.191,
+      "end": 1649580600737.8699,
+      "cpu_scope_us": 2898.679,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "prefill_only",
+      "context_requests": 1,
+      "context_tokens": 1,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [
+        6946
+      ],
+      "excluded_reasons": [],
+      "index": 197,
+      "kernel_count": 237
+    },
+    {
+      "ts": 1649580601182.976,
+      "end": 1649580601404.468,
+      "cpu_scope_us": 221.492,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 198,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580605086.908,
+      "end": 1649580605218.5688,
+      "cpu_scope_us": 131.661,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 199,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580606448.696,
+      "end": 1649580606741.31,
+      "cpu_scope_us": 292.614,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 200,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580608070.687,
+      "end": 1649580608285.86,
+      "cpu_scope_us": 215.173,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 201,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580609514.617,
+      "end": 1649580609624.0278,
+      "cpu_scope_us": 109.411,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 202,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580610848.704,
+      "end": 1649580610996.676,
+      "cpu_scope_us": 147.972,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 203,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580612213.493,
+      "end": 1649580612382.165,
+      "cpu_scope_us": 168.672,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 204,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580613647.402,
+      "end": 1649580613829.414,
+      "cpu_scope_us": 182.012,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 205,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580615054.971,
+      "end": 1649580615261.9429,
+      "cpu_scope_us": 206.972,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 206,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580616496.76,
+      "end": 1649580616646.332,
+      "cpu_scope_us": 149.572,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 207,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580617936.329,
+      "end": 1649580618201.153,
+      "cpu_scope_us": 264.824,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 208,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580619515.34,
+      "end": 1649580619848.464,
+      "cpu_scope_us": 333.124,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 209,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580621162.282,
+      "end": 1649580621465.436,
+      "cpu_scope_us": 303.154,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 210,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580622838.154,
+      "end": 1649580626828.458,
+      "cpu_scope_us": 3990.304,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "prefill_only",
+      "context_requests": 1,
+      "context_tokens": 1,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [
+        7535
+      ],
+      "excluded_reasons": [],
+      "index": 211,
+      "kernel_count": 237
+    },
+    {
+      "ts": 1649580627401.645,
+      "end": 1649580630783.82,
+      "cpu_scope_us": 3382.175,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "prefill_only",
+      "context_requests": 3,
+      "context_tokens": 3,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [
+        8030,
+        8112
+      ],
+      "excluded_reasons": [],
+      "index": 212,
+      "kernel_count": 466
+    },
+    {
+      "ts": 1649580631432.879,
+      "end": 1649580631825.054,
+      "cpu_scope_us": 392.175,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 213,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580638223.56,
+      "end": 1649580638324.301,
+      "cpu_scope_us": 100.741,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 214,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580639537.737,
+      "end": 1649580639621.068,
+      "cpu_scope_us": 83.331,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 215,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580640796.624,
+      "end": 1649580640872.135,
+      "cpu_scope_us": 75.511,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 216,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580642081.871,
+      "end": 1649580642193.653,
+      "cpu_scope_us": 111.782,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 217,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580643385.058,
+      "end": 1649580643470.57,
+      "cpu_scope_us": 85.512,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 218,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580644678.576,
+      "end": 1649580644792.7368,
+      "cpu_scope_us": 114.161,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 219,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580646011.613,
+      "end": 1649580646151.2551,
+      "cpu_scope_us": 139.642,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 220,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580647373.232,
+      "end": 1649580647511.083,
+      "cpu_scope_us": 137.851,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 221,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580648728.96,
+      "end": 1649580648892.632,
+      "cpu_scope_us": 163.672,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 222,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580650112.768,
+      "end": 1649580650257.72,
+      "cpu_scope_us": 144.952,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 223,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580651490.817,
+      "end": 1649580651632.408,
+      "cpu_scope_us": 141.591,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 224,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580652921.456,
+      "end": 1649580653282.3801,
+      "cpu_scope_us": 360.924,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 225,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580654619.258,
+      "end": 1649580654961.7131,
+      "cpu_scope_us": 342.455,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 226,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580656276.54,
+      "end": 1649580656530.2341,
+      "cpu_scope_us": 253.694,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 227,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580657841.951,
+      "end": 1649580658096.9348,
+      "cpu_scope_us": 254.984,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 228,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580659411.882,
+      "end": 1649580659809.217,
+      "cpu_scope_us": 397.335,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 229,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580661060.194,
+      "end": 1649580661219.146,
+      "cpu_scope_us": 158.952,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 230,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580662437.563,
+      "end": 1649580662579.284,
+      "cpu_scope_us": 141.721,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 231,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580663796.491,
+      "end": 1649580663940.013,
+      "cpu_scope_us": 143.522,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 232,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580665156.799,
+      "end": 1649580665315.1611,
+      "cpu_scope_us": 158.362,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 233,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580666530.317,
+      "end": 1649580666698.0889,
+      "cpu_scope_us": 167.772,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 234,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580667932.666,
+      "end": 1649580668075.258,
+      "cpu_scope_us": 142.592,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 235,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580669359.355,
+      "end": 1649580669698.659,
+      "cpu_scope_us": 339.304,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 236,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580671031.227,
+      "end": 1649580671315.281,
+      "cpu_scope_us": 284.054,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 237,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580672629.368,
+      "end": 1649580672944.513,
+      "cpu_scope_us": 315.145,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 238,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580674255.93,
+      "end": 1649580674531.354,
+      "cpu_scope_us": 275.424,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 239,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580675856.902,
+      "end": 1649580676112.395,
+      "cpu_scope_us": 255.493,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 240,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580677434.973,
+      "end": 1649580677711.2058,
+      "cpu_scope_us": 276.233,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 241,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580679032.034,
+      "end": 1649580679389.759,
+      "cpu_scope_us": 357.725,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 242,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580680701.656,
+      "end": 1649580681031.971,
+      "cpu_scope_us": 330.315,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 243,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580682342.398,
+      "end": 1649580682604.712,
+      "cpu_scope_us": 262.314,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 244,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580683916.369,
+      "end": 1649580684172.992,
+      "cpu_scope_us": 256.623,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 245,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580685496.74,
+      "end": 1649580685753.244,
+      "cpu_scope_us": 256.504,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 246,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580686993.07,
+      "end": 1649580687164.4622,
+      "cpu_scope_us": 171.392,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 247,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580688383.289,
+      "end": 1649580688523.0,
+      "cpu_scope_us": 139.711,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 248,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580689740.467,
+      "end": 1649580689895.739,
+      "cpu_scope_us": 155.272,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 249,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580691115.595,
+      "end": 1649580691253.897,
+      "cpu_scope_us": 138.302,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 250,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580692470.573,
+      "end": 1649580692629.425,
+      "cpu_scope_us": 158.852,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 251,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580693855.472,
+      "end": 1649580694018.804,
+      "cpu_scope_us": 163.332,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 252,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580695307.811,
+      "end": 1649580695628.995,
+      "cpu_scope_us": 321.184,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 253,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580696941.583,
+      "end": 1649580697217.046,
+      "cpu_scope_us": 275.463,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "no_correlated_kernels"
+      ],
+      "index": 254,
+      "kernel_count": 0
+    },
+    {
+      "ts": 1649580698527.784,
+      "end": 1649580698766.107,
+      "cpu_scope_us": 238.323,
+      "pid": 1841533,
+      "tid": 1841533,
+      "phase": "empty",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 0,
+      "generation_tokens": 0,
+      "graph_launches": [],
+      "excluded_reasons": [
+        "first_or_last_cpu_thread_scope_conservatively_excluded",
+        "no_correlated_kernels"
+      ],
+      "index": 255,
+      "kernel_count": 0
+    }
+  ],
+  "limits": [
+    "Complete means capture-contained correlated work after conservatively excluding first and last CPU-thread steps; it cannot rule out silent CUPTI drops.",
+    "CPU scope is dispatch duration; GPU span includes gaps; kernel sum counts overlapping kernels more than once; union removes overlap.",
+    "Kernel category/name alone does not establish backbone/tower ownership, bottleneck causality or a speedup.",
+    "GPU cloned annotations never count as CPU steps or kernel events.",
+    "Cross-stage timing needs the same host, explicit epoch anchors and an intersecting capture interval.",
+    "Native execute scopes exclude sample_tokens outside execute_model; unassigned activity is retained."
+  ]
+}

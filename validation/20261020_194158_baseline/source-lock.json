@@ -1,0 +1,20 @@
+{
+  "created": "2026-10-20T19:43:12+0800",
+  "server_commit": "da572cddb38383deae9caef33b8d490e292ef071",
+  "tool_commit": "3b116ea1a7f39323e517804900aa7bb016bafdf1",
+  "model_revision": "b2b5ee998034b2975720906c815e7fb0e9f007bd",
+  "tool_sha256": {
+    "tools/drama3_bench/encode_ref_codes.py": "5f2b0b6c18356886c6d095b991ab3ef40910cb5553ed277b8d56a944e89dee53",
+    "tools/drama3_bench/run_sweep.sh": "bd88765137d21a79d342dc6a915cf3e7e474d635662a76447fcaca9cb292c9ed",
+    "tools/drama3_bench/aggregate_results.py": "1dd3ccf49c1a1bd091430fe4a99f758d19c843cfc7385a0001c810b35740303a",
+    "tools/drama3_bench/analyze_audio.py": "e737c0ae476189cf888242c9cc7854430483e132808c59dab2c6b5308c53bfca",
+    "tools/drama3_bench/eval_quality.py": "2acae7400ac0f3c7f7eaec133f6aed0ea26302c5434437f1cb07a0d14649203f",
+    "tools/drama3_bench/stream_bench.py": "edf874f58e0ab871a77de4ab5205fa2d944526527c23b8a678926161bcc4a0e1"
+  },
+  "deploy_sha256": "b99113e6b2344169a9431686271d2ae9bbaf68b9679347435ad97f44eb3d28f3",
+  "codes_sha256": "4be960b12e0984673a8f2058e6508d07a5bc5ab3cb7e27e10e1b8be4241262b9",
+  "seed": null,
+  "save_audio": false,
+  "warmups": 8,
+  "official_cu130_r580_compliant": false
+}

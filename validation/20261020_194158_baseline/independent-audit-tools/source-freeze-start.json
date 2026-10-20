@@ -1,0 +1,17 @@
+{
+  "server_head_matches": true,
+  "server_tracked_clean": true,
+  "tool_head_matches": true,
+  "tool_tracked_clean": true,
+  "tool_sha_matches": {
+    "tools/drama3_bench/encode_ref_codes.py": true,
+    "tools/drama3_bench/run_sweep.sh": true,
+    "tools/drama3_bench/aggregate_results.py": true,
+    "tools/drama3_bench/analyze_audio.py": true,
+    "tools/drama3_bench/eval_quality.py": true,
+    "tools/drama3_bench/stream_bench.py": true
+  },
+  "deploy_sha_matches": true,
+  "codes_sha_matches": true,
+  "timestamp": "2026-10-20T19:45:34+08:00"
+}

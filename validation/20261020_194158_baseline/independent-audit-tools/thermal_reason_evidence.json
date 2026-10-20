@@ -1,0 +1,55 @@
+{
+  "captured_at": "2026-10-20T19:56:25.664590+08:00",
+  "command": [
+    "nvidia-smi",
+    "-i",
+    "1",
+    "--query-gpu=timestamp,clocks_event_reasons.active,clocks_event_reasons.sw_thermal_slowdown,clocks_event_reasons.hw_thermal_slowdown,clocks.sm,temperature.gpu,power.draw,power.limit",
+    "--format=csv,noheader"
+  ],
+  "stdout": "2026/10/20 19:56:25.732, 0x0000000000000020, Active, Not Active, 1140 MHz, 84, 159.34 W, 300.00 W\n",
+  "local_definition_file": "${NVME_WORKDIR}/venvs/vllm-omni-cu129/lib/python3.12/site-packages/pynvml.py",
+  "sha256": "2828e66b483bec218f461314f6da96c1e56330ed4b297a20b3444b4c43cdd14e",
+  "definition_lines": [
+    {
+      "line": 2190,
+      "text": "nvmlClocksEventReasonGpuIdle              = 0x0000000000000001"
+    },
+    {
+      "line": 2191,
+      "text": "nvmlClocksEventReasonApplicationsClocksSetting = 0x0000000000000002"
+    },
+    {
+      "line": 2193,
+      "text": "nvmlClocksEventReasonSwPowerCap           = 0x0000000000000004"
+    },
+    {
+      "line": 2194,
+      "text": "nvmlClocksEventReasonHwSlowdown           = 0x0000000000000008"
+    },
+    {
+      "line": 2195,
+      "text": "nvmlClocksEventReasonSyncBoost            = 0x0000000000000010"
+    },
+    {
+      "line": 2196,
+      "text": "nvmlClocksEventReasonSwThermalSlowdown    = 0x0000000000000020"
+    },
+    {
+      "line": 2197,
+      "text": "nvmlClocksEventReasonHwThermalSlowdown    = 0x0000000000000040"
+    },
+    {
+      "line": 2198,
+      "text": "nvmlClocksEventReasonHwPowerBrakeSlowdown = 0x0000000000000080"
+    },
+    {
+      "line": 2199,
+      "text": "nvmlClocksEventReasonDisplayClockSetting  = 0x0000000000000100"
+    },
+    {
+      "line": 2200,
+      "text": "nvmlClocksEventReasonNone                 = 0x0000000000000000"
+    }
+  ]
+}

@@ -1,0 +1,1702 @@
+{
+  "completed_runs_seen": 3,
+  "reason_mapping_evidence": {
+    "captured_at": "2026-10-20T19:56:25.664590+08:00",
+    "command": [
+      "nvidia-smi",
+      "-i",
+      "1",
+      "--query-gpu=timestamp,clocks_event_reasons.active,clocks_event_reasons.sw_thermal_slowdown,clocks_event_reasons.hw_thermal_slowdown,clocks.sm,temperature.gpu,power.draw,power.limit",
+      "--format=csv,noheader"
+    ],
+    "stdout": "2026/10/20 19:56:25.732, 0x0000000000000020, Active, Not Active, 1140 MHz, 84, 159.34 W, 300.00 W\n",
+    "local_definition_file": "${NVME_WORKDIR}/venvs/vllm-omni-cu129/lib/python3.12/site-packages/pynvml.py",
+    "sha256": "2828e66b483bec218f461314f6da96c1e56330ed4b297a20b3444b4c43cdd14e",
+    "definition_lines": [
+      {
+        "line": 2190,
+        "text": "nvmlClocksEventReasonGpuIdle              = 0x0000000000000001"
+      },
+      {
+        "line": 2191,
+        "text": "nvmlClocksEventReasonApplicationsClocksSetting = 0x0000000000000002"
+      },
+      {
+        "line": 2193,
+        "text": "nvmlClocksEventReasonSwPowerCap           = 0x0000000000000004"
+      },
+      {
+        "line": 2194,
+        "text": "nvmlClocksEventReasonHwSlowdown           = 0x0000000000000008"
+      },
+      {
+        "line": 2195,
+        "text": "nvmlClocksEventReasonSyncBoost            = 0x0000000000000010"
+      },
+      {
+        "line": 2196,
+        "text": "nvmlClocksEventReasonSwThermalSlowdown    = 0x0000000000000020"
+      },
+      {
+        "line": 2197,
+        "text": "nvmlClocksEventReasonHwThermalSlowdown    = 0x0000000000000040"
+      },
+      {
+        "line": 2198,
+        "text": "nvmlClocksEventReasonHwPowerBrakeSlowdown = 0x0000000000000080"
+      },
+      {
+        "line": 2199,
+        "text": "nvmlClocksEventReasonDisplayClockSetting  = 0x0000000000000100"
+      },
+      {
+        "line": 2200,
+        "text": "nvmlClocksEventReasonNone                 = 0x0000000000000000"
+      }
+    ]
+  },
+  "interpretation": [
+    "Only runs with summary.json are included; rerunning updates the report as more runs complete.",
+    "Client started_at is truncated to whole seconds. Actual timed start is in [started_at, started_at+1s); duration_s has 1ms rounding.",
+    "Nominal selection excludes startup except possible <1s leading-boundary contamination, and can miss <1s of the timed tail.",
+    "Strict interior removes the uncertain first second; compare its statistics to nominal selection for boundary sensitivity.",
+    "nvidia-smi timestamps have no zone; interpret them in the offset recorded by summary.started_at on this same host.",
+    "Reason percentages are percentages of valid sampled records, not exact time-weighted duration.",
+    "SwThermalSlowdown uses bitwise mask & 0x20; the exact-mask distribution separately preserves combinations.",
+    "The 10s explicit-reason file started partway through C1, so C1 coverage is partial. The original 500ms GPU log covers the run.",
+    "Thermal throttling documents actual machine state and does not automatically invalidate a run. Future comparisons need matched hardware/thermal conditions.",
+    "No settings were changed; CPU-only analysis of existing files."
+  ],
+  "runs": [
+    {
+      "directory": "${NVME_WORKDIR}/baseline/20261020_194158/followup/c10/r1",
+      "concurrency": 10,
+      "repeat": "1",
+      "timed_start_second": "2026-10-20T22:02:40+08:00",
+      "duration_s": 260.337,
+      "timed_end_nominal": "2026-10-20T22:07:00.337000+08:00",
+      "nominal_interval_definition": "started_at <= timestamp <= started_at + duration_s",
+      "strict_interior_definition": "started_at + 1 second <= timestamp <= started_at + duration_s",
+      "gpu_500ms": {
+        "parse_errors": [],
+        "file_samples_total": 1009,
+        "nominal_timed_window": {
+          "sample_count": 518,
+          "first_timestamp": "2026-10-20T22:02:40.002000+08:00",
+          "last_timestamp": "2026-10-20T22:07:00.065000+08:00",
+          "sample_gap_seconds": {
+            "n": 517,
+            "min": 0.5,
+            "p50": 0.502000093460083,
+            "p95": 0.5079998970031738,
+            "max": 0.5120000839233398
+          },
+          "hardware": {
+            "sm_clock_mhz": {
+              "n": 518,
+              "min": 285.0,
+              "p50": 712.5,
+              "p95": 1380.0,
+              "max": 1410.0
+            },
+            "memory_clock_mhz": {
+              "n": 518,
+              "min": 1512.0,
+              "p50": 1512.0,
+              "p95": 1512.0,
+              "max": 1512.0
+            },
+            "temperature_c": {
+              "n": 518,
+              "min": 74.0,
+              "p50": 84.0,
+              "p95": 84.0,
+              "max": 85.0
+            },
+            "power_draw_w": {
+              "n": 518,
+              "min": 116.24,
+              "p50": 159.34500000000003,
+              "p95": 278.83849999999995,
+              "max": 362.48
+            },
+            "power_limit_w": {
+              "n": 518,
+              "min": 300.0,
+              "p50": 300.0,
+              "p95": 300.0,
+              "max": 300.0
+            },
+            "gpu_utilization_pct": {
+              "n": 518,
+              "min": 89.0,
+              "p50": 100.0,
+              "p95": 100.0,
+              "max": 100.0
+            },
+            "memory_used_mib": {
+              "n": 518,
+              "min": 73424.0,
+              "p50": 73490.0,
+              "p95": 73490.0,
+              "max": 73490.0
+            }
+          },
+          "active_mask_valid_samples": 518,
+          "exact_active_mask_distribution": {
+            "0x0": {
+              "n": 8,
+              "sample_pct": 1.5444015444015444
+            },
+            "0x4": {
+              "n": 41,
+              "sample_pct": 7.915057915057915
+            },
+            "0x20": {
+              "n": 469,
+              "sample_pct": 90.54054054054055
+            }
+          },
+          "active_reason_bits": {
+            "GpuIdle": {
+              "mask": "0x1",
+              "n": 0,
+              "sample_pct": 0.0
+            },
+            "ApplicationsClocksSetting": {
+              "mask": "0x2",
+              "n": 0,
+              "sample_pct": 0.0
+            },
+            "SwPowerCap": {
+              "mask": "0x4",
+              "n": 41,
+              "sample_pct": 7.915057915057915
+            },
+            "HwSlowdown": {
+              "mask": "0x8",
+              "n": 0,
+              "sample_pct": 0.0
+            },
+            "SyncBoost": {
+              "mask": "0x10",
+              "n": 0,
+              "sample_pct": 0.0
+            },
+            "SwThermalSlowdown": {
+              "mask": "0x20",
+              "n": 469,
+              "sample_pct": 90.54054054054055
+            },
+            "HwThermalSlowdown": {
+              "mask": "0x40",
+              "n": 0,
+              "sample_pct": 0.0
+            },
+            "HwPowerBrakeSlowdown": {
+              "mask": "0x80",
+              "n": 0,
+              "sample_pct": 0.0
+            },
+            "DisplayClockSetting": {
+              "mask": "0x100",
+              "n": 0,
+              "sample_pct": 0.0
+            }
+          },
+          "explicit_reason_fields": {}
+        },
+        "strict_interior_window": {
+          "sample_count": 516,
+          "first_timestamp": "2026-10-20T22:02:41.003000+08:00",
+          "last_timestamp": "2026-10-20T22:07:00.065000+08:00",
+          "sample_gap_seconds": {
+            "n": 515,
+            "min": 0.5,
+            "p50": 0.502000093460083,
+            "p95": 0.5079998970031738,
+            "max": 0.5120000839233398
+          },
+          "hardware": {
+            "sm_clock_mhz": {
+              "n": 516,
+              "min": 285.0,
+              "p50": 705.0,
+              "p95": 1380.0,
+              "max": 1410.0
+            },
+            "memory_clock_mhz": {
+              "n": 516,
+              "min": 1512.0,
+              "p50": 1512.0,
+              "p95": 1512.0,
+              "max": 1512.0
+            },
+            "temperature_c": {
+              "n": 516,
+              "min": 74.0,
+              "p50": 84.0,
+              "p95": 84.0,
+              "max": 85.0
+            },
+            "power_draw_w": {
+              "n": 516,
+              "min": 116.24,
+              "p50": 159.3,
+              "p95": 278.8975,
+              "max": 362.48
+            },
+            "power_limit_w": {
+              "n": 516,
+              "min": 300.0,
+              "p50": 300.0,
+              "p95": 300.0,
+              "max": 300.0
+            },
+            "gpu_utilization_pct": {
+              "n": 516,
+              "min": 89.0,
+              "p50": 100.0,
+              "p95": 100.0,
+              "max": 100.0
+            },
+            "memory_used_mib": {
+              "n": 516,
+              "min": 73486.0,
+              "p50": 73490.0,
+              "p95": 73490.0,
+              "max": 73490.0
+            }
+          },
+          "active_mask_valid_samples": 516,
+          "exact_active_mask_distribution": {
+            "0x0": {
+              "n": 6,
+              "sample_pct": 1.1627906976744187
+            },
+            "0x4": {
+              "n": 41,
+              "sample_pct": 7.945736434108527
+            },
+            "0x20": {
+              "n": 469,
+              "sample_pct": 90.89147286821705
+            }
+          },
+          "active_reason_bits": {
+            "GpuIdle": {
+              "mask": "0x1",
+              "n": 0,
+              "sample_pct": 0.0
+            },
+            "ApplicationsClocksSetting": {
+              "mask": "0x2",
+              "n": 0,
+              "sample_pct": 0.0
+            },
+            "SwPowerCap": {
+              "mask": "0x4",
+              "n": 41,
+              "sample_pct": 7.945736434108527
+            },
+            "HwSlowdown": {
+              "mask": "0x8",
+              "n": 0,
+              "sample_pct": 0.0
+            },
+            "SyncBoost": {
+              "mask": "0x10",
+              "n": 0,
+              "sample_pct": 0.0
+            },
+            "SwThermalSlowdown": {
+              "mask": "0x20",
+              "n": 469,
+              "sample_pct": 90.89147286821705
+            },
+            "HwThermalSlowdown": {
+              "mask": "0x40",
+              "n": 0,
+              "sample_pct": 0.0
+            },
+            "HwPowerBrakeSlowdown": {
+              "mask": "0x80",
+              "n": 0,
+              "sample_pct": 0.0
+            },
+            "DisplayClockSetting": {
+              "mask": "0x100",
+              "n": 0,
+              "sample_pct": 0.0
+            }
+          },
+          "explicit_reason_fields": {}
+        },
+        "possible_timed_envelope_sample_count": 520
+      },
+      "thermal_explicit_10s": {
+        "parse_errors": [],
+        "file_samples_total": 50,
+        "nominal_timed_window": {
+          "sample_count": 26,
+          "first_timestamp": "2026-10-20T22:02:48.238000+08:00",
+          "last_timestamp": "2026-10-20T22:07:00.265000+08:00",
+          "sample_gap_seconds": {
+            "n": 25,
+            "min": 10.062000036239624,
+            "p50": 10.085999965667725,
+            "p95": 10.092799949645997,
+            "max": 10.09500002861023
+          },
+          "hardware": {
+            "sm_clock_mhz": {
+              "n": 26,
+              "min": 465.0,
+              "p50": 675.0,
+              "p95": 1361.25,
+              "max": 1380.0
+            },
+            "memory_clock_mhz": {
+              "n": 0,
+              "min": null,
+              "p50": null,
+              "p95": null,
+              "max": null
+            },
+            "temperature_c": {
+              "n": 26,
+              "min": 79.0,
+              "p50": 84.0,
+              "p95": 84.75,
+              "max": 85.0
+            },
+            "power_draw_w": {
+              "n": 26,
+              "min": 131.27,
+              "p50": 157.905,
+              "p95": 242.2575,
+              "max": 318.01
+            },
+            "power_limit_w": {
+              "n": 0,
+              "min": null,
+              "p50": null,
+              "p95": null,
+              "max": null
+            },
+            "gpu_utilization_pct": {
+              "n": 26,
+              "min": 99.0,
+              "p50": 100.0,
+              "p95": 100.0,
+              "max": 100.0
+            },
+            "memory_used_mib": {
+              "n": 0,
+              "min": null,
+              "p50": null,
+              "p95": null,
+              "max": null
+            }
+          },
+          "active_mask_valid_samples": 26,
+          "exact_active_mask_distribution": {
+            "0x4": {
+              "n": 2,
+              "sample_pct": 7.6923076923076925
+            },
+            "0x20": {
+              "n": 24,
+              "sample_pct": 92.3076923076923
+            }
+          },
+          "active_reason_bits": {
+            "GpuIdle": {
+              "mask": "0x1",
+              "n": 0,
+              "sample_pct": 0.0
+            },
+            "ApplicationsClocksSetting": {
+              "mask": "0x2",
+              "n": 0,
+              "sample_pct": 0.0
+            },
+            "SwPowerCap": {
+              "mask": "0x4",
+              "n": 2,
+              "sample_pct": 7.6923076923076925
+            },
+            "HwSlowdown": {
+              "mask": "0x8",
+              "n": 0,
+              "sample_pct": 0.0
+            },
+            "SyncBoost": {
+              "mask": "0x10",
+              "n": 0,
+              "sample_pct": 0.0
+            },
+            "SwThermalSlowdown": {
+              "mask": "0x20",
+              "n": 24,
+              "sample_pct": 92.3076923076923
+            },
+            "HwThermalSlowdown": {
+              "mask": "0x40",
+              "n": 0,
+              "sample_pct": 0.0
+            },
+            "HwPowerBrakeSlowdown": {
+              "mask": "0x80",
+              "n": 0,
+              "sample_pct": 0.0
+            },
+            "DisplayClockSetting": {
+              "mask": "0x100",
+              "n": 0,
+              "sample_pct": 0.0
+            }
+          },
+          "explicit_reason_fields": {
+            "sw_thermal_slowdown": {
+              "Not Active": 2,
+              "Active": 24
+            },
+            "hw_thermal_slowdown": {
+              "Not Active": 26
+            },
+            "sw_power_cap": {
+              "Active": 2,
+              "Not Active": 24
+            },
+            "hw_power_brake_slowdown": {
+              "Not Active": 26
+            }
+          }
+        },
+        "strict_interior_window": {
+          "sample_count": 26,
+          "first_timestamp": "2026-10-20T22:02:48.238000+08:00",
+          "last_timestamp": "2026-10-20T22:07:00.265000+08:00",
+          "sample_gap_seconds": {
+            "n": 25,
+            "min": 10.062000036239624,
+            "p50": 10.085999965667725,
+            "p95": 10.092799949645997,
+            "max": 10.09500002861023
+          },
+          "hardware": {
+            "sm_clock_mhz": {
+              "n": 26,
+              "min": 465.0,
+              "p50": 675.0,
+              "p95": 1361.25,
+              "max": 1380.0
+            },
+            "memory_clock_mhz": {
+              "n": 0,
+              "min": null,
+              "p50": null,
+              "p95": null,
+              "max": null
+            },
+            "temperature_c": {
+              "n": 26,
+              "min": 79.0,
+              "p50": 84.0,
+              "p95": 84.75,
+              "max": 85.0
+            },
+            "power_draw_w": {
+              "n": 26,
+              "min": 131.27,
+              "p50": 157.905,
+              "p95": 242.2575,
+              "max": 318.01
+            },
+            "power_limit_w": {
+              "n": 0,
+              "min": null,
+              "p50": null,
+              "p95": null,
+              "max": null
+            },
+            "gpu_utilization_pct": {
+              "n": 26,
+              "min": 99.0,
+              "p50": 100.0,
+              "p95": 100.0,
+              "max": 100.0
+            },
+            "memory_used_mib": {
+              "n": 0,
+              "min": null,
+              "p50": null,
+              "p95": null,
+              "max": null
+            }
+          },
+          "active_mask_valid_samples": 26,
+          "exact_active_mask_distribution": {
+            "0x4": {
+              "n": 2,
+              "sample_pct": 7.6923076923076925
+            },
+            "0x20": {
+              "n": 24,
+              "sample_pct": 92.3076923076923
+            }
+          },
+          "active_reason_bits": {
+            "GpuIdle": {
+              "mask": "0x1",
+              "n": 0,
+              "sample_pct": 0.0
+            },
+            "ApplicationsClocksSetting": {
+              "mask": "0x2",
+              "n": 0,
+              "sample_pct": 0.0
+            },
+            "SwPowerCap": {
+              "mask": "0x4",
+              "n": 2,
+              "sample_pct": 7.6923076923076925
+            },
+            "HwSlowdown": {
+              "mask": "0x8",
+              "n": 0,
+              "sample_pct": 0.0
+            },
+            "SyncBoost": {
+              "mask": "0x10",
+              "n": 0,
+              "sample_pct": 0.0
+            },
+            "SwThermalSlowdown": {
+              "mask": "0x20",
+              "n": 24,
+              "sample_pct": 92.3076923076923
+            },
+            "HwThermalSlowdown": {
+              "mask": "0x40",
+              "n": 0,
+              "sample_pct": 0.0
+            },
+            "HwPowerBrakeSlowdown": {
+              "mask": "0x80",
+              "n": 0,
+              "sample_pct": 0.0
+            },
+            "DisplayClockSetting": {
+              "mask": "0x100",
+              "n": 0,
+              "sample_pct": 0.0
+            }
+          },
+          "explicit_reason_fields": {
+            "sw_thermal_slowdown": {
+              "Not Active": 2,
+              "Active": 24
+            },
+            "hw_thermal_slowdown": {
+              "Not Active": 26
+            },
+            "sw_power_cap": {
+              "Active": 2,
+              "Not Active": 24
+            },
+            "hw_power_brake_slowdown": {
+              "Not Active": 26
+            }
+          }
+        },
+        "possible_timed_envelope_sample_count": 26
+      }
+    },
+    {
+      "directory": "${NVME_WORKDIR}/baseline/20261020_194158/followup/c12/r1",
+      "concurrency": 12,
+      "repeat": "1",
+      "timed_start_second": "2026-10-20T22:11:07+08:00",
+      "duration_s": 262.647,
+      "timed_end_nominal": "2026-10-20T22:15:29.647000+08:00",
+      "nominal_interval_definition": "started_at <= timestamp <= started_at + duration_s",
+      "strict_interior_definition": "started_at + 1 second <= timestamp <= started_at + duration_s",
+      "gpu_500ms": {
+        "parse_errors": [],
+        "file_samples_total": 1013,
+        "nominal_timed_window": {
+          "sample_count": 521,
+          "first_timestamp": "2026-10-20T22:11:07.174000+08:00",
+          "last_timestamp": "2026-10-20T22:15:29.197000+08:00",
+          "sample_gap_seconds": {
+            "n": 520,
+            "min": 0.5,
+            "p50": 0.503000020980835,
+            "p95": 0.5090000629425049,
+            "max": 0.5399999618530273
+          },
+          "hardware": {
+            "sm_clock_mhz": {
+              "n": 521,
+              "min": 375.0,
+              "p50": 600.0,
+              "p95": 1230.0,
+              "max": 1410.0
+            },
+            "memory_clock_mhz": {
+              "n": 521,
+              "min": 1512.0,
+              "p50": 1512.0,
+              "p95": 1512.0,
+              "max": 1512.0
+            },
+            "temperature_c": {
+              "n": 521,
+              "min": 80.0,
+              "p50": 84.0,
+              "p95": 84.0,
+              "max": 85.0
+            },
+            "power_draw_w": {
+              "n": 521,
+              "min": 118.47,
+              "p50": 154.8,
+              "p95": 242.48,
+              "max": 311.81
+            },
+            "power_limit_w": {
+              "n": 521,
+              "min": 300.0,
+              "p50": 300.0,
+              "p95": 300.0,
+              "max": 300.0
+            },
+            "gpu_utilization_pct": {
+              "n": 521,
+              "min": 99.0,
+              "p50": 100.0,
+              "p95": 100.0,
+              "max": 100.0
+            },
+            "memory_used_mib": {
+              "n": 521,
+              "min": 73424.0,
+              "p50": 73540.0,
+              "p95": 73540.0,
+              "max": 73540.0
+            }
+          },
+          "active_mask_valid_samples": 521,
+          "exact_active_mask_distribution": {
+            "0x0": {
+              "n": 2,
+              "sample_pct": 0.3838771593090211
+            },
+            "0x4": {
+              "n": 15,
+              "sample_pct": 2.8790786948176583
+            },
+            "0x20": {
+              "n": 504,
+              "sample_pct": 96.73704414587333
+            }
+          },
+          "active_reason_bits": {
+            "GpuIdle": {
+              "mask": "0x1",
+              "n": 0,
+              "sample_pct": 0.0
+            },
+            "ApplicationsClocksSetting": {
+              "mask": "0x2",
+              "n": 0,
+              "sample_pct": 0.0
+            },
+            "SwPowerCap": {
+              "mask": "0x4",
+              "n": 15,
+              "sample_pct": 2.8790786948176583
+            },
+            "HwSlowdown": {
+              "mask": "0x8",
+              "n": 0,
+              "sample_pct": 0.0
+            },
+            "SyncBoost": {
+              "mask": "0x10",
+              "n": 0,
+              "sample_pct": 0.0
+            },
+            "SwThermalSlowdown": {
+              "mask": "0x20",
+              "n": 504,
+              "sample_pct": 96.73704414587333
+            },
+            "HwThermalSlowdown": {
+              "mask": "0x40",
+              "n": 0,
+              "sample_pct": 0.0
+            },
+            "HwPowerBrakeSlowdown": {
+              "mask": "0x80",
+              "n": 0,
+              "sample_pct": 0.0
+            },
+            "DisplayClockSetting": {
+              "mask": "0x100",
+              "n": 0,
+              "sample_pct": 0.0
+            }
+          },
+          "explicit_reason_fields": {}
+        },
+        "strict_interior_window": {
+          "sample_count": 519,
+          "first_timestamp": "2026-10-20T22:11:08.177000+08:00",
+          "last_timestamp": "2026-10-20T22:15:29.197000+08:00",
+          "sample_gap_seconds": {
+            "n": 518,
+            "min": 0.5,
+            "p50": 0.503000020980835,
+            "p95": 0.5090000629425049,
+            "max": 0.5399999618530273
+          },
+          "hardware": {
+            "sm_clock_mhz": {
+              "n": 519,
+              "min": 375.0,
+              "p50": 600.0,
+              "p95": 1215.0,
+              "max": 1410.0
+            },
+            "memory_clock_mhz": {
+              "n": 519,
+              "min": 1512.0,
+              "p50": 1512.0,
+              "p95": 1512.0,
+              "max": 1512.0
+            },
+            "temperature_c": {
+              "n": 519,
+              "min": 81.0,
+              "p50": 84.0,
+              "p95": 84.0,
+              "max": 85.0
+            },
+            "power_draw_w": {
+              "n": 519,
+              "min": 122.91,
+              "p50": 154.8,
+              "p95": 241.78699999999998,
+              "max": 311.81
+            },
+            "power_limit_w": {
+              "n": 519,
+              "min": 300.0,
+              "p50": 300.0,
+              "p95": 300.0,
+              "max": 300.0
+            },
+            "gpu_utilization_pct": {
+              "n": 519,
+              "min": 99.0,
+              "p50": 100.0,
+              "p95": 100.0,
+              "max": 100.0
+            },
+            "memory_used_mib": {
+              "n": 519,
+              "min": 73534.0,
+              "p50": 73540.0,
+              "p95": 73540.0,
+              "max": 73540.0
+            }
+          },
+          "active_mask_valid_samples": 519,
+          "exact_active_mask_distribution": {
+            "0x4": {
+              "n": 15,
+              "sample_pct": 2.8901734104046244
+            },
+            "0x20": {
+              "n": 504,
+              "sample_pct": 97.10982658959537
+            }
+          },
+          "active_reason_bits": {
+            "GpuIdle": {
+              "mask": "0x1",
+              "n": 0,
+              "sample_pct": 0.0
+            },
+            "ApplicationsClocksSetting": {
+              "mask": "0x2",
+              "n": 0,
+              "sample_pct": 0.0
+            },
+            "SwPowerCap": {
+              "mask": "0x4",
+              "n": 15,
+              "sample_pct": 2.8901734104046244
+            },
+            "HwSlowdown": {
+              "mask": "0x8",
+              "n": 0,
+              "sample_pct": 0.0
+            },
+            "SyncBoost": {
+              "mask": "0x10",
+              "n": 0,
+              "sample_pct": 0.0
+            },
+            "SwThermalSlowdown": {
+              "mask": "0x20",
+              "n": 504,
+              "sample_pct": 97.10982658959537
+            },
+            "HwThermalSlowdown": {
+              "mask": "0x40",
+              "n": 0,
+              "sample_pct": 0.0
+            },
+            "HwPowerBrakeSlowdown": {
+              "mask": "0x80",
+              "n": 0,
+              "sample_pct": 0.0
+            },
+            "DisplayClockSetting": {
+              "mask": "0x100",
+              "n": 0,
+              "sample_pct": 0.0
+            }
+          },
+          "explicit_reason_fields": {}
+        },
+        "possible_timed_envelope_sample_count": 523
+      },
+      "thermal_explicit_10s": {
+        "parse_errors": [],
+        "file_samples_total": 50,
+        "nominal_timed_window": {
+          "sample_count": 26,
+          "first_timestamp": "2026-10-20T22:11:12.212000+08:00",
+          "last_timestamp": "2026-10-20T22:15:24.220000+08:00",
+          "sample_gap_seconds": {
+            "n": 25,
+            "min": 10.063999891281128,
+            "p50": 10.083999872207642,
+            "p95": 10.093599891662597,
+            "max": 10.097000122070312
+          },
+          "hardware": {
+            "sm_clock_mhz": {
+              "n": 26,
+              "min": 450.0,
+              "p50": 630.0,
+              "p95": 1162.5,
+              "max": 1275.0
+            },
+            "memory_clock_mhz": {
+              "n": 0,
+              "min": null,
+              "p50": null,
+              "p95": null,
+              "max": null
+            },
+            "temperature_c": {
+              "n": 26,
+              "min": 83.0,
+              "p50": 84.0,
+              "p95": 84.0,
+              "max": 84.0
+            },
+            "power_draw_w": {
+              "n": 26,
+              "min": 135.63,
+              "p50": 150.29,
+              "p95": 209.85000000000002,
+              "max": 311.81
+            },
+            "power_limit_w": {
+              "n": 0,
+              "min": null,
+              "p50": null,
+              "p95": null,
+              "max": null
+            },
+            "gpu_utilization_pct": {
+              "n": 26,
+              "min": 100.0,
+              "p50": 100.0,
+              "p95": 100.0,
+              "max": 100.0
+            },
+            "memory_used_mib": {
+              "n": 0,
+              "min": null,
+              "p50": null,
+              "p95": null,
+              "max": null
+            }
+          },
+          "active_mask_valid_samples": 26,
+          "exact_active_mask_distribution": {
+            "0x4": {
+              "n": 1,
+              "sample_pct": 3.8461538461538463
+            },
+            "0x20": {
+              "n": 25,
+              "sample_pct": 96.15384615384616
+            }
+          },
+          "active_reason_bits": {
+            "GpuIdle": {
+              "mask": "0x1",
+              "n": 0,
+              "sample_pct": 0.0
+            },
+            "ApplicationsClocksSetting": {
+              "mask": "0x2",
+              "n": 0,
+              "sample_pct": 0.0
+            },
+            "SwPowerCap": {
+              "mask": "0x4",
+              "n": 1,
+              "sample_pct": 3.8461538461538463
+            },
+            "HwSlowdown": {
+              "mask": "0x8",
+              "n": 0,
+              "sample_pct": 0.0
+            },
+            "SyncBoost": {
+              "mask": "0x10",
+              "n": 0,
+              "sample_pct": 0.0
+            },
+            "SwThermalSlowdown": {
+              "mask": "0x20",
+              "n": 25,
+              "sample_pct": 96.15384615384616
+            },
+            "HwThermalSlowdown": {
+              "mask": "0x40",
+              "n": 0,
+              "sample_pct": 0.0
+            },
+            "HwPowerBrakeSlowdown": {
+              "mask": "0x80",
+              "n": 0,
+              "sample_pct": 0.0
+            },
+            "DisplayClockSetting": {
+              "mask": "0x100",
+              "n": 0,
+              "sample_pct": 0.0
+            }
+          },
+          "explicit_reason_fields": {
+            "sw_thermal_slowdown": {
+              "Not Active": 1,
+              "Active": 25
+            },
+            "hw_thermal_slowdown": {
+              "Not Active": 26
+            },
+            "sw_power_cap": {
+              "Active": 1,
+              "Not Active": 25
+            },
+            "hw_power_brake_slowdown": {
+              "Not Active": 26
+            }
+          }
+        },
+        "strict_interior_window": {
+          "sample_count": 26,
+          "first_timestamp": "2026-10-20T22:11:12.212000+08:00",
+          "last_timestamp": "2026-10-20T22:15:24.220000+08:00",
+          "sample_gap_seconds": {
+            "n": 25,
+            "min": 10.063999891281128,
+            "p50": 10.083999872207642,
+            "p95": 10.093599891662597,
+            "max": 10.097000122070312
+          },
+          "hardware": {
+            "sm_clock_mhz": {
+              "n": 26,
+              "min": 450.0,
+              "p50": 630.0,
+              "p95": 1162.5,
+              "max": 1275.0
+            },
+            "memory_clock_mhz": {
+              "n": 0,
+              "min": null,
+              "p50": null,
+              "p95": null,
+              "max": null
+            },
+            "temperature_c": {
+              "n": 26,
+              "min": 83.0,
+              "p50": 84.0,
+              "p95": 84.0,
+              "max": 84.0
+            },
+            "power_draw_w": {
+              "n": 26,
+              "min": 135.63,
+              "p50": 150.29,
+              "p95": 209.85000000000002,
+              "max": 311.81
+            },
+            "power_limit_w": {
+              "n": 0,
+              "min": null,
+              "p50": null,
+              "p95": null,
+              "max": null
+            },
+            "gpu_utilization_pct": {
+              "n": 26,
+              "min": 100.0,
+              "p50": 100.0,
+              "p95": 100.0,
+              "max": 100.0
+            },
+            "memory_used_mib": {
+              "n": 0,
+              "min": null,
+              "p50": null,
+              "p95": null,
+              "max": null
+            }
+          },
+          "active_mask_valid_samples": 26,
+          "exact_active_mask_distribution": {
+            "0x4": {
+              "n": 1,
+              "sample_pct": 3.8461538461538463
+            },
+            "0x20": {
+              "n": 25,
+              "sample_pct": 96.15384615384616
+            }
+          },
+          "active_reason_bits": {
+            "GpuIdle": {
+              "mask": "0x1",
+              "n": 0,
+              "sample_pct": 0.0
+            },
+            "ApplicationsClocksSetting": {
+              "mask": "0x2",
+              "n": 0,
+              "sample_pct": 0.0
+            },
+            "SwPowerCap": {
+              "mask": "0x4",
+              "n": 1,
+              "sample_pct": 3.8461538461538463
+            },
+            "HwSlowdown": {
+              "mask": "0x8",
+              "n": 0,
+              "sample_pct": 0.0
+            },
+            "SyncBoost": {
+              "mask": "0x10",
+              "n": 0,
+              "sample_pct": 0.0
+            },
+            "SwThermalSlowdown": {
+              "mask": "0x20",
+              "n": 25,
+              "sample_pct": 96.15384615384616
+            },
+            "HwThermalSlowdown": {
+              "mask": "0x40",
+              "n": 0,
+              "sample_pct": 0.0
+            },
+            "HwPowerBrakeSlowdown": {
+              "mask": "0x80",
+              "n": 0,
+              "sample_pct": 0.0
+            },
+            "DisplayClockSetting": {
+              "mask": "0x100",
+              "n": 0,
+              "sample_pct": 0.0
+            }
+          },
+          "explicit_reason_fields": {
+            "sw_thermal_slowdown": {
+              "Not Active": 1,
+              "Active": 25
+            },
+            "hw_thermal_slowdown": {
+              "Not Active": 26
+            },
+            "sw_power_cap": {
+              "Active": 1,
+              "Not Active": 25
+            },
+            "hw_power_brake_slowdown": {
+              "Not Active": 26
+            }
+          }
+        },
+        "possible_timed_envelope_sample_count": 26
+      }
+    },
+    {
+      "directory": "${NVME_WORKDIR}/baseline/20261020_194158/followup/c16/r1",
+      "concurrency": 16,
+      "repeat": "1",
+      "timed_start_second": "2026-10-20T22:19:36+08:00",
+      "duration_s": 223.927,
+      "timed_end_nominal": "2026-10-20T22:23:19.927000+08:00",
+      "nominal_interval_definition": "started_at <= timestamp <= started_at + duration_s",
+      "strict_interior_definition": "started_at + 1 second <= timestamp <= started_at + duration_s",
+      "gpu_500ms": {
+        "parse_errors": [],
+        "file_samples_total": 937,
+        "nominal_timed_window": {
+          "sample_count": 445,
+          "first_timestamp": "2026-10-20T22:19:36.350000+08:00",
+          "last_timestamp": "2026-10-20T22:23:19.654000+08:00",
+          "sample_gap_seconds": {
+            "n": 444,
+            "min": 0.5,
+            "p50": 0.502000093460083,
+            "p95": 0.5079998970031738,
+            "max": 0.5169999599456787
+          },
+          "hardware": {
+            "sm_clock_mhz": {
+              "n": 445,
+              "min": 285.0,
+              "p50": 570.0,
+              "p95": 1271.9999999999993,
+              "max": 1410.0
+            },
+            "memory_clock_mhz": {
+              "n": 445,
+              "min": 1512.0,
+              "p50": 1512.0,
+              "p95": 1512.0,
+              "max": 1512.0
+            },
+            "temperature_c": {
+              "n": 445,
+              "min": 80.0,
+              "p50": 84.0,
+              "p95": 84.0,
+              "max": 85.0
+            },
+            "power_draw_w": {
+              "n": 445,
+              "min": 119.88,
+              "p50": 156.29,
+              "p95": 256.69399999999973,
+              "max": 359.58
+            },
+            "power_limit_w": {
+              "n": 445,
+              "min": 300.0,
+              "p50": 300.0,
+              "p95": 300.0,
+              "max": 300.0
+            },
+            "gpu_utilization_pct": {
+              "n": 445,
+              "min": 94.0,
+              "p50": 100.0,
+              "p95": 100.0,
+              "max": 100.0
+            },
+            "memory_used_mib": {
+              "n": 445,
+              "min": 73424.0,
+              "p50": 73622.0,
+              "p95": 73622.0,
+              "max": 73622.0
+            }
+          },
+          "active_mask_valid_samples": 445,
+          "exact_active_mask_distribution": {
+            "0x0": {
+              "n": 2,
+              "sample_pct": 0.449438202247191
+            },
+            "0x4": {
+              "n": 16,
+              "sample_pct": 3.595505617977528
+            },
+            "0x20": {
+              "n": 426,
+              "sample_pct": 95.73033707865169
+            },
+            "0x24": {
+              "n": 1,
+              "sample_pct": 0.2247191011235955
+            }
+          },
+          "active_reason_bits": {
+            "GpuIdle": {
+              "mask": "0x1",
+              "n": 0,
+              "sample_pct": 0.0
+            },
+            "ApplicationsClocksSetting": {
+              "mask": "0x2",
+              "n": 0,
+              "sample_pct": 0.0
+            },
+            "SwPowerCap": {
+              "mask": "0x4",
+              "n": 17,
+              "sample_pct": 3.8202247191011236
+            },
+            "HwSlowdown": {
+              "mask": "0x8",
+              "n": 0,
+              "sample_pct": 0.0
+            },
+            "SyncBoost": {
+              "mask": "0x10",
+              "n": 0,
+              "sample_pct": 0.0
+            },
+            "SwThermalSlowdown": {
+              "mask": "0x20",
+              "n": 427,
+              "sample_pct": 95.95505617977528
+            },
+            "HwThermalSlowdown": {
+              "mask": "0x40",
+              "n": 0,
+              "sample_pct": 0.0
+            },
+            "HwPowerBrakeSlowdown": {
+              "mask": "0x80",
+              "n": 0,
+              "sample_pct": 0.0
+            },
+            "DisplayClockSetting": {
+              "mask": "0x100",
+              "n": 0,
+              "sample_pct": 0.0
+            }
+          },
+          "explicit_reason_fields": {}
+        },
+        "strict_interior_window": {
+          "sample_count": 443,
+          "first_timestamp": "2026-10-20T22:19:37.353000+08:00",
+          "last_timestamp": "2026-10-20T22:23:19.654000+08:00",
+          "sample_gap_seconds": {
+            "n": 442,
+            "min": 0.5,
+            "p50": 0.502000093460083,
+            "p95": 0.5079998970031738,
+            "max": 0.5169999599456787
+          },
+          "hardware": {
+            "sm_clock_mhz": {
+              "n": 443,
+              "min": 285.0,
+              "p50": 555.0,
+              "p95": 1260.0,
+              "max": 1410.0
+            },
+            "memory_clock_mhz": {
+              "n": 443,
+              "min": 1512.0,
+              "p50": 1512.0,
+              "p95": 1512.0,
+              "max": 1512.0
+            },
+            "temperature_c": {
+              "n": 443,
+              "min": 81.0,
+              "p50": 84.0,
+              "p95": 84.0,
+              "max": 85.0
+            },
+            "power_draw_w": {
+              "n": 443,
+              "min": 119.88,
+              "p50": 156.1,
+              "p95": 251.90599999999998,
+              "max": 359.58
+            },
+            "power_limit_w": {
+              "n": 443,
+              "min": 300.0,
+              "p50": 300.0,
+              "p95": 300.0,
+              "max": 300.0
+            },
+            "gpu_utilization_pct": {
+              "n": 443,
+              "min": 96.0,
+              "p50": 100.0,
+              "p95": 100.0,
+              "max": 100.0
+            },
+            "memory_used_mib": {
+              "n": 443,
+              "min": 73618.0,
+              "p50": 73622.0,
+              "p95": 73622.0,
+              "max": 73622.0
+            }
+          },
+          "active_mask_valid_samples": 443,
+          "exact_active_mask_distribution": {
+            "0x0": {
+              "n": 1,
+              "sample_pct": 0.22573363431151242
+            },
+            "0x4": {
+              "n": 15,
+              "sample_pct": 3.386004514672686
+            },
+            "0x20": {
+              "n": 426,
+              "sample_pct": 96.16252821670429
+            },
+            "0x24": {
+              "n": 1,
+              "sample_pct": 0.22573363431151242
+            }
+          },
+          "active_reason_bits": {
+            "GpuIdle": {
+              "mask": "0x1",
+              "n": 0,
+              "sample_pct": 0.0
+            },
+            "ApplicationsClocksSetting": {
+              "mask": "0x2",
+              "n": 0,
+              "sample_pct": 0.0
+            },
+            "SwPowerCap": {
+              "mask": "0x4",
+              "n": 16,
+              "sample_pct": 3.6117381489841986
+            },
+            "HwSlowdown": {
+              "mask": "0x8",
+              "n": 0,
+              "sample_pct": 0.0
+            },
+            "SyncBoost": {
+              "mask": "0x10",
+              "n": 0,
+              "sample_pct": 0.0
+            },
+            "SwThermalSlowdown": {
+              "mask": "0x20",
+              "n": 427,
+              "sample_pct": 96.3882618510158
+            },
+            "HwThermalSlowdown": {
+              "mask": "0x40",
+              "n": 0,
+              "sample_pct": 0.0
+            },
+            "HwPowerBrakeSlowdown": {
+              "mask": "0x80",
+              "n": 0,
+              "sample_pct": 0.0
+            },
+            "DisplayClockSetting": {
+              "mask": "0x100",
+              "n": 0,
+              "sample_pct": 0.0
+            }
+          },
+          "explicit_reason_fields": {}
+        },
+        "possible_timed_envelope_sample_count": 447
+      },
+      "thermal_explicit_10s": {
+        "parse_errors": [],
+        "file_samples_total": 47,
+        "nominal_timed_window": {
+          "sample_count": 22,
+          "first_timestamp": "2026-10-20T22:19:46.060000+08:00",
+          "last_timestamp": "2026-10-20T22:23:17.724000+08:00",
+          "sample_gap_seconds": {
+            "n": 21,
+            "min": 10.060999870300293,
+            "p50": 10.08299994468689,
+            "p95": 10.089999914169312,
+            "max": 10.089999914169312
+          },
+          "hardware": {
+            "sm_clock_mhz": {
+              "n": 22,
+              "min": 480.0,
+              "p50": 562.5,
+              "p95": 984.75,
+              "max": 1185.0
+            },
+            "memory_clock_mhz": {
+              "n": 0,
+              "min": null,
+              "p50": null,
+              "p95": null,
+              "max": null
+            },
+            "temperature_c": {
+              "n": 22,
+              "min": 84.0,
+              "p50": 84.0,
+              "p95": 84.0,
+              "max": 84.0
+            },
+            "power_draw_w": {
+              "n": 22,
+              "min": 139.12,
+              "p50": 153.59500000000003,
+              "p95": 201.4125,
+              "max": 260.56
+            },
+            "power_limit_w": {
+              "n": 0,
+              "min": null,
+              "p50": null,
+              "p95": null,
+              "max": null
+            },
+            "gpu_utilization_pct": {
+              "n": 22,
+              "min": 100.0,
+              "p50": 100.0,
+              "p95": 100.0,
+              "max": 100.0
+            },
+            "memory_used_mib": {
+              "n": 0,
+              "min": null,
+              "p50": null,
+              "p95": null,
+              "max": null
+            }
+          },
+          "active_mask_valid_samples": 22,
+          "exact_active_mask_distribution": {
+            "0x20": {
+              "n": 22,
+              "sample_pct": 100.0
+            }
+          },
+          "active_reason_bits": {
+            "GpuIdle": {
+              "mask": "0x1",
+              "n": 0,
+              "sample_pct": 0.0
+            },
+            "ApplicationsClocksSetting": {
+              "mask": "0x2",
+              "n": 0,
+              "sample_pct": 0.0
+            },
+            "SwPowerCap": {
+              "mask": "0x4",
+              "n": 0,
+              "sample_pct": 0.0
+            },
+            "HwSlowdown": {
+              "mask": "0x8",
+              "n": 0,
+              "sample_pct": 0.0
+            },
+            "SyncBoost": {
+              "mask": "0x10",
+              "n": 0,
+              "sample_pct": 0.0
+            },
+            "SwThermalSlowdown": {
+              "mask": "0x20",
+              "n": 22,
+              "sample_pct": 100.0
+            },
+            "HwThermalSlowdown": {
+              "mask": "0x40",
+              "n": 0,
+              "sample_pct": 0.0
+            },
+            "HwPowerBrakeSlowdown": {
+              "mask": "0x80",
+              "n": 0,
+              "sample_pct": 0.0
+            },
+            "DisplayClockSetting": {
+              "mask": "0x100",
+              "n": 0,
+              "sample_pct": 0.0
+            }
+          },
+          "explicit_reason_fields": {
+            "sw_thermal_slowdown": {
+              "Active": 22
+            },
+            "hw_thermal_slowdown": {
+              "Not Active": 22
+            },
+            "sw_power_cap": {
+              "Not Active": 22
+            },
+            "hw_power_brake_slowdown": {
+              "Not Active": 22
+            }
+          }
+        },
+        "strict_interior_window": {
+          "sample_count": 22,
+          "first_timestamp": "2026-10-20T22:19:46.060000+08:00",
+          "last_timestamp": "2026-10-20T22:23:17.724000+08:00",
+          "sample_gap_seconds": {
+            "n": 21,
+            "min": 10.060999870300293,
+            "p50": 10.08299994468689,
+            "p95": 10.089999914169312,
+            "max": 10.089999914169312
+          },
+          "hardware": {
+            "sm_clock_mhz": {
+              "n": 22,
+              "min": 480.0,
+              "p50": 562.5,
+              "p95": 984.75,
+              "max": 1185.0
+            },
+            "memory_clock_mhz": {
+              "n": 0,
+              "min": null,
+              "p50": null,
+              "p95": null,
+              "max": null
+            },
+            "temperature_c": {
+              "n": 22,
+              "min": 84.0,
+              "p50": 84.0,
+              "p95": 84.0,
+              "max": 84.0
+            },
+            "power_draw_w": {
+              "n": 22,
+              "min": 139.12,
+              "p50": 153.59500000000003,
+              "p95": 201.4125,
+              "max": 260.56
+            },
+            "power_limit_w": {
+              "n": 0,
+              "min": null,
+              "p50": null,
+              "p95": null,
+              "max": null
+            },
+            "gpu_utilization_pct": {
+              "n": 22,
+              "min": 100.0,
+              "p50": 100.0,
+              "p95": 100.0,
+              "max": 100.0
+            },
+            "memory_used_mib": {
+              "n": 0,
+              "min": null,
+              "p50": null,
+              "p95": null,
+              "max": null
+            }
+          },
+          "active_mask_valid_samples": 22,
+          "exact_active_mask_distribution": {
+            "0x20": {
+              "n": 22,
+              "sample_pct": 100.0
+            }
+          },
+          "active_reason_bits": {
+            "GpuIdle": {
+              "mask": "0x1",
+              "n": 0,
+              "sample_pct": 0.0
+            },
+            "ApplicationsClocksSetting": {
+              "mask": "0x2",
+              "n": 0,
+              "sample_pct": 0.0
+            },
+            "SwPowerCap": {
+              "mask": "0x4",
+              "n": 0,
+              "sample_pct": 0.0
+            },
+            "HwSlowdown": {
+              "mask": "0x8",
+              "n": 0,
+              "sample_pct": 0.0
+            },
+            "SyncBoost": {
+              "mask": "0x10",
+              "n": 0,
+              "sample_pct": 0.0
+            },
+            "SwThermalSlowdown": {
+              "mask": "0x20",
+              "n": 22,
+              "sample_pct": 100.0
+            },
+            "HwThermalSlowdown": {
+              "mask": "0x40",
+              "n": 0,
+              "sample_pct": 0.0
+            },
+            "HwPowerBrakeSlowdown": {
+              "mask": "0x80",
+              "n": 0,
+              "sample_pct": 0.0
+            },
+            "DisplayClockSetting": {
+              "mask": "0x100",
+              "n": 0,
+              "sample_pct": 0.0
+            }
+          },
+          "explicit_reason_fields": {
+            "sw_thermal_slowdown": {
+              "Active": 22
+            },
+            "hw_thermal_slowdown": {
+              "Not Active": 22
+            },
+            "sw_power_cap": {
+              "Not Active": 22
+            },
+            "hw_power_brake_slowdown": {
+              "Not Active": 22
+            }
+          }
+        },
+        "possible_timed_envelope_sample_count": 22
+      }
+    }
+  ]
+}

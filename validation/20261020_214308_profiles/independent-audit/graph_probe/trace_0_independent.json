@@ -1,0 +1,285 @@
+{
+  "trace": "${NVME_WORKDIR}/profiling/20261020_214308/graph_probe/trace.json",
+  "sha256": "a98dded6eb1b56a44a9efcc401eb98be210407be3fbcb365ec7d48370398ce43",
+  "host_name": "HOST_REDACTED",
+  "baseTimeNanoseconds": 1790857026000000000,
+  "deviceProperties": [
+    {
+      "id": 0,
+      "name": "NVIDIA A100 80GB PCIe",
+      "totalGlobalMem": 84974239744,
+      "computeMajor": 8,
+      "computeMinor": 0,
+      "maxThreadsPerBlock": 1024,
+      "maxThreadsPerMultiprocessor": 2048,
+      "regsPerBlock": 65536,
+      "warpSize": 32,
+      "sharedMemPerBlock": 49152,
+      "numSms": 108,
+      "regsPerMultiprocessor": 65536,
+      "sharedMemPerBlockOptin": 166912,
+      "sharedMemPerMultiprocessor": 167936
+    }
+  ],
+  "capture_local_us": [
+    1649297304780.243,
+    1649297316481.9539
+  ],
+  "capture_epoch_us": [
+    1792506323304780.2,
+    1792506323316482.0
+  ],
+  "cpu_execute_scopes": 3,
+  "gpu_cloned_scopes_excluded": 3,
+  "boundary_exclusion_counts": {
+    "first_or_last_cpu_thread_scope_conservatively_excluded": 2
+  },
+  "phase_summary": {
+    "decode_only": {
+      "all_cpu_scopes": 3,
+      "conservative_complete_interior_steps": 1,
+      "kernel_count": 2,
+      "kernel_sum_us": 132.704,
+      "gpu_span_us": {
+        "n": 1,
+        "p50": 132.9921875,
+        "p95": 132.9921875,
+        "min": 132.9921875,
+        "max": 132.9921875
+      },
+      "gpu_busy_union_us_per_step": {
+        "n": 1,
+        "p50": 132.7041015625,
+        "p95": 132.7041015625,
+        "min": 132.7041015625,
+        "max": 132.7041015625
+      },
+      "gpu_kernel_sum_us_per_step": {
+        "n": 1,
+        "p50": 132.704,
+        "p95": 132.704,
+        "min": 132.704,
+        "max": 132.704
+      },
+      "cpu_scope_us": {
+        "n": 1,
+        "p50": 40.251,
+        "p95": 40.251,
+        "min": 40.251,
+        "max": 40.251
+      },
+      "generation_request_histogram": {
+        "8": 1
+      },
+      "context_request_histogram": {
+        "0": 1
+      },
+      "graph_launches_per_step": {
+        "1": 1
+      },
+      "raw_top10_kernel_time_coverage_pct": 100.0
+    },
+    "mixed": {
+      "all_cpu_scopes": 0,
+      "conservative_complete_interior_steps": 0,
+      "kernel_count": 0,
+      "kernel_sum_us": 0,
+      "gpu_span_us": {
+        "n": 0,
+        "p50": null,
+        "p95": null
+      },
+      "gpu_busy_union_us_per_step": {
+        "n": 0,
+        "p50": null,
+        "p95": null
+      },
+      "gpu_kernel_sum_us_per_step": {
+        "n": 0,
+        "p50": null,
+        "p95": null
+      },
+      "cpu_scope_us": {
+        "n": 0,
+        "p50": null,
+        "p95": null
+      },
+      "generation_request_histogram": {},
+      "context_request_histogram": {},
+      "graph_launches_per_step": {},
+      "raw_top10_kernel_time_coverage_pct": null
+    },
+    "prefill_only": {
+      "all_cpu_scopes": 0,
+      "conservative_complete_interior_steps": 0,
+      "kernel_count": 0,
+      "kernel_sum_us": 0,
+      "gpu_span_us": {
+        "n": 0,
+        "p50": null,
+        "p95": null
+      },
+      "gpu_busy_union_us_per_step": {
+        "n": 0,
+        "p50": null,
+        "p95": null
+      },
+      "gpu_kernel_sum_us_per_step": {
+        "n": 0,
+        "p50": null,
+        "p95": null
+      },
+      "cpu_scope_us": {
+        "n": 0,
+        "p50": null,
+        "p95": null
+      },
+      "generation_request_histogram": {},
+      "context_request_histogram": {},
+      "graph_launches_per_step": {},
+      "raw_top10_kernel_time_coverage_pct": null
+    },
+    "empty": {
+      "all_cpu_scopes": 0,
+      "conservative_complete_interior_steps": 0,
+      "kernel_count": 0,
+      "kernel_sum_us": 0,
+      "gpu_span_us": {
+        "n": 0,
+        "p50": null,
+        "p95": null
+      },
+      "gpu_busy_union_us_per_step": {
+        "n": 0,
+        "p50": null,
+        "p95": null
+      },
+      "gpu_kernel_sum_us_per_step": {
+        "n": 0,
+        "p50": null,
+        "p95": null
+      },
+      "cpu_scope_us": {
+        "n": 0,
+        "p50": null,
+        "p95": null
+      },
+      "generation_request_histogram": {},
+      "context_request_histogram": {},
+      "graph_launches_per_step": {},
+      "raw_top10_kernel_time_coverage_pct": null
+    }
+  },
+  "raw_kernel_tables_complete_interior_only": {
+    "decode_only": [
+      {
+        "name": "ampere_sgemm_128x64_nn",
+        "count": 1,
+        "kernel_sum_us": 127.936
+      },
+      {
+        "name": "void at::native::vectorized_elementwise_kernel<4, at::native::sin_kernel_cuda(at::TensorIteratorBase&)::{lambda()#2}::operator()() const::{lambda()#2}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul> >(int, at::native::sin_kernel_cuda(at::TensorIteratorBase&)::{lambda()#2}::operator()() const::{lambda()#2}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul>)",
+        "count": 1,
+        "kernel_sum_us": 4.768
+      }
+    ],
+    "mixed": [],
+    "prefill_only": [],
+    "empty": []
+  },
+  "kernel_events": 6,
+  "kernel_sum_us_all": 399.42400000000004,
+  "gpu_busy_union_us_all": 399.424072265625,
+  "unassigned_kernel_reasons": {},
+  "unassigned_kernel_sum_us": 0,
+  "exact_duplicate_kernel_records": 0,
+  "runtime_correlation_collisions": [],
+  "graph_launches": [
+    {
+      "correlation": 3,
+      "native_scope_index": 0,
+      "correlated_kernel_count": 2,
+      "distinct_graph_nodes": 2
+    },
+    {
+      "correlation": 8,
+      "native_scope_index": 1,
+      "correlated_kernel_count": 2,
+      "distinct_graph_nodes": 2
+    },
+    {
+      "correlation": 13,
+      "native_scope_index": 2,
+      "correlated_kernel_count": 2,
+      "distinct_graph_nodes": 2
+    }
+  ],
+  "steps": [
+    {
+      "ts": 1649297305161.5,
+      "end": 1649297316104.752,
+      "cpu_scope_us": 10943.252,
+      "pid": 1840892,
+      "tid": 1840892,
+      "phase": "decode_only",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 8,
+      "generation_tokens": 8,
+      "graph_launches": [
+        3
+      ],
+      "excluded_reasons": [
+        "first_or_last_cpu_thread_scope_conservatively_excluded"
+      ],
+      "index": 0,
+      "kernel_count": 2
+    },
+    {
+      "ts": 1649297316133.922,
+      "end": 1649297316174.173,
+      "cpu_scope_us": 40.251,
+      "pid": 1840892,
+      "tid": 1840892,
+      "phase": "decode_only",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 8,
+      "generation_tokens": 8,
+      "graph_launches": [
+        8
+      ],
+      "excluded_reasons": [],
+      "index": 1,
+      "kernel_count": 2
+    },
+    {
+      "ts": 1649297316181.333,
+      "end": 1649297316202.973,
+      "cpu_scope_us": 21.64,
+      "pid": 1840892,
+      "tid": 1840892,
+      "phase": "decode_only",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 8,
+      "generation_tokens": 8,
+      "graph_launches": [
+        13
+      ],
+      "excluded_reasons": [
+        "first_or_last_cpu_thread_scope_conservatively_excluded"
+      ],
+      "index": 2,
+      "kernel_count": 2
+    }
+  ],
+  "limits": [
+    "Complete means capture-contained correlated work after conservatively excluding first and last CPU-thread steps; it cannot rule out silent CUPTI drops.",
+    "CPU scope is dispatch duration; GPU span includes gaps; kernel sum counts overlapping kernels more than once; union removes overlap.",
+    "Kernel category/name alone does not establish backbone/tower ownership, bottleneck causality or a speedup.",
+    "GPU cloned annotations never count as CPU steps or kernel events.",
+    "Cross-stage timing needs the same host, explicit epoch anchors and an intersecting capture interval.",
+    "Native execute scopes exclude sample_tokens outside execute_model; unassigned activity is retained."
+  ]
+}

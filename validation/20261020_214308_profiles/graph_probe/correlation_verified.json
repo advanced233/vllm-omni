@@ -1,0 +1,10 @@
+{
+  "ok": true,
+  "replays": 3,
+  "correlated_kernels_each": [
+    2,
+    2,
+    2
+  ],
+  "fix": "Ignore GPU-side cloned gpu_user_annotation ranges; count native CPU user_annotation scopes only."
+}

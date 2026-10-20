@@ -1,0 +1,24 @@
+基于 A100 实际 profile 的下一步建议（只读分析；尚未实施或测得优化收益）
+
+选用 C8 attempt2、C16、C64 的独立审核结果。C8 attempt1 仅保留诊断归档。
+
+最先做：验证 mixed 步 GDN/FLA 的 CPU 路径在关闭 torch.profiler 后是否仍然昂贵。
+三档 mixed CPU execute scope 中位数分别 58.954/58.110/60.268 ms；同名 GDN core CPU scope 的逐步区间并集中位数 40.011/38.297/39.611 ms。它包含嵌套 FLA、调度和 profiler 开销，不能当作可节省时间。对应全部 CUDA runtime API 区间并集中位数仅 8.097/7.847/7.981 ms，54 次 cudaGraphLaunch 的平均合计仅 2.827/2.730/2.778 ms。审计范围未观察到 Synchronize API 或 D2H。因此不应仅凭“54 个图”就声称主要瓶颈是 launch，也不应因 GDN GPU 占比不大而排除 GDN host 路径。
+
+建议的三个可验证假设：
+
+1. GDN mixed host 路径：先做小范围、无 torch.profiler 的 perf_counter_ns 诊断，按步骤累计 mixed_forward_core 及 gather/prep/chunk/scatter 部分耗时，内存缓冲后统一输出；不逐层打印、不添加同步。再用关闭探针的对照约束探针开销。若确认有实际成本，先隔离测试一个具体的小改动：Omni gdn.py:232–244 未把 core_attn_out 传给 FLA，并在246复制输出；已安装 vLLM 的 ChunkGatedDeltaRule.forward_native:344 支持 core_attn_out，chunk_o.py:159–165 支持直接写入展平后的既有输出缓冲。可在保留状态精度和数学路径的前提下验证去掉那次输出分配/复制。它未必能改善主要延迟，必须独立测量。后续缓冲复用/融合 gather-zero-scatter 或 capture-safe GDN 改造需另有证据和正确性设计。
+
+2. Marlin 调优：三档纯 decode 的 Marlin kernel-duration-sum 占比 30.936/38.596/46.122%，mixed 为 51.970/49.758/38.053%。源码及计数可明确归于40层 backbone MoE 的每层两次 GEMM；三个 profile 的每阶段都严格符合 80 × 步数。先对真实权重、输入和 router indices 做受支持 tile/block-M/blocks-per-SM 的微基准，保留 FP8 权重、BF16 activation、FP32 reduce、不启 atomic-add，再做同热条件端到端验证。这部分调用点位于 vLLM 依赖的 marlin_moe.py:340 与 _custom_ops.py:2455，不是直接宣称 Omni-only 修改。
+
+3. Prefill admission：默认 min_running=32，在 C8/C16 不生效。可以单独用 YAML 测试更低阈值（例如 C8=4、C16=8；C8=8 在已有请求结束只剩7时可能不触发），先不同时改 min_batch=6/max_wait=100ms，再有证据地调 batch/wait。目标是降低零散 mixed 步频率，但会增加排队时间，必须同时看 TTFA p95/p99、stall、吞吐、RTF 和公平性/无饥饿，不能承诺净收益。C64 的原策略已经生效，应据实际 context 请求/长度分布评估。
+
+54 次图的来源已从实际 C8attempt2 编译缓存核实：107 个 submod，其中54个非attention编译分区与53个attention分区交替；后者是30个GDN分区和23组连续KV-update/full-attention。vLLM split_graph 合并连续 splitting ops，仅将非split分区编译并包装 PIECEWISE。submod80跨最后backbone和首tower，不能把这些分区机械等同为整层。GDN backend声明UNIFORM_BATCH，变长prefill/chunk元数据、状态索引和临时缓冲需要capture-safe设计，不能直接删splitting_ops或强开mixed FULL。
+
+其他候选暂不优先：sampling top-k/sort/draw 只占纯decode kernel sum约3.005/2.571/2.177%，并且必须保留全词表概率分母、inclusive top-p、RAS及随机性。通用cuBLAS dense GEMM无法仅凭kernel名分配到backbone或tower；共享专家sigmoid×out虽有源码和计数上的对应，仍需调用关联证据，不能把所有同名generic kernel直接算给它。
+
+验证条件：真实FLA/Triton BF16和FP32状态、fresh/continuing/chunked prefill、slot reuse、输出缓冲alias/contiguous均应覆盖；原始GDN测试夹具会误走FlashInfer，不能沿用“triton标签就是真Triton”的假设。代码改动后需kernel/数值测试、官方E2E和全量1088条noise-run/capped-length/WER/SIM配对验证。不要把更改batching后的输出差异仅归因kernel数值。
+
+解释边界：上述百分比的分母是相关kernel时长总和，可重复计入并行kernel，不是壁钟占比或速度收益。GPU span-busy union不是纯CPU空隙。实际decode cohort不全等于标称C。C8/C16/C64采集时SM中位数约1410/1305/1155MHz，热条件不同；尤其C8 profile比热降频B1 C8快很多。不能把跨C绝对耗时差全部归因并发，不能从MPS活动重叠推导MPS减速。最终结论是实验优先级，不是已经找到并修复了瓶颈。
+
+存证：source_mapping.json（调用点/行号/源码SHA及原始kernel映射）、cross_profile_evidence.json（三档实际batch/阶段/硬件）、piecewise_54_evidence.json（实际编译缓存AST证据）。未修改server源码、安装依赖或GPU设置，未运行额外GPU实验。

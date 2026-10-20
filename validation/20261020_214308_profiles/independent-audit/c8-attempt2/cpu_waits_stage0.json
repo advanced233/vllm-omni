@@ -1,0 +1,2162 @@
+{
+  "trace": "${NVME_WORKDIR}/profiling/20261020_214308/c8/attempt2/traces/20261020-224057_stage0_rank0_1792507257/trace_rank0.json.gz",
+  "independent_scopes": "${NVME_WORKDIR}/profiling/20261020_214308/independent-audit/c8-attempt2/trace_0_independent.json",
+  "denominator": "Complete interior CPU execute scopes; same-thread runtime API intervals are unioned to avoid nested driver/runtime double counting.",
+  "limits": [
+    "CPU operation durations are inclusive and nested; never add them across names.",
+    "Runtime groups may overlap one another; all-runtime union is the non-duplicated total.",
+    "Synchronize API duration is observed CPU blocking, not proof all of it is necessary or independently removable.",
+    "GPU memcpy direction comes from correlated CUPTI gpu_memcpy events, not inference from aten::to.",
+    "Unexplained CPU scope time is not automatically CPU idle time; includes Python/operator dispatch and profiler overhead."
+  ],
+  "phases": {
+    "decode_only": {
+      "complete_steps": 232,
+      "cpu_scope_us": {
+        "n": 232,
+        "p50": 4865.2125,
+        "p95": 7634.8425,
+        "min": 2721.187,
+        "max": 11793.829
+      },
+      "runtime_all_union_us_per_step": {
+        "n": 232,
+        "p50": 2498.1722412109375,
+        "p95": 3922.4663330078124,
+        "min": 1662.611083984375,
+        "max": 4988.097900390625
+      },
+      "cpu_ops_all_union_us_per_step": {
+        "n": 232,
+        "p50": 677.0458984375,
+        "p95": 1037.7710815429687,
+        "min": 374.164306640625,
+        "max": 1763.578125
+      },
+      "selected_cpu_op_union_us_per_step": {
+        "vllm::qwen_gdn_attention_core": {
+          "n": 232,
+          "p50": 0.0,
+          "p95": 0.0,
+          "min": 0,
+          "max": 0
+        },
+        "ChunkGatedDeltaRuleFunction": {
+          "n": 232,
+          "p50": 0.0,
+          "p95": 0.0,
+          "min": 0,
+          "max": 0
+        },
+        "vllm::unified_attention_with_output": {
+          "n": 232,
+          "p50": 0.0,
+          "p95": 0.0,
+          "min": 0,
+          "max": 0
+        },
+        "aten::index": {
+          "n": 232,
+          "p50": 0.0,
+          "p95": 0.0,
+          "min": 0,
+          "max": 0
+        },
+        "aten::index_put_": {
+          "n": 232,
+          "p50": 0.0,
+          "p95": 0.0,
+          "min": 0,
+          "max": 0
+        }
+      },
+      "runtime_group_union_us_per_step": {
+        "synchronization_API": {
+          "n": 232,
+          "p50": 0.0,
+          "p95": 0.0,
+          "min": 0,
+          "max": 0
+        },
+        "memory_copy_API": {
+          "n": 232,
+          "p50": 83.0784912109375,
+          "p95": 132.8514404296875,
+          "min": 41.64111328125,
+          "max": 227.689208984375
+        },
+        "kernel_or_graph_launch_API": {
+          "n": 232,
+          "p50": 2414.0010986328125,
+          "p95": 3792.396203613281,
+          "min": 1604.45703125,
+          "max": 4837.0419921875
+        },
+        "other_runtime_API": {
+          "n": 232,
+          "p50": 18.845458984375,
+          "p95": 35.89415283203125,
+          "min": 7.130126953125,
+          "max": 48.29296875
+        }
+      },
+      "runtime_API_table": [
+        {
+          "name": "cudaGraphLaunch",
+          "count": 232,
+          "inclusive_duration_us": 586519.108,
+          "same_name_interval_union_us": 586519.1049804688,
+          "call_duration_us": {
+            "n": 232,
+            "p50": 2301.7619999999997,
+            "p95": 3637.128,
+            "min": 1532.984,
+            "max": 4476.649
+          }
+        },
+        {
+          "name": "cudaMemcpyAsync",
+          "count": 1174,
+          "inclusive_duration_us": 18272.571,
+          "same_name_interval_union_us": 18272.567626953125,
+          "call_duration_us": {
+            "n": 1174,
+            "p50": 13.5755,
+            "p95": 34.405649999999994,
+            "min": 4.29,
+            "max": 105.444
+          }
+        },
+        {
+          "name": "cudaLaunchKernel",
+          "count": 1214,
+          "inclusive_duration_us": 17378.255,
+          "same_name_interval_union_us": 17378.2509765625,
+          "call_duration_us": {
+            "n": 1214,
+            "p50": 12.6155,
+            "p95": 27.804499999999997,
+            "min": 5.31,
+            "max": 294.51
+          }
+        },
+        {
+          "name": "cuLaunchKernelEx",
+          "count": 928,
+          "inclusive_duration_us": 10497.698,
+          "same_name_interval_union_us": 10497.696533203125,
+          "call_duration_us": {
+            "n": 928,
+            "p50": 10.004999999999999,
+            "p95": 18.861,
+            "min": 5.49,
+            "max": 28.101
+          }
+        },
+        {
+          "name": "cudaEventQuery",
+          "count": 1642,
+          "inclusive_duration_us": 3817.391,
+          "same_name_interval_union_us": 3817.393310546875,
+          "call_duration_us": {
+            "n": 1642,
+            "p50": 1.96,
+            "p95": 5.25,
+            "min": 0.65,
+            "max": 10.051
+          }
+        },
+        {
+          "name": "cudaStreamGetCaptureInfo_v2",
+          "count": 464,
+          "inclusive_duration_us": 613.334,
+          "same_name_interval_union_us": 613.340576171875,
+          "call_duration_us": {
+            "n": 464,
+            "p50": 1.11,
+            "p95": 2.9,
+            "min": 0.35,
+            "max": 3.46
+          }
+        },
+        {
+          "name": "cudaEventRecordWithFlags",
+          "count": 56,
+          "inclusive_duration_us": 145.144,
+          "same_name_interval_union_us": 145.1435546875,
+          "call_duration_us": {
+            "n": 56,
+            "p50": 2.3600000000000003,
+            "p95": 3.7925,
+            "min": 1.7,
+            "max": 4.04
+          }
+        },
+        {
+          "name": "cudaStreamIsCapturing",
+          "count": 56,
+          "inclusive_duration_us": 87.141,
+          "same_name_interval_union_us": 87.141845703125,
+          "call_duration_us": {
+            "n": 56,
+            "p50": 1.355,
+            "p95": 2.465,
+            "min": 0.92,
+            "max": 2.65
+          }
+        }
+      ],
+      "cpu_op_inclusive_table_not_additive": [
+        {
+          "name": "aten::copy_",
+          "count": 2102,
+          "inclusive_duration_us": 30248.429,
+          "call_duration_us": {
+            "n": 2102,
+            "p50": 12.410499999999999,
+            "p95": 37.355449999999976,
+            "min": 1.06,
+            "max": 111.424
+          }
+        },
+        {
+          "name": "aten::slice",
+          "count": 6756,
+          "inclusive_duration_us": 28214.743,
+          "call_duration_us": {
+            "n": 6756,
+            "p50": 3.4,
+            "p95": 8.91025,
+            "min": 1.17,
+            "max": 33.711
+          }
+        },
+        {
+          "name": "aten::arange",
+          "count": 546,
+          "inclusive_duration_us": 21807.412,
+          "call_duration_us": {
+            "n": 546,
+            "p50": 34.576499999999996,
+            "p95": 67.8005,
+            "min": 18.281,
+            "max": 108.474
+          }
+        },
+        {
+          "name": "aten::fill_",
+          "count": 1706,
+          "inclusive_duration_us": 17767.472,
+          "call_duration_us": {
+            "n": 1706,
+            "p50": 5.045,
+            "p95": 34.66625,
+            "min": 0.26,
+            "max": 304.121
+          }
+        },
+        {
+          "name": "aten::clone",
+          "count": 232,
+          "inclusive_duration_us": 13601.19,
+          "call_duration_us": {
+            "n": 232,
+            "p50": 54.152,
+            "p95": 90.3745,
+            "min": 28.521,
+            "max": 126.635
+          }
+        },
+        {
+          "name": "aten::empty",
+          "count": 1747,
+          "inclusive_duration_us": 10874.58,
+          "call_duration_us": {
+            "n": 1747,
+            "p50": 4.6,
+            "p95": 17.774999999999995,
+            "min": 0.78,
+            "max": 31.151
+          }
+        },
+        {
+          "name": "aten::uniform_",
+          "count": 232,
+          "inclusive_duration_us": 9572.853,
+          "call_duration_us": {
+            "n": 232,
+            "p50": 35.706,
+            "p95": 59.614999999999995,
+            "min": 24.781,
+            "max": 89.693
+          }
+        },
+        {
+          "name": "aten::zeros",
+          "count": 464,
+          "inclusive_duration_us": 9317.647,
+          "call_duration_us": {
+            "n": 464,
+            "p50": 16.555500000000002,
+            "p95": 50.609649999999995,
+            "min": 3.35,
+            "max": 78.753
+          }
+        },
+        {
+          "name": "aten::gt",
+          "count": 464,
+          "inclusive_duration_us": 8532.814,
+          "call_duration_us": {
+            "n": 464,
+            "p50": 18.236,
+            "p95": 30.612,
+            "min": 8.5,
+            "max": 67.103
+          }
+        },
+        {
+          "name": "aten::empty_strided",
+          "count": 696,
+          "inclusive_duration_us": 7565.042,
+          "call_duration_us": {
+            "n": 696,
+            "p50": 2.14,
+            "p95": 42.1235,
+            "min": 0.83,
+            "max": 62.982
+          }
+        },
+        {
+          "name": "aten::as_strided",
+          "count": 8653,
+          "inclusive_duration_us": 7543.96,
+          "call_duration_us": {
+            "n": 8653,
+            "p50": 0.72,
+            "p95": 2.04,
+            "min": 0.23,
+            "max": 22.451
+          }
+        },
+        {
+          "name": "aten::select",
+          "count": 1665,
+          "inclusive_duration_us": 6989.656,
+          "call_duration_us": {
+            "n": 1665,
+            "p50": 3.71,
+            "p95": 7.268199999999999,
+            "min": 1.33,
+            "max": 22.701
+          }
+        },
+        {
+          "name": "aten::diff",
+          "count": 232,
+          "inclusive_duration_us": 6663.467,
+          "call_duration_us": {
+            "n": 232,
+            "p50": 25.930999999999997,
+            "p95": 62.540549999999975,
+            "min": 13.77,
+            "max": 119.034
+          }
+        },
+        {
+          "name": "aten::max",
+          "count": 232,
+          "inclusive_duration_us": 5560.343,
+          "call_duration_us": {
+            "n": 232,
+            "p50": 16.456,
+            "p95": 75.54849999999998,
+            "min": 7.24,
+            "max": 158.106
+          }
+        },
+        {
+          "name": "aten::to",
+          "count": 1010,
+          "inclusive_duration_us": 5016.523,
+          "call_duration_us": {
+            "n": 1010,
+            "p50": 1.3705,
+            "p95": 15.335949999999999,
+            "min": 0.23,
+            "max": 53.701
+          }
+        },
+        {
+          "name": "aten::zero_",
+          "count": 464,
+          "inclusive_duration_us": 4791.989,
+          "call_duration_us": {
+            "n": 464,
+            "p50": 6.760000000000001,
+            "p95": 29.547649999999997,
+            "min": 0.27,
+            "max": 46.151
+          }
+        },
+        {
+          "name": "aten::where",
+          "count": 82,
+          "inclusive_duration_us": 4691.773,
+          "call_duration_us": {
+            "n": 82,
+            "p50": 58.622,
+            "p95": 121.178,
+            "min": 25.32,
+            "max": 134.045
+          }
+        },
+        {
+          "name": "aten::_to_copy",
+          "count": 464,
+          "inclusive_duration_us": 3856.105,
+          "call_duration_us": {
+            "n": 464,
+            "p50": 7.725,
+            "p95": 13.791849999999998,
+            "min": 4.01,
+            "max": 51.511
+          }
+        },
+        {
+          "name": "aten::unbind",
+          "count": 232,
+          "inclusive_duration_us": 3425.806,
+          "call_duration_us": {
+            "n": 232,
+            "p50": 11.5755,
+            "p95": 20.046549999999993,
+            "min": 7.56,
+            "max": 305.141
+          }
+        },
+        {
+          "name": "aten::resize_",
+          "count": 314,
+          "inclusive_duration_us": 2687.5099999999998,
+          "call_duration_us": {
+            "n": 314,
+            "p50": 7.6605,
+            "p95": 15.10514999999999,
+            "min": 3.16,
+            "max": 23.801
+          }
+        },
+        {
+          "name": "aten::any",
+          "count": 232,
+          "inclusive_duration_us": 2470.262,
+          "call_duration_us": {
+            "n": 232,
+            "p50": 9.7455,
+            "p95": 15.70045,
+            "min": 5.7,
+            "max": 28.481
+          }
+        },
+        {
+          "name": "aten::lt",
+          "count": 82,
+          "inclusive_duration_us": 2347.8650000000002,
+          "call_duration_us": {
+            "n": 82,
+            "p50": 25.445999999999998,
+            "p95": 49.0435,
+            "min": 17.46,
+            "max": 62.332
+          }
+        },
+        {
+          "name": "aten::sub",
+          "count": 464,
+          "inclusive_duration_us": 2325.185,
+          "call_duration_us": {
+            "n": 464,
+            "p50": 4.23,
+            "p95": 9.9785,
+            "min": 1.551,
+            "max": 15.18
+          }
+        },
+        {
+          "name": "aten::narrow",
+          "count": 464,
+          "inclusive_duration_us": 1951.242,
+          "call_duration_us": {
+            "n": 464,
+            "p50": 3.7350000000000003,
+            "p95": 7.1285,
+            "min": 2.07,
+            "max": 14.491
+          }
+        },
+        {
+          "name": "aten::item",
+          "count": 696,
+          "inclusive_duration_us": 1595.846,
+          "call_duration_us": {
+            "n": 696,
+            "p50": 2.0,
+            "p95": 3.8425000000000002,
+            "min": 0.98,
+            "max": 10.71
+          }
+        },
+        {
+          "name": "aten::scalar_tensor",
+          "count": 41,
+          "inclusive_duration_us": 1265.136,
+          "call_duration_us": {
+            "n": 41,
+            "p50": 24.211,
+            "p95": 51.382,
+            "min": 22.111,
+            "max": 59.212
+          }
+        },
+        {
+          "name": "aten::__and__",
+          "count": 232,
+          "inclusive_duration_us": 1242.973,
+          "call_duration_us": {
+            "n": 232,
+            "p50": 5.2755,
+            "p95": 7.628,
+            "min": 2.86,
+            "max": 9.66
+          }
+        },
+        {
+          "name": "aten::__ior__",
+          "count": 232,
+          "inclusive_duration_us": 1116.929,
+          "call_duration_us": {
+            "n": 232,
+            "p50": 4.625,
+            "p95": 6.902499999999999,
+            "min": 2.57,
+            "max": 8.391
+          }
+        },
+        {
+          "name": "aten::__iand__",
+          "count": 232,
+          "inclusive_duration_us": 1001.407,
+          "call_duration_us": {
+            "n": 232,
+            "p50": 4.02,
+            "p95": 6.4304499999999996,
+            "min": 2.35,
+            "max": 8.53
+          }
+        },
+        {
+          "name": "aten::le",
+          "count": 232,
+          "inclusive_duration_us": 859.514,
+          "call_duration_us": {
+            "n": 232,
+            "p50": 3.675,
+            "p95": 5.4245,
+            "min": 1.9,
+            "max": 6.531
+          }
+        },
+        {
+          "name": "aten::is_nonzero",
+          "count": 232,
+          "inclusive_duration_us": 808.97,
+          "call_duration_us": {
+            "n": 232,
+            "p50": 2.98,
+            "p95": 5.26,
+            "min": 1.891,
+            "max": 12.63
+          }
+        },
+        {
+          "name": "aten::bitwise_and",
+          "count": 232,
+          "inclusive_duration_us": 787.633,
+          "call_duration_us": {
+            "n": 232,
+            "p50": 3.325,
+            "p95": 4.827449999999999,
+            "min": 1.82,
+            "max": 6.15
+          }
+        },
+        {
+          "name": "aten::bitwise_or_",
+          "count": 232,
+          "inclusive_duration_us": 654.688,
+          "call_duration_us": {
+            "n": 232,
+            "p50": 2.8049999999999997,
+            "p95": 4.1045,
+            "min": 1.42,
+            "max": 4.91
+          }
+        },
+        {
+          "name": "aten::bitwise_and_",
+          "count": 232,
+          "inclusive_duration_us": 567.433,
+          "call_duration_us": {
+            "n": 232,
+            "p50": 2.2104999999999997,
+            "p95": 3.63955,
+            "min": 1.3,
+            "max": 4.87
+          }
+        },
+        {
+          "name": "aten::detach",
+          "count": 464,
+          "inclusive_duration_us": 549.376,
+          "call_duration_us": {
+            "n": 464,
+            "p50": 0.97,
+            "p95": 1.7484999999999997,
+            "min": 0.59,
+            "max": 44.812
+          }
+        },
+        {
+          "name": "aten::lift_fresh",
+          "count": 1160,
+          "inclusive_duration_us": 455.273,
+          "call_duration_us": {
+            "n": 1160,
+            "p50": 0.34,
+            "p95": 0.77,
+            "min": 0.1,
+            "max": 1.37
+          }
+        },
+        {
+          "name": "aten::_local_scalar_dense",
+          "count": 696,
+          "inclusive_duration_us": 360.292,
+          "call_duration_us": {
+            "n": 696,
+            "p50": 0.45,
+            "p95": 0.8025,
+            "min": 0.26,
+            "max": 1.97
+          }
+        },
+        {
+          "name": "aten::resolve_conj",
+          "count": 464,
+          "inclusive_duration_us": 142.812,
+          "call_duration_us": {
+            "n": 464,
+            "p50": 0.25,
+            "p95": 0.53,
+            "min": 0.14,
+            "max": 0.68
+          }
+        },
+        {
+          "name": "aten::resolve_neg",
+          "count": 464,
+          "inclusive_duration_us": 93.732,
+          "call_duration_us": {
+            "n": 464,
+            "p50": 0.18,
+            "p95": 0.3284999999999997,
+            "min": 0.1,
+            "max": 0.52
+          }
+        },
+        {
+          "name": "aten::view",
+          "count": 1,
+          "inclusive_duration_us": 1.971,
+          "call_duration_us": {
+            "n": 1,
+            "p50": 1.971,
+            "p95": 1.971,
+            "min": 1.971,
+            "max": 1.971
+          }
+        }
+      ],
+      "suspect_copy_scalar_index_ops": [
+        {
+          "name": "aten::copy_",
+          "count": 2102,
+          "inclusive_duration_us": 30248.429,
+          "call_duration_us": {
+            "n": 2102,
+            "p50": 12.410499999999999,
+            "p95": 37.355449999999976,
+            "min": 1.06,
+            "max": 111.424
+          }
+        },
+        {
+          "name": "aten::to",
+          "count": 1010,
+          "inclusive_duration_us": 5016.523,
+          "call_duration_us": {
+            "n": 1010,
+            "p50": 1.3705,
+            "p95": 15.335949999999999,
+            "min": 0.23,
+            "max": 53.701
+          }
+        },
+        {
+          "name": "aten::_to_copy",
+          "count": 464,
+          "inclusive_duration_us": 3856.105,
+          "call_duration_us": {
+            "n": 464,
+            "p50": 7.725,
+            "p95": 13.791849999999998,
+            "min": 4.01,
+            "max": 51.511
+          }
+        },
+        {
+          "name": "aten::item",
+          "count": 696,
+          "inclusive_duration_us": 1595.846,
+          "call_duration_us": {
+            "n": 696,
+            "p50": 2.0,
+            "p95": 3.8425000000000002,
+            "min": 0.98,
+            "max": 10.71
+          }
+        },
+        {
+          "name": "aten::is_nonzero",
+          "count": 232,
+          "inclusive_duration_us": 808.97,
+          "call_duration_us": {
+            "n": 232,
+            "p50": 2.98,
+            "p95": 5.26,
+            "min": 1.891,
+            "max": 12.63
+          }
+        },
+        {
+          "name": "aten::_local_scalar_dense",
+          "count": 696,
+          "inclusive_duration_us": 360.292,
+          "call_duration_us": {
+            "n": 696,
+            "p50": 0.45,
+            "p95": 0.8025,
+            "min": 0.26,
+            "max": 1.97
+          }
+        }
+      ],
+      "largest_sync_calls_with_enclosing_ops": [],
+      "correlated_GPU_copy_directions": {
+        "Memcpy HtoD (Pinned -> Device)": {
+          "count": 546,
+          "bytes": 139472,
+          "gpu_copy_duration_us": 1151.4800000000023
+        },
+        "Memcpy DtoD (Device -> Device)": {
+          "count": 628,
+          "bytes": 21680,
+          "gpu_copy_duration_us": 1365.4959999999999
+        }
+      }
+    },
+    "mixed": {
+      "complete_steps": 22,
+      "cpu_scope_us": {
+        "n": 22,
+        "p50": 58954.1095,
+        "p95": 62101.9663,
+        "min": 52821.027,
+        "max": 64777.011
+      },
+      "runtime_all_union_us_per_step": {
+        "n": 22,
+        "p50": 8097.228271484375,
+        "p95": 8963.991455078125,
+        "min": 7607.685546875,
+        "max": 9112.58544921875
+      },
+      "cpu_ops_all_union_us_per_step": {
+        "n": 22,
+        "p50": 48002.648681640625,
+        "p95": 50371.6197265625,
+        "min": 44958.360595703125,
+        "max": 52807.10888671875
+      },
+      "selected_cpu_op_union_us_per_step": {
+        "vllm::qwen_gdn_attention_core": {
+          "n": 22,
+          "p50": 40011.429931640625,
+          "p95": 41704.806652832034,
+          "min": 38031.609130859375,
+          "max": 43904.36083984375
+        },
+        "ChunkGatedDeltaRuleFunction": {
+          "n": 22,
+          "p50": 17363.454467773438,
+          "p95": 18341.278771972655,
+          "min": 16765.143798828125,
+          "max": 18508.631591796875
+        },
+        "vllm::unified_attention_with_output": {
+          "n": 22,
+          "p50": 3438.887939453125,
+          "p95": 3535.7356079101564,
+          "min": 3366.746826171875,
+          "max": 3553.275146484375
+        },
+        "aten::index": {
+          "n": 22,
+          "p50": 1781.77783203125,
+          "p95": 1846.2062255859375,
+          "min": 1661.148193359375,
+          "max": 1874.0439453125
+        },
+        "aten::index_put_": {
+          "n": 22,
+          "p50": 2316.58056640625,
+          "p95": 2648.422827148437,
+          "min": 2184.325439453125,
+          "max": 3292.007080078125
+        }
+      },
+      "runtime_group_union_us_per_step": {
+        "synchronization_API": {
+          "n": 22,
+          "p50": 0.0,
+          "p95": 0.0,
+          "min": 0,
+          "max": 0
+        },
+        "memory_copy_API": {
+          "n": 22,
+          "p50": 493.2310791015625,
+          "p95": 545.6947143554687,
+          "min": 425.9443359375,
+          "max": 547.967529296875
+        },
+        "kernel_or_graph_launch_API": {
+          "n": 22,
+          "p50": 7389.207275390625,
+          "p95": 8222.724243164062,
+          "min": 7058.35791015625,
+          "max": 8359.65869140625
+        },
+        "other_runtime_API": {
+          "n": 22,
+          "p50": 216.77978515625,
+          "p95": 237.85257568359376,
+          "min": 113.0341796875,
+          "max": 273.123779296875
+        }
+      },
+      "runtime_API_table": [
+        {
+          "name": "cudaGraphLaunch",
+          "count": 1188,
+          "inclusive_duration_us": 62191.356999999996,
+          "same_name_interval_union_us": 62191.35791015625,
+          "call_duration_us": {
+            "n": 1188,
+            "p50": 50.807,
+            "p95": 69.92999999999998,
+            "min": 30.071,
+            "max": 763.507
+          }
+        },
+        {
+          "name": "cudaLaunchKernel",
+          "count": 6908,
+          "inclusive_duration_us": 52818.361,
+          "same_name_interval_union_us": 52818.347900390625,
+          "call_duration_us": {
+            "n": 6908,
+            "p50": 6.911,
+            "p95": 11.882999999999992,
+            "min": 4.741,
+            "max": 284.0
+          }
+        },
+        {
+          "name": "cuLaunchKernelEx",
+          "count": 6116,
+          "inclusive_duration_us": 49613.416,
+          "same_name_interval_union_us": 49613.41259765625,
+          "call_duration_us": {
+            "n": 6116,
+            "p50": 7.431,
+            "p95": 11.6025,
+            "min": 5.11,
+            "max": 317.931
+          }
+        },
+        {
+          "name": "cudaMemcpyAsync",
+          "count": 880,
+          "inclusive_duration_us": 10921.599,
+          "same_name_interval_union_us": 10921.597412109375,
+          "call_duration_us": {
+            "n": 880,
+            "p50": 11.441,
+            "p95": 19.017499999999995,
+            "min": 4.531,
+            "max": 30.941
+          }
+        },
+        {
+          "name": "cudaEventQuery",
+          "count": 1208,
+          "inclusive_duration_us": 2347.942,
+          "same_name_interval_union_us": 2347.94482421875,
+          "call_duration_us": {
+            "n": 1208,
+            "p50": 1.69,
+            "p95": 4.0,
+            "min": 0.49,
+            "max": 20.641
+          }
+        },
+        {
+          "name": "cudaFuncSetAttribute",
+          "count": 506,
+          "inclusive_duration_us": 901.32,
+          "same_name_interval_union_us": 901.3251953125,
+          "call_duration_us": {
+            "n": 506,
+            "p50": 1.68,
+            "p95": 2.3249999999999997,
+            "min": 1.4,
+            "max": 4.49
+          }
+        },
+        {
+          "name": "cudaDeviceGetAttribute",
+          "count": 1012,
+          "inclusive_duration_us": 394.402,
+          "same_name_interval_union_us": 394.3876953125,
+          "call_duration_us": {
+            "n": 1012,
+            "p50": 0.42,
+            "p95": 0.6,
+            "min": 0.19,
+            "max": 2.12
+          }
+        },
+        {
+          "name": "cudaPointerGetAttributes",
+          "count": 88,
+          "inclusive_duration_us": 351.141,
+          "same_name_interval_union_us": 351.1416015625,
+          "call_duration_us": {
+            "n": 88,
+            "p50": 2.81,
+            "p95": 9.109,
+            "min": 0.74,
+            "max": 9.881
+          }
+        },
+        {
+          "name": "cudaStreamIsCapturing",
+          "count": 195,
+          "inclusive_duration_us": 270.903,
+          "same_name_interval_union_us": 270.9033203125,
+          "call_duration_us": {
+            "n": 195,
+            "p50": 1.27,
+            "p95": 2.8262999999999994,
+            "min": 0.44,
+            "max": 3.281
+          }
+        },
+        {
+          "name": "cudaEventRecordWithFlags",
+          "count": 85,
+          "inclusive_duration_us": 197.468,
+          "same_name_interval_union_us": 197.467529296875,
+          "call_duration_us": {
+            "n": 85,
+            "p50": 2.18,
+            "p95": 3.6,
+            "min": 0.961,
+            "max": 4.07
+          }
+        },
+        {
+          "name": "cudaStreamGetCaptureInfo_v2",
+          "count": 44,
+          "inclusive_duration_us": 57.252,
+          "same_name_interval_union_us": 57.2529296875,
+          "call_duration_us": {
+            "n": 44,
+            "p50": 1.185,
+            "p95": 2.4685,
+            "min": 0.36,
+            "max": 2.8
+          }
+        },
+        {
+          "name": "cudaHostAlloc",
+          "count": 1,
+          "inclusive_duration_us": 43.132,
+          "same_name_interval_union_us": 43.132080078125,
+          "call_duration_us": {
+            "n": 1,
+            "p50": 43.132,
+            "p95": 43.132,
+            "min": 43.132,
+            "max": 43.132
+          }
+        }
+      ],
+      "cpu_op_inclusive_table_not_additive": [
+        {
+          "name": "vllm::qwen_gdn_attention_core",
+          "count": 660,
+          "inclusive_duration_us": 878322.525,
+          "call_duration_us": {
+            "n": 660,
+            "p50": 1269.475,
+            "p95": 1794.3490499999994,
+            "min": 1223.423,
+            "max": 4316.123
+          }
+        },
+        {
+          "name": "ChunkGatedDeltaRuleFunction",
+          "count": 660,
+          "inclusive_duration_us": 384717.672,
+          "call_duration_us": {
+            "n": 660,
+            "p50": 560.755,
+            "p95": 781.25,
+            "min": 539.029,
+            "max": 1411.6
+          }
+        },
+        {
+          "name": "vllm::unified_attention_with_output",
+          "count": 506,
+          "inclusive_duration_us": 75868.762,
+          "call_duration_us": {
+            "n": 506,
+            "p50": 147.675,
+            "p95": 174.6735,
+            "min": 135.005,
+            "max": 291.57
+          }
+        },
+        {
+          "name": "aten::to",
+          "count": 4906,
+          "inclusive_duration_us": 63102.427,
+          "call_duration_us": {
+            "n": 4906,
+            "p50": 5.295,
+            "p95": 31.6835,
+            "min": 0.21,
+            "max": 996.305
+          }
+        },
+        {
+          "name": "aten::_to_copy",
+          "count": 2486,
+          "inclusive_duration_us": 58585.329,
+          "call_duration_us": {
+            "n": 2486,
+            "p50": 24.221,
+            "p95": 38.51625,
+            "min": 3.11,
+            "max": 995.405
+          }
+        },
+        {
+          "name": "aten::copy_",
+          "count": 3740,
+          "inclusive_duration_us": 54335.169,
+          "call_duration_us": {
+            "n": 3740,
+            "p50": 15.431,
+            "p95": 25.662499999999994,
+            "min": 0.82,
+            "max": 109.524
+          }
+        },
+        {
+          "name": "aten::index_put_",
+          "count": 1320,
+          "inclusive_duration_us": 51770.665,
+          "call_duration_us": {
+            "n": 1320,
+            "p50": 40.172,
+            "p95": 51.702949999999994,
+            "min": 29.941,
+            "max": 1020.766
+          }
+        },
+        {
+          "name": "aten::_index_put_impl_",
+          "count": 1320,
+          "inclusive_duration_us": 49498.697,
+          "call_duration_us": {
+            "n": 1320,
+            "p50": 38.2765,
+            "p95": 48.95355,
+            "min": 28.751,
+            "max": 1018.796
+          }
+        },
+        {
+          "name": "aten::empty_strided",
+          "count": 6974,
+          "inclusive_duration_us": 44339.702,
+          "call_duration_us": {
+            "n": 6974,
+            "p50": 6.1955,
+            "p95": 9.87,
+            "min": 0.61,
+            "max": 41.502
+          }
+        },
+        {
+          "name": "aten::empty",
+          "count": 8228,
+          "inclusive_duration_us": 42784.786,
+          "call_duration_us": {
+            "n": 8228,
+            "p50": 4.5,
+            "p95": 8.14,
+            "min": 0.46,
+            "max": 58.962
+          }
+        },
+        {
+          "name": "aten::index",
+          "count": 660,
+          "inclusive_duration_us": 39063.761,
+          "call_duration_us": {
+            "n": 660,
+            "p50": 55.997,
+            "p95": 77.1735,
+            "min": 53.512,
+            "max": 155.085
+          }
+        },
+        {
+          "name": "aten::empty_like",
+          "count": 4488,
+          "inclusive_duration_us": 37001.697,
+          "call_duration_us": {
+            "n": 4488,
+            "p50": 7.991,
+            "p95": 11.401,
+            "min": 5.03,
+            "max": 105.614
+          }
+        },
+        {
+          "name": "vllm::unified_kv_cache_update",
+          "count": 506,
+          "inclusive_duration_us": 36874.741,
+          "call_duration_us": {
+            "n": 506,
+            "p50": 71.737,
+            "p95": 88.98049999999999,
+            "min": 63.882,
+            "max": 145.345
+          }
+        },
+        {
+          "name": "aten::slice",
+          "count": 12648,
+          "inclusive_duration_us": 31135.149,
+          "call_duration_us": {
+            "n": 12648,
+            "p50": 1.82,
+            "p95": 4.92,
+            "min": 1.15,
+            "max": 3029.748
+          }
+        },
+        {
+          "name": "_vllm_fa2_C::varlen_fwd",
+          "count": 506,
+          "inclusive_duration_us": 23479.618,
+          "call_duration_us": {
+            "n": 506,
+            "p50": 44.826,
+            "p95": 57.4995,
+            "min": 41.301,
+            "max": 123.495
+          }
+        },
+        {
+          "name": "aten::new_empty",
+          "count": 3520,
+          "inclusive_duration_us": 21841.907,
+          "call_duration_us": {
+            "n": 3520,
+            "p50": 5.921,
+            "p95": 8.531449999999998,
+            "min": 2.72,
+            "max": 42.892
+          }
+        },
+        {
+          "name": "aten::zeros_like",
+          "count": 660,
+          "inclusive_duration_us": 18261.221,
+          "call_duration_us": {
+            "n": 660,
+            "p50": 26.291,
+            "p95": 36.542500000000004,
+            "min": 24.911,
+            "max": 111.474
+          }
+        },
+        {
+          "name": "aten::as_strided",
+          "count": 26968,
+          "inclusive_duration_us": 17574.183,
+          "call_duration_us": {
+            "n": 26968,
+            "p50": 0.51,
+            "p95": 1.42,
+            "min": 0.23,
+            "max": 16.34
+          }
+        },
+        {
+          "name": "aten::fill_",
+          "count": 902,
+          "inclusive_duration_us": 12639.123,
+          "call_duration_us": {
+            "n": 902,
+            "p50": 13.340499999999999,
+            "p95": 25.334499999999963,
+            "min": 0.22,
+            "max": 84.083
+          }
+        },
+        {
+          "name": "aten::masked_fill_",
+          "count": 660,
+          "inclusive_duration_us": 12113.632,
+          "call_duration_us": {
+            "n": 660,
+            "p50": 17.311,
+            "p95": 24.287999999999993,
+            "min": 16.261,
+            "max": 74.593
+          }
+        },
+        {
+          "name": "aten::zero_",
+          "count": 924,
+          "inclusive_duration_us": 11851.155,
+          "call_duration_us": {
+            "n": 924,
+            "p50": 15.721,
+            "p95": 21.656499999999998,
+            "min": 0.14,
+            "max": 88.363
+          }
+        },
+        {
+          "name": "aten::transpose",
+          "count": 2992,
+          "inclusive_duration_us": 10475.454,
+          "call_duration_us": {
+            "n": 2992,
+            "p50": 3.33,
+            "p95": 5.59045,
+            "min": 1.4,
+            "max": 23.921
+          }
+        },
+        {
+          "name": "_C_cache_ops::reshape_and_cache_flash",
+          "count": 506,
+          "inclusive_duration_us": 9991.581,
+          "call_duration_us": {
+            "n": 506,
+            "p50": 18.930999999999997,
+            "p95": 25.966,
+            "min": 16.711,
+            "max": 77.932
+          }
+        },
+        {
+          "name": "aten::split",
+          "count": 1012,
+          "inclusive_duration_us": 9572.253,
+          "call_duration_us": {
+            "n": 1012,
+            "p50": 9.26,
+            "p95": 11.474499999999999,
+            "min": 8.1,
+            "max": 25.661
+          }
+        },
+        {
+          "name": "aten::unsqueeze",
+          "count": 5984,
+          "inclusive_duration_us": 9150.932999999999,
+          "call_duration_us": {
+            "n": 5984,
+            "p50": 1.27,
+            "p95": 2.23,
+            "min": 1.05,
+            "max": 45.282
+          }
+        },
+        {
+          "name": "aten::bitwise_not",
+          "count": 660,
+          "inclusive_duration_us": 9063.23,
+          "call_duration_us": {
+            "n": 660,
+            "p50": 12.94,
+            "p95": 18.61055,
+            "min": 12.41,
+            "max": 32.251
+          }
+        },
+        {
+          "name": "aten::narrow",
+          "count": 2178,
+          "inclusive_duration_us": 7390.7970000000005,
+          "call_duration_us": {
+            "n": 2178,
+            "p50": 3.5,
+            "p95": 5.161500000000001,
+            "min": 2.03,
+            "max": 18.75
+          }
+        },
+        {
+          "name": "Pregraph bytecode",
+          "count": 22,
+          "inclusive_duration_us": 6971.269,
+          "call_duration_us": {
+            "n": 22,
+            "p50": 305.4105,
+            "p95": 383.9735,
+            "min": 239.018,
+            "max": 414.975
+          }
+        },
+        {
+          "name": "aten::expand",
+          "count": 2200,
+          "inclusive_duration_us": 5339.303,
+          "call_duration_us": {
+            "n": 2200,
+            "p50": 2.35,
+            "p95": 3.3514499999999976,
+            "min": 1.84,
+            "max": 13.16
+          }
+        },
+        {
+          "name": "aten::sub",
+          "count": 242,
+          "inclusive_duration_us": 4037.478,
+          "call_duration_us": {
+            "n": 242,
+            "p50": 8.9755,
+            "p95": 53.846999999999994,
+            "min": 1.75,
+            "max": 74.853
+          }
+        },
+        {
+          "name": "aten::view",
+          "count": 2726,
+          "inclusive_duration_us": 3924.093,
+          "call_duration_us": {
+            "n": 2726,
+            "p50": 1.16,
+            "p95": 2.98,
+            "min": 0.47,
+            "max": 43.632
+          }
+        },
+        {
+          "name": "aten::select",
+          "count": 856,
+          "inclusive_duration_us": 3538.598,
+          "call_duration_us": {
+            "n": 856,
+            "p50": 3.5549999999999997,
+            "p95": 7.395,
+            "min": 1.23,
+            "max": 20.33
+          }
+        },
+        {
+          "name": "aten::index_copy_",
+          "count": 110,
+          "inclusive_duration_us": 2963.4,
+          "call_duration_us": {
+            "n": 110,
+            "p50": 28.871000000000002,
+            "p95": 43.27495,
+            "min": 13.431,
+            "max": 49.332
+          }
+        },
+        {
+          "name": "aten::arange",
+          "count": 88,
+          "inclusive_duration_us": 2808.497,
+          "call_duration_us": {
+            "n": 88,
+            "p50": 26.391,
+            "p95": 67.9545,
+            "min": 8.861,
+            "max": 91.434
+          }
+        },
+        {
+          "name": "aten::reshape",
+          "count": 1342,
+          "inclusive_duration_us": 2603.487,
+          "call_duration_us": {
+            "n": 1342,
+            "p50": 1.92,
+            "p95": 2.7595,
+            "min": 1.41,
+            "max": 14.31
+          }
+        },
+        {
+          "name": "aten::zeros",
+          "count": 220,
+          "inclusive_duration_us": 2201.585,
+          "call_duration_us": {
+            "n": 220,
+            "p50": 6.906,
+            "p95": 34.52854999999989,
+            "min": 2.86,
+            "max": 53.712
+          }
+        },
+        {
+          "name": "aten::item",
+          "count": 1010,
+          "inclusive_duration_us": 1881.175,
+          "call_duration_us": {
+            "n": 1010,
+            "p50": 1.8,
+            "p95": 2.76,
+            "min": 0.82,
+            "max": 9.42
+          }
+        },
+        {
+          "name": "aten::sum",
+          "count": 88,
+          "inclusive_duration_us": 1757.174,
+          "call_duration_us": {
+            "n": 88,
+            "p50": 18.509999999999998,
+            "p95": 27.837999999999997,
+            "min": 10.58,
+            "max": 42.061
+          }
+        },
+        {
+          "name": "aten::full",
+          "count": 44,
+          "inclusive_duration_us": 1716.873,
+          "call_duration_us": {
+            "n": 44,
+            "p50": 37.896,
+            "p95": 64.26350000000001,
+            "min": 15.351,
+            "max": 103.093
+          }
+        },
+        {
+          "name": "aten::gt",
+          "count": 66,
+          "inclusive_duration_us": 1684.9470000000001,
+          "call_duration_us": {
+            "n": 66,
+            "p50": 21.7405,
+            "p95": 45.70375,
+            "min": 8.891,
+            "max": 73.293
+          }
+        },
+        {
+          "name": "aten::squeeze",
+          "count": 660,
+          "inclusive_duration_us": 1511.032,
+          "call_duration_us": {
+            "n": 660,
+            "p50": 2.16,
+            "p95": 3.0,
+            "min": 1.99,
+            "max": 12.24
+          }
+        },
+        {
+          "name": "aten::cat",
+          "count": 110,
+          "inclusive_duration_us": 1472.035,
+          "call_duration_us": {
+            "n": 110,
+            "p50": 11.5705,
+            "p95": 35.6625,
+            "min": 2.21,
+            "max": 41.591
+          }
+        },
+        {
+          "name": "aten::floor_divide",
+          "count": 66,
+          "inclusive_duration_us": 1166.411,
+          "call_duration_us": {
+            "n": 66,
+            "p50": 17.4905,
+            "p95": 27.256,
+            "min": 8.05,
+            "max": 57.962
+          }
+        },
+        {
+          "name": "aten::diff",
+          "count": 44,
+          "inclusive_duration_us": 1096.364,
+          "call_duration_us": {
+            "n": 44,
+            "p50": 22.6655,
+            "p95": 33.00585,
+            "min": 12.87,
+            "max": 47.912
+          }
+        },
+        {
+          "name": "aten::is_pinned",
+          "count": 88,
+          "inclusive_duration_us": 1081.902,
+          "call_duration_us": {
+            "n": 88,
+            "p50": 10.220500000000001,
+            "p95": 24.597499999999997,
+            "min": 3.37,
+            "max": 25.591
+          }
+        },
+        {
+          "name": "aten::clone",
+          "count": 22,
+          "inclusive_duration_us": 1057.427,
+          "call_duration_us": {
+            "n": 22,
+            "p50": 43.506,
+            "p95": 63.22705,
+            "min": 24.381,
+            "max": 65.273
+          }
+        },
+        {
+          "name": "aten::unbind",
+          "count": 44,
+          "inclusive_duration_us": 1014.669,
+          "call_duration_us": {
+            "n": 44,
+            "p50": 19.0405,
+            "p95": 41.33065,
+            "min": 9.04,
+            "max": 41.602
+          }
+        },
+        {
+          "name": "aten::add",
+          "count": 66,
+          "inclusive_duration_us": 927.073,
+          "call_duration_us": {
+            "n": 66,
+            "p50": 13.004999999999999,
+            "p95": 22.1185,
+            "min": 6.7,
+            "max": 39.601
+          }
+        },
+        {
+          "name": "aten::pin_memory",
+          "count": 22,
+          "inclusive_duration_us": 837.911,
+          "call_duration_us": {
+            "n": 22,
+            "p50": 33.871,
+            "p95": 49.653,
+            "min": 23.461,
+            "max": 51.842
+          }
+        },
+        {
+          "name": "aten::uniform_",
+          "count": 22,
+          "inclusive_duration_us": 792.1610000000001,
+          "call_duration_us": {
+            "n": 22,
+            "p50": 32.256,
+            "p95": 48.054500000000004,
+            "min": 24.041,
+            "max": 53.962
+          }
+        },
+        {
+          "name": "aten::cumsum",
+          "count": 44,
+          "inclusive_duration_us": 657.983,
+          "call_duration_us": {
+            "n": 44,
+            "p50": 14.6555,
+            "p95": 21.4895,
+            "min": 7.26,
+            "max": 23.291
+          }
+        },
+        {
+          "name": "aten::stack",
+          "count": 22,
+          "inclusive_duration_us": 582.674,
+          "call_duration_us": {
+            "n": 22,
+            "p50": 24.781,
+            "p95": 34.412,
+            "min": 14.82,
+            "max": 34.992
+          }
+        },
+        {
+          "name": "aten::eq",
+          "count": 44,
+          "inclusive_duration_us": 481.027,
+          "call_duration_us": {
+            "n": 44,
+            "p50": 8.7055,
+            "p95": 21.7885,
+            "min": 3.04,
+            "max": 23.7
+          }
+        },
+        {
+          "name": "aten::_local_scalar_dense",
+          "count": 1010,
+          "inclusive_duration_us": 460.539,
+          "call_duration_us": {
+            "n": 1010,
+            "p50": 0.43,
+            "p95": 0.7554999999999995,
+            "min": 0.12,
+            "max": 1.17
+          }
+        },
+        {
+          "name": "aten::_pin_memory",
+          "count": 22,
+          "inclusive_duration_us": 452.229,
+          "call_duration_us": {
+            "n": 22,
+            "p50": 17.235500000000002,
+            "p95": 27.099999999999998,
+            "min": 12.771,
+            "max": 29.061
+          }
+        },
+        {
+          "name": "aten::max",
+          "count": 22,
+          "inclusive_duration_us": 335.194,
+          "call_duration_us": {
+            "n": 22,
+            "p50": 14.39,
+            "p95": 19.0595,
+            "min": 10.25,
+            "max": 19.42
+          }
+        },
+        {
+          "name": "aten::lift_fresh",
+          "count": 1012,
+          "inclusive_duration_us": 329.72700000000003,
+          "call_duration_us": {
+            "n": 1012,
+            "p50": 0.28,
+            "p95": 0.54,
+            "min": 0.11,
+            "max": 10.051
+          }
+        },
+        {
+          "name": "aten::resize_",
+          "count": 44,
+          "inclusive_duration_us": 298.525,
+          "call_duration_us": {
+            "n": 44,
+            "p50": 4.4350000000000005,
+            "p95": 14.13415,
+            "min": 1.791,
+            "max": 17.441
+          }
+        },
+        {
+          "name": "aten::any",
+          "count": 22,
+          "inclusive_duration_us": 275.4,
+          "call_duration_us": {
+            "n": 22,
+            "p50": 11.505500000000001,
+            "p95": 15.56345,
+            "min": 8.18,
+            "max": 16.281
+          }
+        },
+        {
+          "name": "aten::argmax",
+          "count": 22,
+          "inclusive_duration_us": 224.687,
+          "call_duration_us": {
+            "n": 22,
+            "p50": 9.260000000000002,
+            "p95": 12.89605,
+            "min": 6.76,
+            "max": 13.18
+          }
+        },
+        {
+          "name": "aten::new_zeros",
+          "count": 22,
+          "inclusive_duration_us": 214.646,
+          "call_duration_us": {
+            "n": 22,
+            "p50": 9.1455,
+            "p95": 13.360999999999999,
+            "min": 5.47,
+            "max": 13.49
+          }
+        },
+        {
+          "name": "aten::expand_as",
+          "count": 22,
+          "inclusive_duration_us": 182.876,
+          "call_duration_us": {
+            "n": 22,
+            "p50": 7.2455,
+            "p95": 9.22545,
+            "min": 3.53,
+            "max": 30.801
+          }
+        },
+        {
+          "name": "aten::neg",
+          "count": 44,
+          "inclusive_duration_us": 174.224,
+          "call_duration_us": {
+            "n": 44,
+            "p50": 3.435,
+            "p95": 7.31765,
+            "min": 1.19,
+            "max": 7.4
+          }
+        },
+        {
+          "name": "aten::__and__",
+          "count": 22,
+          "inclusive_duration_us": 143.087,
+          "call_duration_us": {
+            "n": 22,
+            "p50": 6.5055,
+            "p95": 8.26405,
+            "min": 3.93,
+            "max": 9.04
+          }
+        },
+        {
+          "name": "aten::__ior__",
+          "count": 22,
+          "inclusive_duration_us": 126.585,
+          "call_duration_us": {
+            "n": 22,
+            "p50": 5.46,
+            "p95": 7.8995,
+            "min": 3.76,
+            "max": 8.161
+          }
+        },
+        {
+          "name": "aten::detach",
+          "count": 88,
+          "inclusive_duration_us": 116.691,
+          "call_duration_us": {
+            "n": 88,
+            "p50": 1.23,
+            "p95": 1.9865,
+            "min": 0.62,
+            "max": 2.58
+          }
+        },
+        {
+          "name": "aten::__iand__",
+          "count": 22,
+          "inclusive_duration_us": 114.696,
+          "call_duration_us": {
+            "n": 22,
+            "p50": 5.220000000000001,
+            "p95": 6.47905,
+            "min": 2.87,
+            "max": 6.831
+          }
+        },
+        {
+          "name": "aten::le",
+          "count": 22,
+          "inclusive_duration_us": 104.016,
+          "call_duration_us": {
+            "n": 22,
+            "p50": 4.3454999999999995,
+            "p95": 5.741549999999999,
+            "min": 2.72,
+            "max": 13.121
+          }
+        },
+        {
+          "name": "aten::bitwise_and",
+          "count": 22,
+          "inclusive_duration_us": 88.732,
+          "call_duration_us": {
+            "n": 22,
+            "p50": 3.995,
+            "p95": 4.960999999999999,
+            "min": 2.38,
+            "max": 6.02
+          }
+        },
+        {
+          "name": "aten::is_nonzero",
+          "count": 22,
+          "inclusive_duration_us": 84.193,
+          "call_duration_us": {
+            "n": 22,
+            "p50": 3.6500000000000004,
+            "p95": 4.9935,
+            "min": 2.11,
+            "max": 5.06
+          }
+        },
+        {
+          "name": "aten::set_",
+          "count": 22,
+          "inclusive_duration_us": 80.956,
+          "call_duration_us": {
+            "n": 22,
+            "p50": 3.425,
+            "p95": 4.649500000000001,
+            "min": 2.511,
+            "max": 4.68
+          }
+        },
+        {
+          "name": "aten::detach_",
+          "count": 220,
+          "inclusive_duration_us": 75.721,
+          "call_duration_us": {
+            "n": 220,
+            "p50": 0.32,
+            "p95": 0.8004999999999999,
+            "min": 0.11,
+            "max": 0.97
+          }
+        },
+        {
+          "name": "aten::bitwise_or_",
+          "count": 22,
+          "inclusive_duration_us": 75.404,
+          "call_duration_us": {
+            "n": 22,
+            "p50": 3.3605,
+            "p95": 4.815949999999999,
+            "min": 2.18,
+            "max": 4.99
+          }
+        },
+        {
+          "name": "aten::bitwise_and_",
+          "count": 22,
+          "inclusive_duration_us": 63.673,
+          "call_duration_us": {
+            "n": 22,
+            "p50": 2.6555,
+            "p95": 3.6585,
+            "min": 1.67,
+            "max": 3.81
+          }
+        },
+        {
+          "name": "aten::resolve_conj",
+          "count": 132,
+          "inclusive_duration_us": 48.095,
+          "call_duration_us": {
+            "n": 132,
+            "p50": 0.33,
+            "p95": 0.5744999999999998,
+            "min": 0.14,
+            "max": 0.96
+          }
+        },
+        {
+          "name": "aten::resolve_neg",
+          "count": 132,
+          "inclusive_duration_us": 30.4,
+          "call_duration_us": {
+            "n": 132,
+            "p50": 0.215,
+            "p95": 0.3444999999999999,
+            "min": 0.11,
+            "max": 0.41
+          }
+        }
+      ],
+      "suspect_copy_scalar_index_ops": [
+        {
+          "name": "aten::to",
+          "count": 4906,
+          "inclusive_duration_us": 63102.427,
+          "call_duration_us": {
+            "n": 4906,
+            "p50": 5.295,
+            "p95": 31.6835,
+            "min": 0.21,
+            "max": 996.305
+          }
+        },
+        {
+          "name": "aten::_to_copy",
+          "count": 2486,
+          "inclusive_duration_us": 58585.329,
+          "call_duration_us": {
+            "n": 2486,
+            "p50": 24.221,
+            "p95": 38.51625,
+            "min": 3.11,
+            "max": 995.405
+          }
+        },
+        {
+          "name": "aten::copy_",
+          "count": 3740,
+          "inclusive_duration_us": 54335.169,
+          "call_duration_us": {
+            "n": 3740,
+            "p50": 15.431,
+            "p95": 25.662499999999994,
+            "min": 0.82,
+            "max": 109.524
+          }
+        },
+        {
+          "name": "aten::index_put_",
+          "count": 1320,
+          "inclusive_duration_us": 51770.665,
+          "call_duration_us": {
+            "n": 1320,
+            "p50": 40.172,
+            "p95": 51.702949999999994,
+            "min": 29.941,
+            "max": 1020.766
+          }
+        },
+        {
+          "name": "aten::_index_put_impl_",
+          "count": 1320,
+          "inclusive_duration_us": 49498.697,
+          "call_duration_us": {
+            "n": 1320,
+            "p50": 38.2765,
+            "p95": 48.95355,
+            "min": 28.751,
+            "max": 1018.796
+          }
+        },
+        {
+          "name": "aten::index",
+          "count": 660,
+          "inclusive_duration_us": 39063.761,
+          "call_duration_us": {
+            "n": 660,
+            "p50": 55.997,
+            "p95": 77.1735,
+            "min": 53.512,
+            "max": 155.085
+          }
+        },
+        {
+          "name": "aten::masked_fill_",
+          "count": 660,
+          "inclusive_duration_us": 12113.632,
+          "call_duration_us": {
+            "n": 660,
+            "p50": 17.311,
+            "p95": 24.287999999999993,
+            "min": 16.261,
+            "max": 74.593
+          }
+        },
+        {
+          "name": "aten::index_copy_",
+          "count": 110,
+          "inclusive_duration_us": 2963.4,
+          "call_duration_us": {
+            "n": 110,
+            "p50": 28.871000000000002,
+            "p95": 43.27495,
+            "min": 13.431,
+            "max": 49.332
+          }
+        },
+        {
+          "name": "aten::item",
+          "count": 1010,
+          "inclusive_duration_us": 1881.175,
+          "call_duration_us": {
+            "n": 1010,
+            "p50": 1.8,
+            "p95": 2.76,
+            "min": 0.82,
+            "max": 9.42
+          }
+        },
+        {
+          "name": "aten::_local_scalar_dense",
+          "count": 1010,
+          "inclusive_duration_us": 460.539,
+          "call_duration_us": {
+            "n": 1010,
+            "p50": 0.43,
+            "p95": 0.7554999999999995,
+            "min": 0.12,
+            "max": 1.17
+          }
+        },
+        {
+          "name": "aten::is_nonzero",
+          "count": 22,
+          "inclusive_duration_us": 84.193,
+          "call_duration_us": {
+            "n": 22,
+            "p50": 3.6500000000000004,
+            "p95": 4.9935,
+            "min": 2.11,
+            "max": 5.06
+          }
+        }
+      ],
+      "largest_sync_calls_with_enclosing_ops": [],
+      "correlated_GPU_copy_directions": {
+        "Memcpy HtoD (Pinned -> Device)": {
+          "count": 154,
+          "bytes": 21376,
+          "gpu_copy_duration_us": 344.19900000000024
+        },
+        "Memcpy DtoD (Device -> Device)": {
+          "count": 726,
+          "bytes": 919645312,
+          "gpu_copy_duration_us": 2514.8009999999954
+        }
+      }
+    },
+    "prefill_only": {
+      "complete_steps": 0,
+      "cpu_scope_us": {
+        "n": 0,
+        "p50": null,
+        "p95": null
+      },
+      "runtime_all_union_us_per_step": {
+        "n": 0,
+        "p50": null,
+        "p95": null
+      },
+      "cpu_ops_all_union_us_per_step": {
+        "n": 0,
+        "p50": null,
+        "p95": null
+      },
+      "selected_cpu_op_union_us_per_step": {
+        "vllm::qwen_gdn_attention_core": {
+          "n": 0,
+          "p50": null,
+          "p95": null
+        },
+        "ChunkGatedDeltaRuleFunction": {
+          "n": 0,
+          "p50": null,
+          "p95": null
+        },
+        "vllm::unified_attention_with_output": {
+          "n": 0,
+          "p50": null,
+          "p95": null
+        },
+        "aten::index": {
+          "n": 0,
+          "p50": null,
+          "p95": null
+        },
+        "aten::index_put_": {
+          "n": 0,
+          "p50": null,
+          "p95": null
+        }
+      },
+      "runtime_group_union_us_per_step": {
+        "synchronization_API": {
+          "n": 0,
+          "p50": null,
+          "p95": null
+        },
+        "memory_copy_API": {
+          "n": 0,
+          "p50": null,
+          "p95": null
+        },
+        "kernel_or_graph_launch_API": {
+          "n": 0,
+          "p50": null,
+          "p95": null
+        },
+        "other_runtime_API": {
+          "n": 0,
+          "p50": null,
+          "p95": null
+        }
+      },
+      "runtime_API_table": [],
+      "cpu_op_inclusive_table_not_additive": [],
+      "suspect_copy_scalar_index_ops": [],
+      "largest_sync_calls_with_enclosing_ops": [],
+      "correlated_GPU_copy_directions": {}
+    }
+  }
+}

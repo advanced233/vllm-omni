@@ -1,0 +1,94 @@
+{
+  "timestamp": "2026-10-20T23:03:02+0800",
+  "runs": [
+    {
+      "run": "c8/attempt1",
+      "requests": 1088,
+      "failed": 0,
+      "row_indices_complete": true,
+      "saved_audio": false,
+      "clean": true,
+      "client_exit": "0",
+      "startup_s": 228.054
+    },
+    {
+      "run": "c8/attempt2",
+      "requests": 1088,
+      "failed": 0,
+      "row_indices_complete": true,
+      "saved_audio": false,
+      "clean": true,
+      "client_exit": "0",
+      "startup_s": 228.052
+    },
+    {
+      "run": "c16/attempt1",
+      "requests": 1088,
+      "failed": 0,
+      "row_indices_complete": true,
+      "saved_audio": false,
+      "clean": true,
+      "client_exit": "0",
+      "startup_s": 228.052
+    },
+    {
+      "run": "c64/attempt1",
+      "requests": 1088,
+      "failed": 0,
+      "row_indices_complete": true,
+      "saved_audio": false,
+      "clean": true,
+      "client_exit": "0",
+      "startup_s": 228.044
+    }
+  ],
+  "gpu": "GPU_PHYSICAL_1, 15, 0",
+  "compute_apps": [],
+  "port_8091_free": true,
+  "recorded_processes_remaining": [],
+  "tool_source_matches": {
+    "tools/drama3_bench/encode_ref_codes.py": true,
+    "tools/drama3_bench/run_sweep.sh": true,
+    "tools/drama3_bench/aggregate_results.py": true,
+    "tools/drama3_bench/analyze_audio.py": true,
+    "tools/drama3_bench/eval_quality.py": true,
+    "tools/drama3_bench/stream_bench.py": true
+  },
+  "server_tracked_clean": true,
+  "clean": true,
+  "runner_exit_codes": {
+    "c16-c64-runner.exit": 0,
+    "c8-a2-runner.exit": 0,
+    "c8-runner.exit": 0
+  },
+  "probe": {
+    "verified": {
+      "ok": true,
+      "replays": 3,
+      "correlated_kernels_each": [
+        2,
+        2,
+        2
+      ],
+      "fix": "Ignore GPU-side cloned gpu_user_annotation ranges; count native CPU user_annotation scopes only."
+    },
+    "recorded_cpu_pids": [
+      1840892
+    ],
+    "remaining_pids": [],
+    "completed_exit_code": 0
+  },
+  "remaining_profile_helpers": [],
+  "helper_source_matches": {
+    "graph_trace_probe.py": true,
+    "validate_analyzer.py": true,
+    "server_supervisor.py": true,
+    "run_profiles.py": true,
+    "env.sh": true,
+    "analyze_trace.py": true,
+    "run.sh": true,
+    "make_config.py": true,
+    "capture_client.py": true
+  },
+  "system_driver_or_cuda_changed": false
+}

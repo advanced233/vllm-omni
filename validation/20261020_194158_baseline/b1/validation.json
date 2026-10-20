@@ -1,0 +1,2410 @@
+{
+  "valid": true,
+  "completed_runs": 17,
+  "runs": [
+    {
+      "path": "${NVME_WORKDIR}/baseline/20261020_194158/b1/c1/r1",
+      "concurrency": 1,
+      "repeat": 1,
+      "requests": 1088,
+      "succeeded": 1088,
+      "failed": 0,
+      "loop_lag_p99_ms": 0.64,
+      "startup_s": 225.0,
+      "duration_s": 1165.357,
+      "throughput_audio_s_per_s": 4.1,
+      "ttfa_ms": {
+        "mean": 136.3,
+        "p50": 134.3,
+        "p90": 155.3,
+        "p95": 162.0,
+        "p99": 172.4,
+        "max": 216.8
+      },
+      "rtf": {
+        "mean": 0.2462,
+        "p50": 0.2465,
+        "p90": 0.2611,
+        "p95": 0.2667,
+        "p99": 0.2828,
+        "max": 0.3758
+      },
+      "long_takes": {
+        "at_least_20s": 5,
+        "at_least_20s_pct": 0.46,
+        "at_frame_cap": 5,
+        "audio_share_pct": 2.43
+      },
+      "full_concurrency_window": {
+        "seconds": 1164.706,
+        "throughput_audio_s_per_s": 4.1
+      },
+      "max_client_inflight_lower_bound": 1,
+      "seconds_at_requested_client_inflight_lower_bound": 1164.492,
+      "inflight_method": "Intervals sent_s to last audio arrival (e2e_s rounded to 0.1 ms). Client HTTP in-flight lower bound, not number scheduled on GPU.",
+      "key_lines": [
+        "(StageEngineCoreProc_stage0_replica0 pid=1764327) INFO 10-20 19:50:52 [kv_cache_utils.py:2327] GPU KV cache size: 326,716 tokens, Maximum concurrency for 8,192 tokens per request: 39.88x"
+      ],
+      "preemption_oom_cuda_lines": [],
+      "cleanup": {
+        "tracked_processes": [
+          {
+            "pid": 1764232,
+            "create_time": 1792496932.42,
+            "name": "vllm"
+          },
+          {
+            "pid": 1764282,
+            "create_time": 1792496941.84,
+            "name": "python"
+          },
+          {
+            "pid": 1764284,
+            "create_time": 1792496941.87,
+            "name": "python"
+          },
+          {
+            "pid": 1764326,
+            "create_time": 1792496946.27,
+            "name": "python"
+          },
+          {
+            "pid": 1764327,
+            "create_time": 1792496946.27,
+            "name": "VLLM::StageEngineCoreProc_stage0_replica0_DP0"
+          },
+          {
+            "pid": 1764322,
+            "create_time": 1792496946.26,
+            "name": "nvidia-cuda-mps-control"
+          },
+          {
+            "pid": 1764406,
+            "create_time": 1792496956.55,
+            "name": "python"
+          },
+          {
+            "pid": 1764408,
+            "create_time": 1792496956.58,
+            "name": "python"
+          },
+          {
+            "pid": 1764411,
+            "create_time": 1792496956.74,
+            "name": "nvidia-cuda-mps-server"
+          },
+          {
+            "pid": 1764489,
+            "create_time": 1792496960.85,
+            "name": "python"
+          },
+          {
+            "pid": 1764496,
+            "create_time": 1792496961.05,
+            "name": "python"
+          },
+          {
+            "pid": 1764814,
+            "create_time": 1792497071.82,
+            "name": "VLLM::StageEngineCoreProc_stage1_replica0_DP0"
+          },
+          {
+            "pid": 1764867,
+            "create_time": 1792497082.06,
+            "name": "python"
+          },
+          {
+            "pid": 1764869,
+            "create_time": 1792497082.1,
+            "name": "python"
+          },
+          {
+            "pid": 1764955,
+            "create_time": 1792497086.93,
+            "name": "python"
+          },
+          {
+            "pid": 1764962,
+            "create_time": 1792497087.13,
+            "name": "python"
+          }
+        ],
+        "signals": [
+          {
+            "pid": 1764232,
+            "signal": "SIGINT"
+          }
+        ],
+        "server_exit": 0,
+        "gpu_after": "GPU_PHYSICAL_1, NVIDIA A100 80GB PCIe, 15, 81920, 0",
+        "apps_after": [],
+        "port_free": true,
+        "own_processes_remaining": [],
+        "clean": true
+      },
+      "errors": []
+    },
+    {
+      "path": "${NVME_WORKDIR}/baseline/20261020_194158/b1/c12/r1",
+      "concurrency": 12,
+      "repeat": 1,
+      "requests": 1088,
+      "succeeded": 1088,
+      "failed": 0,
+      "loop_lag_p99_ms": 0.91,
+      "startup_s": 228.0,
+      "duration_s": 240.985,
+      "throughput_audio_s_per_s": 19.75,
+      "ttfa_ms": {
+        "mean": 269.1,
+        "p50": 265.2,
+        "p90": 342.7,
+        "p95": 365.2,
+        "p99": 432.3,
+        "max": 488.1
+      },
+      "rtf": {
+        "mean": 0.6072,
+        "p50": 0.6346,
+        "p90": 0.7035,
+        "p95": 0.7245,
+        "p99": 0.768,
+        "max": 0.8314
+      },
+      "long_takes": {
+        "at_least_20s": 7,
+        "at_least_20s_pct": 0.64,
+        "at_frame_cap": 6,
+        "audio_share_pct": 3.38
+      },
+      "full_concurrency_window": {
+        "seconds": 239.05,
+        "throughput_audio_s_per_s": 19.74
+      },
+      "max_client_inflight_lower_bound": 12,
+      "seconds_at_requested_client_inflight_lower_bound": 238.38,
+      "inflight_method": "Intervals sent_s to last audio arrival (e2e_s rounded to 0.1 ms). Client HTTP in-flight lower bound, not number scheduled on GPU.",
+      "key_lines": [
+        "(StageEngineCoreProc_stage0_replica0 pid=1771034) INFO 10-20 20:34:37 [kv_cache_utils.py:2327] GPU KV cache size: 326,716 tokens, Maximum concurrency for 8,192 tokens per request: 39.88x"
+      ],
+      "preemption_oom_cuda_lines": [],
+      "cleanup": {
+        "tracked_processes": [
+          {
+            "pid": 1770935,
+            "create_time": 1792499556.66,
+            "name": "vllm"
+          },
+          {
+            "pid": 1770984,
+            "create_time": 1792499566.09,
+            "name": "python"
+          },
+          {
+            "pid": 1770986,
+            "create_time": 1792499566.12,
+            "name": "python"
+          },
+          {
+            "pid": 1771033,
+            "create_time": 1792499570.6,
+            "name": "python"
+          },
+          {
+            "pid": 1771034,
+            "create_time": 1792499570.6,
+            "name": "VLLM::StageEngineCoreProc_stage0_replica0_DP0"
+          },
+          {
+            "pid": 1771029,
+            "create_time": 1792499570.56,
+            "name": "nvidia-cuda-mps-control"
+          },
+          {
+            "pid": 1771087,
+            "create_time": 1792499580.9,
+            "name": "python"
+          },
+          {
+            "pid": 1771089,
+            "create_time": 1792499580.94,
+            "name": "python"
+          },
+          {
+            "pid": 1771092,
+            "create_time": 1792499581.1,
+            "name": "nvidia-cuda-mps-server"
+          },
+          {
+            "pid": 1771173,
+            "create_time": 1792499585.16,
+            "name": "python"
+          },
+          {
+            "pid": 1771180,
+            "create_time": 1792499585.37,
+            "name": "python"
+          },
+          {
+            "pid": 1772145,
+            "create_time": 1792499696.46,
+            "name": "VLLM::StageEngineCoreProc_stage1_replica0_DP0"
+          },
+          {
+            "pid": 1772200,
+            "create_time": 1792499706.79,
+            "name": "python"
+          },
+          {
+            "pid": 1772202,
+            "create_time": 1792499706.82,
+            "name": "python"
+          },
+          {
+            "pid": 1772306,
+            "create_time": 1792499711.7,
+            "name": "python"
+          },
+          {
+            "pid": 1772314,
+            "create_time": 1792499711.9,
+            "name": "python"
+          }
+        ],
+        "signals": [
+          {
+            "pid": 1770935,
+            "signal": "SIGINT"
+          }
+        ],
+        "server_exit": 0,
+        "gpu_after": "GPU_PHYSICAL_1, NVIDIA A100 80GB PCIe, 15, 81920, 0",
+        "apps_after": [],
+        "port_free": true,
+        "own_processes_remaining": [],
+        "clean": true
+      },
+      "errors": []
+    },
+    {
+      "path": "${NVME_WORKDIR}/baseline/20261020_194158/b1/c128/r1",
+      "concurrency": 128,
+      "repeat": 1,
+      "requests": 1088,
+      "succeeded": 1088,
+      "failed": 0,
+      "loop_lag_p99_ms": 0.96,
+      "startup_s": 227.0,
+      "duration_s": 76.007,
+      "throughput_audio_s_per_s": 62.47,
+      "ttfa_ms": {
+        "mean": 908.3,
+        "p50": 838.8,
+        "p90": 1584.8,
+        "p95": 1703.1,
+        "p99": 1771.0,
+        "max": 1786.2
+      },
+      "rtf": {
+        "mean": 1.9032,
+        "p50": 1.7388,
+        "p90": 2.5709,
+        "p95": 2.621,
+        "p99": 2.7341,
+        "max": 2.9341
+      },
+      "long_takes": {
+        "at_least_20s": 6,
+        "at_least_20s_pct": 0.55,
+        "at_frame_cap": 6,
+        "audio_share_pct": 2.93
+      },
+      "full_concurrency_window": {
+        "seconds": 66.201,
+        "throughput_audio_s_per_s": 65.82
+      },
+      "max_client_inflight_lower_bound": 128,
+      "seconds_at_requested_client_inflight_lower_bound": 64.249,
+      "inflight_method": "Intervals sent_s to last audio arrival (e2e_s rounded to 0.1 ms). Client HTTP in-flight lower bound, not number scheduled on GPU.",
+      "key_lines": [
+        "(StageEngineCoreProc_stage0_replica0 pid=1805799) INFO 10-20 21:33:10 [kv_cache_utils.py:2327] GPU KV cache size: 326,716 tokens, Maximum concurrency for 8,192 tokens per request: 39.88x"
+      ],
+      "preemption_oom_cuda_lines": [],
+      "cleanup": {
+        "tracked_processes": [
+          {
+            "pid": 1805556,
+            "create_time": 1792503069.52,
+            "name": "vllm"
+          },
+          {
+            "pid": 1805699,
+            "create_time": 1792503078.99,
+            "name": "python"
+          },
+          {
+            "pid": 1805701,
+            "create_time": 1792503079.03,
+            "name": "python"
+          },
+          {
+            "pid": 1805798,
+            "create_time": 1792503083.46,
+            "name": "python"
+          },
+          {
+            "pid": 1805799,
+            "create_time": 1792503083.46,
+            "name": "VLLM::StageEngineCoreProc_stage0_replica0_DP0"
+          },
+          {
+            "pid": 1805794,
+            "create_time": 1792503083.43,
+            "name": "nvidia-cuda-mps-control"
+          },
+          {
+            "pid": 1805957,
+            "create_time": 1792503093.74,
+            "name": "python"
+          },
+          {
+            "pid": 1805959,
+            "create_time": 1792503093.78,
+            "name": "python"
+          },
+          {
+            "pid": 1805962,
+            "create_time": 1792503093.93,
+            "name": "nvidia-cuda-mps-server"
+          },
+          {
+            "pid": 1806127,
+            "create_time": 1792503098.08,
+            "name": "python"
+          },
+          {
+            "pid": 1806136,
+            "create_time": 1792503098.28,
+            "name": "python"
+          },
+          {
+            "pid": 1807673,
+            "create_time": 1792503209.5,
+            "name": "VLLM::StageEngineCoreProc_stage1_replica0_DP0"
+          },
+          {
+            "pid": 1807882,
+            "create_time": 1792503219.72,
+            "name": "python"
+          },
+          {
+            "pid": 1807884,
+            "create_time": 1792503219.76,
+            "name": "python"
+          },
+          {
+            "pid": 1808007,
+            "create_time": 1792503224.63,
+            "name": "python"
+          }
+        ],
+        "signals": [
+          {
+            "pid": 1805556,
+            "signal": "SIGINT"
+          }
+        ],
+        "server_exit": 0,
+        "gpu_after": "GPU_PHYSICAL_1, NVIDIA A100 80GB PCIe, 15, 81920, 0",
+        "apps_after": [],
+        "port_free": true,
+        "own_processes_remaining": [],
+        "clean": true
+      },
+      "errors": []
+    },
+    {
+      "path": "${NVME_WORKDIR}/baseline/20261020_194158/b1/c128/r2",
+      "concurrency": 128,
+      "repeat": 2,
+      "requests": 1088,
+      "succeeded": 1088,
+      "failed": 0,
+      "loop_lag_p99_ms": 0.96,
+      "startup_s": 227.0,
+      "duration_s": 75.709,
+      "throughput_audio_s_per_s": 63.16,
+      "ttfa_ms": {
+        "mean": 887.8,
+        "p50": 817.5,
+        "p90": 1585.6,
+        "p95": 1681.7,
+        "p99": 1767.7,
+        "max": 1770.0
+      },
+      "rtf": {
+        "mean": 1.8686,
+        "p50": 1.7685,
+        "p90": 2.5433,
+        "p95": 2.6575,
+        "p99": 2.8087,
+        "max": 2.9546
+      },
+      "long_takes": {
+        "at_least_20s": 5,
+        "at_least_20s_pct": 0.46,
+        "at_frame_cap": 4,
+        "audio_share_pct": 2.41
+      },
+      "full_concurrency_window": {
+        "seconds": 64.831,
+        "throughput_audio_s_per_s": 67.61
+      },
+      "max_client_inflight_lower_bound": 128,
+      "seconds_at_requested_client_inflight_lower_bound": 63.062,
+      "inflight_method": "Intervals sent_s to last audio arrival (e2e_s rounded to 0.1 ms). Client HTTP in-flight lower bound, not number scheduled on GPU.",
+      "key_lines": [
+        "(StageEngineCoreProc_stage0_replica0 pid=1810546) INFO 10-20 21:38:32 [kv_cache_utils.py:2327] GPU KV cache size: 326,716 tokens, Maximum concurrency for 8,192 tokens per request: 39.88x"
+      ],
+      "preemption_oom_cuda_lines": [],
+      "cleanup": {
+        "tracked_processes": [
+          {
+            "pid": 1810318,
+            "create_time": 1792503391.56,
+            "name": "vllm"
+          },
+          {
+            "pid": 1810471,
+            "create_time": 1792503400.98,
+            "name": "python"
+          },
+          {
+            "pid": 1810473,
+            "create_time": 1792503401.02,
+            "name": "python"
+          },
+          {
+            "pid": 1810545,
+            "create_time": 1792503405.44,
+            "name": "python"
+          },
+          {
+            "pid": 1810546,
+            "create_time": 1792503405.45,
+            "name": "VLLM::StageEngineCoreProc_stage0_replica0_DP0"
+          },
+          {
+            "pid": 1810541,
+            "create_time": 1792503405.41,
+            "name": "nvidia-cuda-mps-control"
+          },
+          {
+            "pid": 1810766,
+            "create_time": 1792503415.78,
+            "name": "python"
+          },
+          {
+            "pid": 1810768,
+            "create_time": 1792503415.81,
+            "name": "python"
+          },
+          {
+            "pid": 1810771,
+            "create_time": 1792503415.97,
+            "name": "nvidia-cuda-mps-server"
+          },
+          {
+            "pid": 1810881,
+            "create_time": 1792503420.01,
+            "name": "python"
+          },
+          {
+            "pid": 1810888,
+            "create_time": 1792503420.21,
+            "name": "python"
+          },
+          {
+            "pid": 1812571,
+            "create_time": 1792503532.05,
+            "name": "VLLM::StageEngineCoreProc_stage1_replica0_DP0"
+          },
+          {
+            "pid": 1812749,
+            "create_time": 1792503542.27,
+            "name": "python"
+          },
+          {
+            "pid": 1812753,
+            "create_time": 1792503542.3,
+            "name": "python"
+          },
+          {
+            "pid": 1812879,
+            "create_time": 1792503547.19,
+            "name": "python"
+          },
+          {
+            "pid": 1812886,
+            "create_time": 1792503547.39,
+            "name": "python"
+          }
+        ],
+        "signals": [
+          {
+            "pid": 1810318,
+            "signal": "SIGINT"
+          }
+        ],
+        "server_exit": 0,
+        "gpu_after": "GPU_PHYSICAL_1, NVIDIA A100 80GB PCIe, 15, 81920, 0",
+        "apps_after": [],
+        "port_free": true,
+        "own_processes_remaining": [],
+        "clean": true
+      },
+      "errors": []
+    },
+    {
+      "path": "${NVME_WORKDIR}/baseline/20261020_194158/b1/c128/r3",
+      "concurrency": 128,
+      "repeat": 3,
+      "requests": 1088,
+      "succeeded": 1088,
+      "failed": 0,
+      "loop_lag_p99_ms": 0.94,
+      "startup_s": 227.0,
+      "duration_s": 77.035,
+      "throughput_audio_s_per_s": 62.66,
+      "ttfa_ms": {
+        "mean": 903.3,
+        "p50": 807.2,
+        "p90": 1585.2,
+        "p95": 1670.1,
+        "p99": 1750.2,
+        "max": 1759.7
+      },
+      "rtf": {
+        "mean": 1.9017,
+        "p50": 1.6724,
+        "p90": 2.8002,
+        "p95": 2.8651,
+        "p99": 2.9202,
+        "max": 3.0382
+      },
+      "long_takes": {
+        "at_least_20s": 10,
+        "at_least_20s_pct": 0.92,
+        "at_frame_cap": 8,
+        "audio_share_pct": 4.76
+      },
+      "full_concurrency_window": {
+        "seconds": 66.916,
+        "throughput_audio_s_per_s": 66.08
+      },
+      "max_client_inflight_lower_bound": 128,
+      "seconds_at_requested_client_inflight_lower_bound": 64.547,
+      "inflight_method": "Intervals sent_s to last audio arrival (e2e_s rounded to 0.1 ms). Client HTTP in-flight lower bound, not number scheduled on GPU.",
+      "key_lines": [
+        "(StageEngineCoreProc_stage0_replica0 pid=1815839) INFO 10-20 21:43:52 [kv_cache_utils.py:2327] GPU KV cache size: 326,716 tokens, Maximum concurrency for 8,192 tokens per request: 39.88x"
+      ],
+      "preemption_oom_cuda_lines": [],
+      "cleanup": {
+        "tracked_processes": [
+          {
+            "pid": 1815616,
+            "create_time": 1792503712.34,
+            "name": "vllm"
+          },
+          {
+            "pid": 1815751,
+            "create_time": 1792503721.76,
+            "name": "python"
+          },
+          {
+            "pid": 1815753,
+            "create_time": 1792503721.8,
+            "name": "python"
+          },
+          {
+            "pid": 1815838,
+            "create_time": 1792503726.27,
+            "name": "python"
+          },
+          {
+            "pid": 1815839,
+            "create_time": 1792503726.27,
+            "name": "VLLM::StageEngineCoreProc_stage0_replica0_DP0"
+          },
+          {
+            "pid": 1815834,
+            "create_time": 1792503726.24,
+            "name": "nvidia-cuda-mps-control"
+          },
+          {
+            "pid": 1816032,
+            "create_time": 1792503736.58,
+            "name": "python"
+          },
+          {
+            "pid": 1816034,
+            "create_time": 1792503736.62,
+            "name": "python"
+          },
+          {
+            "pid": 1816037,
+            "create_time": 1792503736.77,
+            "name": "nvidia-cuda-mps-server"
+          },
+          {
+            "pid": 1816165,
+            "create_time": 1792503740.84,
+            "name": "python"
+          },
+          {
+            "pid": 1816172,
+            "create_time": 1792503741.05,
+            "name": "python"
+          },
+          {
+            "pid": 1817701,
+            "create_time": 1792503852.37,
+            "name": "VLLM::StageEngineCoreProc_stage1_replica0_DP0"
+          },
+          {
+            "pid": 1817881,
+            "create_time": 1792503862.61,
+            "name": "python"
+          },
+          {
+            "pid": 1817883,
+            "create_time": 1792503862.65,
+            "name": "python"
+          },
+          {
+            "pid": 1818110,
+            "create_time": 1792503867.56,
+            "name": "python"
+          },
+          {
+            "pid": 1818120,
+            "create_time": 1792503867.78,
+            "name": "python"
+          }
+        ],
+        "signals": [
+          {
+            "pid": 1815616,
+            "signal": "SIGINT"
+          }
+        ],
+        "server_exit": 0,
+        "gpu_after": "GPU_PHYSICAL_1, NVIDIA A100 80GB PCIe, 15, 81920, 0",
+        "apps_after": [],
+        "port_free": true,
+        "own_processes_remaining": [],
+        "clean": true
+      },
+      "errors": []
+    },
+    {
+      "path": "${NVME_WORKDIR}/baseline/20261020_194158/b1/c128/r4",
+      "concurrency": 128,
+      "repeat": 4,
+      "requests": 1088,
+      "succeeded": 1088,
+      "failed": 0,
+      "loop_lag_p99_ms": 0.94,
+      "startup_s": 227.0,
+      "duration_s": 76.383,
+      "throughput_audio_s_per_s": 62.38,
+      "ttfa_ms": {
+        "mean": 907.1,
+        "p50": 820.1,
+        "p90": 1593.5,
+        "p95": 1692.3,
+        "p99": 1758.9,
+        "max": 1759.6
+      },
+      "rtf": {
+        "mean": 1.914,
+        "p50": 1.7859,
+        "p90": 2.7436,
+        "p95": 2.9641,
+        "p99": 3.1095,
+        "max": 3.2937
+      },
+      "long_takes": {
+        "at_least_20s": 5,
+        "at_least_20s_pct": 0.46,
+        "at_frame_cap": 3,
+        "audio_share_pct": 2.37
+      },
+      "full_concurrency_window": {
+        "seconds": 66.661,
+        "throughput_audio_s_per_s": 65.89
+      },
+      "max_client_inflight_lower_bound": 128,
+      "seconds_at_requested_client_inflight_lower_bound": 64.643,
+      "inflight_method": "Intervals sent_s to last audio arrival (e2e_s rounded to 0.1 ms). Client HTTP in-flight lower bound, not number scheduled on GPU.",
+      "key_lines": [
+        "(StageEngineCoreProc_stage0_replica0 pid=1820762) INFO 10-20 21:49:16 [kv_cache_utils.py:2327] GPU KV cache size: 326,716 tokens, Maximum concurrency for 8,192 tokens per request: 39.88x"
+      ],
+      "preemption_oom_cuda_lines": [],
+      "cleanup": {
+        "tracked_processes": [
+          {
+            "pid": 1820540,
+            "create_time": 1792504035.74,
+            "name": "vllm"
+          },
+          {
+            "pid": 1820661,
+            "create_time": 1792504045.15,
+            "name": "python"
+          },
+          {
+            "pid": 1820664,
+            "create_time": 1792504045.19,
+            "name": "python"
+          },
+          {
+            "pid": 1820761,
+            "create_time": 1792504049.64,
+            "name": "python"
+          },
+          {
+            "pid": 1820762,
+            "create_time": 1792504049.64,
+            "name": "VLLM::StageEngineCoreProc_stage0_replica0_DP0"
+          },
+          {
+            "pid": 1820756,
+            "create_time": 1792504049.61,
+            "name": "nvidia-cuda-mps-control"
+          },
+          {
+            "pid": 1820906,
+            "create_time": 1792504059.93,
+            "name": "python"
+          },
+          {
+            "pid": 1820908,
+            "create_time": 1792504059.96,
+            "name": "python"
+          },
+          {
+            "pid": 1820921,
+            "create_time": 1792504060.12,
+            "name": "nvidia-cuda-mps-server"
+          },
+          {
+            "pid": 1821067,
+            "create_time": 1792504064.19,
+            "name": "python"
+          },
+          {
+            "pid": 1821074,
+            "create_time": 1792504064.4,
+            "name": "python"
+          },
+          {
+            "pid": 1822963,
+            "create_time": 1792504175.59,
+            "name": "VLLM::StageEngineCoreProc_stage1_replica0_DP0"
+          },
+          {
+            "pid": 1823105,
+            "create_time": 1792504185.83,
+            "name": "python"
+          },
+          {
+            "pid": 1823107,
+            "create_time": 1792504185.87,
+            "name": "python"
+          },
+          {
+            "pid": 1823232,
+            "create_time": 1792504190.74,
+            "name": "python"
+          },
+          {
+            "pid": 1823239,
+            "create_time": 1792504190.95,
+            "name": "python"
+          }
+        ],
+        "signals": [
+          {
+            "pid": 1820540,
+            "signal": "SIGINT"
+          }
+        ],
+        "server_exit": 0,
+        "gpu_after": "GPU_PHYSICAL_1, NVIDIA A100 80GB PCIe, 15, 81920, 0",
+        "apps_after": [],
+        "port_free": true,
+        "own_processes_remaining": [],
+        "clean": true
+      },
+      "errors": []
+    },
+    {
+      "path": "${NVME_WORKDIR}/baseline/20261020_194158/b1/c128/r5",
+      "concurrency": 128,
+      "repeat": 5,
+      "requests": 1088,
+      "succeeded": 1088,
+      "failed": 0,
+      "loop_lag_p99_ms": 0.93,
+      "startup_s": 227.0,
+      "duration_s": 74.671,
+      "throughput_audio_s_per_s": 64.04,
+      "ttfa_ms": {
+        "mean": 882.7,
+        "p50": 808.7,
+        "p90": 1595.2,
+        "p95": 1718.2,
+        "p99": 1764.0,
+        "max": 1777.0
+      },
+      "rtf": {
+        "mean": 1.8676,
+        "p50": 1.7533,
+        "p90": 2.5502,
+        "p95": 2.6415,
+        "p99": 2.7825,
+        "max": 2.9267
+      },
+      "long_takes": {
+        "at_least_20s": 8,
+        "at_least_20s_pct": 0.74,
+        "at_frame_cap": 8,
+        "audio_share_pct": 3.88
+      },
+      "full_concurrency_window": {
+        "seconds": 65.52,
+        "throughput_audio_s_per_s": 67.32
+      },
+      "max_client_inflight_lower_bound": 128,
+      "seconds_at_requested_client_inflight_lower_bound": 63.271,
+      "inflight_method": "Intervals sent_s to last audio arrival (e2e_s rounded to 0.1 ms). Client HTTP in-flight lower bound, not number scheduled on GPU.",
+      "key_lines": [
+        "(StageEngineCoreProc_stage0_replica0 pid=1826137) INFO 10-20 21:54:38 [kv_cache_utils.py:2327] GPU KV cache size: 326,716 tokens, Maximum concurrency for 8,192 tokens per request: 39.88x"
+      ],
+      "preemption_oom_cuda_lines": [],
+      "cleanup": {
+        "tracked_processes": [
+          {
+            "pid": 1825912,
+            "create_time": 1792504358.09,
+            "name": "vllm"
+          },
+          {
+            "pid": 1826050,
+            "create_time": 1792504367.48,
+            "name": "python"
+          },
+          {
+            "pid": 1826052,
+            "create_time": 1792504367.51,
+            "name": "python"
+          },
+          {
+            "pid": 1826136,
+            "create_time": 1792504371.93,
+            "name": "python"
+          },
+          {
+            "pid": 1826137,
+            "create_time": 1792504371.93,
+            "name": "VLLM::StageEngineCoreProc_stage0_replica0_DP0"
+          },
+          {
+            "pid": 1826132,
+            "create_time": 1792504371.9,
+            "name": "nvidia-cuda-mps-control"
+          },
+          {
+            "pid": 1826302,
+            "create_time": 1792504382.36,
+            "name": "python"
+          },
+          {
+            "pid": 1826304,
+            "create_time": 1792504382.4,
+            "name": "python"
+          },
+          {
+            "pid": 1826307,
+            "create_time": 1792504382.56,
+            "name": "nvidia-cuda-mps-server"
+          },
+          {
+            "pid": 1826430,
+            "create_time": 1792504386.67,
+            "name": "python"
+          },
+          {
+            "pid": 1826437,
+            "create_time": 1792504386.88,
+            "name": "python"
+          },
+          {
+            "pid": 1827761,
+            "create_time": 1792504497.88,
+            "name": "VLLM::StageEngineCoreProc_stage1_replica0_DP0"
+          },
+          {
+            "pid": 1827901,
+            "create_time": 1792504508.14,
+            "name": "python"
+          },
+          {
+            "pid": 1827903,
+            "create_time": 1792504508.18,
+            "name": "python"
+          },
+          {
+            "pid": 1828055,
+            "create_time": 1792504513.03,
+            "name": "python"
+          },
+          {
+            "pid": 1828062,
+            "create_time": 1792504513.25,
+            "name": "python"
+          }
+        ],
+        "signals": [
+          {
+            "pid": 1825912,
+            "signal": "SIGINT"
+          }
+        ],
+        "server_exit": 0,
+        "gpu_after": "GPU_PHYSICAL_1, NVIDIA A100 80GB PCIe, 15, 81920, 0",
+        "apps_after": [],
+        "port_free": true,
+        "own_processes_remaining": [],
+        "clean": true
+      },
+      "errors": []
+    },
+    {
+      "path": "${NVME_WORKDIR}/baseline/20261020_194158/b1/c16/r1",
+      "concurrency": 16,
+      "repeat": 1,
+      "requests": 1088,
+      "succeeded": 1088,
+      "failed": 0,
+      "loop_lag_p99_ms": 0.94,
+      "startup_s": 227.0,
+      "duration_s": 208.263,
+      "throughput_audio_s_per_s": 22.88,
+      "ttfa_ms": {
+        "mean": 301.1,
+        "p50": 300.4,
+        "p90": 382.9,
+        "p95": 412.5,
+        "p99": 453.1,
+        "max": 522.6
+      },
+      "rtf": {
+        "mean": 0.6985,
+        "p50": 0.7446,
+        "p90": 0.8177,
+        "p95": 0.834,
+        "p99": 0.8807,
+        "max": 0.9431
+      },
+      "long_takes": {
+        "at_least_20s": 5,
+        "at_least_20s_pct": 0.46,
+        "at_frame_cap": 4,
+        "audio_share_pct": 2.42
+      },
+      "full_concurrency_window": {
+        "seconds": 206.186,
+        "throughput_audio_s_per_s": 22.9
+      },
+      "max_client_inflight_lower_bound": 16,
+      "seconds_at_requested_client_inflight_lower_bound": 204.971,
+      "inflight_method": "Intervals sent_s to last audio arrival (e2e_s rounded to 0.1 ms). Client HTTP in-flight lower bound, not number scheduled on GPU.",
+      "key_lines": [
+        "(StageEngineCoreProc_stage0_replica0 pid=1773155) INFO 10-20 20:42:43 [kv_cache_utils.py:2327] GPU KV cache size: 326,716 tokens, Maximum concurrency for 8,192 tokens per request: 39.88x"
+      ],
+      "preemption_oom_cuda_lines": [],
+      "cleanup": {
+        "tracked_processes": [
+          {
+            "pid": 1773061,
+            "create_time": 1792500043.1,
+            "name": "vllm"
+          },
+          {
+            "pid": 1773106,
+            "create_time": 1792500052.52,
+            "name": "python"
+          },
+          {
+            "pid": 1773108,
+            "create_time": 1792500052.56,
+            "name": "python"
+          },
+          {
+            "pid": 1773154,
+            "create_time": 1792500056.96,
+            "name": "python"
+          },
+          {
+            "pid": 1773155,
+            "create_time": 1792500056.97,
+            "name": "VLLM::StageEngineCoreProc_stage0_replica0_DP0"
+          },
+          {
+            "pid": 1773150,
+            "create_time": 1792500056.94,
+            "name": "nvidia-cuda-mps-control"
+          },
+          {
+            "pid": 1773204,
+            "create_time": 1792500067.27,
+            "name": "python"
+          },
+          {
+            "pid": 1773206,
+            "create_time": 1792500067.3,
+            "name": "python"
+          },
+          {
+            "pid": 1773209,
+            "create_time": 1792500067.46,
+            "name": "nvidia-cuda-mps-server"
+          },
+          {
+            "pid": 1773310,
+            "create_time": 1792500071.47,
+            "name": "python"
+          },
+          {
+            "pid": 1773319,
+            "create_time": 1792500071.68,
+            "name": "python"
+          },
+          {
+            "pid": 1773637,
+            "create_time": 1792500182.67,
+            "name": "VLLM::StageEngineCoreProc_stage1_replica0_DP0"
+          },
+          {
+            "pid": 1773712,
+            "create_time": 1792500192.9,
+            "name": "python"
+          },
+          {
+            "pid": 1773714,
+            "create_time": 1792500192.94,
+            "name": "python"
+          },
+          {
+            "pid": 1773798,
+            "create_time": 1792500197.81,
+            "name": "python"
+          },
+          {
+            "pid": 1773805,
+            "create_time": 1792500198.02,
+            "name": "python"
+          }
+        ],
+        "signals": [
+          {
+            "pid": 1773061,
+            "signal": "SIGINT"
+          }
+        ],
+        "server_exit": 0,
+        "gpu_after": "GPU_PHYSICAL_1, NVIDIA A100 80GB PCIe, 15, 81920, 0",
+        "apps_after": [],
+        "port_free": true,
+        "own_processes_remaining": [],
+        "clean": true
+      },
+      "errors": []
+    },
+    {
+      "path": "${NVME_WORKDIR}/baseline/20261020_194158/b1/c24/r1",
+      "concurrency": 24,
+      "repeat": 1,
+      "requests": 1088,
+      "succeeded": 1088,
+      "failed": 0,
+      "loop_lag_p99_ms": 0.93,
+      "startup_s": 227.0,
+      "duration_s": 173.674,
+      "throughput_audio_s_per_s": 27.41,
+      "ttfa_ms": {
+        "mean": 360.7,
+        "p50": 366.2,
+        "p90": 473.5,
+        "p95": 494.2,
+        "p99": 533.4,
+        "max": 554.1
+      },
+      "rtf": {
+        "mean": 0.8659,
+        "p50": 0.9599,
+        "p90": 1.0331,
+        "p95": 1.0581,
+        "p99": 1.1049,
+        "max": 1.1968
+      },
+      "long_takes": {
+        "at_least_20s": 3,
+        "at_least_20s_pct": 0.28,
+        "at_frame_cap": 3,
+        "audio_share_pct": 1.46
+      },
+      "full_concurrency_window": {
+        "seconds": 169.481,
+        "throughput_audio_s_per_s": 27.62
+      },
+      "max_client_inflight_lower_bound": 24,
+      "seconds_at_requested_client_inflight_lower_bound": 168.365,
+      "inflight_method": "Intervals sent_s to last audio arrival (e2e_s rounded to 0.1 ms). Client HTTP in-flight lower bound, not number scheduled on GPU.",
+      "key_lines": [
+        "(StageEngineCoreProc_stage0_replica0 pid=1776117) INFO 10-20 20:50:18 [kv_cache_utils.py:2327] GPU KV cache size: 326,716 tokens, Maximum concurrency for 8,192 tokens per request: 39.88x"
+      ],
+      "preemption_oom_cuda_lines": [],
+      "cleanup": {
+        "tracked_processes": [
+          {
+            "pid": 1775827,
+            "create_time": 1792500497.88,
+            "name": "vllm"
+          },
+          {
+            "pid": 1775994,
+            "create_time": 1792500507.28,
+            "name": "python"
+          },
+          {
+            "pid": 1775996,
+            "create_time": 1792500507.31,
+            "name": "python"
+          },
+          {
+            "pid": 1776116,
+            "create_time": 1792500511.76,
+            "name": "python"
+          },
+          {
+            "pid": 1776117,
+            "create_time": 1792500511.76,
+            "name": "VLLM::StageEngineCoreProc_stage0_replica0_DP0"
+          },
+          {
+            "pid": 1776112,
+            "create_time": 1792500511.72,
+            "name": "nvidia-cuda-mps-control"
+          },
+          {
+            "pid": 1776294,
+            "create_time": 1792500522.02,
+            "name": "python"
+          },
+          {
+            "pid": 1776296,
+            "create_time": 1792500522.05,
+            "name": "python"
+          },
+          {
+            "pid": 1776299,
+            "create_time": 1792500522.21,
+            "name": "nvidia-cuda-mps-server"
+          },
+          {
+            "pid": 1776422,
+            "create_time": 1792500526.25,
+            "name": "python"
+          },
+          {
+            "pid": 1776429,
+            "create_time": 1792500526.45,
+            "name": "python"
+          },
+          {
+            "pid": 1777831,
+            "create_time": 1792500637.78,
+            "name": "VLLM::StageEngineCoreProc_stage1_replica0_DP0"
+          },
+          {
+            "pid": 1777978,
+            "create_time": 1792500648.02,
+            "name": "python"
+          },
+          {
+            "pid": 1777980,
+            "create_time": 1792500648.05,
+            "name": "python"
+          },
+          {
+            "pid": 1778108,
+            "create_time": 1792500652.91,
+            "name": "python"
+          },
+          {
+            "pid": 1778115,
+            "create_time": 1792500653.12,
+            "name": "python"
+          }
+        ],
+        "signals": [
+          {
+            "pid": 1775827,
+            "signal": "SIGINT"
+          }
+        ],
+        "server_exit": 0,
+        "gpu_after": "GPU_PHYSICAL_1, NVIDIA A100 80GB PCIe, 15, 81920, 0",
+        "apps_after": [],
+        "port_free": true,
+        "own_processes_remaining": [],
+        "clean": true
+      },
+      "errors": []
+    },
+    {
+      "path": "${NVME_WORKDIR}/baseline/20261020_194158/b1/c32/r1",
+      "concurrency": 32,
+      "repeat": 1,
+      "requests": 1088,
+      "succeeded": 1088,
+      "failed": 0,
+      "loop_lag_p99_ms": 0.94,
+      "startup_s": 227.0,
+      "duration_s": 154.358,
+      "throughput_audio_s_per_s": 30.58,
+      "ttfa_ms": {
+        "mean": 421.5,
+        "p50": 431.9,
+        "p90": 563.6,
+        "p95": 587.3,
+        "p99": 642.4,
+        "max": 686.0
+      },
+      "rtf": {
+        "mean": 1.0302,
+        "p50": 1.1195,
+        "p90": 1.2906,
+        "p95": 1.3169,
+        "p99": 1.3487,
+        "max": 1.4582
+      },
+      "long_takes": {
+        "at_least_20s": 2,
+        "at_least_20s_pct": 0.18,
+        "at_frame_cap": 1,
+        "audio_share_pct": 0.96
+      },
+      "full_concurrency_window": {
+        "seconds": 150.021,
+        "throughput_audio_s_per_s": 30.83
+      },
+      "max_client_inflight_lower_bound": 32,
+      "seconds_at_requested_client_inflight_lower_bound": 148.561,
+      "inflight_method": "Intervals sent_s to last audio arrival (e2e_s rounded to 0.1 ms). Client HTTP in-flight lower bound, not number scheduled on GPU.",
+      "key_lines": [
+        "(StageEngineCoreProc_stage0_replica0 pid=1781680) INFO 10-20 20:57:17 [kv_cache_utils.py:2327] GPU KV cache size: 326,716 tokens, Maximum concurrency for 8,192 tokens per request: 39.88x"
+      ],
+      "preemption_oom_cuda_lines": [],
+      "cleanup": {
+        "tracked_processes": [
+          {
+            "pid": 1781368,
+            "create_time": 1792500916.8,
+            "name": "vllm"
+          },
+          {
+            "pid": 1781582,
+            "create_time": 1792500926.24,
+            "name": "python"
+          },
+          {
+            "pid": 1781584,
+            "create_time": 1792500926.27,
+            "name": "python"
+          },
+          {
+            "pid": 1781679,
+            "create_time": 1792500930.66,
+            "name": "python"
+          },
+          {
+            "pid": 1781680,
+            "create_time": 1792500930.67,
+            "name": "VLLM::StageEngineCoreProc_stage0_replica0_DP0"
+          },
+          {
+            "pid": 1781675,
+            "create_time": 1792500930.63,
+            "name": "nvidia-cuda-mps-control"
+          },
+          {
+            "pid": 1781826,
+            "create_time": 1792500940.93,
+            "name": "python"
+          },
+          {
+            "pid": 1781828,
+            "create_time": 1792500940.97,
+            "name": "python"
+          },
+          {
+            "pid": 1781832,
+            "create_time": 1792500941.13,
+            "name": "nvidia-cuda-mps-server"
+          },
+          {
+            "pid": 1781957,
+            "create_time": 1792500945.21,
+            "name": "python"
+          },
+          {
+            "pid": 1781964,
+            "create_time": 1792500945.41,
+            "name": "python"
+          },
+          {
+            "pid": 1783539,
+            "create_time": 1792501057.3,
+            "name": "VLLM::StageEngineCoreProc_stage1_replica0_DP0"
+          },
+          {
+            "pid": 1783683,
+            "create_time": 1792501067.56,
+            "name": "python"
+          },
+          {
+            "pid": 1783685,
+            "create_time": 1792501067.6,
+            "name": "python"
+          },
+          {
+            "pid": 1783811,
+            "create_time": 1792501072.5,
+            "name": "python"
+          },
+          {
+            "pid": 1783819,
+            "create_time": 1792501072.7,
+            "name": "python"
+          }
+        ],
+        "signals": [
+          {
+            "pid": 1781368,
+            "signal": "SIGINT"
+          }
+        ],
+        "server_exit": 0,
+        "gpu_after": "GPU_PHYSICAL_1, NVIDIA A100 80GB PCIe, 15, 81920, 0",
+        "apps_after": [],
+        "port_free": true,
+        "own_processes_remaining": [],
+        "clean": true
+      },
+      "errors": []
+    },
+    {
+      "path": "${NVME_WORKDIR}/baseline/20261020_194158/b1/c4/r1",
+      "concurrency": 4,
+      "repeat": 1,
+      "requests": 1088,
+      "succeeded": 1088,
+      "failed": 0,
+      "loop_lag_p99_ms": 0.84,
+      "startup_s": 227.0,
+      "duration_s": 418.959,
+      "throughput_audio_s_per_s": 11.49,
+      "ttfa_ms": {
+        "mean": 185.2,
+        "p50": 179.7,
+        "p90": 233.9,
+        "p95": 247.0,
+        "p99": 290.0,
+        "max": 331.3
+      },
+      "rtf": {
+        "mean": 0.3506,
+        "p50": 0.3539,
+        "p90": 0.3827,
+        "p95": 0.3972,
+        "p99": 0.4191,
+        "max": 0.4355
+      },
+      "long_takes": {
+        "at_least_20s": 8,
+        "at_least_20s_pct": 0.74,
+        "at_frame_cap": 6,
+        "audio_share_pct": 3.75
+      },
+      "full_concurrency_window": {
+        "seconds": 418.092,
+        "throughput_audio_s_per_s": 11.49
+      },
+      "max_client_inflight_lower_bound": 4,
+      "seconds_at_requested_client_inflight_lower_bound": 417.587,
+      "inflight_method": "Intervals sent_s to last audio arrival (e2e_s rounded to 0.1 ms). Client HTTP in-flight lower bound, not number scheduled on GPU.",
+      "key_lines": [
+        "(StageEngineCoreProc_stage0_replica0 pid=1767026) INFO 10-20 20:14:30 [kv_cache_utils.py:2327] GPU KV cache size: 326,716 tokens, Maximum concurrency for 8,192 tokens per request: 39.88x"
+      ],
+      "preemption_oom_cuda_lines": [],
+      "cleanup": {
+        "tracked_processes": [
+          {
+            "pid": 1766934,
+            "create_time": 1792498350.62,
+            "name": "vllm"
+          },
+          {
+            "pid": 1766983,
+            "create_time": 1792498360.0,
+            "name": "python"
+          },
+          {
+            "pid": 1766985,
+            "create_time": 1792498360.03,
+            "name": "python"
+          },
+          {
+            "pid": 1767025,
+            "create_time": 1792498364.46,
+            "name": "python"
+          },
+          {
+            "pid": 1767026,
+            "create_time": 1792498364.46,
+            "name": "VLLM::StageEngineCoreProc_stage0_replica0_DP0"
+          },
+          {
+            "pid": 1767021,
+            "create_time": 1792498364.42,
+            "name": "nvidia-cuda-mps-control"
+          },
+          {
+            "pid": 1767080,
+            "create_time": 1792498374.72,
+            "name": "python"
+          },
+          {
+            "pid": 1767082,
+            "create_time": 1792498374.75,
+            "name": "python"
+          },
+          {
+            "pid": 1767085,
+            "create_time": 1792498374.91,
+            "name": "nvidia-cuda-mps-server"
+          },
+          {
+            "pid": 1767164,
+            "create_time": 1792498379.02,
+            "name": "python"
+          },
+          {
+            "pid": 1767171,
+            "create_time": 1792498379.22,
+            "name": "python"
+          },
+          {
+            "pid": 1767515,
+            "create_time": 1792498490.23,
+            "name": "VLLM::StageEngineCoreProc_stage1_replica0_DP0"
+          },
+          {
+            "pid": 1767576,
+            "create_time": 1792498500.55,
+            "name": "python"
+          },
+          {
+            "pid": 1767578,
+            "create_time": 1792498500.58,
+            "name": "python"
+          },
+          {
+            "pid": 1767662,
+            "create_time": 1792498505.41,
+            "name": "python"
+          },
+          {
+            "pid": 1767669,
+            "create_time": 1792498505.61,
+            "name": "python"
+          }
+        ],
+        "signals": [
+          {
+            "pid": 1766934,
+            "signal": "SIGINT"
+          }
+        ],
+        "server_exit": 0,
+        "gpu_after": "GPU_PHYSICAL_1, NVIDIA A100 80GB PCIe, 15, 81920, 0",
+        "apps_after": [],
+        "port_free": true,
+        "own_processes_remaining": [],
+        "clean": true
+      },
+      "errors": []
+    },
+    {
+      "path": "${NVME_WORKDIR}/baseline/20261020_194158/b1/c48/r1",
+      "concurrency": 48,
+      "repeat": 1,
+      "requests": 1088,
+      "succeeded": 1088,
+      "failed": 0,
+      "loop_lag_p99_ms": 0.95,
+      "startup_s": 227.0,
+      "duration_s": 121.982,
+      "throughput_audio_s_per_s": 39.49,
+      "ttfa_ms": {
+        "mean": 541.7,
+        "p50": 540.9,
+        "p90": 739.4,
+        "p95": 775.5,
+        "p99": 828.7,
+        "max": 936.1
+      },
+      "rtf": {
+        "mean": 1.1798,
+        "p50": 1.2229,
+        "p90": 1.5473,
+        "p95": 1.5856,
+        "p99": 1.6537,
+        "max": 1.7264
+      },
+      "long_takes": {
+        "at_least_20s": 7,
+        "at_least_20s_pct": 0.64,
+        "at_frame_cap": 6,
+        "audio_share_pct": 3.32
+      },
+      "full_concurrency_window": {
+        "seconds": 114.612,
+        "throughput_audio_s_per_s": 40.41
+      },
+      "max_client_inflight_lower_bound": 48,
+      "seconds_at_requested_client_inflight_lower_bound": 112.788,
+      "inflight_method": "Intervals sent_s to last audio arrival (e2e_s rounded to 0.1 ms). Client HTTP in-flight lower bound, not number scheduled on GPU.",
+      "key_lines": [
+        "(StageEngineCoreProc_stage0_replica0 pid=1786912) INFO 10-20 21:03:57 [kv_cache_utils.py:2327] GPU KV cache size: 326,716 tokens, Maximum concurrency for 8,192 tokens per request: 39.88x"
+      ],
+      "preemption_oom_cuda_lines": [],
+      "cleanup": {
+        "tracked_processes": [
+          {
+            "pid": 1786661,
+            "create_time": 1792501317.53,
+            "name": "vllm"
+          },
+          {
+            "pid": 1786794,
+            "create_time": 1792501326.95,
+            "name": "python"
+          },
+          {
+            "pid": 1786796,
+            "create_time": 1792501326.99,
+            "name": "python"
+          },
+          {
+            "pid": 1786911,
+            "create_time": 1792501331.43,
+            "name": "python"
+          },
+          {
+            "pid": 1786912,
+            "create_time": 1792501331.43,
+            "name": "VLLM::StageEngineCoreProc_stage0_replica0_DP0"
+          },
+          {
+            "pid": 1786907,
+            "create_time": 1792501331.4,
+            "name": "nvidia-cuda-mps-control"
+          },
+          {
+            "pid": 1787078,
+            "create_time": 1792501341.72,
+            "name": "python"
+          },
+          {
+            "pid": 1787081,
+            "create_time": 1792501341.75,
+            "name": "python"
+          },
+          {
+            "pid": 1787085,
+            "create_time": 1792501341.91,
+            "name": "nvidia-cuda-mps-server"
+          },
+          {
+            "pid": 1787215,
+            "create_time": 1792501345.98,
+            "name": "python"
+          },
+          {
+            "pid": 1787222,
+            "create_time": 1792501346.18,
+            "name": "python"
+          },
+          {
+            "pid": 1788599,
+            "create_time": 1792501457.08,
+            "name": "VLLM::StageEngineCoreProc_stage1_replica0_DP0"
+          },
+          {
+            "pid": 1788761,
+            "create_time": 1792501467.32,
+            "name": "python"
+          },
+          {
+            "pid": 1788764,
+            "create_time": 1792501467.36,
+            "name": "python"
+          },
+          {
+            "pid": 1788891,
+            "create_time": 1792501472.22,
+            "name": "python"
+          }
+        ],
+        "signals": [
+          {
+            "pid": 1786661,
+            "signal": "SIGINT"
+          }
+        ],
+        "server_exit": 0,
+        "gpu_after": "GPU_PHYSICAL_1, NVIDIA A100 80GB PCIe, 15, 81920, 0",
+        "apps_after": [],
+        "port_free": true,
+        "own_processes_remaining": [],
+        "clean": true
+      },
+      "errors": []
+    },
+    {
+      "path": "${NVME_WORKDIR}/baseline/20261020_194158/b1/c64/r1",
+      "concurrency": 64,
+      "repeat": 1,
+      "requests": 1088,
+      "succeeded": 1088,
+      "failed": 0,
+      "loop_lag_p99_ms": 0.93,
+      "startup_s": 228.0,
+      "duration_s": 105.42,
+      "throughput_audio_s_per_s": 45.39,
+      "ttfa_ms": {
+        "mean": 617.8,
+        "p50": 608.3,
+        "p90": 897.3,
+        "p95": 970.1,
+        "p99": 1051.7,
+        "max": 1116.8
+      },
+      "rtf": {
+        "mean": 1.3496,
+        "p50": 1.4097,
+        "p90": 1.8968,
+        "p95": 1.9656,
+        "p99": 2.0873,
+        "max": 2.3368
+      },
+      "long_takes": {
+        "at_least_20s": 8,
+        "at_least_20s_pct": 0.74,
+        "at_frame_cap": 7,
+        "audio_share_pct": 3.86
+      },
+      "full_concurrency_window": {
+        "seconds": 96.592,
+        "throughput_audio_s_per_s": 47.19
+      },
+      "max_client_inflight_lower_bound": 64,
+      "seconds_at_requested_client_inflight_lower_bound": 95.652,
+      "inflight_method": "Intervals sent_s to last audio arrival (e2e_s rounded to 0.1 ms). Client HTTP in-flight lower bound, not number scheduled on GPU.",
+      "key_lines": [
+        "(StageEngineCoreProc_stage0_replica0 pid=1791920) INFO 10-20 21:10:05 [kv_cache_utils.py:2327] GPU KV cache size: 326,716 tokens, Maximum concurrency for 8,192 tokens per request: 39.88x"
+      ],
+      "preemption_oom_cuda_lines": [],
+      "cleanup": {
+        "tracked_processes": [
+          {
+            "pid": 1791727,
+            "create_time": 1792501684.74,
+            "name": "vllm"
+          },
+          {
+            "pid": 1791849,
+            "create_time": 1792501694.16,
+            "name": "python"
+          },
+          {
+            "pid": 1791851,
+            "create_time": 1792501694.2,
+            "name": "python"
+          },
+          {
+            "pid": 1791919,
+            "create_time": 1792501698.64,
+            "name": "python"
+          },
+          {
+            "pid": 1791920,
+            "create_time": 1792501698.64,
+            "name": "VLLM::StageEngineCoreProc_stage0_replica0_DP0"
+          },
+          {
+            "pid": 1791915,
+            "create_time": 1792501698.61,
+            "name": "nvidia-cuda-mps-control"
+          },
+          {
+            "pid": 1792029,
+            "create_time": 1792501708.93,
+            "name": "python"
+          },
+          {
+            "pid": 1792031,
+            "create_time": 1792501708.96,
+            "name": "python"
+          },
+          {
+            "pid": 1792034,
+            "create_time": 1792501709.12,
+            "name": "nvidia-cuda-mps-server"
+          },
+          {
+            "pid": 1792139,
+            "create_time": 1792501713.17,
+            "name": "python"
+          },
+          {
+            "pid": 1792146,
+            "create_time": 1792501713.37,
+            "name": "python"
+          },
+          {
+            "pid": 1793169,
+            "create_time": 1792501824.81,
+            "name": "VLLM::StageEngineCoreProc_stage1_replica0_DP0"
+          },
+          {
+            "pid": 1793303,
+            "create_time": 1792501835.19,
+            "name": "python"
+          },
+          {
+            "pid": 1793305,
+            "create_time": 1792501835.23,
+            "name": "python"
+          },
+          {
+            "pid": 1793419,
+            "create_time": 1792501840.06,
+            "name": "python"
+          },
+          {
+            "pid": 1793426,
+            "create_time": 1792501840.25,
+            "name": "python"
+          }
+        ],
+        "signals": [
+          {
+            "pid": 1791727,
+            "signal": "SIGINT"
+          }
+        ],
+        "server_exit": 0,
+        "gpu_after": "GPU_PHYSICAL_1, NVIDIA A100 80GB PCIe, 15, 81920, 0",
+        "apps_after": [],
+        "port_free": true,
+        "own_processes_remaining": [],
+        "clean": true
+      },
+      "errors": []
+    },
+    {
+      "path": "${NVME_WORKDIR}/baseline/20261020_194158/b1/c64/r2",
+      "concurrency": 64,
+      "repeat": 2,
+      "requests": 1088,
+      "succeeded": 1088,
+      "failed": 0,
+      "loop_lag_p99_ms": 0.95,
+      "startup_s": 227.0,
+      "duration_s": 101.666,
+      "throughput_audio_s_per_s": 46.81,
+      "ttfa_ms": {
+        "mean": 617.6,
+        "p50": 602.0,
+        "p90": 880.6,
+        "p95": 941.4,
+        "p99": 997.1,
+        "max": 1115.9
+      },
+      "rtf": {
+        "mean": 1.3518,
+        "p50": 1.3649,
+        "p90": 1.8709,
+        "p95": 1.9146,
+        "p99": 1.9845,
+        "max": 2.2313
+      },
+      "long_takes": {
+        "at_least_20s": 5,
+        "at_least_20s_pct": 0.46,
+        "at_frame_cap": 3,
+        "audio_share_pct": 2.42
+      },
+      "full_concurrency_window": {
+        "seconds": 97.175,
+        "throughput_audio_s_per_s": 47.15
+      },
+      "max_client_inflight_lower_bound": 64,
+      "seconds_at_requested_client_inflight_lower_bound": 95.691,
+      "inflight_method": "Intervals sent_s to last audio arrival (e2e_s rounded to 0.1 ms). Client HTTP in-flight lower bound, not number scheduled on GPU.",
+      "key_lines": [
+        "(StageEngineCoreProc_stage0_replica0 pid=1795390) INFO 10-20 21:15:57 [kv_cache_utils.py:2327] GPU KV cache size: 326,716 tokens, Maximum concurrency for 8,192 tokens per request: 39.88x"
+      ],
+      "preemption_oom_cuda_lines": [],
+      "cleanup": {
+        "tracked_processes": [
+          {
+            "pid": 1795237,
+            "create_time": 1792502036.54,
+            "name": "vllm"
+          },
+          {
+            "pid": 1795332,
+            "create_time": 1792502045.93,
+            "name": "python"
+          },
+          {
+            "pid": 1795334,
+            "create_time": 1792502045.97,
+            "name": "python"
+          },
+          {
+            "pid": 1795389,
+            "create_time": 1792502050.41,
+            "name": "python"
+          },
+          {
+            "pid": 1795390,
+            "create_time": 1792502050.41,
+            "name": "VLLM::StageEngineCoreProc_stage0_replica0_DP0"
+          },
+          {
+            "pid": 1795385,
+            "create_time": 1792502050.38,
+            "name": "nvidia-cuda-mps-control"
+          },
+          {
+            "pid": 1795609,
+            "create_time": 1792502060.69,
+            "name": "python"
+          },
+          {
+            "pid": 1795611,
+            "create_time": 1792502060.73,
+            "name": "python"
+          },
+          {
+            "pid": 1795614,
+            "create_time": 1792502060.89,
+            "name": "nvidia-cuda-mps-server"
+          },
+          {
+            "pid": 1795707,
+            "create_time": 1792502064.86,
+            "name": "python"
+          },
+          {
+            "pid": 1795714,
+            "create_time": 1792502065.06,
+            "name": "python"
+          },
+          {
+            "pid": 1796698,
+            "create_time": 1792502176.6,
+            "name": "VLLM::StageEngineCoreProc_stage1_replica0_DP0"
+          },
+          {
+            "pid": 1796794,
+            "create_time": 1792502186.91,
+            "name": "python"
+          },
+          {
+            "pid": 1796796,
+            "create_time": 1792502186.95,
+            "name": "python"
+          },
+          {
+            "pid": 1796926,
+            "create_time": 1792502191.8,
+            "name": "python"
+          },
+          {
+            "pid": 1796933,
+            "create_time": 1792502192.01,
+            "name": "python"
+          }
+        ],
+        "signals": [
+          {
+            "pid": 1795237,
+            "signal": "SIGINT"
+          }
+        ],
+        "server_exit": 0,
+        "gpu_after": "GPU_PHYSICAL_1, NVIDIA A100 80GB PCIe, 15, 81920, 0",
+        "apps_after": [],
+        "port_free": true,
+        "own_processes_remaining": [],
+        "clean": true
+      },
+      "errors": []
+    },
+    {
+      "path": "${NVME_WORKDIR}/baseline/20261020_194158/b1/c64/r3",
+      "concurrency": 64,
+      "repeat": 3,
+      "requests": 1088,
+      "succeeded": 1088,
+      "failed": 0,
+      "loop_lag_p99_ms": 0.94,
+      "startup_s": 227.0,
+      "duration_s": 105.669,
+      "throughput_audio_s_per_s": 45.99,
+      "ttfa_ms": {
+        "mean": 612.6,
+        "p50": 603.7,
+        "p90": 883.2,
+        "p95": 960.8,
+        "p99": 999.5,
+        "max": 1117.4
+      },
+      "rtf": {
+        "mean": 1.3427,
+        "p50": 1.3352,
+        "p90": 1.8622,
+        "p95": 1.916,
+        "p99": 2.021,
+        "max": 2.1777
+      },
+      "long_takes": {
+        "at_least_20s": 10,
+        "at_least_20s_pct": 0.92,
+        "at_frame_cap": 9,
+        "audio_share_pct": 4.72
+      },
+      "full_concurrency_window": {
+        "seconds": 97.959,
+        "throughput_audio_s_per_s": 47.15
+      },
+      "max_client_inflight_lower_bound": 64,
+      "seconds_at_requested_client_inflight_lower_bound": 96.508,
+      "inflight_method": "Intervals sent_s to last audio arrival (e2e_s rounded to 0.1 ms). Client HTTP in-flight lower bound, not number scheduled on GPU.",
+      "key_lines": [
+        "(StageEngineCoreProc_stage0_replica0 pid=1798712) INFO 10-20 21:21:45 [kv_cache_utils.py:2327] GPU KV cache size: 326,716 tokens, Maximum concurrency for 8,192 tokens per request: 39.88x"
+      ],
+      "preemption_oom_cuda_lines": [],
+      "cleanup": {
+        "tracked_processes": [
+          {
+            "pid": 1798520,
+            "create_time": 1792502384.57,
+            "name": "vllm"
+          },
+          {
+            "pid": 1798638,
+            "create_time": 1792502394.02,
+            "name": "python"
+          },
+          {
+            "pid": 1798640,
+            "create_time": 1792502394.05,
+            "name": "python"
+          },
+          {
+            "pid": 1798711,
+            "create_time": 1792502398.52,
+            "name": "python"
+          },
+          {
+            "pid": 1798712,
+            "create_time": 1792502398.52,
+            "name": "VLLM::StageEngineCoreProc_stage0_replica0_DP0"
+          },
+          {
+            "pid": 1798707,
+            "create_time": 1792502398.48,
+            "name": "nvidia-cuda-mps-control"
+          },
+          {
+            "pid": 1798806,
+            "create_time": 1792502408.79,
+            "name": "python"
+          },
+          {
+            "pid": 1798808,
+            "create_time": 1792502408.83,
+            "name": "python"
+          },
+          {
+            "pid": 1798811,
+            "create_time": 1792502408.99,
+            "name": "nvidia-cuda-mps-server"
+          },
+          {
+            "pid": 1798935,
+            "create_time": 1792502413.06,
+            "name": "python"
+          },
+          {
+            "pid": 1798942,
+            "create_time": 1792502413.27,
+            "name": "python"
+          },
+          {
+            "pid": 1800097,
+            "create_time": 1792502524.76,
+            "name": "VLLM::StageEngineCoreProc_stage1_replica0_DP0"
+          },
+          {
+            "pid": 1800213,
+            "create_time": 1792502535.03,
+            "name": "python"
+          },
+          {
+            "pid": 1800215,
+            "create_time": 1792502535.06,
+            "name": "python"
+          },
+          {
+            "pid": 1800333,
+            "create_time": 1792502539.91,
+            "name": "python"
+          },
+          {
+            "pid": 1800341,
+            "create_time": 1792502540.12,
+            "name": "python"
+          }
+        ],
+        "signals": [
+          {
+            "pid": 1798520,
+            "signal": "SIGINT"
+          }
+        ],
+        "server_exit": 0,
+        "gpu_after": "GPU_PHYSICAL_1, NVIDIA A100 80GB PCIe, 15, 81920, 0",
+        "apps_after": [],
+        "port_free": true,
+        "own_processes_remaining": [],
+        "clean": true
+      },
+      "errors": []
+    },
+    {
+      "path": "${NVME_WORKDIR}/baseline/20261020_194158/b1/c8/r1",
+      "concurrency": 8,
+      "repeat": 1,
+      "requests": 1088,
+      "succeeded": 1088,
+      "failed": 0,
+      "loop_lag_p99_ms": 0.92,
+      "startup_s": 227.0,
+      "duration_s": 295.159,
+      "throughput_audio_s_per_s": 16.31,
+      "ttfa_ms": {
+        "mean": 234.8,
+        "p50": 228.0,
+        "p90": 295.9,
+        "p95": 321.7,
+        "p99": 363.2,
+        "max": 439.4
+      },
+      "rtf": {
+        "mean": 0.4928,
+        "p50": 0.5097,
+        "p90": 0.5576,
+        "p95": 0.5727,
+        "p99": 0.6149,
+        "max": 0.6883
+      },
+      "long_takes": {
+        "at_least_20s": 9,
+        "at_least_20s_pct": 0.83,
+        "at_frame_cap": 6,
+        "audio_share_pct": 4.25
+      },
+      "full_concurrency_window": {
+        "seconds": 293.984,
+        "throughput_audio_s_per_s": 16.31
+      },
+      "max_client_inflight_lower_bound": 8,
+      "seconds_at_requested_client_inflight_lower_bound": 293.089,
+      "inflight_method": "Intervals sent_s to last audio arrival (e2e_s rounded to 0.1 ms). Client HTTP in-flight lower bound, not number scheduled on GPU.",
+      "key_lines": [
+        "(StageEngineCoreProc_stage0_replica0 pid=1769108) INFO 10-20 20:25:35 [kv_cache_utils.py:2327] GPU KV cache size: 326,716 tokens, Maximum concurrency for 8,192 tokens per request: 39.88x"
+      ],
+      "preemption_oom_cuda_lines": [],
+      "cleanup": {
+        "tracked_processes": [
+          {
+            "pid": 1769013,
+            "create_time": 1792499015.32,
+            "name": "vllm"
+          },
+          {
+            "pid": 1769062,
+            "create_time": 1792499024.78,
+            "name": "python"
+          },
+          {
+            "pid": 1769064,
+            "create_time": 1792499024.81,
+            "name": "python"
+          },
+          {
+            "pid": 1769107,
+            "create_time": 1792499029.24,
+            "name": "python"
+          },
+          {
+            "pid": 1769108,
+            "create_time": 1792499029.24,
+            "name": "VLLM::StageEngineCoreProc_stage0_replica0_DP0"
+          },
+          {
+            "pid": 1769103,
+            "create_time": 1792499029.21,
+            "name": "nvidia-cuda-mps-control"
+          },
+          {
+            "pid": 1769167,
+            "create_time": 1792499039.57,
+            "name": "python"
+          },
+          {
+            "pid": 1769169,
+            "create_time": 1792499039.61,
+            "name": "python"
+          },
+          {
+            "pid": 1769172,
+            "create_time": 1792499039.77,
+            "name": "nvidia-cuda-mps-server"
+          },
+          {
+            "pid": 1769256,
+            "create_time": 1792499043.86,
+            "name": "python"
+          },
+          {
+            "pid": 1769263,
+            "create_time": 1792499044.06,
+            "name": "python"
+          },
+          {
+            "pid": 1769595,
+            "create_time": 1792499154.98,
+            "name": "VLLM::StageEngineCoreProc_stage1_replica0_DP0"
+          },
+          {
+            "pid": 1769649,
+            "create_time": 1792499165.24,
+            "name": "python"
+          },
+          {
+            "pid": 1769651,
+            "create_time": 1792499165.28,
+            "name": "python"
+          },
+          {
+            "pid": 1769755,
+            "create_time": 1792499170.12,
+            "name": "python"
+          },
+          {
+            "pid": 1769763,
+            "create_time": 1792499170.32,
+            "name": "python"
+          }
+        ],
+        "signals": [
+          {
+            "pid": 1769013,
+            "signal": "SIGINT"
+          }
+        ],
+        "server_exit": 0,
+        "gpu_after": "GPU_PHYSICAL_1, NVIDIA A100 80GB PCIe, 15, 81920, 0",
+        "apps_after": [],
+        "port_free": true,
+        "own_processes_remaining": [],
+        "clean": true
+      },
+      "errors": []
+    },
+    {
+      "path": "${NVME_WORKDIR}/baseline/20261020_194158/b1/c96/r1",
+      "concurrency": 96,
+      "repeat": 1,
+      "requests": 1088,
+      "succeeded": 1088,
+      "failed": 0,
+      "loop_lag_p99_ms": 0.95,
+      "startup_s": 228.0,
+      "duration_s": 86.32,
+      "throughput_audio_s_per_s": 56.3,
+      "ttfa_ms": {
+        "mean": 760.2,
+        "p50": 731.7,
+        "p90": 1090.0,
+        "p95": 1313.6,
+        "p99": 1391.4,
+        "max": 1394.8
+      },
+      "rtf": {
+        "mean": 1.6356,
+        "p50": 1.5768,
+        "p90": 2.211,
+        "p95": 2.2441,
+        "p99": 2.3346,
+        "max": 2.4949
+      },
+      "long_takes": {
+        "at_least_20s": 8,
+        "at_least_20s_pct": 0.74,
+        "at_frame_cap": 8,
+        "audio_share_pct": 3.82
+      },
+      "full_concurrency_window": {
+        "seconds": 78.917,
+        "throughput_audio_s_per_s": 57.82
+      },
+      "max_client_inflight_lower_bound": 96,
+      "seconds_at_requested_client_inflight_lower_bound": 77.298,
+      "inflight_method": "Intervals sent_s to last audio arrival (e2e_s rounded to 0.1 ms). Client HTTP in-flight lower bound, not number scheduled on GPU.",
+      "key_lines": [
+        "(StageEngineCoreProc_stage0_replica0 pid=1802338) INFO 10-20 21:27:37 [kv_cache_utils.py:2327] GPU KV cache size: 326,716 tokens, Maximum concurrency for 8,192 tokens per request: 39.88x"
+      ],
+      "preemption_oom_cuda_lines": [],
+      "cleanup": {
+        "tracked_processes": [
+          {
+            "pid": 1802168,
+            "create_time": 1792502736.69,
+            "name": "vllm"
+          },
+          {
+            "pid": 1802272,
+            "create_time": 1792502746.12,
+            "name": "python"
+          },
+          {
+            "pid": 1802274,
+            "create_time": 1792502746.15,
+            "name": "python"
+          },
+          {
+            "pid": 1802337,
+            "create_time": 1792502750.58,
+            "name": "python"
+          },
+          {
+            "pid": 1802338,
+            "create_time": 1792502750.59,
+            "name": "VLLM::StageEngineCoreProc_stage0_replica0_DP0"
+          },
+          {
+            "pid": 1802333,
+            "create_time": 1792502750.55,
+            "name": "nvidia-cuda-mps-control"
+          },
+          {
+            "pid": 1802441,
+            "create_time": 1792502760.89,
+            "name": "python"
+          },
+          {
+            "pid": 1802445,
+            "create_time": 1792502760.93,
+            "name": "python"
+          },
+          {
+            "pid": 1802448,
+            "create_time": 1792502761.08,
+            "name": "nvidia-cuda-mps-server"
+          },
+          {
+            "pid": 1802539,
+            "create_time": 1792502765.17,
+            "name": "python"
+          },
+          {
+            "pid": 1802546,
+            "create_time": 1792502765.37,
+            "name": "python"
+          },
+          {
+            "pid": 1803425,
+            "create_time": 1792502876.87,
+            "name": "VLLM::StageEngineCoreProc_stage1_replica0_DP0"
+          },
+          {
+            "pid": 1803529,
+            "create_time": 1792502887.08,
+            "name": "python"
+          },
+          {
+            "pid": 1803531,
+            "create_time": 1792502887.11,
+            "name": "python"
+          },
+          {
+            "pid": 1803658,
+            "create_time": 1792502892.01,
+            "name": "python"
+          },
+          {
+            "pid": 1803665,
+            "create_time": 1792502892.22,
+            "name": "python"
+          }
+        ],
+        "signals": [
+          {
+            "pid": 1802168,
+            "signal": "SIGINT"
+          }
+        ],
+        "server_exit": 0,
+        "gpu_after": "GPU_PHYSICAL_1, NVIDIA A100 80GB PCIe, 15, 81920, 0",
+        "apps_after": [],
+        "port_free": true,
+        "own_processes_remaining": [],
+        "clean": true
+      },
+      "errors": []
+    }
+  ]
+}

@@ -1,0 +1,1746 @@
+{
+  "title": "Drama 3 B1 \u2014 A100 80GB PCIe, cu129 / driver R550",
+  "scope": "Actual machine/environment; not official cu130/R580+ compliance.",
+  "aggregation": "Arithmetic mean of run-level values. For TTFA this is the mean of each run's p50/p95, not pooled request percentiles.",
+  "error_bars": "Minimum and maximum across observed repeats; no confidence intervals. Single runs have no estimated spread.",
+  "axes": "Concurrency on a base-2 logarithmic quantitative axis; exact measured levels shown as ticks. Lines only connect observations, not a fitted model.",
+  "hardware_alignment": "Nominal timed window from summary.started_at (whole-second truncation) plus duration_s. Boundary alignment may differ by <1s; thermal values are sample proportions.",
+  "quality_limitation": "Audio >=20s is a duration proxy; no saved audio, so no noise-run or WER inference.",
+  "sources": [
+    {
+      "path": "${NVME_WORKDIR}/baseline/20261020_194158/b1-independent-audit.json",
+      "sha256": "9ca01661b8da114cf6ad8ff48366823e53568fd3a0fae8b02ac594513f550816"
+    },
+    {
+      "path": "${NVME_WORKDIR}/baseline/20261020_194158/b1-hardware-summary.json",
+      "sha256": "5f1a1e3103b02f4e7fe89673ceafdf18ff999fc266e1471983b0bab3153ba615"
+    },
+    {
+      "path": "${NVME_WORKDIR}/baseline/20261020_194158/postprocessing/plot_baseline.py",
+      "sha256": "947c842a5a93ecdccb8558d4bc8acb8448ee7ae688d5617e38eb6236c59f24e6"
+    },
+    {
+      "path": "${NVME_WORKDIR}/baseline/20261020_194158/b1/c1/r1/summary.json",
+      "sha256": "790c4025b094d2ada14ceded069fbe58d32187888957cadbd71839dd8ca88759"
+    },
+    {
+      "path": "${NVME_WORKDIR}/baseline/20261020_194158/b1/c1/r1/requests.jsonl",
+      "sha256": "fcd973049374fde9138ac23e1a4b1cff2278926156868043f4b19e54a6197d09"
+    },
+    {
+      "path": "${NVME_WORKDIR}/baseline/20261020_194158/b1/c1/r1/gpu.csv",
+      "sha256": "c771c756f828140fbd5a85dac8b04693c8b97cae4ed54ac8cb258a15374c2265"
+    },
+    {
+      "path": "${NVME_WORKDIR}/baseline/20261020_194158/b1/c4/r1/summary.json",
+      "sha256": "df5ac35d4194d3612cf3a5a51651de21d3db8f36c79a69bbbd1f4538d8a6f63e"
+    },
+    {
+      "path": "${NVME_WORKDIR}/baseline/20261020_194158/b1/c4/r1/requests.jsonl",
+      "sha256": "479f283ef6b4d773790ef582b71f239c85bf493eb5d1124464050921b2941071"
+    },
+    {
+      "path": "${NVME_WORKDIR}/baseline/20261020_194158/b1/c4/r1/gpu.csv",
+      "sha256": "70b9493a2ed9f08f9336ad7e454294870758acc5773eaff8f66a11d166727373"
+    },
+    {
+      "path": "${NVME_WORKDIR}/baseline/20261020_194158/b1/c8/r1/summary.json",
+      "sha256": "e037082362e8cf017ea2811e9e145c5c59e23d59675ae21597dae01417476928"
+    },
+    {
+      "path": "${NVME_WORKDIR}/baseline/20261020_194158/b1/c8/r1/requests.jsonl",
+      "sha256": "a4d9bd1ad1efee0830e9f8c11a470101ae854a881bdb16afbd77deaa0ce44ca8"
+    },
+    {
+      "path": "${NVME_WORKDIR}/baseline/20261020_194158/b1/c8/r1/gpu.csv",
+      "sha256": "aedde336007b17335df6a3a892ef07ce995e71e5c6827e5ef72ceb659d3adfa8"
+    },
+    {
+      "path": "${NVME_WORKDIR}/baseline/20261020_194158/b1/c12/r1/summary.json",
+      "sha256": "0286f3a59b9d4ab0ad2c5a699282e7b843b803b532f3ab16afadaeea3fa9b73c"
+    },
+    {
+      "path": "${NVME_WORKDIR}/baseline/20261020_194158/b1/c12/r1/requests.jsonl",
+      "sha256": "fdbf6d3e6bc4d4181a9ec842cdd4caab55b22b4ed2cc028d7305388383ddcca2"
+    },
+    {
+      "path": "${NVME_WORKDIR}/baseline/20261020_194158/b1/c12/r1/gpu.csv",
+      "sha256": "9c204220376800c30a3734f18c4d33d14dc3bb0f5d4ef6b022e0710eb982429b"
+    },
+    {
+      "path": "${NVME_WORKDIR}/baseline/20261020_194158/b1/c16/r1/summary.json",
+      "sha256": "7377fa1c8a446988408993ec9b9bac236c518e4276acff52596303dd06618d4e"
+    },
+    {
+      "path": "${NVME_WORKDIR}/baseline/20261020_194158/b1/c16/r1/requests.jsonl",
+      "sha256": "a2fb9890dfb22b3073da368fba0847b225652924d1b5f682f3725f949e42e548"
+    },
+    {
+      "path": "${NVME_WORKDIR}/baseline/20261020_194158/b1/c16/r1/gpu.csv",
+      "sha256": "a97f14bf7beb18408c177c6ccd456cdb0222523296afc81f8d0324443984377b"
+    },
+    {
+      "path": "${NVME_WORKDIR}/baseline/20261020_194158/b1/c24/r1/summary.json",
+      "sha256": "daf8883233f5144224cbdd9f3a08e5866012b95c089d71e2a07a5396f688c79a"
+    },
+    {
+      "path": "${NVME_WORKDIR}/baseline/20261020_194158/b1/c24/r1/requests.jsonl",
+      "sha256": "c5f1f7e41c9eaf5bf3a0b72959e4eab32448d81be36d3e524f58f0aacd586215"
+    },
+    {
+      "path": "${NVME_WORKDIR}/baseline/20261020_194158/b1/c24/r1/gpu.csv",
+      "sha256": "5c353ed2d8eed8785398b61051390fed2ef3b0b56a3e4867313ef5dbae59d98f"
+    },
+    {
+      "path": "${NVME_WORKDIR}/baseline/20261020_194158/b1/c32/r1/summary.json",
+      "sha256": "3490962804132af5cd22be64c241828ae5946fad53293fc21d88037827002c0d"
+    },
+    {
+      "path": "${NVME_WORKDIR}/baseline/20261020_194158/b1/c32/r1/requests.jsonl",
+      "sha256": "bb670f5a093bef41a8084ac81b7756d5ea28c1dd336eece17e3b0b45f20bcacc"
+    },
+    {
+      "path": "${NVME_WORKDIR}/baseline/20261020_194158/b1/c32/r1/gpu.csv",
+      "sha256": "361b0f4f2348d7961dc4c5864768574e29d04a2a90328bfe7f67f5d0bd3709ed"
+    },
+    {
+      "path": "${NVME_WORKDIR}/baseline/20261020_194158/b1/c48/r1/summary.json",
+      "sha256": "75935f4e9fe4e09ecfdcd28d8da56b09f35573f29546a3ad43a8d3176cb7fa21"
+    },
+    {
+      "path": "${NVME_WORKDIR}/baseline/20261020_194158/b1/c48/r1/requests.jsonl",
+      "sha256": "55ea8cac75aa41856186ea3f2845e6e0767af1d1c9eb4950da322aeaf4c73e55"
+    },
+    {
+      "path": "${NVME_WORKDIR}/baseline/20261020_194158/b1/c48/r1/gpu.csv",
+      "sha256": "73f96c4c19804593a0d93cfd83babe84ed2dbe6c82412bb94f9291bd9281d276"
+    },
+    {
+      "path": "${NVME_WORKDIR}/baseline/20261020_194158/b1/c64/r1/summary.json",
+      "sha256": "700c53ff75a515a7ac81d82161adf165305ed20f5f1b3089e1cb03c5cff1227f"
+    },
+    {
+      "path": "${NVME_WORKDIR}/baseline/20261020_194158/b1/c64/r1/requests.jsonl",
+      "sha256": "00cebd5e99a98d07816fd52da8a11863d762899800679da2c12518c4e965d3ff"
+    },
+    {
+      "path": "${NVME_WORKDIR}/baseline/20261020_194158/b1/c64/r1/gpu.csv",
+      "sha256": "b78e4ac5cc092af922cd80c036b9592424caf2ff6f2fcc0de99fa0fcb2e862a2"
+    },
+    {
+      "path": "${NVME_WORKDIR}/baseline/20261020_194158/b1/c64/r2/summary.json",
+      "sha256": "c85293e1a9c28bc22bf558c05f62ea301d509d9196764f39bd1eecde00f3b2dc"
+    },
+    {
+      "path": "${NVME_WORKDIR}/baseline/20261020_194158/b1/c64/r2/requests.jsonl",
+      "sha256": "2adabf551644b9434c6d4d32c01231e3d0b8fefaa876899cd012ceeb01c7b235"
+    },
+    {
+      "path": "${NVME_WORKDIR}/baseline/20261020_194158/b1/c64/r2/gpu.csv",
+      "sha256": "d9702e3e5380688fd6ca252bf0699d268781ff1fa053b7390543959b206502cd"
+    },
+    {
+      "path": "${NVME_WORKDIR}/baseline/20261020_194158/b1/c64/r3/summary.json",
+      "sha256": "4a7108f4f1f2add9c84332a93692fa4f01f8f2101c7642b56184901333cfb61c"
+    },
+    {
+      "path": "${NVME_WORKDIR}/baseline/20261020_194158/b1/c64/r3/requests.jsonl",
+      "sha256": "de5b83b50cf4a44ce7019fcaad0d9fd7b70ebc1c42120b9f8680741ebb41b121"
+    },
+    {
+      "path": "${NVME_WORKDIR}/baseline/20261020_194158/b1/c64/r3/gpu.csv",
+      "sha256": "4f47f698b5e794b42b96fb24de7741d3470b6db8589b8a1cdd4356535ea46782"
+    },
+    {
+      "path": "${NVME_WORKDIR}/baseline/20261020_194158/b1/c96/r1/summary.json",
+      "sha256": "4c5d20a154c7ea0947df75b69b3bd574e647bba8f880b166f304a9174841eb76"
+    },
+    {
+      "path": "${NVME_WORKDIR}/baseline/20261020_194158/b1/c96/r1/requests.jsonl",
+      "sha256": "15b0c449482183166c703007a273ed1a750f43d435a57b809a3d8c00e8e13d80"
+    },
+    {
+      "path": "${NVME_WORKDIR}/baseline/20261020_194158/b1/c96/r1/gpu.csv",
+      "sha256": "80df4d4e8b8fff5dd2eb2095ffda4ff2c8d77c390e63b2b45c9b95c052b1bb77"
+    },
+    {
+      "path": "${NVME_WORKDIR}/baseline/20261020_194158/b1/c128/r1/summary.json",
+      "sha256": "8d8957871c20fc49ea15a1faed4295001bb04afcdf0318a0d266dbaa1bfcd5d1"
+    },
+    {
+      "path": "${NVME_WORKDIR}/baseline/20261020_194158/b1/c128/r1/requests.jsonl",
+      "sha256": "b59378351b26741247980e335311f3eeb482f22cc30fc854e6efd930ae64c2ba"
+    },
+    {
+      "path": "${NVME_WORKDIR}/baseline/20261020_194158/b1/c128/r1/gpu.csv",
+      "sha256": "83634ce24efc0ad84c999d89ef3cb1adbb3bd18d28a861b471b50f6b7c63daf4"
+    },
+    {
+      "path": "${NVME_WORKDIR}/baseline/20261020_194158/b1/c128/r2/summary.json",
+      "sha256": "3c78163165c073fe0b040b7c2203293c79d12464d426558e80e93b6da5ceab35"
+    },
+    {
+      "path": "${NVME_WORKDIR}/baseline/20261020_194158/b1/c128/r2/requests.jsonl",
+      "sha256": "c4f1532ec8e53e1aba12e89d88957afa2b05dd5957f82a1618166f266ba53a76"
+    },
+    {
+      "path": "${NVME_WORKDIR}/baseline/20261020_194158/b1/c128/r2/gpu.csv",
+      "sha256": "b000dc6b9887e3f21c7cc9e80f34357a45c0e781a84d49c666a8df96e54942a1"
+    },
+    {
+      "path": "${NVME_WORKDIR}/baseline/20261020_194158/b1/c128/r3/summary.json",
+      "sha256": "bbcd9afa9fb4fb3a16e70d84c626cd73445a75159f0de7d32d7b0b507a5f4796"
+    },
+    {
+      "path": "${NVME_WORKDIR}/baseline/20261020_194158/b1/c128/r3/requests.jsonl",
+      "sha256": "c47b459f49507a89008a6430f2b4104fe08c9cef9c0a46f3ef43eb255b2c5744"
+    },
+    {
+      "path": "${NVME_WORKDIR}/baseline/20261020_194158/b1/c128/r3/gpu.csv",
+      "sha256": "4da069afe4bf4675cf24fcf15a33a6c16fadc1817971f8e658bdba13594073eb"
+    },
+    {
+      "path": "${NVME_WORKDIR}/baseline/20261020_194158/b1/c128/r4/summary.json",
+      "sha256": "7e71ad8e0a52174557e585029c2aedd12ff96377cc9def3c8a33bc28a179eb4a"
+    },
+    {
+      "path": "${NVME_WORKDIR}/baseline/20261020_194158/b1/c128/r4/requests.jsonl",
+      "sha256": "5b08be434123e70f686d2f4db5942255a4203c808aedc6729b50e7fae171f7cb"
+    },
+    {
+      "path": "${NVME_WORKDIR}/baseline/20261020_194158/b1/c128/r4/gpu.csv",
+      "sha256": "24445cc6977170079828b290b9a79828a67e938159acd648a8629db9f98bd0a3"
+    },
+    {
+      "path": "${NVME_WORKDIR}/baseline/20261020_194158/b1/c128/r5/summary.json",
+      "sha256": "712ee5f95a43832c1d7a36b9fe4342a94f0b288435db1d24df31cb713fe6c694"
+    },
+    {
+      "path": "${NVME_WORKDIR}/baseline/20261020_194158/b1/c128/r5/requests.jsonl",
+      "sha256": "eb27cbc25c38e0a29107a8199ad1dab0a931090c076fd0307d207e87c804d298"
+    },
+    {
+      "path": "${NVME_WORKDIR}/baseline/20261020_194158/b1/c128/r5/gpu.csv",
+      "sha256": "4913466711794243f8f0c031ee522b225495c70a3be810130a137f77c9120e09"
+    }
+  ],
+  "runs": [
+    {
+      "concurrency": 1,
+      "repeat": 1,
+      "directory": "${NVME_WORKDIR}/baseline/20261020_194158/b1/c1/r1",
+      "metrics": {
+        "throughput_audio_s_per_s": 4.1,
+        "full_window_audio_s_per_s": 4.1,
+        "rtf_mean": 0.2462,
+        "ttfa_p50_ms": 134.3,
+        "ttfa_p95_ms": 162.0,
+        "stall_0ms_pct": 0.0,
+        "stall_100ms_pct": 0.0,
+        "sm_clock_run_median_mhz": 1110.0,
+        "thermal_sample_pct": 93.62618432385874,
+        "long_take_audio_share_pct": 2.43
+      }
+    },
+    {
+      "concurrency": 4,
+      "repeat": 1,
+      "directory": "${NVME_WORKDIR}/baseline/20261020_194158/b1/c4/r1",
+      "metrics": {
+        "throughput_audio_s_per_s": 11.49,
+        "full_window_audio_s_per_s": 11.49,
+        "rtf_mean": 0.3506,
+        "ttfa_p50_ms": 179.7,
+        "ttfa_p95_ms": 247.0,
+        "stall_0ms_pct": 0.0,
+        "stall_100ms_pct": 0.0,
+        "sm_clock_run_median_mhz": 990.0,
+        "thermal_sample_pct": 96.51442307692308,
+        "long_take_audio_share_pct": 3.75
+      }
+    },
+    {
+      "concurrency": 8,
+      "repeat": 1,
+      "directory": "${NVME_WORKDIR}/baseline/20261020_194158/b1/c8/r1",
+      "metrics": {
+        "throughput_audio_s_per_s": 16.31,
+        "full_window_audio_s_per_s": 16.31,
+        "rtf_mean": 0.4928,
+        "ttfa_p50_ms": 228.0,
+        "ttfa_p95_ms": 321.7,
+        "stall_0ms_pct": 1.75,
+        "stall_100ms_pct": 0.0,
+        "sm_clock_run_median_mhz": 735.0,
+        "thermal_sample_pct": 95.73378839590444,
+        "long_take_audio_share_pct": 4.25
+      }
+    },
+    {
+      "concurrency": 12,
+      "repeat": 1,
+      "directory": "${NVME_WORKDIR}/baseline/20261020_194158/b1/c12/r1",
+      "metrics": {
+        "throughput_audio_s_per_s": 19.75,
+        "full_window_audio_s_per_s": 19.74,
+        "rtf_mean": 0.6072,
+        "ttfa_p50_ms": 265.2,
+        "ttfa_p95_ms": 365.2,
+        "stall_0ms_pct": 20.5,
+        "stall_100ms_pct": 1.1,
+        "sm_clock_run_median_mhz": 630.0,
+        "thermal_sample_pct": 95.19832985386222,
+        "long_take_audio_share_pct": 3.38
+      }
+    },
+    {
+      "concurrency": 16,
+      "repeat": 1,
+      "directory": "${NVME_WORKDIR}/baseline/20261020_194158/b1/c16/r1",
+      "metrics": {
+        "throughput_audio_s_per_s": 22.88,
+        "full_window_audio_s_per_s": 22.9,
+        "rtf_mean": 0.6985,
+        "ttfa_p50_ms": 300.4,
+        "ttfa_p95_ms": 412.5,
+        "stall_0ms_pct": 59.74,
+        "stall_100ms_pct": 26.56,
+        "sm_clock_run_median_mhz": 600.0,
+        "thermal_sample_pct": 94.68599033816425,
+        "long_take_audio_share_pct": 2.42
+      }
+    },
+    {
+      "concurrency": 24,
+      "repeat": 1,
+      "directory": "${NVME_WORKDIR}/baseline/20261020_194158/b1/c24/r1",
+      "metrics": {
+        "throughput_audio_s_per_s": 27.41,
+        "full_window_audio_s_per_s": 27.62,
+        "rtf_mean": 0.8659,
+        "ttfa_p50_ms": 366.2,
+        "ttfa_p95_ms": 494.2,
+        "stall_0ms_pct": 75.64,
+        "stall_100ms_pct": 65.99,
+        "sm_clock_run_median_mhz": 540.0,
+        "thermal_sample_pct": 93.33333333333333,
+        "long_take_audio_share_pct": 1.46
+      }
+    },
+    {
+      "concurrency": 32,
+      "repeat": 1,
+      "directory": "${NVME_WORKDIR}/baseline/20261020_194158/b1/c32/r1",
+      "metrics": {
+        "throughput_audio_s_per_s": 30.58,
+        "full_window_audio_s_per_s": 30.83,
+        "rtf_mean": 1.0302,
+        "ttfa_p50_ms": 431.9,
+        "ttfa_p95_ms": 587.3,
+        "stall_0ms_pct": 80.97,
+        "stall_100ms_pct": 74.45,
+        "sm_clock_run_median_mhz": 525.0,
+        "thermal_sample_pct": 93.15960912052117,
+        "long_take_audio_share_pct": 0.96
+      }
+    },
+    {
+      "concurrency": 48,
+      "repeat": 1,
+      "directory": "${NVME_WORKDIR}/baseline/20261020_194158/b1/c48/r1",
+      "metrics": {
+        "throughput_audio_s_per_s": 39.49,
+        "full_window_audio_s_per_s": 40.41,
+        "rtf_mean": 1.1798,
+        "ttfa_p50_ms": 540.9,
+        "ttfa_p95_ms": 775.5,
+        "stall_0ms_pct": 95.68,
+        "stall_100ms_pct": 79.41,
+        "sm_clock_run_median_mhz": 555.0,
+        "thermal_sample_pct": 88.88888888888889,
+        "long_take_audio_share_pct": 3.32
+      }
+    },
+    {
+      "concurrency": 64,
+      "repeat": 1,
+      "directory": "${NVME_WORKDIR}/baseline/20261020_194158/b1/c64/r1",
+      "metrics": {
+        "throughput_audio_s_per_s": 45.39,
+        "full_window_audio_s_per_s": 47.19,
+        "rtf_mean": 1.3496,
+        "ttfa_p50_ms": 608.3,
+        "ttfa_p95_ms": 970.1,
+        "stall_0ms_pct": 98.35,
+        "stall_100ms_pct": 95.22,
+        "sm_clock_run_median_mhz": 592.5,
+        "thermal_sample_pct": 88.0952380952381,
+        "long_take_audio_share_pct": 3.86
+      }
+    },
+    {
+      "concurrency": 64,
+      "repeat": 2,
+      "directory": "${NVME_WORKDIR}/baseline/20261020_194158/b1/c64/r2",
+      "metrics": {
+        "throughput_audio_s_per_s": 46.81,
+        "full_window_audio_s_per_s": 47.15,
+        "rtf_mean": 1.3518,
+        "ttfa_p50_ms": 602.0,
+        "ttfa_p95_ms": 941.4,
+        "stall_0ms_pct": 97.61,
+        "stall_100ms_pct": 95.31,
+        "sm_clock_run_median_mhz": 570.0,
+        "thermal_sample_pct": 87.12871287128714,
+        "long_take_audio_share_pct": 2.42
+      }
+    },
+    {
+      "concurrency": 64,
+      "repeat": 3,
+      "directory": "${NVME_WORKDIR}/baseline/20261020_194158/b1/c64/r3",
+      "metrics": {
+        "throughput_audio_s_per_s": 45.99,
+        "full_window_audio_s_per_s": 47.15,
+        "rtf_mean": 1.3427,
+        "ttfa_p50_ms": 603.7,
+        "ttfa_p95_ms": 960.8,
+        "stall_0ms_pct": 98.53,
+        "stall_100ms_pct": 94.94,
+        "sm_clock_run_median_mhz": 570.0,
+        "thermal_sample_pct": 87.67772511848341,
+        "long_take_audio_share_pct": 4.72
+      }
+    },
+    {
+      "concurrency": 96,
+      "repeat": 1,
+      "directory": "${NVME_WORKDIR}/baseline/20261020_194158/b1/c96/r1",
+      "metrics": {
+        "throughput_audio_s_per_s": 56.3,
+        "full_window_audio_s_per_s": 57.82,
+        "rtf_mean": 1.6356,
+        "ttfa_p50_ms": 731.7,
+        "ttfa_p95_ms": 1313.6,
+        "stall_0ms_pct": 100.0,
+        "stall_100ms_pct": 98.35,
+        "sm_clock_run_median_mhz": 630.0,
+        "thermal_sample_pct": 84.88372093023256,
+        "long_take_audio_share_pct": 3.82
+      }
+    },
+    {
+      "concurrency": 128,
+      "repeat": 1,
+      "directory": "${NVME_WORKDIR}/baseline/20261020_194158/b1/c128/r1",
+      "metrics": {
+        "throughput_audio_s_per_s": 62.47,
+        "full_window_audio_s_per_s": 65.82,
+        "rtf_mean": 1.9032,
+        "ttfa_p50_ms": 838.8,
+        "ttfa_p95_ms": 1703.1,
+        "stall_0ms_pct": 100.0,
+        "stall_100ms_pct": 100.0,
+        "sm_clock_run_median_mhz": 645.0,
+        "thermal_sample_pct": 84.10596026490066,
+        "long_take_audio_share_pct": 2.93
+      }
+    },
+    {
+      "concurrency": 128,
+      "repeat": 2,
+      "directory": "${NVME_WORKDIR}/baseline/20261020_194158/b1/c128/r2",
+      "metrics": {
+        "throughput_audio_s_per_s": 63.16,
+        "full_window_audio_s_per_s": 67.61,
+        "rtf_mean": 1.8686,
+        "ttfa_p50_ms": 817.5,
+        "ttfa_p95_ms": 1681.7,
+        "stall_0ms_pct": 100.0,
+        "stall_100ms_pct": 99.91,
+        "sm_clock_run_median_mhz": 735.0,
+        "thermal_sample_pct": 82.78145695364239,
+        "long_take_audio_share_pct": 2.41
+      }
+    },
+    {
+      "concurrency": 128,
+      "repeat": 3,
+      "directory": "${NVME_WORKDIR}/baseline/20261020_194158/b1/c128/r3",
+      "metrics": {
+        "throughput_audio_s_per_s": 62.66,
+        "full_window_audio_s_per_s": 66.08,
+        "rtf_mean": 1.9017,
+        "ttfa_p50_ms": 807.2,
+        "ttfa_p95_ms": 1670.1,
+        "stall_0ms_pct": 100.0,
+        "stall_100ms_pct": 100.0,
+        "sm_clock_run_median_mhz": 690.0,
+        "thermal_sample_pct": 82.3529411764706,
+        "long_take_audio_share_pct": 4.76
+      }
+    },
+    {
+      "concurrency": 128,
+      "repeat": 4,
+      "directory": "${NVME_WORKDIR}/baseline/20261020_194158/b1/c128/r4",
+      "metrics": {
+        "throughput_audio_s_per_s": 62.38,
+        "full_window_audio_s_per_s": 65.89,
+        "rtf_mean": 1.914,
+        "ttfa_p50_ms": 820.1,
+        "ttfa_p95_ms": 1692.3,
+        "stall_0ms_pct": 100.0,
+        "stall_100ms_pct": 99.91,
+        "sm_clock_run_median_mhz": 720.0,
+        "thermal_sample_pct": 81.57894736842105,
+        "long_take_audio_share_pct": 2.37
+      }
+    },
+    {
+      "concurrency": 128,
+      "repeat": 5,
+      "directory": "${NVME_WORKDIR}/baseline/20261020_194158/b1/c128/r5",
+      "metrics": {
+        "throughput_audio_s_per_s": 64.04,
+        "full_window_audio_s_per_s": 67.32,
+        "rtf_mean": 1.8676,
+        "ttfa_p50_ms": 808.7,
+        "ttfa_p95_ms": 1718.2,
+        "stall_0ms_pct": 100.0,
+        "stall_100ms_pct": 99.82,
+        "sm_clock_run_median_mhz": 712.5,
+        "thermal_sample_pct": 81.75675675675676,
+        "long_take_audio_share_pct": 3.88
+      }
+    }
+  ],
+  "by_concurrency": [
+    {
+      "concurrency": 1,
+      "runs": 1,
+      "metrics": {
+        "throughput_audio_s_per_s": {
+          "n": 1,
+          "mean": 4.1,
+          "min": 4.1,
+          "max": 4.1,
+          "sample_stdev": null,
+          "values_by_repeat": [
+            4.1
+          ]
+        },
+        "full_window_audio_s_per_s": {
+          "n": 1,
+          "mean": 4.1,
+          "min": 4.1,
+          "max": 4.1,
+          "sample_stdev": null,
+          "values_by_repeat": [
+            4.1
+          ]
+        },
+        "rtf_mean": {
+          "n": 1,
+          "mean": 0.2462,
+          "min": 0.2462,
+          "max": 0.2462,
+          "sample_stdev": null,
+          "values_by_repeat": [
+            0.2462
+          ]
+        },
+        "ttfa_p50_ms": {
+          "n": 1,
+          "mean": 134.3,
+          "min": 134.3,
+          "max": 134.3,
+          "sample_stdev": null,
+          "values_by_repeat": [
+            134.3
+          ]
+        },
+        "ttfa_p95_ms": {
+          "n": 1,
+          "mean": 162.0,
+          "min": 162.0,
+          "max": 162.0,
+          "sample_stdev": null,
+          "values_by_repeat": [
+            162.0
+          ]
+        },
+        "stall_0ms_pct": {
+          "n": 1,
+          "mean": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "sample_stdev": null,
+          "values_by_repeat": [
+            0.0
+          ]
+        },
+        "stall_100ms_pct": {
+          "n": 1,
+          "mean": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "sample_stdev": null,
+          "values_by_repeat": [
+            0.0
+          ]
+        },
+        "sm_clock_run_median_mhz": {
+          "n": 1,
+          "mean": 1110.0,
+          "min": 1110.0,
+          "max": 1110.0,
+          "sample_stdev": null,
+          "values_by_repeat": [
+            1110.0
+          ]
+        },
+        "thermal_sample_pct": {
+          "n": 1,
+          "mean": 93.62618432385874,
+          "min": 93.62618432385874,
+          "max": 93.62618432385874,
+          "sample_stdev": null,
+          "values_by_repeat": [
+            93.62618432385874
+          ]
+        },
+        "long_take_audio_share_pct": {
+          "n": 1,
+          "mean": 2.43,
+          "min": 2.43,
+          "max": 2.43,
+          "sample_stdev": null,
+          "values_by_repeat": [
+            2.43
+          ]
+        }
+      }
+    },
+    {
+      "concurrency": 4,
+      "runs": 1,
+      "metrics": {
+        "throughput_audio_s_per_s": {
+          "n": 1,
+          "mean": 11.49,
+          "min": 11.49,
+          "max": 11.49,
+          "sample_stdev": null,
+          "values_by_repeat": [
+            11.49
+          ]
+        },
+        "full_window_audio_s_per_s": {
+          "n": 1,
+          "mean": 11.49,
+          "min": 11.49,
+          "max": 11.49,
+          "sample_stdev": null,
+          "values_by_repeat": [
+            11.49
+          ]
+        },
+        "rtf_mean": {
+          "n": 1,
+          "mean": 0.3506,
+          "min": 0.3506,
+          "max": 0.3506,
+          "sample_stdev": null,
+          "values_by_repeat": [
+            0.3506
+          ]
+        },
+        "ttfa_p50_ms": {
+          "n": 1,
+          "mean": 179.7,
+          "min": 179.7,
+          "max": 179.7,
+          "sample_stdev": null,
+          "values_by_repeat": [
+            179.7
+          ]
+        },
+        "ttfa_p95_ms": {
+          "n": 1,
+          "mean": 247.0,
+          "min": 247.0,
+          "max": 247.0,
+          "sample_stdev": null,
+          "values_by_repeat": [
+            247.0
+          ]
+        },
+        "stall_0ms_pct": {
+          "n": 1,
+          "mean": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "sample_stdev": null,
+          "values_by_repeat": [
+            0.0
+          ]
+        },
+        "stall_100ms_pct": {
+          "n": 1,
+          "mean": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "sample_stdev": null,
+          "values_by_repeat": [
+            0.0
+          ]
+        },
+        "sm_clock_run_median_mhz": {
+          "n": 1,
+          "mean": 990.0,
+          "min": 990.0,
+          "max": 990.0,
+          "sample_stdev": null,
+          "values_by_repeat": [
+            990.0
+          ]
+        },
+        "thermal_sample_pct": {
+          "n": 1,
+          "mean": 96.51442307692308,
+          "min": 96.51442307692308,
+          "max": 96.51442307692308,
+          "sample_stdev": null,
+          "values_by_repeat": [
+            96.51442307692308
+          ]
+        },
+        "long_take_audio_share_pct": {
+          "n": 1,
+          "mean": 3.75,
+          "min": 3.75,
+          "max": 3.75,
+          "sample_stdev": null,
+          "values_by_repeat": [
+            3.75
+          ]
+        }
+      }
+    },
+    {
+      "concurrency": 8,
+      "runs": 1,
+      "metrics": {
+        "throughput_audio_s_per_s": {
+          "n": 1,
+          "mean": 16.31,
+          "min": 16.31,
+          "max": 16.31,
+          "sample_stdev": null,
+          "values_by_repeat": [
+            16.31
+          ]
+        },
+        "full_window_audio_s_per_s": {
+          "n": 1,
+          "mean": 16.31,
+          "min": 16.31,
+          "max": 16.31,
+          "sample_stdev": null,
+          "values_by_repeat": [
+            16.31
+          ]
+        },
+        "rtf_mean": {
+          "n": 1,
+          "mean": 0.4928,
+          "min": 0.4928,
+          "max": 0.4928,
+          "sample_stdev": null,
+          "values_by_repeat": [
+            0.4928
+          ]
+        },
+        "ttfa_p50_ms": {
+          "n": 1,
+          "mean": 228.0,
+          "min": 228.0,
+          "max": 228.0,
+          "sample_stdev": null,
+          "values_by_repeat": [
+            228.0
+          ]
+        },
+        "ttfa_p95_ms": {
+          "n": 1,
+          "mean": 321.7,
+          "min": 321.7,
+          "max": 321.7,
+          "sample_stdev": null,
+          "values_by_repeat": [
+            321.7
+          ]
+        },
+        "stall_0ms_pct": {
+          "n": 1,
+          "mean": 1.75,
+          "min": 1.75,
+          "max": 1.75,
+          "sample_stdev": null,
+          "values_by_repeat": [
+            1.75
+          ]
+        },
+        "stall_100ms_pct": {
+          "n": 1,
+          "mean": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "sample_stdev": null,
+          "values_by_repeat": [
+            0.0
+          ]
+        },
+        "sm_clock_run_median_mhz": {
+          "n": 1,
+          "mean": 735.0,
+          "min": 735.0,
+          "max": 735.0,
+          "sample_stdev": null,
+          "values_by_repeat": [
+            735.0
+          ]
+        },
+        "thermal_sample_pct": {
+          "n": 1,
+          "mean": 95.73378839590444,
+          "min": 95.73378839590444,
+          "max": 95.73378839590444,
+          "sample_stdev": null,
+          "values_by_repeat": [
+            95.73378839590444
+          ]
+        },
+        "long_take_audio_share_pct": {
+          "n": 1,
+          "mean": 4.25,
+          "min": 4.25,
+          "max": 4.25,
+          "sample_stdev": null,
+          "values_by_repeat": [
+            4.25
+          ]
+        }
+      }
+    },
+    {
+      "concurrency": 12,
+      "runs": 1,
+      "metrics": {
+        "throughput_audio_s_per_s": {
+          "n": 1,
+          "mean": 19.75,
+          "min": 19.75,
+          "max": 19.75,
+          "sample_stdev": null,
+          "values_by_repeat": [
+            19.75
+          ]
+        },
+        "full_window_audio_s_per_s": {
+          "n": 1,
+          "mean": 19.74,
+          "min": 19.74,
+          "max": 19.74,
+          "sample_stdev": null,
+          "values_by_repeat": [
+            19.74
+          ]
+        },
+        "rtf_mean": {
+          "n": 1,
+          "mean": 0.6072,
+          "min": 0.6072,
+          "max": 0.6072,
+          "sample_stdev": null,
+          "values_by_repeat": [
+            0.6072
+          ]
+        },
+        "ttfa_p50_ms": {
+          "n": 1,
+          "mean": 265.2,
+          "min": 265.2,
+          "max": 265.2,
+          "sample_stdev": null,
+          "values_by_repeat": [
+            265.2
+          ]
+        },
+        "ttfa_p95_ms": {
+          "n": 1,
+          "mean": 365.2,
+          "min": 365.2,
+          "max": 365.2,
+          "sample_stdev": null,
+          "values_by_repeat": [
+            365.2
+          ]
+        },
+        "stall_0ms_pct": {
+          "n": 1,
+          "mean": 20.5,
+          "min": 20.5,
+          "max": 20.5,
+          "sample_stdev": null,
+          "values_by_repeat": [
+            20.5
+          ]
+        },
+        "stall_100ms_pct": {
+          "n": 1,
+          "mean": 1.1,
+          "min": 1.1,
+          "max": 1.1,
+          "sample_stdev": null,
+          "values_by_repeat": [
+            1.1
+          ]
+        },
+        "sm_clock_run_median_mhz": {
+          "n": 1,
+          "mean": 630.0,
+          "min": 630.0,
+          "max": 630.0,
+          "sample_stdev": null,
+          "values_by_repeat": [
+            630.0
+          ]
+        },
+        "thermal_sample_pct": {
+          "n": 1,
+          "mean": 95.19832985386222,
+          "min": 95.19832985386222,
+          "max": 95.19832985386222,
+          "sample_stdev": null,
+          "values_by_repeat": [
+            95.19832985386222
+          ]
+        },
+        "long_take_audio_share_pct": {
+          "n": 1,
+          "mean": 3.38,
+          "min": 3.38,
+          "max": 3.38,
+          "sample_stdev": null,
+          "values_by_repeat": [
+            3.38
+          ]
+        }
+      }
+    },
+    {
+      "concurrency": 16,
+      "runs": 1,
+      "metrics": {
+        "throughput_audio_s_per_s": {
+          "n": 1,
+          "mean": 22.88,
+          "min": 22.88,
+          "max": 22.88,
+          "sample_stdev": null,
+          "values_by_repeat": [
+            22.88
+          ]
+        },
+        "full_window_audio_s_per_s": {
+          "n": 1,
+          "mean": 22.9,
+          "min": 22.9,
+          "max": 22.9,
+          "sample_stdev": null,
+          "values_by_repeat": [
+            22.9
+          ]
+        },
+        "rtf_mean": {
+          "n": 1,
+          "mean": 0.6985,
+          "min": 0.6985,
+          "max": 0.6985,
+          "sample_stdev": null,
+          "values_by_repeat": [
+            0.6985
+          ]
+        },
+        "ttfa_p50_ms": {
+          "n": 1,
+          "mean": 300.4,
+          "min": 300.4,
+          "max": 300.4,
+          "sample_stdev": null,
+          "values_by_repeat": [
+            300.4
+          ]
+        },
+        "ttfa_p95_ms": {
+          "n": 1,
+          "mean": 412.5,
+          "min": 412.5,
+          "max": 412.5,
+          "sample_stdev": null,
+          "values_by_repeat": [
+            412.5
+          ]
+        },
+        "stall_0ms_pct": {
+          "n": 1,
+          "mean": 59.74,
+          "min": 59.74,
+          "max": 59.74,
+          "sample_stdev": null,
+          "values_by_repeat": [
+            59.74
+          ]
+        },
+        "stall_100ms_pct": {
+          "n": 1,
+          "mean": 26.56,
+          "min": 26.56,
+          "max": 26.56,
+          "sample_stdev": null,
+          "values_by_repeat": [
+            26.56
+          ]
+        },
+        "sm_clock_run_median_mhz": {
+          "n": 1,
+          "mean": 600.0,
+          "min": 600.0,
+          "max": 600.0,
+          "sample_stdev": null,
+          "values_by_repeat": [
+            600.0
+          ]
+        },
+        "thermal_sample_pct": {
+          "n": 1,
+          "mean": 94.68599033816425,
+          "min": 94.68599033816425,
+          "max": 94.68599033816425,
+          "sample_stdev": null,
+          "values_by_repeat": [
+            94.68599033816425
+          ]
+        },
+        "long_take_audio_share_pct": {
+          "n": 1,
+          "mean": 2.42,
+          "min": 2.42,
+          "max": 2.42,
+          "sample_stdev": null,
+          "values_by_repeat": [
+            2.42
+          ]
+        }
+      }
+    },
+    {
+      "concurrency": 24,
+      "runs": 1,
+      "metrics": {
+        "throughput_audio_s_per_s": {
+          "n": 1,
+          "mean": 27.41,
+          "min": 27.41,
+          "max": 27.41,
+          "sample_stdev": null,
+          "values_by_repeat": [
+            27.41
+          ]
+        },
+        "full_window_audio_s_per_s": {
+          "n": 1,
+          "mean": 27.62,
+          "min": 27.62,
+          "max": 27.62,
+          "sample_stdev": null,
+          "values_by_repeat": [
+            27.62
+          ]
+        },
+        "rtf_mean": {
+          "n": 1,
+          "mean": 0.8659,
+          "min": 0.8659,
+          "max": 0.8659,
+          "sample_stdev": null,
+          "values_by_repeat": [
+            0.8659
+          ]
+        },
+        "ttfa_p50_ms": {
+          "n": 1,
+          "mean": 366.2,
+          "min": 366.2,
+          "max": 366.2,
+          "sample_stdev": null,
+          "values_by_repeat": [
+            366.2
+          ]
+        },
+        "ttfa_p95_ms": {
+          "n": 1,
+          "mean": 494.2,
+          "min": 494.2,
+          "max": 494.2,
+          "sample_stdev": null,
+          "values_by_repeat": [
+            494.2
+          ]
+        },
+        "stall_0ms_pct": {
+          "n": 1,
+          "mean": 75.64,
+          "min": 75.64,
+          "max": 75.64,
+          "sample_stdev": null,
+          "values_by_repeat": [
+            75.64
+          ]
+        },
+        "stall_100ms_pct": {
+          "n": 1,
+          "mean": 65.99,
+          "min": 65.99,
+          "max": 65.99,
+          "sample_stdev": null,
+          "values_by_repeat": [
+            65.99
+          ]
+        },
+        "sm_clock_run_median_mhz": {
+          "n": 1,
+          "mean": 540.0,
+          "min": 540.0,
+          "max": 540.0,
+          "sample_stdev": null,
+          "values_by_repeat": [
+            540.0
+          ]
+        },
+        "thermal_sample_pct": {
+          "n": 1,
+          "mean": 93.33333333333333,
+          "min": 93.33333333333333,
+          "max": 93.33333333333333,
+          "sample_stdev": null,
+          "values_by_repeat": [
+            93.33333333333333
+          ]
+        },
+        "long_take_audio_share_pct": {
+          "n": 1,
+          "mean": 1.46,
+          "min": 1.46,
+          "max": 1.46,
+          "sample_stdev": null,
+          "values_by_repeat": [
+            1.46
+          ]
+        }
+      }
+    },
+    {
+      "concurrency": 32,
+      "runs": 1,
+      "metrics": {
+        "throughput_audio_s_per_s": {
+          "n": 1,
+          "mean": 30.58,
+          "min": 30.58,
+          "max": 30.58,
+          "sample_stdev": null,
+          "values_by_repeat": [
+            30.58
+          ]
+        },
+        "full_window_audio_s_per_s": {
+          "n": 1,
+          "mean": 30.83,
+          "min": 30.83,
+          "max": 30.83,
+          "sample_stdev": null,
+          "values_by_repeat": [
+            30.83
+          ]
+        },
+        "rtf_mean": {
+          "n": 1,
+          "mean": 1.0302,
+          "min": 1.0302,
+          "max": 1.0302,
+          "sample_stdev": null,
+          "values_by_repeat": [
+            1.0302
+          ]
+        },
+        "ttfa_p50_ms": {
+          "n": 1,
+          "mean": 431.9,
+          "min": 431.9,
+          "max": 431.9,
+          "sample_stdev": null,
+          "values_by_repeat": [
+            431.9
+          ]
+        },
+        "ttfa_p95_ms": {
+          "n": 1,
+          "mean": 587.3,
+          "min": 587.3,
+          "max": 587.3,
+          "sample_stdev": null,
+          "values_by_repeat": [
+            587.3
+          ]
+        },
+        "stall_0ms_pct": {
+          "n": 1,
+          "mean": 80.97,
+          "min": 80.97,
+          "max": 80.97,
+          "sample_stdev": null,
+          "values_by_repeat": [
+            80.97
+          ]
+        },
+        "stall_100ms_pct": {
+          "n": 1,
+          "mean": 74.45,
+          "min": 74.45,
+          "max": 74.45,
+          "sample_stdev": null,
+          "values_by_repeat": [
+            74.45
+          ]
+        },
+        "sm_clock_run_median_mhz": {
+          "n": 1,
+          "mean": 525.0,
+          "min": 525.0,
+          "max": 525.0,
+          "sample_stdev": null,
+          "values_by_repeat": [
+            525.0
+          ]
+        },
+        "thermal_sample_pct": {
+          "n": 1,
+          "mean": 93.15960912052117,
+          "min": 93.15960912052117,
+          "max": 93.15960912052117,
+          "sample_stdev": null,
+          "values_by_repeat": [
+            93.15960912052117
+          ]
+        },
+        "long_take_audio_share_pct": {
+          "n": 1,
+          "mean": 0.96,
+          "min": 0.96,
+          "max": 0.96,
+          "sample_stdev": null,
+          "values_by_repeat": [
+            0.96
+          ]
+        }
+      }
+    },
+    {
+      "concurrency": 48,
+      "runs": 1,
+      "metrics": {
+        "throughput_audio_s_per_s": {
+          "n": 1,
+          "mean": 39.49,
+          "min": 39.49,
+          "max": 39.49,
+          "sample_stdev": null,
+          "values_by_repeat": [
+            39.49
+          ]
+        },
+        "full_window_audio_s_per_s": {
+          "n": 1,
+          "mean": 40.41,
+          "min": 40.41,
+          "max": 40.41,
+          "sample_stdev": null,
+          "values_by_repeat": [
+            40.41
+          ]
+        },
+        "rtf_mean": {
+          "n": 1,
+          "mean": 1.1798,
+          "min": 1.1798,
+          "max": 1.1798,
+          "sample_stdev": null,
+          "values_by_repeat": [
+            1.1798
+          ]
+        },
+        "ttfa_p50_ms": {
+          "n": 1,
+          "mean": 540.9,
+          "min": 540.9,
+          "max": 540.9,
+          "sample_stdev": null,
+          "values_by_repeat": [
+            540.9
+          ]
+        },
+        "ttfa_p95_ms": {
+          "n": 1,
+          "mean": 775.5,
+          "min": 775.5,
+          "max": 775.5,
+          "sample_stdev": null,
+          "values_by_repeat": [
+            775.5
+          ]
+        },
+        "stall_0ms_pct": {
+          "n": 1,
+          "mean": 95.68,
+          "min": 95.68,
+          "max": 95.68,
+          "sample_stdev": null,
+          "values_by_repeat": [
+            95.68
+          ]
+        },
+        "stall_100ms_pct": {
+          "n": 1,
+          "mean": 79.41,
+          "min": 79.41,
+          "max": 79.41,
+          "sample_stdev": null,
+          "values_by_repeat": [
+            79.41
+          ]
+        },
+        "sm_clock_run_median_mhz": {
+          "n": 1,
+          "mean": 555.0,
+          "min": 555.0,
+          "max": 555.0,
+          "sample_stdev": null,
+          "values_by_repeat": [
+            555.0
+          ]
+        },
+        "thermal_sample_pct": {
+          "n": 1,
+          "mean": 88.88888888888889,
+          "min": 88.88888888888889,
+          "max": 88.88888888888889,
+          "sample_stdev": null,
+          "values_by_repeat": [
+            88.88888888888889
+          ]
+        },
+        "long_take_audio_share_pct": {
+          "n": 1,
+          "mean": 3.32,
+          "min": 3.32,
+          "max": 3.32,
+          "sample_stdev": null,
+          "values_by_repeat": [
+            3.32
+          ]
+        }
+      }
+    },
+    {
+      "concurrency": 64,
+      "runs": 3,
+      "metrics": {
+        "throughput_audio_s_per_s": {
+          "n": 3,
+          "mean": 46.06333333333333,
+          "min": 45.39,
+          "max": 46.81,
+          "sample_stdev": 0.7128347167003964,
+          "values_by_repeat": [
+            45.39,
+            46.81,
+            45.99
+          ]
+        },
+        "full_window_audio_s_per_s": {
+          "n": 3,
+          "mean": 47.163333333333334,
+          "min": 47.15,
+          "max": 47.19,
+          "sample_stdev": 0.02309401076758454,
+          "values_by_repeat": [
+            47.19,
+            47.15,
+            47.15
+          ]
+        },
+        "rtf_mean": {
+          "n": 3,
+          "mean": 1.3480333333333334,
+          "min": 1.3427,
+          "max": 1.3518,
+          "sample_stdev": 0.004747982027486284,
+          "values_by_repeat": [
+            1.3496,
+            1.3518,
+            1.3427
+          ]
+        },
+        "ttfa_p50_ms": {
+          "n": 3,
+          "mean": 604.6666666666666,
+          "min": 602.0,
+          "max": 608.3,
+          "sample_stdev": 3.2593455375785374,
+          "values_by_repeat": [
+            608.3,
+            602.0,
+            603.7
+          ]
+        },
+        "ttfa_p95_ms": {
+          "n": 3,
+          "mean": 957.4333333333334,
+          "min": 941.4,
+          "max": 970.1,
+          "sample_stdev": 14.643200925116538,
+          "values_by_repeat": [
+            970.1,
+            941.4,
+            960.8
+          ]
+        },
+        "stall_0ms_pct": {
+          "n": 3,
+          "mean": 98.16333333333334,
+          "min": 97.61,
+          "max": 98.53,
+          "sample_stdev": 0.48757905341937424,
+          "values_by_repeat": [
+            98.35,
+            97.61,
+            98.53
+          ]
+        },
+        "stall_100ms_pct": {
+          "n": 3,
+          "mean": 95.15666666666668,
+          "min": 94.94,
+          "max": 95.31,
+          "sample_stdev": 0.19295940851208604,
+          "values_by_repeat": [
+            95.22,
+            95.31,
+            94.94
+          ]
+        },
+        "sm_clock_run_median_mhz": {
+          "n": 3,
+          "mean": 577.5,
+          "min": 570.0,
+          "max": 592.5,
+          "sample_stdev": 12.99038105676658,
+          "values_by_repeat": [
+            592.5,
+            570.0,
+            570.0
+          ]
+        },
+        "thermal_sample_pct": {
+          "n": 3,
+          "mean": 87.63389202833622,
+          "min": 87.12871287128714,
+          "max": 88.0952380952381,
+          "sample_stdev": 0.4847512320533654,
+          "values_by_repeat": [
+            88.0952380952381,
+            87.12871287128714,
+            87.67772511848341
+          ]
+        },
+        "long_take_audio_share_pct": {
+          "n": 3,
+          "mean": 3.6666666666666665,
+          "min": 2.42,
+          "max": 4.72,
+          "sample_stdev": 1.1621244913232545,
+          "values_by_repeat": [
+            3.86,
+            2.42,
+            4.72
+          ]
+        }
+      }
+    },
+    {
+      "concurrency": 96,
+      "runs": 1,
+      "metrics": {
+        "throughput_audio_s_per_s": {
+          "n": 1,
+          "mean": 56.3,
+          "min": 56.3,
+          "max": 56.3,
+          "sample_stdev": null,
+          "values_by_repeat": [
+            56.3
+          ]
+        },
+        "full_window_audio_s_per_s": {
+          "n": 1,
+          "mean": 57.82,
+          "min": 57.82,
+          "max": 57.82,
+          "sample_stdev": null,
+          "values_by_repeat": [
+            57.82
+          ]
+        },
+        "rtf_mean": {
+          "n": 1,
+          "mean": 1.6356,
+          "min": 1.6356,
+          "max": 1.6356,
+          "sample_stdev": null,
+          "values_by_repeat": [
+            1.6356
+          ]
+        },
+        "ttfa_p50_ms": {
+          "n": 1,
+          "mean": 731.7,
+          "min": 731.7,
+          "max": 731.7,
+          "sample_stdev": null,
+          "values_by_repeat": [
+            731.7
+          ]
+        },
+        "ttfa_p95_ms": {
+          "n": 1,
+          "mean": 1313.6,
+          "min": 1313.6,
+          "max": 1313.6,
+          "sample_stdev": null,
+          "values_by_repeat": [
+            1313.6
+          ]
+        },
+        "stall_0ms_pct": {
+          "n": 1,
+          "mean": 100.0,
+          "min": 100.0,
+          "max": 100.0,
+          "sample_stdev": null,
+          "values_by_repeat": [
+            100.0
+          ]
+        },
+        "stall_100ms_pct": {
+          "n": 1,
+          "mean": 98.35,
+          "min": 98.35,
+          "max": 98.35,
+          "sample_stdev": null,
+          "values_by_repeat": [
+            98.35
+          ]
+        },
+        "sm_clock_run_median_mhz": {
+          "n": 1,
+          "mean": 630.0,
+          "min": 630.0,
+          "max": 630.0,
+          "sample_stdev": null,
+          "values_by_repeat": [
+            630.0
+          ]
+        },
+        "thermal_sample_pct": {
+          "n": 1,
+          "mean": 84.88372093023256,
+          "min": 84.88372093023256,
+          "max": 84.88372093023256,
+          "sample_stdev": null,
+          "values_by_repeat": [
+            84.88372093023256
+          ]
+        },
+        "long_take_audio_share_pct": {
+          "n": 1,
+          "mean": 3.82,
+          "min": 3.82,
+          "max": 3.82,
+          "sample_stdev": null,
+          "values_by_repeat": [
+            3.82
+          ]
+        }
+      }
+    },
+    {
+      "concurrency": 128,
+      "runs": 5,
+      "metrics": {
+        "throughput_audio_s_per_s": {
+          "n": 5,
+          "mean": 62.94199999999999,
+          "min": 62.38,
+          "max": 64.04,
+          "sample_stdev": 0.6839736837042805,
+          "values_by_repeat": [
+            62.47,
+            63.16,
+            62.66,
+            62.38,
+            64.04
+          ]
+        },
+        "full_window_audio_s_per_s": {
+          "n": 5,
+          "mean": 66.544,
+          "min": 65.82,
+          "max": 67.61,
+          "sample_stdev": 0.8523086295468325,
+          "values_by_repeat": [
+            65.82,
+            67.61,
+            66.08,
+            65.89,
+            67.32
+          ]
+        },
+        "rtf_mean": {
+          "n": 5,
+          "mean": 1.89102,
+          "min": 1.8676,
+          "max": 1.914,
+          "sample_stdev": 0.021457213239374755,
+          "values_by_repeat": [
+            1.9032,
+            1.8686,
+            1.9017,
+            1.914,
+            1.8676
+          ]
+        },
+        "ttfa_p50_ms": {
+          "n": 5,
+          "mean": 818.46,
+          "min": 807.2,
+          "max": 838.8,
+          "sample_stdev": 12.642903147616021,
+          "values_by_repeat": [
+            838.8,
+            817.5,
+            807.2,
+            820.1,
+            808.7
+          ]
+        },
+        "ttfa_p95_ms": {
+          "n": 5,
+          "mean": 1693.08,
+          "min": 1670.1,
+          "max": 1718.2,
+          "sample_stdev": 18.638723132232016,
+          "values_by_repeat": [
+            1703.1,
+            1681.7,
+            1670.1,
+            1692.3,
+            1718.2
+          ]
+        },
+        "stall_0ms_pct": {
+          "n": 5,
+          "mean": 100.0,
+          "min": 100.0,
+          "max": 100.0,
+          "sample_stdev": 0.0,
+          "values_by_repeat": [
+            100.0,
+            100.0,
+            100.0,
+            100.0,
+            100.0
+          ]
+        },
+        "stall_100ms_pct": {
+          "n": 5,
+          "mean": 99.928,
+          "min": 99.82,
+          "max": 100.0,
+          "sample_stdev": 0.07529940238806965,
+          "values_by_repeat": [
+            100.0,
+            99.91,
+            100.0,
+            99.91,
+            99.82
+          ]
+        },
+        "sm_clock_run_median_mhz": {
+          "n": 5,
+          "mean": 700.5,
+          "min": 645.0,
+          "max": 735.0,
+          "sample_stdev": 35.01785258978626,
+          "values_by_repeat": [
+            645.0,
+            735.0,
+            690.0,
+            720.0,
+            712.5
+          ]
+        },
+        "thermal_sample_pct": {
+          "n": 5,
+          "mean": 82.51521250403829,
+          "min": 81.57894736842105,
+          "max": 84.10596026490066,
+          "sample_stdev": 1.0098940605505313,
+          "values_by_repeat": [
+            84.10596026490066,
+            82.78145695364239,
+            82.3529411764706,
+            81.57894736842105,
+            81.75675675675676
+          ]
+        },
+        "long_take_audio_share_pct": {
+          "n": 5,
+          "mean": 3.2700000000000005,
+          "min": 2.37,
+          "max": 4.76,
+          "sample_stdev": 1.031673397931729,
+          "values_by_repeat": [
+            2.93,
+            2.41,
+            4.76,
+            2.37,
+            3.88
+          ]
+        }
+      }
+    }
+  ]
+}

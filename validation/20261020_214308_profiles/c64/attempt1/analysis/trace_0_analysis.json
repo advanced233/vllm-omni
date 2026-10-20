@@ -1,0 +1,3266 @@
+{
+  "trace": "${NVME_WORKDIR}/profiling/20261020_214308/c64/attempt1/traces/20261020-225940_stage0_rank0_1792508380/trace_rank0.json.gz",
+  "baseTimeNanoseconds": 1790857026000000000,
+  "displayTimeUnit": "ms",
+  "steps_total": 120,
+  "phase_summary": {
+    "decode_only": {
+      "steps": 89,
+      "steps_with_correlated_kernels": 89,
+      "cpu_scope_us_p50": 6591.596,
+      "cpu_scope_us_p95": 8360.7178,
+      "gpu_kernel_sum_us": 2997594.6549999993,
+      "gpu_step_span_us_p50": 33179.2978515625,
+      "gpu_step_span_us_p95": 40421.127636718746,
+      "generation_requests_histogram": {
+        "62": 22,
+        "63": 32,
+        "58": 4,
+        "64": 9,
+        "60": 6,
+        "59": 2,
+        "61": 13,
+        "57": 1
+      }
+    },
+    "mixed": {
+      "steps": 31,
+      "steps_with_correlated_kernels": 31,
+      "cpu_scope_us_p50": 60267.544,
+      "cpu_scope_us_p95": 65998.72,
+      "gpu_kernel_sum_us": 2051071.3669999999,
+      "gpu_step_span_us_p50": 66694.69604492188,
+      "gpu_step_span_us_p95": 105915.93542480469,
+      "generation_requests_histogram": {
+        "60": 6,
+        "61": 10,
+        "63": 4,
+        "57": 1,
+        "58": 3,
+        "56": 1,
+        "62": 6
+      }
+    },
+    "prefill_only": {
+      "steps": 0,
+      "steps_with_correlated_kernels": 0,
+      "cpu_scope_us_p50": null,
+      "cpu_scope_us_p95": null,
+      "gpu_kernel_sum_us": 0,
+      "gpu_step_span_us_p50": null,
+      "gpu_step_span_us_p95": null,
+      "generation_requests_histogram": {}
+    },
+    "empty": {
+      "steps": 0,
+      "steps_with_correlated_kernels": 0,
+      "cpu_scope_us_p50": null,
+      "cpu_scope_us_p95": null,
+      "gpu_kernel_sum_us": 0,
+      "gpu_step_span_us_p50": null,
+      "gpu_step_span_us_p95": null,
+      "generation_requests_histogram": {}
+    }
+  },
+  "kernel_events": 189184,
+  "graph_launch_events": 1763,
+  "kernel_total_us": 5051582.852,
+  "kernel_busy_union_us": 4764613.848876953,
+  "unattributed_kernel_reasons": {
+    "launch_outside_execute_scope": 600
+  },
+  "phase_kernel_categories_heuristic_us": {
+    "decode_only": {
+      "other": 183551.2319999984,
+      "marlin": 1382562.205999998,
+      "elementwise_or_reduction": 359417.8870000058,
+      "gemm": 727046.3210000031,
+      "gdn_or_causal_conv": 255070.70199999955,
+      "sampling": 89946.30700000009
+    },
+    "unattributed": {
+      "elementwise_or_reduction": 799.157,
+      "sampling": 860.23,
+      "other": 1257.443000000001
+    },
+    "mixed": {
+      "elementwise_or_reduction": 132485.83100000065,
+      "other": 182341.1220000005,
+      "sampling": 38065.120000000046,
+      "gemm": 744501.086999997,
+      "gdn_or_causal_conv": 158583.4879999996,
+      "convolution": 13132.453,
+      "marlin": 781962.2660000027
+    }
+  },
+  "kernel_table": [
+    {
+      "phase": "decode_only",
+      "name": "void marlin_moe_wna16::Marlin<1125899906909960l, 2814749767172868l, 1125899906909960l, 1125899906909960l, 128, 1, 8, 4, true, 4, 8, false>(int4 const*, int4 const*, int4*, int4*, int4 const*, float const*, int4 const*, float const*, int4 const*, int const*, int const*, int const*, float const*, int, bool, int, int, int, int*, bool, bool, bool)",
+      "category_heuristic": "marlin",
+      "count": 7120,
+      "duration_us": 1382562.205999998
+    },
+    {
+      "phase": "mixed",
+      "name": "void marlin_moe_wna16::Marlin<1125899906909960l, 2814749767172868l, 1125899906909960l, 1125899906909960l, 128, 1, 8, 4, false, 4, 8, false>(int4 const*, int4 const*, int4*, int4*, int4 const*, float const*, int4 const*, float const*, int4 const*, int const*, int const*, int const*, float const*, int, bool, int, int, int, int*, bool, bool, bool)",
+      "category_heuristic": "marlin",
+      "count": 1440,
+      "duration_us": 396355.56300000043
+    },
+    {
+      "phase": "mixed",
+      "name": "void marlin_moe_wna16::Marlin<1125899906909960l, 2814749767172868l, 1125899906909960l, 1125899906909960l, 128, 2, 8, 4, false, 4, 8, false>(int4 const*, int4 const*, int4*, int4*, int4 const*, float const*, int4 const*, float const*, int4 const*, int const*, int const*, int const*, float const*, int, bool, int, int, int, int*, bool, bool, bool)",
+      "category_heuristic": "marlin",
+      "count": 720,
+      "duration_us": 245636.04799999998
+    },
+    {
+      "phase": "decode_only",
+      "name": "fused_recurrent_gated_delta_rule_packed_decode_kernel",
+      "category_heuristic": "gdn_or_causal_conv",
+      "count": 2670,
+      "duration_us": 228562.6199999999
+    },
+    {
+      "phase": "decode_only",
+      "name": "ampere_bf16_s16816gemm_bf16_128x64_ldg8_f2f_stages_64x4_tn",
+      "category_heuristic": "gemm",
+      "count": 8010,
+      "duration_us": 218182.82099999965
+    },
+    {
+      "phase": "mixed",
+      "name": "ampere_bf16_s16816gemm_bf16_256x128_ldg8_f2f_stages_32x3_tn",
+      "category_heuristic": "gemm",
+      "count": 1352,
+      "duration_us": 183425.01399999988
+    },
+    {
+      "phase": "decode_only",
+      "name": "ampere_bf16_s16816gemm_bf16_128x64_ldg8_f2f_stages_64x3_tn",
+      "category_heuristic": "gemm",
+      "count": 3827,
+      "duration_us": 181477.36499999973
+    },
+    {
+      "phase": "mixed",
+      "name": "void flash::flash_fwd_splitkv_kernel<Flash_fwd_kernel_traits<256, 64, 64, 4, false, false, cutlass::bfloat16_t, Flash_kernel_traits<256, 64, 64, 4, cutlass::bfloat16_t> >, true, false, false, false, true, false, false, false>(flash::Flash_fwd_params)",
+      "category_heuristic": "gemm",
+      "count": 713,
+      "duration_us": 167339.46700000012
+    },
+    {
+      "phase": "mixed",
+      "name": "ampere_bf16_s16816gemm_bf16_128x256_ldg8_f2f_stages_64x3_tn",
+      "category_heuristic": "gemm",
+      "count": 1086,
+      "duration_us": 155430.4650000002
+    },
+    {
+      "phase": "decode_only",
+      "name": "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl_nocast<at::native::BinaryFunctor<c10::BFloat16, c10::BFloat16, c10::BFloat16, at::native::binary_internal::MulFunctor<float> > >(at::TensorIteratorBase&, at::native::BinaryFunctor<c10::BFloat16, c10::BFloat16, c10::BFloat16, at::native::binary_internal::MulFunctor<float> > const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::BinaryFunctor<c10::BFloat16, c10::BFloat16, c10::BFloat16, at::native::binary_internal::MulFunctor<float> > >(at::TensorIteratorBase&, at::native::BinaryFunctor<c10::BFloat16, c10::BFloat16, c10::BFloat16, at::native::binary_internal::MulFunctor<float> > const&)::{lambda(int)#1})",
+      "category_heuristic": "elementwise_or_reduction",
+      "count": 3560,
+      "duration_us": 104981.10200000025
+    },
+    {
+      "phase": "decode_only",
+      "name": "void flash::flash_fwd_splitkv_kernel<Flash_fwd_kernel_traits<256, 64, 64, 4, false, false, cutlass::bfloat16_t, Flash_kernel_traits<256, 64, 64, 4, cutlass::bfloat16_t> >, false, false, false, false, true, false, true, false>(flash::Flash_fwd_params)",
+      "category_heuristic": "gemm",
+      "count": 2047,
+      "duration_us": 100976.83400000008
+    },
+    {
+      "phase": "mixed",
+      "name": "ampere_bf16_s16816gemm_bf16_128x128_ldg8_f2f_stages_64x3_tn",
+      "category_heuristic": "gemm",
+      "count": 1764,
+      "duration_us": 94515.36700000001
+    },
+    {
+      "phase": "decode_only",
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8>(cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8::Params)",
+      "category_heuristic": "gemm",
+      "count": 7120,
+      "duration_us": 82543.9030000001
+    },
+    {
+      "phase": "mixed",
+      "name": "fused_recurrent_gated_delta_rule_packed_decode_kernel",
+      "category_heuristic": "gdn_or_causal_conv",
+      "count": 930,
+      "duration_us": 77358.87700000011
+    },
+    {
+      "phase": "mixed",
+      "name": "void marlin_moe_wna16::Marlin<1125899906909960l, 2814749767172868l, 1125899906909960l, 1125899906909960l, 128, 3, 8, 4, false, 4, 8, false>(int4 const*, int4 const*, int4*, int4*, int4 const*, float const*, int4 const*, float const*, int4 const*, int const*, int const*, int const*, float const*, int, bool, int, int, int, int*, bool, bool, bool)",
+      "category_heuristic": "marlin",
+      "count": 160,
+      "duration_us": 72216.23999999996
+    },
+    {
+      "phase": "decode_only",
+      "name": "ampere_bf16_s16816gemm_bf16_64x64_sliced1x2_ldg8_f2f_stages_64x6_tn",
+      "category_heuristic": "gemm",
+      "count": 4628,
+      "duration_us": 57234.90199999985
+    },
+    {
+      "phase": "mixed",
+      "name": "ampere_bf16_s16816gemm_bf16_128x64_ldg8_f2f_stages_64x4_tn",
+      "category_heuristic": "gemm",
+      "count": 2192,
+      "duration_us": 52221.64100000006
+    },
+    {
+      "phase": "decode_only",
+      "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, __nv_bfloat16, false, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, true, false, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, __nv_bfloat16*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float*, float const*, float const*, float const*, float const*, float const*)",
+      "category_heuristic": "elementwise_or_reduction",
+      "count": 9790,
+      "duration_us": 47088.50099999979
+    },
+    {
+      "phase": "mixed",
+      "name": "void marlin_moe_wna16::Marlin<1125899906909960l, 2814749767172868l, 1125899906909960l, 1125899906909960l, 128, 4, 8, 4, false, 4, 8, false>(int4 const*, int4 const*, int4*, int4*, int4 const*, float const*, int4 const*, float const*, int4 const*, int const*, int const*, int const*, float const*, int, bool, int, int, int, int*, bool, bool, bool)",
+      "category_heuristic": "marlin",
+      "count": 80,
+      "duration_us": 46419.735
+    },
+    {
+      "phase": "mixed",
+      "name": "ampere_bf16_s16816gemm_bf16_256x128_ldg8_f2f_stages_64x3_tn",
+      "category_heuristic": "gemm",
+      "count": 359,
+      "duration_us": 42569.62399999998
+    },
+    {
+      "phase": "decode_only",
+      "name": "void vllm::moe::topkGating<8, 256, 4, 16, 32, int, __nv_bfloat16, (vllm::moe::ScoringFunc)0>(__nv_bfloat16 const*, bool const*, float*, int, int*, int*, int, int, int, bool, float const*, double, bool const*)",
+      "category_heuristic": "sampling",
+      "count": 3560,
+      "duration_us": 37402.9090000001
+    },
+    {
+      "phase": "mixed",
+      "name": "merge_16x16_to_64x64_inverse_kernel",
+      "category_heuristic": "other",
+      "count": 930,
+      "duration_us": 36579.00599999995
+    },
+    {
+      "phase": "decode_only",
+      "name": "void at::native::sbtopk::gatherTopK<c10::BFloat16, unsigned int, 2, false>(at::cuda::detail::TensorInfo<c10::BFloat16 const, unsigned int>, unsigned int, unsigned int, bool, unsigned int, unsigned int, at::cuda::detail::TensorInfo<c10::BFloat16, unsigned int>, unsigned int, at::cuda::detail::TensorInfo<long, unsigned int>, unsigned int, c10::BFloat16*)",
+      "category_heuristic": "sampling",
+      "count": 890,
+      "duration_us": 36548.39900000001
+    },
+    {
+      "phase": "decode_only",
+      "name": "void cublasLt::splitKreduce_kernel<32, 16, int, __nv_bfloat16, __nv_bfloat16, float, __nv_bfloat16, false, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, true, false, false, false>(cublasLt::cublasSplitKParams<float>, __nv_bfloat16 const*, __nv_bfloat16 const*, __nv_bfloat16*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, __nv_bfloat16 const*, __nv_bfloat16*, void*, long, float*, int*, float*, float*, float const*, float const*, float const*, float const*, float const*)",
+      "category_heuristic": "elementwise_or_reduction",
+      "count": 5963,
+      "duration_us": 31610.593000000077
+    },
+    {
+      "phase": "decode_only",
+      "name": "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1})",
+      "category_heuristic": "elementwise_or_reduction",
+      "count": 4094,
+      "duration_us": 29372.19399999994
+    },
+    {
+      "phase": "mixed",
+      "name": "chunk_fwd_kernel_o",
+      "category_heuristic": "gdn_or_causal_conv",
+      "count": 930,
+      "duration_us": 28513.839000000018
+    },
+    {
+      "phase": "decode_only",
+      "name": "void vllm::moe::moe_align_block_size_kernel<int>(int const*, int*, int*, int*, int*, int, int, int, int, unsigned long, int*, int, int, bool)",
+      "category_heuristic": "other",
+      "count": 3560,
+      "duration_us": 27927.894999999997
+    },
+    {
+      "phase": "mixed",
+      "name": "chunk_gated_delta_rule_fwd_kernel_h_blockdim64",
+      "category_heuristic": "gdn_or_causal_conv",
+      "count": 930,
+      "duration_us": 26758.67099999998
+    },
+    {
+      "phase": "decode_only",
+      "name": "_causal_conv1d_update_kernel",
+      "category_heuristic": "gdn_or_causal_conv",
+      "count": 2670,
+      "duration_us": 26508.081999999988
+    },
+    {
+      "phase": "decode_only",
+      "name": "void at::native::vectorized_elementwise_kernel<4, at::native::sigmoid_kernel_cuda(at::TensorIteratorBase&)::{lambda()#2}::operator()() const::{lambda()#4}::operator()() const::{lambda(c10::BFloat16)#1}, std::array<char*, 2ul> >(int, at::native::sigmoid_kernel_cuda(at::TensorIteratorBase&)::{lambda()#2}::operator()() const::{lambda()#4}::operator()() const::{lambda(c10::BFloat16)#1}, std::array<char*, 2ul>)",
+      "category_heuristic": "elementwise_or_reduction",
+      "count": 3560,
+      "duration_us": 26365.601999999948
+    },
+    {
+      "phase": "mixed",
+      "name": "_causal_conv1d_fwd_kernel",
+      "category_heuristic": "gdn_or_causal_conv",
+      "count": 930,
+      "duration_us": 25952.100999999995
+    },
+    {
+      "phase": "decode_only",
+      "name": "void flash::flash_fwd_splitkv_combine_kernel<Flash_fwd_kernel_traits<256, 64, 64, 4, false, false, cutlass::bfloat16_t, Flash_kernel_traits<256, 64, 64, 4, cutlass::bfloat16_t> >, 4, 2, true>(flash::Flash_fwd_params)",
+      "category_heuristic": "gemm",
+      "count": 2047,
+      "duration_us": 25616.202999999998
+    },
+    {
+      "phase": "decode_only",
+      "name": "void vllm::act_and_mul_kernel<c10::BFloat16, __nv_bfloat162, &(c10::BFloat16 vllm::silu_kernel<c10::BFloat16>(c10::BFloat16 const&, float)), &(__nv_bfloat162 vllm::packed_silu_kernel<__nv_bfloat162>(__nv_bfloat162 const&, float)), true, true, false, false>(c10::BFloat16*, c10::BFloat16 const*, int, float, float, float)",
+      "category_heuristic": "other",
+      "count": 3560,
+      "duration_us": 24241.135000000002
+    },
+    {
+      "phase": "decode_only",
+      "name": "triton_red_fused__to_copy_add_fused_add_rms_norm_2",
+      "category_heuristic": "elementwise_or_reduction",
+      "count": 3471,
+      "duration_us": 24069.477000000046
+    },
+    {
+      "phase": "decode_only",
+      "name": "triton_poi_fused_mul_silu_slice_0",
+      "category_heuristic": "elementwise_or_reduction",
+      "count": 4717,
+      "duration_us": 23553.78499999993
+    },
+    {
+      "phase": "decode_only",
+      "name": "void cutlass::Kernel2<cutlass_80_wmma_tensorop_s161616gemm_bf16_32x32_128x1_tn_align8>(cutlass_80_wmma_tensorop_s161616gemm_bf16_32x32_128x1_tn_align8::Params)",
+      "category_heuristic": "gemm",
+      "count": 2670,
+      "duration_us": 21714.39400000003
+    },
+    {
+      "phase": "decode_only",
+      "name": "void dot_kernel<float, 128, 0, cublasDotParams<cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<float> > >(cublasDotParams<cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<float> >)",
+      "category_heuristic": "other",
+      "count": 3560,
+      "duration_us": 21553.47600000003
+    },
+    {
+      "phase": "mixed",
+      "name": "void marlin_moe_wna16::Marlin<1125899906909960l, 2814749767172868l, 1125899906909960l, 1125899906909960l, 128, 1, 8, 4, true, 4, 8, false>(int4 const*, int4 const*, int4*, int4*, int4 const*, float const*, int4 const*, float const*, int4 const*, int const*, int const*, int const*, float const*, int, bool, int, int, int, int*, bool, bool, bool)",
+      "category_heuristic": "marlin",
+      "count": 80,
+      "duration_us": 21334.68
+    },
+    {
+      "phase": "decode_only",
+      "name": "ampere_bf16_s16816gemm_bf16_64x64_sliced1x2_ldg8_f2f_stages_64x5_tn",
+      "category_heuristic": "gemm",
+      "count": 890,
+      "duration_us": 20453.711000000018
+    },
+    {
+      "phase": "decode_only",
+      "name": "void vllm::moe::moe_sum_vec_kernel<c10::BFloat16, int, 8, false>(c10::BFloat16*, c10::BFloat16 const*, long, int, long, long, int const*, int const*, long, long)",
+      "category_heuristic": "other",
+      "count": 3560,
+      "duration_us": 20099.947999999968
+    },
+    {
+      "phase": "decode_only",
+      "name": "triton_red_fused__to_copy_add_fused_add_rms_norm_moe_forward_shared_1",
+      "category_heuristic": "elementwise_or_reduction",
+      "count": 3471,
+      "duration_us": 19917.414999999946
+    },
+    {
+      "phase": "mixed",
+      "name": "void at::native::sbtopk::gatherTopK<c10::BFloat16, unsigned int, 2, false>(at::cuda::detail::TensorInfo<c10::BFloat16 const, unsigned int>, unsigned int, unsigned int, bool, unsigned int, unsigned int, at::cuda::detail::TensorInfo<c10::BFloat16, unsigned int>, unsigned int, at::cuda::detail::TensorInfo<long, unsigned int>, unsigned int, c10::BFloat16*)",
+      "category_heuristic": "sampling",
+      "count": 310,
+      "duration_us": 19119.46499999999
+    },
+    {
+      "phase": "decode_only",
+      "name": "triton_per_fused__to_copy_add_mean_mul_pow_rsqrt_silu_0",
+      "category_heuristic": "other",
+      "count": 2670,
+      "duration_us": 18846.295000000013
+    },
+    {
+      "phase": "decode_only",
+      "name": "_gemma_norm_kernel",
+      "category_heuristic": "gemm",
+      "count": 3471,
+      "duration_us": 18846.187999999926
+    },
+    {
+      "phase": "mixed",
+      "name": "void vllm::moe::moe_sum_vec_kernel<c10::BFloat16, int, 8, false>(c10::BFloat16*, c10::BFloat16 const*, long, int, long, long, int const*, int const*, long, long)",
+      "category_heuristic": "other",
+      "count": 1240,
+      "duration_us": 18688.632000000005
+    },
+    {
+      "phase": "decode_only",
+      "name": "void reduce_1Block_kernel<float, 128, 7, cublasGemvTensorStridedBatched<float>, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16> >(float const*, float, cublasGemvTensorStridedBatched<float>, int, float const*, float, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16>, cublasPointerMode_t, cublasLtEpilogue_t, cublasGemvTensorStridedBatched<biasType<cublasGemvTensorStridedBatched<__nv_bfloat16>::value_type, float>::type const>)",
+      "category_heuristic": "elementwise_or_reduction",
+      "count": 3560,
+      "duration_us": 17256.808999999987
+    },
+    {
+      "phase": "mixed",
+      "name": "_fused_qk_rmsnorm_rope_gate_kernel",
+      "category_heuristic": "other",
+      "count": 713,
+      "duration_us": 16645.737000000012
+    },
+    {
+      "phase": "decode_only",
+      "name": "void vllm::moe::count_and_sort_expert_tokens_kernel<int>(int const*, int*, int*, int*, unsigned long, int, int, int, bool, int*)",
+      "category_heuristic": "other",
+      "count": 3560,
+      "duration_us": 16198.486999999966
+    },
+    {
+      "phase": "decode_only",
+      "name": "_fused_qk_rmsnorm_rope_gate_kernel",
+      "category_heuristic": "other",
+      "count": 2047,
+      "duration_us": 15625.657000000012
+    },
+    {
+      "phase": "decode_only",
+      "name": "_draw_kernel",
+      "category_heuristic": "sampling",
+      "count": 979,
+      "duration_us": 15347.598
+    },
+    {
+      "phase": "mixed",
+      "name": "recompute_w_u_fwd_kernel",
+      "category_heuristic": "other",
+      "count": 930,
+      "duration_us": 14803.48399999999
+    },
+    {
+      "phase": "mixed",
+      "name": "void vllm::act_and_mul_kernel<c10::BFloat16, __nv_bfloat162, &(c10::BFloat16 vllm::silu_kernel<c10::BFloat16>(c10::BFloat16 const&, float)), &(__nv_bfloat162 vllm::packed_silu_kernel<__nv_bfloat162>(__nv_bfloat162 const&, float)), true, true, false, false>(c10::BFloat16*, c10::BFloat16 const*, int, float, float, float)",
+      "category_heuristic": "other",
+      "count": 1240,
+      "duration_us": 14428.972000000002
+    },
+    {
+      "phase": "mixed",
+      "name": "void at::native::index_elementwise_kernel<128, 4, at::native::gpu_index_kernel<at::native::index_put_kernel_impl<at::native::OpaqueType<2> >(at::TensorIterator&, c10::ArrayRef<long>, c10::ArrayRef<long>)::{lambda(char*, char const*, long)#1}>(at::TensorIteratorBase&, c10::ArrayRef<long>, c10::ArrayRef<long>, at::native::index_put_kernel_impl<at::native::OpaqueType<2> >(at::TensorIterator&, c10::ArrayRef<long>, c10::ArrayRef<long>)::{lambda(char*, char const*, long)#1} const&, bool)::{lambda(int)#1}>(long, at::native::gpu_index_kernel<at::native::index_put_kernel_impl<at::native::OpaqueType<2> >(at::TensorIterator&, c10::ArrayRef<long>, c10::ArrayRef<long>)::{lambda(char*, char const*, long)#1}>(at::TensorIteratorBase&, c10::ArrayRef<long>, c10::ArrayRef<long>, at::native::index_put_kernel_impl<at::native::OpaqueType<2> >(at::TensorIterator&, c10::ArrayRef<long>, c10::ArrayRef<long>)::{lambda(char*, char const*, long)#1} const&, bool)::{lambda(int)#1})",
+      "category_heuristic": "elementwise_or_reduction",
+      "count": 930,
+      "duration_us": 14174.386999999984
+    },
+    {
+      "phase": "mixed",
+      "name": "triton_red_fused__to_copy_add_fused_add_rms_norm_2",
+      "category_heuristic": "elementwise_or_reduction",
+      "count": 1209,
+      "duration_us": 13921.332000000026
+    },
+    {
+      "phase": "decode_only",
+      "name": "void at::native::warpMergeSortKVInPlace<2, -1, 128, 16, c10::BFloat16, long, at::native::GTOp<c10::BFloat16, true>, unsigned int, 32>(at::cuda::detail::TensorInfo<c10::BFloat16, unsigned int>, unsigned int, unsigned int, unsigned int, at::cuda::detail::TensorInfo<long, unsigned int>, unsigned int, at::native::GTOp<c10::BFloat16, true>, c10::BFloat16)",
+      "category_heuristic": "other",
+      "count": 890,
+      "duration_us": 13366.020000000011
+    },
+    {
+      "phase": "mixed",
+      "name": "_fused_post_conv_kernel",
+      "category_heuristic": "convolution",
+      "count": 930,
+      "duration_us": 13132.453
+    },
+    {
+      "phase": "mixed",
+      "name": "triton_poi_fused_mul_silu_slice_0",
+      "category_heuristic": "elementwise_or_reduction",
+      "count": 1643,
+      "duration_us": 13081.482999999997
+    },
+    {
+      "phase": "mixed",
+      "name": "void vllm::moe::topkGating<8, 256, 4, 16, 32, int, __nv_bfloat16, (vllm::moe::ScoringFunc)0>(__nv_bfloat16 const*, bool const*, float*, int, int*, int*, int, int, int, bool, float const*, double, bool const*)",
+      "category_heuristic": "sampling",
+      "count": 1240,
+      "duration_us": 12714.94300000002
+    },
+    {
+      "phase": "mixed",
+      "name": "triton_red_fused__to_copy_add_fused_add_rms_norm_moe_forward_shared_1",
+      "category_heuristic": "elementwise_or_reduction",
+      "count": 1209,
+      "duration_us": 12610.823000000002
+    },
+    {
+      "phase": "mixed",
+      "name": "_gemma_norm_kernel",
+      "category_heuristic": "gemm",
+      "count": 1209,
+      "duration_us": 12605.816
+    },
+    {
+      "phase": "mixed",
+      "name": "chunk_scaled_dot_kkt_fwd_kernel",
+      "category_heuristic": "other",
+      "count": 930,
+      "duration_us": 11864.35499999999
+    },
+    {
+      "phase": "mixed",
+      "name": "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl_nocast<at::native::BinaryFunctor<c10::BFloat16, c10::BFloat16, c10::BFloat16, at::native::binary_internal::MulFunctor<float> > >(at::TensorIteratorBase&, at::native::BinaryFunctor<c10::BFloat16, c10::BFloat16, c10::BFloat16, at::native::binary_internal::MulFunctor<float> > const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::BinaryFunctor<c10::BFloat16, c10::BFloat16, c10::BFloat16, at::native::binary_internal::MulFunctor<float> > >(at::TensorIteratorBase&, at::native::BinaryFunctor<c10::BFloat16, c10::BFloat16, c10::BFloat16, at::native::binary_internal::MulFunctor<float> > const&)::{lambda(int)#1})",
+      "category_heuristic": "elementwise_or_reduction",
+      "count": 1240,
+      "duration_us": 11370.825000000008
+    },
+    {
+      "phase": "mixed",
+      "name": "triton_per_fused__to_copy_add_mean_mul_pow_rsqrt_silu_0",
+      "category_heuristic": "other",
+      "count": 930,
+      "duration_us": 11137.627000000002
+    },
+    {
+      "phase": "mixed",
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8>(cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8::Params)",
+      "category_heuristic": "gemm",
+      "count": 960,
+      "duration_us": 10456.736000000015
+    },
+    {
+      "phase": "mixed",
+      "name": "void vllm::moe::moe_align_block_size_kernel<int>(int const*, int*, int*, int*, int*, int, int, int, int, unsigned long, int*, int, int, bool)",
+      "category_heuristic": "other",
+      "count": 1240,
+      "duration_us": 10413.650000000007
+    },
+    {
+      "phase": "decode_only",
+      "name": "void vllm::reshape_and_cache_flash_kernel<__nv_bfloat16, __nv_bfloat16, (vllm::Fp8KVCacheDataType)0>(__nv_bfloat16 const*, __nv_bfloat16 const*, __nv_bfloat16*, __nv_bfloat16*, long const*, long, long, long, long, long, int, int, int, float const*, float const*, int)",
+      "category_heuristic": "other",
+      "count": 2047,
+      "duration_us": 10105.804999999984
+    },
+    {
+      "phase": "mixed",
+      "name": "std::enable_if<!(false), void>::type internal::gemvx::kernel<int, int, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, float, false, true, true, false, 7, false, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16>, float> >(cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16>, float>)",
+      "category_heuristic": "other",
+      "count": 1240,
+      "duration_us": 9056.878000000006
+    },
+    {
+      "phase": "mixed",
+      "name": "ampere_bf16_s16816gemm_bf16_64x64_sliced1x2_ldg8_f2f_stages_64x6_tn",
+      "category_heuristic": "gemm",
+      "count": 520,
+      "duration_us": 8742.153999999991
+    },
+    {
+      "phase": "mixed",
+      "name": "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl_nocast<at::native::(anonymous namespace)::masked_fill_kernel(at::TensorIterator&, c10::Scalar const&)::{lambda()#1}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16, bool)#1}>(at::TensorIteratorBase&, at::native::(anonymous namespace)::masked_fill_kernel(at::TensorIterator&, c10::Scalar const&)::{lambda()#1}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16, bool)#1} const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::(anonymous namespace)::masked_fill_kernel(at::TensorIterator&, c10::Scalar const&)::{lambda()#1}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16, bool)#1}>(at::TensorIteratorBase&, at::native::(anonymous namespace)::masked_fill_kernel(at::TensorIterator&, c10::Scalar const&)::{lambda()#1}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16, bool)#1} const&)::{lambda(int)#1})",
+      "category_heuristic": "elementwise_or_reduction",
+      "count": 930,
+      "duration_us": 7831.985999999995
+    },
+    {
+      "phase": "mixed",
+      "name": "ampere_bf16_s16816gemm_bf16_64x64_sliced1x2_ldg8_f2f_stages_64x5_tn",
+      "category_heuristic": "gemm",
+      "count": 400,
+      "duration_us": 7694.907999999998
+    },
+    {
+      "phase": "decode_only",
+      "name": "triton_poi_fused_3",
+      "category_heuristic": "elementwise_or_reduction",
+      "count": 2670,
+      "duration_us": 7185.579999999988
+    },
+    {
+      "phase": "mixed",
+      "name": "void at::native::unrolled_elementwise_kernel<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#4}::operator()() const::{lambda(long)#1}, std::array<char*, 2ul>, 4, TrivialOffsetCalculator<1, unsigned int>, char*, at::native::memory::LoadWithCast<1>, std::array<char*, 2ul>::StoreWithCast<1> >(int, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#4}::operator()() const::{lambda(long)#1}, std::array<char*, 2ul>, TrivialOffsetCalculator<1, unsigned int>, char*, at::native::memory::LoadWithCast<1>, std::array<char*, 2ul>::StoreWithCast<1>)",
+      "category_heuristic": "elementwise_or_reduction",
+      "count": 1860,
+      "duration_us": 7029.984000000014
+    },
+    {
+      "phase": "decode_only",
+      "name": "triton_poi_fused_zeros_4",
+      "category_heuristic": "elementwise_or_reduction",
+      "count": 2581,
+      "duration_us": 6646.766999999965
+    },
+    {
+      "phase": "decode_only",
+      "name": "_table_norm_kernel",
+      "category_heuristic": "other",
+      "count": 1068,
+      "duration_us": 6231.94400000001
+    },
+    {
+      "phase": "mixed",
+      "name": "void vllm::reshape_and_cache_flash_kernel<__nv_bfloat16, __nv_bfloat16, (vllm::Fp8KVCacheDataType)0>(__nv_bfloat16 const*, __nv_bfloat16 const*, __nv_bfloat16*, __nv_bfloat16*, long const*, long, long, long, long, long, int, int, int, float const*, float const*, int)",
+      "category_heuristic": "other",
+      "count": 713,
+      "duration_us": 6186.014999999991
+    },
+    {
+      "phase": "mixed",
+      "name": "_draw_kernel",
+      "category_heuristic": "sampling",
+      "count": 341,
+      "duration_us": 6009.687999999996
+    },
+    {
+      "phase": "mixed",
+      "name": "void at::native::vectorized_elementwise_kernel<4, at::native::bfloat16_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda(float)#1}, std::array<char*, 2ul> >(int, at::native::bfloat16_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda(float)#1}, std::array<char*, 2ul>)",
+      "category_heuristic": "elementwise_or_reduction",
+      "count": 930,
+      "duration_us": 5963.372999999988
+    },
+    {
+      "phase": "mixed",
+      "name": "void vllm::moe::count_and_sort_expert_tokens_kernel<int>(int const*, int*, int*, int*, unsigned long, int, int, int, bool, int*)",
+      "category_heuristic": "other",
+      "count": 1240,
+      "duration_us": 5898.598999999981
+    },
+    {
+      "phase": "mixed",
+      "name": "ampere_bf16_s16816gemm_bf16_128x64_ldg8_f2f_stages_64x3_tn",
+      "category_heuristic": "gemm",
+      "count": 372,
+      "duration_us": 5837.071000000002
+    },
+    {
+      "phase": "decode_only",
+      "name": "_sigmoid_gate_kernel",
+      "category_heuristic": "other",
+      "count": 1157,
+      "duration_us": 5327.231999999999
+    },
+    {
+      "phase": "mixed",
+      "name": "void at::native::vectorized_elementwise_kernel<4, at::native::sigmoid_kernel_cuda(at::TensorIteratorBase&)::{lambda()#2}::operator()() const::{lambda()#4}::operator()() const::{lambda(c10::BFloat16)#1}, std::array<char*, 2ul> >(int, at::native::sigmoid_kernel_cuda(at::TensorIteratorBase&)::{lambda()#2}::operator()() const::{lambda()#4}::operator()() const::{lambda(c10::BFloat16)#1}, std::array<char*, 2ul>)",
+      "category_heuristic": "elementwise_or_reduction",
+      "count": 1240,
+      "duration_us": 5205.356000000011
+    },
+    {
+      "phase": "mixed",
+      "name": "void cublasLt::splitKreduce_kernel<32, 16, int, __nv_bfloat16, __nv_bfloat16, float, __nv_bfloat16, false, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, true, false, false, false>(cublasLt::cublasSplitKParams<float>, __nv_bfloat16 const*, __nv_bfloat16 const*, __nv_bfloat16*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, __nv_bfloat16 const*, __nv_bfloat16*, void*, long, float*, int*, float*, float*, float const*, float const*, float const*, float const*, float const*)",
+      "category_heuristic": "elementwise_or_reduction",
+      "count": 935,
+      "duration_us": 4985.773999999994
+    },
+    {
+      "phase": "mixed",
+      "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, __nv_bfloat16, false, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, true, false, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, __nv_bfloat16*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float*, float const*, float const*, float const*, float const*, float const*)",
+      "category_heuristic": "elementwise_or_reduction",
+      "count": 1170,
+      "duration_us": 4952.151999999985
+    },
+    {
+      "phase": "mixed",
+      "name": "void at::native::warpMergeSortKVInPlace<2, -1, 128, 16, c10::BFloat16, long, at::native::GTOp<c10::BFloat16, true>, unsigned int, 32>(at::cuda::detail::TensorInfo<c10::BFloat16, unsigned int>, unsigned int, unsigned int, unsigned int, at::cuda::detail::TensorInfo<long, unsigned int>, unsigned int, at::native::GTOp<c10::BFloat16, true>, c10::BFloat16)",
+      "category_heuristic": "other",
+      "count": 310,
+      "duration_us": 4675.237999999998
+    },
+    {
+      "phase": "mixed",
+      "name": "_sigmoid_gate_kernel",
+      "category_heuristic": "other",
+      "count": 403,
+      "duration_us": 4566.725
+    },
+    {
+      "phase": "mixed",
+      "name": "chunk_local_cumsum_scalar_kernel",
+      "category_heuristic": "other",
+      "count": 930,
+      "duration_us": 4540.968
+    },
+    {
+      "phase": "mixed",
+      "name": "triton_poi_fused_zeros_4",
+      "category_heuristic": "elementwise_or_reduction",
+      "count": 899,
+      "duration_us": 4509.0259999999935
+    },
+    {
+      "phase": "mixed",
+      "name": "void at::native::vectorized_gather_kernel<16, long>(char*, char*, long*, int, long, long, long, long, bool)",
+      "category_heuristic": "other",
+      "count": 570,
+      "duration_us": 4485.213000000003
+    },
+    {
+      "phase": "mixed",
+      "name": "void at::native::index_elementwise_kernel<128, 4, at::native::gpu_index_kernel<at::native::index_kernel_impl<at::native::OpaqueType<2> >(at::TensorIteratorBase&, c10::ArrayRef<long>, c10::ArrayRef<long>)::{lambda(char*, char const*, long)#1}>(at::TensorIteratorBase&, c10::ArrayRef<long>, c10::ArrayRef<long>, at::native::index_kernel_impl<at::native::OpaqueType<2> >(at::TensorIteratorBase&, c10::ArrayRef<long>, c10::ArrayRef<long>)::{lambda(char*, char const*, long)#1} const&, bool)::{lambda(int)#1}>(long, at::native::gpu_index_kernel<at::native::index_kernel_impl<at::native::OpaqueType<2> >(at::TensorIteratorBase&, c10::ArrayRef<long>, c10::ArrayRef<long>)::{lambda(char*, char const*, long)#1}>(at::TensorIteratorBase&, c10::ArrayRef<long>, c10::ArrayRef<long>, at::native::index_kernel_impl<at::native::OpaqueType<2> >(at::TensorIteratorBase&, c10::ArrayRef<long>, c10::ArrayRef<long>)::{lambda(char*, char const*, long)#1} const&, bool)::{lambda(int)#1})",
+      "category_heuristic": "elementwise_or_reduction",
+      "count": 360,
+      "duration_us": 3885.120000000002
+    },
+    {
+      "phase": "mixed",
+      "name": "_table_norm_kernel",
+      "category_heuristic": "other",
+      "count": 372,
+      "duration_us": 3783.644
+    },
+    {
+      "phase": "mixed",
+      "name": "void at::native::vectorized_elementwise_kernel<4, at::native::FillFunctor<c10::BFloat16>, std::array<char*, 1ul> >(int, at::native::FillFunctor<c10::BFloat16>, std::array<char*, 1ul>)",
+      "category_heuristic": "elementwise_or_reduction",
+      "count": 930,
+      "duration_us": 3414.2719999999968
+    },
+    {
+      "phase": "decode_only",
+      "name": "triton_poi_fused_mul_sigmoid_view_0",
+      "category_heuristic": "elementwise_or_reduction",
+      "count": 801,
+      "duration_us": 3116.4929999999936
+    },
+    {
+      "phase": "decode_only",
+      "name": "triton_poi_fused_index_1",
+      "category_heuristic": "elementwise_or_reduction",
+      "count": 801,
+      "duration_us": 2928.147999999995
+    },
+    {
+      "phase": "decode_only",
+      "name": "triton_poi_fused_index_where_2",
+      "category_heuristic": "elementwise_or_reduction",
+      "count": 712,
+      "duration_us": 2912.1989999999955
+    },
+    {
+      "phase": "mixed",
+      "name": "triton_poi_fused_mul_sigmoid_view_0",
+      "category_heuristic": "elementwise_or_reduction",
+      "count": 279,
+      "duration_us": 2795.185999999999
+    },
+    {
+      "phase": "decode_only",
+      "name": "triton_poi_fused_clone_split_with_sizes_3",
+      "category_heuristic": "elementwise_or_reduction",
+      "count": 712,
+      "duration_us": 2455.1849999999977
+    },
+    {
+      "phase": "mixed",
+      "name": "triton_poi_fused_3",
+      "category_heuristic": "elementwise_or_reduction",
+      "count": 930,
+      "duration_us": 2369.9430000000016
+    },
+    {
+      "phase": "mixed",
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_bf16_s16816gemm_relu_bf16_64x64_64x6_tn_align8>(cutlass_80_tensorop_bf16_s16816gemm_relu_bf16_64x64_64x6_tn_align8::Params)",
+      "category_heuristic": "gemm",
+      "count": 240,
+      "duration_us": 2154.555999999999
+    },
+    {
+      "phase": "mixed",
+      "name": "ampere_s16816gemm_bf16_64x64_ldg8_stages_64x5_tn",
+      "category_heuristic": "gemm",
+      "count": 210,
+      "duration_us": 1508.2680000000007
+    },
+    {
+      "phase": "mixed",
+      "name": "void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#4}::operator()() const::{lambda(long)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#4}::operator()() const::{lambda(long)#1} const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#4}::operator()() const::{lambda(long)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#4}::operator()() const::{lambda(long)#1} const&)::{lambda(int)#1})",
+      "category_heuristic": "elementwise_or_reduction",
+      "count": 186,
+      "duration_us": 1506.8369999999995
+    },
+    {
+      "phase": "mixed",
+      "name": "triton_per_fused_1",
+      "category_heuristic": "other",
+      "count": 31,
+      "duration_us": 1485.0659999999998
+    },
+    {
+      "phase": "mixed",
+      "name": "void at::native::unrolled_elementwise_kernel<at::native::bitwise_not_kernel_cuda(at::TensorIteratorBase&)::{lambda(bool)#1}, std::array<char*, 2ul>, 4, TrivialOffsetCalculator<1, unsigned int>, TrivialOffsetCalculator, at::native::memory::LoadWithoutCast, TrivialOffsetCalculator<1, unsigned int>::StoreWithoutCast>(int, at::native::bitwise_not_kernel_cuda(at::TensorIteratorBase&)::{lambda(bool)#1}, std::array<char*, 2ul>, TrivialOffsetCalculator<1, unsigned int>, TrivialOffsetCalculator, at::native::memory::LoadWithoutCast, TrivialOffsetCalculator<1, unsigned int>::StoreWithoutCast)",
+      "category_heuristic": "elementwise_or_reduction",
+      "count": 450,
+      "duration_us": 1285.3209999999995
+    },
+    {
+      "phase": "decode_only",
+      "name": "triton_poi_fused_clone_split_with_sizes_1",
+      "category_heuristic": "elementwise_or_reduction",
+      "count": 356,
+      "duration_us": 1274.5039999999997
+    },
+    {
+      "phase": "mixed",
+      "name": "_zero_kv_blocks_kernel",
+      "category_heuristic": "other",
+      "count": 31,
+      "duration_us": 1180.715
+    },
+    {
+      "phase": "mixed",
+      "name": "triton_poi_fused_index_1",
+      "category_heuristic": "elementwise_or_reduction",
+      "count": 279,
+      "duration_us": 1107.1720000000003
+    },
+    {
+      "phase": "mixed",
+      "name": "triton_poi_fused_index_where_2",
+      "category_heuristic": "elementwise_or_reduction",
+      "count": 248,
+      "duration_us": 1045.8679999999995
+    },
+    {
+      "phase": "mixed",
+      "name": "triton_poi_fused_clone_split_with_sizes_3",
+      "category_heuristic": "elementwise_or_reduction",
+      "count": 248,
+      "duration_us": 992.241
+    },
+    {
+      "phase": "decode_only",
+      "name": "triton_per_fused_1",
+      "category_heuristic": "other",
+      "count": 89,
+      "duration_us": 973.8950000000002
+    },
+    {
+      "phase": "mixed",
+      "name": "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#11}::operator()() const::{lambda(bool)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#11}::operator()() const::{lambda(bool)#1} const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#11}::operator()() const::{lambda(bool)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#11}::operator()() const::{lambda(bool)#1} const&)::{lambda(int)#1})",
+      "category_heuristic": "elementwise_or_reduction",
+      "count": 93,
+      "duration_us": 899.2060000000001
+    },
+    {
+      "phase": "unattributed",
+      "name": "_post_update_kernel",
+      "category_heuristic": "other",
+      "count": 120,
+      "duration_us": 897.6740000000002
+    },
+    {
+      "phase": "mixed",
+      "name": "void at::native::vectorized_elementwise_kernel<2, at::native::bitwise_not_kernel_cuda(at::TensorIteratorBase&)::{lambda(bool)#1}, std::array<char*, 2ul> >(int, at::native::bitwise_not_kernel_cuda(at::TensorIteratorBase&)::{lambda(bool)#1}, std::array<char*, 2ul>)",
+      "category_heuristic": "elementwise_or_reduction",
+      "count": 270,
+      "duration_us": 864.1310000000008
+    },
+    {
+      "phase": "unattributed",
+      "name": "_get_num_sampled_and_rejected_kernel",
+      "category_heuristic": "sampling",
+      "count": 120,
+      "duration_us": 860.23
+    },
+    {
+      "phase": "decode_only",
+      "name": "triton_poi_fused_2",
+      "category_heuristic": "elementwise_or_reduction",
+      "count": 178,
+      "duration_us": 790.4680000000005
+    },
+    {
+      "phase": "decode_only",
+      "name": "_gather_block_tables_kernel",
+      "category_heuristic": "other",
+      "count": 89,
+      "duration_us": 762.3450000000003
+    },
+    {
+      "phase": "decode_only",
+      "name": "_mix_norm_kernel",
+      "category_heuristic": "other",
+      "count": 89,
+      "duration_us": 705.4430000000002
+    },
+    {
+      "phase": "mixed",
+      "name": "void at::native::vectorized_elementwise_kernel<4, at::native::bitwise_not_kernel_cuda(at::TensorIteratorBase&)::{lambda(bool)#1}, std::array<char*, 2ul> >(int, at::native::bitwise_not_kernel_cuda(at::TensorIteratorBase&)::{lambda(bool)#1}, std::array<char*, 2ul>)",
+      "category_heuristic": "elementwise_or_reduction",
+      "count": 210,
+      "duration_us": 687.1370000000009
+    },
+    {
+      "phase": "decode_only",
+      "name": "triton_red_fused__to_copy_add_bitwise_and_clamp_embedding_ge_index_le_mul_rms_norm_select_slice_sum_unsqueeze_where_0",
+      "category_heuristic": "elementwise_or_reduction",
+      "count": 89,
+      "duration_us": 672.486
+    },
+    {
+      "phase": "decode_only",
+      "name": "_combine_sampled_and_draft_tokens_kernel",
+      "category_heuristic": "sampling",
+      "count": 89,
+      "duration_us": 647.401
+    },
+    {
+      "phase": "mixed",
+      "name": "void at::native::index_elementwise_kernel<128, 4, at::native::index_copy_kernel_impl<at::native::OpaqueType<8> >(at::TensorIterator&, long, long, long)::{lambda(int)#1}>(long, at::native::index_copy_kernel_impl<at::native::OpaqueType<8> >(at::TensorIterator&, long, long, long)::{lambda(int)#1})",
+      "category_heuristic": "elementwise_or_reduction",
+      "count": 93,
+      "duration_us": 645.7960000000003
+    },
+    {
+      "phase": "decode_only",
+      "name": "triton_red_fused__to_copy_add_fused_add_rms_norm_3",
+      "category_heuristic": "elementwise_or_reduction",
+      "count": 89,
+      "duration_us": 595.6509999999997
+    },
+    {
+      "phase": "decode_only",
+      "name": "triton_poi_fused_0",
+      "category_heuristic": "elementwise_or_reduction",
+      "count": 89,
+      "duration_us": 552.9360000000001
+    },
+    {
+      "phase": "decode_only",
+      "name": "_ZN2at6native55_GLOBAL__N__3bce53d0_22_DistributionUniform_cu_67fa25cf43distribution_elementwise_grid_stride_kernelIfLi4EZNS0_9templates4cuda21uniform_and_transformIffPNS_17CUDAGeneratorImplEZZZNS4_14uniform_kernelIS7_EEvRNS_18TensorIteratorBaseEddT_ENKUlvE_clEvENKUlvE0_clEvEUlfE_EEvSA_T1_T2_EUlP24curandStatePhilox4_32_10E0_ZNS1_27distribution_nullary_kernelIff6float4S7_SJ_SE_EEvSA_SG_RKT3_T4_EUlifE_EEvlNS_15PhiloxCudaStateESF_SG_",
+      "category_heuristic": "elementwise_or_reduction",
+      "count": 89,
+      "duration_us": 546.248
+    },
+    {
+      "phase": "decode_only",
+      "name": "triton_red_fused__to_copy_add_fused_add_rms_norm_moe_forward_shared_2",
+      "category_heuristic": "elementwise_or_reduction",
+      "count": 89,
+      "duration_us": 544.072
+    },
+    {
+      "phase": "decode_only",
+      "name": "_compute_slot_mappings_kernel",
+      "category_heuristic": "other",
+      "count": 89,
+      "duration_us": 529.8699999999999
+    },
+    {
+      "phase": "unattributed",
+      "name": "void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#4}::operator()() const::{lambda(long)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#4}::operator()() const::{lambda(long)#1} const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#4}::operator()() const::{lambda(long)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#4}::operator()() const::{lambda(long)#1} const&)::{lambda(int)#1})",
+      "category_heuristic": "elementwise_or_reduction",
+      "count": 120,
+      "duration_us": 482.7340000000001
+    },
+    {
+      "phase": "decode_only",
+      "name": "triton_per_fused_any_bitwise_and_clamp_eq_ge_index_lt_slice_sub_unsqueeze_where_5",
+      "category_heuristic": "other",
+      "count": 89,
+      "duration_us": 479.8140000000002
+    },
+    {
+      "phase": "mixed",
+      "name": "triton_poi_fused_clone_split_with_sizes_1",
+      "category_heuristic": "elementwise_or_reduction",
+      "count": 124,
+      "duration_us": 467.61899999999986
+    },
+    {
+      "phase": "mixed",
+      "name": "_mix_norm_kernel",
+      "category_heuristic": "other",
+      "count": 31,
+      "duration_us": 464.8979999999999
+    },
+    {
+      "phase": "decode_only",
+      "name": "void at::native::vectorized_elementwise_kernel<4, at::native::FillFunctor<bool>, std::array<char*, 1ul> >(int, at::native::FillFunctor<bool>, std::array<char*, 1ul>)",
+      "category_heuristic": "elementwise_or_reduction",
+      "count": 148,
+      "duration_us": 441.75500000000005
+    },
+    {
+      "phase": "mixed",
+      "name": "triton_red_fused__to_copy_add_fused_add_rms_norm_moe_forward_shared_2",
+      "category_heuristic": "elementwise_or_reduction",
+      "count": 31,
+      "duration_us": 419.521
+    },
+    {
+      "phase": "mixed",
+      "name": "triton_poi_fused_0",
+      "category_heuristic": "elementwise_or_reduction",
+      "count": 31,
+      "duration_us": 388.16299999999984
+    },
+    {
+      "phase": "mixed",
+      "name": "void at::native::index_elementwise_kernel<128, 4, at::native::index_copy_kernel_impl<at::native::OpaqueType<4> >(at::TensorIterator&, long, long, long)::{lambda(int)#1}>(long, at::native::index_copy_kernel_impl<at::native::OpaqueType<4> >(at::TensorIterator&, long, long, long)::{lambda(int)#1})",
+      "category_heuristic": "elementwise_or_reduction",
+      "count": 62,
+      "duration_us": 387.9390000000001
+    },
+    {
+      "phase": "decode_only",
+      "name": "triton_poi_fused_bitwise_and_ge_index_le_slice_where_6",
+      "category_heuristic": "elementwise_or_reduction",
+      "count": 89,
+      "duration_us": 379.90400000000017
+    },
+    {
+      "phase": "mixed",
+      "name": "triton_red_fused__to_copy_add_bitwise_and_clamp_embedding_ge_index_le_mul_rms_norm_select_slice_sum_unsqueeze_where_0",
+      "category_heuristic": "elementwise_or_reduction",
+      "count": 31,
+      "duration_us": 364.51299999999986
+    },
+    {
+      "phase": "decode_only",
+      "name": "triton_poi_fused_6",
+      "category_heuristic": "elementwise_or_reduction",
+      "count": 89,
+      "duration_us": 363.5270000000001
+    },
+    {
+      "phase": "unattributed",
+      "name": "_scatter_num_accepted_kernel",
+      "category_heuristic": "other",
+      "count": 120,
+      "duration_us": 359.76900000000006
+    },
+    {
+      "phase": "mixed",
+      "name": "triton_red_fused__to_copy_add_fused_add_rms_norm_3",
+      "category_heuristic": "elementwise_or_reduction",
+      "count": 31,
+      "duration_us": 355.87499999999994
+    },
+    {
+      "phase": "decode_only",
+      "name": "triton_poi_fused_index_slice_4",
+      "category_heuristic": "elementwise_or_reduction",
+      "count": 89,
+      "duration_us": 355.62499999999994
+    },
+    {
+      "phase": "decode_only",
+      "name": "void at::native::vectorized_elementwise_kernel<4, at::native::compare_scalar_kernel<long>(at::TensorIteratorBase&, at::native::(anonymous namespace)::OpType, long)::{lambda(long)#1}, std::array<char*, 2ul> >(int, at::native::compare_scalar_kernel<long>(at::TensorIteratorBase&, at::native::(anonymous namespace)::OpType, long)::{lambda(long)#1}, std::array<char*, 2ul>)",
+      "category_heuristic": "elementwise_or_reduction",
+      "count": 106,
+      "duration_us": 353.38300000000015
+    },
+    {
+      "phase": "mixed",
+      "name": "triton_poi_fused_2",
+      "category_heuristic": "elementwise_or_reduction",
+      "count": 62,
+      "duration_us": 350.94900000000007
+    },
+    {
+      "phase": "decode_only",
+      "name": "triton_poi_fused__to_copy_bitwise_and_ge_index_le_mul_slice_unsqueeze_where_5",
+      "category_heuristic": "elementwise_or_reduction",
+      "count": 89,
+      "duration_us": 340.0049999999998
+    },
+    {
+      "phase": "unattributed",
+      "name": "void at::native::vectorized_elementwise_kernel<4, at::native::FillFunctor<int>, std::array<char*, 1ul> >(int, at::native::FillFunctor<int>, std::array<char*, 1ul>)",
+      "category_heuristic": "elementwise_or_reduction",
+      "count": 120,
+      "duration_us": 316.42299999999994
+    },
+    {
+      "phase": "decode_only",
+      "name": "triton_poi_fused_clone_split_with_sizes_7",
+      "category_heuristic": "elementwise_or_reduction",
+      "count": 89,
+      "duration_us": 315.39599999999996
+    },
+    {
+      "phase": "decode_only",
+      "name": "_prepare_pos_seq_lens_kernel",
+      "category_heuristic": "other",
+      "count": 89,
+      "duration_us": 295.1370000000001
+    },
+    {
+      "phase": "decode_only",
+      "name": "triton_poi_fused_7",
+      "category_heuristic": "elementwise_or_reduction",
+      "count": 89,
+      "duration_us": 285.00199999999995
+    },
+    {
+      "phase": "decode_only",
+      "name": "memcpy32_post",
+      "category_heuristic": "other",
+      "count": 89,
+      "duration_us": 280.834
+    },
+    {
+      "phase": "mixed",
+      "name": "void at::native::vectorized_elementwise_kernel<4, at::native::FillFunctor<int>, std::array<char*, 1ul> >(int, at::native::FillFunctor<int>, std::array<char*, 1ul>)",
+      "category_heuristic": "elementwise_or_reduction",
+      "count": 110,
+      "duration_us": 273.70199999999994
+    },
+    {
+      "phase": "mixed",
+      "name": "_apply_write_kernel",
+      "category_heuristic": "other",
+      "count": 31,
+      "duration_us": 266.65899999999993
+    },
+    {
+      "phase": "decode_only",
+      "name": "triton_poi_fused_1",
+      "category_heuristic": "elementwise_or_reduction",
+      "count": 89,
+      "duration_us": 260.90099999999995
+    },
+    {
+      "phase": "mixed",
+      "name": "_gather_block_tables_kernel",
+      "category_heuristic": "other",
+      "count": 31,
+      "duration_us": 259.59000000000003
+    },
+    {
+      "phase": "decode_only",
+      "name": "triton_poi_fused__to_copy_clamp_index_index_put_slice_unsqueeze_where_8",
+      "category_heuristic": "elementwise_or_reduction",
+      "count": 89,
+      "duration_us": 256.1380000000001
+    },
+    {
+      "phase": "mixed",
+      "name": "_prepare_prefill_inputs_kernel",
+      "category_heuristic": "other",
+      "count": 31,
+      "duration_us": 250.18200000000004
+    },
+    {
+      "phase": "mixed",
+      "name": "_byte_scatter_kernel",
+      "category_heuristic": "other",
+      "count": 31,
+      "duration_us": 249.02700000000002
+    },
+    {
+      "phase": "decode_only",
+      "name": "void at::native::vectorized_elementwise_kernel<4, at::native::FillFunctor<int>, std::array<char*, 1ul> >(int, at::native::FillFunctor<int>, std::array<char*, 1ul>)",
+      "category_heuristic": "elementwise_or_reduction",
+      "count": 89,
+      "duration_us": 240.259
+    },
+    {
+      "phase": "decode_only",
+      "name": "void (anonymous namespace)::elementwise_kernel_with_index<int, at::native::arange_cuda_out(c10::Scalar const&, c10::Scalar const&, c10::Scalar const&, at::Tensor&)::{lambda()#1}::operator()() const::{lambda()#3}::operator()() const::{lambda(long)#1}>(int, at::native::arange_cuda_out(c10::Scalar const&, c10::Scalar const&, c10::Scalar const&, at::Tensor&)::{lambda()#1}::operator()() const::{lambda()#3}::operator()() const::{lambda(long)#1}, function_traits<{lambda(long)#1}>::result_type*)",
+      "category_heuristic": "elementwise_or_reduction",
+      "count": 89,
+      "duration_us": 239.74099999999996
+    },
+    {
+      "phase": "decode_only",
+      "name": "triton_poi_fused_stack_4",
+      "category_heuristic": "elementwise_or_reduction",
+      "count": 89,
+      "duration_us": 233.444
+    },
+    {
+      "phase": "decode_only",
+      "name": "void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl_nocast<at::native::(anonymous namespace)::where_kernel_impl(at::TensorIterator&)::{lambda()#1}::operator()() const::{lambda()#4}::operator()() const::{lambda(bool, unsigned long, unsigned long)#1}>(at::TensorIteratorBase&, at::native::(anonymous namespace)::where_kernel_impl(at::TensorIterator&)::{lambda()#1}::operator()() const::{lambda()#4}::operator()() const::{lambda(bool, unsigned long, unsigned long)#1} const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::(anonymous namespace)::where_kernel_impl(at::TensorIterator&)::{lambda()#1}::operator()() const::{lambda()#4}::operator()() const::{lambda(bool, unsigned long, unsigned long)#1}>(at::TensorIteratorBase&, at::native::(anonymous namespace)::where_kernel_impl(at::TensorIterator&)::{lambda()#1}::operator()() const::{lambda()#4}::operator()() const::{lambda(bool, unsigned long, unsigned long)#1} const&)::{lambda(int)#1})",
+      "category_heuristic": "elementwise_or_reduction",
+      "count": 53,
+      "duration_us": 222.65900000000002
+    },
+    {
+      "phase": "mixed",
+      "name": "_combine_sampled_and_draft_tokens_kernel",
+      "category_heuristic": "sampling",
+      "count": 31,
+      "duration_us": 221.02400000000006
+    },
+    {
+      "phase": "decode_only",
+      "name": "triton_poi_fused__to_copy_add_index_index_put_9",
+      "category_heuristic": "elementwise_or_reduction",
+      "count": 89,
+      "duration_us": 216.10500000000013
+    },
+    {
+      "phase": "mixed",
+      "name": "_ZN2at6native55_GLOBAL__N__3bce53d0_22_DistributionUniform_cu_67fa25cf43distribution_elementwise_grid_stride_kernelIfLi4EZNS0_9templates4cuda21uniform_and_transformIffPNS_17CUDAGeneratorImplEZZZNS4_14uniform_kernelIS7_EEvRNS_18TensorIteratorBaseEddT_ENKUlvE_clEvENKUlvE0_clEvEUlfE_EEvSA_T1_T2_EUlP24curandStatePhilox4_32_10E0_ZNS1_27distribution_nullary_kernelIff6float4S7_SJ_SE_EEvSA_SG_RKT3_T4_EUlifE_EEvlNS_15PhiloxCudaStateESF_SG_",
+      "category_heuristic": "elementwise_or_reduction",
+      "count": 31,
+      "duration_us": 186.14700000000002
+    },
+    {
+      "phase": "mixed",
+      "name": "_compute_slot_mappings_kernel",
+      "category_heuristic": "other",
+      "count": 31,
+      "duration_us": 182.36700000000002
+    },
+    {
+      "phase": "mixed",
+      "name": "triton_per_fused_any_bitwise_and_clamp_eq_ge_index_lt_slice_sub_unsqueeze_where_5",
+      "category_heuristic": "other",
+      "count": 31,
+      "duration_us": 150.08
+    },
+    {
+      "phase": "decode_only",
+      "name": "void at::native::vectorized_elementwise_kernel<2, at::native::FillFunctor<long>, std::array<char*, 1ul> >(int, at::native::FillFunctor<long>, std::array<char*, 1ul>)",
+      "category_heuristic": "elementwise_or_reduction",
+      "count": 53,
+      "duration_us": 141.56700000000004
+    },
+    {
+      "phase": "decode_only",
+      "name": "void (anonymous namespace)::elementwise_kernel_with_index<int, at::native::arange_cuda_out(c10::Scalar const&, c10::Scalar const&, c10::Scalar const&, at::Tensor&)::{lambda()#1}::operator()() const::{lambda()#4}::operator()() const::{lambda(long)#1}>(int, at::native::arange_cuda_out(c10::Scalar const&, c10::Scalar const&, c10::Scalar const&, at::Tensor&)::{lambda()#1}::operator()() const::{lambda()#4}::operator()() const::{lambda(long)#1}, function_traits<{lambda(long)#1}>::result_type*)",
+      "category_heuristic": "elementwise_or_reduction",
+      "count": 53,
+      "duration_us": 140.80200000000002
+    },
+    {
+      "phase": "mixed",
+      "name": "triton_poi_fused_6",
+      "category_heuristic": "elementwise_or_reduction",
+      "count": 31,
+      "duration_us": 134.30399999999997
+    },
+    {
+      "phase": "mixed",
+      "name": "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1} const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1} const&)::{lambda(int)#1})",
+      "category_heuristic": "elementwise_or_reduction",
+      "count": 19,
+      "duration_us": 129.281
+    },
+    {
+      "phase": "mixed",
+      "name": "triton_poi_fused_clone_split_with_sizes_7",
+      "category_heuristic": "elementwise_or_reduction",
+      "count": 31,
+      "duration_us": 126.97699999999998
+    },
+    {
+      "phase": "mixed",
+      "name": "triton_poi_fused_index_slice_4",
+      "category_heuristic": "elementwise_or_reduction",
+      "count": 31,
+      "duration_us": 125.635
+    },
+    {
+      "phase": "mixed",
+      "name": "void at::native::unrolled_elementwise_kernel<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#3}::operator()() const::{lambda(int)#1}, std::array<char*, 2ul>, 4, TrivialOffsetCalculator<1, unsigned int>, char*, at::native::memory::LoadWithCast<1>, std::array<char*, 2ul>::StoreWithCast<1> >(int, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#3}::operator()() const::{lambda(int)#1}, std::array<char*, 2ul>, TrivialOffsetCalculator<1, unsigned int>, char*, at::native::memory::LoadWithCast<1>, std::array<char*, 2ul>::StoreWithCast<1>)",
+      "category_heuristic": "elementwise_or_reduction",
+      "count": 31,
+      "duration_us": 121.89000000000001
+    },
+    {
+      "phase": "decode_only",
+      "name": "void at::native::unrolled_elementwise_kernel<at::native::FillFunctor<bool>, std::array<char*, 1ul>, 4, TrivialOffsetCalculator<0, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithoutCast, at::native::memory::StoreWithoutCast>(int, at::native::FillFunctor<bool>, std::array<char*, 1ul>, TrivialOffsetCalculator<0, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithoutCast, at::native::memory::StoreWithoutCast)",
+      "category_heuristic": "elementwise_or_reduction",
+      "count": 48,
+      "duration_us": 121.50599999999999
+    },
+    {
+      "phase": "mixed",
+      "name": "void at::native::vectorized_elementwise_kernel<4, at::native::FillFunctor<bool>, std::array<char*, 1ul> >(int, at::native::FillFunctor<bool>, std::array<char*, 1ul>)",
+      "category_heuristic": "elementwise_or_reduction",
+      "count": 39,
+      "duration_us": 120.544
+    },
+    {
+      "phase": "mixed",
+      "name": "triton_poi_fused_bitwise_and_ge_index_le_slice_where_6",
+      "category_heuristic": "elementwise_or_reduction",
+      "count": 31,
+      "duration_us": 120.194
+    },
+    {
+      "phase": "mixed",
+      "name": "triton_poi_fused__to_copy_bitwise_and_ge_index_le_mul_slice_unsqueeze_where_5",
+      "category_heuristic": "elementwise_or_reduction",
+      "count": 31,
+      "duration_us": 113.47200000000005
+    },
+    {
+      "phase": "mixed",
+      "name": "triton_poi_fused_7",
+      "category_heuristic": "elementwise_or_reduction",
+      "count": 31,
+      "duration_us": 112.99300000000001
+    },
+    {
+      "phase": "mixed",
+      "name": "_prepare_pos_seq_lens_kernel",
+      "category_heuristic": "other",
+      "count": 31,
+      "duration_us": 97.795
+    },
+    {
+      "phase": "mixed",
+      "name": "void at::native::vectorized_elementwise_kernel<4, at::native::compare_scalar_kernel<int>(at::TensorIteratorBase&, at::native::(anonymous namespace)::OpType, int)::{lambda(int)#1}, std::array<char*, 2ul> >(int, at::native::compare_scalar_kernel<int>(at::TensorIteratorBase&, at::native::(anonymous namespace)::OpType, int)::{lambda(int)#1}, std::array<char*, 2ul>)",
+      "category_heuristic": "elementwise_or_reduction",
+      "count": 31,
+      "duration_us": 97.027
+    },
+    {
+      "phase": "mixed",
+      "name": "void at::native::unrolled_elementwise_kernel<at::native::FillFunctor<int>, std::array<char*, 1ul>, 4, TrivialOffsetCalculator<0, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithoutCast, at::native::memory::StoreWithoutCast>(int, at::native::FillFunctor<int>, std::array<char*, 1ul>, TrivialOffsetCalculator<0, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithoutCast, at::native::memory::StoreWithoutCast)",
+      "category_heuristic": "elementwise_or_reduction",
+      "count": 40,
+      "duration_us": 96.166
+    },
+    {
+      "phase": "mixed",
+      "name": "void at::native::vectorized_elementwise_kernel<4, at::native::CUDAFunctor_add<int>, std::array<char*, 3ul> >(int, at::native::CUDAFunctor_add<int>, std::array<char*, 3ul>)",
+      "category_heuristic": "elementwise_or_reduction",
+      "count": 31,
+      "duration_us": 91.171
+    },
+    {
+      "phase": "mixed",
+      "name": "triton_poi_fused_stack_4",
+      "category_heuristic": "elementwise_or_reduction",
+      "count": 31,
+      "duration_us": 89.05799999999999
+    },
+    {
+      "phase": "mixed",
+      "name": "triton_poi_fused_1",
+      "category_heuristic": "elementwise_or_reduction",
+      "count": 31,
+      "duration_us": 89.05700000000002
+    },
+    {
+      "phase": "mixed",
+      "name": "triton_poi_fused__to_copy_clamp_index_index_put_slice_unsqueeze_where_8",
+      "category_heuristic": "elementwise_or_reduction",
+      "count": 31,
+      "duration_us": 88.80100000000002
+    },
+    {
+      "phase": "mixed",
+      "name": "void at::native::unrolled_elementwise_kernel<at::native::CUDAFunctor_add<int>, std::array<char*, 3ul>, 4, TrivialOffsetCalculator<2, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithoutCast, at::native::memory::StoreWithoutCast>(int, at::native::CUDAFunctor_add<int>, std::array<char*, 3ul>, TrivialOffsetCalculator<2, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithoutCast, at::native::memory::StoreWithoutCast)",
+      "category_heuristic": "elementwise_or_reduction",
+      "count": 31,
+      "duration_us": 85.88900000000001
+    },
+    {
+      "phase": "mixed",
+      "name": "triton_poi_fused__to_copy_add_index_index_put_9",
+      "category_heuristic": "elementwise_or_reduction",
+      "count": 31,
+      "duration_us": 83.074
+    },
+    {
+      "phase": "mixed",
+      "name": "void (anonymous namespace)::elementwise_kernel_with_index<int, at::native::arange_cuda_out(c10::Scalar const&, c10::Scalar const&, c10::Scalar const&, at::Tensor&)::{lambda()#1}::operator()() const::{lambda()#3}::operator()() const::{lambda(long)#1}>(int, at::native::arange_cuda_out(c10::Scalar const&, c10::Scalar const&, c10::Scalar const&, at::Tensor&)::{lambda()#1}::operator()() const::{lambda()#3}::operator()() const::{lambda(long)#1}, function_traits<{lambda(long)#1}>::result_type*)",
+      "category_heuristic": "elementwise_or_reduction",
+      "count": 31,
+      "duration_us": 77.50399999999999
+    },
+    {
+      "phase": "decode_only",
+      "name": "void at::native::vectorized_elementwise_kernel<2, at::native::FillFunctor<bool>, std::array<char*, 1ul> >(int, at::native::FillFunctor<bool>, std::array<char*, 1ul>)",
+      "category_heuristic": "elementwise_or_reduction",
+      "count": 26,
+      "duration_us": 73.95299999999999
+    },
+    {
+      "phase": "mixed",
+      "name": "void at::native::unrolled_elementwise_kernel<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul>, 4, TrivialOffsetCalculator<1, unsigned int>, char*, at::native::memory::LoadWithCast<1>, std::array<char*, 2ul>::StoreWithCast<1> >(int, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul>, TrivialOffsetCalculator<1, unsigned int>, char*, at::native::memory::LoadWithCast<1>, std::array<char*, 2ul>::StoreWithCast<1>)",
+      "category_heuristic": "elementwise_or_reduction",
+      "count": 12,
+      "duration_us": 73.47
+    },
+    {
+      "phase": "mixed",
+      "name": "void at::native::unrolled_elementwise_kernel<at::native::CUDAFunctorOnSelf_add<int>, std::array<char*, 2ul>, 4, TrivialOffsetCalculator<1, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithoutCast, at::native::memory::StoreWithoutCast>(int, at::native::CUDAFunctorOnSelf_add<int>, std::array<char*, 2ul>, TrivialOffsetCalculator<1, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithoutCast, at::native::memory::StoreWithoutCast)",
+      "category_heuristic": "elementwise_or_reduction",
+      "count": 15,
+      "duration_us": 39.519999999999996
+    },
+    {
+      "phase": "mixed",
+      "name": "void at::native::unrolled_elementwise_kernel<at::native::FillFunctor<bool>, std::array<char*, 1ul>, 4, TrivialOffsetCalculator<0, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithoutCast, at::native::memory::StoreWithoutCast>(int, at::native::FillFunctor<bool>, std::array<char*, 1ul>, TrivialOffsetCalculator<0, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithoutCast, at::native::memory::StoreWithoutCast)",
+      "category_heuristic": "elementwise_or_reduction",
+      "count": 15,
+      "duration_us": 37.345
+    },
+    {
+      "phase": "mixed",
+      "name": "void at::native::vectorized_elementwise_kernel<2, at::native::FillFunctor<int>, std::array<char*, 1ul> >(int, at::native::FillFunctor<int>, std::array<char*, 1ul>)",
+      "category_heuristic": "elementwise_or_reduction",
+      "count": 14,
+      "duration_us": 36.193
+    },
+    {
+      "phase": "mixed",
+      "name": "void at::native::vectorized_elementwise_kernel<2, at::native::CUDAFunctorOnSelf_add<int>, std::array<char*, 2ul> >(int, at::native::CUDAFunctorOnSelf_add<int>, std::array<char*, 2ul>)",
+      "category_heuristic": "elementwise_or_reduction",
+      "count": 9,
+      "duration_us": 26.144999999999996
+    },
+    {
+      "phase": "mixed",
+      "name": "void at::native::vectorized_elementwise_kernel<2, at::native::FillFunctor<bool>, std::array<char*, 1ul> >(int, at::native::FillFunctor<bool>, std::array<char*, 1ul>)",
+      "category_heuristic": "elementwise_or_reduction",
+      "count": 8,
+      "duration_us": 21.281
+    },
+    {
+      "phase": "mixed",
+      "name": "void at::native::vectorized_elementwise_kernel<4, at::native::CUDAFunctorOnSelf_add<int>, std::array<char*, 2ul> >(int, at::native::CUDAFunctorOnSelf_add<int>, std::array<char*, 2ul>)",
+      "category_heuristic": "elementwise_or_reduction",
+      "count": 7,
+      "duration_us": 19.681
+    }
+  ],
+  "cpu_user_scopes_inclusive": {
+    "schedule: allocate_slots": {
+      "count": 7397,
+      "inclusive_us": 296288.70200000005
+    },
+    "schedule: make_cached_request_data": {
+      "count": 120,
+      "inclusive_us": 12223.664999999995
+    },
+    "schedule: update_after_schedule": {
+      "count": 120,
+      "inclusive_us": 11916.394000000002
+    }
+  },
+  "steps": [
+    {
+      "ts": 1651354203828.742,
+      "end": 1651354260008.989,
+      "duration_us": 56180.247,
+      "phase": "mixed",
+      "context_requests": 2,
+      "context_tokens": 306,
+      "generation_requests": 60,
+      "generation_tokens": 60,
+      "pid": 1852029,
+      "tid": 1852029,
+      "kernel_count": 1763,
+      "kernel_us": 49592.17800000003,
+      "gpu_busy_union_us": 49561.274658203125
+    },
+    {
+      "ts": 1651354265436.988,
+      "end": 1651354272558.746,
+      "duration_us": 7121.758,
+      "phase": "decode_only",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 62,
+      "generation_tokens": 62,
+      "pid": 1852029,
+      "tid": 1852029,
+      "kernel_count": 1508,
+      "kernel_us": 34131.21899999995,
+      "gpu_busy_union_us": 31221.95068359375
+    },
+    {
+      "ts": 1651354277430.091,
+      "end": 1651354338447.423,
+      "duration_us": 61017.332,
+      "phase": "mixed",
+      "context_requests": 2,
+      "context_tokens": 349,
+      "generation_requests": 61,
+      "generation_tokens": 61,
+      "pid": 1852029,
+      "tid": 1852029,
+      "kernel_count": 1763,
+      "kernel_us": 57483.541999999994,
+      "gpu_busy_union_us": 57451.39013671875
+    },
+    {
+      "ts": 1651354346507.453,
+      "end": 1651354350499.648,
+      "duration_us": 3992.195,
+      "phase": "decode_only",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 63,
+      "generation_tokens": 63,
+      "pid": 1852029,
+      "tid": 1852029,
+      "kernel_count": 1508,
+      "kernel_us": 32815.27699999994,
+      "gpu_busy_union_us": 29822.437255859375
+    },
+    {
+      "ts": 1651354377579.838,
+      "end": 1651354383691.212,
+      "duration_us": 6111.374,
+      "phase": "decode_only",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 63,
+      "generation_tokens": 63,
+      "pid": 1852029,
+      "tid": 1852029,
+      "kernel_count": 1502,
+      "kernel_us": 31799.571999999967,
+      "gpu_busy_union_us": 28939.51513671875
+    },
+    {
+      "ts": 1651354411678.433,
+      "end": 1651354469444.999,
+      "duration_us": 57766.566,
+      "phase": "mixed",
+      "context_requests": 1,
+      "context_tokens": 157,
+      "generation_requests": 63,
+      "generation_tokens": 63,
+      "pid": 1852029,
+      "tid": 1852029,
+      "kernel_count": 1829,
+      "kernel_us": 46445.49199999993,
+      "gpu_busy_union_us": 44768.43798828125
+    },
+    {
+      "ts": 1651354474285.313,
+      "end": 1651354482768.613,
+      "duration_us": 8483.3,
+      "phase": "decode_only",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 63,
+      "generation_tokens": 63,
+      "pid": 1852029,
+      "tid": 1852029,
+      "kernel_count": 1508,
+      "kernel_us": 34494.291000000034,
+      "gpu_busy_union_us": 31662.0224609375
+    },
+    {
+      "ts": 1651354488538.71,
+      "end": 1651354494263.755,
+      "duration_us": 5725.045,
+      "phase": "decode_only",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 62,
+      "generation_tokens": 62,
+      "pid": 1852029,
+      "tid": 1852029,
+      "kernel_count": 1508,
+      "kernel_us": 33008.546999999955,
+      "gpu_busy_union_us": 30105.476318359375
+    },
+    {
+      "ts": 1651354523908.155,
+      "end": 1651354531237.099,
+      "duration_us": 7328.944,
+      "phase": "decode_only",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 62,
+      "generation_tokens": 62,
+      "pid": 1852029,
+      "tid": 1852029,
+      "kernel_count": 1502,
+      "kernel_us": 33430.14199999999,
+      "gpu_busy_union_us": 30679.46533203125
+    },
+    {
+      "ts": 1651354559772.963,
+      "end": 1651354568312.095,
+      "duration_us": 8539.132,
+      "phase": "decode_only",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 58,
+      "generation_tokens": 58,
+      "pid": 1852029,
+      "tid": 1852029,
+      "kernel_count": 1508,
+      "kernel_us": 32637.627000000033,
+      "gpu_busy_union_us": 29935.783447265625
+    },
+    {
+      "ts": 1651354596657.775,
+      "end": 1651354605932.6838,
+      "duration_us": 9274.909,
+      "phase": "decode_only",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 58,
+      "generation_tokens": 58,
+      "pid": 1852029,
+      "tid": 1852029,
+      "kernel_count": 1502,
+      "kernel_us": 31662.97200000002,
+      "gpu_busy_union_us": 28587.77197265625
+    },
+    {
+      "ts": 1651354628388.664,
+      "end": 1651354692599.592,
+      "duration_us": 64210.928,
+      "phase": "mixed",
+      "context_requests": 6,
+      "context_tokens": 971,
+      "generation_requests": 57,
+      "generation_tokens": 57,
+      "pid": 1852029,
+      "tid": 1852029,
+      "kernel_count": 1727,
+      "kernel_us": 101937.84800000001,
+      "gpu_busy_union_us": 101877.37426757812
+    },
+    {
+      "ts": 1651354697866.916,
+      "end": 1651354704535.384,
+      "duration_us": 6668.468,
+      "phase": "decode_only",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 63,
+      "generation_tokens": 63,
+      "pid": 1852029,
+      "tid": 1852029,
+      "kernel_count": 1508,
+      "kernel_us": 31768.05799999997,
+      "gpu_busy_union_us": 28308.787841796875
+    },
+    {
+      "ts": 1651354762638.657,
+      "end": 1651354820424.562,
+      "duration_us": 57785.905,
+      "phase": "mixed",
+      "context_requests": 1,
+      "context_tokens": 213,
+      "generation_requests": 63,
+      "generation_tokens": 63,
+      "pid": 1852029,
+      "tid": 1852029,
+      "kernel_count": 1762,
+      "kernel_us": 52653.299999999996,
+      "gpu_busy_union_us": 52625.011962890625
+    },
+    {
+      "ts": 1651354828217.736,
+      "end": 1651354832304.7131,
+      "duration_us": 4086.977,
+      "phase": "decode_only",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 64,
+      "generation_tokens": 64,
+      "pid": 1852029,
+      "tid": 1852029,
+      "kernel_count": 1507,
+      "kernel_us": 33453.627,
+      "gpu_busy_union_us": 30413.0
+    },
+    {
+      "ts": 1651354844902.411,
+      "end": 1651354852580.462,
+      "duration_us": 7678.051,
+      "phase": "decode_only",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 62,
+      "generation_tokens": 62,
+      "pid": 1852029,
+      "tid": 1852029,
+      "kernel_count": 1508,
+      "kernel_us": 33058.90299999998,
+      "gpu_busy_union_us": 30086.59228515625
+    },
+    {
+      "ts": 1651354878836.213,
+      "end": 1651354886240.668,
+      "duration_us": 7404.455,
+      "phase": "decode_only",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 62,
+      "generation_tokens": 62,
+      "pid": 1852029,
+      "tid": 1852029,
+      "kernel_count": 1502,
+      "kernel_us": 34227.971000000005,
+      "gpu_busy_union_us": 31214.5693359375
+    },
+    {
+      "ts": 1651354911738.94,
+      "end": 1651354919771.65,
+      "duration_us": 8032.71,
+      "phase": "decode_only",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 60,
+      "generation_tokens": 60,
+      "pid": 1852029,
+      "tid": 1852029,
+      "kernel_count": 1508,
+      "kernel_us": 33176.949,
+      "gpu_busy_union_us": 30213.918212890625
+    },
+    {
+      "ts": 1651354948477.198,
+      "end": 1651354956879.477,
+      "duration_us": 8402.279,
+      "phase": "decode_only",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 59,
+      "generation_tokens": 59,
+      "pid": 1852029,
+      "tid": 1852029,
+      "kernel_count": 1508,
+      "kernel_us": 35057.471000000056,
+      "gpu_busy_union_us": 32082.20068359375
+    },
+    {
+      "ts": 1651354982851.37,
+      "end": 1651355048962.0232,
+      "duration_us": 66110.653,
+      "phase": "mixed",
+      "context_requests": 4,
+      "context_tokens": 718,
+      "generation_requests": 58,
+      "generation_tokens": 58,
+      "pid": 1852029,
+      "tid": 1852029,
+      "kernel_count": 1725,
+      "kernel_us": 86396.2529999999,
+      "gpu_busy_union_us": 86349.23681640625
+    },
+    {
+      "ts": 1651355053873.169,
+      "end": 1651355061214.4019,
+      "duration_us": 7341.233,
+      "phase": "decode_only",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 61,
+      "generation_tokens": 61,
+      "pid": 1852029,
+      "tid": 1852029,
+      "kernel_count": 1508,
+      "kernel_us": 32581.304999999993,
+      "gpu_busy_union_us": 29486.763916015625
+    },
+    {
+      "ts": 1651355118474.595,
+      "end": 1651355180162.703,
+      "duration_us": 61688.108,
+      "phase": "mixed",
+      "context_requests": 3,
+      "context_tokens": 531,
+      "generation_requests": 60,
+      "generation_tokens": 60,
+      "pid": 1852029,
+      "tid": 1852029,
+      "kernel_count": 1724,
+      "kernel_us": 70404.35899999998,
+      "gpu_busy_union_us": 70361.29125976562
+    },
+    {
+      "ts": 1651355188076.09,
+      "end": 1651355194307.687,
+      "duration_us": 6231.597,
+      "phase": "decode_only",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 62,
+      "generation_tokens": 62,
+      "pid": 1852029,
+      "tid": 1852029,
+      "kernel_count": 1508,
+      "kernel_us": 32451.2,
+      "gpu_busy_union_us": 29134.8798828125
+    },
+    {
+      "ts": 1651355225113.925,
+      "end": 1651355230848.521,
+      "duration_us": 5734.596,
+      "phase": "decode_only",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 62,
+      "generation_tokens": 62,
+      "pid": 1852029,
+      "tid": 1852029,
+      "kernel_count": 1502,
+      "kernel_us": 31660.80400000001,
+      "gpu_busy_union_us": 28509.17138671875
+    },
+    {
+      "ts": 1651355259417.916,
+      "end": 1651355317855.597,
+      "duration_us": 58437.681,
+      "phase": "mixed",
+      "context_requests": 2,
+      "context_tokens": 358,
+      "generation_requests": 61,
+      "generation_tokens": 61,
+      "pid": 1852029,
+      "tid": 1852029,
+      "kernel_count": 1763,
+      "kernel_us": 58457.77800000006,
+      "gpu_busy_union_us": 58424.69189453125
+    },
+    {
+      "ts": 1651355323371.157,
+      "end": 1651355330830.413,
+      "duration_us": 7459.256,
+      "phase": "decode_only",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 63,
+      "generation_tokens": 63,
+      "pid": 1852029,
+      "tid": 1852029,
+      "kernel_count": 1508,
+      "kernel_us": 34044.50599999993,
+      "gpu_busy_union_us": 31001.683837890625
+    },
+    {
+      "ts": 1651355349935.595,
+      "end": 1651355357834.691,
+      "duration_us": 7899.096,
+      "phase": "decode_only",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 62,
+      "generation_tokens": 62,
+      "pid": 1852029,
+      "tid": 1852029,
+      "kernel_count": 1508,
+      "kernel_us": 33848.02699999997,
+      "gpu_busy_union_us": 30993.3125
+    },
+    {
+      "ts": 1651355384943.182,
+      "end": 1651355447820.398,
+      "duration_us": 62877.216,
+      "phase": "mixed",
+      "context_requests": 2,
+      "context_tokens": 328,
+      "generation_requests": 61,
+      "generation_tokens": 61,
+      "pid": 1852029,
+      "tid": 1852029,
+      "kernel_count": 1763,
+      "kernel_us": 58909.31199999992,
+      "gpu_busy_union_us": 58871.310302734375
+    },
+    {
+      "ts": 1651355453369.749,
+      "end": 1651355460741.823,
+      "duration_us": 7372.074,
+      "phase": "decode_only",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 60,
+      "generation_tokens": 60,
+      "pid": 1852029,
+      "tid": 1852029,
+      "kernel_count": 1508,
+      "kernel_us": 34090.44800000004,
+      "gpu_busy_union_us": 31218.27490234375
+    },
+    {
+      "ts": 1651355484865.783,
+      "end": 1651355492297.0889,
+      "duration_us": 7431.306,
+      "phase": "decode_only",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 58,
+      "generation_tokens": 58,
+      "pid": 1852029,
+      "tid": 1852029,
+      "kernel_count": 1508,
+      "kernel_us": 31759.73200000003,
+      "gpu_busy_union_us": 29027.68115234375
+    },
+    {
+      "ts": 1651355516049.73,
+      "end": 1651355522831.6199,
+      "duration_us": 6781.89,
+      "phase": "decode_only",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 57,
+      "generation_tokens": 57,
+      "pid": 1852029,
+      "tid": 1852029,
+      "kernel_count": 1508,
+      "kernel_us": 31458.679999999993,
+      "gpu_busy_union_us": 28432.267822265625
+    },
+    {
+      "ts": 1651355548193.58,
+      "end": 1651355614080.3672,
+      "duration_us": 65886.787,
+      "phase": "mixed",
+      "context_requests": 7,
+      "context_tokens": 1299,
+      "generation_requests": 56,
+      "generation_tokens": 56,
+      "pid": 1852029,
+      "tid": 1852029,
+      "kernel_count": 1728,
+      "kernel_us": 122054.44000000003,
+      "gpu_busy_union_us": 121988.2607421875
+    },
+    {
+      "ts": 1651355621768.998,
+      "end": 1651355627790.891,
+      "duration_us": 6021.893,
+      "phase": "decode_only",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 63,
+      "generation_tokens": 63,
+      "pid": 1852029,
+      "tid": 1852029,
+      "kernel_count": 1508,
+      "kernel_us": 31605.82300000002,
+      "gpu_busy_union_us": 28228.43115234375
+    },
+    {
+      "ts": 1651355702388.373,
+      "end": 1651355762890.023,
+      "duration_us": 60501.65,
+      "phase": "mixed",
+      "context_requests": 1,
+      "context_tokens": 211,
+      "generation_requests": 63,
+      "generation_tokens": 63,
+      "pid": 1852029,
+      "tid": 1852029,
+      "kernel_count": 1762,
+      "kernel_us": 52074.90700000004,
+      "gpu_busy_union_us": 52044.84765625
+    },
+    {
+      "ts": 1651355771488.456,
+      "end": 1651355776615.0972,
+      "duration_us": 5126.641,
+      "phase": "decode_only",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 64,
+      "generation_tokens": 64,
+      "pid": 1852029,
+      "tid": 1852029,
+      "kernel_count": 1507,
+      "kernel_us": 35246.83800000005,
+      "gpu_busy_union_us": 32398.014892578125
+    },
+    {
+      "ts": 1651355783399.008,
+      "end": 1651355789592.084,
+      "duration_us": 6193.076,
+      "phase": "decode_only",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 64,
+      "generation_tokens": 64,
+      "pid": 1852029,
+      "tid": 1852029,
+      "kernel_count": 1501,
+      "kernel_us": 32378.254999999976,
+      "gpu_busy_union_us": 29372.78515625
+    },
+    {
+      "ts": 1651355823661.749,
+      "end": 1651355827102.68,
+      "duration_us": 3440.931,
+      "phase": "decode_only",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 64,
+      "generation_tokens": 64,
+      "pid": 1852029,
+      "tid": 1852029,
+      "kernel_count": 1501,
+      "kernel_us": 31063.613000000038,
+      "gpu_busy_union_us": 27718.87646484375
+    },
+    {
+      "ts": 1651355851210.77,
+      "end": 1651355857075.889,
+      "duration_us": 5865.119,
+      "phase": "decode_only",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 64,
+      "generation_tokens": 64,
+      "pid": 1852029,
+      "tid": 1852029,
+      "kernel_count": 1501,
+      "kernel_us": 32712.708999999908,
+      "gpu_busy_union_us": 29618.288818359375
+    },
+    {
+      "ts": 1651355882510.99,
+      "end": 1651355890408.996,
+      "duration_us": 7898.006,
+      "phase": "decode_only",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 64,
+      "generation_tokens": 64,
+      "pid": 1852029,
+      "tid": 1852029,
+      "kernel_count": 1501,
+      "kernel_us": 35224.332,
+      "gpu_busy_union_us": 32296.860595703125
+    },
+    {
+      "ts": 1651355914257.68,
+      "end": 1651355922273.3188,
+      "duration_us": 8015.639,
+      "phase": "decode_only",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 63,
+      "generation_tokens": 63,
+      "pid": 1852029,
+      "tid": 1852029,
+      "kernel_count": 1508,
+      "kernel_us": 35392.197999999946,
+      "gpu_busy_union_us": 32624.37841796875
+    },
+    {
+      "ts": 1651355952622.916,
+      "end": 1651355959168.381,
+      "duration_us": 6545.465,
+      "phase": "decode_only",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 63,
+      "generation_tokens": 63,
+      "pid": 1852029,
+      "tid": 1852029,
+      "kernel_count": 1502,
+      "kernel_us": 31784.841999999993,
+      "gpu_busy_union_us": 28646.4287109375
+    },
+    {
+      "ts": 1651355988764.26,
+      "end": 1651355995728.315,
+      "duration_us": 6964.055,
+      "phase": "decode_only",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 63,
+      "generation_tokens": 63,
+      "pid": 1852029,
+      "tid": 1852029,
+      "kernel_count": 1502,
+      "kernel_us": 32352.541000000085,
+      "gpu_busy_union_us": 29368.06494140625
+    },
+    {
+      "ts": 1651356019980.358,
+      "end": 1651356026755.428,
+      "duration_us": 6775.07,
+      "phase": "decode_only",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 62,
+      "generation_tokens": 62,
+      "pid": 1852029,
+      "tid": 1852029,
+      "kernel_count": 1508,
+      "kernel_us": 33724.80500000005,
+      "gpu_busy_union_us": 30778.516357421875
+    },
+    {
+      "ts": 1651356046402.302,
+      "end": 1651356051910.873,
+      "duration_us": 5508.571,
+      "phase": "decode_only",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 61,
+      "generation_tokens": 61,
+      "pid": 1852029,
+      "tid": 1852029,
+      "kernel_count": 1508,
+      "kernel_us": 30378.18100000002,
+      "gpu_busy_union_us": 27399.96337890625
+    },
+    {
+      "ts": 1651356080137.96,
+      "end": 1651356139889.842,
+      "duration_us": 59751.882,
+      "phase": "mixed",
+      "context_requests": 2,
+      "context_tokens": 417,
+      "generation_requests": 61,
+      "generation_tokens": 61,
+      "pid": 1852029,
+      "tid": 1852029,
+      "kernel_count": 1763,
+      "kernel_us": 63860.66099999993,
+      "gpu_busy_union_us": 63822.9521484375
+    },
+    {
+      "ts": 1651356146886.997,
+      "end": 1651356153270.228,
+      "duration_us": 6383.231,
+      "phase": "decode_only",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 63,
+      "generation_tokens": 63,
+      "pid": 1852029,
+      "tid": 1852029,
+      "kernel_count": 1508,
+      "kernel_us": 34163.43600000002,
+      "gpu_busy_union_us": 31072.943603515625
+    },
+    {
+      "ts": 1651356178047.783,
+      "end": 1651356185045.869,
+      "duration_us": 6998.086,
+      "phase": "decode_only",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 62,
+      "generation_tokens": 62,
+      "pid": 1852029,
+      "tid": 1852029,
+      "kernel_count": 1508,
+      "kernel_us": 32642.973000000038,
+      "gpu_busy_union_us": 29640.067138671875
+    },
+    {
+      "ts": 1651356209208.76,
+      "end": 1651356266050.103,
+      "duration_us": 56841.343,
+      "phase": "mixed",
+      "context_requests": 1,
+      "context_tokens": 199,
+      "generation_requests": 62,
+      "generation_tokens": 62,
+      "pid": 1852029,
+      "tid": 1852029,
+      "kernel_count": 1762,
+      "kernel_us": 53233.71900000005,
+      "gpu_busy_union_us": 53202.226318359375
+    },
+    {
+      "ts": 1651356270817.695,
+      "end": 1651356277561.465,
+      "duration_us": 6743.77,
+      "phase": "decode_only",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 63,
+      "generation_tokens": 63,
+      "pid": 1852029,
+      "tid": 1852029,
+      "kernel_count": 1508,
+      "kernel_us": 33909.84099999997,
+      "gpu_busy_union_us": 30988.755615234375
+    },
+    {
+      "ts": 1651356302117.395,
+      "end": 1651356306249.513,
+      "duration_us": 4132.118,
+      "phase": "decode_only",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 63,
+      "generation_tokens": 63,
+      "pid": 1852029,
+      "tid": 1852029,
+      "kernel_count": 1502,
+      "kernel_us": 33690.161999999946,
+      "gpu_busy_union_us": 30502.345458984375
+    },
+    {
+      "ts": 1651356338240.689,
+      "end": 1651356395529.332,
+      "duration_us": 57288.643,
+      "phase": "mixed",
+      "context_requests": 1,
+      "context_tokens": 167,
+      "generation_requests": 62,
+      "generation_tokens": 62,
+      "pid": 1852029,
+      "tid": 1852029,
+      "kernel_count": 1829,
+      "kernel_us": 48925.666999999965,
+      "gpu_busy_union_us": 46876.43115234375
+    },
+    {
+      "ts": 1651356402666.131,
+      "end": 1651356408220.312,
+      "duration_us": 5554.181,
+      "phase": "decode_only",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 62,
+      "generation_tokens": 62,
+      "pid": 1852029,
+      "tid": 1852029,
+      "kernel_count": 1508,
+      "kernel_us": 34536.520999999964,
+      "gpu_busy_union_us": 31503.469970703125
+    },
+    {
+      "ts": 1651356418753.701,
+      "end": 1651356424117.988,
+      "duration_us": 5364.287,
+      "phase": "decode_only",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 61,
+      "generation_tokens": 61,
+      "pid": 1852029,
+      "tid": 1852029,
+      "kernel_count": 1508,
+      "kernel_us": 31036.874000000014,
+      "gpu_busy_union_us": 27791.041015625
+    },
+    {
+      "ts": 1651356456035.702,
+      "end": 1651356461700.856,
+      "duration_us": 5665.154,
+      "phase": "decode_only",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 61,
+      "generation_tokens": 61,
+      "pid": 1852029,
+      "tid": 1852029,
+      "kernel_count": 1502,
+      "kernel_us": 33174.80900000003,
+      "gpu_busy_union_us": 30305.95703125
+    },
+    {
+      "ts": 1651356483499.321,
+      "end": 1651356546999.722,
+      "duration_us": 63500.401,
+      "phase": "mixed",
+      "context_requests": 3,
+      "context_tokens": 533,
+      "generation_requests": 60,
+      "generation_tokens": 60,
+      "pid": 1852029,
+      "tid": 1852029,
+      "kernel_count": 1724,
+      "kernel_us": 75468.44899999995,
+      "gpu_busy_union_us": 75420.13354492188
+    },
+    {
+      "ts": 1651356551811.635,
+      "end": 1651356558129.575,
+      "duration_us": 6317.94,
+      "phase": "decode_only",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 62,
+      "generation_tokens": 62,
+      "pid": 1852029,
+      "tid": 1852029,
+      "kernel_count": 1508,
+      "kernel_us": 34812.66299999996,
+      "gpu_busy_union_us": 31778.846435546875
+    },
+    {
+      "ts": 1651356598139.14,
+      "end": 1651356605518.615,
+      "duration_us": 7379.475,
+      "phase": "decode_only",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 61,
+      "generation_tokens": 61,
+      "pid": 1852029,
+      "tid": 1852029,
+      "kernel_count": 1508,
+      "kernel_us": 31615.317000000003,
+      "gpu_busy_union_us": 28450.25830078125
+    },
+    {
+      "ts": 1651356637028.379,
+      "end": 1651356694733.203,
+      "duration_us": 57704.824,
+      "phase": "mixed",
+      "context_requests": 2,
+      "context_tokens": 411,
+      "generation_requests": 61,
+      "generation_tokens": 61,
+      "pid": 1852029,
+      "tid": 1852029,
+      "kernel_count": 1763,
+      "kernel_us": 63538.71500000006,
+      "gpu_busy_union_us": 63496.146484375
+    },
+    {
+      "ts": 1651356699503.145,
+      "end": 1651356707278.599,
+      "duration_us": 7775.454,
+      "phase": "decode_only",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 63,
+      "generation_tokens": 63,
+      "pid": 1852029,
+      "tid": 1852029,
+      "kernel_count": 1508,
+      "kernel_us": 36544.787999999935,
+      "gpu_busy_union_us": 33638.14990234375
+    },
+    {
+      "ts": 1651356733916.759,
+      "end": 1651356740155.186,
+      "duration_us": 6238.427,
+      "phase": "decode_only",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 63,
+      "generation_tokens": 63,
+      "pid": 1852029,
+      "tid": 1852029,
+      "kernel_count": 1502,
+      "kernel_us": 34438.87499999994,
+      "gpu_busy_union_us": 31468.401611328125
+    },
+    {
+      "ts": 1651356772931.131,
+      "end": 1651356831951.7852,
+      "duration_us": 59020.654,
+      "phase": "mixed",
+      "context_requests": 1,
+      "context_tokens": 166,
+      "generation_requests": 62,
+      "generation_tokens": 62,
+      "pid": 1852029,
+      "tid": 1852029,
+      "kernel_count": 1829,
+      "kernel_us": 48219.071999999964,
+      "gpu_busy_union_us": 46242.1572265625
+    },
+    {
+      "ts": 1651356836830.7,
+      "end": 1651356843385.4949,
+      "duration_us": 6554.795,
+      "phase": "decode_only",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 62,
+      "generation_tokens": 62,
+      "pid": 1852029,
+      "tid": 1852029,
+      "kernel_count": 1508,
+      "kernel_us": 35218.80199999999,
+      "gpu_busy_union_us": 32240.50927734375
+    },
+    {
+      "ts": 1651356857240.973,
+      "end": 1651356865539.3489,
+      "duration_us": 8298.376,
+      "phase": "decode_only",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 61,
+      "generation_tokens": 61,
+      "pid": 1852029,
+      "tid": 1852029,
+      "kernel_count": 1508,
+      "kernel_us": 33153.04599999994,
+      "gpu_busy_union_us": 29856.00146484375
+    },
+    {
+      "ts": 1651356897030.343,
+      "end": 1651356903283.321,
+      "duration_us": 6252.978,
+      "phase": "decode_only",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 61,
+      "generation_tokens": 61,
+      "pid": 1852029,
+      "tid": 1852029,
+      "kernel_count": 1502,
+      "kernel_us": 33783.86999999996,
+      "gpu_busy_union_us": 30586.361083984375
+    },
+    {
+      "ts": 1651356927393.821,
+      "end": 1651356987230.2441,
+      "duration_us": 59836.423,
+      "phase": "mixed",
+      "context_requests": 3,
+      "context_tokens": 459,
+      "generation_requests": 61,
+      "generation_tokens": 61,
+      "pid": 1852029,
+      "tid": 1852029,
+      "kernel_count": 1724,
+      "kernel_us": 73929.20499999999,
+      "gpu_busy_union_us": 73887.89770507812
+    },
+    {
+      "ts": 1651356995141.231,
+      "end": 1651357000028.807,
+      "duration_us": 4887.576,
+      "phase": "decode_only",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 63,
+      "generation_tokens": 63,
+      "pid": 1852029,
+      "tid": 1852029,
+      "kernel_count": 1508,
+      "kernel_us": 33464.94700000001,
+      "gpu_busy_union_us": 30117.592529296875
+    },
+    {
+      "ts": 1651357036091.789,
+      "end": 1651357042485.9001,
+      "duration_us": 6394.111,
+      "phase": "decode_only",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 62,
+      "generation_tokens": 62,
+      "pid": 1852029,
+      "tid": 1852029,
+      "kernel_count": 1508,
+      "kernel_us": 34198.36600000003,
+      "gpu_busy_union_us": 31031.782958984375
+    },
+    {
+      "ts": 1651357068353.781,
+      "end": 1651357072634.363,
+      "duration_us": 4280.582,
+      "phase": "decode_only",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 62,
+      "generation_tokens": 62,
+      "pid": 1852029,
+      "tid": 1852029,
+      "kernel_count": 1502,
+      "kernel_us": 31279.04199999996,
+      "gpu_busy_union_us": 28017.79736328125
+    },
+    {
+      "ts": 1651357099665.231,
+      "end": 1651357105180.1418,
+      "duration_us": 5514.911,
+      "phase": "decode_only",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 62,
+      "generation_tokens": 62,
+      "pid": 1852029,
+      "tid": 1852029,
+      "kernel_count": 1502,
+      "kernel_us": 34482.60999999998,
+      "gpu_busy_union_us": 31428.566162109375
+    },
+    {
+      "ts": 1651357130385.237,
+      "end": 1651357191031.07,
+      "duration_us": 60645.833,
+      "phase": "mixed",
+      "context_requests": 2,
+      "context_tokens": 377,
+      "generation_requests": 61,
+      "generation_tokens": 61,
+      "pid": 1852029,
+      "tid": 1852029,
+      "kernel_count": 1763,
+      "kernel_us": 66148.39599999994,
+      "gpu_busy_union_us": 66114.73046875
+    },
+    {
+      "ts": 1651357195891.945,
+      "end": 1651357203256.179,
+      "duration_us": 7364.234,
+      "phase": "decode_only",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 63,
+      "generation_tokens": 63,
+      "pid": 1852029,
+      "tid": 1852029,
+      "kernel_count": 1508,
+      "kernel_us": 35292.28800000001,
+      "gpu_busy_union_us": 31977.88427734375
+    },
+    {
+      "ts": 1651357236486.534,
+      "end": 1651357242594.5688,
+      "duration_us": 6108.035,
+      "phase": "decode_only",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 63,
+      "generation_tokens": 63,
+      "pid": 1852029,
+      "tid": 1852029,
+      "kernel_count": 1502,
+      "kernel_us": 34463.956999999966,
+      "gpu_busy_union_us": 31251.156005859375
+    },
+    {
+      "ts": 1651357269686.029,
+      "end": 1651357333572.969,
+      "duration_us": 63886.94,
+      "phase": "mixed",
+      "context_requests": 1,
+      "context_tokens": 212,
+      "generation_requests": 62,
+      "generation_tokens": 62,
+      "pid": 1852029,
+      "tid": 1852029,
+      "kernel_count": 1762,
+      "kernel_us": 55010.69400000001,
+      "gpu_busy_union_us": 54979.238525390625
+    },
+    {
+      "ts": 1651357338682.489,
+      "end": 1651357346222.038,
+      "duration_us": 7539.549,
+      "phase": "decode_only",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 62,
+      "generation_tokens": 62,
+      "pid": 1852029,
+      "tid": 1852029,
+      "kernel_count": 1508,
+      "kernel_us": 35684.077000000056,
+      "gpu_busy_union_us": 32379.80078125
+    },
+    {
+      "ts": 1651357358907.787,
+      "end": 1651357365646.697,
+      "duration_us": 6738.91,
+      "phase": "decode_only",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 62,
+      "generation_tokens": 62,
+      "pid": 1852029,
+      "tid": 1852029,
+      "kernel_count": 1502,
+      "kernel_us": 34110.21399999999,
+      "gpu_busy_union_us": 30961.964599609375
+    },
+    {
+      "ts": 1651357396993.917,
+      "end": 1651357405149.35,
+      "duration_us": 8155.433,
+      "phase": "decode_only",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 61,
+      "generation_tokens": 61,
+      "pid": 1852029,
+      "tid": 1852029,
+      "kernel_count": 1508,
+      "kernel_us": 34118.86500000001,
+      "gpu_busy_union_us": 30929.168212890625
+    },
+    {
+      "ts": 1651357431232.416,
+      "end": 1651357490475.616,
+      "duration_us": 59243.2,
+      "phase": "mixed",
+      "context_requests": 3,
+      "context_tokens": 548,
+      "generation_requests": 61,
+      "generation_tokens": 61,
+      "pid": 1852029,
+      "tid": 1852029,
+      "kernel_count": 1724,
+      "kernel_us": 73838.84799999993,
+      "gpu_busy_union_us": 73795.97290039062
+    },
+    {
+      "ts": 1651357495820.183,
+      "end": 1651357502266.725,
+      "duration_us": 6446.542,
+      "phase": "decode_only",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 63,
+      "generation_tokens": 63,
+      "pid": 1852029,
+      "tid": 1852029,
+      "kernel_count": 1508,
+      "kernel_us": 35651.48499999995,
+      "gpu_busy_union_us": 32311.48828125
+    },
+    {
+      "ts": 1651357537646.591,
+      "end": 1651357544817.1802,
+      "duration_us": 7170.589,
+      "phase": "decode_only",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 63,
+      "generation_tokens": 63,
+      "pid": 1852029,
+      "tid": 1852029,
+      "kernel_count": 1502,
+      "kernel_us": 34401.23800000002,
+      "gpu_busy_union_us": 31100.698486328125
+    },
+    {
+      "ts": 1651357579161.842,
+      "end": 1651357585400.959,
+      "duration_us": 6239.117,
+      "phase": "decode_only",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 63,
+      "generation_tokens": 63,
+      "pid": 1852029,
+      "tid": 1852029,
+      "kernel_count": 1502,
+      "kernel_us": 32759.371000000036,
+      "gpu_busy_union_us": 29569.663330078125
+    },
+    {
+      "ts": 1651357612376.907,
+      "end": 1651357616557.336,
+      "duration_us": 4180.429,
+      "phase": "decode_only",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 63,
+      "generation_tokens": 63,
+      "pid": 1852029,
+      "tid": 1852029,
+      "kernel_count": 1502,
+      "kernel_us": 35354.09299999992,
+      "gpu_busy_union_us": 32362.956298828125
+    },
+    {
+      "ts": 1651357643793.419,
+      "end": 1651357703879.409,
+      "duration_us": 60085.99,
+      "phase": "mixed",
+      "context_requests": 1,
+      "context_tokens": 168,
+      "generation_requests": 62,
+      "generation_tokens": 62,
+      "pid": 1852029,
+      "tid": 1852029,
+      "kernel_count": 1829,
+      "kernel_us": 50731.28299999996,
+      "gpu_busy_union_us": 48697.791015625
+    },
+    {
+      "ts": 1651357711282.364,
+      "end": 1651357716975.629,
+      "duration_us": 5693.265,
+      "phase": "decode_only",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 60,
+      "generation_tokens": 60,
+      "pid": 1852029,
+      "tid": 1852029,
+      "kernel_count": 1508,
+      "kernel_us": 35251.61299999992,
+      "gpu_busy_union_us": 32425.73046875
+    },
+    {
+      "ts": 1651357727881.686,
+      "end": 1651357733831.257,
+      "duration_us": 5949.571,
+      "phase": "decode_only",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 60,
+      "generation_tokens": 60,
+      "pid": 1852029,
+      "tid": 1852029,
+      "kernel_count": 1502,
+      "kernel_us": 33316.663999999946,
+      "gpu_busy_union_us": 30135.711181640625
+    },
+    {
+      "ts": 1651357767095.393,
+      "end": 1651357773568.706,
+      "duration_us": 6473.313,
+      "phase": "decode_only",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 60,
+      "generation_tokens": 60,
+      "pid": 1852029,
+      "tid": 1852029,
+      "kernel_count": 1502,
+      "kernel_us": 31092.176000000036,
+      "gpu_busy_union_us": 27910.23974609375
+    },
+    {
+      "ts": 1651357800030.731,
+      "end": 1651357859515.737,
+      "duration_us": 59485.006,
+      "phase": "mixed",
+      "context_requests": 4,
+      "context_tokens": 821,
+      "generation_requests": 60,
+      "generation_tokens": 60,
+      "pid": 1852029,
+      "tid": 1852029,
+      "kernel_count": 1725,
+      "kernel_us": 96172.43200000007,
+      "gpu_busy_union_us": 96121.69873046875
+    },
+    {
+      "ts": 1651357864537.815,
+      "end": 1651357871830.7979,
+      "duration_us": 7292.983,
+      "phase": "decode_only",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 63,
+      "generation_tokens": 63,
+      "pid": 1852029,
+      "tid": 1852029,
+      "kernel_count": 1508,
+      "kernel_us": 36705.55299999999,
+      "gpu_busy_union_us": 33333.246337890625
+    },
+    {
+      "ts": 1651357930856.573,
+      "end": 1651357936935.896,
+      "duration_us": 6079.323,
+      "phase": "decode_only",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 63,
+      "generation_tokens": 63,
+      "pid": 1852029,
+      "tid": 1852029,
+      "kernel_count": 1502,
+      "kernel_us": 35992.961000000025,
+      "gpu_busy_union_us": 32714.023193359375
+    },
+    {
+      "ts": 1651357967547.35,
+      "end": 1651357972932.787,
+      "duration_us": 5385.437,
+      "phase": "decode_only",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 61,
+      "generation_tokens": 61,
+      "pid": 1852029,
+      "tid": 1852029,
+      "kernel_count": 1508,
+      "kernel_us": 32478.626000000033,
+      "gpu_busy_union_us": 29156.60791015625
+    },
+    {
+      "ts": 1651358005287.061,
+      "end": 1651358066326.064,
+      "duration_us": 61039.003,
+      "phase": "mixed",
+      "context_requests": 1,
+      "context_tokens": 171,
+      "generation_requests": 61,
+      "generation_tokens": 61,
+      "pid": 1852029,
+      "tid": 1852029,
+      "kernel_count": 1829,
+      "kernel_us": 50071.50199999985,
+      "gpu_busy_union_us": 47892.09619140625
+    },
+    {
+      "ts": 1651358074244.641,
+      "end": 1651358083398.0771,
+      "duration_us": 9153.436,
+      "phase": "decode_only",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 62,
+      "generation_tokens": 62,
+      "pid": 1852029,
+      "tid": 1852029,
+      "kernel_count": 1508,
+      "kernel_us": 36919.19,
+      "gpu_busy_union_us": 33969.19873046875
+    },
+    {
+      "ts": 1651358089974.583,
+      "end": 1651358097065.8801,
+      "duration_us": 7091.297,
+      "phase": "decode_only",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 61,
+      "generation_tokens": 61,
+      "pid": 1852029,
+      "tid": 1852029,
+      "kernel_count": 1508,
+      "kernel_us": 34514.17799999999,
+      "gpu_busy_union_us": 31473.23779296875
+    },
+    {
+      "ts": 1651358134927.595,
+      "end": 1651358198582.3289,
+      "duration_us": 63654.734,
+      "phase": "mixed",
+      "context_requests": 2,
+      "context_tokens": 373,
+      "generation_requests": 60,
+      "generation_tokens": 60,
+      "pid": 1852029,
+      "tid": 1852029,
+      "kernel_count": 1763,
+      "kernel_us": 64848.18600000002,
+      "gpu_busy_union_us": 64812.087890625
+    },
+    {
+      "ts": 1651358203299.991,
+      "end": 1651358210806.868,
+      "duration_us": 7506.877,
+      "phase": "decode_only",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 60,
+      "generation_tokens": 60,
+      "pid": 1852029,
+      "tid": 1852029,
+      "kernel_count": 1508,
+      "kernel_us": 35645.71899999995,
+      "gpu_busy_union_us": 32290.93603515625
+    },
+    {
+      "ts": 1651358238270.037,
+      "end": 1651358246432.83,
+      "duration_us": 8162.793,
+      "phase": "decode_only",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 58,
+      "generation_tokens": 58,
+      "pid": 1852029,
+      "tid": 1852029,
+      "kernel_count": 1508,
+      "kernel_us": 32901.38200000003,
+      "gpu_busy_union_us": 29537.160400390625
+    },
+    {
+      "ts": 1651358276432.569,
+      "end": 1651358337971.193,
+      "duration_us": 61538.624,
+      "phase": "mixed",
+      "context_requests": 5,
+      "context_tokens": 921,
+      "generation_requests": 58,
+      "generation_tokens": 58,
+      "pid": 1852029,
+      "tid": 1852029,
+      "kernel_count": 1726,
+      "kernel_us": 101486.54100000027,
+      "gpu_busy_union_us": 101431.05639648438
+    },
+    {
+      "ts": 1651358344982.709,
+      "end": 1651358351139.284,
+      "duration_us": 6156.575,
+      "phase": "decode_only",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 63,
+      "generation_tokens": 63,
+      "pid": 1852029,
+      "tid": 1852029,
+      "kernel_count": 1508,
+      "kernel_us": 34604.42999999998,
+      "gpu_busy_union_us": 31177.993408203125
+    },
+    {
+      "ts": 1651358414804.098,
+      "end": 1651358474946.39,
+      "duration_us": 60142.292,
+      "phase": "mixed",
+      "context_requests": 1,
+      "context_tokens": 201,
+      "generation_requests": 62,
+      "generation_tokens": 62,
+      "pid": 1852029,
+      "tid": 1852029,
+      "kernel_count": 1762,
+      "kernel_us": 56481.46999999996,
+      "gpu_busy_union_us": 56447.16015625
+    },
+    {
+      "ts": 1651358480475.68,
+      "end": 1651358487506.146,
+      "duration_us": 7030.466,
+      "phase": "decode_only",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 63,
+      "generation_tokens": 63,
+      "pid": 1852029,
+      "tid": 1852029,
+      "kernel_count": 1508,
+      "kernel_us": 35662.11999999995,
+      "gpu_busy_union_us": 32698.393310546875
+    },
+    {
+      "ts": 1651358507792.496,
+      "end": 1651358514384.092,
+      "duration_us": 6591.596,
+      "phase": "decode_only",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 63,
+      "generation_tokens": 63,
+      "pid": 1852029,
+      "tid": 1852029,
+      "kernel_count": 1502,
+      "kernel_us": 35050.780000000035,
+      "gpu_busy_union_us": 31959.6669921875
+    },
+    {
+      "ts": 1651358543290.115,
+      "end": 1651358549856.73,
+      "duration_us": 6566.615,
+      "phase": "decode_only",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 63,
+      "generation_tokens": 63,
+      "pid": 1852029,
+      "tid": 1852029,
+      "kernel_count": 1502,
+      "kernel_us": 33980.530999999995,
+      "gpu_busy_union_us": 30897.1220703125
+    },
+    {
+      "ts": 1651358580391.521,
+      "end": 1651358642878.298,
+      "duration_us": 62486.777,
+      "phase": "mixed",
+      "context_requests": 1,
+      "context_tokens": 197,
+      "generation_requests": 60,
+      "generation_tokens": 60,
+      "pid": 1852029,
+      "tid": 1852029,
+      "kernel_count": 1762,
+      "kernel_us": 54904.80600000003,
+      "gpu_busy_union_us": 54876.262939453125
+    },
+    {
+      "ts": 1651358647649.231,
+      "end": 1651358655433.625,
+      "duration_us": 7784.394,
+      "phase": "decode_only",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 61,
+      "generation_tokens": 61,
+      "pid": 1852029,
+      "tid": 1852029,
+      "kernel_count": 1508,
+      "kernel_us": 36471.40299999998,
+      "gpu_busy_union_us": 33476.33154296875
+    },
+    {
+      "ts": 1651358672242.922,
+      "end": 1651358676967.4731,
+      "duration_us": 4724.551,
+      "phase": "decode_only",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 61,
+      "generation_tokens": 61,
+      "pid": 1852029,
+      "tid": 1852029,
+      "kernel_count": 1502,
+      "kernel_us": 33233.50499999994,
+      "gpu_busy_union_us": 29994.020263671875
+    },
+    {
+      "ts": 1651358708261.573,
+      "end": 1651358714237.174,
+      "duration_us": 5975.601,
+      "phase": "decode_only",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 61,
+      "generation_tokens": 61,
+      "pid": 1852029,
+      "tid": 1852029,
+      "kernel_count": 1502,
+      "kernel_us": 31718.684000000023,
+      "gpu_busy_union_us": 28362.4560546875
+    },
+    {
+      "ts": 1651358740768.291,
+      "end": 1651358801035.835,
+      "duration_us": 60267.544,
+      "phase": "mixed",
+      "context_requests": 3,
+      "context_tokens": 490,
+      "generation_requests": 61,
+      "generation_tokens": 61,
+      "pid": 1852029,
+      "tid": 1852029,
+      "kernel_count": 1724,
+      "kernel_us": 72513.893,
+      "gpu_busy_union_us": 72471.58520507812
+    },
+    {
+      "ts": 1651358806020.023,
+      "end": 1651358813213.343,
+      "duration_us": 7193.32,
+      "phase": "decode_only",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 63,
+      "generation_tokens": 63,
+      "pid": 1852029,
+      "tid": 1852029,
+      "kernel_count": 1508,
+      "kernel_us": 35033.611999999936,
+      "gpu_busy_union_us": 31556.9248046875
+    },
+    {
+      "ts": 1651358846331.956,
+      "end": 1651358852799.718,
+      "duration_us": 6467.762,
+      "phase": "decode_only",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 63,
+      "generation_tokens": 63,
+      "pid": 1852029,
+      "tid": 1852029,
+      "kernel_count": 1502,
+      "kernel_us": 33374.04199999996,
+      "gpu_busy_union_us": 30104.0458984375
+    },
+    {
+      "ts": 1651358880464.652,
+      "end": 1651358886835.343,
+      "duration_us": 6370.691,
+      "phase": "decode_only",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 63,
+      "generation_tokens": 63,
+      "pid": 1852029,
+      "tid": 1852029,
+      "kernel_count": 1502,
+      "kernel_us": 31540.083000000028,
+      "gpu_busy_union_us": 28259.11865234375
+    },
+    {
+      "ts": 1651358912724.454,
+      "end": 1651358920263.693,
+      "duration_us": 7539.239,
+      "phase": "decode_only",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 63,
+      "generation_tokens": 63,
+      "pid": 1852029,
+      "tid": 1852029,
+      "kernel_count": 1502,
+      "kernel_us": 34810.81600000004,
+      "gpu_busy_union_us": 31809.5263671875
+    },
+    {
+      "ts": 1651358939188.06,
+      "end": 1651358999048.134,
+      "duration_us": 59860.074,
+      "phase": "mixed",
+      "context_requests": 1,
+      "context_tokens": 195,
+      "generation_requests": 63,
+      "generation_tokens": 63,
+      "pid": 1852029,
+      "tid": 1852029,
+      "kernel_count": 1762,
+      "kernel_us": 58231.56299999992,
+      "gpu_busy_union_us": 58199.726806640625
+    },
+    {
+      "ts": 1651359006301.496,
+      "end": 1651359014117.3,
+      "duration_us": 7815.804,
+      "phase": "decode_only",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 64,
+      "generation_tokens": 64,
+      "pid": 1852029,
+      "tid": 1852029,
+      "kernel_count": 1507,
+      "kernel_us": 34530.094999999994,
+      "gpu_busy_union_us": 31323.899658203125
+    },
+    {
+      "ts": 1651359043641.028,
+      "end": 1651359050441.769,
+      "duration_us": 6800.741,
+      "phase": "decode_only",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 64,
+      "generation_tokens": 64,
+      "pid": 1852029,
+      "tid": 1852029,
+      "kernel_count": 1501,
+      "kernel_us": 34635.54899999998,
+      "gpu_busy_union_us": 31728.817138671875
+    },
+    {
+      "ts": 1651359076679.839,
+      "end": 1651359081782.029,
+      "duration_us": 5102.19,
+      "phase": "decode_only",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 64,
+      "generation_tokens": 64,
+      "pid": 1852029,
+      "tid": 1852029,
+      "kernel_count": 1501,
+      "kernel_us": 33655.14800000004,
+      "gpu_busy_union_us": 30459.25146484375
+    },
+    {
+      "ts": 1651359111595.124,
+      "end": 1651359118432.675,
+      "duration_us": 6837.551,
+      "phase": "decode_only",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 63,
+      "generation_tokens": 63,
+      "pid": 1852029,
+      "tid": 1852029,
+      "kernel_count": 1508,
+      "kernel_us": 33255.45200000001,
+      "gpu_busy_union_us": 30120.83544921875
+    },
+    {
+      "ts": 1651359143347.224,
+      "end": 1651359150305.509,
+      "duration_us": 6958.285,
+      "phase": "decode_only",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 62,
+      "generation_tokens": 62,
+      "pid": 1852029,
+      "tid": 1852029,
+      "kernel_count": 1508,
+      "kernel_us": 32782.59400000006,
+      "gpu_busy_union_us": 29554.343017578125
+    },
+    {
+      "ts": 1651359175408.652,
+      "end": 1651359181209.4292,
+      "duration_us": 5800.777,
+      "phase": "decode_only",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 62,
+      "generation_tokens": 62,
+      "pid": 1852029,
+      "tid": 1852029,
+      "kernel_count": 1502,
+      "kernel_us": 32864.47700000002,
+      "gpu_busy_union_us": 29674.81103515625
+    },
+    {
+      "ts": 1651359204371.826,
+      "end": 1651359210665.125,
+      "duration_us": 6293.299,
+      "phase": "decode_only",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 62,
+      "generation_tokens": 62,
+      "pid": 1852029,
+      "tid": 1852029,
+      "kernel_count": 1502,
+      "kernel_us": 34218.96299999999,
+      "gpu_busy_union_us": 30961.0361328125
+    },
+    {
+      "ts": 1651359234892.577,
+      "end": 1651359243001.869,
+      "duration_us": 8109.292,
+      "phase": "decode_only",
+      "context_requests": 0,
+      "context_tokens": 0,
+      "generation_requests": 59,
+      "generation_tokens": 59,
+      "pid": 1852029,
+      "tid": 1852029,
+      "kernel_count": 1508,
+      "kernel_us": 34890.31400000003,
+      "gpu_busy_union_us": 31722.37841796875
+    },
+    {
+      "ts": 1651359270817.006,
+      "end": 1651359337261.7961,
+      "duration_us": 66444.79,
+      "phase": "mixed",
+      "context_requests": 2,
+      "context_tokens": 367,
+      "generation_requests": 58,
+      "generation_tokens": 58,
+      "pid": 1852029,
+      "tid": 1852029,
+      "kernel_count": 1763,
+      "kernel_us": 67046.85600000012,
+      "gpu_busy_union_us": 67007.7119140625
+    }
+  ],
+  "limitations": [
+    "CPU execute scope duration is dispatch time, not GPU latency; async work can outlive scope.",
+    "GPU sum double counts concurrent kernels; union is separate.",
+    "Phase comes only from native SchedulerOutput annotation. CUDA correlation required for phase-specific attribution.",
+    "Kernel-name category is heuristic and cannot separate backbone from codebook tower when names coincide.",
+    "Sampling outside execute scopes remains unattributed.",
+    "Profiler timings and counters are not B1 throughput measurements."
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "phase_samples_adequate": true,
+  "all_stages_have_cuda_kernels": true,
+  "stage0_graph_launches": 1050,
+  "requires_manual_graph_node_and_drop_audit": true,
+  "trace_window_note": "Each stage independently stops at max_iterations or HTTP stop, so stage windows may differ."
+}

@@ -1,0 +1,50 @@
+[
+  {
+    "relative_path_under_private_profile_root": "c16/attempt1/traces/20261020-225106_stage0_rank0_1792507866/trace_rank0.json.gz",
+    "bytes": 32839508,
+    "sha256": "28111d2b1c9a1d7de6b13579fb87f6f91fc25a8926c69c0c5a4c6c4f1b0f45e1",
+    "published": false
+  },
+  {
+    "relative_path_under_private_profile_root": "c16/attempt1/traces/20261020-225106_stage1_rank0_1792507866/trace_rank0.json.gz",
+    "bytes": 3846625,
+    "sha256": "78529bf23228d9c39d8ad848cfe51ce63962a1c0a008cf8c1680d386ca7e6a0d",
+    "published": false
+  },
+  {
+    "relative_path_under_private_profile_root": "c64/attempt1/traces/20261020-225940_stage0_rank0_1792508380/trace_rank0.json.gz",
+    "bytes": 20414250,
+    "sha256": "d4407ae1fb16b071359c3b9bbde85e502d783dffdf0f8a0aa924dd182a3b016f",
+    "published": false
+  },
+  {
+    "relative_path_under_private_profile_root": "c64/attempt1/traces/20261020-225940_stage1_rank0_1792508380/trace_rank0.json.gz",
+    "bytes": 5120705,
+    "sha256": "2e35d46e4dd4b84b8d70b3c14ee99f7916d64d0fd303a8db98f992cc7d7f7c2c",
+    "published": false
+  },
+  {
+    "relative_path_under_private_profile_root": "c8/attempt1/traces/20261020-223006_stage0_rank0_1792506606/trace_rank0.json.gz",
+    "bytes": 32991479,
+    "sha256": "f67262ce8cc7f485a452524808fc72106b974a3cb3b5b96c122113788b08edec",
+    "published": false
+  },
+  {
+    "relative_path_under_private_profile_root": "c8/attempt1/traces/20261020-223006_stage1_rank0_1792506606/trace_rank0.json.gz",
+    "bytes": 290904,
+    "sha256": "9a393cef8200a328a27fd7e9b5881060531e851f0058dd1ba06b266f3d13f8d3",
+    "published": false
+  },
+  {
+    "relative_path_under_private_profile_root": "c8/attempt2/traces/20261020-224057_stage0_rank0_1792507257/trace_rank0.json.gz",
+    "bytes": 34910525,
+    "sha256": "56b24f759496d18ac292b6d93e75422dea817a66dd69da75feace7c63a279f4f",
+    "published": false
+  },
+  {
+    "relative_path_under_private_profile_root": "c8/attempt2/traces/20261020-224057_stage1_rank0_1792507257/trace_rank0.json.gz",
+    "bytes": 2680053,
+    "sha256": "d23a4345ea402f32a9d39c66c263d7ddd41be95ef271666413adf177cf2717ff",
+    "published": false
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "label": "a100-main-c128-check",
+    "concurrency": 128,
+    "runs": 1,
+    "Audio s/s": "76.3",
+    "Audio s/s (full window)": "81.4",
+    "TTFA p50 (ms)": "1000",
+    "TTFA p95 (ms)": "1712",
+    "RTF (mean)": "1.272",
+    "Stall % (>0 ms)": "100.00",
+    "Stall % (>100 ms)": "98.05",
+    "Takes >= 20 s": "2",
+    "Their audio %": "4.2",
+    "Failed": "0"
+  }
+]

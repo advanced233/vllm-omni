@@ -1,0 +1,106 @@
+{
+  "tracked_processes": [
+    {
+      "pid": 1844001,
+      "create_time": 1792507002.52,
+      "name": "vllm"
+    },
+    {
+      "pid": 1844103,
+      "create_time": 1792507011.97,
+      "name": "python"
+    },
+    {
+      "pid": 1844105,
+      "create_time": 1792507012.0,
+      "name": "python"
+    },
+    {
+      "pid": 1844200,
+      "create_time": 1792507016.44,
+      "name": "python"
+    },
+    {
+      "pid": 1844201,
+      "create_time": 1792507016.44,
+      "name": "VLLM::StageEngineCoreProc_stage0_replica0_DP0"
+    },
+    {
+      "pid": 1844193,
+      "create_time": 1792507016.42,
+      "name": "nvidia-cuda-mps-control"
+    },
+    {
+      "pid": 1844339,
+      "create_time": 1792507026.92,
+      "name": "python"
+    },
+    {
+      "pid": 1844341,
+      "create_time": 1792507026.95,
+      "name": "python"
+    },
+    {
+      "pid": 1844344,
+      "create_time": 1792507027.11,
+      "name": "nvidia-cuda-mps-server"
+    },
+    {
+      "pid": 1844431,
+      "create_time": 1792507031.2,
+      "name": "python"
+    },
+    {
+      "pid": 1844447,
+      "create_time": 1792507031.41,
+      "name": "python"
+    },
+    {
+      "pid": 1845134,
+      "create_time": 1792507143.86,
+      "name": "VLLM::StageEngineCoreProc_stage1_replica0_DP0"
+    },
+    {
+      "pid": 1845246,
+      "create_time": 1792507154.15,
+      "name": "python"
+    },
+    {
+      "pid": 1845248,
+      "create_time": 1792507154.18,
+      "name": "python"
+    },
+    {
+      "pid": 1845370,
+      "create_time": 1792507159.07,
+      "name": "python"
+    },
+    {
+      "pid": 1845377,
+      "create_time": 1792507159.28,
+      "name": "python"
+    },
+    {
+      "pid": 1846118,
+      "create_time": 1792507264.8,
+      "name": "gzip"
+    },
+    {
+      "pid": 1846165,
+      "create_time": 1792507273.95,
+      "name": "gzip"
+    }
+  ],
+  "signals": [
+    {
+      "pid": 1844001,
+      "signal": "SIGINT"
+    }
+  ],
+  "server_exit": 0,
+  "gpu_after": "GPU_PHYSICAL_1, NVIDIA A100 80GB PCIe, 15, 81920, 0",
+  "apps_after": [],
+  "port_free": true,
+  "own_processes_remaining": [],
+  "clean": true
+}

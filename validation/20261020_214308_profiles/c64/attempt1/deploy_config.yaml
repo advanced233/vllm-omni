@@ -1,0 +1,122 @@
+async_chunk: true
+enable_chunked_prefill: true
+connectors:
+  connector_of_shared_memory:
+    name: SharedMemoryConnector
+    extra:
+      codec_streaming: true
+      codec_chunk_ramp: 6,8,12,16,24,32
+      codec_chunk_frames: 64
+      codec_left_context_frames: 32
+      ar_prefill_admission_min_batch: 6
+      ar_prefill_admission_max_wait_ms: 100
+      ar_prefill_admission_min_running: 32
+      fish_speech_dac_dtype: fp16
+      fish_speech_dac_cuda_graphs: true
+      fish_speech_dac_stateful: true
+stages:
+- stage_id: 0
+  model_runner: v2
+  max_num_seqs: 128
+  gpu_memory_utilization: 0.78
+  enforce_eager: false
+  trust_remote_code: false
+  enable_prefix_caching: false
+  async_scheduling: true
+  max_num_batched_tokens: 4096
+  mamba_ssm_cache_dtype: bfloat16
+  max_model_len: 8192
+  devices: '0'
+  compilation_config:
+    cudagraph_mode: FULL_AND_PIECEWISE
+    max_cudagraph_capture_size: 4096
+    cudagraph_capture_sizes:
+    - 1
+    - 2
+    - 4
+    - 8
+    - 16
+    - 24
+    - 32
+    - 40
+    - 48
+    - 56
+    - 64
+    - 72
+    - 80
+    - 88
+    - 96
+    - 104
+    - 112
+    - 120
+    - 128
+    - 160
+    - 192
+    - 224
+    - 256
+    - 320
+    - 384
+    - 448
+    - 512
+    - 640
+    - 768
+    - 896
+    - 1024
+    - 1280
+    - 1536
+    - 1792
+    - 2048
+    - 2560
+    - 3072
+    - 3584
+    - 4096
+  output_connectors:
+    to_stage_1: connector_of_shared_memory
+  default_sampling_params:
+    temperature: 1.0
+    top_k: 30
+    top_p: 0.9
+    max_tokens: 500
+    repetition_penalty: 1.0
+  profiler_config:
+    profiler: torch
+    max_iterations: 256
+    delay_iterations: 0
+    torch_profiler_dir: ${NVME_WORKDIR}/profiling/20261020_214308/c64/attempt1/traces
+    torch_profiler_use_gzip: true
+    torch_profiler_with_stack: false
+    torch_profiler_record_shapes: false
+    torch_profiler_with_memory: false
+    torch_profiler_with_flops: false
+- stage_id: 1
+  model_runner: v1
+  max_num_seqs: 128
+  gpu_memory_utilization: 0.1
+  enforce_eager: true
+  trust_remote_code: false
+  enable_prefix_caching: false
+  async_scheduling: true
+  max_num_batched_tokens: 65536
+  max_model_len: 65536
+  devices: '0'
+  input_connectors:
+    from_stage_0: connector_of_shared_memory
+  default_sampling_params:
+    temperature: 0.0
+    top_p: 1.0
+    top_k: -1
+    max_tokens: 65536
+    repetition_penalty: 1.0
+  profiler_config:
+    profiler: torch
+    max_iterations: 4096
+    delay_iterations: 0
+    torch_profiler_dir: ${NVME_WORKDIR}/profiling/20261020_214308/c64/attempt1/traces
+    torch_profiler_use_gzip: true
+    torch_profiler_with_stack: false
+    torch_profiler_record_shapes: false
+    torch_profiler_with_memory: false
+    torch_profiler_with_flops: false
+platforms:
+  cuda:
+    cuda_mps: true

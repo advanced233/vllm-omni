@@ -1,0 +1,96 @@
+{
+  "tracked_processes": [
+    {
+      "pid": 1781368,
+      "create_time": 1792500916.8,
+      "name": "vllm"
+    },
+    {
+      "pid": 1781582,
+      "create_time": 1792500926.24,
+      "name": "python"
+    },
+    {
+      "pid": 1781584,
+      "create_time": 1792500926.27,
+      "name": "python"
+    },
+    {
+      "pid": 1781679,
+      "create_time": 1792500930.66,
+      "name": "python"
+    },
+    {
+      "pid": 1781680,
+      "create_time": 1792500930.67,
+      "name": "VLLM::StageEngineCoreProc_stage0_replica0_DP0"
+    },
+    {
+      "pid": 1781675,
+      "create_time": 1792500930.63,
+      "name": "nvidia-cuda-mps-control"
+    },
+    {
+      "pid": 1781826,
+      "create_time": 1792500940.93,
+      "name": "python"
+    },
+    {
+      "pid": 1781828,
+      "create_time": 1792500940.97,
+      "name": "python"
+    },
+    {
+      "pid": 1781832,
+      "create_time": 1792500941.13,
+      "name": "nvidia-cuda-mps-server"
+    },
+    {
+      "pid": 1781957,
+      "create_time": 1792500945.21,
+      "name": "python"
+    },
+    {
+      "pid": 1781964,
+      "create_time": 1792500945.41,
+      "name": "python"
+    },
+    {
+      "pid": 1783539,
+      "create_time": 1792501057.3,
+      "name": "VLLM::StageEngineCoreProc_stage1_replica0_DP0"
+    },
+    {
+      "pid": 1783683,
+      "create_time": 1792501067.56,
+      "name": "python"
+    },
+    {
+      "pid": 1783685,
+      "create_time": 1792501067.6,
+      "name": "python"
+    },
+    {
+      "pid": 1783811,
+      "create_time": 1792501072.5,
+      "name": "python"
+    },
+    {
+      "pid": 1783819,
+      "create_time": 1792501072.7,
+      "name": "python"
+    }
+  ],
+  "signals": [
+    {
+      "pid": 1781368,
+      "signal": "SIGINT"
+    }
+  ],
+  "server_exit": 0,
+  "gpu_after": "GPU_PHYSICAL_1, NVIDIA A100 80GB PCIe, 15, 81920, 0",
+  "apps_after": [],
+  "port_free": true,
+  "own_processes_remaining": [],
+  "clean": true
+}

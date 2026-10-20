@@ -1,0 +1,554 @@
+{
+  "planned_runs": 3,
+  "artifact_checks_pass": true,
+  "sweep_errors": [],
+  "recorded_client_exits": [
+    {
+      "concurrency": 10,
+      "repeat": 1,
+      "exit": 0
+    },
+    {
+      "concurrency": 12,
+      "repeat": 1,
+      "exit": 0
+    },
+    {
+      "concurrency": 16,
+      "repeat": 1,
+      "exit": 0
+    }
+  ],
+  "phase_aware_log_review_pending": false,
+  "notes": [
+    "Run-level metric means/min/max/stdev; not pooled request percentiles.",
+    "GPU telemetry, source hashes, own-PID lifecycle and other-user interference require executor-manifest review.",
+    "Full-concurrency window includes initial filling and excludes draining; 256 prompts at C128 is a short capacity check.",
+    "Long/capped outputs are duration proxies, not noise-run, WER or finish_reason evidence.",
+    "Short-take audio divided by unchanged wall time is a numerator sensitivity only, not a counterfactual speed estimate.",
+    "No audio means no quality verification or WER/SIM can be recovered from these artifacts."
+  ],
+  "runs": [
+    {
+      "concurrency": 10,
+      "repeat": 1,
+      "directory": "${NVME_WORKDIR}/baseline/20261020_194158/followup/c10/r1",
+      "errors": [],
+      "review": [],
+      "cleanup": {
+        "gpu_mem_after_mib": 15,
+        "wait_s": 0
+      },
+      "log_evidence": [
+        {
+          "line": 144,
+          "text": "(StageEngineCoreProc_stage0_replica0 pid=1831084) INFO 10-20 22:00:47 [kv_cache_utils.py:2327] GPU KV cache size: 326,716 tokens, Maximum concurrency for 8,192 tokens per request: 39.88x"
+        }
+      ],
+      "metrics": {
+        "duration_s": 260.337,
+        "throughput_audio_s_per_s": 18.55,
+        "full_window_audio_s_per_s": 18.57,
+        "full_window_seconds": 258.401,
+        "ttfa_p50_ms": 239.8,
+        "ttfa_p95_ms": 348.7,
+        "rtf_mean": 0.5399,
+        "stall_0ms_pct": 8.46,
+        "stall_100ms_pct": 1.01,
+        "loop_lag_p99_ms": 0.91,
+        "audio_s_total": 4829.013,
+        "at_least_20s": 8,
+        "at_least_20s_pct": 0.74,
+        "at_frame_cap": 6,
+        "audio_share_pct": 3.75,
+        "long_take_audio_seconds": 181.3016,
+        "short_take_audio_s_per_same_wall_s": 17.852673265805475
+      },
+      "long_take_indices": [
+        9,
+        19,
+        353,
+        440,
+        510,
+        530,
+        704,
+        973
+      ]
+    },
+    {
+      "concurrency": 12,
+      "repeat": 1,
+      "directory": "${NVME_WORKDIR}/baseline/20261020_194158/followup/c12/r1",
+      "errors": [],
+      "review": [],
+      "cleanup": {
+        "gpu_mem_after_mib": 15,
+        "wait_s": 0
+      },
+      "log_evidence": [
+        {
+          "line": 144,
+          "text": "(StageEngineCoreProc_stage0_replica0 pid=1835362) INFO 10-20 22:09:13 [kv_cache_utils.py:2327] GPU KV cache size: 326,716 tokens, Maximum concurrency for 8,192 tokens per request: 39.88x"
+        }
+      ],
+      "metrics": {
+        "duration_s": 262.647,
+        "throughput_audio_s_per_s": 18.87,
+        "full_window_audio_s_per_s": 19.05,
+        "full_window_seconds": 257.559,
+        "ttfa_p50_ms": 276.7,
+        "ttfa_p95_ms": 386.2,
+        "rtf_mean": 0.6323,
+        "stall_0ms_pct": 31.16,
+        "stall_100ms_pct": 4.6,
+        "loop_lag_p99_ms": 0.92,
+        "audio_s_total": 4956.4425,
+        "at_least_20s": 14,
+        "at_least_20s_pct": 1.29,
+        "at_frame_cap": 13,
+        "audio_share_pct": 6.53,
+        "long_take_audio_seconds": 323.6868,
+        "short_take_audio_s_per_same_wall_s": 17.638715462198313
+      },
+      "long_take_indices": [
+        19,
+        104,
+        160,
+        449,
+        510,
+        530,
+        647,
+        715,
+        738,
+        793,
+        812,
+        819,
+        1020,
+        1074
+      ]
+    },
+    {
+      "concurrency": 16,
+      "repeat": 1,
+      "directory": "${NVME_WORKDIR}/baseline/20261020_194158/followup/c16/r1",
+      "errors": [],
+      "review": [],
+      "cleanup": {
+        "gpu_mem_after_mib": 15,
+        "wait_s": 0
+      },
+      "log_evidence": [
+        {
+          "line": 144,
+          "text": "(StageEngineCoreProc_stage0_replica0 pid=1838691) INFO 10-20 22:17:42 [kv_cache_utils.py:2327] GPU KV cache size: 326,716 tokens, Maximum concurrency for 8,192 tokens per request: 39.88x"
+        }
+      ],
+      "metrics": {
+        "duration_s": 223.927,
+        "throughput_audio_s_per_s": 21.68,
+        "full_window_audio_s_per_s": 21.7,
+        "full_window_seconds": 221.416,
+        "ttfa_p50_ms": 313.8,
+        "ttfa_p95_ms": 447.1,
+        "rtf_mean": 0.7383,
+        "stall_0ms_pct": 67.28,
+        "stall_100ms_pct": 42.28,
+        "loop_lag_p99_ms": 0.94,
+        "audio_s_total": 4855.0652,
+        "at_least_20s": 8,
+        "at_least_20s_pct": 0.74,
+        "at_frame_cap": 8,
+        "audio_share_pct": 3.83,
+        "long_take_audio_seconds": 185.76,
+        "short_take_audio_s_per_same_wall_s": 20.851907987871048
+      },
+      "long_take_indices": [
+        39,
+        61,
+        241,
+        326,
+        510,
+        670,
+        757,
+        834
+      ]
+    }
+  ],
+  "numeric_by_concurrency": [
+    {
+      "concurrency": 10,
+      "accepted_artifact_runs": 1,
+      "metrics": {
+        "duration_s": {
+          "n": 1,
+          "mean": 260.337,
+          "min": 260.337,
+          "max": 260.337,
+          "sample_stdev": null
+        },
+        "throughput_audio_s_per_s": {
+          "n": 1,
+          "mean": 18.55,
+          "min": 18.55,
+          "max": 18.55,
+          "sample_stdev": null
+        },
+        "full_window_audio_s_per_s": {
+          "n": 1,
+          "mean": 18.57,
+          "min": 18.57,
+          "max": 18.57,
+          "sample_stdev": null
+        },
+        "full_window_seconds": {
+          "n": 1,
+          "mean": 258.401,
+          "min": 258.401,
+          "max": 258.401,
+          "sample_stdev": null
+        },
+        "ttfa_p50_ms": {
+          "n": 1,
+          "mean": 239.8,
+          "min": 239.8,
+          "max": 239.8,
+          "sample_stdev": null
+        },
+        "ttfa_p95_ms": {
+          "n": 1,
+          "mean": 348.7,
+          "min": 348.7,
+          "max": 348.7,
+          "sample_stdev": null
+        },
+        "rtf_mean": {
+          "n": 1,
+          "mean": 0.5399,
+          "min": 0.5399,
+          "max": 0.5399,
+          "sample_stdev": null
+        },
+        "stall_0ms_pct": {
+          "n": 1,
+          "mean": 8.46,
+          "min": 8.46,
+          "max": 8.46,
+          "sample_stdev": null
+        },
+        "stall_100ms_pct": {
+          "n": 1,
+          "mean": 1.01,
+          "min": 1.01,
+          "max": 1.01,
+          "sample_stdev": null
+        },
+        "loop_lag_p99_ms": {
+          "n": 1,
+          "mean": 0.91,
+          "min": 0.91,
+          "max": 0.91,
+          "sample_stdev": null
+        },
+        "audio_s_total": {
+          "n": 1,
+          "mean": 4829.013,
+          "min": 4829.013,
+          "max": 4829.013,
+          "sample_stdev": null
+        },
+        "at_least_20s": {
+          "n": 1,
+          "mean": 8.0,
+          "min": 8,
+          "max": 8,
+          "sample_stdev": null
+        },
+        "at_least_20s_pct": {
+          "n": 1,
+          "mean": 0.74,
+          "min": 0.74,
+          "max": 0.74,
+          "sample_stdev": null
+        },
+        "at_frame_cap": {
+          "n": 1,
+          "mean": 6.0,
+          "min": 6,
+          "max": 6,
+          "sample_stdev": null
+        },
+        "audio_share_pct": {
+          "n": 1,
+          "mean": 3.75,
+          "min": 3.75,
+          "max": 3.75,
+          "sample_stdev": null
+        },
+        "long_take_audio_seconds": {
+          "n": 1,
+          "mean": 181.3016,
+          "min": 181.3016,
+          "max": 181.3016,
+          "sample_stdev": null
+        },
+        "short_take_audio_s_per_same_wall_s": {
+          "n": 1,
+          "mean": 17.852673265805475,
+          "min": 17.852673265805475,
+          "max": 17.852673265805475,
+          "sample_stdev": null
+        }
+      }
+    },
+    {
+      "concurrency": 12,
+      "accepted_artifact_runs": 1,
+      "metrics": {
+        "duration_s": {
+          "n": 1,
+          "mean": 262.647,
+          "min": 262.647,
+          "max": 262.647,
+          "sample_stdev": null
+        },
+        "throughput_audio_s_per_s": {
+          "n": 1,
+          "mean": 18.87,
+          "min": 18.87,
+          "max": 18.87,
+          "sample_stdev": null
+        },
+        "full_window_audio_s_per_s": {
+          "n": 1,
+          "mean": 19.05,
+          "min": 19.05,
+          "max": 19.05,
+          "sample_stdev": null
+        },
+        "full_window_seconds": {
+          "n": 1,
+          "mean": 257.559,
+          "min": 257.559,
+          "max": 257.559,
+          "sample_stdev": null
+        },
+        "ttfa_p50_ms": {
+          "n": 1,
+          "mean": 276.7,
+          "min": 276.7,
+          "max": 276.7,
+          "sample_stdev": null
+        },
+        "ttfa_p95_ms": {
+          "n": 1,
+          "mean": 386.2,
+          "min": 386.2,
+          "max": 386.2,
+          "sample_stdev": null
+        },
+        "rtf_mean": {
+          "n": 1,
+          "mean": 0.6323,
+          "min": 0.6323,
+          "max": 0.6323,
+          "sample_stdev": null
+        },
+        "stall_0ms_pct": {
+          "n": 1,
+          "mean": 31.16,
+          "min": 31.16,
+          "max": 31.16,
+          "sample_stdev": null
+        },
+        "stall_100ms_pct": {
+          "n": 1,
+          "mean": 4.6,
+          "min": 4.6,
+          "max": 4.6,
+          "sample_stdev": null
+        },
+        "loop_lag_p99_ms": {
+          "n": 1,
+          "mean": 0.92,
+          "min": 0.92,
+          "max": 0.92,
+          "sample_stdev": null
+        },
+        "audio_s_total": {
+          "n": 1,
+          "mean": 4956.4425,
+          "min": 4956.4425,
+          "max": 4956.4425,
+          "sample_stdev": null
+        },
+        "at_least_20s": {
+          "n": 1,
+          "mean": 14.0,
+          "min": 14,
+          "max": 14,
+          "sample_stdev": null
+        },
+        "at_least_20s_pct": {
+          "n": 1,
+          "mean": 1.29,
+          "min": 1.29,
+          "max": 1.29,
+          "sample_stdev": null
+        },
+        "at_frame_cap": {
+          "n": 1,
+          "mean": 13.0,
+          "min": 13,
+          "max": 13,
+          "sample_stdev": null
+        },
+        "audio_share_pct": {
+          "n": 1,
+          "mean": 6.53,
+          "min": 6.53,
+          "max": 6.53,
+          "sample_stdev": null
+        },
+        "long_take_audio_seconds": {
+          "n": 1,
+          "mean": 323.6868,
+          "min": 323.6868,
+          "max": 323.6868,
+          "sample_stdev": null
+        },
+        "short_take_audio_s_per_same_wall_s": {
+          "n": 1,
+          "mean": 17.638715462198313,
+          "min": 17.638715462198313,
+          "max": 17.638715462198313,
+          "sample_stdev": null
+        }
+      }
+    },
+    {
+      "concurrency": 16,
+      "accepted_artifact_runs": 1,
+      "metrics": {
+        "duration_s": {
+          "n": 1,
+          "mean": 223.927,
+          "min": 223.927,
+          "max": 223.927,
+          "sample_stdev": null
+        },
+        "throughput_audio_s_per_s": {
+          "n": 1,
+          "mean": 21.68,
+          "min": 21.68,
+          "max": 21.68,
+          "sample_stdev": null
+        },
+        "full_window_audio_s_per_s": {
+          "n": 1,
+          "mean": 21.7,
+          "min": 21.7,
+          "max": 21.7,
+          "sample_stdev": null
+        },
+        "full_window_seconds": {
+          "n": 1,
+          "mean": 221.416,
+          "min": 221.416,
+          "max": 221.416,
+          "sample_stdev": null
+        },
+        "ttfa_p50_ms": {
+          "n": 1,
+          "mean": 313.8,
+          "min": 313.8,
+          "max": 313.8,
+          "sample_stdev": null
+        },
+        "ttfa_p95_ms": {
+          "n": 1,
+          "mean": 447.1,
+          "min": 447.1,
+          "max": 447.1,
+          "sample_stdev": null
+        },
+        "rtf_mean": {
+          "n": 1,
+          "mean": 0.7383,
+          "min": 0.7383,
+          "max": 0.7383,
+          "sample_stdev": null
+        },
+        "stall_0ms_pct": {
+          "n": 1,
+          "mean": 67.28,
+          "min": 67.28,
+          "max": 67.28,
+          "sample_stdev": null
+        },
+        "stall_100ms_pct": {
+          "n": 1,
+          "mean": 42.28,
+          "min": 42.28,
+          "max": 42.28,
+          "sample_stdev": null
+        },
+        "loop_lag_p99_ms": {
+          "n": 1,
+          "mean": 0.94,
+          "min": 0.94,
+          "max": 0.94,
+          "sample_stdev": null
+        },
+        "audio_s_total": {
+          "n": 1,
+          "mean": 4855.0652,
+          "min": 4855.0652,
+          "max": 4855.0652,
+          "sample_stdev": null
+        },
+        "at_least_20s": {
+          "n": 1,
+          "mean": 8.0,
+          "min": 8,
+          "max": 8,
+          "sample_stdev": null
+        },
+        "at_least_20s_pct": {
+          "n": 1,
+          "mean": 0.74,
+          "min": 0.74,
+          "max": 0.74,
+          "sample_stdev": null
+        },
+        "at_frame_cap": {
+          "n": 1,
+          "mean": 8.0,
+          "min": 8,
+          "max": 8,
+          "sample_stdev": null
+        },
+        "audio_share_pct": {
+          "n": 1,
+          "mean": 3.83,
+          "min": 3.83,
+          "max": 3.83,
+          "sample_stdev": null
+        },
+        "long_take_audio_seconds": {
+          "n": 1,
+          "mean": 185.76,
+          "min": 185.76,
+          "max": 185.76,
+          "sample_stdev": null
+        },
+        "short_take_audio_s_per_same_wall_s": {
+          "n": 1,
+          "mean": 20.851907987871048,
+          "min": 20.851907987871048,
+          "max": 20.851907987871048,
+          "sample_stdev": null
+        }
+      }
+    }
+  ]
+}

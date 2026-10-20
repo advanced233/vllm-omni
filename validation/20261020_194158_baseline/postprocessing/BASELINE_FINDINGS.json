@@ -1,0 +1,807 @@
+{
+  "created_at": "2026-10-20T22:00:13.529190+08:00",
+  "scope": "Original 17-run B1 only; follow-up and profiles are excluded. A100 80GB PCIe / cu129 / driver R550; not official cu130 compliance.",
+  "validation": {
+    "planned_runs": 17,
+    "completed_runs": 17,
+    "requests": 18496,
+    "succeeded": 18496,
+    "failed": 0,
+    "independent_artifact_audit_pass": true,
+    "peak_run_client_loop_lag_p99_ms": 0.96,
+    "largest_individual_loop_lag_ms": 6.4,
+    "matching_oom_cuda_or_preemption_log_lines": 0,
+    "interpretation": "No OOM/CUDA-error/preemption matches in retained server logs; absence of log matches is not proof of unlogged events."
+  },
+  "repeat_summaries": {
+    "64": {
+      "throughput_audio_s_per_s": {
+        "n": 3,
+        "mean": 46.06333333333333,
+        "min": 45.39,
+        "max": 46.81,
+        "sample_stdev": 0.7128347167003964,
+        "values_by_repeat": [
+          45.39,
+          46.81,
+          45.99
+        ]
+      },
+      "full_window_audio_s_per_s": {
+        "n": 3,
+        "mean": 47.163333333333334,
+        "min": 47.15,
+        "max": 47.19,
+        "sample_stdev": 0.02309401076758454,
+        "values_by_repeat": [
+          47.19,
+          47.15,
+          47.15
+        ]
+      },
+      "rtf_mean": {
+        "n": 3,
+        "mean": 1.3480333333333334,
+        "min": 1.3427,
+        "max": 1.3518,
+        "sample_stdev": 0.004747982027486284,
+        "values_by_repeat": [
+          1.3496,
+          1.3518,
+          1.3427
+        ]
+      },
+      "ttfa_p50_ms": {
+        "n": 3,
+        "mean": 604.6666666666666,
+        "min": 602.0,
+        "max": 608.3,
+        "sample_stdev": 3.2593455375785374,
+        "values_by_repeat": [
+          608.3,
+          602.0,
+          603.7
+        ]
+      },
+      "ttfa_p95_ms": {
+        "n": 3,
+        "mean": 957.4333333333334,
+        "min": 941.4,
+        "max": 970.1,
+        "sample_stdev": 14.643200925116538,
+        "values_by_repeat": [
+          970.1,
+          941.4,
+          960.8
+        ]
+      },
+      "stall_0ms_pct": {
+        "n": 3,
+        "mean": 98.16333333333334,
+        "min": 97.61,
+        "max": 98.53,
+        "sample_stdev": 0.48757905341937424,
+        "values_by_repeat": [
+          98.35,
+          97.61,
+          98.53
+        ]
+      },
+      "stall_100ms_pct": {
+        "n": 3,
+        "mean": 95.15666666666668,
+        "min": 94.94,
+        "max": 95.31,
+        "sample_stdev": 0.19295940851208604,
+        "values_by_repeat": [
+          95.22,
+          95.31,
+          94.94
+        ]
+      },
+      "sm_clock_run_median_mhz": {
+        "n": 3,
+        "mean": 577.5,
+        "min": 570.0,
+        "max": 592.5,
+        "sample_stdev": 12.99038105676658,
+        "values_by_repeat": [
+          592.5,
+          570.0,
+          570.0
+        ]
+      },
+      "thermal_sample_pct": {
+        "n": 3,
+        "mean": 87.63389202833622,
+        "min": 87.12871287128714,
+        "max": 88.0952380952381,
+        "sample_stdev": 0.4847512320533654,
+        "values_by_repeat": [
+          88.0952380952381,
+          87.12871287128714,
+          87.67772511848341
+        ]
+      },
+      "long_take_audio_share_pct": {
+        "n": 3,
+        "mean": 3.6666666666666665,
+        "min": 2.42,
+        "max": 4.72,
+        "sample_stdev": 1.1621244913232545,
+        "values_by_repeat": [
+          3.86,
+          2.42,
+          4.72
+        ]
+      }
+    },
+    "128": {
+      "throughput_audio_s_per_s": {
+        "n": 5,
+        "mean": 62.94199999999999,
+        "min": 62.38,
+        "max": 64.04,
+        "sample_stdev": 0.6839736837042805,
+        "values_by_repeat": [
+          62.47,
+          63.16,
+          62.66,
+          62.38,
+          64.04
+        ]
+      },
+      "full_window_audio_s_per_s": {
+        "n": 5,
+        "mean": 66.544,
+        "min": 65.82,
+        "max": 67.61,
+        "sample_stdev": 0.8523086295468325,
+        "values_by_repeat": [
+          65.82,
+          67.61,
+          66.08,
+          65.89,
+          67.32
+        ]
+      },
+      "rtf_mean": {
+        "n": 5,
+        "mean": 1.89102,
+        "min": 1.8676,
+        "max": 1.914,
+        "sample_stdev": 0.021457213239374755,
+        "values_by_repeat": [
+          1.9032,
+          1.8686,
+          1.9017,
+          1.914,
+          1.8676
+        ]
+      },
+      "ttfa_p50_ms": {
+        "n": 5,
+        "mean": 818.46,
+        "min": 807.2,
+        "max": 838.8,
+        "sample_stdev": 12.642903147616021,
+        "values_by_repeat": [
+          838.8,
+          817.5,
+          807.2,
+          820.1,
+          808.7
+        ]
+      },
+      "ttfa_p95_ms": {
+        "n": 5,
+        "mean": 1693.08,
+        "min": 1670.1,
+        "max": 1718.2,
+        "sample_stdev": 18.638723132232016,
+        "values_by_repeat": [
+          1703.1,
+          1681.7,
+          1670.1,
+          1692.3,
+          1718.2
+        ]
+      },
+      "stall_0ms_pct": {
+        "n": 5,
+        "mean": 100.0,
+        "min": 100.0,
+        "max": 100.0,
+        "sample_stdev": 0.0,
+        "values_by_repeat": [
+          100.0,
+          100.0,
+          100.0,
+          100.0,
+          100.0
+        ]
+      },
+      "stall_100ms_pct": {
+        "n": 5,
+        "mean": 99.928,
+        "min": 99.82,
+        "max": 100.0,
+        "sample_stdev": 0.07529940238806965,
+        "values_by_repeat": [
+          100.0,
+          99.91,
+          100.0,
+          99.91,
+          99.82
+        ]
+      },
+      "sm_clock_run_median_mhz": {
+        "n": 5,
+        "mean": 700.5,
+        "min": 645.0,
+        "max": 735.0,
+        "sample_stdev": 35.01785258978626,
+        "values_by_repeat": [
+          645.0,
+          735.0,
+          690.0,
+          720.0,
+          712.5
+        ]
+      },
+      "thermal_sample_pct": {
+        "n": 5,
+        "mean": 82.51521250403829,
+        "min": 81.57894736842105,
+        "max": 84.10596026490066,
+        "sample_stdev": 1.0098940605505313,
+        "values_by_repeat": [
+          84.10596026490066,
+          82.78145695364239,
+          82.3529411764706,
+          81.57894736842105,
+          81.75675675675676
+        ]
+      },
+      "long_take_audio_share_pct": {
+        "n": 5,
+        "mean": 3.2700000000000005,
+        "min": 2.37,
+        "max": 4.76,
+        "sample_stdev": 1.031673397931729,
+        "values_by_repeat": [
+          2.93,
+          2.41,
+          4.76,
+          2.37,
+          3.88
+        ]
+      }
+    }
+  },
+  "transition_observations": {
+    "4": {
+      "throughput_audio_s_per_s": {
+        "n": 1,
+        "mean": 11.49,
+        "min": 11.49,
+        "max": 11.49,
+        "sample_stdev": null,
+        "values_by_repeat": [
+          11.49
+        ]
+      },
+      "full_window_audio_s_per_s": {
+        "n": 1,
+        "mean": 11.49,
+        "min": 11.49,
+        "max": 11.49,
+        "sample_stdev": null,
+        "values_by_repeat": [
+          11.49
+        ]
+      },
+      "rtf_mean": {
+        "n": 1,
+        "mean": 0.3506,
+        "min": 0.3506,
+        "max": 0.3506,
+        "sample_stdev": null,
+        "values_by_repeat": [
+          0.3506
+        ]
+      },
+      "ttfa_p50_ms": {
+        "n": 1,
+        "mean": 179.7,
+        "min": 179.7,
+        "max": 179.7,
+        "sample_stdev": null,
+        "values_by_repeat": [
+          179.7
+        ]
+      },
+      "ttfa_p95_ms": {
+        "n": 1,
+        "mean": 247.0,
+        "min": 247.0,
+        "max": 247.0,
+        "sample_stdev": null,
+        "values_by_repeat": [
+          247.0
+        ]
+      },
+      "stall_0ms_pct": {
+        "n": 1,
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "sample_stdev": null,
+        "values_by_repeat": [
+          0.0
+        ]
+      },
+      "stall_100ms_pct": {
+        "n": 1,
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "sample_stdev": null,
+        "values_by_repeat": [
+          0.0
+        ]
+      },
+      "sm_clock_run_median_mhz": {
+        "n": 1,
+        "mean": 990.0,
+        "min": 990.0,
+        "max": 990.0,
+        "sample_stdev": null,
+        "values_by_repeat": [
+          990.0
+        ]
+      },
+      "thermal_sample_pct": {
+        "n": 1,
+        "mean": 96.51442307692308,
+        "min": 96.51442307692308,
+        "max": 96.51442307692308,
+        "sample_stdev": null,
+        "values_by_repeat": [
+          96.51442307692308
+        ]
+      },
+      "long_take_audio_share_pct": {
+        "n": 1,
+        "mean": 3.75,
+        "min": 3.75,
+        "max": 3.75,
+        "sample_stdev": null,
+        "values_by_repeat": [
+          3.75
+        ]
+      }
+    },
+    "8": {
+      "throughput_audio_s_per_s": {
+        "n": 1,
+        "mean": 16.31,
+        "min": 16.31,
+        "max": 16.31,
+        "sample_stdev": null,
+        "values_by_repeat": [
+          16.31
+        ]
+      },
+      "full_window_audio_s_per_s": {
+        "n": 1,
+        "mean": 16.31,
+        "min": 16.31,
+        "max": 16.31,
+        "sample_stdev": null,
+        "values_by_repeat": [
+          16.31
+        ]
+      },
+      "rtf_mean": {
+        "n": 1,
+        "mean": 0.4928,
+        "min": 0.4928,
+        "max": 0.4928,
+        "sample_stdev": null,
+        "values_by_repeat": [
+          0.4928
+        ]
+      },
+      "ttfa_p50_ms": {
+        "n": 1,
+        "mean": 228.0,
+        "min": 228.0,
+        "max": 228.0,
+        "sample_stdev": null,
+        "values_by_repeat": [
+          228.0
+        ]
+      },
+      "ttfa_p95_ms": {
+        "n": 1,
+        "mean": 321.7,
+        "min": 321.7,
+        "max": 321.7,
+        "sample_stdev": null,
+        "values_by_repeat": [
+          321.7
+        ]
+      },
+      "stall_0ms_pct": {
+        "n": 1,
+        "mean": 1.75,
+        "min": 1.75,
+        "max": 1.75,
+        "sample_stdev": null,
+        "values_by_repeat": [
+          1.75
+        ]
+      },
+      "stall_100ms_pct": {
+        "n": 1,
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "sample_stdev": null,
+        "values_by_repeat": [
+          0.0
+        ]
+      },
+      "sm_clock_run_median_mhz": {
+        "n": 1,
+        "mean": 735.0,
+        "min": 735.0,
+        "max": 735.0,
+        "sample_stdev": null,
+        "values_by_repeat": [
+          735.0
+        ]
+      },
+      "thermal_sample_pct": {
+        "n": 1,
+        "mean": 95.73378839590444,
+        "min": 95.73378839590444,
+        "max": 95.73378839590444,
+        "sample_stdev": null,
+        "values_by_repeat": [
+          95.73378839590444
+        ]
+      },
+      "long_take_audio_share_pct": {
+        "n": 1,
+        "mean": 4.25,
+        "min": 4.25,
+        "max": 4.25,
+        "sample_stdev": null,
+        "values_by_repeat": [
+          4.25
+        ]
+      }
+    },
+    "12": {
+      "throughput_audio_s_per_s": {
+        "n": 1,
+        "mean": 19.75,
+        "min": 19.75,
+        "max": 19.75,
+        "sample_stdev": null,
+        "values_by_repeat": [
+          19.75
+        ]
+      },
+      "full_window_audio_s_per_s": {
+        "n": 1,
+        "mean": 19.74,
+        "min": 19.74,
+        "max": 19.74,
+        "sample_stdev": null,
+        "values_by_repeat": [
+          19.74
+        ]
+      },
+      "rtf_mean": {
+        "n": 1,
+        "mean": 0.6072,
+        "min": 0.6072,
+        "max": 0.6072,
+        "sample_stdev": null,
+        "values_by_repeat": [
+          0.6072
+        ]
+      },
+      "ttfa_p50_ms": {
+        "n": 1,
+        "mean": 265.2,
+        "min": 265.2,
+        "max": 265.2,
+        "sample_stdev": null,
+        "values_by_repeat": [
+          265.2
+        ]
+      },
+      "ttfa_p95_ms": {
+        "n": 1,
+        "mean": 365.2,
+        "min": 365.2,
+        "max": 365.2,
+        "sample_stdev": null,
+        "values_by_repeat": [
+          365.2
+        ]
+      },
+      "stall_0ms_pct": {
+        "n": 1,
+        "mean": 20.5,
+        "min": 20.5,
+        "max": 20.5,
+        "sample_stdev": null,
+        "values_by_repeat": [
+          20.5
+        ]
+      },
+      "stall_100ms_pct": {
+        "n": 1,
+        "mean": 1.1,
+        "min": 1.1,
+        "max": 1.1,
+        "sample_stdev": null,
+        "values_by_repeat": [
+          1.1
+        ]
+      },
+      "sm_clock_run_median_mhz": {
+        "n": 1,
+        "mean": 630.0,
+        "min": 630.0,
+        "max": 630.0,
+        "sample_stdev": null,
+        "values_by_repeat": [
+          630.0
+        ]
+      },
+      "thermal_sample_pct": {
+        "n": 1,
+        "mean": 95.19832985386222,
+        "min": 95.19832985386222,
+        "max": 95.19832985386222,
+        "sample_stdev": null,
+        "values_by_repeat": [
+          95.19832985386222
+        ]
+      },
+      "long_take_audio_share_pct": {
+        "n": 1,
+        "mean": 3.38,
+        "min": 3.38,
+        "max": 3.38,
+        "sample_stdev": null,
+        "values_by_repeat": [
+          3.38
+        ]
+      }
+    },
+    "16": {
+      "throughput_audio_s_per_s": {
+        "n": 1,
+        "mean": 22.88,
+        "min": 22.88,
+        "max": 22.88,
+        "sample_stdev": null,
+        "values_by_repeat": [
+          22.88
+        ]
+      },
+      "full_window_audio_s_per_s": {
+        "n": 1,
+        "mean": 22.9,
+        "min": 22.9,
+        "max": 22.9,
+        "sample_stdev": null,
+        "values_by_repeat": [
+          22.9
+        ]
+      },
+      "rtf_mean": {
+        "n": 1,
+        "mean": 0.6985,
+        "min": 0.6985,
+        "max": 0.6985,
+        "sample_stdev": null,
+        "values_by_repeat": [
+          0.6985
+        ]
+      },
+      "ttfa_p50_ms": {
+        "n": 1,
+        "mean": 300.4,
+        "min": 300.4,
+        "max": 300.4,
+        "sample_stdev": null,
+        "values_by_repeat": [
+          300.4
+        ]
+      },
+      "ttfa_p95_ms": {
+        "n": 1,
+        "mean": 412.5,
+        "min": 412.5,
+        "max": 412.5,
+        "sample_stdev": null,
+        "values_by_repeat": [
+          412.5
+        ]
+      },
+      "stall_0ms_pct": {
+        "n": 1,
+        "mean": 59.74,
+        "min": 59.74,
+        "max": 59.74,
+        "sample_stdev": null,
+        "values_by_repeat": [
+          59.74
+        ]
+      },
+      "stall_100ms_pct": {
+        "n": 1,
+        "mean": 26.56,
+        "min": 26.56,
+        "max": 26.56,
+        "sample_stdev": null,
+        "values_by_repeat": [
+          26.56
+        ]
+      },
+      "sm_clock_run_median_mhz": {
+        "n": 1,
+        "mean": 600.0,
+        "min": 600.0,
+        "max": 600.0,
+        "sample_stdev": null,
+        "values_by_repeat": [
+          600.0
+        ]
+      },
+      "thermal_sample_pct": {
+        "n": 1,
+        "mean": 94.68599033816425,
+        "min": 94.68599033816425,
+        "max": 94.68599033816425,
+        "sample_stdev": null,
+        "values_by_repeat": [
+          94.68599033816425
+        ]
+      },
+      "long_take_audio_share_pct": {
+        "n": 1,
+        "mean": 2.42,
+        "min": 2.42,
+        "max": 2.42,
+        "sample_stdev": null,
+        "values_by_repeat": [
+          2.42
+        ]
+      }
+    }
+  },
+  "transition_interpretation": "Under these observed host conditions, >0ms stalls rise from 1.75% at C8 to20.50% at C12 and59.74% at C16; >100ms stalls are0%,1.10%,26.56%. This is a measured transition region, not a fitted or universal concurrency knee. C10 and C12/C16 follow-ups are pending.",
+  "hardware": {
+    "runs_with_software_thermal_slowdown_samples": 17,
+    "run_thermal_sample_pct_min": 81.57894736842105,
+    "run_thermal_sample_pct_max": 96.51442307692308,
+    "run_sm_median_mhz_min": 525.0,
+    "run_sm_median_mhz_max": 1110.0,
+    "highest_timed_temperature_c": 86.0,
+    "maximum_nominal_vs_strict_thermal_difference_pp": 1.1289390639583985,
+    "limitation": "Temperature/clock state was not controlled. Results describe this machine with observed thermal slowdown; do not discard them silently or attribute cross-run differences solely to kernels/I/O. Future comparisons need matched thermal conditions. Telemetry uses timed window with <1s alignment uncertainty; sample percentages are not exact time shares."
+  },
+  "audio_limitations": "No audio saved. >=20s/capped counts and their audio contribution are duration proxies, not noise-run or WER. Whole-run throughput includes all generated audio, including long outputs.",
+  "aggregation": "Repeat means/min/max are run-level; mean TTFA p95 is not a pooled request p95. Min-max bars are not confidence intervals.",
+  "figures": {
+    "directory": "${NVME_WORKDIR}/baseline/20261020_194158/postprocessing/figures",
+    "png_svg_pairs": 5,
+    "visual_review": {
+      "method": "Viewed all five final PNGs with view_image",
+      "files": [
+        "throughput.png",
+        "rtf.png",
+        "ttfa.png",
+        "stalls.png",
+        "hardware_and_long_outputs.png"
+      ],
+      "result": "All plot marks, ticks, units, legends and captions readable; no observed clipping or overlap. Explicit log2 concurrency axis and min-max wording visible."
+    }
+  },
+  "log_evidence": [
+    {
+      "path": "${NVME_WORKDIR}/baseline/20261020_194158/b1/c1/r1/server.log",
+      "sha256": "e59e3c728e13f783588568924880dec8d49a2fb4e28523ba623cc782b04fe404",
+      "error_or_preemption_matches": []
+    },
+    {
+      "path": "${NVME_WORKDIR}/baseline/20261020_194158/b1/c12/r1/server.log",
+      "sha256": "b0f8e57ed58ed05b93458aeefaf85e5d256a99d5b221233c6d8d6b2afe76aacb",
+      "error_or_preemption_matches": []
+    },
+    {
+      "path": "${NVME_WORKDIR}/baseline/20261020_194158/b1/c128/r1/server.log",
+      "sha256": "27538bf655da151b0d6d2acffb96ea356266f726f6aed9ab187dea68c7465564",
+      "error_or_preemption_matches": []
+    },
+    {
+      "path": "${NVME_WORKDIR}/baseline/20261020_194158/b1/c128/r2/server.log",
+      "sha256": "175d357bddf6a2c74c9c209771afc2ec26efab95f87deaaa6e2fa079c7d5fb87",
+      "error_or_preemption_matches": []
+    },
+    {
+      "path": "${NVME_WORKDIR}/baseline/20261020_194158/b1/c128/r3/server.log",
+      "sha256": "06a767c735d2591e720b0363469c74f2aa57e72e968affd6eeb327627acb30e6",
+      "error_or_preemption_matches": []
+    },
+    {
+      "path": "${NVME_WORKDIR}/baseline/20261020_194158/b1/c128/r4/server.log",
+      "sha256": "b9281ba5ea2145804c7a60058aeaf93d236b25650ae0f86764f1f2e90578909f",
+      "error_or_preemption_matches": []
+    },
+    {
+      "path": "${NVME_WORKDIR}/baseline/20261020_194158/b1/c128/r5/server.log",
+      "sha256": "b5c9664f111b767fd1dc85ac3e40d562297581816a5821bed3cda95d11f6d116",
+      "error_or_preemption_matches": []
+    },
+    {
+      "path": "${NVME_WORKDIR}/baseline/20261020_194158/b1/c16/r1/server.log",
+      "sha256": "8739bc207b0248d2e8d25ecceabb1e22c67ea29b1409045238af79249567e162",
+      "error_or_preemption_matches": []
+    },
+    {
+      "path": "${NVME_WORKDIR}/baseline/20261020_194158/b1/c24/r1/server.log",
+      "sha256": "150507a13db79e4a0642f59ff4b615b5ff6306817d4fd2b887f61fd340eb0148",
+      "error_or_preemption_matches": []
+    },
+    {
+      "path": "${NVME_WORKDIR}/baseline/20261020_194158/b1/c32/r1/server.log",
+      "sha256": "ba659212a9f2993e3864ad658f0473c92481aaa42287215a02943b15dc750325",
+      "error_or_preemption_matches": []
+    },
+    {
+      "path": "${NVME_WORKDIR}/baseline/20261020_194158/b1/c4/r1/server.log",
+      "sha256": "77711ce83b12a041a7d535606808bde7f0354693d995bcc67cda96ed11a40421",
+      "error_or_preemption_matches": []
+    },
+    {
+      "path": "${NVME_WORKDIR}/baseline/20261020_194158/b1/c48/r1/server.log",
+      "sha256": "acb275b08772af774df18d8dd2939a02d52249f13a29d6da67b8d46bf7135c2f",
+      "error_or_preemption_matches": []
+    },
+    {
+      "path": "${NVME_WORKDIR}/baseline/20261020_194158/b1/c64/r1/server.log",
+      "sha256": "32cbe29284aed9cab0a5c3a03c8aae0d984d405dcaea4fa3108a15986853f754",
+      "error_or_preemption_matches": []
+    },
+    {
+      "path": "${NVME_WORKDIR}/baseline/20261020_194158/b1/c64/r2/server.log",
+      "sha256": "dd470cfbcd3b561b1a488e705c281d9ad6f5b70add003cf71a25d820c92f2020",
+      "error_or_preemption_matches": []
+    },
+    {
+      "path": "${NVME_WORKDIR}/baseline/20261020_194158/b1/c64/r3/server.log",
+      "sha256": "a50c33779ee8c8a4517ac7192ed73c5481f776566efd592fe3a6696ab57fd57c",
+      "error_or_preemption_matches": []
+    },
+    {
+      "path": "${NVME_WORKDIR}/baseline/20261020_194158/b1/c8/r1/server.log",
+      "sha256": "f92d2ec91e1c718b0e37868ca4a44b4cb7a07c0ce0b3204f85850480076935da",
+      "error_or_preemption_matches": []
+    },
+    {
+      "path": "${NVME_WORKDIR}/baseline/20261020_194158/b1/c96/r1/server.log",
+      "sha256": "abfcae8682b2dc724dee5dd7f446b1d3424901ca407177861547d86723b167ea",
+      "error_or_preemption_matches": []
+    }
+  ]
+}

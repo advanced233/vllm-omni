@@ -1,0 +1,152 @@
+{
+  "label": "diagnostic-profile-c64",
+  "concurrency": 64,
+  "started_at": "2026-10-20T22:59:20+0800",
+  "requests": 1088,
+  "succeeded": 1088,
+  "failed": 0,
+  "failure_examples": [],
+  "duration_s": 126.904,
+  "audio_s_total": 4703.02,
+  "throughput_audio_s_per_s": 37.06,
+  "full_concurrency_window": {
+    "seconds": 119.063,
+    "throughput_audio_s_per_s": 37.62
+  },
+  "ttfa_ms": {
+    "mean": 756.8,
+    "p50": 465.3,
+    "p90": 775.9,
+    "p95": 949.8,
+    "p99": 990.4,
+    "max": 42580.0
+  },
+  "rtf": {
+    "mean": 1.6147,
+    "p50": 0.9992,
+    "p90": 1.7398,
+    "p95": 7.3748,
+    "p99": 11.3239,
+    "max": 18.0244
+  },
+  "audio_s": {
+    "mean": 4.323,
+    "p50": 4.087,
+    "p90": 6.037,
+    "p95": 6.78,
+    "p99": 8.85,
+    "max": 23.22
+  },
+  "underrun_s_total": 3661.02,
+  "longest_wait_ms": {
+    "mean": 2684.1,
+    "p50": 304.6,
+    "p90": 1279.6,
+    "p95": 41197.4,
+    "p99": 42310.2,
+    "max": 43305.6
+  },
+  "stall": {
+    "0ms": {
+      "streams_stalled": 1066,
+      "streams_stalled_pct": 97.98,
+      "events": 4557
+    },
+    "100ms": {
+      "streams_stalled": 1020,
+      "streams_stalled_pct": 93.75,
+      "events": 3297
+    }
+  },
+  "long_takes": {
+    "at_least_20s": 3,
+    "at_least_20s_pct": 0.28,
+    "at_frame_cap": 2,
+    "audio_share_pct": 1.46
+  },
+  "client": {
+    "loop_lag_ms": {
+      "mean": 0.15,
+      "p50": 0.15,
+      "p90": 0.32,
+      "p95": 0.55,
+      "p99": 0.9,
+      "max": 23.77
+    },
+    "event_loop": "uvloop",
+    "hostname": "HOST_REDACTED",
+    "python": "3.12.13",
+    "aiohttp": "3.14.5"
+  },
+  "workload": {
+    "codes_file": "${NVME_WORKDIR}/bench-validation/20261020_165001_49599d4/ref_codes_en.jsonl",
+    "codes_meta": {
+      "model": "${NVME_WORKDIR}/models/fishaudio/drama-3",
+      "codec_sha256": "74fc41c5a7151c6f350af8bd7e5d6e3accfcc7f3dfbfac23afd35af07052bb2f",
+      "locale": "en",
+      "meta_lst_sha256": "7cd29f701743e6c7033edbca764ddc0b979de8c4f4907eff5e5454682114661f",
+      "rows_written": 1088,
+      "device_name": "NVIDIA A100 80GB PCIe",
+      "vllm_omni_commit": "da572cddb38383deae9caef33b8d490e292ef071"
+    },
+    "ref_mode": "codes",
+    "rows_timed": 1088,
+    "warmups": 8,
+    "shuffle_seed": null,
+    "seed": null,
+    "extra_body": {},
+    "stream": "raw pcm (stream_format=audio)",
+    "sampling": "server defaults unless set in extra_body"
+  },
+  "server": {
+    "base_url": "http://127.0.0.1:8091",
+    "models": {
+      "object": "list",
+      "data": [
+        {
+          "id": "fishaudio/drama-3",
+          "object": "model",
+          "created": 1792508353,
+          "owned_by": "vllm",
+          "root": "${NVME_WORKDIR}/models/fishaudio/drama-3",
+          "parent": null,
+          "max_model_len": 8192,
+          "permission": [
+            {
+              "id": "modelperm-843f3ff21b15cbfd",
+              "object": "model_permission",
+              "created": 1792508353,
+              "allow_create_engine": false,
+              "allow_sampling": true,
+              "allow_logprobs": true,
+              "allow_search_indices": false,
+              "allow_view": true,
+              "allow_fine_tuning": false,
+              "organization": "*",
+              "group": null,
+              "is_blocking": false
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "meta": {},
+  "argv": [
+    "${NVME_WORKDIR}/profiling/20261020_214308/preparation/capture_client.py",
+    "--codes",
+    "${NVME_WORKDIR}/bench-validation/20261020_165001_49599d4/ref_codes_en.jsonl",
+    "--ref-mode",
+    "codes",
+    "--concurrency",
+    "64",
+    "--num-prompts",
+    "1088",
+    "--num-warmups",
+    "8",
+    "--label",
+    "diagnostic-profile-c64",
+    "--out",
+    "${NVME_WORKDIR}/profiling/20261020_214308/c64/attempt1/client"
+  ]
+}

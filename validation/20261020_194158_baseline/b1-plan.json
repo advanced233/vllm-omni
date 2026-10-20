@@ -1,0 +1,94 @@
+{
+  "concurrency": [
+    1,
+    4,
+    8,
+    12,
+    16,
+    24,
+    32,
+    48,
+    64,
+    96,
+    128
+  ],
+  "repeats_at": {
+    "64": 3,
+    "128": 5
+  },
+  "num_prompts": 1088,
+  "seed": null,
+  "warmups": 8,
+  "save_audio": false,
+  "ref_mode": "codes",
+  "runs": [
+    {
+      "concurrency": 1,
+      "repeat": 1
+    },
+    {
+      "concurrency": 4,
+      "repeat": 1
+    },
+    {
+      "concurrency": 8,
+      "repeat": 1
+    },
+    {
+      "concurrency": 12,
+      "repeat": 1
+    },
+    {
+      "concurrency": 16,
+      "repeat": 1
+    },
+    {
+      "concurrency": 24,
+      "repeat": 1
+    },
+    {
+      "concurrency": 32,
+      "repeat": 1
+    },
+    {
+      "concurrency": 48,
+      "repeat": 1
+    },
+    {
+      "concurrency": 64,
+      "repeat": 1
+    },
+    {
+      "concurrency": 64,
+      "repeat": 2
+    },
+    {
+      "concurrency": 64,
+      "repeat": 3
+    },
+    {
+      "concurrency": 96,
+      "repeat": 1
+    },
+    {
+      "concurrency": 128,
+      "repeat": 1
+    },
+    {
+      "concurrency": 128,
+      "repeat": 2
+    },
+    {
+      "concurrency": 128,
+      "repeat": 3
+    },
+    {
+      "concurrency": 128,
+      "repeat": 4
+    },
+    {
+      "concurrency": 128,
+      "repeat": 5
+    }
+  ]
+}

@@ -1,0 +1,543 @@
+{
+  "status": "complete across selected profiles",
+  "profiles": [
+    {
+      "label": "C8",
+      "selected_audit": "${NVME_WORKDIR}/profiling/20261020_214308/independent-audit/c8-attempt2",
+      "trace_sha256": "56b24f759496d18ac292b6d93e75422dea817a66dd69da75feace7c63a279f4f",
+      "phases": {
+        "decode_only": {
+          "complete_steps": 232,
+          "generation_request_histogram": {
+            "8": 192,
+            "7": 38,
+            "6": 2
+          },
+          "context_request_histogram": {
+            "0": 232
+          },
+          "cpu_scope_p50_ms": 4.865212499999999,
+          "gpu_span_p50_ms": 13.743502075195313,
+          "gpu_busy_union_p50_ms": 13.59044873046875,
+          "graph_launches_per_step": {
+            "1": 232
+          },
+          "runtime_union_p50_ms": 2.4981722412109373,
+          "gdn_core_cpu_union_p50_ms": 0.0,
+          "gdn_core_cpu_inclusive_mean_per_step_ms": null,
+          "graphlaunch_cpu_duration_mean_per_step_ms": 2.528099603448276,
+          "gpu_family_kernel_sum_share_pct": {
+            "Marlin_MoE_GEMM": 30.93600684898409,
+            "dense_GEMM_GEMV_heuristic": 29.71023307425148,
+            "other": 11.809591324080737,
+            "BLAS_splitK_and_GEMV_reductions": 8.589899459635063,
+            "MoE_routing_alignment_sum": 4.825093777198518,
+            "attention_and_QK_KV_helpers": 4.044265216060108,
+            "normalization_and_norm_fusions": 3.84946922732078,
+            "GDN_and_prefill_helpers_heuristic": 3.2307394690593934,
+            "sampling_topk_draw": 3.0047016034094436
+          },
+          "gdn_call_count": 0,
+          "expected_gdn_calls_for_mixed": null,
+          "synchronization_api_union": {
+            "n": 232,
+            "p50": 0.0,
+            "p95": 0.0,
+            "min": 0,
+            "max": 0
+          },
+          "gpu_copy_directions": {
+            "Memcpy HtoD (Pinned -> Device)": {
+              "count": 546,
+              "bytes": 139472,
+              "gpu_copy_duration_us": 1151.4800000000023
+            },
+            "Memcpy DtoD (Device -> Device)": {
+              "count": 628,
+              "bytes": 21680,
+              "gpu_copy_duration_us": 1365.4959999999999
+            }
+          }
+        },
+        "mixed": {
+          "complete_steps": 22,
+          "generation_request_histogram": {
+            "7": 20,
+            "6": 2
+          },
+          "context_request_histogram": {
+            "1": 22
+          },
+          "cpu_scope_p50_ms": 58.9541095,
+          "gpu_span_p50_ms": 49.06703149414062,
+          "gpu_busy_union_p50_ms": 35.0686328125,
+          "graph_launches_per_step": {
+            "54": 22
+          },
+          "runtime_union_p50_ms": 8.097228271484376,
+          "gdn_core_cpu_union_p50_ms": 40.01142993164063,
+          "gdn_core_cpu_inclusive_mean_per_step_ms": 39.923751136363634,
+          "graphlaunch_cpu_duration_mean_per_step_ms": 2.8268798636363637,
+          "gpu_family_kernel_sum_share_pct": {
+            "Marlin_MoE_GEMM": 51.96963495067473,
+            "dense_GEMM_GEMV_heuristic": 21.64609767091364,
+            "GDN_and_prefill_helpers_heuristic": 7.525320762156288,
+            "other": 6.971483295833873,
+            "attention_and_QK_KV_helpers": 3.254228329695633,
+            "MoE_routing_alignment_sum": 2.7080580774909904,
+            "normalization_and_norm_fusions": 2.354896517309934,
+            "sampling_topk_draw": 1.8966577729375866,
+            "BLAS_splitK_and_GEMV_reductions": 1.6736226229873896
+          },
+          "gdn_call_count": 660,
+          "expected_gdn_calls_for_mixed": 660,
+          "synchronization_api_union": {
+            "n": 22,
+            "p50": 0.0,
+            "p95": 0.0,
+            "min": 0,
+            "max": 0
+          },
+          "gpu_copy_directions": {
+            "Memcpy HtoD (Pinned -> Device)": {
+              "count": 154,
+              "bytes": 21376,
+              "gpu_copy_duration_us": 344.19900000000024
+            },
+            "Memcpy DtoD (Device -> Device)": {
+              "count": 726,
+              "bytes": 919645312,
+              "gpu_copy_duration_us": 2514.8009999999954
+            }
+          }
+        }
+      },
+      "capture_hardware_stage0": {
+        "capture_epoch_us": [
+          1792507257848112.8,
+          1792507262340551.8
+        ],
+        "duration_s": 4.492439,
+        "sample_count": 5,
+        "sm_clock_mhz": {
+          "n": 5,
+          "p50": 1410.0,
+          "p95": 1410.0,
+          "min": 1395.0,
+          "max": 1410.0
+        },
+        "temperature_c": {
+          "n": 5,
+          "p50": 82.0,
+          "p95": 83.0,
+          "min": 82.0,
+          "max": 83.0
+        },
+        "power_draw_w": {
+          "n": 5,
+          "p50": 286.06,
+          "p95": 292.11400000000003,
+          "min": 266.48,
+          "max": 292.6
+        },
+        "utilization_pct": {
+          "n": 5,
+          "p50": 88.0,
+          "p95": 92.4,
+          "min": 69.0,
+          "max": 93.0
+        },
+        "reason_flags": {
+          "sw_thermal_slowdown": {
+            "valid_samples": 5,
+            "active_samples": 0,
+            "active_sample_pct": 0.0
+          },
+          "hw_thermal_slowdown": {
+            "valid_samples": 5,
+            "active_samples": 0,
+            "active_sample_pct": 0.0
+          },
+          "sw_power_cap": {
+            "valid_samples": 5,
+            "active_samples": 3,
+            "active_sample_pct": 60.0
+          },
+          "hw_power_brake_slowdown": {
+            "valid_samples": 5,
+            "active_samples": 0,
+            "active_sample_pct": 0.0
+          }
+        }
+      }
+    },
+    {
+      "label": "C16",
+      "selected_audit": "${NVME_WORKDIR}/profiling/20261020_214308/independent-audit/c16",
+      "trace_sha256": "28111d2b1c9a1d7de6b13579fb87f6f91fc25a8926c69c0c5a4c6c4f1b0f45e1",
+      "phases": {
+        "decode_only": {
+          "complete_steps": 194,
+          "generation_request_histogram": {
+            "16": 147,
+            "15": 38,
+            "14": 6,
+            "13": 3
+          },
+          "context_request_histogram": {
+            "0": 194
+          },
+          "cpu_scope_p50_ms": 6.27768,
+          "gpu_span_p50_ms": 18.06339404296875,
+          "gpu_busy_union_p50_ms": 17.63160754394531,
+          "graph_launches_per_step": {
+            "1": 194
+          },
+          "runtime_union_p50_ms": 3.434526611328125,
+          "gdn_core_cpu_union_p50_ms": 0.0,
+          "gdn_core_cpu_inclusive_mean_per_step_ms": null,
+          "graphlaunch_cpu_duration_mean_per_step_ms": 2.8231912938144332,
+          "gpu_family_kernel_sum_share_pct": {
+            "Marlin_MoE_GEMM": 38.59560879946871,
+            "dense_GEMM_GEMV_heuristic": 25.777938178666716,
+            "other": 9.911549265185629,
+            "BLAS_splitK_and_GEMV_reductions": 7.3464256375970445,
+            "MoE_routing_alignment_sum": 4.278028830172067,
+            "attention_and_QK_KV_helpers": 4.168604663539333,
+            "GDN_and_prefill_helpers_heuristic": 3.891765128886345,
+            "normalization_and_norm_fusions": 3.458604812426883,
+            "sampling_topk_draw": 2.571474684057393
+          },
+          "gdn_call_count": 0,
+          "expected_gdn_calls_for_mixed": null,
+          "synchronization_api_union": {
+            "n": 194,
+            "p50": 0.0,
+            "p95": 0.0,
+            "min": 0,
+            "max": 0
+          },
+          "gpu_copy_directions": {
+            "Memcpy HtoD (Pinned -> Device)": {
+              "count": 482,
+              "bytes": 136496,
+              "gpu_copy_duration_us": 1047.921000000001
+            },
+            "Memcpy DtoD (Device -> Device)": {
+              "count": 576,
+              "bytes": 39144,
+              "gpu_copy_duration_us": 1334.8530000000037
+            }
+          }
+        },
+        "mixed": {
+          "complete_steps": 29,
+          "generation_request_histogram": {
+            "15": 20,
+            "14": 7,
+            "13": 2
+          },
+          "context_request_histogram": {
+            "1": 26,
+            "2": 2,
+            "3": 1
+          },
+          "cpu_scope_p50_ms": 58.109853,
+          "gpu_span_p50_ms": 46.32414599609375,
+          "gpu_busy_union_p50_ms": 38.007003662109376,
+          "graph_launches_per_step": {
+            "54": 29
+          },
+          "runtime_union_p50_ms": 7.8468154296875,
+          "gdn_core_cpu_union_p50_ms": 38.29687255859375,
+          "gdn_core_cpu_inclusive_mean_per_step_ms": 38.63389472413793,
+          "graphlaunch_cpu_duration_mean_per_step_ms": 2.7303354482758624,
+          "gpu_family_kernel_sum_share_pct": {
+            "Marlin_MoE_GEMM": 49.75779359264811,
+            "dense_GEMM_GEMV_heuristic": 22.528480227705113,
+            "GDN_and_prefill_helpers_heuristic": 8.411709610416567,
+            "other": 6.627760879873322,
+            "attention_and_QK_KV_helpers": 4.315763015389703,
+            "MoE_routing_alignment_sum": 2.6346394185669038,
+            "normalization_and_norm_fusions": 2.383227006220579,
+            "sampling_topk_draw": 1.8361795492429982,
+            "BLAS_splitK_and_GEMV_reductions": 1.504446699936754
+          },
+          "gdn_call_count": 870,
+          "expected_gdn_calls_for_mixed": 870,
+          "synchronization_api_union": {
+            "n": 29,
+            "p50": 0.0,
+            "p95": 0.0,
+            "min": 0,
+            "max": 0
+          },
+          "gpu_copy_directions": {
+            "Memcpy HtoD (Pinned -> Device)": {
+              "count": 203,
+              "bytes": 34292,
+              "gpu_copy_duration_us": 444.57599999999985
+            },
+            "Memcpy DtoD (Device -> Device)": {
+              "count": 957,
+              "bytes": 1442874176,
+              "gpu_copy_duration_us": 3848.9779999999973
+            }
+          }
+        }
+      },
+      "capture_hardware_stage0": {
+        "capture_epoch_us": [
+          1792507866498034.8,
+          1792507871605805.0
+        ],
+        "duration_s": 5.10777025,
+        "sample_count": 5,
+        "sm_clock_mhz": {
+          "n": 5,
+          "p50": 1305.0,
+          "p95": 1365.0,
+          "min": 1275.0,
+          "max": 1365.0
+        },
+        "temperature_c": {
+          "n": 5,
+          "p50": 84.0,
+          "p95": 84.0,
+          "min": 84.0,
+          "max": 84.0
+        },
+        "power_draw_w": {
+          "n": 5,
+          "p50": 261.31,
+          "p95": 283.504,
+          "min": 235.07,
+          "max": 284.74
+        },
+        "utilization_pct": {
+          "n": 5,
+          "p50": 92.0,
+          "p95": 98.6,
+          "min": 74.0,
+          "max": 100.0
+        },
+        "reason_flags": {
+          "sw_thermal_slowdown": {
+            "valid_samples": 5,
+            "active_samples": 4,
+            "active_sample_pct": 80.0
+          },
+          "hw_thermal_slowdown": {
+            "valid_samples": 5,
+            "active_samples": 0,
+            "active_sample_pct": 0.0
+          },
+          "sw_power_cap": {
+            "valid_samples": 5,
+            "active_samples": 1,
+            "active_sample_pct": 20.0
+          },
+          "hw_power_brake_slowdown": {
+            "valid_samples": 5,
+            "active_samples": 0,
+            "active_sample_pct": 0.0
+          }
+        }
+      }
+    },
+    {
+      "label": "C64",
+      "selected_audit": "${NVME_WORKDIR}/profiling/20261020_214308/independent-audit/c64",
+      "trace_sha256": "d4407ae1fb16b071359c3b9bbde85e502d783dffdf0f8a0aa924dd182a3b016f",
+      "phases": {
+        "decode_only": {
+          "complete_steps": 89,
+          "generation_request_histogram": {
+            "62": 22,
+            "63": 32,
+            "58": 4,
+            "64": 9,
+            "60": 6,
+            "59": 2,
+            "61": 13,
+            "57": 1
+          },
+          "context_request_histogram": {
+            "0": 89
+          },
+          "cpu_scope_p50_ms": 6.591595999999999,
+          "gpu_span_p50_ms": 33.1792978515625,
+          "gpu_busy_union_p50_ms": 30.778516357421875,
+          "graph_launches_per_step": {
+            "1": 89
+          },
+          "runtime_union_p50_ms": 2.396508056640625,
+          "gdn_core_cpu_union_p50_ms": 0.0,
+          "gdn_core_cpu_inclusive_mean_per_step_ms": null,
+          "graphlaunch_cpu_duration_mean_per_step_ms": 2.20251706741573,
+          "gpu_family_kernel_sum_share_pct": {
+            "Marlin_MoE_GEMM": 46.122386950946805,
+            "dense_GEMM_GEMV_heuristic": 19.40245973650494,
+            "GDN_and_prefill_helpers_heuristic": 8.509179237244126,
+            "other": 8.380070520241839,
+            "attention_and_QK_KV_helpers": 5.081557599721573,
+            "BLAS_splitK_and_GEMV_reductions": 3.9201223822571727,
+            "MoE_routing_alignment_sum": 3.3903596281932886,
+            "normalization_and_norm_fusions": 3.016717782344722,
+            "sampling_topk_draw": 2.177146162545451
+          },
+          "gdn_call_count": 0,
+          "expected_gdn_calls_for_mixed": null,
+          "synchronization_api_union": {
+            "n": 89,
+            "p50": 0.0,
+            "p95": 0.0,
+            "min": 0,
+            "max": 0
+          },
+          "gpu_copy_directions": {
+            "Memcpy HtoD (Pinned -> Device)": {
+              "count": 284,
+              "bytes": 144324,
+              "gpu_copy_duration_us": 730.634
+            },
+            "Memcpy DtoD (Device -> Device)": {
+              "count": 390,
+              "bytes": 106980,
+              "gpu_copy_duration_us": 1146.3490000000008
+            }
+          }
+        },
+        "mixed": {
+          "complete_steps": 29,
+          "generation_request_histogram": {
+            "61": 10,
+            "63": 4,
+            "57": 1,
+            "58": 2,
+            "60": 5,
+            "56": 1,
+            "62": 6
+          },
+          "context_request_histogram": {
+            "2": 7,
+            "1": 12,
+            "6": 1,
+            "4": 2,
+            "3": 5,
+            "7": 1,
+            "5": 1
+          },
+          "cpu_scope_p50_ms": 60.267544,
+          "gpu_span_p50_ms": 66.69469604492187,
+          "gpu_busy_union_p50_ms": 58.87131030273437,
+          "graph_launches_per_step": {
+            "54": 29
+          },
+          "runtime_union_p50_ms": 7.98115869140625,
+          "gdn_core_cpu_union_p50_ms": 39.61061450195312,
+          "gdn_core_cpu_inclusive_mean_per_step_ms": 39.95961724137931,
+          "graphlaunch_cpu_duration_mean_per_step_ms": 2.7777060000000002,
+          "gpu_family_kernel_sum_share_pct": {
+            "Marlin_MoE_GEMM": 38.05293787963172,
+            "dense_GEMM_GEMV_heuristic": 28.06183725011177,
+            "GDN_and_prefill_helpers_heuristic": 11.667878485569124,
+            "attention_and_QK_KV_helpers": 9.245238975231702,
+            "other": 5.9898650897911745,
+            "normalization_and_norm_fusions": 2.716321274392183,
+            "MoE_routing_alignment_sum": 2.328127752608239,
+            "sampling_topk_draw": 1.4529876036764933,
+            "BLAS_splitK_and_GEMV_reductions": 0.48480568898762266
+          },
+          "gdn_call_count": 870,
+          "expected_gdn_calls_for_mixed": 870,
+          "synchronization_api_union": {
+            "n": 29,
+            "p50": 0.0,
+            "p95": 0.0,
+            "min": 0,
+            "max": 0
+          },
+          "gpu_copy_directions": {
+            "Memcpy HtoD (Pinned -> Device)": {
+              "count": 203,
+              "bytes": 72448,
+              "gpu_copy_duration_us": 547.5160000000001
+            },
+            "Memcpy DtoD (Device -> Device)": {
+              "count": 957,
+              "bytes": 2988722240,
+              "gpu_copy_duration_us": 6536.677000000011
+            }
+          }
+        }
+      },
+      "capture_hardware_stage0": {
+        "capture_epoch_us": [
+          1792508380200557.8,
+          1792508385373624.8
+        ],
+        "duration_s": 5.173067,
+        "sample_count": 6,
+        "sm_clock_mhz": {
+          "n": 6,
+          "p50": 1155.0,
+          "p95": 1312.5,
+          "min": 1080.0,
+          "max": 1350.0
+        },
+        "temperature_c": {
+          "n": 6,
+          "p50": 84.0,
+          "p95": 85.0,
+          "min": 84.0,
+          "max": 85.0
+        },
+        "power_draw_w": {
+          "n": 6,
+          "p50": 246.82,
+          "p95": 318.195,
+          "min": 220.29,
+          "max": 340.0
+        },
+        "utilization_pct": {
+          "n": 6,
+          "p50": 100.0,
+          "p95": 100.0,
+          "min": 100.0,
+          "max": 100.0
+        },
+        "reason_flags": {
+          "sw_thermal_slowdown": {
+            "valid_samples": 6,
+            "active_samples": 6,
+            "active_sample_pct": 100.0
+          },
+          "hw_thermal_slowdown": {
+            "valid_samples": 6,
+            "active_samples": 0,
+            "active_sample_pct": 0.0
+          },
+          "sw_power_cap": {
+            "valid_samples": 6,
+            "active_samples": 1,
+            "active_sample_pct": 16.666666666666668
+          },
+          "hw_power_brake_slowdown": {
+            "valid_samples": 6,
+            "active_samples": 0,
+            "active_sample_pct": 0.0
+          }
+        }
+      }
+    }
+  ],
+  "limits": [
+    "Do not compare different actual decode/context batch populations as equal steps.",
+    "Capture thermal conditions differ; absolute duration deltas are not isolated concurrency effects.",
+    "Inclusive GDN CPU duration contains nested FLA ops and profiler overhead; not an additive or removable-time estimate.",
+    "Pure decode full CUDA graph does not emit the same per-op CPU scopes as mixed steps; absent decode GDN CPU scope is not zero GPU work.",
+    "No changes implemented, no unprofiled timing test performed."
+  ],
+  "provisional_next_action": "First verify GDN mixed host cost with bounded lightweight no-torch-profiler instrumentation, not a forced mixed FULL graph. Then isolate existing-output-buffer reuse; in parallel plan a separate dependency-side Marlin tile microbenchmark. Admission batching remains an explicit latency/fairness tradeoff."
+}

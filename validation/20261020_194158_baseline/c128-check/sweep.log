@@ -1,0 +1,4 @@
+[19:43:24] c=128 r=1: starting server
+[19:47:09] c=128 r=1: ready after 225s, benchmarking
+[19:47:30] c=128 r=1: client exit 0, stopping server
+[19:47:42] done: ${NVME_WORKDIR}/baseline/20261020_194158/c128-check/table.md

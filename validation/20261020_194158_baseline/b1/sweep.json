@@ -1,0 +1,13 @@
+{
+  "label": "a100-main",
+  "concurrency": "1 4 8 12 16 24 32 48 64 96 128",
+  "repeats": "1",
+  "repeats_at": "64:3 128:5",
+  "codes": "${NVME_WORKDIR}/bench-validation/20261020_165001_49599d4/ref_codes_en.jsonl",
+  "port": "8091",
+  "gpu_index": "1",
+  "bench_args": "--num-prompts 1088",
+  "server_cmd": "source ${NVME_WORKDIR}/baseline/20261020_194158/preparation/env.sh && exec python ${NVME_WORKDIR}/baseline/20261020_194158/preparation/server_supervisor.py",
+  "started_at": "2026-10-20T19:48:52+0800",
+  "hostname": "HOST_REDACTED"
+}

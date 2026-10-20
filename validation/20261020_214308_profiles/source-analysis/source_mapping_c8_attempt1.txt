@@ -1,0 +1,112 @@
+Source/trace mapping — provisional C8 attempt1
+No GPU work, source edits or optimizations performed.
+All percentages below are correlated kernel-duration sums, not walltime or speedup.
+
+Marlin routed-expert GEMMs
+Backbone MoE, supported by construction and exact count; the audio tower uses dense nn.Linear and no MoE.
+Confidence: high at family level; no per-launch w13 versus w2 attribution from the demangled kernel alone
+  decode_only: 19040 kernels, 1096300.503 us, 29.237%
+  mixed: 1120 kernels, 281330.981 us, 49.286%
+  ${WORKSPACE}/vllm-omni/vllm_omni/model_executor/models/fish_omni/fish_omni_model.py:205 — Constructs Qwen3_5Model backbone
+  ${NVME_WORKDIR}/venvs/vllm-omni-cu129/lib/python3.12/site-packages/vllm/model_executor/models/qwen3_5.py:173 — MoE layers use Qwen3NextSparseMoeBlock
+  ${NVME_WORKDIR}/venvs/vllm-omni-cu129/lib/python3.12/site-packages/vllm/model_executor/models/qwen3_next.py:223 — Constructs FusedMoEFactory for routed experts
+  ${NVME_WORKDIR}/venvs/vllm-omni-cu129/lib/python3.12/site-packages/vllm/model_executor/layers/fused_moe/oracle/fp8.py:192 — MARLIN backend maps to MarlinExperts
+  ${NVME_WORKDIR}/venvs/vllm-omni-cu129/lib/python3.12/site-packages/vllm/model_executor/layers/fused_moe/experts/marlin_moe.py:741 — MarlinExperts.apply invokes fused_marlin_moe
+  ${NVME_WORKDIR}/venvs/vllm-omni-cu129/lib/python3.12/site-packages/vllm/model_executor/layers/fused_moe/experts/marlin_moe.py:131 — First w13 Marlin GEMM
+  ${NVME_WORKDIR}/venvs/vllm-omni-cu129/lib/python3.12/site-packages/vllm/model_executor/layers/fused_moe/experts/marlin_moe.py:195 — Second w2 Marlin GEMM
+  ${NVME_WORKDIR}/venvs/vllm-omni-cu129/lib/python3.12/site-packages/vllm/_custom_ops.py:2431 — Python CUDA-op boundary, exposes thread_k/thread_n/blocks_per_sm overrides
+
+Dense GEMM/GEMV/reductions
+Unresolved aggregate: potentially backbone projections, shared experts/router, tower linears and semantic/codebook heads. Kernel names alone do not identify modules.
+Confidence: only family-level library operation identified
+  ${NVME_WORKDIR}/venvs/vllm-omni-cu129/lib/python3.12/site-packages/vllm/model_executor/layers/mamba/gdn/qwen_gdn_linear_attn.py:995 — GDN input qkvz and ba projections
+  ${NVME_WORKDIR}/venvs/vllm-omni-cu129/lib/python3.12/site-packages/vllm/model_executor/layers/mamba/gdn/qwen_gdn_linear_attn.py:1057 — GDN output projection
+  ${NVME_WORKDIR}/venvs/vllm-omni-cu129/lib/python3.12/site-packages/vllm/model_executor/models/qwen2_moe.py:115 — Shared-expert MLP projections and expert gate
+  ${WORKSPACE}/vllm-omni/vllm_omni/model_executor/models/fish_omni/codebook_tower.py:169 — Tower eh_proj
+  ${WORKSPACE}/vllm-omni/vllm_omni/model_executor/models/fish_omni/codebook_tower.py:187 — Tower qkv projection
+  ${WORKSPACE}/vllm-omni/vllm_omni/model_executor/models/fish_omni/codebook_tower.py:205 — Tower o_proj
+  ${WORKSPACE}/vllm-omni/vllm_omni/model_executor/models/fish_omni/codebook_tower.py:208 — Tower gate_up/down MLP projections
+  ${WORKSPACE}/vllm-omni/vllm_omni/model_executor/models/fish_omni/fish_omni_model.py:447 — Semantic head matmul
+  ${WORKSPACE}/vllm-omni/vllm_omni/model_executor/models/fish_omni/fish_omni_model.py:484 — Nine codebook head matmuls
+
+Packed GDN decode
+Backbone linear-attention layers
+Confidence: high: unique named kernel and actual call chain
+  decode_only: 7140 kernels, 92802.870 us, 2.475%
+  mixed: 420 kernels, 5471.764 us, 0.959%
+  ${WORKSPACE}/vllm-omni/vllm_omni/model_executor/models/fish_omni/gdn.py:277 — Pure decode delegates to installed Qwen standard path
+  ${NVME_WORKDIR}/venvs/vllm-omni-cu129/lib/python3.12/site-packages/vllm/model_executor/layers/mamba/gdn/qwen_gdn_linear_attn.py:1728 — Packed non-spec decode path
+  ${NVME_WORKDIR}/venvs/vllm-omni-cu129/lib/python3.12/site-packages/vllm/model_executor/layers/mamba/gdn/qwen_gdn_linear_attn.py:1756 — Causal convolution update
+  ${NVME_WORKDIR}/venvs/vllm-omni-cu129/lib/python3.12/site-packages/vllm/model_executor/layers/mamba/gdn/qwen_gdn_linear_attn.py:1766 — Packed recurrent attention call
+  ${NVME_WORKDIR}/venvs/vllm-omni-cu129/lib/python3.12/site-packages/vllm/third_party/flash_linear_attention/ops/fused_recurrent.py:256 — Actual Triton kernel; state load/update computes in fp32, final store rounds to pool dtype
+  ${WORKSPACE}/vllm-omni/vllm_omni/model_executor/models/fish_omni/gdn.py:181 — Mixed-step decode tokens reuse packed kernel
+
+A100 GDN prefill/FLA
+Backbone linear-attention prefill subset of mixed steps
+Confidence: high at named FLA kernels; generic index/copy kernels not individually attributed
+  decode_only: 0 kernels, 0.000 us, 0.000%
+  mixed: 2100 kernels, 31746.442 us, 5.562%
+  ${WORKSPACE}/vllm-omni/vllm_omni/model_executor/models/fish_omni/gdn.py:135 — Direct indexed state-pool path is FlashInfer-only
+  ${WORKSPACE}/vllm-omni/vllm_omni/model_executor/models/fish_omni/gdn.py:230 — A100 FLA fallback gathers state, zeroes fresh rows
+  ${WORKSPACE}/vllm-omni/vllm_omni/model_executor/models/fish_omni/gdn.py:232 — Calls layer.chunk_gated_delta_rule
+  ${WORKSPACE}/vllm-omni/vllm_omni/model_executor/models/fish_omni/gdn.py:245 — Scatters final state and copies output
+  ${NVME_WORKDIR}/venvs/vllm-omni-cu129/lib/python3.12/site-packages/vllm/model_executor/layers/mamba/gdn/qwen_gdn_linear_attn.py:344 — forward_native dispatches to FLA
+  ${NVME_WORKDIR}/venvs/vllm-omni-cu129/lib/python3.12/site-packages/vllm/third_party/flash_linear_attention/ops/chunk.py:23 — FLA chunk orchestration
+  ${NVME_WORKDIR}/venvs/vllm-omni-cu129/lib/python3.12/site-packages/vllm/third_party/flash_linear_attention/ops/solve_tril.py:227 — Named triangular solve kernel
+  ${NVME_WORKDIR}/venvs/vllm-omni-cu129/lib/python3.12/site-packages/vllm/third_party/flash_linear_attention/ops/chunk_delta_h.py:45 — Named recurrent chunk kernel
+
+Tower-specific helper kernels
+Audio codebook tower
+Confidence: high for these exact unique kernel names; excludes generic dense GEMMs
+  decode_only: 15470 kernels, 51114.382 us, 1.363%
+  mixed: 910 kernels, 4768.215 us, 0.835%
+  ${WORKSPACE}/vllm-omni/vllm_omni/model_executor/models/fish_omni/codebook_tower.py:159 — TowerLayer.forward uses these helpers around dense projections
+  ${WORKSPACE}/vllm-omni/vllm_omni/model_executor/models/fish_omni/kernels.py:1 — Helper kernel definitions
+  ${WORKSPACE}/vllm-omni/vllm_omni/model_executor/models/fish_omni/fish_omni_model.py:476 — Four shared tower layers
+  ${WORKSPACE}/vllm-omni/vllm_omni/model_executor/models/fish_omni/fish_omni_model.py:481 — Nine autoregressive codebook-specific layers
+
+Frame sampling top-k + sort + draw
+Semantic/codebook frame sampling, excluding MoE topkGating
+Confidence: high for _draw_kernel; topk/sort association supported by unique sampling calls and counts, requires attribution if other topk paths added
+  decode_only: 7378 kernels, 115968.946 us, 3.093%
+  mixed: 434 kernels, 9819.106 us, 1.720%
+  ${WORKSPACE}/vllm-omni/vllm_omni/model_executor/models/fish_omni/sampling.py:59 — Semantic torch.topk shared by first/RAS draws
+  ${WORKSPACE}/vllm-omni/vllm_omni/model_executor/models/fish_omni/sampling.py:63 — Second RAS draw
+  ${WORKSPACE}/vllm-omni/vllm_omni/model_executor/models/fish_omni/sampling.py:88 — Nine codebook draws
+  ${WORKSPACE}/vllm-omni/vllm_omni/model_executor/models/fish_omni/kernels.py:295 — Each head performs torch.topk if candidates not provided
+  ${WORKSPACE}/vllm-omni/vllm_omni/model_executor/models/fish_omni/kernels.py:251 — Draw still reads whole vocab for normalization
+  ${WORKSPACE}/vllm-omni/vllm_omni/model_executor/models/fish_omni/kernels.py:260 — Inclusive cumulative top-p mask plus always-keep-rank0 semantics
+  ${WORKSPACE}/vllm-omni/vllm_omni/model_executor/models/fish_omni/model_state.py:306 — Per-frame sampling noise generation; do not freeze RNG when graphing
+
+Unfused sigmoid/multiply candidate
+Possible shared-expert gate; not proven per-event by current trace
+Confidence: candidate locus, not a confirmed attribution
+  decode_only: 19040 kernels, 261293.399 us, 6.968%
+  mixed: 1120 kernels, 8708.204 us, 1.526%
+  ${NVME_WORKDIR}/venvs/vllm-omni-cu129/lib/python3.12/site-packages/vllm/model_executor/models/qwen3_next.py:211 — Shared expert passes expert_gate
+  ${NVME_WORKDIR}/venvs/vllm-omni-cu129/lib/python3.12/site-packages/vllm/model_executor/models/qwen2_moe.py:121 — F.sigmoid(expert_gate(x)[0]) * out
+
+provisional 1: A100 Marlin launch/tile tuning for the measured routed-expert shapes
+location: ['${NVME_WORKDIR}/venvs/vllm-omni-cu129/lib/python3.12/site-packages/vllm/model_executor/layers/fused_moe/experts/marlin_moe.py:340', '${NVME_WORKDIR}/venvs/vllm-omni-cu129/lib/python3.12/site-packages/vllm/_custom_ops.py:2455']
+current_behavior: Block-M heuristic chooses among8/16/32/48/64 from M*topk/E; thread_k/thread_n/blocks_per_sm remain -1 at the Marlin callsites. Actual model E256/topk8/K2048/intermediate512, BF16 activations with FP8 expert weights.
+support: Marlin exact mapped29.237% decode and49.286% mixed kernel-duration sums in C8 attempt1.
+experiment: After C16/C64 traces establish shapes, replay identical captured input/weights/router indices for decode M8/16/64 and observed mixed token M; benchmark only supported kernel tile/block-M choices. Keep FP8 weights, BF16 activation, use_fp32_reduce=True and use_atomic_add=False unchanged. Confirm standalone event timings then end-to-end C8/C16/C64 with matched thermal distribution and GPU sharing.
+quality_validation: Compare expert outputs to existing path with explicit errors/tolerances, then fixed-seed frame tests plus full1088 noise-run/WER/SIM and official E2E. Tile rounding may alter trajectories; distribution/quality tests required, not only allclose.
+scope_note: Implementation locus is installed vLLM dependency; do not present a vLLM-only patch as an Omni-only performance PR. No tuning or speedup measured yet.
+
+provisional 2, config experiment first: Batch arriving prefills earlier around C8/C16 to reduce mixed-step frequency
+location: ['${WORKSPACE}/vllm-omni/vllm_omni/core/sched/omni_ar_scheduler.py:347', '${WORKSPACE}/vllm-omni/vllm_omni/core/sched/omni_ar_scheduler.py:370']
+current_behavior: Default min_running32/min_batch6/max_wait100ms means admission batching inactive at C8/C16; small arriving prompts can each produce a mixed step.
+support: C8 attempt1 includes14 complete mixed steps (12 with one context request), GPU-span median51.226ms vs decode13.543ms; one versus54 graph launches per step. This is an association/optimization opportunity, not proof of causality or CPU bottleneck.
+experiment: Use separate deploy YAML and fresh service: change only min_running to4 for C8 (8 may not trigger when only7 requests remain running) or8 for C16 first, preserving min_batch6/max_wait100; then, if warranted, bounded sweep of min_batch2/4 and max_wait10/25/50ms. Measure mixed-step fraction, total GPU busy union, TTFA p95/p99, stall>100ms, RTF and throughput at same workload/thermal conditions; do not select on throughput alone.
+quality_validation: Same1088 rows and seeded quality companion, noise-run/capped duration/WER/SIM; admission changes batching/numerical trajectories even without changing model math.
+scope_note: Explicit TTFA latency tradeoff: waiting may outweigh saved mixed steps. C16/C64 and aligned C8 retry evidence must be read before final priority; no improvement yet demonstrated.
+
+provisional 3, bounded lower payoff: Fuse exact top-k selection and frame draw, or dual semantic draws, on A100
+location: ['${WORKSPACE}/vllm-omni/vllm_omni/model_executor/models/fish_omni/sampling.py:59', '${WORKSPACE}/vllm-omni/vllm_omni/model_executor/models/fish_omni/kernels.py:229', '${WORKSPACE}/vllm-omni/vllm_omni/model_executor/models/fish_omni/kernels.py:295']
+current_behavior: Ten torch.topk operations per frame plus sort helpers, followed by11 _draw_kernel launches; main and RAS share top candidates but each draw reads full logits for its probability normalization.
+support: Sampling topk/sort/draw family is3.093% decode and1.720% mixed kernel-duration sum in C8 attempt1, so limited scope and below Marlin priority.
+experiment: Prototype only after authorization: fuse full-row normalization with sorted top-k selection and exact draw, or two semantic draws sharing loads while maintaining possibly different temperatures. Do not reduce max_top_k64 or vocabulary/candidate set to manufacture a gain. Benchmark logits4096/semantic-candidate shape at8/16/64 rows including FULL graph replay.
+quality_validation: Existing test_fused_draw_matches_reference_distribution, greedy-zero-temperature, semantic/RAS tests, per-request RNG freshness and controlled uniform-noise comparisons. Preserve whole-row denominator, inclusive top-p condition, rank0 kept and candidate id map; full1088 noise/WER/SIM plus E2E after kernel tests.
+scope_note: Small kernel-sum fraction is not an end-to-end speedup estimate. Changes to ties/sort/numerics can change generation; no implementation performed.
+

@@ -1,0 +1,11 @@
+{
+  "ok": true,
+  "checks": [
+    "native phase parsing",
+    "CUPTI correlation even when kernel outlives CPU scope",
+    "one CUDA graph launch maps to all three correlated node kernels",
+    "unattributed work preserved",
+    "interval union",
+    "cross-stage interval overlap"
+  ]
+}

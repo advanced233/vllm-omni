@@ -1,0 +1,10 @@
+[21:58:46] c=10 r=1: starting server
+[22:02:33] c=10 r=1: ready after 227s, benchmarking
+[22:07:01] c=10 r=1: client exit 0, stopping server
+[22:07:13] c=12 r=1: starting server
+[22:11:00] c=12 r=1: ready after 227s, benchmarking
+[22:15:30] c=12 r=1: client exit 0, stopping server
+[22:15:42] c=16 r=1: starting server
+[22:19:29] c=16 r=1: ready after 227s, benchmarking
+[22:23:20] c=16 r=1: client exit 0, stopping server
+[22:23:32] done: ${NVME_WORKDIR}/baseline/20261020_194158/followup/table.md

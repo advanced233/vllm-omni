@@ -1,0 +1,1422 @@
+{
+  "graph_cache": "${NVME_WORKDIR}/cache/vllm/torch_compile_cache/4fc28974e2/rank_0_0/backbone/computation_graph.py",
+  "graph_sha256": "3715d4a01fbbe69f8dc1a9902ee44214f8a65d8fa993b158197a700044848c46",
+  "parse_method": "Python AST only; graph code NOT executed/imported.",
+  "submodules_total": 107,
+  "non_attention_partitions_compiled": 54,
+  "attention_split_partitions": 53,
+  "split_op_counts": {
+    "torch.ops.vllm.qwen_gdn_attention_core": 30,
+    "torch.ops.vllm.unified_kv_cache_update": 23,
+    "torch.ops.vllm.unified_attention_with_output": 23
+  },
+  "compiled_partition_names": [
+    "submod_0",
+    "submod_2",
+    "submod_4",
+    "submod_6",
+    "submod_8",
+    "submod_10",
+    "submod_12",
+    "submod_14",
+    "submod_16",
+    "submod_18",
+    "submod_20",
+    "submod_22",
+    "submod_24",
+    "submod_26",
+    "submod_28",
+    "submod_30",
+    "submod_32",
+    "submod_34",
+    "submod_36",
+    "submod_38",
+    "submod_40",
+    "submod_42",
+    "submod_44",
+    "submod_46",
+    "submod_48",
+    "submod_50",
+    "submod_52",
+    "submod_54",
+    "submod_56",
+    "submod_58",
+    "submod_60",
+    "submod_62",
+    "submod_64",
+    "submod_66",
+    "submod_68",
+    "submod_70",
+    "submod_72",
+    "submod_74",
+    "submod_76",
+    "submod_78",
+    "submod_80",
+    "submod_82",
+    "submod_84",
+    "submod_86",
+    "submod_88",
+    "submod_90",
+    "submod_92",
+    "submod_94",
+    "submod_96",
+    "submod_98",
+    "submod_100",
+    "submod_102",
+    "submod_104",
+    "submod_106"
+  ],
+  "partitions": [
+    {
+      "name": "submod_0",
+      "line": 1010,
+      "end_line": 1124,
+      "split_attention_ops": [],
+      "is_attention_split_partition": false,
+      "mentions_backbone_layer_params": true,
+      "mentions_tower_layer_params": false
+    },
+    {
+      "name": "submod_1",
+      "line": 1126,
+      "end_line": 1130,
+      "split_attention_ops": [
+        {
+          "line": 1129,
+          "op": "torch.ops.vllm.qwen_gdn_attention_core"
+        }
+      ],
+      "is_attention_split_partition": true,
+      "mentions_backbone_layer_params": false,
+      "mentions_tower_layer_params": false
+    },
+    {
+      "name": "submod_2",
+      "line": 1132,
+      "end_line": 1230,
+      "split_attention_ops": [],
+      "is_attention_split_partition": false,
+      "mentions_backbone_layer_params": true,
+      "mentions_tower_layer_params": false
+    },
+    {
+      "name": "submod_3",
+      "line": 1232,
+      "end_line": 1236,
+      "split_attention_ops": [
+        {
+          "line": 1235,
+          "op": "torch.ops.vllm.qwen_gdn_attention_core"
+        }
+      ],
+      "is_attention_split_partition": true,
+      "mentions_backbone_layer_params": false,
+      "mentions_tower_layer_params": false
+    },
+    {
+      "name": "submod_4",
+      "line": 1238,
+      "end_line": 1336,
+      "split_attention_ops": [],
+      "is_attention_split_partition": false,
+      "mentions_backbone_layer_params": true,
+      "mentions_tower_layer_params": false
+    },
+    {
+      "name": "submod_5",
+      "line": 1338,
+      "end_line": 1342,
+      "split_attention_ops": [
+        {
+          "line": 1341,
+          "op": "torch.ops.vllm.qwen_gdn_attention_core"
+        }
+      ],
+      "is_attention_split_partition": true,
+      "mentions_backbone_layer_params": false,
+      "mentions_tower_layer_params": false
+    },
+    {
+      "name": "submod_6",
+      "line": 1344,
+      "end_line": 1453,
+      "split_attention_ops": [],
+      "is_attention_split_partition": false,
+      "mentions_backbone_layer_params": true,
+      "mentions_tower_layer_params": false
+    },
+    {
+      "name": "submod_7",
+      "line": 1455,
+      "end_line": 1462,
+      "split_attention_ops": [
+        {
+          "line": 1458,
+          "op": "torch.ops.vllm.unified_kv_cache_update"
+        },
+        {
+          "line": 1461,
+          "op": "torch.ops.vllm.unified_attention_with_output"
+        }
+      ],
+      "is_attention_split_partition": true,
+      "mentions_backbone_layer_params": false,
+      "mentions_tower_layer_params": false
+    },
+    {
+      "name": "submod_8",
+      "line": 1464,
+      "end_line": 1538,
+      "split_attention_ops": [],
+      "is_attention_split_partition": false,
+      "mentions_backbone_layer_params": true,
+      "mentions_tower_layer_params": false
+    },
+    {
+      "name": "submod_9",
+      "line": 1540,
+      "end_line": 1544,
+      "split_attention_ops": [
+        {
+          "line": 1543,
+          "op": "torch.ops.vllm.qwen_gdn_attention_core"
+        }
+      ],
+      "is_attention_split_partition": true,
+      "mentions_backbone_layer_params": false,
+      "mentions_tower_layer_params": false
+    },
+    {
+      "name": "submod_10",
+      "line": 1546,
+      "end_line": 1644,
+      "split_attention_ops": [],
+      "is_attention_split_partition": false,
+      "mentions_backbone_layer_params": true,
+      "mentions_tower_layer_params": false
+    },
+    {
+      "name": "submod_11",
+      "line": 1646,
+      "end_line": 1650,
+      "split_attention_ops": [
+        {
+          "line": 1649,
+          "op": "torch.ops.vllm.qwen_gdn_attention_core"
+        }
+      ],
+      "is_attention_split_partition": true,
+      "mentions_backbone_layer_params": false,
+      "mentions_tower_layer_params": false
+    },
+    {
+      "name": "submod_12",
+      "line": 1652,
+      "end_line": 1750,
+      "split_attention_ops": [],
+      "is_attention_split_partition": false,
+      "mentions_backbone_layer_params": true,
+      "mentions_tower_layer_params": false
+    },
+    {
+      "name": "submod_13",
+      "line": 1752,
+      "end_line": 1756,
+      "split_attention_ops": [
+        {
+          "line": 1755,
+          "op": "torch.ops.vllm.qwen_gdn_attention_core"
+        }
+      ],
+      "is_attention_split_partition": true,
+      "mentions_backbone_layer_params": false,
+      "mentions_tower_layer_params": false
+    },
+    {
+      "name": "submod_14",
+      "line": 1758,
+      "end_line": 1867,
+      "split_attention_ops": [],
+      "is_attention_split_partition": false,
+      "mentions_backbone_layer_params": true,
+      "mentions_tower_layer_params": false
+    },
+    {
+      "name": "submod_15",
+      "line": 1869,
+      "end_line": 1876,
+      "split_attention_ops": [
+        {
+          "line": 1872,
+          "op": "torch.ops.vllm.unified_kv_cache_update"
+        },
+        {
+          "line": 1875,
+          "op": "torch.ops.vllm.unified_attention_with_output"
+        }
+      ],
+      "is_attention_split_partition": true,
+      "mentions_backbone_layer_params": false,
+      "mentions_tower_layer_params": false
+    },
+    {
+      "name": "submod_16",
+      "line": 1878,
+      "end_line": 1952,
+      "split_attention_ops": [],
+      "is_attention_split_partition": false,
+      "mentions_backbone_layer_params": true,
+      "mentions_tower_layer_params": false
+    },
+    {
+      "name": "submod_17",
+      "line": 1954,
+      "end_line": 1958,
+      "split_attention_ops": [
+        {
+          "line": 1957,
+          "op": "torch.ops.vllm.qwen_gdn_attention_core"
+        }
+      ],
+      "is_attention_split_partition": true,
+      "mentions_backbone_layer_params": false,
+      "mentions_tower_layer_params": false
+    },
+    {
+      "name": "submod_18",
+      "line": 1960,
+      "end_line": 2058,
+      "split_attention_ops": [],
+      "is_attention_split_partition": false,
+      "mentions_backbone_layer_params": true,
+      "mentions_tower_layer_params": false
+    },
+    {
+      "name": "submod_19",
+      "line": 2060,
+      "end_line": 2064,
+      "split_attention_ops": [
+        {
+          "line": 2063,
+          "op": "torch.ops.vllm.qwen_gdn_attention_core"
+        }
+      ],
+      "is_attention_split_partition": true,
+      "mentions_backbone_layer_params": false,
+      "mentions_tower_layer_params": false
+    },
+    {
+      "name": "submod_20",
+      "line": 2066,
+      "end_line": 2164,
+      "split_attention_ops": [],
+      "is_attention_split_partition": false,
+      "mentions_backbone_layer_params": true,
+      "mentions_tower_layer_params": false
+    },
+    {
+      "name": "submod_21",
+      "line": 2166,
+      "end_line": 2170,
+      "split_attention_ops": [
+        {
+          "line": 2169,
+          "op": "torch.ops.vllm.qwen_gdn_attention_core"
+        }
+      ],
+      "is_attention_split_partition": true,
+      "mentions_backbone_layer_params": false,
+      "mentions_tower_layer_params": false
+    },
+    {
+      "name": "submod_22",
+      "line": 2172,
+      "end_line": 2281,
+      "split_attention_ops": [],
+      "is_attention_split_partition": false,
+      "mentions_backbone_layer_params": true,
+      "mentions_tower_layer_params": false
+    },
+    {
+      "name": "submod_23",
+      "line": 2283,
+      "end_line": 2290,
+      "split_attention_ops": [
+        {
+          "line": 2286,
+          "op": "torch.ops.vllm.unified_kv_cache_update"
+        },
+        {
+          "line": 2289,
+          "op": "torch.ops.vllm.unified_attention_with_output"
+        }
+      ],
+      "is_attention_split_partition": true,
+      "mentions_backbone_layer_params": false,
+      "mentions_tower_layer_params": false
+    },
+    {
+      "name": "submod_24",
+      "line": 2292,
+      "end_line": 2366,
+      "split_attention_ops": [],
+      "is_attention_split_partition": false,
+      "mentions_backbone_layer_params": true,
+      "mentions_tower_layer_params": false
+    },
+    {
+      "name": "submod_25",
+      "line": 2368,
+      "end_line": 2372,
+      "split_attention_ops": [
+        {
+          "line": 2371,
+          "op": "torch.ops.vllm.qwen_gdn_attention_core"
+        }
+      ],
+      "is_attention_split_partition": true,
+      "mentions_backbone_layer_params": false,
+      "mentions_tower_layer_params": false
+    },
+    {
+      "name": "submod_26",
+      "line": 2374,
+      "end_line": 2472,
+      "split_attention_ops": [],
+      "is_attention_split_partition": false,
+      "mentions_backbone_layer_params": true,
+      "mentions_tower_layer_params": false
+    },
+    {
+      "name": "submod_27",
+      "line": 2474,
+      "end_line": 2478,
+      "split_attention_ops": [
+        {
+          "line": 2477,
+          "op": "torch.ops.vllm.qwen_gdn_attention_core"
+        }
+      ],
+      "is_attention_split_partition": true,
+      "mentions_backbone_layer_params": false,
+      "mentions_tower_layer_params": false
+    },
+    {
+      "name": "submod_28",
+      "line": 2480,
+      "end_line": 2578,
+      "split_attention_ops": [],
+      "is_attention_split_partition": false,
+      "mentions_backbone_layer_params": true,
+      "mentions_tower_layer_params": false
+    },
+    {
+      "name": "submod_29",
+      "line": 2580,
+      "end_line": 2584,
+      "split_attention_ops": [
+        {
+          "line": 2583,
+          "op": "torch.ops.vllm.qwen_gdn_attention_core"
+        }
+      ],
+      "is_attention_split_partition": true,
+      "mentions_backbone_layer_params": false,
+      "mentions_tower_layer_params": false
+    },
+    {
+      "name": "submod_30",
+      "line": 2586,
+      "end_line": 2695,
+      "split_attention_ops": [],
+      "is_attention_split_partition": false,
+      "mentions_backbone_layer_params": true,
+      "mentions_tower_layer_params": false
+    },
+    {
+      "name": "submod_31",
+      "line": 2697,
+      "end_line": 2704,
+      "split_attention_ops": [
+        {
+          "line": 2700,
+          "op": "torch.ops.vllm.unified_kv_cache_update"
+        },
+        {
+          "line": 2703,
+          "op": "torch.ops.vllm.unified_attention_with_output"
+        }
+      ],
+      "is_attention_split_partition": true,
+      "mentions_backbone_layer_params": false,
+      "mentions_tower_layer_params": false
+    },
+    {
+      "name": "submod_32",
+      "line": 2706,
+      "end_line": 2780,
+      "split_attention_ops": [],
+      "is_attention_split_partition": false,
+      "mentions_backbone_layer_params": true,
+      "mentions_tower_layer_params": false
+    },
+    {
+      "name": "submod_33",
+      "line": 2782,
+      "end_line": 2786,
+      "split_attention_ops": [
+        {
+          "line": 2785,
+          "op": "torch.ops.vllm.qwen_gdn_attention_core"
+        }
+      ],
+      "is_attention_split_partition": true,
+      "mentions_backbone_layer_params": false,
+      "mentions_tower_layer_params": false
+    },
+    {
+      "name": "submod_34",
+      "line": 2788,
+      "end_line": 2886,
+      "split_attention_ops": [],
+      "is_attention_split_partition": false,
+      "mentions_backbone_layer_params": true,
+      "mentions_tower_layer_params": false
+    },
+    {
+      "name": "submod_35",
+      "line": 2888,
+      "end_line": 2892,
+      "split_attention_ops": [
+        {
+          "line": 2891,
+          "op": "torch.ops.vllm.qwen_gdn_attention_core"
+        }
+      ],
+      "is_attention_split_partition": true,
+      "mentions_backbone_layer_params": false,
+      "mentions_tower_layer_params": false
+    },
+    {
+      "name": "submod_36",
+      "line": 2894,
+      "end_line": 2992,
+      "split_attention_ops": [],
+      "is_attention_split_partition": false,
+      "mentions_backbone_layer_params": true,
+      "mentions_tower_layer_params": false
+    },
+    {
+      "name": "submod_37",
+      "line": 2994,
+      "end_line": 2998,
+      "split_attention_ops": [
+        {
+          "line": 2997,
+          "op": "torch.ops.vllm.qwen_gdn_attention_core"
+        }
+      ],
+      "is_attention_split_partition": true,
+      "mentions_backbone_layer_params": false,
+      "mentions_tower_layer_params": false
+    },
+    {
+      "name": "submod_38",
+      "line": 3000,
+      "end_line": 3109,
+      "split_attention_ops": [],
+      "is_attention_split_partition": false,
+      "mentions_backbone_layer_params": true,
+      "mentions_tower_layer_params": false
+    },
+    {
+      "name": "submod_39",
+      "line": 3111,
+      "end_line": 3118,
+      "split_attention_ops": [
+        {
+          "line": 3114,
+          "op": "torch.ops.vllm.unified_kv_cache_update"
+        },
+        {
+          "line": 3117,
+          "op": "torch.ops.vllm.unified_attention_with_output"
+        }
+      ],
+      "is_attention_split_partition": true,
+      "mentions_backbone_layer_params": false,
+      "mentions_tower_layer_params": false
+    },
+    {
+      "name": "submod_40",
+      "line": 3120,
+      "end_line": 3194,
+      "split_attention_ops": [],
+      "is_attention_split_partition": false,
+      "mentions_backbone_layer_params": true,
+      "mentions_tower_layer_params": false
+    },
+    {
+      "name": "submod_41",
+      "line": 3196,
+      "end_line": 3200,
+      "split_attention_ops": [
+        {
+          "line": 3199,
+          "op": "torch.ops.vllm.qwen_gdn_attention_core"
+        }
+      ],
+      "is_attention_split_partition": true,
+      "mentions_backbone_layer_params": false,
+      "mentions_tower_layer_params": false
+    },
+    {
+      "name": "submod_42",
+      "line": 3202,
+      "end_line": 3300,
+      "split_attention_ops": [],
+      "is_attention_split_partition": false,
+      "mentions_backbone_layer_params": true,
+      "mentions_tower_layer_params": false
+    },
+    {
+      "name": "submod_43",
+      "line": 3302,
+      "end_line": 3306,
+      "split_attention_ops": [
+        {
+          "line": 3305,
+          "op": "torch.ops.vllm.qwen_gdn_attention_core"
+        }
+      ],
+      "is_attention_split_partition": true,
+      "mentions_backbone_layer_params": false,
+      "mentions_tower_layer_params": false
+    },
+    {
+      "name": "submod_44",
+      "line": 3308,
+      "end_line": 3406,
+      "split_attention_ops": [],
+      "is_attention_split_partition": false,
+      "mentions_backbone_layer_params": true,
+      "mentions_tower_layer_params": false
+    },
+    {
+      "name": "submod_45",
+      "line": 3408,
+      "end_line": 3412,
+      "split_attention_ops": [
+        {
+          "line": 3411,
+          "op": "torch.ops.vllm.qwen_gdn_attention_core"
+        }
+      ],
+      "is_attention_split_partition": true,
+      "mentions_backbone_layer_params": false,
+      "mentions_tower_layer_params": false
+    },
+    {
+      "name": "submod_46",
+      "line": 3414,
+      "end_line": 3523,
+      "split_attention_ops": [],
+      "is_attention_split_partition": false,
+      "mentions_backbone_layer_params": true,
+      "mentions_tower_layer_params": false
+    },
+    {
+      "name": "submod_47",
+      "line": 3525,
+      "end_line": 3532,
+      "split_attention_ops": [
+        {
+          "line": 3528,
+          "op": "torch.ops.vllm.unified_kv_cache_update"
+        },
+        {
+          "line": 3531,
+          "op": "torch.ops.vllm.unified_attention_with_output"
+        }
+      ],
+      "is_attention_split_partition": true,
+      "mentions_backbone_layer_params": false,
+      "mentions_tower_layer_params": false
+    },
+    {
+      "name": "submod_48",
+      "line": 3534,
+      "end_line": 3608,
+      "split_attention_ops": [],
+      "is_attention_split_partition": false,
+      "mentions_backbone_layer_params": true,
+      "mentions_tower_layer_params": false
+    },
+    {
+      "name": "submod_49",
+      "line": 3610,
+      "end_line": 3614,
+      "split_attention_ops": [
+        {
+          "line": 3613,
+          "op": "torch.ops.vllm.qwen_gdn_attention_core"
+        }
+      ],
+      "is_attention_split_partition": true,
+      "mentions_backbone_layer_params": false,
+      "mentions_tower_layer_params": false
+    },
+    {
+      "name": "submod_50",
+      "line": 3616,
+      "end_line": 3714,
+      "split_attention_ops": [],
+      "is_attention_split_partition": false,
+      "mentions_backbone_layer_params": true,
+      "mentions_tower_layer_params": false
+    },
+    {
+      "name": "submod_51",
+      "line": 3716,
+      "end_line": 3720,
+      "split_attention_ops": [
+        {
+          "line": 3719,
+          "op": "torch.ops.vllm.qwen_gdn_attention_core"
+        }
+      ],
+      "is_attention_split_partition": true,
+      "mentions_backbone_layer_params": false,
+      "mentions_tower_layer_params": false
+    },
+    {
+      "name": "submod_52",
+      "line": 3722,
+      "end_line": 3820,
+      "split_attention_ops": [],
+      "is_attention_split_partition": false,
+      "mentions_backbone_layer_params": true,
+      "mentions_tower_layer_params": false
+    },
+    {
+      "name": "submod_53",
+      "line": 3822,
+      "end_line": 3826,
+      "split_attention_ops": [
+        {
+          "line": 3825,
+          "op": "torch.ops.vllm.qwen_gdn_attention_core"
+        }
+      ],
+      "is_attention_split_partition": true,
+      "mentions_backbone_layer_params": false,
+      "mentions_tower_layer_params": false
+    },
+    {
+      "name": "submod_54",
+      "line": 3828,
+      "end_line": 3937,
+      "split_attention_ops": [],
+      "is_attention_split_partition": false,
+      "mentions_backbone_layer_params": true,
+      "mentions_tower_layer_params": false
+    },
+    {
+      "name": "submod_55",
+      "line": 3939,
+      "end_line": 3946,
+      "split_attention_ops": [
+        {
+          "line": 3942,
+          "op": "torch.ops.vllm.unified_kv_cache_update"
+        },
+        {
+          "line": 3945,
+          "op": "torch.ops.vllm.unified_attention_with_output"
+        }
+      ],
+      "is_attention_split_partition": true,
+      "mentions_backbone_layer_params": false,
+      "mentions_tower_layer_params": false
+    },
+    {
+      "name": "submod_56",
+      "line": 3948,
+      "end_line": 4022,
+      "split_attention_ops": [],
+      "is_attention_split_partition": false,
+      "mentions_backbone_layer_params": true,
+      "mentions_tower_layer_params": false
+    },
+    {
+      "name": "submod_57",
+      "line": 4024,
+      "end_line": 4028,
+      "split_attention_ops": [
+        {
+          "line": 4027,
+          "op": "torch.ops.vllm.qwen_gdn_attention_core"
+        }
+      ],
+      "is_attention_split_partition": true,
+      "mentions_backbone_layer_params": false,
+      "mentions_tower_layer_params": false
+    },
+    {
+      "name": "submod_58",
+      "line": 4030,
+      "end_line": 4128,
+      "split_attention_ops": [],
+      "is_attention_split_partition": false,
+      "mentions_backbone_layer_params": true,
+      "mentions_tower_layer_params": false
+    },
+    {
+      "name": "submod_59",
+      "line": 4130,
+      "end_line": 4134,
+      "split_attention_ops": [
+        {
+          "line": 4133,
+          "op": "torch.ops.vllm.qwen_gdn_attention_core"
+        }
+      ],
+      "is_attention_split_partition": true,
+      "mentions_backbone_layer_params": false,
+      "mentions_tower_layer_params": false
+    },
+    {
+      "name": "submod_60",
+      "line": 4136,
+      "end_line": 4234,
+      "split_attention_ops": [],
+      "is_attention_split_partition": false,
+      "mentions_backbone_layer_params": true,
+      "mentions_tower_layer_params": false
+    },
+    {
+      "name": "submod_61",
+      "line": 4236,
+      "end_line": 4240,
+      "split_attention_ops": [
+        {
+          "line": 4239,
+          "op": "torch.ops.vllm.qwen_gdn_attention_core"
+        }
+      ],
+      "is_attention_split_partition": true,
+      "mentions_backbone_layer_params": false,
+      "mentions_tower_layer_params": false
+    },
+    {
+      "name": "submod_62",
+      "line": 4242,
+      "end_line": 4351,
+      "split_attention_ops": [],
+      "is_attention_split_partition": false,
+      "mentions_backbone_layer_params": true,
+      "mentions_tower_layer_params": false
+    },
+    {
+      "name": "submod_63",
+      "line": 4353,
+      "end_line": 4360,
+      "split_attention_ops": [
+        {
+          "line": 4356,
+          "op": "torch.ops.vllm.unified_kv_cache_update"
+        },
+        {
+          "line": 4359,
+          "op": "torch.ops.vllm.unified_attention_with_output"
+        }
+      ],
+      "is_attention_split_partition": true,
+      "mentions_backbone_layer_params": false,
+      "mentions_tower_layer_params": false
+    },
+    {
+      "name": "submod_64",
+      "line": 4362,
+      "end_line": 4436,
+      "split_attention_ops": [],
+      "is_attention_split_partition": false,
+      "mentions_backbone_layer_params": true,
+      "mentions_tower_layer_params": false
+    },
+    {
+      "name": "submod_65",
+      "line": 4438,
+      "end_line": 4442,
+      "split_attention_ops": [
+        {
+          "line": 4441,
+          "op": "torch.ops.vllm.qwen_gdn_attention_core"
+        }
+      ],
+      "is_attention_split_partition": true,
+      "mentions_backbone_layer_params": false,
+      "mentions_tower_layer_params": false
+    },
+    {
+      "name": "submod_66",
+      "line": 4444,
+      "end_line": 4542,
+      "split_attention_ops": [],
+      "is_attention_split_partition": false,
+      "mentions_backbone_layer_params": true,
+      "mentions_tower_layer_params": false
+    },
+    {
+      "name": "submod_67",
+      "line": 4544,
+      "end_line": 4548,
+      "split_attention_ops": [
+        {
+          "line": 4547,
+          "op": "torch.ops.vllm.qwen_gdn_attention_core"
+        }
+      ],
+      "is_attention_split_partition": true,
+      "mentions_backbone_layer_params": false,
+      "mentions_tower_layer_params": false
+    },
+    {
+      "name": "submod_68",
+      "line": 4550,
+      "end_line": 4648,
+      "split_attention_ops": [],
+      "is_attention_split_partition": false,
+      "mentions_backbone_layer_params": true,
+      "mentions_tower_layer_params": false
+    },
+    {
+      "name": "submod_69",
+      "line": 4650,
+      "end_line": 4654,
+      "split_attention_ops": [
+        {
+          "line": 4653,
+          "op": "torch.ops.vllm.qwen_gdn_attention_core"
+        }
+      ],
+      "is_attention_split_partition": true,
+      "mentions_backbone_layer_params": false,
+      "mentions_tower_layer_params": false
+    },
+    {
+      "name": "submod_70",
+      "line": 4656,
+      "end_line": 4765,
+      "split_attention_ops": [],
+      "is_attention_split_partition": false,
+      "mentions_backbone_layer_params": true,
+      "mentions_tower_layer_params": false
+    },
+    {
+      "name": "submod_71",
+      "line": 4767,
+      "end_line": 4774,
+      "split_attention_ops": [
+        {
+          "line": 4770,
+          "op": "torch.ops.vllm.unified_kv_cache_update"
+        },
+        {
+          "line": 4773,
+          "op": "torch.ops.vllm.unified_attention_with_output"
+        }
+      ],
+      "is_attention_split_partition": true,
+      "mentions_backbone_layer_params": false,
+      "mentions_tower_layer_params": false
+    },
+    {
+      "name": "submod_72",
+      "line": 4776,
+      "end_line": 4850,
+      "split_attention_ops": [],
+      "is_attention_split_partition": false,
+      "mentions_backbone_layer_params": true,
+      "mentions_tower_layer_params": false
+    },
+    {
+      "name": "submod_73",
+      "line": 4852,
+      "end_line": 4856,
+      "split_attention_ops": [
+        {
+          "line": 4855,
+          "op": "torch.ops.vllm.qwen_gdn_attention_core"
+        }
+      ],
+      "is_attention_split_partition": true,
+      "mentions_backbone_layer_params": false,
+      "mentions_tower_layer_params": false
+    },
+    {
+      "name": "submod_74",
+      "line": 4858,
+      "end_line": 4956,
+      "split_attention_ops": [],
+      "is_attention_split_partition": false,
+      "mentions_backbone_layer_params": true,
+      "mentions_tower_layer_params": false
+    },
+    {
+      "name": "submod_75",
+      "line": 4958,
+      "end_line": 4962,
+      "split_attention_ops": [
+        {
+          "line": 4961,
+          "op": "torch.ops.vllm.qwen_gdn_attention_core"
+        }
+      ],
+      "is_attention_split_partition": true,
+      "mentions_backbone_layer_params": false,
+      "mentions_tower_layer_params": false
+    },
+    {
+      "name": "submod_76",
+      "line": 4964,
+      "end_line": 5062,
+      "split_attention_ops": [],
+      "is_attention_split_partition": false,
+      "mentions_backbone_layer_params": true,
+      "mentions_tower_layer_params": false
+    },
+    {
+      "name": "submod_77",
+      "line": 5064,
+      "end_line": 5068,
+      "split_attention_ops": [
+        {
+          "line": 5067,
+          "op": "torch.ops.vllm.qwen_gdn_attention_core"
+        }
+      ],
+      "is_attention_split_partition": true,
+      "mentions_backbone_layer_params": false,
+      "mentions_tower_layer_params": false
+    },
+    {
+      "name": "submod_78",
+      "line": 5070,
+      "end_line": 5179,
+      "split_attention_ops": [],
+      "is_attention_split_partition": false,
+      "mentions_backbone_layer_params": true,
+      "mentions_tower_layer_params": false
+    },
+    {
+      "name": "submod_79",
+      "line": 5181,
+      "end_line": 5188,
+      "split_attention_ops": [
+        {
+          "line": 5184,
+          "op": "torch.ops.vllm.unified_kv_cache_update"
+        },
+        {
+          "line": 5187,
+          "op": "torch.ops.vllm.unified_attention_with_output"
+        }
+      ],
+      "is_attention_split_partition": true,
+      "mentions_backbone_layer_params": false,
+      "mentions_tower_layer_params": false
+    },
+    {
+      "name": "submod_80",
+      "line": 5190,
+      "end_line": 5427,
+      "split_attention_ops": [],
+      "is_attention_split_partition": false,
+      "mentions_backbone_layer_params": true,
+      "mentions_tower_layer_params": true
+    },
+    {
+      "name": "submod_81",
+      "line": 5429,
+      "end_line": 5436,
+      "split_attention_ops": [
+        {
+          "line": 5432,
+          "op": "torch.ops.vllm.unified_kv_cache_update"
+        },
+        {
+          "line": 5435,
+          "op": "torch.ops.vllm.unified_attention_with_output"
+        }
+      ],
+      "is_attention_split_partition": true,
+      "mentions_backbone_layer_params": false,
+      "mentions_tower_layer_params": false
+    },
+    {
+      "name": "submod_82",
+      "line": 5438,
+      "end_line": 5547,
+      "split_attention_ops": [],
+      "is_attention_split_partition": false,
+      "mentions_backbone_layer_params": false,
+      "mentions_tower_layer_params": true
+    },
+    {
+      "name": "submod_83",
+      "line": 5549,
+      "end_line": 5556,
+      "split_attention_ops": [
+        {
+          "line": 5552,
+          "op": "torch.ops.vllm.unified_kv_cache_update"
+        },
+        {
+          "line": 5555,
+          "op": "torch.ops.vllm.unified_attention_with_output"
+        }
+      ],
+      "is_attention_split_partition": true,
+      "mentions_backbone_layer_params": false,
+      "mentions_tower_layer_params": false
+    },
+    {
+      "name": "submod_84",
+      "line": 5558,
+      "end_line": 5659,
+      "split_attention_ops": [],
+      "is_attention_split_partition": false,
+      "mentions_backbone_layer_params": false,
+      "mentions_tower_layer_params": true
+    },
+    {
+      "name": "submod_85",
+      "line": 5661,
+      "end_line": 5668,
+      "split_attention_ops": [
+        {
+          "line": 5664,
+          "op": "torch.ops.vllm.unified_kv_cache_update"
+        },
+        {
+          "line": 5667,
+          "op": "torch.ops.vllm.unified_attention_with_output"
+        }
+      ],
+      "is_attention_split_partition": true,
+      "mentions_backbone_layer_params": false,
+      "mentions_tower_layer_params": false
+    },
+    {
+      "name": "submod_86",
+      "line": 5670,
+      "end_line": 5771,
+      "split_attention_ops": [],
+      "is_attention_split_partition": false,
+      "mentions_backbone_layer_params": false,
+      "mentions_tower_layer_params": true
+    },
+    {
+      "name": "submod_87",
+      "line": 5773,
+      "end_line": 5780,
+      "split_attention_ops": [
+        {
+          "line": 5776,
+          "op": "torch.ops.vllm.unified_kv_cache_update"
+        },
+        {
+          "line": 5779,
+          "op": "torch.ops.vllm.unified_attention_with_output"
+        }
+      ],
+      "is_attention_split_partition": true,
+      "mentions_backbone_layer_params": false,
+      "mentions_tower_layer_params": false
+    },
+    {
+      "name": "submod_88",
+      "line": 5782,
+      "end_line": 5883,
+      "split_attention_ops": [],
+      "is_attention_split_partition": false,
+      "mentions_backbone_layer_params": false,
+      "mentions_tower_layer_params": true
+    },
+    {
+      "name": "submod_89",
+      "line": 5885,
+      "end_line": 5892,
+      "split_attention_ops": [
+        {
+          "line": 5888,
+          "op": "torch.ops.vllm.unified_kv_cache_update"
+        },
+        {
+          "line": 5891,
+          "op": "torch.ops.vllm.unified_attention_with_output"
+        }
+      ],
+      "is_attention_split_partition": true,
+      "mentions_backbone_layer_params": false,
+      "mentions_tower_layer_params": false
+    },
+    {
+      "name": "submod_90",
+      "line": 5894,
+      "end_line": 6014,
+      "split_attention_ops": [],
+      "is_attention_split_partition": false,
+      "mentions_backbone_layer_params": false,
+      "mentions_tower_layer_params": true
+    },
+    {
+      "name": "submod_91",
+      "line": 6016,
+      "end_line": 6023,
+      "split_attention_ops": [
+        {
+          "line": 6019,
+          "op": "torch.ops.vllm.unified_kv_cache_update"
+        },
+        {
+          "line": 6022,
+          "op": "torch.ops.vllm.unified_attention_with_output"
+        }
+      ],
+      "is_attention_split_partition": true,
+      "mentions_backbone_layer_params": false,
+      "mentions_tower_layer_params": false
+    },
+    {
+      "name": "submod_92",
+      "line": 6025,
+      "end_line": 6145,
+      "split_attention_ops": [],
+      "is_attention_split_partition": false,
+      "mentions_backbone_layer_params": false,
+      "mentions_tower_layer_params": true
+    },
+    {
+      "name": "submod_93",
+      "line": 6147,
+      "end_line": 6154,
+      "split_attention_ops": [
+        {
+          "line": 6150,
+          "op": "torch.ops.vllm.unified_kv_cache_update"
+        },
+        {
+          "line": 6153,
+          "op": "torch.ops.vllm.unified_attention_with_output"
+        }
+      ],
+      "is_attention_split_partition": true,
+      "mentions_backbone_layer_params": false,
+      "mentions_tower_layer_params": false
+    },
+    {
+      "name": "submod_94",
+      "line": 6156,
+      "end_line": 6276,
+      "split_attention_ops": [],
+      "is_attention_split_partition": false,
+      "mentions_backbone_layer_params": false,
+      "mentions_tower_layer_params": true
+    },
+    {
+      "name": "submod_95",
+      "line": 6278,
+      "end_line": 6285,
+      "split_attention_ops": [
+        {
+          "line": 6281,
+          "op": "torch.ops.vllm.unified_kv_cache_update"
+        },
+        {
+          "line": 6284,
+          "op": "torch.ops.vllm.unified_attention_with_output"
+        }
+      ],
+      "is_attention_split_partition": true,
+      "mentions_backbone_layer_params": false,
+      "mentions_tower_layer_params": false
+    },
+    {
+      "name": "submod_96",
+      "line": 6287,
+      "end_line": 6407,
+      "split_attention_ops": [],
+      "is_attention_split_partition": false,
+      "mentions_backbone_layer_params": false,
+      "mentions_tower_layer_params": true
+    },
+    {
+      "name": "submod_97",
+      "line": 6409,
+      "end_line": 6416,
+      "split_attention_ops": [
+        {
+          "line": 6412,
+          "op": "torch.ops.vllm.unified_kv_cache_update"
+        },
+        {
+          "line": 6415,
+          "op": "torch.ops.vllm.unified_attention_with_output"
+        }
+      ],
+      "is_attention_split_partition": true,
+      "mentions_backbone_layer_params": false,
+      "mentions_tower_layer_params": false
+    },
+    {
+      "name": "submod_98",
+      "line": 6418,
+      "end_line": 6538,
+      "split_attention_ops": [],
+      "is_attention_split_partition": false,
+      "mentions_backbone_layer_params": false,
+      "mentions_tower_layer_params": true
+    },
+    {
+      "name": "submod_99",
+      "line": 6540,
+      "end_line": 6547,
+      "split_attention_ops": [
+        {
+          "line": 6543,
+          "op": "torch.ops.vllm.unified_kv_cache_update"
+        },
+        {
+          "line": 6546,
+          "op": "torch.ops.vllm.unified_attention_with_output"
+        }
+      ],
+      "is_attention_split_partition": true,
+      "mentions_backbone_layer_params": false,
+      "mentions_tower_layer_params": false
+    },
+    {
+      "name": "submod_100",
+      "line": 6549,
+      "end_line": 6669,
+      "split_attention_ops": [],
+      "is_attention_split_partition": false,
+      "mentions_backbone_layer_params": false,
+      "mentions_tower_layer_params": true
+    },
+    {
+      "name": "submod_101",
+      "line": 6671,
+      "end_line": 6678,
+      "split_attention_ops": [
+        {
+          "line": 6674,
+          "op": "torch.ops.vllm.unified_kv_cache_update"
+        },
+        {
+          "line": 6677,
+          "op": "torch.ops.vllm.unified_attention_with_output"
+        }
+      ],
+      "is_attention_split_partition": true,
+      "mentions_backbone_layer_params": false,
+      "mentions_tower_layer_params": false
+    },
+    {
+      "name": "submod_102",
+      "line": 6680,
+      "end_line": 6800,
+      "split_attention_ops": [],
+      "is_attention_split_partition": false,
+      "mentions_backbone_layer_params": false,
+      "mentions_tower_layer_params": true
+    },
+    {
+      "name": "submod_103",
+      "line": 6802,
+      "end_line": 6809,
+      "split_attention_ops": [
+        {
+          "line": 6805,
+          "op": "torch.ops.vllm.unified_kv_cache_update"
+        },
+        {
+          "line": 6808,
+          "op": "torch.ops.vllm.unified_attention_with_output"
+        }
+      ],
+      "is_attention_split_partition": true,
+      "mentions_backbone_layer_params": false,
+      "mentions_tower_layer_params": false
+    },
+    {
+      "name": "submod_104",
+      "line": 6811,
+      "end_line": 6931,
+      "split_attention_ops": [],
+      "is_attention_split_partition": false,
+      "mentions_backbone_layer_params": false,
+      "mentions_tower_layer_params": true
+    },
+    {
+      "name": "submod_105",
+      "line": 6933,
+      "end_line": 6940,
+      "split_attention_ops": [
+        {
+          "line": 6936,
+          "op": "torch.ops.vllm.unified_kv_cache_update"
+        },
+        {
+          "line": 6939,
+          "op": "torch.ops.vllm.unified_attention_with_output"
+        }
+      ],
+      "is_attention_split_partition": true,
+      "mentions_backbone_layer_params": false,
+      "mentions_tower_layer_params": false
+    },
+    {
+      "name": "submod_106",
+      "line": 6942,
+      "end_line": 7057,
+      "split_attention_ops": [],
+      "is_attention_split_partition": false,
+      "mentions_backbone_layer_params": false,
+      "mentions_tower_layer_params": true
+    }
+  ],
+  "explanation": "Actual dumped split graph has107 alternating partitions:54 non-attention partitions and53 attention split partitions.30 GDN attention partitions plus23 pairs of consecutive KV-update/full-attention (10 backbone+13 tower).backends.py split_graph groups consecutive splitting ops; only non-splitting partitions are compiled/wrapped for PIECEWISE replay.54 cudaGraphLaunch events per mixed step match the54 actual compiled partitions, not an assumed one-graph-per-layer rule. Partitions straddle layer boundaries; e.g submod80 bridges last backbone layer and first tower block.",
+  "code_evidence": [
+    {
+      "path": "vllm/compilation/backends.py",
+      "lines": [
+        557,
+        582,
+        587,
+        637,
+        675,
+        1214
+      ],
+      "meaning": "split_graph, groups consecutive split ops; non-splitting submods compiled and wrapped PIECEWISE"
+    },
+    {
+      "path": "vllm/v1/attention/backends/gdn_attn.py",
+      "line": 93,
+      "meaning": "GDN builder declares AttentionCGSupport.UNIFORM_BATCH, not all mixed/prefill FULL graph support"
+    },
+    {
+      "path": "vllm_omni/model_executor/models/fish_omni/fish_omni_model.py",
+      "line": 168,
+      "meaning": "Tower and sampler compile with backbone; not wholly eager tower"
+    }
+  ],
+  "limits": [
+    "This establishes static partition/launch count correspondence; not module-level GPU kernel attribution inside each compiled partition.",
+    "GPU span minus busy union contains any waits/gaps, including dependencies/stream scheduling/profiler effects; cannot equate it entirely with CPU dispatch.",
+    "CPU execute scope walltime includes Python work and CUDA runtime waits; cannot treat all of it as removable overhead.",
+    "Removing splitting ops or forcing FULL mixed graphs is not justified: GDN metadata/backend supports only uniform batches; FLA variable sequence/chunk metadata shapes and state updates need capture-safe redesign and correctness validation."
+  ]
+}

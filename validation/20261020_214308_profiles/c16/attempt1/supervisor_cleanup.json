@@ -1,0 +1,101 @@
+{
+  "tracked_processes": [
+    {
+      "pid": 1848427,
+      "create_time": 1792507611.05,
+      "name": "vllm"
+    },
+    {
+      "pid": 1848503,
+      "create_time": 1792507620.48,
+      "name": "python"
+    },
+    {
+      "pid": 1848505,
+      "create_time": 1792507620.51,
+      "name": "python"
+    },
+    {
+      "pid": 1848547,
+      "create_time": 1792507624.94,
+      "name": "python"
+    },
+    {
+      "pid": 1848548,
+      "create_time": 1792507624.94,
+      "name": "VLLM::StageEngineCoreProc_stage0_replica0_DP0"
+    },
+    {
+      "pid": 1848543,
+      "create_time": 1792507624.91,
+      "name": "nvidia-cuda-mps-control"
+    },
+    {
+      "pid": 1848637,
+      "create_time": 1792507635.18,
+      "name": "python"
+    },
+    {
+      "pid": 1848653,
+      "create_time": 1792507635.21,
+      "name": "python"
+    },
+    {
+      "pid": 1848676,
+      "create_time": 1792507635.37,
+      "name": "nvidia-cuda-mps-server"
+    },
+    {
+      "pid": 1848759,
+      "create_time": 1792507639.47,
+      "name": "python"
+    },
+    {
+      "pid": 1848766,
+      "create_time": 1792507639.68,
+      "name": "python"
+    },
+    {
+      "pid": 1849427,
+      "create_time": 1792507752.48,
+      "name": "VLLM::StageEngineCoreProc_stage1_replica0_DP0"
+    },
+    {
+      "pid": 1849553,
+      "create_time": 1792507762.73,
+      "name": "python"
+    },
+    {
+      "pid": 1849555,
+      "create_time": 1792507762.77,
+      "name": "python"
+    },
+    {
+      "pid": 1849666,
+      "create_time": 1792507767.63,
+      "name": "python"
+    },
+    {
+      "pid": 1850384,
+      "create_time": 1792507874.24,
+      "name": "gzip"
+    },
+    {
+      "pid": 1850460,
+      "create_time": 1792507882.26,
+      "name": "gzip"
+    }
+  ],
+  "signals": [
+    {
+      "pid": 1848427,
+      "signal": "SIGINT"
+    }
+  ],
+  "server_exit": 0,
+  "gpu_after": "GPU_PHYSICAL_1, NVIDIA A100 80GB PCIe, 15, 81920, 0",
+  "apps_after": [],
+  "port_free": true,
+  "own_processes_remaining": [],
+  "clean": true
+}

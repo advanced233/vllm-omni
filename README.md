@@ -18,7 +18,9 @@
 
 ## 工具实机验证
 
-最新：[A100 GPU 单测与 GDN BF16/FP32 全量质量对照](validation/20261020_184405_gdn_quality/README.md)：各 1088 条，WER 2.32% / 2.34%，noise-run 13 / 16，未观察到 FP32 改善。
+最新：[C128 容量检查、17 次 B1 与拐点补测](validation/20261020_194158_baseline/README.md)，以及 [C8/C16/C64 双阶段 profile 与优化候选](validation/20261020_214308_profiles/README.md)。主 B1 18,496 条全部成功；GPU热降频条件、重复波动及 profile 限制均保留，尚未实施优化。
+
+此前：[A100 GPU 单测与 GDN BF16/FP32 全量质量对照](validation/20261020_184405_gdn_quality/README.md)：各 1088 条，WER 2.32% / 2.34%，noise-run 13 / 16，未观察到 FP32 改善。
 
 此前：[B1前快速检查A/B](validation/20261020_180250_prebaseline/README.md)：帧数一致，但多seed出现低能量输出离群，C128/B1暂未启动。
 

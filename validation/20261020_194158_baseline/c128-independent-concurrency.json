@@ -1,0 +1,11 @@
+{
+  "records": 256,
+  "estimated_inflight_peak_until_last_chunk": 128,
+  "estimated_total_time_at_128_s": 7.620219175703824,
+  "first_to_last_dispatch_s": 7.9453608794137836,
+  "summary_full_window_s": 7.946,
+  "reconstructed_window_audio_seconds": 646.8150566893399,
+  "reconstructed_full_window_audio_s_per_s": 81.40788901926662,
+  "summary_full_window_audio_s_per_s": 81.4,
+  "interpretation": "Client interval ends at rounded last chunk, not HTTP close; concurrency is an estimate/lower-bound apart from ~0.05ms rounding. Full window includes initial fill; capacity short test only."
+}

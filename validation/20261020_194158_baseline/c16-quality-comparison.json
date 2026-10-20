@@ -1,0 +1,568 @@
+{
+  "caution": "Descriptive only: seed policy, CPU affinity, save_audio, tool revision and thermal conditions differ; not an isolated I/O comparison.",
+  "runs": [
+    {
+      "label": "quality-default",
+      "path": "${NVME_WORKDIR}/gdn-quality/20261020_184405/default",
+      "summary": {
+        "label": "quality-default",
+        "concurrency": 16,
+        "started_at": "2026-10-20T18:54:48+0800",
+        "requests": 1088,
+        "succeeded": 1088,
+        "failed": 0,
+        "failure_examples": [],
+        "duration_s": 169.68,
+        "audio_s_total": 4748.345,
+        "throughput_audio_s_per_s": 27.98,
+        "full_concurrency_window": {
+          "seconds": 167.465,
+          "throughput_audio_s_per_s": 28.05
+        },
+        "ttfa_ms": {
+          "mean": 249.1,
+          "p50": 232.6,
+          "p90": 339.9,
+          "p95": 363.5,
+          "p99": 404.6,
+          "max": 467.0
+        },
+        "rtf": {
+          "mean": 0.5738,
+          "p50": 0.5118,
+          "p90": 0.7495,
+          "p95": 0.7727,
+          "p99": 0.8031,
+          "max": 0.881
+        },
+        "audio_s": {
+          "mean": 4.364,
+          "p50": 4.133,
+          "p90": 6.084,
+          "p95": 6.641,
+          "p99": 8.831,
+          "max": 23.22
+        },
+        "underrun_s_total": 21.895,
+        "longest_wait_ms": {
+          "mean": 16.0,
+          "p50": 0.0,
+          "p90": 56.8,
+          "p95": 107.6,
+          "p99": 212.5,
+          "max": 667.1
+        },
+        "stall": {
+          "0ms": {
+            "streams_stalled": 224,
+            "streams_stalled_pct": 20.59,
+            "events": 364
+          },
+          "100ms": {
+            "streams_stalled": 60,
+            "streams_stalled_pct": 5.51,
+            "events": 62
+          }
+        },
+        "client": {
+          "loop_lag_ms": {
+            "mean": 0.14,
+            "p50": 0.13,
+            "p90": 0.41,
+            "p95": 0.61,
+            "p99": 0.94,
+            "max": 2.63
+          },
+          "event_loop": "uvloop",
+          "hostname": "HOST_REDACTED",
+          "python": "3.12.13",
+          "aiohttp": "3.14.5"
+        },
+        "workload": {
+          "codes_file": "${NVME_WORKDIR}/bench-validation/20261020_165001_49599d4/ref_codes_en.jsonl",
+          "codes_meta": {
+            "model": "${NVME_WORKDIR}/models/fishaudio/drama-3",
+            "codec_sha256": "74fc41c5a7151c6f350af8bd7e5d6e3accfcc7f3dfbfac23afd35af07052bb2f",
+            "locale": "en",
+            "meta_lst_sha256": "7cd29f701743e6c7033edbca764ddc0b979de8c4f4907eff5e5454682114661f",
+            "rows_written": 1088,
+            "device_name": "NVIDIA A100 80GB PCIe",
+            "vllm_omni_commit": "da572cddb38383deae9caef33b8d490e292ef071"
+          },
+          "ref_mode": "codes",
+          "rows_timed": 1088,
+          "warmups": 8,
+          "shuffle_seed": null,
+          "seed": 0,
+          "extra_body": {},
+          "stream": "raw pcm (stream_format=audio)",
+          "sampling": "server defaults unless set in extra_body"
+        },
+        "server": {
+          "base_url": "http://127.0.0.1:8091",
+          "models": {
+            "object": "list",
+            "data": [
+              {
+                "id": "fishaudio/drama-3",
+                "object": "model",
+                "created": 1792493681,
+                "owned_by": "vllm",
+                "root": "${NVME_WORKDIR}/models/fishaudio/drama-3",
+                "parent": null,
+                "max_model_len": 8192,
+                "permission": [
+                  {
+                    "id": "modelperm-8d3626b81aa48310",
+                    "object": "model_permission",
+                    "created": 1792493681,
+                    "allow_create_engine": false,
+                    "allow_sampling": true,
+                    "allow_logprobs": true,
+                    "allow_search_indices": false,
+                    "allow_view": true,
+                    "allow_fine_tuning": false,
+                    "organization": "*",
+                    "group": null,
+                    "is_blocking": false
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "meta": {
+          "commit": "da572cddb38383deae9caef33b8d490e292ef071",
+          "tool_commit": "4d87d0f35b77b5d14dd5b381d2fde18f5cad26ab",
+          "mamba_ssm_cache_dtype": "bfloat16",
+          "deploy_sha256": "b99113e6b2344169a9431686271d2ae9bbaf68b9679347435ad97f44eb3d28f3"
+        },
+        "argv": [
+          "${PERSONAL_WORKDIR}/github-smoke-audio-20261020/tools/drama3_bench/stream_bench.py",
+          "--codes",
+          "${NVME_WORKDIR}/bench-validation/20261020_165001_49599d4/ref_codes_en.jsonl",
+          "--ref-mode",
+          "codes",
+          "--concurrency",
+          "16",
+          "--num-prompts",
+          "1088",
+          "--seed",
+          "0",
+          "--num-warmups",
+          "8",
+          "--save-audio",
+          "--label",
+          "quality-default",
+          "--meta",
+          "commit=da572cddb38383deae9caef33b8d490e292ef071",
+          "--meta",
+          "tool_commit=4d87d0f35b77b5d14dd5b381d2fde18f5cad26ab",
+          "--meta",
+          "mamba_ssm_cache_dtype=bfloat16",
+          "--meta",
+          "deploy_sha256=b99113e6b2344169a9431686271d2ae9bbaf68b9679347435ad97f44eb3d28f3",
+          "--out",
+          "${NVME_WORKDIR}/gdn-quality/20261020_184405/default"
+        ]
+      },
+      "run_metadata": {
+        "purpose": "A100 kernel tests and GDN state dtype quality comparison",
+        "server_commit": "da572cddb38383deae9caef33b8d490e292ef071",
+        "tool_commit": "4d87d0f35b77b5d14dd5b381d2fde18f5cad26ab",
+        "concurrency": 16,
+        "num_prompts": 1088,
+        "seed_base": 0,
+        "ref_mode": "codes",
+        "num_warmups": 8,
+        "save_audio": true,
+        "only_deploy_difference": "stages[0].mamba_ssm_cache_dtype: bfloat16 -> float32",
+        "gpu_index": 1,
+        "gpu_uuid": "GPU_PHYSICAL_1",
+        "model": "${NVME_WORKDIR}/models/fishaudio/drama-3",
+        "model_revision": "b2b5ee998034b2975720906c815e7fb0e9f007bd",
+        "codes": "${NVME_WORKDIR}/bench-validation/20261020_165001_49599d4/ref_codes_en.jsonl",
+        "dataset_root": "${NVME_WORKDIR}/datasets/seed-tts-eval",
+        "default_yaml_sha256": "b99113e6b2344169a9431686271d2ae9bbaf68b9679347435ad97f44eb3d28f3",
+        "fp32_yaml_sha256": "1d0a6bae534d648d54505fe5f2ca160e02e3cb5d6b50b2628062ecce7a57723b",
+        "formal_b1_run": false,
+        "system_driver_or_cuda_changes": false,
+        "official_cu130_r580_environment": false,
+        "mode": "default",
+        "mamba_ssm_cache_dtype": "bfloat16",
+        "deploy_sha256": "b99113e6b2344169a9431686271d2ae9bbaf68b9679347435ad97f44eb3d28f3",
+        "codes_sha256": "4be960b12e0984673a8f2058e6508d07a5bc5ab3cb7e27e10e1b8be4241262b9",
+        "server_argv": [
+          "vllm",
+          "serve",
+          "${NVME_WORKDIR}/models/fishaudio/drama-3",
+          "--omni",
+          "--served-model-name",
+          "fishaudio/drama-3",
+          "--host",
+          "127.0.0.1",
+          "--port",
+          "8091",
+          "--deploy-config",
+          "${NVME_WORKDIR}/gdn-quality/20261020_184405/default/deploy_config.yaml",
+          "--stage-init-timeout",
+          "1800"
+        ],
+        "client_argv": [
+          "${WORKSPACE}/.venvs/vllm-omni-cu129/bin/python",
+          "${PERSONAL_WORKDIR}/github-smoke-audio-20261020/tools/drama3_bench/stream_bench.py",
+          "--codes",
+          "${NVME_WORKDIR}/bench-validation/20261020_165001_49599d4/ref_codes_en.jsonl",
+          "--ref-mode",
+          "codes",
+          "--concurrency",
+          "16",
+          "--num-prompts",
+          "1088",
+          "--seed",
+          "0",
+          "--num-warmups",
+          "8",
+          "--save-audio",
+          "--label",
+          "quality-default",
+          "--meta",
+          "commit=da572cddb38383deae9caef33b8d490e292ef071",
+          "--meta",
+          "tool_commit=4d87d0f35b77b5d14dd5b381d2fde18f5cad26ab",
+          "--meta",
+          "mamba_ssm_cache_dtype=bfloat16",
+          "--meta",
+          "deploy_sha256=b99113e6b2344169a9431686271d2ae9bbaf68b9679347435ad97f44eb3d28f3",
+          "--out",
+          "${NVME_WORKDIR}/gdn-quality/20261020_184405/default"
+        ],
+        "client_cpu_affinity": "inherited, not taskset",
+        "process_cpu_affinity": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49,
+          50,
+          51,
+          52,
+          53,
+          54,
+          55,
+          56,
+          57,
+          58,
+          59,
+          60,
+          61,
+          62,
+          63
+        ],
+        "versions": {
+          "torch": "2.13.0+cu129",
+          "vllm": "0.32.0+cu129",
+          "vllm-omni": "0.32.0rc1",
+          "triton": "3.7.1",
+          "transformers": "5.19.0"
+        },
+        "environment": {
+          "CUDA_DEVICE_ORDER": "PCI_BUS_ID",
+          "CUDA_VISIBLE_DEVICES": "1",
+          "CUDA_HOME": "${PERSONAL_WORKDIR}/toolchains/cuda-12.9",
+          "CUDA_PATH": "${PERSONAL_WORKDIR}/toolchains/cuda-12.9",
+          "PATH": "${PERSONAL_WORKDIR}/toolchains/cuda-12.9/bin:${WORKSPACE}/.venvs/vllm-omni-cu129/bin:${USER_HOME}/.codex/packages/app-server-daemon/releases/0.163.0-x86_64-unknown-linux-musl/codex-path:${USER_HOME}/.local/bin:${USER_HOME}/.codex/tmp/arg0-linux/codex-arg0fcfXmQ:${USER_HOME}/.codex/packages/app-server-daemon/releases/0.163.0-x86_64-unknown-linux-musl/codex-path:${USER_HOME}/.codex/tmp/arg0/codex-arg0zrPD8y:${USER_HOME}/.codex/packages/app-server-daemon/releases/0.162.1-x86_64-unknown-linux-musl/codex-path:${USER_HOME}/.codex/tmp/arg0/codex-arg0tFt4X7:${USER_HOME}/.codex/packages/app-server-daemon/releases/0.162.0-x86_64-unknown-linux-musl/codex-path:${USER_HOME}/.codex/tmp/arg0/codex-arg0Wa4WOG:${USER_HOME}/.codex/packages/app-server-daemon/releases/0.161.0-x86_64-unknown-linux-musl/codex-path:${USER_HOME}/.codex/tmp/arg0/codex-arg0565GMs:${USER_HOME}/.codex/packages/app-server-daemon/releases/0.160.1-x86_64-unknown-linux-musl/codex-path:${USER_HOME}/.codex/tmp/arg0/codex-arg0kg4rRY:${USER_HOME}/.codex/packages/app-server-daemon/releases/0.160.0-x86_64-unknown-linux-musl/codex-path:${USER_HOME}/.codex/tmp/arg0/codex-arg0aTqo3b:${USER_HOME}/.codex/packages/app-server-daemon/releases/0.159.3-x86_64-unknown-linux-musl/codex-path:${USER_HOME}/.codex/tmp/arg0/codex-arg0Cp4s2D:${USER_HOME}/.codex/packages/app-server-daemon/releases/0.159.2-x86_64-unknown-linux-musl/codex-path:${USER_HOME}/.codex/tmp/arg0/codex-arg0aAbbsg:${USER_HOME}/.codex/packages/app-server-daemon/releases/0.159.1-x86_64-unknown-linux-musl/codex-path:${USER_HOME}/.codex/tmp/arg0/codex-arg0FSo1yn:${USER_HOME}/.codex/packages/app-server-daemon/releases/0.159.0-x86_64-unknown-linux-musl/codex-path:${USER_HOME}/.codex/tmp/arg0/codex-arg0SnK0Rz:${USER_HOME}/.codex/packages/app-server-daemon/releases/0.158.0-x86_64-unknown-linux-musl/codex-path:${USER_HOME}/.codex/tmp/arg0/codex-arg0jp7JHF:${USER_HOME}/.codex/packages/app-server-daemon/releases/0.157.1-x86_64-unknown-linux-musl/codex-path:${USER_HOME}/.codex/tmp/arg0/codex-arg0DJGcYR:${USER_HOME}/.codex/packages/app-server-daemon/releases/0.157.0-x86_64-unknown-linux-musl/codex-path:${USER_HOME}/.codex/tmp/arg0/codex-arg0vhBN9F:${USER_HOME}/.codex/packages/standalone/releases/0.157.0-x86_64-unknown-linux-musl/codex-path:${USER_HOME}/.local/bin:${USER_HOME}/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/local/cuda/bin:/usr/local/cuda-12.4/bin:/usr/local/cuda/bin:/usr/local/cuda-12.4/bin",
+          "LD_LIBRARY_PATH": "${PERSONAL_WORKDIR}/toolchains/cuda-12.9/lib64:${WORKSPACE}/.venvs/vllm-omni-cu129/lib/python3.12/site-packages/nvidia/cublas/lib:${WORKSPACE}/.venvs/vllm-omni-cu129/lib/python3.12/site-packages/nvidia/cuda_cccl/lib:${WORKSPACE}/.venvs/vllm-omni-cu129/lib/python3.12/site-packages/nvidia/cuda_cupti/lib:${WORKSPACE}/.venvs/vllm-omni-cu129/lib/python3.12/site-packages/nvidia/cuda_nvrtc/lib:${WORKSPACE}/.venvs/vllm-omni-cu129/lib/python3.12/site-packages/nvidia/cuda_runtime/lib:${WORKSPACE}/.venvs/vllm-omni-cu129/lib/python3.12/site-packages/nvidia/cudnn/lib:${WORKSPACE}/.venvs/vllm-omni-cu129/lib/python3.12/site-packages/nvidia/cufft/lib:${WORKSPACE}/.venvs/vllm-omni-cu129/lib/python3.12/site-packages/nvidia/cufile/lib:${WORKSPACE}/.venvs/vllm-omni-cu129/lib/python3.12/site-packages/nvidia/curand/lib:${WORKSPACE}/.venvs/vllm-omni-cu129/lib/python3.12/site-packages/nvidia/cusolver/lib:${WORKSPACE}/.venvs/vllm-omni-cu129/lib/python3.12/site-packages/nvidia/cusparse/lib:${WORKSPACE}/.venvs/vllm-omni-cu129/lib/python3.12/site-packages/nvidia/cusparselt/lib:${WORKSPACE}/.venvs/vllm-omni-cu129/lib/python3.12/site-packages/nvidia/nccl/lib:${WORKSPACE}/.venvs/vllm-omni-cu129/lib/python3.12/site-packages/nvidia/nvjitlink/lib:${WORKSPACE}/.venvs/vllm-omni-cu129/lib/python3.12/site-packages/nvidia/nvshmem/lib:${WORKSPACE}/.venvs/vllm-omni-cu129/lib/python3.12/site-packages/nvidia/nvtx/lib",
+          "CPATH": "${WORKSPACE}/.venvs/vllm-omni-cu129/lib/python3.12/site-packages/nvidia/curand/include",
+          "TMPDIR": "${NVME_WORKDIR}/tmp/gdn-184405",
+          "TRITON_CACHE_DIR": "${PERSONAL_WORKDIR}/.cache/triton",
+          "TORCHINDUCTOR_CACHE_DIR": "${PERSONAL_WORKDIR}/.cache/torchinductor",
+          "VLLM_CACHE_ROOT": "${PERSONAL_WORKDIR}/.cache/vllm",
+          "CUDA_CACHE_PATH": "${PERSONAL_WORKDIR}/.cache/cuda",
+          "FLASHINFER_WORKSPACE_BASE": "${PERSONAL_WORKDIR}",
+          "TORCH_EXTENSIONS_DIR": "${PERSONAL_WORKDIR}/.cache/torch_extensions",
+          "OMP_NUM_THREADS": "8",
+          "MAX_JOBS": "4",
+          "HF_HOME": "${WORKSPACE}/.cache/huggingface",
+          "HF_HUB_CACHE": "${WORKSPACE}/.cache/huggingface/hub",
+          "HF_HUB_OFFLINE": "1",
+          "TRANSFORMERS_OFFLINE": "1"
+        },
+        "gpu_before": "1, GPU_PHYSICAL_1, NVIDIA A100 80GB PCIe, 15, 81920, 0",
+        "timestamp_start": "2026-10-20T18:50:46+0800"
+      }
+    },
+    {
+      "label": "B1-C16",
+      "path": "${NVME_WORKDIR}/baseline/20261020_194158/b1/c16/r1",
+      "summary": {
+        "label": "a100-main",
+        "concurrency": 16,
+        "started_at": "2026-10-20T20:44:37+0800",
+        "requests": 1088,
+        "succeeded": 1088,
+        "failed": 0,
+        "failure_examples": [],
+        "duration_s": 208.263,
+        "audio_s_total": 4766.087,
+        "throughput_audio_s_per_s": 22.88,
+        "full_concurrency_window": {
+          "seconds": 206.186,
+          "throughput_audio_s_per_s": 22.9
+        },
+        "ttfa_ms": {
+          "mean": 301.1,
+          "p50": 300.4,
+          "p90": 382.9,
+          "p95": 412.5,
+          "p99": 453.1,
+          "max": 522.6
+        },
+        "rtf": {
+          "mean": 0.6985,
+          "p50": 0.7446,
+          "p90": 0.8177,
+          "p95": 0.834,
+          "p99": 0.8807,
+          "max": 0.9431
+        },
+        "audio_s": {
+          "mean": 4.381,
+          "p50": 4.133,
+          "p90": 6.176,
+          "p95": 6.92,
+          "p99": 9.399,
+          "max": 23.22
+        },
+        "underrun_s_total": 108.33,
+        "longest_wait_ms": {
+          "mean": 71.1,
+          "p50": 34.8,
+          "p90": 165.1,
+          "p95": 213.2,
+          "p99": 669.5,
+          "max": 992.8
+        },
+        "stall": {
+          "0ms": {
+            "streams_stalled": 650,
+            "streams_stalled_pct": 59.74,
+            "events": 1402
+          },
+          "100ms": {
+            "streams_stalled": 289,
+            "streams_stalled_pct": 26.56,
+            "events": 329
+          }
+        },
+        "long_takes": {
+          "at_least_20s": 5,
+          "at_least_20s_pct": 0.46,
+          "at_frame_cap": 4,
+          "audio_share_pct": 2.42
+        },
+        "client": {
+          "loop_lag_ms": {
+            "mean": 0.15,
+            "p50": 0.15,
+            "p90": 0.39,
+            "p95": 0.6,
+            "p99": 0.94,
+            "max": 1.66
+          },
+          "event_loop": "uvloop",
+          "hostname": "HOST_REDACTED",
+          "python": "3.12.13",
+          "aiohttp": "3.14.5"
+        },
+        "workload": {
+          "codes_file": "${NVME_WORKDIR}/bench-validation/20261020_165001_49599d4/ref_codes_en.jsonl",
+          "codes_meta": {
+            "model": "${NVME_WORKDIR}/models/fishaudio/drama-3",
+            "codec_sha256": "74fc41c5a7151c6f350af8bd7e5d6e3accfcc7f3dfbfac23afd35af07052bb2f",
+            "locale": "en",
+            "meta_lst_sha256": "7cd29f701743e6c7033edbca764ddc0b979de8c4f4907eff5e5454682114661f",
+            "rows_written": 1088,
+            "device_name": "NVIDIA A100 80GB PCIe",
+            "vllm_omni_commit": "da572cddb38383deae9caef33b8d490e292ef071"
+          },
+          "ref_mode": "codes",
+          "rows_timed": 1088,
+          "warmups": 8,
+          "shuffle_seed": null,
+          "seed": null,
+          "extra_body": {},
+          "stream": "raw pcm (stream_format=audio)",
+          "sampling": "server defaults unless set in extra_body"
+        },
+        "server": {
+          "base_url": "http://127.0.0.1:8091",
+          "models": {
+            "object": "list",
+            "data": [
+              {
+                "id": "fishaudio/drama-3",
+                "object": "model",
+                "created": 1792500271,
+                "owned_by": "vllm",
+                "root": "${NVME_WORKDIR}/models/fishaudio/drama-3",
+                "parent": null,
+                "max_model_len": 8192,
+                "permission": [
+                  {
+                    "id": "modelperm-941302ad3f427c3f",
+                    "object": "model_permission",
+                    "created": 1792500271,
+                    "allow_create_engine": false,
+                    "allow_sampling": true,
+                    "allow_logprobs": true,
+                    "allow_search_indices": false,
+                    "allow_view": true,
+                    "allow_fine_tuning": false,
+                    "organization": "*",
+                    "group": null,
+                    "is_blocking": false
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "meta": {
+          "repeat": "1",
+          "startup_s": "227"
+        },
+        "argv": [
+          "${PERSONAL_WORKDIR}/github-smoke-audio-20261020/tools/drama3_bench/stream_bench.py",
+          "--codes",
+          "${NVME_WORKDIR}/bench-validation/20261020_165001_49599d4/ref_codes_en.jsonl",
+          "--concurrency",
+          "16",
+          "--out",
+          "${NVME_WORKDIR}/baseline/20261020_194158/b1/c16/r1",
+          "--base-url",
+          "http://127.0.0.1:8091",
+          "--label",
+          "a100-main",
+          "--meta",
+          "repeat=1",
+          "--meta",
+          "startup_s=227",
+          "--num-prompts",
+          "1088"
+        ]
+      },
+      "run_metadata": {
+        "created": "2026-10-20T19:43:12+0800",
+        "server_commit": "da572cddb38383deae9caef33b8d490e292ef071",
+        "tool_commit": "3b116ea1a7f39323e517804900aa7bb016bafdf1",
+        "model_revision": "b2b5ee998034b2975720906c815e7fb0e9f007bd",
+        "tool_sha256": {
+          "tools/drama3_bench/encode_ref_codes.py": "5f2b0b6c18356886c6d095b991ab3ef40910cb5553ed277b8d56a944e89dee53",
+          "tools/drama3_bench/run_sweep.sh": "bd88765137d21a79d342dc6a915cf3e7e474d635662a76447fcaca9cb292c9ed",
+          "tools/drama3_bench/aggregate_results.py": "1dd3ccf49c1a1bd091430fe4a99f758d19c843cfc7385a0001c810b35740303a",
+          "tools/drama3_bench/analyze_audio.py": "e737c0ae476189cf888242c9cc7854430483e132808c59dab2c6b5308c53bfca",
+          "tools/drama3_bench/eval_quality.py": "2acae7400ac0f3c7f7eaec133f6aed0ea26302c5434437f1cb07a0d14649203f",
+          "tools/drama3_bench/stream_bench.py": "edf874f58e0ab871a77de4ab5205fa2d944526527c23b8a678926161bcc4a0e1"
+        },
+        "deploy_sha256": "b99113e6b2344169a9431686271d2ae9bbaf68b9679347435ad97f44eb3d28f3",
+        "codes_sha256": "4be960b12e0984673a8f2058e6508d07a5bc5ab3cb7e27e10e1b8be4241262b9",
+        "seed": null,
+        "save_audio": false,
+        "warmups": 8,
+        "official_cu130_r580_compliant": false,
+        "server_argv": [
+          "taskset",
+          "-c",
+          "0-27,32-59",
+          "vllm",
+          "serve",
+          "${NVME_WORKDIR}/models/fishaudio/drama-3",
+          "--omni",
+          "--host",
+          "127.0.0.1",
+          "--port",
+          "8091",
+          "--served-model-name",
+          "fishaudio/drama-3",
+          "--deploy-config",
+          "${NVME_WORKDIR}/baseline/20261020_194158/deploy_config.yaml",
+          "--stage-init-timeout",
+          "1800"
+        ],
+        "client_affinity": "60-63",
+        "server_affinity": "0-27,32-59",
+        "client_smt_siblings_excluded": "28-31",
+        "gpu_before": "GPU_PHYSICAL_1, NVIDIA A100 80GB PCIe, 15, 81920, 0",
+        "packages": {
+          "torch": "2.13.0+cu129",
+          "vllm": "0.32.0+cu129",
+          "vllm-omni": "0.32.0rc1",
+          "triton": "3.7.1",
+          "aiohttp": "3.14.5",
+          "uvloop": "0.23.0"
+        },
+        "environment": {
+          "BENCH_ARGS": "--num-prompts 1088",
+          "CUDA_VISIBLE_DEVICES": "1",
+          "CUDA_HOME": "${PERSONAL_WORKDIR}/toolchains/cuda-12.9",
+          "LD_LIBRARY_PATH": "${PERSONAL_WORKDIR}/toolchains/cuda-12.9/lib64:${WORKSPACE}/.venvs/vllm-omni-cu129/lib/python3.12/site-packages/nvidia/cublas/lib:${WORKSPACE}/.venvs/vllm-omni-cu129/lib/python3.12/site-packages/nvidia/cuda_cccl/lib:${WORKSPACE}/.venvs/vllm-omni-cu129/lib/python3.12/site-packages/nvidia/cuda_cupti/lib:${WORKSPACE}/.venvs/vllm-omni-cu129/lib/python3.12/site-packages/nvidia/cuda_nvrtc/lib:${WORKSPACE}/.venvs/vllm-omni-cu129/lib/python3.12/site-packages/nvidia/cuda_runtime/lib:${WORKSPACE}/.venvs/vllm-omni-cu129/lib/python3.12/site-packages/nvidia/cudnn/lib:${WORKSPACE}/.venvs/vllm-omni-cu129/lib/python3.12/site-packages/nvidia/cufft/lib:${WORKSPACE}/.venvs/vllm-omni-cu129/lib/python3.12/site-packages/nvidia/cufile/lib:${WORKSPACE}/.venvs/vllm-omni-cu129/lib/python3.12/site-packages/nvidia/curand/lib:${WORKSPACE}/.venvs/vllm-omni-cu129/lib/python3.12/site-packages/nvidia/cusolver/lib:${WORKSPACE}/.venvs/vllm-omni-cu129/lib/python3.12/site-packages/nvidia/cusparse/lib:${WORKSPACE}/.venvs/vllm-omni-cu129/lib/python3.12/site-packages/nvidia/cusparselt/lib:${WORKSPACE}/.venvs/vllm-omni-cu129/lib/python3.12/site-packages/nvidia/nccl/lib:${WORKSPACE}/.venvs/vllm-omni-cu129/lib/python3.12/site-packages/nvidia/nvjitlink/lib:${WORKSPACE}/.venvs/vllm-omni-cu129/lib/python3.12/site-packages/nvidia/nvshmem/lib:${WORKSPACE}/.venvs/vllm-omni-cu129/lib/python3.12/site-packages/nvidia/nvtx/lib:${PERSONAL_WORKDIR}/toolchains/cuda-12.9/lib64:${WORKSPACE}/.venvs/vllm-omni-cu129/lib/python3.12/site-packages/nvidia/cublas/lib:${WORKSPACE}/.venvs/vllm-omni-cu129/lib/python3.12/site-packages/nvidia/cuda_cccl/lib:${WORKSPACE}/.venvs/vllm-omni-cu129/lib/python3.12/site-packages/nvidia/cuda_cupti/lib:${WORKSPACE}/.venvs/vllm-omni-cu129/lib/python3.12/site-packages/nvidia/cuda_nvrtc/lib:${WORKSPACE}/.venvs/vllm-omni-cu129/lib/python3.12/site-packages/nvidia/cuda_runtime/lib:${WORKSPACE}/.venvs/vllm-omni-cu129/lib/python3.12/site-packages/nvidia/cudnn/lib:${WORKSPACE}/.venvs/vllm-omni-cu129/lib/python3.12/site-packages/nvidia/cufft/lib:${WORKSPACE}/.venvs/vllm-omni-cu129/lib/python3.12/site-packages/nvidia/cufile/lib:${WORKSPACE}/.venvs/vllm-omni-cu129/lib/python3.12/site-packages/nvidia/curand/lib:${WORKSPACE}/.venvs/vllm-omni-cu129/lib/python3.12/site-packages/nvidia/cusolver/lib:${WORKSPACE}/.venvs/vllm-omni-cu129/lib/python3.12/site-packages/nvidia/cusparse/lib:${WORKSPACE}/.venvs/vllm-omni-cu129/lib/python3.12/site-packages/nvidia/cusparselt/lib:${WORKSPACE}/.venvs/vllm-omni-cu129/lib/python3.12/site-packages/nvidia/nccl/lib:${WORKSPACE}/.venvs/vllm-omni-cu129/lib/python3.12/site-packages/nvidia/nvjitlink/lib:${WORKSPACE}/.venvs/vllm-omni-cu129/lib/python3.12/site-packages/nvidia/nvshmem/lib:${WORKSPACE}/.venvs/vllm-omni-cu129/lib/python3.12/site-packages/nvidia/nvtx/lib",
+          "OMP_NUM_THREADS": "8",
+          "MAX_JOBS": "4",
+          "TMPDIR": "${NVME_WORKDIR}/tmp/b1-194158",
+          "TRITON_CACHE_DIR": "${PERSONAL_WORKDIR}/.cache/triton",
+          "VLLM_CACHE_ROOT": "${PERSONAL_WORKDIR}/.cache/vllm",
+          "TORCHINDUCTOR_CACHE_DIR": "${PERSONAL_WORKDIR}/.cache/torchinductor",
+          "CUDA_CACHE_PATH": "${PERSONAL_WORKDIR}/.cache/cuda",
+          "HF_HUB_OFFLINE": "1"
+        },
+        "timestamp": "2026-10-20T20:40:43+0800"
+      }
+    }
+  ]
+}

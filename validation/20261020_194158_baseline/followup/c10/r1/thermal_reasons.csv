@@ -1,0 +1,51 @@
+timestamp,clocks.sm,temperature.gpu,utilization.gpu,power.draw,clocks_throttle_reasons.active,clocks_throttle_reasons.sw_thermal_slowdown,clocks_throttle_reasons.hw_thermal_slowdown,clocks_throttle_reasons.sw_power_cap,clocks_throttle_reasons.hw_power_brake_slowdown
+2026/10/20 21:58:56.636, 210 MHz, 69, 0 %, 58.19 W, 0x0000000000000001, Not Active, Not Active, Not Active, Not Active
+2026/10/20 21:59:06.682, 210 MHz, 68, 0 %, 57.30 W, 0x0000000000000001, Not Active, Not Active, Not Active, Not Active
+2026/10/20 21:59:16.745, 1410 MHz, 68, 0 %, 87.95 W, 0x0000000000000000, Not Active, Not Active, Not Active, Not Active
+2026/10/20 21:59:26.830, 1410 MHz, 67, 10 %, 86.98 W, 0x0000000000000000, Not Active, Not Active, Not Active, Not Active
+2026/10/20 21:59:36.915, 1410 MHz, 67, 0 %, 85.86 W, 0x0000000000000000, Not Active, Not Active, Not Active, Not Active
+2026/10/20 21:59:46.972, 1410 MHz, 66, 0 %, 85.50 W, 0x0000000000000000, Not Active, Not Active, Not Active, Not Active
+2026/10/20 21:59:57.035, 1410 MHz, 66, 0 %, 85.07 W, 0x0000000000000000, Not Active, Not Active, Not Active, Not Active
+2026/10/20 22:00:07.100, 1410 MHz, 66, 0 %, 85.30 W, 0x0000000000000000, Not Active, Not Active, Not Active, Not Active
+2026/10/20 22:00:17.184, 1410 MHz, 65, 0 %, 85.19 W, 0x0000000000000000, Not Active, Not Active, Not Active, Not Active
+2026/10/20 22:00:27.248, 1410 MHz, 65, 0 %, 84.04 W, 0x0000000000000000, Not Active, Not Active, Not Active, Not Active
+2026/10/20 22:00:37.330, 1410 MHz, 67, 100 %, 223.44 W, 0x0000000000000000, Not Active, Not Active, Not Active, Not Active
+2026/10/20 22:00:47.418, 1410 MHz, 66, 65 %, 85.46 W, 0x0000000000000000, Not Active, Not Active, Not Active, Not Active
+2026/10/20 22:00:57.503, 1410 MHz, 69, 100 %, 121.96 W, 0x0000000000000000, Not Active, Not Active, Not Active, Not Active
+2026/10/20 22:01:07.568, 1410 MHz, 66, 0 %, 85.66 W, 0x0000000000000000, Not Active, Not Active, Not Active, Not Active
+2026/10/20 22:01:17.660, 1410 MHz, 66, 0 %, 85.49 W, 0x0000000000000000, Not Active, Not Active, Not Active, Not Active
+2026/10/20 22:01:27.723, 1410 MHz, 65, 0 %, 84.42 W, 0x0000000000000000, Not Active, Not Active, Not Active, Not Active
+2026/10/20 22:01:37.780, 1410 MHz, 64, 0 %, 83.14 W, 0x0000000000000000, Not Active, Not Active, Not Active, Not Active
+2026/10/20 22:01:47.836, 1170 MHz, 72, 100 %, 318.33 W, 0x0000000000000004, Not Active, Not Active, Active, Not Active
+2026/10/20 22:01:57.902, 1410 MHz, 71, 34 %, 90.99 W, 0x0000000000000000, Not Active, Not Active, Not Active, Not Active
+2026/10/20 22:02:07.964, 1335 MHz, 76, 20 %, 244.77 W, 0x0000000000000004, Not Active, Not Active, Active, Not Active
+2026/10/20 22:02:18.049, 1410 MHz, 71, 16 %, 91.90 W, 0x0000000000000000, Not Active, Not Active, Not Active, Not Active
+2026/10/20 22:02:28.114, 1410 MHz, 70, 0 %, 90.38 W, 0x0000000000000000, Not Active, Not Active, Not Active, Not Active
+2026/10/20 22:02:38.178, 1410 MHz, 69, 0 %, 89.44 W, 0x0000000000000000, Not Active, Not Active, Not Active, Not Active
+2026/10/20 22:02:48.238, 1380 MHz, 79, 99 %, 318.01 W, 0x0000000000000004, Not Active, Not Active, Active, Not Active
+2026/10/20 22:02:58.328, 1380 MHz, 83, 100 %, 247.03 W, 0x0000000000000004, Not Active, Not Active, Active, Not Active
+2026/10/20 22:03:08.415, 1305 MHz, 84, 100 %, 227.94 W, 0x0000000000000020, Active, Not Active, Not Active, Not Active
+2026/10/20 22:03:18.483, 1065 MHz, 84, 100 %, 220.41 W, 0x0000000000000020, Active, Not Active, Not Active, Not Active
+2026/10/20 22:03:28.575, 1035 MHz, 84, 100 %, 168.31 W, 0x0000000000000020, Active, Not Active, Not Active, Not Active
+2026/10/20 22:03:38.638, 1050 MHz, 85, 100 %, 222.96 W, 0x0000000000000020, Active, Not Active, Not Active, Not Active
+2026/10/20 22:03:48.724, 690 MHz, 84, 100 %, 155.71 W, 0x0000000000000020, Active, Not Active, Not Active, Not Active
+2026/10/20 22:03:58.810, 495 MHz, 84, 100 %, 179.31 W, 0x0000000000000020, Active, Not Active, Not Active, Not Active
+2026/10/20 22:04:08.879, 525 MHz, 84, 100 %, 146.31 W, 0x0000000000000020, Active, Not Active, Not Active, Not Active
+2026/10/20 22:04:18.965, 570 MHz, 84, 100 %, 157.93 W, 0x0000000000000020, Active, Not Active, Not Active, Not Active
+2026/10/20 22:04:29.052, 720 MHz, 84, 100 %, 152.83 W, 0x0000000000000020, Active, Not Active, Not Active, Not Active
+2026/10/20 22:04:39.141, 465 MHz, 84, 100 %, 155.65 W, 0x0000000000000020, Active, Not Active, Not Active, Not Active
+2026/10/20 22:04:49.227, 660 MHz, 84, 100 %, 160.43 W, 0x0000000000000020, Active, Not Active, Not Active, Not Active
+2026/10/20 22:04:59.296, 600 MHz, 84, 100 %, 131.27 W, 0x0000000000000020, Active, Not Active, Not Active, Not Active
+2026/10/20 22:05:09.389, 675 MHz, 84, 100 %, 146.10 W, 0x0000000000000020, Active, Not Active, Not Active, Not Active
+2026/10/20 22:05:19.465, 570 MHz, 84, 100 %, 139.38 W, 0x0000000000000020, Active, Not Active, Not Active, Not Active
+2026/10/20 22:05:29.553, 555 MHz, 84, 100 %, 135.53 W, 0x0000000000000020, Active, Not Active, Not Active, Not Active
+2026/10/20 22:05:39.637, 735 MHz, 84, 100 %, 159.41 W, 0x0000000000000020, Active, Not Active, Not Active, Not Active
+2026/10/20 22:05:49.705, 780 MHz, 84, 100 %, 164.31 W, 0x0000000000000020, Active, Not Active, Not Active, Not Active
+2026/10/20 22:05:59.800, 615 MHz, 84, 100 %, 151.35 W, 0x0000000000000020, Active, Not Active, Not Active, Not Active
+2026/10/20 22:06:09.888, 780 MHz, 84, 100 %, 154.51 W, 0x0000000000000020, Active, Not Active, Not Active, Not Active
+2026/10/20 22:06:19.950, 750 MHz, 84, 100 %, 155.61 W, 0x0000000000000020, Active, Not Active, Not Active, Not Active
+2026/10/20 22:06:30.039, 675 MHz, 84, 100 %, 165.85 W, 0x0000000000000020, Active, Not Active, Not Active, Not Active
+2026/10/20 22:06:40.109, 495 MHz, 84, 100 %, 161.09 W, 0x0000000000000020, Active, Not Active, Not Active, Not Active
+2026/10/20 22:06:50.200, 615 MHz, 85, 100 %, 157.88 W, 0x0000000000000020, Active, Not Active, Not Active, Not Active
+2026/10/20 22:07:00.265, 585 MHz, 84, 100 %, 140.78 W, 0x0000000000000020, Active, Not Active, Not Active, Not Active
+2026/10/20 22:07:10.329, 1410 MHz, 83, 0 %, 110.63 W, 0x0000000000000000, Not Active, Not Active, Not Active, Not Active

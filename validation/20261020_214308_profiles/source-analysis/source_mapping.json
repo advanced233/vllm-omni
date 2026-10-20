@@ -1,0 +1,836 @@
+{
+  "status": "provisional; only C8 attempt2 available when written",
+  "created": "2026-10-20T23:02:52+0800",
+  "trace": "${NVME_WORKDIR}/profiling/20261020_214308/c8/attempt2/traces/20261020-224057_stage0_rank0_1792507257/trace_rank0.json.gz",
+  "trace_sha256": "56b24f759496d18ac292b6d93e75422dea817a66dd69da75feace7c63a279f4f",
+  "server_commit": "da572cddb38383deae9caef33b8d490e292ef071",
+  "vllm_distribution": "0.32.0+cu129",
+  "source_changes_performed": false,
+  "gpu_work_performed": false,
+  "denominator": "Correlated kernel-duration sums of complete interior stage0 steps. Overlap double-counts across kernels, unlike busy union; never interpret as walltime shares or speedup bounds.",
+  "evidence_limits": [
+    "C8 retry with aligned stage windows is selected; C8attempt2/C16/C64 independently corroborate mixed GDN CPU scope cost and Marlin GPU work; the proposed changes remain untested.",
+    "C8 decode cohort has mixed generation batch sizes; consult the recorded generation_request_histogram rather than assuming all232 steps have8 live requests.",
+    "MPS overlap is observed concurrency, not slowdown causality.",
+    "Dense GEMM module ownership unresolved.",
+    "Selected C8 capture_hardware reports1395-1410MHz/82-83C/no software thermal; B1 C8 had median735MHz and95.73% thermal samples. Therefore this trace does not isolate the cause or quantify the size of hot-baseline stalls. Future A/B timings need matched thermal conditions.",
+    "BF16\u2192FP32 quality experiment did not demonstrate benefit; no precision change proposed.",
+    "Original family v1 classified _gemma_norm_kernel as dense; family v2 corrected that."
+  ],
+  "phase_summary": {
+    "decode_only": {
+      "all_cpu_scopes": 234,
+      "conservative_complete_interior_steps": 232,
+      "kernel_count": 360582,
+      "kernel_sum_us": 3829427.417,
+      "gpu_span_us": {
+        "n": 232,
+        "p50": 13743.502075195312,
+        "p95": 17648.221606445313,
+        "min": 12662.518798828125,
+        "max": 19282.05078125
+      },
+      "gpu_busy_union_us_per_step": {
+        "n": 232,
+        "p50": 13590.44873046875,
+        "p95": 14791.818774414063,
+        "min": 12515.36865234375,
+        "max": 16063.98193359375
+      },
+      "gpu_kernel_sum_us_per_step": {
+        "n": 232,
+        "p50": 16357.4415,
+        "p95": 17385.596999999998,
+        "min": 15349.729,
+        "max": 18524.205
+      },
+      "cpu_scope_us": {
+        "n": 232,
+        "p50": 4865.2125,
+        "p95": 7634.8425,
+        "min": 2721.187,
+        "max": 11793.829
+      },
+      "generation_request_histogram": {
+        "8": 192,
+        "7": 38,
+        "6": 2
+      },
+      "context_request_histogram": {
+        "0": 232
+      },
+      "context_tokens": {
+        "n": 232,
+        "p50": 0.0,
+        "p95": 0.0,
+        "min": 0,
+        "max": 0
+      },
+      "graph_launches_per_step": {
+        "1": 232
+      },
+      "raw_top10_kernel_time_coverage_pct": 77.45479164411552,
+      "gpu_span_by_generation_requests": {
+        "6": {
+          "n": 2,
+          "p50": 12672.534912109375,
+          "p95": 12681.5494140625,
+          "min": 12662.518798828125,
+          "max": 12682.551025390625
+        },
+        "7": {
+          "n": 38,
+          "p50": 13343.765502929688,
+          "p95": 17408.81936035156,
+          "min": 12761.880126953125,
+          "max": 18280.17822265625
+        },
+        "8": {
+          "n": 192,
+          "p50": 13766.030883789062,
+          "p95": 17781.329858398436,
+          "min": 13210.37109375,
+          "max": 19282.05078125
+        }
+      }
+    },
+    "mixed": {
+      "all_cpu_scopes": 22,
+      "conservative_complete_interior_steps": 22,
+      "kernel_count": 40238,
+      "kernel_sum_us": 810711.675,
+      "gpu_span_us": {
+        "n": 22,
+        "p50": 49067.031494140625,
+        "p95": 55238.10665283203,
+        "min": 44412.294189453125,
+        "max": 55810.572021484375
+      },
+      "gpu_busy_union_us_per_step": {
+        "n": 22,
+        "p50": 35068.6328125,
+        "p95": 37019.4169921875,
+        "min": 32351.33740234375,
+        "max": 37180.38037109375
+      },
+      "gpu_kernel_sum_us_per_step": {
+        "n": 22,
+        "p50": 36968.679000000004,
+        "p95": 38658.3514,
+        "min": 34323.985,
+        "max": 38965.001
+      },
+      "cpu_scope_us": {
+        "n": 22,
+        "p50": 58954.1095,
+        "p95": 62101.9663,
+        "min": 52821.027,
+        "max": 64777.011
+      },
+      "generation_request_histogram": {
+        "7": 20,
+        "6": 2
+      },
+      "context_request_histogram": {
+        "1": 22
+      },
+      "context_tokens": {
+        "n": 22,
+        "p50": 169.5,
+        "p95": 225.45,
+        "min": 126,
+        "max": 227
+      },
+      "graph_launches_per_step": {
+        "54": 22
+      },
+      "raw_top10_kernel_time_coverage_pct": 77.46540494806622,
+      "gpu_span_by_generation_requests": {
+        "6": {
+          "n": 2,
+          "p50": 47230.6865234375,
+          "p95": 48264.816625976564,
+          "min": 46081.653076171875,
+          "max": 48379.719970703125
+        },
+        "7": {
+          "n": 20,
+          "p50": 49629.50146484375,
+          "p95": 55290.81185302734,
+          "min": 44412.294189453125,
+          "max": 55810.572021484375
+        }
+      }
+    }
+  },
+  "mappings": [
+    {
+      "family": "Marlin routed-expert GEMMs",
+      "ownership": "Backbone MoE, supported by construction and exact count; the audio tower uses dense nn.Linear and no MoE.",
+      "confidence": "high at family level; no per-launch w13 versus w2 attribution from the demangled kernel alone",
+      "trace": {
+        "decode_only": {
+          "kernel_count": 18560,
+          "kernel_sum_us": 1184671.9279999945,
+          "share_of_phase_kernel_sum_pct": 30.93600684898409,
+          "raw_kernels": [
+            {
+              "name": "void marlin_moe_wna16::Marlin<1125899906909960l, 2814749767172868l, 1125899906909960l, 1125899906909960l, 128, 1, 8, 4, true, 4, 8, false>(int4 const*, int4 const*, int4*, int4*, int4 const*, float const*, int4 const*, float const*, int4 const*, int const*, int const*, int const*, float const*, int, bool, int, int, int, int*, bool, bool, bool)",
+              "count": 18560,
+              "kernel_sum_us": 1184671.9279999945
+            }
+          ]
+        },
+        "mixed": {
+          "kernel_count": 1760,
+          "kernel_sum_us": 421323.89800000057,
+          "share_of_phase_kernel_sum_pct": 51.96963495067473,
+          "raw_kernels": [
+            {
+              "name": "void marlin_moe_wna16::Marlin<1125899906909960l, 2814749767172868l, 1125899906909960l, 1125899906909960l, 128, 1, 8, 4, true, 4, 8, false>(int4 const*, int4 const*, int4*, int4*, int4 const*, float const*, int4 const*, float const*, int4 const*, int const*, int const*, int const*, float const*, int, bool, int, int, int, int*, bool, bool, bool)",
+              "count": 1600,
+              "kernel_sum_us": 381467.2130000006
+            },
+            {
+              "name": "void marlin_moe_wna16::Marlin<1125899906909960l, 2814749767172868l, 1125899906909960l, 1125899906909960l, 128, 1, 8, 4, false, 4, 8, false>(int4 const*, int4 const*, int4*, int4*, int4 const*, float const*, int4 const*, float const*, int4 const*, int const*, int const*, int const*, float const*, int, bool, int, int, int, int*, bool, bool, bool)",
+              "count": 160,
+              "kernel_sum_us": 39856.685
+            }
+          ]
+        }
+      },
+      "count_crosscheck": "232 complete decode steps \u00d740 backbone MoE layers \u00d72 GEMMs =18560 traced Marlin kernels;22 mixed \u00d740\u00d72 =1760.",
+      "sources": [
+        {
+          "path": "${WORKSPACE}/vllm-omni/vllm_omni/model_executor/models/fish_omni/fish_omni_model.py",
+          "line": 205,
+          "sha256": "b791b2f017af9ed9aacd3fa740c031ac6f38cfda862c3c5cb31111ff63e26437",
+          "evidence": "Constructs Qwen3_5Model backbone"
+        },
+        {
+          "path": "${NVME_WORKDIR}/venvs/vllm-omni-cu129/lib/python3.12/site-packages/vllm/model_executor/models/qwen3_5.py",
+          "line": 173,
+          "sha256": "ea7e71303c902b9678e85ff3e9a75a7ab6e69b5770605d540ad6ab1084e18187",
+          "evidence": "MoE layers use Qwen3NextSparseMoeBlock"
+        },
+        {
+          "path": "${NVME_WORKDIR}/venvs/vllm-omni-cu129/lib/python3.12/site-packages/vllm/model_executor/models/qwen3_next.py",
+          "line": 223,
+          "sha256": "09ea2a385259edc9feadc79e304e86a31582b9770f80b8003d2d641782405818",
+          "evidence": "Constructs FusedMoEFactory for routed experts"
+        },
+        {
+          "path": "${NVME_WORKDIR}/venvs/vllm-omni-cu129/lib/python3.12/site-packages/vllm/model_executor/layers/fused_moe/oracle/fp8.py",
+          "line": 192,
+          "sha256": "31245dae9406d6beeab9376be89bcda6935c97153436021172015e425c2ac62d",
+          "evidence": "MARLIN backend maps to MarlinExperts"
+        },
+        {
+          "path": "${NVME_WORKDIR}/venvs/vllm-omni-cu129/lib/python3.12/site-packages/vllm/model_executor/layers/fused_moe/experts/marlin_moe.py",
+          "line": 741,
+          "sha256": "e048731e130ecc3100be0ab4a168777a7697131b41538f9d9b6a73c4f66e14ff",
+          "evidence": "MarlinExperts.apply invokes fused_marlin_moe"
+        },
+        {
+          "path": "${NVME_WORKDIR}/venvs/vllm-omni-cu129/lib/python3.12/site-packages/vllm/model_executor/layers/fused_moe/experts/marlin_moe.py",
+          "line": 131,
+          "sha256": "e048731e130ecc3100be0ab4a168777a7697131b41538f9d9b6a73c4f66e14ff",
+          "evidence": "First w13 Marlin GEMM"
+        },
+        {
+          "path": "${NVME_WORKDIR}/venvs/vllm-omni-cu129/lib/python3.12/site-packages/vllm/model_executor/layers/fused_moe/experts/marlin_moe.py",
+          "line": 195,
+          "sha256": "e048731e130ecc3100be0ab4a168777a7697131b41538f9d9b6a73c4f66e14ff",
+          "evidence": "Second w2 Marlin GEMM"
+        },
+        {
+          "path": "${NVME_WORKDIR}/venvs/vllm-omni-cu129/lib/python3.12/site-packages/vllm/_custom_ops.py",
+          "line": 2431,
+          "sha256": "36428c27bad9bf5ffe5debf9e34bccbc888adb68ad3eb972f6c9ff080e7f683e",
+          "evidence": "Python CUDA-op boundary, exposes thread_k/thread_n/blocks_per_sm overrides"
+        }
+      ]
+    },
+    {
+      "family": "Dense GEMM/GEMV/reductions",
+      "ownership": "Unresolved aggregate: potentially backbone projections, shared experts/router, tower linears and semantic/codebook heads. Kernel names alone do not identify modules.",
+      "static_shape_candidates": {
+        "tower_layers": 13,
+        "tower_hidden": 2048,
+        "tower_first_eh_proj": [
+          4096,
+          2048
+        ],
+        "tower_other_eh_proj_after_code_table": [
+          2048,
+          2048
+        ],
+        "tower_qkv_proj": [
+          2048,
+          9216
+        ],
+        "tower_o_proj": [
+          4096,
+          2048
+        ],
+        "tower_gate_up_proj": [
+          2048,
+          12288
+        ],
+        "tower_down_proj": [
+          6144,
+          2048
+        ],
+        "nine_codebook_heads": [
+          2048,
+          4096
+        ],
+        "meaning": "[in_features,out_features], from loaded model config plus TowerLayer definitions. These are candidate shapes for attribution, not proof that a named generic GEMM in the current trace is from that module."
+      },
+      "confidence": "only family-level library operation identified",
+      "sources": [
+        {
+          "path": "${NVME_WORKDIR}/venvs/vllm-omni-cu129/lib/python3.12/site-packages/vllm/model_executor/layers/mamba/gdn/qwen_gdn_linear_attn.py",
+          "line": 995,
+          "sha256": "3fbf257fef7f303b0082fdbedce4394df74b78ad9a594157079c89632b5c221e",
+          "evidence": "GDN input qkvz and ba projections"
+        },
+        {
+          "path": "${NVME_WORKDIR}/venvs/vllm-omni-cu129/lib/python3.12/site-packages/vllm/model_executor/layers/mamba/gdn/qwen_gdn_linear_attn.py",
+          "line": 1057,
+          "sha256": "3fbf257fef7f303b0082fdbedce4394df74b78ad9a594157079c89632b5c221e",
+          "evidence": "GDN output projection"
+        },
+        {
+          "path": "${NVME_WORKDIR}/venvs/vllm-omni-cu129/lib/python3.12/site-packages/vllm/model_executor/models/qwen2_moe.py",
+          "line": 115,
+          "sha256": "382904901ed32374009fbecfd08c37d3337d721d30d3d25010d39de32cfbb2f8",
+          "evidence": "Shared-expert MLP projections and expert gate"
+        },
+        {
+          "path": "${WORKSPACE}/vllm-omni/vllm_omni/model_executor/models/fish_omni/codebook_tower.py",
+          "line": 169,
+          "sha256": "0276c531634b52e15c5c974b84ec2c625fa3685d4d2991a34c24da6201a612c8",
+          "evidence": "Tower eh_proj"
+        },
+        {
+          "path": "${WORKSPACE}/vllm-omni/vllm_omni/model_executor/models/fish_omni/codebook_tower.py",
+          "line": 187,
+          "sha256": "0276c531634b52e15c5c974b84ec2c625fa3685d4d2991a34c24da6201a612c8",
+          "evidence": "Tower qkv projection"
+        },
+        {
+          "path": "${WORKSPACE}/vllm-omni/vllm_omni/model_executor/models/fish_omni/codebook_tower.py",
+          "line": 205,
+          "sha256": "0276c531634b52e15c5c974b84ec2c625fa3685d4d2991a34c24da6201a612c8",
+          "evidence": "Tower o_proj"
+        },
+        {
+          "path": "${WORKSPACE}/vllm-omni/vllm_omni/model_executor/models/fish_omni/codebook_tower.py",
+          "line": 208,
+          "sha256": "0276c531634b52e15c5c974b84ec2c625fa3685d4d2991a34c24da6201a612c8",
+          "evidence": "Tower gate_up/down MLP projections"
+        },
+        {
+          "path": "${WORKSPACE}/vllm-omni/vllm_omni/model_executor/models/fish_omni/fish_omni_model.py",
+          "line": 447,
+          "sha256": "b791b2f017af9ed9aacd3fa740c031ac6f38cfda862c3c5cb31111ff63e26437",
+          "evidence": "Semantic head matmul"
+        },
+        {
+          "path": "${WORKSPACE}/vllm-omni/vllm_omni/model_executor/models/fish_omni/fish_omni_model.py",
+          "line": 484,
+          "sha256": "b791b2f017af9ed9aacd3fa740c031ac6f38cfda862c3c5cb31111ff63e26437",
+          "evidence": "Nine codebook head matmuls"
+        }
+      ],
+      "attribution_required": "Collect exact module/shape attribution at capture time or matched isolated layer microbenchmarks; do not label the current 38.300% decode dense+reduction bucket as tower/backbone."
+    },
+    {
+      "family": "Packed GDN decode",
+      "ownership": "Backbone linear-attention layers",
+      "confidence": "high: unique named kernel and actual call chain",
+      "trace": {
+        "decode_only": {
+          "kernel_count": 6960,
+          "kernel_sum_us": 97062.17100000007,
+          "share_of_phase_kernel_sum_pct": 2.5346392666723854,
+          "raw_kernels": [
+            {
+              "name": "fused_recurrent_gated_delta_rule_packed_decode_kernel",
+              "count": 6960,
+              "kernel_sum_us": 97062.17100000007
+            }
+          ]
+        },
+        "mixed": {
+          "kernel_count": 660,
+          "kernel_sum_us": 9006.609000000015,
+          "share_of_phase_kernel_sum_pct": 1.1109509431944489,
+          "raw_kernels": [
+            {
+              "name": "fused_recurrent_gated_delta_rule_packed_decode_kernel",
+              "count": 660,
+              "kernel_sum_us": 9006.609000000015
+            }
+          ]
+        }
+      },
+      "count_crosscheck": "30 GDN layers \u00d7232 complete decode steps =6960;30\u00d722 mixed=660.",
+      "sources": [
+        {
+          "path": "${WORKSPACE}/vllm-omni/vllm_omni/model_executor/models/fish_omni/gdn.py",
+          "line": 277,
+          "sha256": "843fc4dabf3e0368e8089e4c647af2f77134538312e89376424abffcfa60cf7c",
+          "evidence": "Pure decode delegates to installed Qwen standard path"
+        },
+        {
+          "path": "${NVME_WORKDIR}/venvs/vllm-omni-cu129/lib/python3.12/site-packages/vllm/model_executor/layers/mamba/gdn/qwen_gdn_linear_attn.py",
+          "line": 1728,
+          "sha256": "3fbf257fef7f303b0082fdbedce4394df74b78ad9a594157079c89632b5c221e",
+          "evidence": "Packed non-spec decode path"
+        },
+        {
+          "path": "${NVME_WORKDIR}/venvs/vllm-omni-cu129/lib/python3.12/site-packages/vllm/model_executor/layers/mamba/gdn/qwen_gdn_linear_attn.py",
+          "line": 1756,
+          "sha256": "3fbf257fef7f303b0082fdbedce4394df74b78ad9a594157079c89632b5c221e",
+          "evidence": "Causal convolution update"
+        },
+        {
+          "path": "${NVME_WORKDIR}/venvs/vllm-omni-cu129/lib/python3.12/site-packages/vllm/model_executor/layers/mamba/gdn/qwen_gdn_linear_attn.py",
+          "line": 1766,
+          "sha256": "3fbf257fef7f303b0082fdbedce4394df74b78ad9a594157079c89632b5c221e",
+          "evidence": "Packed recurrent attention call"
+        },
+        {
+          "path": "${NVME_WORKDIR}/venvs/vllm-omni-cu129/lib/python3.12/site-packages/vllm/third_party/flash_linear_attention/ops/fused_recurrent.py",
+          "line": 256,
+          "sha256": "fe6f1311014809040497aa0a623e7fa97f4b3457cdc7ee1f1f8aed21f326f755",
+          "evidence": "Actual Triton kernel; state load/update computes in fp32, final store rounds to pool dtype"
+        },
+        {
+          "path": "${WORKSPACE}/vllm-omni/vllm_omni/model_executor/models/fish_omni/gdn.py",
+          "line": 181,
+          "sha256": "843fc4dabf3e0368e8089e4c647af2f77134538312e89376424abffcfa60cf7c",
+          "evidence": "Mixed-step decode tokens reuse packed kernel"
+        }
+      ]
+    },
+    {
+      "family": "A100 GDN prefill/FLA",
+      "ownership": "Backbone linear-attention prefill subset of mixed steps",
+      "confidence": "high at named FLA kernels; generic index/copy kernels not individually attributed",
+      "trace": {
+        "decode_only": {
+          "kernel_count": 0,
+          "kernel_sum_us": 0,
+          "share_of_phase_kernel_sum_pct": 0.0,
+          "raw_kernels": []
+        },
+        "mixed": {
+          "kernel_count": 3300,
+          "kernel_sum_us": 39261.761,
+          "share_of_phase_kernel_sum_pct": 4.842875983005918,
+          "raw_kernels": [
+            {
+              "name": "merge_16x16_to_64x64_inverse_kernel",
+              "count": 660,
+              "kernel_sum_us": 12993.480999999998
+            },
+            {
+              "name": "chunk_gated_delta_rule_fwd_kernel_h_blockdim64",
+              "count": 660,
+              "kernel_sum_us": 8795.537000000017
+            },
+            {
+              "name": "chunk_fwd_kernel_o",
+              "count": 660,
+              "kernel_sum_us": 7902.9589999999935
+            },
+            {
+              "name": "recompute_w_u_fwd_kernel",
+              "count": 660,
+              "kernel_sum_us": 5171.452999999992
+            },
+            {
+              "name": "chunk_scaled_dot_kkt_fwd_kernel",
+              "count": 660,
+              "kernel_sum_us": 4398.330999999998
+            }
+          ]
+        }
+      },
+      "sources": [
+        {
+          "path": "${WORKSPACE}/vllm-omni/vllm_omni/model_executor/models/fish_omni/gdn.py",
+          "line": 135,
+          "sha256": "843fc4dabf3e0368e8089e4c647af2f77134538312e89376424abffcfa60cf7c",
+          "evidence": "Direct indexed state-pool path is FlashInfer-only"
+        },
+        {
+          "path": "${WORKSPACE}/vllm-omni/vllm_omni/model_executor/models/fish_omni/gdn.py",
+          "line": 230,
+          "sha256": "843fc4dabf3e0368e8089e4c647af2f77134538312e89376424abffcfa60cf7c",
+          "evidence": "A100 FLA fallback gathers state, zeroes fresh rows"
+        },
+        {
+          "path": "${WORKSPACE}/vllm-omni/vllm_omni/model_executor/models/fish_omni/gdn.py",
+          "line": 232,
+          "sha256": "843fc4dabf3e0368e8089e4c647af2f77134538312e89376424abffcfa60cf7c",
+          "evidence": "Calls layer.chunk_gated_delta_rule"
+        },
+        {
+          "path": "${WORKSPACE}/vllm-omni/vllm_omni/model_executor/models/fish_omni/gdn.py",
+          "line": 245,
+          "sha256": "843fc4dabf3e0368e8089e4c647af2f77134538312e89376424abffcfa60cf7c",
+          "evidence": "Scatters final state and copies output"
+        },
+        {
+          "path": "${NVME_WORKDIR}/venvs/vllm-omni-cu129/lib/python3.12/site-packages/vllm/model_executor/layers/mamba/gdn/qwen_gdn_linear_attn.py",
+          "line": 344,
+          "sha256": "3fbf257fef7f303b0082fdbedce4394df74b78ad9a594157079c89632b5c221e",
+          "evidence": "forward_native dispatches to FLA"
+        },
+        {
+          "path": "${NVME_WORKDIR}/venvs/vllm-omni-cu129/lib/python3.12/site-packages/vllm/third_party/flash_linear_attention/ops/chunk.py",
+          "line": 23,
+          "sha256": "c105ead259e86aedc248c53e7c4cef07034d0ff12da608d80265d1dd0990803f",
+          "evidence": "FLA chunk orchestration"
+        },
+        {
+          "path": "${NVME_WORKDIR}/venvs/vllm-omni-cu129/lib/python3.12/site-packages/vllm/third_party/flash_linear_attention/ops/solve_tril.py",
+          "line": 227,
+          "sha256": "88098d2dd05ad0fbd4639dcf34100920f89510664f87c48af42bd74fb9df60cc",
+          "evidence": "Named triangular solve kernel"
+        },
+        {
+          "path": "${NVME_WORKDIR}/venvs/vllm-omni-cu129/lib/python3.12/site-packages/vllm/third_party/flash_linear_attention/ops/chunk_delta_h.py",
+          "line": 45,
+          "sha256": "240fbe430200c4168799c05243edffc0b8dce7b41651b95233266d632b70071b",
+          "evidence": "Named recurrent chunk kernel"
+        },
+        {
+          "path": "${NVME_WORKDIR}/venvs/vllm-omni-cu129/lib/python3.12/site-packages/vllm/third_party/flash_linear_attention/ops/chunk_o.py",
+          "line": 159,
+          "sha256": "9b8476c16ac6fff9f0a99cac01e540f893bb1cc6cfa48347182386e399ab2133",
+          "evidence": "Already supports supplied flattened output buffer; otherwise empty_like"
+        },
+        {
+          "path": "${NVME_WORKDIR}/venvs/vllm-omni-cu129/lib/python3.12/site-packages/vllm/third_party/flash_linear_attention/ops/utils.py",
+          "line": 83,
+          "sha256": "d6c90d36505e02086954c23ca4dd2fea82a69416d68ff1d0501e16b3148b5b0c",
+          "evidence": "Per-call input_guard contiguous checks and device context"
+        }
+      ]
+    },
+    {
+      "family": "Tower-specific helper kernels",
+      "ownership": "Audio codebook tower",
+      "confidence": "high for these exact unique kernel names; excludes generic dense GEMMs",
+      "trace": {
+        "decode_only": {
+          "kernel_count": 15080,
+          "kernel_sum_us": 50874.80899999982,
+          "share_of_phase_kernel_sum_pct": 1.3285226082142456,
+          "raw_kernels": [
+            {
+              "name": "_gemma_norm_kernel",
+              "count": 9048,
+              "kernel_sum_us": 30629.558999999685
+            },
+            {
+              "name": "_table_norm_kernel",
+              "count": 2784,
+              "kernel_sum_us": 10251.789000000037
+            },
+            {
+              "name": "_sigmoid_gate_kernel",
+              "count": 3016,
+              "kernel_sum_us": 8843.138000000103
+            },
+            {
+              "name": "_mix_norm_kernel",
+              "count": 232,
+              "kernel_sum_us": 1150.3229999999996
+            }
+          ]
+        },
+        "mixed": {
+          "kernel_count": 1430,
+          "kernel_sum_us": 6512.9750000000095,
+          "share_of_phase_kernel_sum_pct": 0.8033651421141812,
+          "raw_kernels": [
+            {
+              "name": "_gemma_norm_kernel",
+              "count": 858,
+              "kernel_sum_us": 3889.7190000000096
+            },
+            {
+              "name": "_table_norm_kernel",
+              "count": 264,
+              "kernel_sum_us": 1254.205
+            },
+            {
+              "name": "_sigmoid_gate_kernel",
+              "count": 286,
+              "kernel_sum_us": 1232.632
+            },
+            {
+              "name": "_mix_norm_kernel",
+              "count": 22,
+              "kernel_sum_us": 136.419
+            }
+          ]
+        }
+      },
+      "sources": [
+        {
+          "path": "${WORKSPACE}/vllm-omni/vllm_omni/model_executor/models/fish_omni/codebook_tower.py",
+          "line": 159,
+          "sha256": "0276c531634b52e15c5c974b84ec2c625fa3685d4d2991a34c24da6201a612c8",
+          "evidence": "TowerLayer.forward uses these helpers around dense projections"
+        },
+        {
+          "path": "${WORKSPACE}/vllm-omni/vllm_omni/model_executor/models/fish_omni/kernels.py",
+          "line": 1,
+          "sha256": "90e5fda848917974f1d198d676d5378fe85fdd90d14e0f76652fd01c523e640a",
+          "evidence": "Helper kernel definitions"
+        },
+        {
+          "path": "${WORKSPACE}/vllm-omni/vllm_omni/model_executor/models/fish_omni/fish_omni_model.py",
+          "line": 476,
+          "sha256": "b791b2f017af9ed9aacd3fa740c031ac6f38cfda862c3c5cb31111ff63e26437",
+          "evidence": "Four shared tower layers"
+        },
+        {
+          "path": "${WORKSPACE}/vllm-omni/vllm_omni/model_executor/models/fish_omni/fish_omni_model.py",
+          "line": 481,
+          "sha256": "b791b2f017af9ed9aacd3fa740c031ac6f38cfda862c3c5cb31111ff63e26437",
+          "evidence": "Nine autoregressive codebook-specific layers"
+        }
+      ]
+    },
+    {
+      "family": "Frame sampling top-k + sort + draw",
+      "ownership": "Semantic/codebook frame sampling, excluding MoE topkGating",
+      "confidence": "high for _draw_kernel; topk/sort association supported by unique sampling calls and counts, requires attribution if other topk paths added",
+      "trace": {
+        "decode_only": {
+          "kernel_count": 7192,
+          "kernel_sum_us": 115062.86699999985,
+          "share_of_phase_kernel_sum_pct": 3.0047016034094436,
+          "raw_kernels": [
+            {
+              "name": "void at::native::sbtopk::gatherTopK<c10::BFloat16, unsigned int, 2, false>(at::cuda::detail::TensorInfo<c10::BFloat16 const, unsigned int>, unsigned int, unsigned int, bool, unsigned int, unsigned int, at::cuda::detail::TensorInfo<c10::BFloat16, unsigned int>, unsigned int, at::cuda::detail::TensorInfo<long, unsigned int>, unsigned int, c10::BFloat16*)",
+              "count": 2320,
+              "kernel_sum_us": 65411.29200000002
+            },
+            {
+              "name": "_draw_kernel",
+              "count": 2552,
+              "kernel_sum_us": 26206.623999999836
+            },
+            {
+              "name": "void at::native::warpMergeSortKVInPlace<2, -1, 128, 16, c10::BFloat16, long, at::native::GTOp<c10::BFloat16, true>, unsigned int, 32>(at::cuda::detail::TensorInfo<c10::BFloat16, unsigned int>, unsigned int, unsigned int, unsigned int, at::cuda::detail::TensorInfo<long, unsigned int>, unsigned int, at::native::GTOp<c10::BFloat16, true>, c10::BFloat16)",
+              "count": 2320,
+              "kernel_sum_us": 23444.95100000001
+            }
+          ]
+        },
+        "mixed": {
+          "kernel_count": 682,
+          "kernel_sum_us": 15376.426000000007,
+          "share_of_phase_kernel_sum_pct": 1.8966577729375866,
+          "raw_kernels": [
+            {
+              "name": "void at::native::sbtopk::gatherTopK<c10::BFloat16, unsigned int, 2, false>(at::cuda::detail::TensorInfo<c10::BFloat16 const, unsigned int>, unsigned int, unsigned int, bool, unsigned int, unsigned int, at::cuda::detail::TensorInfo<c10::BFloat16, unsigned int>, unsigned int, at::cuda::detail::TensorInfo<long, unsigned int>, unsigned int, c10::BFloat16*)",
+              "count": 220,
+              "kernel_sum_us": 10221.761000000011
+            },
+            {
+              "name": "_draw_kernel",
+              "count": 242,
+              "kernel_sum_us": 3014.7769999999987
+            },
+            {
+              "name": "void at::native::warpMergeSortKVInPlace<2, -1, 128, 16, c10::BFloat16, long, at::native::GTOp<c10::BFloat16, true>, unsigned int, 32>(at::cuda::detail::TensorInfo<c10::BFloat16, unsigned int>, unsigned int, unsigned int, unsigned int, at::cuda::detail::TensorInfo<long, unsigned int>, unsigned int, at::native::GTOp<c10::BFloat16, true>, c10::BFloat16)",
+              "count": 220,
+              "kernel_sum_us": 2139.8879999999967
+            }
+          ]
+        }
+      },
+      "count_crosscheck": "_draw_kernel count2552 =232 steps\u00d711 draws (2 semantic/RAS+9 codebook).",
+      "sources": [
+        {
+          "path": "${WORKSPACE}/vllm-omni/vllm_omni/model_executor/models/fish_omni/sampling.py",
+          "line": 59,
+          "sha256": "33db22e1338d4214a1e0ed0be919cdfba6b1865c095d0a17fa54dc222e332e03",
+          "evidence": "Semantic torch.topk shared by first/RAS draws"
+        },
+        {
+          "path": "${WORKSPACE}/vllm-omni/vllm_omni/model_executor/models/fish_omni/sampling.py",
+          "line": 63,
+          "sha256": "33db22e1338d4214a1e0ed0be919cdfba6b1865c095d0a17fa54dc222e332e03",
+          "evidence": "Second RAS draw"
+        },
+        {
+          "path": "${WORKSPACE}/vllm-omni/vllm_omni/model_executor/models/fish_omni/sampling.py",
+          "line": 88,
+          "sha256": "33db22e1338d4214a1e0ed0be919cdfba6b1865c095d0a17fa54dc222e332e03",
+          "evidence": "Nine codebook draws"
+        },
+        {
+          "path": "${WORKSPACE}/vllm-omni/vllm_omni/model_executor/models/fish_omni/kernels.py",
+          "line": 295,
+          "sha256": "90e5fda848917974f1d198d676d5378fe85fdd90d14e0f76652fd01c523e640a",
+          "evidence": "Each head performs torch.topk if candidates not provided"
+        },
+        {
+          "path": "${WORKSPACE}/vllm-omni/vllm_omni/model_executor/models/fish_omni/kernels.py",
+          "line": 251,
+          "sha256": "90e5fda848917974f1d198d676d5378fe85fdd90d14e0f76652fd01c523e640a",
+          "evidence": "Draw still reads whole vocab for normalization"
+        },
+        {
+          "path": "${WORKSPACE}/vllm-omni/vllm_omni/model_executor/models/fish_omni/kernels.py",
+          "line": 260,
+          "sha256": "90e5fda848917974f1d198d676d5378fe85fdd90d14e0f76652fd01c523e640a",
+          "evidence": "Inclusive cumulative top-p mask plus always-keep-rank0 semantics"
+        },
+        {
+          "path": "${WORKSPACE}/vllm-omni/vllm_omni/model_executor/models/fish_omni/model_state.py",
+          "line": 306,
+          "sha256": "ff7adee6158c7b6327c4709d1ee61ec182d882420623e0f6ca8cb4330f0887c2",
+          "evidence": "Per-frame sampling noise generation; do not freeze RNG when graphing"
+        }
+      ]
+    },
+    {
+      "family": "Unfused sigmoid/multiply candidate",
+      "ownership": "Possible shared-expert gate; not proven per-event by current trace",
+      "confidence": "candidate locus, not a confirmed attribution",
+      "trace": {
+        "decode_only": {
+          "kernel_count": 18560,
+          "kernel_sum_us": 257703.01700000057,
+          "share_of_phase_kernel_sum_pct": 6.729544366240709,
+          "raw_kernels": [
+            {
+              "name": "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl_nocast<at::native::BinaryFunctor<c10::BFloat16, c10::BFloat16, c10::BFloat16, at::native::binary_internal::MulFunctor<float> > >(at::TensorIteratorBase&, at::native::BinaryFunctor<c10::BFloat16, c10::BFloat16, c10::BFloat16, at::native::binary_internal::MulFunctor<float> > const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::BinaryFunctor<c10::BFloat16, c10::BFloat16, c10::BFloat16, at::native::binary_internal::MulFunctor<float> > >(at::TensorIteratorBase&, at::native::BinaryFunctor<c10::BFloat16, c10::BFloat16, c10::BFloat16, at::native::binary_internal::MulFunctor<float> > const&)::{lambda(int)#1})",
+              "count": 9280,
+              "kernel_sum_us": 168673.1270000003
+            },
+            {
+              "name": "void at::native::vectorized_elementwise_kernel<4, at::native::sigmoid_kernel_cuda(at::TensorIteratorBase&)::{lambda()#2}::operator()() const::{lambda()#4}::operator()() const::{lambda(c10::BFloat16)#1}, std::array<char*, 2ul> >(int, at::native::sigmoid_kernel_cuda(at::TensorIteratorBase&)::{lambda()#2}::operator()() const::{lambda()#4}::operator()() const::{lambda(c10::BFloat16)#1}, std::array<char*, 2ul>)",
+              "count": 9280,
+              "kernel_sum_us": 89029.89000000028
+            }
+          ]
+        },
+        "mixed": {
+          "kernel_count": 1760,
+          "kernel_sum_us": 12987.784999999996,
+          "share_of_phase_kernel_sum_pct": 1.602022691976157,
+          "raw_kernels": [
+            {
+              "name": "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl_nocast<at::native::BinaryFunctor<c10::BFloat16, c10::BFloat16, c10::BFloat16, at::native::binary_internal::MulFunctor<float> > >(at::TensorIteratorBase&, at::native::BinaryFunctor<c10::BFloat16, c10::BFloat16, c10::BFloat16, at::native::binary_internal::MulFunctor<float> > const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::BinaryFunctor<c10::BFloat16, c10::BFloat16, c10::BFloat16, at::native::binary_internal::MulFunctor<float> > >(at::TensorIteratorBase&, at::native::BinaryFunctor<c10::BFloat16, c10::BFloat16, c10::BFloat16, at::native::binary_internal::MulFunctor<float> > const&)::{lambda(int)#1})",
+              "count": 880,
+              "kernel_sum_us": 9194.715000000004
+            },
+            {
+              "name": "void at::native::vectorized_elementwise_kernel<4, at::native::sigmoid_kernel_cuda(at::TensorIteratorBase&)::{lambda()#2}::operator()() const::{lambda()#4}::operator()() const::{lambda(c10::BFloat16)#1}, std::array<char*, 2ul> >(int, at::native::sigmoid_kernel_cuda(at::TensorIteratorBase&)::{lambda()#2}::operator()() const::{lambda()#4}::operator()() const::{lambda(c10::BFloat16)#1}, std::array<char*, 2ul>)",
+              "count": 880,
+              "kernel_sum_us": 3793.0699999999915
+            }
+          ]
+        }
+      },
+      "count_crosscheck": "Each of the generic sigmoid and multiply symbols appears9280 times=40\u00d7232; consistent with one shared-expert gate per backbone layer, but counts are not a call-stack proof.",
+      "sources": [
+        {
+          "path": "${NVME_WORKDIR}/venvs/vllm-omni-cu129/lib/python3.12/site-packages/vllm/model_executor/models/qwen3_next.py",
+          "line": 211,
+          "sha256": "09ea2a385259edc9feadc79e304e86a31582b9770f80b8003d2d641782405818",
+          "evidence": "Shared expert passes expert_gate"
+        },
+        {
+          "path": "${NVME_WORKDIR}/venvs/vllm-omni-cu129/lib/python3.12/site-packages/vllm/model_executor/models/qwen2_moe.py",
+          "line": 121,
+          "sha256": "382904901ed32374009fbecfd08c37d3337d721d30d3d25010d39de32cfbb2f8",
+          "evidence": "F.sigmoid(expert_gate(x)[0]) * out"
+        }
+      ],
+      "next_evidence": "Need module/call correlation or one-gate isolated reproduction with identical bf16 shapes before claiming the measured generic sigmoid/multiply kernels belong to shared gates."
+    }
+  ],
+  "hypotheses": [
+    {
+      "rank": "1: first diagnostic and conditional Omni-side optimization",
+      "name": "Reduce mixed-step GDN/FLA host dispatch and temporary-buffer work if lightweight measurements confirm it",
+      "location": [
+        "vllm_omni/model_executor/models/fish_omni/gdn.py:144",
+        "vllm_omni/model_executor/models/fish_omni/gdn.py:230",
+        "vllm_omni/model_executor/models/fish_omni/gdn.py:246",
+        "vllm/model_executor/layers/mamba/gdn/qwen_gdn_linear_attn.py:344",
+        "vllm/third_party/flash_linear_attention/ops/chunk.py:23",
+        "vllm/third_party/flash_linear_attention/ops/chunk_o.py:159",
+        "vllm/third_party/flash_linear_attention/ops/utils.py:83"
+      ],
+      "current_behavior": "A100 mixed_forward_core is an eager custom-op boundary, invoked30 times per mixed step. It performs convolution/prep, packed decode, state gather/zero, an autograd.Function FLA call chain with repeated Python/Triton launches and input_guard contiguous/device checks, final-state scatter and output copy. ChunkGatedDeltaRule.forward_native already accepts core_attn_out, and chunk_fwd_o supports a supplied flattened output buffer, but Omni gdn.py232-244 does not pass that buffer and246 copies the returned output.",
+      "support": "Selected C8 attempt2 CPU audit:22 mixed steps; vllm::qwen_gdn_attention_core660 calls with878322.525us inclusive total(39.923751ms/step), nested ChunkGatedDeltaRuleFunction384717.672us not additive. CPU scope p50=58.954110ms, CUDA runtime interval-union p50=8.097228ms;54 GraphLaunch calls sum to mean2.826880ms/step. No Synchronize API or correlated D2H was observed in these audited scopes. A small GDN GPU kernel-sum fraction does not exclude a costly GDN host path. Independent C16/C64 reproduce mixed CPU scope medians58.110/60.268ms and same-name GDN core interval-union medians38.297/39.611ms; runtime unions7.847/7.981ms and graph-launch sums means2.730/2.778ms. All three profiles show54 mixed graph launches; this does not make graph launches alone the dominant host cost.",
+      "experiment": "First run a short separate matched workload with torch.profiler disabled and minimal perf_counter_ns probes around aggregate mixed_forward_core and its gather/prep/chunk/scatter sections. Buffer counters in memory, emit only after the window; no per-layer print or synchronize. Repeat with probes disabled to bound instrumentation cost. Compare CPU enqueue durations with separately sampled GPU events and end-to-end TTFA/stall/RTF, controlling CPU affinity/thermal state. If material host cost persists, first prototype passing contiguous flattened core_attn_out[decode_tokens:tokens] through the existing FLA output-buffer API and remove only the redundant output allocation/copy; measure this isolated change. Then investigate scratch-buffer reuse or fused gather/zero/scatter only if evidence supports them. Do not promise the full39.9ms is removable.",
+      "quality_validation": "Use the real FLA/Triton path, not the original test fixture that dispatches FlashInfer. Cover fp32 and bf16 recurrent state, decode counts0/3 plus actual8/16/64, fresh/continuing/chunked prefills, differing reference lengths and slot reuse. Check every output/state against standard path with existing tolerances and no dtype change; test output aliasing/contiguity and graph replay. Then official E2E and fixed-seed1088 noise-run/capped-length/WER/SIM companion against control.",
+      "capture_constraints": "GDN backend declares UNIFORM_BATCH. Variable prefill cu_seqlens/chunk-count/state indexing and scratch lifetimes prevent treating forced FULL mixed capture or deleting splitting_ops as a safe configuration change. Any per-shape graph proposal needs bounded static buffers and updated metadata on replay, with capture/memory/startup costs measured.",
+      "scope_note": "Hypothesis based on profiled inclusive CPU scopes, which include instrumentation overhead. No unprofiled timing or implementation exists yet. span-busy is not all CPU idle; nested CPU durations must never be added. Output-buffer reuse is a concrete Omni-side candidate with likely limited payoff, not proof it fixes the whole mixed-step delay. All three selected profiles corroborate the profiled mixed host pattern. Priority is to establish its unprofiled size; no end-to-end CPU bottleneck or removable-time amount is proven."
+    },
+    {
+      "rank": "2: separate dependency-side kernel track",
+      "name": "A100 Marlin launch/tile tuning for the measured routed-expert shapes",
+      "location": [
+        "${NVME_WORKDIR}/venvs/vllm-omni-cu129/lib/python3.12/site-packages/vllm/model_executor/layers/fused_moe/experts/marlin_moe.py:340",
+        "${NVME_WORKDIR}/venvs/vllm-omni-cu129/lib/python3.12/site-packages/vllm/_custom_ops.py:2455"
+      ],
+      "current_behavior": "Block-M heuristic chooses among8/16/32/48/64 from M*topk/E; thread_k/thread_n/blocks_per_sm remain -1 at the Marlin callsites. Actual model E256/topk8/K2048/intermediate512, BF16 activations with FP8 expert weights.",
+      "support": "Marlin exact mapped30.936% decode and51.970% mixed kernel-duration sums in C8 attempt2.",
+      "experiment": "Using selected C8/C16/C64 actual token/request distributions, replay identical captured input/weights/router indices for decode M8/16/64 and observed mixed token M; benchmark only supported kernel tile/block-M choices. Keep FP8 weights, BF16 activation, use_fp32_reduce=True and use_atomic_add=False unchanged. Confirm standalone event timings then end-to-end C8/C16/C64 with matched thermal distribution and GPU sharing.",
+      "quality_validation": "Compare expert outputs to existing path with explicit errors/tolerances, then fixed-seed frame tests plus full1088 noise-run/WER/SIM and official E2E. Tile rounding may alter trajectories; distribution/quality tests required, not only allclose.",
+      "scope_note": "Implementation locus is installed vLLM dependency; do not present a vLLM-only patch as an Omni-only performance PR. No tuning or speedup measured yet."
+    },
+    {
+      "rank": "3: bounded configuration latency/fairness experiment",
+      "name": "Batch arriving prefills earlier around C8/C16 to reduce mixed-step frequency",
+      "location": [
+        "${WORKSPACE}/vllm-omni/vllm_omni/core/sched/omni_ar_scheduler.py:347",
+        "${WORKSPACE}/vllm-omni/vllm_omni/core/sched/omni_ar_scheduler.py:370"
+      ],
+      "current_behavior": "Default min_running32/min_batch6/max_wait100ms means admission batching inactive at C8/C16; small arriving prompts can each produce a mixed step.",
+      "support": "C8 attempt2 includes22 complete mixed steps, GPU-span median49.067ms vs decode13.744ms; one versus54 graph launches per step. C16/C64 also show54 mixed versus1 decode graph launches, while most profiled mixed CPU time is inside GDN custom-op scopes rather than graph-launch APIs. This is an association/optimization opportunity, not proof of causality or CPU bottleneck.",
+      "experiment": "Use separate deploy YAML and fresh service: change only min_running to4 for C8 (8 may not trigger when only7 requests remain running) or8 for C16 first, preserving min_batch6/max_wait100; then, if warranted, bounded sweep of min_batch2/4 and max_wait10/25/50ms. Measure mixed-step fraction, total GPU busy union, TTFA p95/p99, stall>100ms, RTF and throughput at same workload/thermal conditions; do not select on throughput alone.",
+      "quality_validation": "Same1088 rows and seeded quality companion, noise-run/capped duration/WER/SIM; admission changes batching/numerical trajectories even without changing model math.",
+      "graph_path_evidence": "piecewise_54_evidence.json parses the actual selected C8 attempt2 compiled cache:54 non-attention partitions,53 attention partitions(30 GDN+23 paired KV-update/full-attention).Compiled partitions straddle module boundaries, so54 is not literally54 full layers.",
+      "capture_constraints": "GDNAttentionMetadataBuilder declares UNIFORM_BATCH at gdn_attn.py93; mixed FLA uses variable cu_seqlens/chunk metadata and gathered state buffers. Removing split ops or forcing FULL mixed capture is not a configuration-only safe fix; capture-safe shapes/metadata/state handling and tests must be designed first.",
+      "timing_limits": "CPU execute_scope includes dispatch and runtime blocking; GPU span minus busy union includes waits/dependencies/stream scheduling/profiler effects, not solely CPU empty time.",
+      "scope_note": "Explicit TTFA latency/fairness tradeoff: waiting may outweigh saved mixed steps; verify admission bound and no request starvation. All three profiles are available in cross_profile_evidence.json; no improvement yet demonstrated."
+    }
+  ],
+  "deferred_sampling_candidate": {
+    "rank": "provisional 3, bounded lower payoff",
+    "name": "Fuse exact top-k selection and frame draw, or dual semantic draws, on A100",
+    "location": [
+      "${WORKSPACE}/vllm-omni/vllm_omni/model_executor/models/fish_omni/sampling.py:59",
+      "${WORKSPACE}/vllm-omni/vllm_omni/model_executor/models/fish_omni/kernels.py:229",
+      "${WORKSPACE}/vllm-omni/vllm_omni/model_executor/models/fish_omni/kernels.py:295"
+    ],
+    "current_behavior": "Ten torch.topk operations per frame plus sort helpers, followed by11 _draw_kernel launches; main and RAS share top candidates but each draw reads full logits for its probability normalization.",
+    "support": "Sampling topk/sort/draw family is3.005% decode and1.897% mixed kernel-duration sum in C8 attempt2, so limited scope and below Marlin priority.",
+    "experiment": "Prototype only after authorization: fuse full-row normalization with sorted top-k selection and exact draw, or two semantic draws sharing loads while maintaining possibly different temperatures. Do not reduce max_top_k64 or vocabulary/candidate set to manufacture a gain. Benchmark logits4096/semantic-candidate shape at8/16/64 rows including FULL graph replay.",
+    "quality_validation": "Existing test_fused_draw_matches_reference_distribution, greedy-zero-temperature, semantic/RAS tests, per-request RNG freshness and controlled uniform-noise comparisons. Preserve whole-row denominator, inclusive top-p condition, rank0 kept and candidate id map; full1088 noise/WER/SIM plus E2E after kernel tests.",
+    "scope_note": "Small kernel-sum fraction is not an end-to-end speedup estimate. Changes to ties/sort/numerics can change generation; no implementation performed."
+  },
+  "cross_profile_evidence_path": "${NVME_WORKDIR}/profiling/20261020_214308/source-analysis/cross_profile_evidence.json",
+  "cpu_wait_evidence": {
+    "path": "${NVME_WORKDIR}/profiling/20261020_214308/independent-audit/c8-attempt2/cpu_waits_stage0.json",
+    "sha256": "c4faa6eb578c1bbb8236766386acf6bef0ced67c85c4821d0d26f1f51d6036ab"
+  }
+}

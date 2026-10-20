@@ -1,0 +1,791 @@
+{
+  "scope": "A100 80GB PCIe, cu129/R550. Diagnostic torch/CUPTI profiles, separate from B1 throughput.",
+  "selected_profiles": [
+    {
+      "requested_concurrency": 8,
+      "selected_attempt": "c8-attempt2",
+      "stage0_trace_sha256": "56b24f759496d18ac292b6d93e75422dea817a66dd69da75feace7c63a279f4f",
+      "stage1_trace_sha256": "d23a4345ea402f32a9d39c66c263d7ddd41be95ef271666413adf177cf2717ff",
+      "stage0_total_kernel_events": 405212,
+      "stage0_unassigned_kernel_count": 1280,
+      "stage0_unassigned_kernel_time_pct": 0.10250618402322698,
+      "stage0_graph_launches": 1422,
+      "stage0_graph_launches_without_correlated_kernels": 0,
+      "complete_codec_nonempty_scopes": 112,
+      "same_host_and_clock_anchor_check": true,
+      "common_capture_seconds": 4.422532340087891,
+      "kernel_busy_overlap_ms": 393.10376782226564,
+      "overlap_pct_of_common_capture": 8.88865784561913,
+      "stage0_capture_hardware": {
+        "capture_epoch_us": [
+          1792507257848112.8,
+          1792507262340551.8
+        ],
+        "duration_s": 4.492439,
+        "sample_count": 5,
+        "sm_clock_mhz": {
+          "n": 5,
+          "p50": 1410.0,
+          "p95": 1410.0,
+          "min": 1395.0,
+          "max": 1410.0
+        },
+        "temperature_c": {
+          "n": 5,
+          "p50": 82.0,
+          "p95": 83.0,
+          "min": 82.0,
+          "max": 83.0
+        },
+        "power_draw_w": {
+          "n": 5,
+          "p50": 286.06,
+          "p95": 292.11400000000003,
+          "min": 266.48,
+          "max": 292.6
+        },
+        "utilization_pct": {
+          "n": 5,
+          "p50": 88.0,
+          "p95": 92.4,
+          "min": 69.0,
+          "max": 93.0
+        },
+        "reason_flags": {
+          "sw_thermal_slowdown": {
+            "valid_samples": 5,
+            "active_samples": 0,
+            "active_sample_pct": 0.0
+          },
+          "hw_thermal_slowdown": {
+            "valid_samples": 5,
+            "active_samples": 0,
+            "active_sample_pct": 0.0
+          },
+          "sw_power_cap": {
+            "valid_samples": 5,
+            "active_samples": 3,
+            "active_sample_pct": 60.0
+          },
+          "hw_power_brake_slowdown": {
+            "valid_samples": 5,
+            "active_samples": 0,
+            "active_sample_pct": 0.0
+          }
+        }
+      }
+    },
+    {
+      "requested_concurrency": 16,
+      "selected_attempt": "c16",
+      "stage0_trace_sha256": "28111d2b1c9a1d7de6b13579fb87f6f91fc25a8926c69c0c5a4c6c4f1b0f45e1",
+      "stage1_trace_sha256": "78529bf23228d9c39d8ad848cfe51ce63962a1c0a008cf8c1680d386ca7e6a0d",
+      "stage0_total_kernel_events": 358645,
+      "stage0_unassigned_kernel_count": 1125,
+      "stage0_unassigned_kernel_time_pct": 0.08529687472573702,
+      "stage0_graph_launches": 1762,
+      "stage0_graph_launches_without_correlated_kernels": 0,
+      "complete_codec_nonempty_scopes": 173,
+      "same_host_and_clock_anchor_check": true,
+      "common_capture_seconds": 5.035507216064453,
+      "kernel_busy_overlap_ms": 626.4413781738281,
+      "overlap_pct_of_common_capture": 12.44048218569388,
+      "stage0_capture_hardware": {
+        "capture_epoch_us": [
+          1792507866498034.8,
+          1792507871605805.0
+        ],
+        "duration_s": 5.10777025,
+        "sample_count": 5,
+        "sm_clock_mhz": {
+          "n": 5,
+          "p50": 1305.0,
+          "p95": 1365.0,
+          "min": 1275.0,
+          "max": 1365.0
+        },
+        "temperature_c": {
+          "n": 5,
+          "p50": 84.0,
+          "p95": 84.0,
+          "min": 84.0,
+          "max": 84.0
+        },
+        "power_draw_w": {
+          "n": 5,
+          "p50": 261.31,
+          "p95": 283.504,
+          "min": 235.07,
+          "max": 284.74
+        },
+        "utilization_pct": {
+          "n": 5,
+          "p50": 92.0,
+          "p95": 98.6,
+          "min": 74.0,
+          "max": 100.0
+        },
+        "reason_flags": {
+          "sw_thermal_slowdown": {
+            "valid_samples": 5,
+            "active_samples": 4,
+            "active_sample_pct": 80.0
+          },
+          "hw_thermal_slowdown": {
+            "valid_samples": 5,
+            "active_samples": 0,
+            "active_sample_pct": 0.0
+          },
+          "sw_power_cap": {
+            "valid_samples": 5,
+            "active_samples": 1,
+            "active_sample_pct": 20.0
+          },
+          "hw_power_brake_slowdown": {
+            "valid_samples": 5,
+            "active_samples": 0,
+            "active_sample_pct": 0.0
+          }
+        }
+      }
+    },
+    {
+      "requested_concurrency": 64,
+      "selected_attempt": "c64",
+      "stage0_trace_sha256": "d4407ae1fb16b071359c3b9bbde85e502d783dffdf0f8a0aa924dd182a3b016f",
+      "stage1_trace_sha256": "2e35d46e4dd4b84b8d70b3c14ee99f7916d64d0fd303a8db98f992cc7d7f7c2c",
+      "stage0_total_kernel_events": 189184,
+      "stage0_unassigned_kernel_count": 600,
+      "stage0_unassigned_kernel_time_pct": 0.05774091181826666,
+      "stage0_graph_launches": 1763,
+      "stage0_graph_launches_without_correlated_kernels": 0,
+      "complete_codec_nonempty_scopes": 182,
+      "same_host_and_clock_anchor_check": true,
+      "common_capture_seconds": 5.108676549072266,
+      "kernel_busy_overlap_ms": 1016.1209987792969,
+      "overlap_pct_of_common_capture": 19.89010243687916,
+      "stage0_capture_hardware": {
+        "capture_epoch_us": [
+          1792508380200557.8,
+          1792508385373624.8
+        ],
+        "duration_s": 5.173067,
+        "sample_count": 6,
+        "sm_clock_mhz": {
+          "n": 6,
+          "p50": 1155.0,
+          "p95": 1312.5,
+          "min": 1080.0,
+          "max": 1350.0
+        },
+        "temperature_c": {
+          "n": 6,
+          "p50": 84.0,
+          "p95": 85.0,
+          "min": 84.0,
+          "max": 85.0
+        },
+        "power_draw_w": {
+          "n": 6,
+          "p50": 246.82,
+          "p95": 318.195,
+          "min": 220.29,
+          "max": 340.0
+        },
+        "utilization_pct": {
+          "n": 6,
+          "p50": 100.0,
+          "p95": 100.0,
+          "min": 100.0,
+          "max": 100.0
+        },
+        "reason_flags": {
+          "sw_thermal_slowdown": {
+            "valid_samples": 6,
+            "active_samples": 6,
+            "active_sample_pct": 100.0
+          },
+          "hw_thermal_slowdown": {
+            "valid_samples": 6,
+            "active_samples": 0,
+            "active_sample_pct": 0.0
+          },
+          "sw_power_cap": {
+            "valid_samples": 6,
+            "active_samples": 1,
+            "active_sample_pct": 16.666666666666668
+          },
+          "hw_power_brake_slowdown": {
+            "valid_samples": 6,
+            "active_samples": 0,
+            "active_sample_pct": 0.0
+          }
+        }
+      }
+    }
+  ],
+  "phase_rows": [
+    {
+      "requested_concurrency": 8,
+      "phase": "decode_only",
+      "complete_interior_steps": 232,
+      "actual_generation_requests": {
+        "n": 232,
+        "p50": 8.0,
+        "p95": 8.0,
+        "min": 6,
+        "max": 8
+      },
+      "actual_context_tokens": {
+        "n": 232,
+        "p50": 0.0,
+        "p95": 0.0,
+        "min": 0,
+        "max": 0
+      },
+      "actual_generation_request_histogram": {
+        "8": 192,
+        "7": 38,
+        "6": 2
+      },
+      "actual_context_request_histogram": {
+        "0": 232
+      },
+      "graph_launches_per_step_histogram": {
+        "1": 232
+      },
+      "gpu_span_ms": {
+        "n": 232,
+        "p50": 13.743502075195313,
+        "p95": 17.648221606445315,
+        "min": 12.662518798828126,
+        "max": 19.28205078125
+      },
+      "gpu_kernel_sum_ms_per_step": {
+        "n": 232,
+        "p50": 16.3574415,
+        "p95": 17.385596999999997,
+        "min": 15.349729,
+        "max": 18.524205000000002
+      },
+      "gpu_busy_union_ms_per_step": {
+        "n": 232,
+        "p50": 13.59044873046875,
+        "p95": 14.791818774414063,
+        "min": 12.51536865234375,
+        "max": 16.06398193359375
+      },
+      "cpu_execute_scope_ms": {
+        "n": 232,
+        "p50": 4.865212499999999,
+        "p95": 7.6348424999999995,
+        "min": 2.721187,
+        "max": 11.793829
+      },
+      "cpu_gdn_scope_union_ms": null,
+      "cpu_runtime_api_union_ms": {
+        "n": 232,
+        "p50": 2.4981722412109373,
+        "p95": 3.9224663330078124,
+        "min": 1.662611083984375,
+        "max": 4.988097900390625
+      },
+      "cpu_synchronization_api_union_ms": {
+        "n": 232,
+        "p50": 0.0,
+        "p95": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "GPU_DtoH_transfers": {},
+      "kernel_time_share_pct_by_name_heuristic": {
+        "Marlin_MoE_GEMM": 30.93600684898409,
+        "dense_GEMM_GEMV_heuristic": 29.71023307425148,
+        "other": 11.809591324080737,
+        "BLAS_splitK_and_GEMV_reductions": 8.589899459635063,
+        "MoE_routing_alignment_sum": 4.825093777198518,
+        "attention_and_QK_KV_helpers": 4.044265216060108,
+        "normalization_and_norm_fusions": 3.84946922732078,
+        "GDN_and_prefill_helpers_heuristic": 3.2307394690593934,
+        "sampling_topk_draw": 3.0047016034094436
+      }
+    },
+    {
+      "requested_concurrency": 8,
+      "phase": "mixed",
+      "complete_interior_steps": 22,
+      "actual_generation_requests": {
+        "n": 22,
+        "p50": 7.0,
+        "p95": 7.0,
+        "min": 6,
+        "max": 7
+      },
+      "actual_context_tokens": {
+        "n": 22,
+        "p50": 169.5,
+        "p95": 225.45,
+        "min": 126,
+        "max": 227
+      },
+      "actual_generation_request_histogram": {
+        "7": 20,
+        "6": 2
+      },
+      "actual_context_request_histogram": {
+        "1": 22
+      },
+      "graph_launches_per_step_histogram": {
+        "54": 22
+      },
+      "gpu_span_ms": {
+        "n": 22,
+        "p50": 49.06703149414062,
+        "p95": 55.23810665283203,
+        "min": 44.41229418945313,
+        "max": 55.810572021484376
+      },
+      "gpu_kernel_sum_ms_per_step": {
+        "n": 22,
+        "p50": 36.968679,
+        "p95": 38.6583514,
+        "min": 34.323985,
+        "max": 38.965000999999994
+      },
+      "gpu_busy_union_ms_per_step": {
+        "n": 22,
+        "p50": 35.0686328125,
+        "p95": 37.0194169921875,
+        "min": 32.35133740234375,
+        "max": 37.18038037109375
+      },
+      "cpu_execute_scope_ms": {
+        "n": 22,
+        "p50": 58.9541095,
+        "p95": 62.1019663,
+        "min": 52.821027,
+        "max": 64.777011
+      },
+      "cpu_gdn_scope_union_ms": {
+        "n": 22,
+        "p50": 40.01142993164063,
+        "p95": 41.70480665283203,
+        "min": 38.03160913085937,
+        "max": 43.90436083984375
+      },
+      "cpu_runtime_api_union_ms": {
+        "n": 22,
+        "p50": 8.097228271484376,
+        "p95": 8.963991455078125,
+        "min": 7.607685546875,
+        "max": 9.11258544921875
+      },
+      "cpu_synchronization_api_union_ms": {
+        "n": 22,
+        "p50": 0.0,
+        "p95": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "GPU_DtoH_transfers": {},
+      "kernel_time_share_pct_by_name_heuristic": {
+        "Marlin_MoE_GEMM": 51.96963495067473,
+        "dense_GEMM_GEMV_heuristic": 21.64609767091364,
+        "GDN_and_prefill_helpers_heuristic": 7.525320762156288,
+        "other": 6.971483295833873,
+        "attention_and_QK_KV_helpers": 3.254228329695633,
+        "MoE_routing_alignment_sum": 2.7080580774909904,
+        "normalization_and_norm_fusions": 2.354896517309934,
+        "sampling_topk_draw": 1.8966577729375866,
+        "BLAS_splitK_and_GEMV_reductions": 1.6736226229873896
+      }
+    },
+    {
+      "requested_concurrency": 16,
+      "phase": "decode_only",
+      "complete_interior_steps": 194,
+      "actual_generation_requests": {
+        "n": 194,
+        "p50": 16.0,
+        "p95": 16.0,
+        "min": 13,
+        "max": 16
+      },
+      "actual_context_tokens": {
+        "n": 194,
+        "p50": 0.0,
+        "p95": 0.0,
+        "min": 0,
+        "max": 0
+      },
+      "actual_generation_request_histogram": {
+        "16": 147,
+        "15": 38,
+        "14": 6,
+        "13": 3
+      },
+      "actual_context_request_histogram": {
+        "0": 194
+      },
+      "graph_launches_per_step_histogram": {
+        "1": 194
+      },
+      "gpu_span_ms": {
+        "n": 194,
+        "p50": 18.06339404296875,
+        "p95": 23.31653957519531,
+        "min": 16.393296142578127,
+        "max": 27.02148583984375
+      },
+      "gpu_kernel_sum_ms_per_step": {
+        "n": 194,
+        "p50": 20.3646935,
+        "p95": 21.66024145,
+        "min": 19.070071,
+        "max": 22.883152
+      },
+      "gpu_busy_union_ms_per_step": {
+        "n": 194,
+        "p50": 17.63160754394531,
+        "p95": 19.01432003173828,
+        "min": 16.2943046875,
+        "max": 20.332580322265624
+      },
+      "cpu_execute_scope_ms": {
+        "n": 194,
+        "p50": 6.27768,
+        "p95": 9.069161099999995,
+        "min": 2.817814,
+        "max": 10.986358000000001
+      },
+      "cpu_gdn_scope_union_ms": null,
+      "cpu_runtime_api_union_ms": {
+        "n": 194,
+        "p50": 3.434526611328125,
+        "p95": 3.962369177246094,
+        "min": 1.66793212890625,
+        "max": 4.196472412109375
+      },
+      "cpu_synchronization_api_union_ms": {
+        "n": 194,
+        "p50": 0.0,
+        "p95": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "GPU_DtoH_transfers": {},
+      "kernel_time_share_pct_by_name_heuristic": {
+        "Marlin_MoE_GEMM": 38.59560879946871,
+        "dense_GEMM_GEMV_heuristic": 25.777938178666716,
+        "other": 9.911549265185629,
+        "BLAS_splitK_and_GEMV_reductions": 7.3464256375970445,
+        "MoE_routing_alignment_sum": 4.278028830172067,
+        "attention_and_QK_KV_helpers": 4.168604663539333,
+        "GDN_and_prefill_helpers_heuristic": 3.891765128886345,
+        "normalization_and_norm_fusions": 3.458604812426883,
+        "sampling_topk_draw": 2.571474684057393
+      }
+    },
+    {
+      "requested_concurrency": 16,
+      "phase": "mixed",
+      "complete_interior_steps": 29,
+      "actual_generation_requests": {
+        "n": 29,
+        "p50": 15.0,
+        "p95": 15.0,
+        "min": 13,
+        "max": 15
+      },
+      "actual_context_tokens": {
+        "n": 29,
+        "p50": 176.0,
+        "p95": 380.39999999999986,
+        "min": 148,
+        "max": 552
+      },
+      "actual_generation_request_histogram": {
+        "15": 20,
+        "14": 7,
+        "13": 2
+      },
+      "actual_context_request_histogram": {
+        "1": 26,
+        "2": 2,
+        "3": 1
+      },
+      "graph_launches_per_step_histogram": {
+        "54": 29
+      },
+      "gpu_span_ms": {
+        "n": 29,
+        "p50": 46.32414599609375,
+        "p95": 59.30591699218749,
+        "min": 40.82194189453125,
+        "max": 61.091471923828124
+      },
+      "gpu_kernel_sum_ms_per_step": {
+        "n": 29,
+        "p50": 39.617658000000006,
+        "p95": 49.70587919999999,
+        "min": 38.267492,
+        "max": 59.808341
+      },
+      "gpu_busy_union_ms_per_step": {
+        "n": 29,
+        "p50": 38.007003662109376,
+        "p95": 49.672004931640615,
+        "min": 36.34538842773438,
+        "max": 59.69125512695312
+      },
+      "cpu_execute_scope_ms": {
+        "n": 29,
+        "p50": 58.109853,
+        "p95": 61.474367,
+        "min": 52.233729,
+        "max": 62.649932
+      },
+      "cpu_gdn_scope_union_ms": {
+        "n": 29,
+        "p50": 38.29687255859375,
+        "p95": 40.18437172851562,
+        "min": 37.70136645507812,
+        "max": 40.47859130859375
+      },
+      "cpu_runtime_api_union_ms": {
+        "n": 29,
+        "p50": 7.8468154296875,
+        "p95": 8.28093994140625,
+        "min": 7.2255283203125,
+        "max": 9.4719189453125
+      },
+      "cpu_synchronization_api_union_ms": {
+        "n": 29,
+        "p50": 0.0,
+        "p95": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "GPU_DtoH_transfers": {},
+      "kernel_time_share_pct_by_name_heuristic": {
+        "Marlin_MoE_GEMM": 49.75779359264811,
+        "dense_GEMM_GEMV_heuristic": 22.528480227705113,
+        "GDN_and_prefill_helpers_heuristic": 8.411709610416567,
+        "other": 6.627760879873322,
+        "attention_and_QK_KV_helpers": 4.315763015389703,
+        "MoE_routing_alignment_sum": 2.6346394185669038,
+        "normalization_and_norm_fusions": 2.383227006220579,
+        "sampling_topk_draw": 1.8361795492429982,
+        "BLAS_splitK_and_GEMV_reductions": 1.504446699936754
+      }
+    },
+    {
+      "requested_concurrency": 64,
+      "phase": "decode_only",
+      "complete_interior_steps": 89,
+      "actual_generation_requests": {
+        "n": 89,
+        "p50": 62.0,
+        "p95": 64.0,
+        "min": 57,
+        "max": 64
+      },
+      "actual_context_tokens": {
+        "n": 89,
+        "p50": 0.0,
+        "p95": 0.0,
+        "min": 0,
+        "max": 0
+      },
+      "actual_generation_request_histogram": {
+        "62": 22,
+        "63": 32,
+        "58": 4,
+        "64": 9,
+        "60": 6,
+        "59": 2,
+        "61": 13,
+        "57": 1
+      },
+      "actual_context_request_histogram": {
+        "0": 89
+      },
+      "graph_launches_per_step_histogram": {
+        "1": 89
+      },
+      "gpu_span_ms": {
+        "n": 89,
+        "p50": 33.1792978515625,
+        "p95": 40.421127636718744,
+        "min": 27.53726513671875,
+        "max": 48.4607119140625
+      },
+      "gpu_kernel_sum_ms_per_step": {
+        "n": 89,
+        "p50": 33.78387,
+        "p95": 35.86940739999999,
+        "min": 30.378181,
+        "max": 36.91919
+      },
+      "gpu_busy_union_ms_per_step": {
+        "n": 89,
+        "p50": 30.778516357421875,
+        "p95": 32.70777124023437,
+        "min": 27.39996337890625,
+        "max": 33.96919873046875
+      },
+      "cpu_execute_scope_ms": {
+        "n": 89,
+        "p50": 6.591595999999999,
+        "p95": 8.3607178,
+        "min": 3.440931,
+        "max": 9.274909
+      },
+      "cpu_gdn_scope_union_ms": null,
+      "cpu_runtime_api_union_ms": {
+        "n": 89,
+        "p50": 2.396508056640625,
+        "p95": 3.2361773437499988,
+        "min": 1.7455693359375,
+        "max": 4.21743017578125
+      },
+      "cpu_synchronization_api_union_ms": {
+        "n": 89,
+        "p50": 0.0,
+        "p95": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "GPU_DtoH_transfers": {},
+      "kernel_time_share_pct_by_name_heuristic": {
+        "Marlin_MoE_GEMM": 46.122386950946805,
+        "dense_GEMM_GEMV_heuristic": 19.40245973650494,
+        "GDN_and_prefill_helpers_heuristic": 8.509179237244126,
+        "other": 8.380070520241839,
+        "attention_and_QK_KV_helpers": 5.081557599721573,
+        "BLAS_splitK_and_GEMV_reductions": 3.9201223822571727,
+        "MoE_routing_alignment_sum": 3.3903596281932886,
+        "normalization_and_norm_fusions": 3.016717782344722,
+        "sampling_topk_draw": 2.177146162545451
+      }
+    },
+    {
+      "requested_concurrency": 64,
+      "phase": "mixed",
+      "complete_interior_steps": 29,
+      "actual_generation_requests": {
+        "n": 29,
+        "p50": 61.0,
+        "p95": 63.0,
+        "min": 56,
+        "max": 63
+      },
+      "actual_context_tokens": {
+        "n": 29,
+        "p50": 358.0,
+        "p95": 950.9999999999999,
+        "min": 157,
+        "max": 1299
+      },
+      "actual_generation_request_histogram": {
+        "61": 10,
+        "63": 4,
+        "57": 1,
+        "58": 2,
+        "60": 5,
+        "56": 1,
+        "62": 6
+      },
+      "actual_context_request_histogram": {
+        "2": 7,
+        "1": 12,
+        "6": 1,
+        "4": 2,
+        "3": 5,
+        "7": 1,
+        "5": 1
+      },
+      "graph_launches_per_step_histogram": {
+        "54": 29
+      },
+      "gpu_span_ms": {
+        "n": 29,
+        "p50": 66.69469604492187,
+        "p95": 106.02207392578126,
+        "min": 46.07547607421875,
+        "max": 126.04049609375
+      },
+      "gpu_kernel_sum_ms_per_step": {
+        "n": 29,
+        "p50": 58.909312,
+        "p95": 101.7573252,
+        "min": 46.445492,
+        "max": 122.05444
+      },
+      "gpu_busy_union_ms_per_step": {
+        "n": 29,
+        "p50": 58.87131030273437,
+        "p95": 101.69884711914062,
+        "min": 44.76843798828125,
+        "max": 121.9882607421875
+      },
+      "cpu_execute_scope_ms": {
+        "n": 29,
+        "p50": 60.267544,
+        "p95": 65.2164434,
+        "min": 56.841343,
+        "max": 66.110653
+      },
+      "cpu_gdn_scope_union_ms": {
+        "n": 29,
+        "p50": 39.61061450195312,
+        "p95": 41.41390107421875,
+        "min": 38.5283818359375,
+        "max": 43.9110283203125
+      },
+      "cpu_runtime_api_union_ms": {
+        "n": 29,
+        "p50": 7.98115869140625,
+        "p95": 8.4074685546875,
+        "min": 7.49722509765625,
+        "max": 10.7405205078125
+      },
+      "cpu_synchronization_api_union_ms": {
+        "n": 29,
+        "p50": 0.0,
+        "p95": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "GPU_DtoH_transfers": {},
+      "kernel_time_share_pct_by_name_heuristic": {
+        "Marlin_MoE_GEMM": 38.05293787963172,
+        "dense_GEMM_GEMV_heuristic": 28.06183725011177,
+        "GDN_and_prefill_helpers_heuristic": 11.667878485569124,
+        "attention_and_QK_KV_helpers": 9.245238975231702,
+        "other": 5.9898650897911745,
+        "normalization_and_norm_fusions": 2.716321274392183,
+        "MoE_routing_alignment_sum": 2.328127752608239,
+        "sampling_topk_draw": 1.4529876036764933,
+        "BLAS_splitK_and_GEMV_reductions": 0.48480568898762266
+      }
+    }
+  ],
+  "measurement_definitions": {
+    "complete_steps": "Native CPU execute scopes inside profiler capture; first/last CPU-thread scopes removed conservatively; all attributed kernels must be capture-contained.",
+    "GPU_span": "First to last correlated kernel in one step; includes gaps and can outlive CPU dispatch.",
+    "GPU_kernel_sum": "Sum of correlated kernel durations; overlapping kernels count separately. Family fractions use this denominator, not walltime.",
+    "GPU_busy_union": "Union of kernel intervals within a step, with overlap counted once.",
+    "CPU_scope": "Inclusive host execute or GDN scope, including nested dispatch and profiler overhead. GDN CPU scope is unavailable when only graph replay is visible; not proof of no GDN work.",
+    "CPU_runtime_union": "Nonduplicated runtime/driver API intervals inside each complete CPU scope. Parent/child CPU operation times must not be added.",
+    "cross_stage_overlap": "Kernel interval overlap only inside the validated common capture window. Does not estimate MPS slowdown."
+  },
+  "interpretation_limits": [
+    "Concurrency labels are request limits, not constant generation batch size; actual generation requests and prefill-token distributions differ.",
+    "Mixed-step latency at C8 versus C16/C64 is not a speed comparison without matching token mix, batch, clock and profiling overhead.",
+    "Capture temperatures/clocks differ from B1 and across profiles. Twenty seconds of requests is not thermal steady state.",
+    "No explicit synchronize API or DtoH in a scope does not prove all execution is wait-free; only observed evidence is reported.",
+    "No speedup, removable-time estimate, Amdahl bound or bottleneck causality is inferred from kernel names or inclusive CPU time.",
+    "Capture-contained steps cannot exclude silent CUPTI activity loss; retained logs and correlation checks supply additional evidence."
+  ]
+}

@@ -1,0 +1,16 @@
+[
+  {
+    "action": "start_profile",
+    "wall_ns": 1792507866418068765,
+    "monotonic_ns": 7650976615518747,
+    "status": 200,
+    "body": "{\"status\":\"SUCCESS\"}"
+  },
+  {
+    "action": "stop_profile",
+    "wall_ns": 1792507871572947234,
+    "monotonic_ns": 7650981770397106,
+    "status": 200,
+    "body": "{\"status\":\"SUCCESS\"}"
+  }
+]

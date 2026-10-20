@@ -1,0 +1,52 @@
+[19:48:52] c=1 r=1: starting server
+[19:52:38] c=1 r=1: ready after 225s, benchmarking
+[20:12:18] c=1 r=1: client exit 0, stopping server
+[20:12:31] c=4 r=1: starting server
+[20:16:18] c=4 r=1: ready after 227s, benchmarking
+[20:23:24] c=4 r=1: client exit 0, stopping server
+[20:23:35] c=8 r=1: starting server
+[20:27:23] c=8 r=1: ready after 227s, benchmarking
+[20:32:24] c=8 r=1: client exit 0, stopping server
+[20:32:36] c=12 r=1: starting server
+[20:36:24] c=12 r=1: ready after 228s, benchmarking
+[20:40:32] c=12 r=1: client exit 0, stopping server
+[20:40:43] c=16 r=1: starting server
+[20:44:30] c=16 r=1: ready after 227s, benchmarking
+[20:48:05] c=16 r=1: client exit 0, stopping server
+[20:48:18] c=24 r=1: starting server
+[20:52:05] c=24 r=1: ready after 227s, benchmarking
+[20:55:05] c=24 r=1: client exit 0, stopping server
+[20:55:17] c=32 r=1: starting server
+[20:59:04] c=32 r=1: ready after 227s, benchmarking
+[21:01:45] c=32 r=1: client exit 0, stopping server
+[21:01:57] c=48 r=1: starting server
+[21:05:44] c=48 r=1: ready after 227s, benchmarking
+[21:07:53] c=48 r=1: client exit 0, stopping server
+[21:08:04] c=64 r=1: starting server
+[21:11:52] c=64 r=1: ready after 228s, benchmarking
+[21:13:44] c=64 r=1: client exit 0, stopping server
+[21:13:56] c=64 r=2: starting server
+[21:17:43] c=64 r=2: ready after 227s, benchmarking
+[21:19:32] c=64 r=2: client exit 0, stopping server
+[21:19:44] c=64 r=3: starting server
+[21:23:31] c=64 r=3: ready after 227s, benchmarking
+[21:25:24] c=64 r=3: client exit 0, stopping server
+[21:25:36] c=96 r=1: starting server
+[21:29:24] c=96 r=1: ready after 228s, benchmarking
+[21:30:57] c=96 r=1: client exit 0, stopping server
+[21:31:09] c=128 r=1: starting server
+[21:34:56] c=128 r=1: ready after 227s, benchmarking
+[21:36:19] c=128 r=1: client exit 0, stopping server
+[21:36:31] c=128 r=2: starting server
+[21:40:18] c=128 r=2: ready after 227s, benchmarking
+[21:41:41] c=128 r=2: client exit 0, stopping server
+[21:41:52] c=128 r=3: starting server
+[21:45:39] c=128 r=3: ready after 227s, benchmarking
+[21:47:03] c=128 r=3: client exit 0, stopping server
+[21:47:15] c=128 r=4: starting server
+[21:51:02] c=128 r=4: ready after 227s, benchmarking
+[21:52:25] c=128 r=4: client exit 0, stopping server
+[21:52:38] c=128 r=5: starting server
+[21:56:25] c=128 r=5: ready after 227s, benchmarking
+[21:57:46] c=128 r=5: client exit 0, stopping server
+[21:57:57] done: ${NVME_WORKDIR}/baseline/20261020_194158/b1/table.md

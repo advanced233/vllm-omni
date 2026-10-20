@@ -1,0 +1,19 @@
+{
+  "timestamp": "2026-10-20T22:24:41+0800",
+  "gpu": "GPU_PHYSICAL_1, 15, 0",
+  "compute_apps": "",
+  "port_8091_free": true,
+  "recorded_server_processes_remaining": [],
+  "experiment_helpers_remaining": [],
+  "tool_source_matches": {
+    "tools/drama3_bench/encode_ref_codes.py": true,
+    "tools/drama3_bench/run_sweep.sh": true,
+    "tools/drama3_bench/aggregate_results.py": true,
+    "tools/drama3_bench/analyze_audio.py": true,
+    "tools/drama3_bench/eval_quality.py": true,
+    "tools/drama3_bench/stream_bench.py": true
+  },
+  "main_completed_runs": 17,
+  "followup_completed_runs": 3,
+  "clean": true
+}

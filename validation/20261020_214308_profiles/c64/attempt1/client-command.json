@@ -1,0 +1,28 @@
+{
+  "argv": [
+    "taskset",
+    "-c",
+    "60-63",
+    "${WORKSPACE}/.venvs/vllm-omni-cu129/bin/python",
+    "${NVME_WORKDIR}/profiling/20261020_214308/preparation/capture_client.py",
+    "--codes",
+    "${NVME_WORKDIR}/bench-validation/20261020_165001_49599d4/ref_codes_en.jsonl",
+    "--ref-mode",
+    "codes",
+    "--concurrency",
+    "64",
+    "--num-prompts",
+    "1088",
+    "--num-warmups",
+    "8",
+    "--label",
+    "diagnostic-profile-c64",
+    "--out",
+    "${NVME_WORKDIR}/profiling/20261020_214308/c64/attempt1/client"
+  ],
+  "server_affinity": "0-27,32-59",
+  "no_explicit_seed": true,
+  "save_audio": false,
+  "start_after_s": "20",
+  "capture_s": "5"
+}
