@@ -1,0 +1,19 @@
+source ${NVME_WORKDIR}/venvs/vllm-omni-cu129/bin/activate
+source ${PERSONAL_WORKDIR}/activate_cuda129.sh
+export B1_ROOT=${NVME_WORKDIR}/gpu2-thermal/20261021_002746
+export TOOL_REPO=${PERSONAL_WORKDIR}/github-smoke-audio-20261020
+export OMNI_REPO=${WORKSPACE}/vllm-omni
+export CUDA_DEVICE_ORDER=PCI_BUS_ID CUDA_VISIBLE_DEVICES=2
+export GPU_INDEX=2 PORT=8091
+export CODES=${NVME_WORKDIR}/bench-validation/20261020_165001_49599d4/ref_codes_en.jsonl
+export CLIENT_PREFIX='taskset -c 60-63'
+export SERVER_CPUS='0-27,32-59'
+export PYTHON=${NVME_WORKDIR}/venvs/vllm-omni-cu129/bin/python
+export TMPDIR=${NVME_WORKDIR}/tmp/gpu2-002746
+export MAX_JOBS=4 OMP_NUM_THREADS=8 PYTHONUNBUFFERED=1
+export HF_HOME=${WORKSPACE}/.cache/huggingface
+export HF_HUB_CACHE="$HF_HOME/hub" HF_XET_CACHE="$HF_HOME/xet"
+export HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1
+export READY_TIMEOUT=2100 STOP_TIMEOUT=300 GPU_IDLE_MIB=128
+unset CUDA_MPS_PIPE_DIRECTORY CUDA_MPS_LOG_DIRECTORY
+export SERVER_CMD='source ${NVME_WORKDIR}/gpu2-thermal/20261021_002746/preparation/env.sh && exec python ${NVME_WORKDIR}/gpu2-thermal/20261021_002746/preparation/server_supervisor.py'

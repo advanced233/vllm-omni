@@ -1,0 +1,13 @@
+{
+  "label": "a100-gpu2-cold-c1",
+  "concurrency": "1",
+  "repeats": "1",
+  "repeats_at": "",
+  "codes": "${NVME_WORKDIR}/bench-validation/20261020_165001_49599d4/ref_codes_en.jsonl",
+  "port": "8091",
+  "gpu_index": "2",
+  "bench_args": "--num-prompts 1088",
+  "server_cmd": "source ${NVME_WORKDIR}/gpu2-thermal/20261021_002746/preparation/env.sh && exec python ${NVME_WORKDIR}/gpu2-thermal/20261021_002746/preparation/server_supervisor.py",
+  "started_at": "2026-10-21T00:29:41+0800",
+  "hostname": "HOST_REDACTED"
+}

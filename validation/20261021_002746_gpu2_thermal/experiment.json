@@ -1,0 +1,18 @@
+{
+  "created": "2026-10-21T00:28:56+0800",
+  "comparison": "B1 C1 same workload and software; different physical GPU2 and startup thermal state",
+  "baseline_root": "${NVME_WORKDIR}/baseline/20261020_194158",
+  "gpu_index": 2,
+  "gpu_uuid": "GPU_PHYSICAL_2",
+  "num_prompts": 1088,
+  "concurrency": 1,
+  "warmups": 8,
+  "seed": null,
+  "save_audio": false,
+  "changes_from_b1": [
+    "GPU index/UUID",
+    "private run directory and TMPDIR",
+    "extra1Hz GPU core+HBM telemetry and health observation"
+  ],
+  "system_settings_changed": false
+}

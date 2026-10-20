@@ -1,0 +1,726 @@
+{
+  "checks": {
+    "requests": 1088,
+    "succeeded": 1088,
+    "failed": 0,
+    "no_audio_saved": true,
+    "seed": null,
+    "warmups": 8,
+    "cpu_affinity_matches_B1": true,
+    "CUDA_VISIBLE_DEVICES": "2",
+    "private_MPS_matches_physical_GPU2": true,
+    "live_API_stage_client_affinity_independently_verified": true,
+    "cleanup_clean": true,
+    "loop_lag_p99_ms": 0.64,
+    "observed_unowned_GPU_processes": 0,
+    "GPU_process_observation_samples": 87,
+    "software_workload_match_fields": {
+      "server_commit": true,
+      "tool_sha256": true,
+      "model_revision": true,
+      "deploy_sha256": true,
+      "codes_sha256": true,
+      "seed": true,
+      "save_audio": true,
+      "warmups": true,
+      "client_affinity": true,
+      "server_affinity": true,
+      "packages": true
+    },
+    "oom_cuda_preemption_log_matches": []
+  },
+  "timing": {
+    "service_start": "2026-10-21T00:29:42.120+08:00",
+    "runner_health_ready_second": "2026-10-21T00:33:41.000+08:00",
+    "independent_health_observation": "2026-10-21T00:33:43.421+08:00",
+    "warmup_print_observed": "2026-10-21T00:33:41.527+08:00",
+    "estimated_first_timed_HTTP_send": "2026-10-21T00:33:52.470+08:00",
+    "estimated_last_audio_arrival": "2026-10-21T00:52:13.288+08:00",
+    "clock_anchor_offset_change_s": 0.0,
+    "anchor_wall_bracket_ns": [
+      2600,
+      2040
+    ],
+    "HTTP_span_s": 1100.8185884952545,
+    "benchmark_duration_s": 1100.819,
+    "boundary_note": "Runner-ready has 1s precision; warmup log is observed by 0.1s polling. Independent health observer was later, not the first successful health. HTTP times use linear wall/perf clock-anchor interpolation; last arrival uses rounded e2e_s and excludes trailing client housekeeping."
+  },
+  "operating_thresholds": {
+    "core_max_operating_c": 85,
+    "core_slowdown_c": 89,
+    "hbm_max_operating_c": 95
+  },
+  "full_run": {
+    "core_c": {
+      "n": 1356,
+      "min": 36.0,
+      "p50": 84.0,
+      "p95": 85.0,
+      "max": 86.0
+    },
+    "hbm_c": {
+      "n": 1356,
+      "min": 50.0,
+      "p50": 89.0,
+      "p95": 91.0,
+      "max": 92.0
+    },
+    "sm_mhz": {
+      "n": 1356,
+      "min": 210.0,
+      "p50": 1215.0,
+      "p95": 1410.0,
+      "max": 1410.0
+    },
+    "power_w": {
+      "n": 1356,
+      "min": 46.46,
+      "p50": 182.815,
+      "p95": 245.505,
+      "max": 364.98
+    },
+    "memory_used_mib": {
+      "n": 1356,
+      "min": 14.0,
+      "p50": 73290.0,
+      "p95": 73292.0,
+      "max": 78734.0
+    },
+    "gpu_utilization_pct": {
+      "n": 1356,
+      "min": 0.0,
+      "p50": 100.0,
+      "p95": 100.0,
+      "max": 100.0
+    },
+    "samples": 1356,
+    "sample_gap_s": {
+      "n": 1355,
+      "min": 1.0,
+      "p50": 1.001000165939331,
+      "p95": 1.005000114440918,
+      "max": 1.6740000247955322
+    },
+    "sw_thermal_slowdown": {
+      "valid_samples": 1356,
+      "active_samples": 967,
+      "sample_pct": 71.3126843657817
+    },
+    "hw_thermal_slowdown": {
+      "valid_samples": 1356,
+      "active_samples": 0,
+      "sample_pct": 0.0
+    },
+    "sw_power_cap": {
+      "valid_samples": 1356,
+      "active_samples": 41,
+      "sample_pct": 3.023598820058997
+    },
+    "hw_power_brake_slowdown": {
+      "valid_samples": 1356,
+      "active_samples": 0,
+      "sample_pct": 0.0
+    }
+  },
+  "timed": {
+    "core_c": {
+      "n": 1095,
+      "min": 56.0,
+      "p50": 84.0,
+      "p95": 85.0,
+      "max": 86.0
+    },
+    "hbm_c": {
+      "n": 1095,
+      "min": 67.0,
+      "p50": 90.0,
+      "p95": 91.0,
+      "max": 92.0
+    },
+    "sm_mhz": {
+      "n": 1095,
+      "min": 690.0,
+      "p50": 1200.0,
+      "p95": 1410.0,
+      "max": 1410.0
+    },
+    "power_w": {
+      "n": 1095,
+      "min": 122.57,
+      "p50": 185.46,
+      "p95": 245.694,
+      "max": 348.77
+    },
+    "memory_used_mib": {
+      "n": 1095,
+      "min": 73266.0,
+      "p50": 73292.0,
+      "p95": 73292.0,
+      "max": 73292.0
+    },
+    "gpu_utilization_pct": {
+      "n": 1095,
+      "min": 87.0,
+      "p50": 100.0,
+      "p95": 100.0,
+      "max": 100.0
+    },
+    "samples": 1095,
+    "sample_gap_s": {
+      "n": 1094,
+      "min": 1.0,
+      "p50": 1.001000165939331,
+      "p95": 1.004000186920166,
+      "max": 1.4219999313354492
+    },
+    "sw_thermal_slowdown": {
+      "valid_samples": 1095,
+      "active_samples": 966,
+      "sample_pct": 88.21917808219177
+    },
+    "hw_thermal_slowdown": {
+      "valid_samples": 1095,
+      "active_samples": 0,
+      "sample_pct": 0.0
+    },
+    "sw_power_cap": {
+      "valid_samples": 1095,
+      "active_samples": 20,
+      "sample_pct": 1.82648401826484
+    },
+    "hw_power_brake_slowdown": {
+      "valid_samples": 1095,
+      "active_samples": 0,
+      "sample_pct": 0.0
+    }
+  },
+  "timed_last_5_minutes": {
+    "core_c": {
+      "n": 299,
+      "min": 83.0,
+      "p50": 84.0,
+      "p95": 85.0,
+      "max": 86.0
+    },
+    "hbm_c": {
+      "n": 299,
+      "min": 88.0,
+      "p50": 90.0,
+      "p95": 91.0,
+      "max": 92.0
+    },
+    "sm_mhz": {
+      "n": 299,
+      "min": 690.0,
+      "p50": 1200.0,
+      "p95": 1275.0,
+      "max": 1350.0
+    },
+    "power_w": {
+      "n": 299,
+      "min": 123.82,
+      "p50": 182.65,
+      "p95": 215.70199999999997,
+      "max": 275.28
+    },
+    "memory_used_mib": {
+      "n": 299,
+      "min": 73292.0,
+      "p50": 73292.0,
+      "p95": 73292.0,
+      "max": 73292.0
+    },
+    "gpu_utilization_pct": {
+      "n": 299,
+      "min": 88.0,
+      "p50": 100.0,
+      "p95": 100.0,
+      "max": 100.0
+    },
+    "samples": 299,
+    "sample_gap_s": {
+      "n": 298,
+      "min": 1.0,
+      "p50": 1.001000165939331,
+      "p95": 1.003999948501587,
+      "max": 1.4019999504089355
+    },
+    "sw_thermal_slowdown": {
+      "valid_samples": 299,
+      "active_samples": 299,
+      "sample_pct": 100.0
+    },
+    "hw_thermal_slowdown": {
+      "valid_samples": 299,
+      "active_samples": 0,
+      "sample_pct": 0.0
+    },
+    "sw_power_cap": {
+      "valid_samples": 299,
+      "active_samples": 0,
+      "sample_pct": 0.0
+    },
+    "hw_power_brake_slowdown": {
+      "valid_samples": 299,
+      "active_samples": 0,
+      "sample_pct": 0.0
+    }
+  },
+  "timed_last_3_minutes": {
+    "core_c": {
+      "n": 179,
+      "min": 83.0,
+      "p50": 84.0,
+      "p95": 85.0,
+      "max": 85.0
+    },
+    "hbm_c": {
+      "n": 179,
+      "min": 88.0,
+      "p50": 90.0,
+      "p95": 91.0,
+      "max": 91.0
+    },
+    "sm_mhz": {
+      "n": 179,
+      "min": 690.0,
+      "p50": 1200.0,
+      "p95": 1275.0,
+      "max": 1350.0
+    },
+    "power_w": {
+      "n": 179,
+      "min": 123.82,
+      "p50": 181.97,
+      "p95": 216.07299999999998,
+      "max": 275.28
+    },
+    "memory_used_mib": {
+      "n": 179,
+      "min": 73292.0,
+      "p50": 73292.0,
+      "p95": 73292.0,
+      "max": 73292.0
+    },
+    "gpu_utilization_pct": {
+      "n": 179,
+      "min": 88.0,
+      "p50": 100.0,
+      "p95": 100.0,
+      "max": 100.0
+    },
+    "samples": 179,
+    "sample_gap_s": {
+      "n": 178,
+      "min": 1.0,
+      "p50": 1.001000165939331,
+      "p95": 1.003999948501587,
+      "max": 1.4019999504089355
+    },
+    "sw_thermal_slowdown": {
+      "valid_samples": 179,
+      "active_samples": 179,
+      "sample_pct": 100.0
+    },
+    "hw_thermal_slowdown": {
+      "valid_samples": 179,
+      "active_samples": 0,
+      "sample_pct": 0.0
+    },
+    "sw_power_cap": {
+      "valid_samples": 179,
+      "active_samples": 0,
+      "sample_pct": 0.0
+    },
+    "hw_power_brake_slowdown": {
+      "valid_samples": 179,
+      "active_samples": 0,
+      "sample_pct": 0.0
+    }
+  },
+  "first_SW_thermal_sample": {
+    "timestamp": "2026/10/21 00:36:02.421",
+    "epoch_s": 1792514162.421,
+    "core_c": 84.0,
+    "hbm_c": 89.0,
+    "sm_mhz": 1305.0,
+    "power_w": 232.79,
+    "memory_used_mib": 73270.0,
+    "gpu_utilization_pct": 91.0,
+    "active_mask": 32,
+    "sw_thermal_slowdown": true,
+    "hw_thermal_slowdown": false,
+    "sw_power_cap": false,
+    "hw_power_brake_slowdown": false,
+    "minutes_since_service_start": 6.338335605462392,
+    "seconds_since_timed_start": 129.95060205459595,
+    "phase": "timed",
+    "relative_service_start_s": 380.30013632774353,
+    "relative_timed_start_s": 129.95060205459595
+  },
+  "first_SW_thermal_onset_bracket": {
+    "previous_sample": {
+      "timestamp": "2026/10/21 00:36:01.420",
+      "epoch_s": 1792514161.42,
+      "core_c": 84.0,
+      "hbm_c": 90.0,
+      "sm_mhz": 1395.0,
+      "power_w": 259.86,
+      "memory_used_mib": 73270.0,
+      "gpu_utilization_pct": 89.0,
+      "active_mask": 0,
+      "sw_thermal_slowdown": false,
+      "hw_thermal_slowdown": false,
+      "sw_power_cap": false,
+      "hw_power_brake_slowdown": false,
+      "minutes_since_service_start": 6.321652273337047,
+      "seconds_since_timed_start": 128.9496021270752,
+      "phase": "timed"
+    },
+    "first_active_sample": {
+      "timestamp": "2026/10/21 00:36:02.421",
+      "epoch_s": 1792514162.421,
+      "core_c": 84.0,
+      "hbm_c": 89.0,
+      "sm_mhz": 1305.0,
+      "power_w": 232.79,
+      "memory_used_mib": 73270.0,
+      "gpu_utilization_pct": 91.0,
+      "active_mask": 32,
+      "sw_thermal_slowdown": true,
+      "hw_thermal_slowdown": false,
+      "sw_power_cap": false,
+      "hw_power_brake_slowdown": false,
+      "minutes_since_service_start": 6.338335605462392,
+      "seconds_since_timed_start": 129.95060205459595,
+      "phase": "timed"
+    },
+    "relative_service_start_s": [
+      379.2991364002228,
+      380.30013632774353
+    ],
+    "relative_timed_start_s": [
+      128.9496021270752,
+      129.95060205459595
+    ],
+    "note": "Flag onset lies after the previous inactive observation and no later than the first active observation; sensor/internal sampling delays remain unknown."
+  },
+  "SW_thermal_episodes": [
+    {
+      "first_active_s": 1792514162.421,
+      "last_active_s": 1792514162.421,
+      "active_samples": 1,
+      "previous_inactive_s": 1792514161.42,
+      "first_inactive_after_s": 1792514163.421,
+      "end_censored_by_gap": false,
+      "observed_active_span_s": 0.0
+    },
+    {
+      "first_active_s": 1792514164.423,
+      "last_active_s": 1792515133.325,
+      "active_samples": 966,
+      "previous_inactive_s": 1792514163.421,
+      "first_inactive_after_s": 1792515134.325,
+      "end_censored_by_gap": false,
+      "observed_active_span_s": 968.9019999504089
+    }
+  ],
+  "threshold_first_samples": {
+    "core_c": {
+      "timestamp": "2026/10/21 00:36:28.665",
+      "epoch_s": 1792514188.665,
+      "core_c": 85.0,
+      "hbm_c": 91.0,
+      "sm_mhz": 960.0,
+      "power_w": 212.2,
+      "memory_used_mib": 73270.0,
+      "gpu_utilization_pct": 95.0,
+      "active_mask": 32,
+      "sw_thermal_slowdown": true,
+      "hw_thermal_slowdown": false,
+      "sw_power_cap": false,
+      "hw_power_brake_slowdown": false,
+      "minutes_since_service_start": 6.775735604763031,
+      "seconds_since_timed_start": 156.19460201263428,
+      "phase": "timed"
+    },
+    "hbm_c": null
+  },
+  "coincidence_during_timed": {
+    "thermal_active_samples": 966,
+    "thermal_with_core_below_85_HBM_at_least_95": 0,
+    "thermal_with_core_at_least_85": 71,
+    "thermal_with_HBM_at_least_95": 0
+  },
+  "fan_observation": {
+    "nvidia_GPU_fan_speed": "N/A",
+    "chassis_fan_RPM_or_mode_verified": false,
+    "interpretation": "GPU Fan N/A does not establish that chassis fans are stopped. Actual chassis fan speed/mode unavailable to this account.",
+    "fan_or_BMC_settings_changed": false
+  },
+  "performance": {
+    "GPU2_cold_C1": {
+      "duration_s": 1100.819,
+      "throughput_audio_s_per_s": 4.34,
+      "ttfa_ms": {
+        "mean": 123.3,
+        "p50": 124.5,
+        "p90": 133.8,
+        "p95": 136.3,
+        "p99": 141.1,
+        "max": 348.2
+      },
+      "rtf": {
+        "mean": 0.2322,
+        "p50": 0.2333,
+        "p90": 0.2454,
+        "p95": 0.2501,
+        "p99": 0.2592,
+        "max": 0.4374
+      },
+      "stall": {
+        "0ms": {
+          "streams_stalled": 0,
+          "streams_stalled_pct": 0.0,
+          "events": 0
+        },
+        "100ms": {
+          "streams_stalled": 0,
+          "streams_stalled_pct": 0.0,
+          "events": 0
+        }
+      },
+      "long_takes": {
+        "at_least_20s": 6,
+        "at_least_20s_pct": 0.55,
+        "at_frame_cap": 4,
+        "audio_share_pct": 2.85
+      }
+    },
+    "prior_GPU1_B1_C1": {
+      "duration_s": 1165.357,
+      "throughput_audio_s_per_s": 4.1,
+      "ttfa_ms": {
+        "mean": 136.3,
+        "p50": 134.3,
+        "p90": 155.3,
+        "p95": 162.0,
+        "p99": 172.4,
+        "max": 216.8
+      },
+      "rtf": {
+        "mean": 0.2462,
+        "p50": 0.2465,
+        "p90": 0.2611,
+        "p95": 0.2667,
+        "p99": 0.2828,
+        "max": 0.3758
+      },
+      "stall": {
+        "0ms": {
+          "streams_stalled": 0,
+          "streams_stalled_pct": 0.0,
+          "events": 0
+        },
+        "100ms": {
+          "streams_stalled": 0,
+          "streams_stalled_pct": 0.0,
+          "events": 0
+        }
+      },
+      "long_takes": {
+        "at_least_20s": 5,
+        "at_least_20s_pct": 0.46,
+        "at_frame_cap": 5,
+        "audio_share_pct": 2.43
+      }
+    }
+  },
+  "prior_GPU1_hardware": {
+    "timed": {
+      "core_c": {
+        "n": 2322,
+        "min": 66.0,
+        "p50": 84.0,
+        "p95": 84.0,
+        "max": 86.0
+      },
+      "hbm_c": {
+        "n": 0,
+        "min": null,
+        "p50": null,
+        "p95": null,
+        "max": null
+      },
+      "sm_mhz": {
+        "n": 2322,
+        "min": 315.0,
+        "p50": 1110.0,
+        "p95": 1410.0,
+        "max": 1410.0
+      },
+      "power_w": {
+        "n": 2322,
+        "min": 103.16,
+        "p50": 154.86,
+        "p95": 223.69499999999996,
+        "max": 340.42
+      },
+      "memory_used_mib": {
+        "n": 2322,
+        "min": 73266.0,
+        "p50": 73292.0,
+        "p95": 73292.0,
+        "max": 73292.0
+      },
+      "gpu_utilization_pct": {
+        "n": 2322,
+        "min": 82.0,
+        "p50": 100.0,
+        "p95": 100.0,
+        "max": 100.0
+      },
+      "samples": 2322,
+      "sample_gap_s": {
+        "n": 2321,
+        "min": 0.5,
+        "p50": 0.501000165939331,
+        "p95": 0.5049998760223389,
+        "max": 0.5349998474121094
+      },
+      "sw_thermal_slowdown": {
+        "valid_samples": 2322,
+        "active_samples": 2174,
+        "sample_pct": 93.62618432385874
+      },
+      "hw_thermal_slowdown": {
+        "valid_samples": 2322,
+        "active_samples": 0,
+        "sample_pct": 0.0
+      },
+      "sw_power_cap": {
+        "valid_samples": 2322,
+        "active_samples": 18,
+        "sample_pct": 0.7751937984496124
+      },
+      "hw_power_brake_slowdown": {
+        "valid_samples": 2322,
+        "active_samples": 0,
+        "sample_pct": 0.0
+      }
+    },
+    "timed_last_5_minutes": {
+      "core_c": {
+        "n": 597,
+        "min": 83.0,
+        "p50": 84.0,
+        "p95": 84.0,
+        "max": 85.0
+      },
+      "hbm_c": {
+        "n": 0,
+        "min": null,
+        "p50": null,
+        "p95": null,
+        "max": null
+      },
+      "sm_mhz": {
+        "n": 597,
+        "min": 315.0,
+        "p50": 1110.0,
+        "p95": 1140.0,
+        "max": 1305.0
+      },
+      "power_w": {
+        "n": 597,
+        "min": 104.78,
+        "p50": 153.8,
+        "p95": 168.84399999999994,
+        "max": 239.73
+      },
+      "memory_used_mib": {
+        "n": 597,
+        "min": 73292.0,
+        "p50": 73292.0,
+        "p95": 73292.0,
+        "max": 73292.0
+      },
+      "gpu_utilization_pct": {
+        "n": 597,
+        "min": 87.0,
+        "p50": 100.0,
+        "p95": 100.0,
+        "max": 100.0
+      },
+      "samples": 597,
+      "sample_gap_s": {
+        "n": 596,
+        "min": 0.5,
+        "p50": 0.5019998550415039,
+        "p95": 0.504000186920166,
+        "max": 0.5140001773834229
+      },
+      "sw_thermal_slowdown": {
+        "valid_samples": 597,
+        "active_samples": 597,
+        "sample_pct": 100.0
+      },
+      "hw_thermal_slowdown": {
+        "valid_samples": 597,
+        "active_samples": 0,
+        "sample_pct": 0.0
+      },
+      "sw_power_cap": {
+        "valid_samples": 597,
+        "active_samples": 0,
+        "sample_pct": 0.0
+      },
+      "hw_power_brake_slowdown": {
+        "valid_samples": 597,
+        "active_samples": 0,
+        "sample_pct": 0.0
+      }
+    },
+    "first_telemetry_sample": {
+      "timestamp": "2026/10/20 19:48:52.929",
+      "epoch_s": 1792496932.929,
+      "core_c": 52.0,
+      "hbm_c": null,
+      "sm_mhz": 210.0,
+      "power_w": 48.57,
+      "memory_used_mib": 15.0,
+      "gpu_utilization_pct": 0.0,
+      "active_mask": 1,
+      "sw_thermal_slowdown": false,
+      "hw_thermal_slowdown": false,
+      "sw_power_cap": false,
+      "hw_power_brake_slowdown": false
+    },
+    "first_SW_thermal_sample": {
+      "timestamp": "2026/10/20 19:54:06.936",
+      "epoch_s": 1792497246.936,
+      "core_c": 84.0,
+      "hbm_c": null,
+      "sm_mhz": 1335.0,
+      "power_w": 283.69,
+      "memory_used_mib": 73272.0,
+      "gpu_utilization_pct": 100.0,
+      "active_mask": 32,
+      "sw_thermal_slowdown": true,
+      "hw_thermal_slowdown": false,
+      "sw_power_cap": false,
+      "hw_power_brake_slowdown": false
+    },
+    "first_SW_thermal_relative_timed_start_s": 73.93600010871887,
+    "HBM_temperature_available": false,
+    "timed_alignment_uncertainty_s": 1
+  },
+  "limits": [
+    "Changed physical GPU and starting/thermal conditions; this is not a controlled causal comparison against GPU1.",
+    "Core and HBM temperatures are sampled once per second and rounded by the sensor. First active sample brackets an event; it is not the exact onset.",
+    "SW thermal slowdown does not identify which sensor triggered it. Threshold coincidence is evidence of association, not proof of the exclusive cause.",
+    "Do not infer core-temperature triggering from a reading of 84C. Old GPU1 telemetry contains no HBM temperature.",
+    "Sample proportions are not exact time-weighted throttling shares. Episode spans are between observed active samples, with censoring recorded.",
+    "No driver/CUDA/power/clock/fan settings were changed by this analysis."
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "timestamp": "2026-10-21T00:52:53+0800",
+  "gpu2": "GPU_PHYSICAL_2, 14, 0, 73, 80",
+  "compute_apps": "",
+  "port_8091_free": true,
+  "own_recorded_processes_remaining": [],
+  "own_helpers_remaining": [],
+  "thermal_monitor_exit": 0,
+  "source_hashes_match": {
+    "tools/drama3_bench/encode_ref_codes.py": true,
+    "tools/drama3_bench/run_sweep.sh": true,
+    "tools/drama3_bench/aggregate_results.py": true,
+    "tools/drama3_bench/analyze_audio.py": true,
+    "tools/drama3_bench/eval_quality.py": true,
+    "tools/drama3_bench/stream_bench.py": true
+  },
+  "run_audit_valid": true,
+  "clean": true,
+  "user_looping_nvidia_smi_processes_remaining": [],
+  "server_head_after": "da572cddb38383deae9caef33b8d490e292ef071",
+  "server_tracked_status_after": ""
+}

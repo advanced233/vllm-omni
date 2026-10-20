@@ -1,0 +1,12 @@
+[00:29:41] c=1 r=1: starting server
+[00:33:41] c=1 r=1: ready after 240s, benchmarking
+warmup: 8 requests
+timed: 1088 requests at concurrency 1
+| Concurrency | Audio s/s | TTFA p50 | TTFA p95 | RTF (mean) | Streams that stall | Failed |
+| ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| 1 | 4.34 | 124.5 ms | 136.3 ms | 0.2322 | 0.0% (>0ms) / 0.0% (>100ms) | 0 |
+[00:52:13] c=1 r=1: client exit 0, stopping server
+| Label | Concurrency | Runs | Audio s/s | Audio s/s (full window) | TTFA p50 (ms) | TTFA p95 (ms) | RTF (mean) | Stall % (>0 ms) | Stall % (>100 ms) | Takes >= 20 s | Their audio % | Failed |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| a100-gpu2-cold-c1 | 1 | 1 | 4.3 | 4.3 | 124 | 136 | 0.232 | 0.00 | 0.00 | 6 | 2.9 | 0 |
+[00:52:26] done: ${NVME_WORKDIR}/gpu2-thermal/20261021_002746/sweep/table.md

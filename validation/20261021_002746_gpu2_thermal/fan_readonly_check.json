@@ -1,0 +1,18 @@
+{
+  "observed_at": "2026-10-21T00:41:42.875692+08:00",
+  "gpu_index": 2,
+  "gpu_fan_speed": "N/A",
+  "board_vendor": "Supermicro",
+  "board_name": "H12SSL-i",
+  "ipmi_device": "/dev/ipmi0",
+  "ipmi_device_permissions": "0600 root:root",
+  "ipmitool_read_succeeded": false,
+  "noninteractive_sudo_result": "sudo: a password is required",
+  "hwmon_fan_rpm_available": false,
+  "sensors_cpu_tctl_c": 28.2,
+  "gpu_core_c_during_check": 84,
+  "gpu_hbm_c_during_check": 89,
+  "fan_or_bmc_settings_changed": false,
+  "interpretation": "GPU Fan N/A does not establish that chassis fans are stopped. Actual chassis fan speed/mode unavailable to this account.",
+  "official_reference": "https://www.nvidia.com/content/dam/en-zz/Solutions/Data-Center/a100/pdf/PB-10577-001_v02.pdf"
+}

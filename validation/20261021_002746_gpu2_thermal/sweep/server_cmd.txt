@@ -1,0 +1,1 @@
+source ${NVME_WORKDIR}/gpu2-thermal/20261021_002746/preparation/env.sh && exec python ${NVME_WORKDIR}/gpu2-thermal/20261021_002746/preparation/server_supervisor.py
