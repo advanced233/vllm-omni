@@ -1,0 +1,49 @@
+{
+  "default": {
+    "complete": true,
+    "totals": {
+      "utterances": 1088,
+      "scored": 1088,
+      "errors": {},
+      "wer_mean": 0.0232,
+      "wer_median": 0.0,
+      "wer_mean_nonempty": 0.0232,
+      "asr_empty": 0,
+      "wer_mean_without_stuck": 0.0166,
+      "wer_over_0.5": 8,
+      "wer_zero_pct": 85.48,
+      "sim_mean": 0.8646,
+      "sim_median": 0.8767,
+      "sim_scored": 1088,
+      "sim_mean_without_stuck": 0.8703,
+      "stuck": 13,
+      "stuck_pct": 1.19,
+      "stuck_scored_wer_mean": 0.5681,
+      "at_frame_cap": 4
+    }
+  },
+  "fp32_state": {
+    "complete": true,
+    "totals": {
+      "utterances": 1088,
+      "scored": 1088,
+      "errors": {},
+      "wer_mean": 0.0234,
+      "wer_median": 0.0,
+      "wer_mean_nonempty": 0.0234,
+      "asr_empty": 0,
+      "wer_mean_without_stuck": 0.0176,
+      "wer_over_0.5": 7,
+      "wer_zero_pct": 84.74,
+      "sim_mean": 0.8637,
+      "sim_median": 0.8761,
+      "sim_scored": 1088,
+      "sim_mean_without_stuck": 0.8701,
+      "stuck": 16,
+      "stuck_pct": 1.47,
+      "stuck_scored_wer_mean": 0.4104,
+      "at_frame_cap": 4
+    }
+  },
+  "gpu_after": "GPU_PHYSICAL_1, 15 MiB, 41 %"
+}

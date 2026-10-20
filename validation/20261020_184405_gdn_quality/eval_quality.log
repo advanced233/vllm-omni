@@ -1,0 +1,81 @@
+Loading Seed-TTS eval Whisper HF model 'openai/whisper-large-v3' on cuda:0 (one-time, seed-tts-eval protocol)...
+Loading weights:   0%|          | 0/1259 [00:00<?, ?it/s]Loading weights:  28%|██▊       | 351/1259 [00:00<00:00, 3429.90it/s]Loading weights:  57%|█████▋    | 719/1259 [00:00<00:00, 3575.08it/s]Loading weights:  86%|████████▌ | 1077/1259 [00:00<00:00, 3488.40it/s]Loading weights: 100%|██████████| 1259/1259 [00:00<00:00, 3500.65it/s]
+[transformers] Using custom `forced_decoder_ids` from the (generation) config. This is deprecated in favor of the `task` and `language` flags/config options.
+[transformers] Passing `generation_config` together with generation-related arguments=({'suppress_tokens', 'begin_suppress_tokens'}) is deprecated and will be removed in future versions. Please pass either a `generation_config` object OR all generation parameters explicitly, but not both.
+[transformers] Ignoring clean_up_tokenization_spaces=True for BPE tokenizer WhisperTokenizer. The clean_up_tokenization post-processing step is designed for WordPiece tokenizers and is destructive for BPE (it strips spaces before punctuation). Set clean_up_tokenization_spaces=False to suppress this warning, or set clean_up_tokenization_spaces_for_bpe_even_though_it_will_corrupt_output=True to force cleanup anyway.
+Loading WavLM 'microsoft/wavlm-base-plus' on cuda:0 for Seed-TTS SIM (embedding cosine; not identical to seed-tts-eval UniSpeech SV checkpoint).
+Loading weights:   0%|          | 0/248 [00:00<?, ?it/s]Loading weights: 100%|██████████| 248/248 [00:00<00:00, 27220.06it/s]
+${WORKSPACE}/.venvs/vllm-omni-cu129/lib/python3.12/site-packages/torch/nn/functional.py:6802: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  key_padding_mask = _canonical_mask(
+default: [50/1088] 1.75 utt/s
+default: [100/1088] 1.81 utt/s
+default: [150/1088] 1.82 utt/s
+default: [200/1088] 1.77 utt/s
+default: [250/1088] 1.73 utt/s
+default: [300/1088] 1.71 utt/s
+default: [350/1088] 1.70 utt/s
+default: [400/1088] 1.70 utt/s
+default: [450/1088] 1.69 utt/s
+default: [500/1088] 1.68 utt/s
+default: [550/1088] 1.67 utt/s
+default: [600/1088] 1.66 utt/s
+default: [650/1088] 1.66 utt/s
+default: [700/1088] 1.66 utt/s
+default: [750/1088] 1.65 utt/s
+default: [800/1088] 1.65 utt/s
+default: [850/1088] 1.65 utt/s
+default: [900/1088] 1.65 utt/s
+default: [950/1088] 1.65 utt/s
+default: [1000/1088] 1.65 utt/s
+default: [1050/1088] 1.65 utt/s
+default: [1088/1088] 1.65 utt/s
+fp32_state: [50/1088] 1.66 utt/s
+fp32_state: [100/1088] 1.64 utt/s
+fp32_state: [150/1088] 1.68 utt/s
+fp32_state: [200/1088] 1.67 utt/s
+fp32_state: [250/1088] 1.66 utt/s
+fp32_state: [300/1088] 1.66 utt/s
+fp32_state: [350/1088] 1.66 utt/s
+fp32_state: [400/1088] 1.66 utt/s
+fp32_state: [450/1088] 1.66 utt/s
+fp32_state: [500/1088] 1.65 utt/s
+fp32_state: [550/1088] 1.65 utt/s
+fp32_state: [600/1088] 1.65 utt/s
+fp32_state: [650/1088] 1.65 utt/s
+fp32_state: [700/1088] 1.65 utt/s
+fp32_state: [750/1088] 1.65 utt/s
+fp32_state: [800/1088] 1.65 utt/s
+fp32_state: [850/1088] 1.65 utt/s
+fp32_state: [900/1088] 1.65 utt/s
+fp32_state: [950/1088] 1.65 utt/s
+fp32_state: [1000/1088] 1.65 utt/s
+fp32_state: [1050/1088] 1.66 utt/s
+fp32_state: [1088/1088] 1.65 utt/s
+| run | scored | WER mean | WER w/o stuck | WER > 0.5 | empty ASR | SIM mean | stuck | at cap | errors |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | --- |
+| default | 1088/1088 | 0.0232 | 0.0166 | 8 | 0 | 0.8646 | 13 (1.19%) | 4 | - |
+| fp32_state | 1088/1088 | 0.0234 | 0.0176 | 7 | 0 | 0.8637 | 16 (1.47%) | 4 | - |
+
+default: highest WER
+  1.000 [stuck]  0357_common_voice_en_19791537-common_voice_en_19791538.wav  asr='you'
+  1.000 [stuck]  0704_common_voice_en_25024571-common_voice_en_25024570.wav  asr='.'
+  1.000 [stuck]  0996_common_voice_en_570615-common_voice_en_570616.wav  asr='Silence.'
+  0.917 [stuck]  0812_common_voice_en_28884498-common_voice_en_28884499.wav  asr='factors.'
+  0.812 [stuck]  0002_common_voice_en_103675-common_voice_en_103676.wav  asr='one by one.'
+  0.750 [stuck]  0353_common_voice_en_19778240-common_voice_en_19778244.wav  asr='She married David Wallet.'
+  0.700 [stuck]  0244_common_voice_en_19428391-common_voice_en_19428396.wav  asr='during that time.'
+  0.700 [stuck]  0350_common_voice_en_19768597-common_voice_en_19768600.wav  asr='As a result,'
+  0.429 [stuck]  0726_common_voice_en_25346256-common_voice_en_25346259.wav  asr='They are often in dual or quadruple mounts.'
+  0.400  0056_common_voice_en_17288057-common_voice_en_17288056.wav  asr="Where'd that come from?"
+
+fp32_state: highest WER
+  1.000 [stuck]  0040_common_voice_en_17263780-common_voice_en_17263782.wav  asr='.'
+  1.000 [stuck]  0877_common_voice_en_32767770-common_voice_en_32767778.wav  asr='you'
+  0.700 [stuck]  0049_common_voice_en_17275818-common_voice_en_17275817.wav  asr='Ladies and gentlemen.'
+  0.636 [stuck]  0843_common_voice_en_31576099-common_voice_en_31576097.wav  asr='Their sounds unite together and'
+  0.625 [stuck]  0838_common_voice_en_31350445-common_voice_en_31350446.wav  asr='There are three...'
+  0.600 [stuck]  0039_common_voice_en_17263780-common_voice_en_17263781.wav  asr='The more you read...'
+  0.538 [stuck]  0537_common_voice_en_21504874-common_voice_en_21504873.wav  asr='MAZE systems provide users many choices.'
+  0.500 [stuck]  0972_common_voice_en_530085-common_voice_en_530083.wav  asr='He had found where his treasure was.'
+  0.500 [stuck]  0973_common_voice_en_530085-common_voice_en_530084.wav  asr='The boy began again to read his book.'
+  0.400  0227_common_voice_en_19284142-common_voice_en_19284143.wav  asr="You aren't positive, you're negative."

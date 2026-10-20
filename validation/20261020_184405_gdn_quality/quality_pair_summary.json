@@ -1,0 +1,121 @@
+{
+  "rows": 1088,
+  "all_quality_complete": true,
+  "pairing": "same row index, utt_id, target, reference, seed; unchanged online generator can vary with batch timing",
+  "groups": {
+    "default": {
+      "all": {
+        "n": 1088,
+        "wer_mean": 0.02321277573529412,
+        "sim_mean": 0.8646487132352941,
+        "wer_over_0_5": 8,
+        "wer_zero": 930,
+        "asr_empty": 0,
+        "at_frame_cap": 4
+      },
+      "noise_run": {
+        "n": 13,
+        "wer_mean": 0.5680538461538461,
+        "sim_mean": 0.3953,
+        "wer_over_0_5": 8,
+        "wer_zero": 3,
+        "asr_empty": 0,
+        "at_frame_cap": 4
+      },
+      "without_noise_run": {
+        "n": 1075,
+        "wer_mean": 0.016624,
+        "sim_mean": 0.8703245581395348,
+        "wer_over_0_5": 0,
+        "wer_zero": 927,
+        "asr_empty": 0,
+        "at_frame_cap": 0
+      },
+      "at_frame_cap": {
+        "n": 4,
+        "wer_mean": 0.71445,
+        "sim_mean": 0.28302499999999997,
+        "wer_over_0_5": 3,
+        "wer_zero": 0,
+        "asr_empty": 0,
+        "at_frame_cap": 4
+      },
+      "not_at_frame_cap": {
+        "n": 1084,
+        "wer_mean": 0.02066208487084871,
+        "sim_mean": 0.8667949261992619,
+        "wer_over_0_5": 5,
+        "wer_zero": 930,
+        "asr_empty": 0,
+        "at_frame_cap": 0
+      }
+    },
+    "fp32_state": {
+      "all": {
+        "n": 1088,
+        "wer_mean": 0.023405238970588237,
+        "sim_mean": 0.8637450367647058,
+        "wer_over_0_5": 7,
+        "wer_zero": 922,
+        "asr_empty": 0,
+        "at_frame_cap": 4
+      },
+      "noise_run": {
+        "n": 16,
+        "wer_mean": 0.4104125,
+        "sim_mean": 0.43621875,
+        "wer_over_0_5": 7,
+        "wer_zero": 5,
+        "asr_empty": 0,
+        "at_frame_cap": 4
+      },
+      "without_noise_run": {
+        "n": 1072,
+        "wer_mean": 0.01762901119402985,
+        "sim_mean": 0.8701260261194029,
+        "wer_over_0_5": 0,
+        "wer_zero": 917,
+        "asr_empty": 0,
+        "at_frame_cap": 0
+      },
+      "at_frame_cap": {
+        "n": 4,
+        "wer_mean": 0.543725,
+        "sim_mean": 0.29357500000000003,
+        "wer_over_0_5": 3,
+        "wer_zero": 1,
+        "asr_empty": 0,
+        "at_frame_cap": 4
+      },
+      "not_at_frame_cap": {
+        "n": 1084,
+        "wer_mean": 0.021485239852398523,
+        "sim_mean": 0.8658489852398523,
+        "wer_over_0_5": 4,
+        "wer_zero": 921,
+        "asr_empty": 0,
+        "at_frame_cap": 0
+      }
+    }
+  },
+  "paired": {
+    "wer": {
+      "delta_direction": "fp32 minus default",
+      "mean_delta": 0.00019246323529411766,
+      "median_delta": 0.0,
+      "fp32_better": 48,
+      "default_better": 56,
+      "equal_at_recorded_precision": 984
+    },
+    "sim": {
+      "delta_direction": "fp32 minus default",
+      "mean_delta": -0.0009036764705882353,
+      "median_delta": -0.0005499999999999999,
+      "fp32_better": 523,
+      "default_better": 563,
+      "equal_at_recorded_precision": 2
+    }
+  },
+  "noise_run_union_rows": 28,
+  "interpretation": "Single run per dtype. Noise-run uses the supplied heuristic and is not per-sample human confirmation. WER includes empty ASR as 1 if present; SIM is the repository WavLM base-plus proxy. No formal B1 performance measurement."
+}

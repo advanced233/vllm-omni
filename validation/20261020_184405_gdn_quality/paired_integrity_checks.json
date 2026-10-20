@@ -1,0 +1,8 @@
+{
+  "same_ordered_prompt_and_reference_set": true,
+  "same_seed_policy": "seed = row index, both validated for all 1088",
+  "same_runtime_env": true,
+  "same_versions": true,
+  "same_inherited_cpu_affinity": true,
+  "same_codes_sha256": true
+}

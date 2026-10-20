@@ -1,0 +1,8 @@
+{
+  "commit": "4d87d0f35b77b5d14dd5b381d2fde18f5cad26ab",
+  "sha256": {
+    "stream_bench.py": "f9b4fae020f4009125533bf659ac7db909d2fca76efb59497f05fbebba287711",
+    "analyze_audio.py": "e737c0ae476189cf888242c9cc7854430483e132808c59dab2c6b5308c53bfca",
+    "eval_quality.py": "c034e6dcc7937a57cdeee0b1e0488d9aff5ca8cf4f9431e2c24fefec48768368"
+  }
+}

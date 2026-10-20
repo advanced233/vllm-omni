@@ -1,0 +1,126 @@
+{
+  "ready": true,
+  "total_bytes": 3469165369,
+  "models": [
+    {
+      "repo": "openai/whisper-large-v3",
+      "revision": "06f233fe06e710322aca913c1bc4249a0d71fce1",
+      "snapshot": "${NVME_WORKDIR}/cache/huggingface-quality/hub/models--openai--whisper-large-v3/snapshots/06f233fe06e710322aca913c1bc4249a0d71fce1",
+      "total_bytes": 3091541593,
+      "checked": [
+        {
+          "name": "README.md",
+          "bytes": 21829,
+          "digest": "f98e6afab120b2c8cc504933527659c5adcc6d30",
+          "algorithm": "git-blob-sha1"
+        },
+        {
+          "name": "added_tokens.json",
+          "bytes": 34648,
+          "digest": "1b33526d33aaa60d79f78ae8651dae50b730185a",
+          "algorithm": "git-blob-sha1"
+        },
+        {
+          "name": "config.json",
+          "bytes": 1272,
+          "digest": "14c6c8cf48b64ebb1cb8b637e2b0fab3a9774972",
+          "algorithm": "git-blob-sha1"
+        },
+        {
+          "name": "generation_config.json",
+          "bytes": 3903,
+          "digest": "f3294dfe3654ac4e362570867369ec48104af59f",
+          "algorithm": "git-blob-sha1"
+        },
+        {
+          "name": "merges.txt",
+          "bytes": 493869,
+          "digest": "6038932a2a1f09a66991b1c2adae0d14066fa29e",
+          "algorithm": "git-blob-sha1"
+        },
+        {
+          "name": "model.safetensors",
+          "bytes": 3087130976,
+          "digest": "a8e94b85976e5864ba3e9525c7e6c83b2a1eca42d4b797a0c7c24d778e40fd95",
+          "algorithm": "sha256"
+        },
+        {
+          "name": "normalizer.json",
+          "bytes": 52666,
+          "digest": "dd6ae819ad738ac1a546e9f9282ef325c33b9ea0",
+          "algorithm": "git-blob-sha1"
+        },
+        {
+          "name": "preprocessor_config.json",
+          "bytes": 340,
+          "digest": "931c77a740890c46365c7ae0c9d350ba3cca908f",
+          "algorithm": "git-blob-sha1"
+        },
+        {
+          "name": "special_tokens_map.json",
+          "bytes": 2072,
+          "digest": "3c18e97162d572f2b1d62e7e1c7b805f1be11dbe",
+          "algorithm": "git-blob-sha1"
+        },
+        {
+          "name": "tokenizer.json",
+          "bytes": 2480617,
+          "digest": "3a5e2ba63acdcac9a19ba56cf9bd27f185bfff61",
+          "algorithm": "git-blob-sha1"
+        },
+        {
+          "name": "tokenizer_config.json",
+          "bytes": 282843,
+          "digest": "06ffdc8308eae6bb7bd1fdd81e94b0a881a539ab",
+          "algorithm": "git-blob-sha1"
+        },
+        {
+          "name": "vocab.json",
+          "bytes": 1036558,
+          "digest": "0f3456460629e21d559c6daa23ab6ce3644e8271",
+          "algorithm": "git-blob-sha1"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "repo": "microsoft/wavlm-base-plus",
+      "revision": "4c66d4806a428f2e922ccfa1a962776e232d487b",
+      "snapshot": "${NVME_WORKDIR}/cache/huggingface-quality/hub/models--microsoft--wavlm-base-plus/snapshots/4c66d4806a428f2e922ccfa1a962776e232d487b",
+      "total_bytes": 377623776,
+      "checked": [
+        {
+          "name": "README.md",
+          "bytes": 3904,
+          "digest": "1192671605727eff94113d3b599161892688b9d5",
+          "algorithm": "git-blob-sha1"
+        },
+        {
+          "name": "config.json",
+          "bytes": 2232,
+          "digest": "b7b4e5f6c410f71283a59e26250e40855ca99310",
+          "algorithm": "git-blob-sha1"
+        },
+        {
+          "name": "preprocessor_config.json",
+          "bytes": 215,
+          "digest": "10f6def8c83d70a2b087a567dcf523b75152a80b",
+          "algorithm": "git-blob-sha1"
+        },
+        {
+          "name": "pytorch_model.bin",
+          "bytes": 377617425,
+          "digest": "3bb273a6ace99408b50cfc81afdbb7ef2de02da2eab0234e18db608ce692fe51",
+          "algorithm": "sha256"
+        }
+      ],
+      "verified": true
+    }
+  ],
+  "environment_file": "${NVME_WORKDIR}/gdn-quality/20261020_184405/eval-models/activate_eval_cache.sh",
+  "model_weights_loaded": false,
+  "gpu_used": false,
+  "compatibility_checked": true,
+  "sim_scope": "microsoft/wavlm-base-plus mean-pooled embedding cosine proxy; not official WavLM-large SV",
+  "whisper_load_dtype": "float32 enforced by unmodified repository helper; standard default model.safetensors selected"
+}

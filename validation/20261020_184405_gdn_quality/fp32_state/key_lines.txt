@@ -1,0 +1,4 @@
+(APIServer pid=1755198) INFO 10-20 18:58:32 [cuda_mps.py:77] Started private MPS for GPU_PHYSICAL_1 at ${NVME_WORKDIR}/tmp/gdn-184405/vllm-omni-mps-qhbzcq9n/pipe
+(StageEngineCoreProc_stage0_replica0 pid=1755271) INFO 10-20 18:58:47 [qwen_gdn_linear_attn.py:221] Using Triton/FLA GDN prefill kernel (requested=auto, head_k_dim=128).
+(StageEngineCoreProc_stage0_replica0 pid=1755271) INFO 10-20 18:58:47 [fp8.py:525] Using MARLIN Fp8 MoE backend out of potential backends: ['AITER', 'FLASHINFER_TRTLLM', 'FLASHINFER_CUTLASS', 'DEEPGEMM', 'TRITON', 'MARLIN', 'HUMMING', 'BATCHED_DEEPGEMM', 'BATCHED_TRITON', 'XPU', 'CPU_W8A8', 'CPU', 'HPC'].
+(StageEngineCoreProc_stage0_replica0 pid=1755271) INFO 10-20 19:00:22 [kv_cache_utils.py:2327] GPU KV cache size: 317,667 tokens, Maximum concurrency for 8,192 tokens per request: 38.78x

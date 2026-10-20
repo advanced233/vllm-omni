@@ -1,0 +1,28 @@
+{
+  "errors": [],
+  "rows": 1088,
+  "manifest_entries": 1088,
+  "audio_analysis_rows": 1088,
+  "all_rows_seed_equals_index": true,
+  "noise_run_rows": [
+    2,
+    244,
+    272,
+    333,
+    350,
+    353,
+    357,
+    704,
+    726,
+    812,
+    945,
+    988,
+    996
+  ],
+  "capped_rows": [
+    2,
+    350,
+    726,
+    812
+  ]
+}

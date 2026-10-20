@@ -1,0 +1,22 @@
+{
+  "tool_commit": "4d87d0f35b77b5d14dd5b381d2fde18f5cad26ab",
+  "server_commit": "da572cddb38383deae9caef33b8d490e292ef071",
+  "files": [
+    {
+      "path": "${PERSONAL_WORKDIR}/github-smoke-audio-20261020/tools/drama3_bench/stream_bench.py",
+      "sha256": "f9b4fae020f4009125533bf659ac7db909d2fca76efb59497f05fbebba287711"
+    },
+    {
+      "path": "${PERSONAL_WORKDIR}/github-smoke-audio-20261020/tools/drama3_bench/analyze_audio.py",
+      "sha256": "e737c0ae476189cf888242c9cc7854430483e132808c59dab2c6b5308c53bfca"
+    },
+    {
+      "path": "${PERSONAL_WORKDIR}/github-smoke-audio-20261020/tools/drama3_bench/eval_quality.py",
+      "sha256": "c034e6dcc7937a57cdeee0b1e0488d9aff5ca8cf4f9431e2c24fefec48768368"
+    },
+    {
+      "path": "${WORKSPACE}/vllm-omni/vllm_omni/benchmarks/data_modules/seed_tts_eval.py",
+      "sha256": "5e5a055d0297bc52daec2b789e19e2b43176127609b39222aa9d762076ab753b"
+    }
+  ]
+}

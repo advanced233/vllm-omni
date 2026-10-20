@@ -1,0 +1,35 @@
+{
+  "protocol": "${WORKSPACE}/vllm-omni/vllm_omni/benchmarks/data_modules/seed_tts_eval.py",
+  "missing_deps": null,
+  "helpers": {
+    "_missing_deps_message": "(lang: 'str') -> 'str | None'",
+    "_pcm_s16le_to_f32_16k": "(pcm: 'bytes', pcm_sample_rate: 'int | None' = None, channels: 'int | None' = None) -> 'np.ndarray'",
+    "_audio_path_to_f32_16k": "(path: 'str') -> 'np.ndarray'",
+    "_transcribe_en_f32_16k": "(wav_f32: 'np.ndarray') -> 'str'",
+    "_transcribe_zh_wav_path": "(wav_path: 'str') -> 'str'",
+    "process_one_official": "(hypo: 'str', truth: 'str', lang: 'str') -> 'tuple[float, str, str]'",
+    "_wavlm_mean_embedding_f32_16k": "(wav: 'np.ndarray') -> 'np.ndarray | None'",
+    "_cosine_similarity_unit_vectors": "(a: 'np.ndarray', b: 'np.ndarray') -> 'float'",
+    "OFFICIAL_WHISPER_HF_ID": "openai/whisper-large-v3"
+  },
+  "normalization_check": [
+    0.0,
+    "Hello, world!",
+    "Hello world."
+  ],
+  "model_classes_import": "ok",
+  "versions": {
+    "torch": "2.13.0+cu129",
+    "transformers": "5.19.0",
+    "huggingface-hub": "1.33.0",
+    "jiwer": "4.0.0",
+    "scipy": "1.18.1",
+    "soundfile": "0.14.0"
+  },
+  "source_sha256": {
+    "${PERSONAL_WORKDIR}/github-smoke-audio-20261020/tools/drama3_bench/eval_quality.py": "c034e6dcc7937a57cdeee0b1e0488d9aff5ca8cf4f9431e2c24fefec48768368",
+    "${WORKSPACE}/vllm-omni/vllm_omni/benchmarks/data_modules/seed_tts_eval.py": "5e5a055d0297bc52daec2b789e19e2b43176127609b39222aa9d762076ab753b"
+  },
+  "cuda_visible_devices": "",
+  "weights_loaded": false
+}

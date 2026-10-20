@@ -1,0 +1,52 @@
+Running 42 items in this shard
+tests/model_executor/models/fish_omni/test_fish_omni_kernels.py::test_fused_tower_layer_matches_reference
+tests/model_executor/models/fish_omni/test_fish_omni_kernels.py::test_fused_draw_matches_reference_distribution
+tests/model_executor/models/fish_omni/test_fish_omni_kernels.py::test_fused_draw_is_greedy_at_zero_temperature
+tests/model_executor/models/fish_omni/test_fish_omni_kernels.py::test_code_table_matches_mix_projection
+tests/model_executor/models/fish_omni/test_fish_omni_sampling.py::test_top_p_uses_full_vocabulary_mass
+tests/model_executor/models/fish_omni/test_fish_omni_sampling.py::test_greedy_rows_in_a_mixed_batch_take_the_argmax
+tests/model_executor/models/fish_omni/test_fish_omni_sampling.py::test_top_p_keeps_the_most_likely_token
+tests/model_executor/models/fish_omni/test_fish_omni_sampling.py::test_non_repeated_token_keeps_first_draw
+tests/model_executor/models/fish_omni/test_fish_omni_sampling.py::test_repeated_semantic_token_is_redrawn
+tests/model_executor/models/fish_omni/test_fish_omni_sampling.py::test_redraw_may_end_speech
+tests/model_executor/models/fish_omni/test_fish_omni_sampling.py::test_end_of_speech_is_never_redrawn
+tests/model_executor/models/fish_omni/test_fish_omni_sampling.py::test_repeat_outside_window_keeps_first_draw
+tests/model_executor/models/fish_omni/test_fish_omni_gdn.py::test_drama3_gdn_core_matches_standard_path[state_dtype0-3-flashinfer]
+tests/model_executor/models/fish_omni/test_fish_omni_gdn.py::test_drama3_gdn_core_matches_standard_path[state_dtype0-3-triton]
+tests/model_executor/models/fish_omni/test_fish_omni_gdn.py::test_drama3_gdn_core_matches_standard_path[state_dtype0-0-flashinfer]
+tests/model_executor/models/fish_omni/test_fish_omni_gdn.py::test_drama3_gdn_core_matches_standard_path[state_dtype0-0-triton]
+tests/model_executor/models/fish_omni/test_fish_omni_gdn.py::test_drama3_gdn_core_matches_standard_path[state_dtype1-3-flashinfer]
+tests/model_executor/models/fish_omni/test_fish_omni_gdn.py::test_drama3_gdn_core_matches_standard_path[state_dtype1-3-triton]
+tests/model_executor/models/fish_omni/test_fish_omni_gdn.py::test_drama3_gdn_core_matches_standard_path[state_dtype1-0-flashinfer]
+tests/model_executor/models/fish_omni/test_fish_omni_gdn.py::test_drama3_gdn_core_matches_standard_path[state_dtype1-0-triton]
+tests/model_executor/models/fish_omni/test_fish_omni_gdn.py::test_zero_fresh_state_rows_only_touches_fresh_slots
+tests/model_executor/models/fish_omni/test_fish_omni_gdn.py::test_metadata_builder_skips_fla_chunk_metadata_only_for_flashinfer[flashinfer]
+tests/model_executor/models/fish_omni/test_fish_omni_gdn.py::test_metadata_builder_skips_fla_chunk_metadata_only_for_flashinfer[triton]
+tests/model_executor/models/fish_omni/test_fish_omni_gdn.py::test_flashinfer_prefill_warmup_compiles_before_serving
+tests/model_executor/models/fish_omni/test_fish_omni_candidates.py::test_semantic_code_zero_is_never_a_candidate
+tests/model_executor/models/fish_omni/test_fish_omni_candidates.py::test_released_checkpoint_ids
+tests/model_executor/models/fish_speech/test_dac_channels_last.py::test_channels_last_decoder_matches_module_decoder[21-dtype0]
+tests/model_executor/models/fish_speech/test_dac_channels_last.py::test_channels_last_decoder_matches_module_decoder[21-dtype1]
+tests/model_executor/models/fish_speech/test_dac_channels_last.py::test_channels_last_decoder_matches_module_decoder[140-dtype0]
+tests/model_executor/models/fish_speech/test_dac_channels_last.py::test_channels_last_decoder_matches_module_decoder[140-dtype1]
+tests/model_executor/models/fish_speech/test_dac_channels_last.py::test_dac_decode_graphs_match_eager_with_padding
+tests/model_executor/models/fish_speech/test_dac_channels_last.py::test_rows_with_fewer_frames_share_a_bucket_graph
+tests/model_executor/models/fish_speech/test_dac_channels_last.py::test_conv_context_trim_keeps_new_frames_exact
+tests/model_executor/models/fish_speech/test_dac_channels_last.py::test_compiled_transformer_decode_matches_eager_in_graphs
+tests/model_executor/models/fish_speech/test_dac_channels_last.py::test_graph_plan_splits_requests_into_exact_batch_buckets
+tests/model_executor/models/fish_speech/test_dac_channels_last.py::test_graph_plan_uses_measured_replay_costs
+tests/model_executor/models/fish_speech/test_dac_channels_last.py::test_stream_with_transformer_kv_matches_whole_utterance[dtype0]
+tests/model_executor/models/fish_speech/test_dac_channels_last.py::test_stream_with_transformer_kv_matches_whole_utterance[dtype1]
+tests/model_executor/models/fish_speech/test_dac_channels_last.py::test_stream_with_transformer_kv_windows_longer_than_the_attention_window[dtype0]
+tests/model_executor/models/fish_speech/test_dac_channels_last.py::test_stream_with_transformer_kv_windows_longer_than_the_attention_window[dtype1]
+tests/model_executor/models/fish_speech/test_dac_channels_last.py::test_stream_padding_rows_near_the_rotary_table_end[dtype0]
+tests/model_executor/models/fish_speech/test_dac_channels_last.py::test_stream_padding_rows_near_the_rotary_table_end[dtype1]
+
+=============================== warnings summary ===============================
+../.venvs/vllm-omni-cu129/lib/python3.12/site-packages/torch/jit/_script.py:365: 14 warnings
+  ${WORKSPACE}/.venvs/vllm-omni-cu129/lib/python3.12/site-packages/torch/jit/_script.py:365: DeprecationWarning: `torch.jit.script_method` is deprecated. Please switch to `torch.compile` or `torch.export`.
+    warnings.warn(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+--- Running Summary
+42 tests collected in 0.26s

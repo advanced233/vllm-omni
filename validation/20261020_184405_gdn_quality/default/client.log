@@ -1,0 +1,5 @@
+warmup: 8 requests
+timed: 1088 requests at concurrency 16
+| Concurrency | Audio s/s | TTFA p50 | TTFA p95 | RTF (mean) | Streams that stall | Failed |
+| ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| 16 | 27.98 | 232.6 ms | 363.5 ms | 0.5738 | 20.59% (>0ms) / 5.51% (>100ms) | 0 |

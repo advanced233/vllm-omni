@@ -1,0 +1,7 @@
+{
+  "commit": "060ae50bf5e711d969fdbadd04fb1b04e6bcffb0",
+  "sha256": {
+    "analyze_audio.py": "e737c0ae476189cf888242c9cc7854430483e132808c59dab2c6b5308c53bfca",
+    "eval_quality.py": "2acae7400ac0f3c7f7eaec133f6aed0ea26302c5434437f1cb07a0d14649203f"
+  }
+}

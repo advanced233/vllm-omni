@@ -1,0 +1,289 @@
+{
+  "timestamp": "2026-10-20T10:50:28.148597+00:00",
+  "repo_commit": "da572cddb38383deae9caef33b8d490e292ef071",
+  "environment": "2.13.0+cu129 12.9 0.32.0\nNVIDIA A100 80GB PCIe (8, 0)",
+  "physical_gpu": 1,
+  "driver": "550.127.05",
+  "original": {
+    "tests": 36,
+    "passed": 32,
+    "failed": 4,
+    "cases": [
+      {
+        "name": "test_fused_tower_layer_matches_reference",
+        "class": "tests.model_executor.models.fish_omni.test_fish_omni_kernels",
+        "seconds": 2.382,
+        "status": "passed"
+      },
+      {
+        "name": "test_fused_draw_matches_reference_distribution",
+        "class": "tests.model_executor.models.fish_omni.test_fish_omni_kernels",
+        "seconds": 0.371,
+        "status": "passed"
+      },
+      {
+        "name": "test_fused_draw_is_greedy_at_zero_temperature",
+        "class": "tests.model_executor.models.fish_omni.test_fish_omni_kernels",
+        "seconds": 0.229,
+        "status": "passed"
+      },
+      {
+        "name": "test_code_table_matches_mix_projection",
+        "class": "tests.model_executor.models.fish_omni.test_fish_omni_kernels",
+        "seconds": 0.851,
+        "status": "passed"
+      },
+      {
+        "name": "test_top_p_uses_full_vocabulary_mass",
+        "class": "tests.model_executor.models.fish_omni.test_fish_omni_sampling",
+        "seconds": 0.16,
+        "status": "passed"
+      },
+      {
+        "name": "test_greedy_rows_in_a_mixed_batch_take_the_argmax",
+        "class": "tests.model_executor.models.fish_omni.test_fish_omni_sampling",
+        "seconds": 0.006,
+        "status": "passed"
+      },
+      {
+        "name": "test_top_p_keeps_the_most_likely_token",
+        "class": "tests.model_executor.models.fish_omni.test_fish_omni_sampling",
+        "seconds": 0.003,
+        "status": "passed"
+      },
+      {
+        "name": "test_non_repeated_token_keeps_first_draw",
+        "class": "tests.model_executor.models.fish_omni.test_fish_omni_sampling",
+        "seconds": 0.161,
+        "status": "passed"
+      },
+      {
+        "name": "test_repeated_semantic_token_is_redrawn",
+        "class": "tests.model_executor.models.fish_omni.test_fish_omni_sampling",
+        "seconds": 0.005,
+        "status": "passed"
+      },
+      {
+        "name": "test_redraw_may_end_speech",
+        "class": "tests.model_executor.models.fish_omni.test_fish_omni_sampling",
+        "seconds": 0.003,
+        "status": "passed"
+      },
+      {
+        "name": "test_end_of_speech_is_never_redrawn",
+        "class": "tests.model_executor.models.fish_omni.test_fish_omni_sampling",
+        "seconds": 0.003,
+        "status": "passed"
+      },
+      {
+        "name": "test_repeat_outside_window_keeps_first_draw",
+        "class": "tests.model_executor.models.fish_omni.test_fish_omni_sampling",
+        "seconds": 0.003,
+        "status": "passed"
+      },
+      {
+        "name": "test_drama3_gdn_core_matches_standard_path[state_dtype0-3-triton]",
+        "class": "tests.model_executor.models.fish_omni.test_fish_omni_gdn",
+        "seconds": 2.105,
+        "status": "failed",
+        "message": "NotImplementedError: GDN prefill DSL kernel is unavailable"
+      },
+      {
+        "name": "test_drama3_gdn_core_matches_standard_path[state_dtype0-0-triton]",
+        "class": "tests.model_executor.models.fish_omni.test_fish_omni_gdn",
+        "seconds": 0.031,
+        "status": "failed",
+        "message": "NotImplementedError: GDN prefill DSL kernel is unavailable"
+      },
+      {
+        "name": "test_drama3_gdn_core_matches_standard_path[state_dtype1-3-triton]",
+        "class": "tests.model_executor.models.fish_omni.test_fish_omni_gdn",
+        "seconds": 0.367,
+        "status": "failed",
+        "message": "NotImplementedError: GDN prefill DSL kernel is unavailable"
+      },
+      {
+        "name": "test_drama3_gdn_core_matches_standard_path[state_dtype1-0-triton]",
+        "class": "tests.model_executor.models.fish_omni.test_fish_omni_gdn",
+        "seconds": 0.044,
+        "status": "failed",
+        "message": "NotImplementedError: GDN prefill DSL kernel is unavailable"
+      },
+      {
+        "name": "test_zero_fresh_state_rows_only_touches_fresh_slots",
+        "class": "tests.model_executor.models.fish_omni.test_fish_omni_gdn",
+        "seconds": 0.065,
+        "status": "passed"
+      },
+      {
+        "name": "test_metadata_builder_skips_fla_chunk_metadata_only_for_flashinfer[triton]",
+        "class": "tests.model_executor.models.fish_omni.test_fish_omni_gdn",
+        "seconds": 0.003,
+        "status": "passed"
+      },
+      {
+        "name": "test_semantic_code_zero_is_never_a_candidate",
+        "class": "tests.model_executor.models.fish_omni.test_fish_omni_candidates",
+        "seconds": 0.002,
+        "status": "passed"
+      },
+      {
+        "name": "test_released_checkpoint_ids",
+        "class": "tests.model_executor.models.fish_omni.test_fish_omni_candidates",
+        "seconds": 0.004,
+        "status": "passed"
+      },
+      {
+        "name": "test_channels_last_decoder_matches_module_decoder[21-dtype0]",
+        "class": "tests.model_executor.models.fish_speech.test_dac_channels_last",
+        "seconds": 4.687,
+        "status": "passed"
+      },
+      {
+        "name": "test_channels_last_decoder_matches_module_decoder[21-dtype1]",
+        "class": "tests.model_executor.models.fish_speech.test_dac_channels_last",
+        "seconds": 4.046,
+        "status": "passed"
+      },
+      {
+        "name": "test_channels_last_decoder_matches_module_decoder[140-dtype0]",
+        "class": "tests.model_executor.models.fish_speech.test_dac_channels_last",
+        "seconds": 3.157,
+        "status": "passed"
+      },
+      {
+        "name": "test_channels_last_decoder_matches_module_decoder[140-dtype1]",
+        "class": "tests.model_executor.models.fish_speech.test_dac_channels_last",
+        "seconds": 3.785,
+        "status": "passed"
+      },
+      {
+        "name": "test_dac_decode_graphs_match_eager_with_padding",
+        "class": "tests.model_executor.models.fish_speech.test_dac_channels_last",
+        "seconds": 5.939,
+        "status": "passed"
+      },
+      {
+        "name": "test_rows_with_fewer_frames_share_a_bucket_graph",
+        "class": "tests.model_executor.models.fish_speech.test_dac_channels_last",
+        "seconds": 3.557,
+        "status": "passed"
+      },
+      {
+        "name": "test_conv_context_trim_keeps_new_frames_exact",
+        "class": "tests.model_executor.models.fish_speech.test_dac_channels_last",
+        "seconds": 3.003,
+        "status": "passed"
+      },
+      {
+        "name": "test_compiled_transformer_decode_matches_eager_in_graphs",
+        "class": "tests.model_executor.models.fish_speech.test_dac_channels_last",
+        "seconds": 34.187,
+        "status": "passed"
+      },
+      {
+        "name": "test_graph_plan_splits_requests_into_exact_batch_buckets",
+        "class": "tests.model_executor.models.fish_speech.test_dac_channels_last",
+        "seconds": 0.002,
+        "status": "passed"
+      },
+      {
+        "name": "test_graph_plan_uses_measured_replay_costs",
+        "class": "tests.model_executor.models.fish_speech.test_dac_channels_last",
+        "seconds": 0.002,
+        "status": "passed"
+      },
+      {
+        "name": "test_stream_with_transformer_kv_matches_whole_utterance[dtype0]",
+        "class": "tests.model_executor.models.fish_speech.test_dac_channels_last",
+        "seconds": 7.101,
+        "status": "passed"
+      },
+      {
+        "name": "test_stream_with_transformer_kv_matches_whole_utterance[dtype1]",
+        "class": "tests.model_executor.models.fish_speech.test_dac_channels_last",
+        "seconds": 9.219,
+        "status": "passed"
+      },
+      {
+        "name": "test_stream_with_transformer_kv_windows_longer_than_the_attention_window[dtype0]",
+        "class": "tests.model_executor.models.fish_speech.test_dac_channels_last",
+        "seconds": 2.725,
+        "status": "passed"
+      },
+      {
+        "name": "test_stream_with_transformer_kv_windows_longer_than_the_attention_window[dtype1]",
+        "class": "tests.model_executor.models.fish_speech.test_dac_channels_last",
+        "seconds": 6.183,
+        "status": "passed"
+      },
+      {
+        "name": "test_stream_padding_rows_near_the_rotary_table_end[dtype0]",
+        "class": "tests.model_executor.models.fish_speech.test_dac_channels_last",
+        "seconds": 2.468,
+        "status": "passed"
+      },
+      {
+        "name": "test_stream_padding_rows_near_the_rotary_table_end[dtype1]",
+        "class": "tests.model_executor.models.fish_speech.test_dac_channels_last",
+        "seconds": 3.251,
+        "status": "passed"
+      }
+    ]
+  },
+  "selection": {
+    "collected": 42,
+    "selected": 36,
+    "excluded": 6,
+    "excluded_reason": "GDN FlashInfer parameters and FlashInfer prefill warmup are not supported on A100; retain triton metadata test even though its name contains flashinfer."
+  },
+  "supplemental_actual_triton": {
+    "tests": 4,
+    "passed": 4,
+    "failed": 0,
+    "cases": [
+      {
+        "name": "test_drama3_gdn_core_matches_standard_path[state_dtype0-3-triton]",
+        "class": "tests.model_executor.models.fish_omni.test_fish_omni_gdn",
+        "seconds": 19.464,
+        "status": "passed"
+      },
+      {
+        "name": "test_drama3_gdn_core_matches_standard_path[state_dtype0-0-triton]",
+        "class": "tests.model_executor.models.fish_omni.test_fish_omni_gdn",
+        "seconds": 0.046,
+        "status": "passed"
+      },
+      {
+        "name": "test_drama3_gdn_core_matches_standard_path[state_dtype1-3-triton]",
+        "class": "tests.model_executor.models.fish_omni.test_fish_omni_gdn",
+        "seconds": 0.665,
+        "status": "passed"
+      },
+      {
+        "name": "test_drama3_gdn_core_matches_standard_path[state_dtype1-0-triton]",
+        "class": "tests.model_executor.models.fish_omni.test_fish_omni_gdn",
+        "seconds": 0.037,
+        "status": "passed"
+      }
+    ]
+  },
+  "conclusions": {
+    "fused_sampling_distribution": "PASS",
+    "dac_channels_last": "16 PASS",
+    "original_gdn_triton_labeled": "All 4 fail before numerical comparisons because original fixture calls FlashInfer even under triton label; GDN prefill DSL kernel is unavailable on A100.",
+    "actual_triton_fp32": "2 PASS (0 and 3 decodes)",
+    "actual_triton_bf16": "2 PASS (0 and 3 decodes)",
+    "supplement_scope": "External pytest plugin substitutes fixture chunk callable with installed production ChunkGatedDeltaRule.forward_native; original inputs/seeds/assertions/tolerances unchanged. Supplemental evidence, not original test success.",
+    "limitations": "This small random-input unit test does not prove absence of long-generation or quality defects."
+  },
+  "artifact_sha256": {
+    "actual_triton_plugin.py": "d3ec8401fd31890891f24d6504fd85c89f5bc04a1caa524cc322ae955e3940ad"
+  },
+  "cleanup": {
+    "gpu1_memory_mib": 18,
+    "gpu1_utilization_pct": 0,
+    "own_compute_processes_remaining": false,
+    "tracked_worktree_clean": true
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "default": {
+    "takes": 1088,
+    "pr8933_at_least_20s": {
+      "count": 6,
+      "pct": 0.55
+    },
+    "issue9157_failed": {
+      "count": 10,
+      "pct": 0.92
+    },
+    "pr9044_silence_over_1s": {
+      "count": 16,
+      "pct": 1.47
+    },
+    "definitions": {
+      "pr8933_at_least_20s": "generated audio of 20 s or more (#8933 description)",
+      "issue9157_failed": "ran to the frame cap, or WER over 50%, or duration outside 0.3-3x the run's median seconds per word times the line's words (#9157, Seed-TTS rule)",
+      "pr9044_silence_over_1s": "longest run of 50 ms windows with RMS under 1e-3 over 1 s (#9044)"
+    }
+  },
+  "fp32_state": {
+    "takes": 1088,
+    "pr8933_at_least_20s": {
+      "count": 8,
+      "pct": 0.74
+    },
+    "issue9157_failed": {
+      "count": 11,
+      "pct": 1.01
+    },
+    "pr9044_silence_over_1s": {
+      "count": 24,
+      "pct": 2.21
+    },
+    "definitions": {
+      "pr8933_at_least_20s": "generated audio of 20 s or more (#8933 description)",
+      "issue9157_failed": "ran to the frame cap, or WER over 50%, or duration outside 0.3-3x the run's median seconds per word times the line's words (#9157, Seed-TTS rule)",
+      "pr9044_silence_over_1s": "longest run of 50 ms windows with RMS under 1e-3 over 1 s (#9044)"
+    }
+  }
+}

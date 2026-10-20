@@ -18,7 +18,9 @@
 
 ## 工具实机验证
 
-最新：[B1前快速检查A/B](validation/20261020_180250_prebaseline/README.md)：帧数一致，但多seed出现低能量输出离群，C128/B1暂未启动。
+最新：[A100 GPU 单测与 GDN BF16/FP32 全量质量对照](validation/20261020_184405_gdn_quality/README.md)：各 1088 条，WER 2.32% / 2.34%，noise-run 13 / 16，未观察到 FP32 改善。
+
+此前：[B1前快速检查A/B](validation/20261020_180250_prebaseline/README.md)：帧数一致，但多seed出现低能量输出离群，C128/B1暂未启动。
 
 已完成[两种参考方式的C4 × 32真实模型验证](validation/20261020_165001_49599d4/README.md)：数值检查通过，音色及长尾差异听检待完成，尚未开始正式基线。
 

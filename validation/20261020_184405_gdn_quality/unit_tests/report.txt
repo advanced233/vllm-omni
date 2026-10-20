@@ -1,0 +1,13 @@
+A100 GPU unit tests — 2026-10-20
+
+Original tests: 42 collected, 6 unsupported GDN FlashInfer cases excluded by exact node ID, 36 run: 32 passed, 4 failed (102.04 seconds).
+The four failures are the GDN tests labelled triton (fp32/bf16 state, 0/3 decodes). Their fixture always calls fi_chunk_gated_delta_rule, which dispatches FlashInfer. All four fail in reference prefill with NotImplementedError: GDN prefill DSL kernel is unavailable, before numerical comparison. They are not observed Triton numerical failures.
+
+PASS: all 4 kernels tests, including test_fused_draw_matches_reference_distribution; all 8 sampling tests; both candidates tests; two GDN utility/metadata tests; all 16 DAC channels-last tests.
+
+Supplement: external plugin replaces only the GDN fixture chunk callable with installed vLLM ChunkGatedDeltaRule.forward_native (the production FLA/Triton adapter). All original inputs, seeds, assertions, tolerances and state dtypes remain unchanged. All 4 supplemental cases pass in 20.28 seconds, including bf16 state with and without mixed decode requests. Source: actual_triton_plugin.py; command: run_supplemental.sh; results: supplemental-junit.xml and supplemental-pytest.log.
+The first plugin attempt did not match pytest module naming and therefore made no substitution; archived as supplemental-plugin-noop-attempt. It reproduced FI failures and is not a Triton result.
+
+This validates small unit fixtures, not all long-form generation quality. It does not diagnose the earlier noise-runs.
+Environment: A100 80GB PCIe physical GPU 1, capability 8.0; torch 2.13.0+cu129, vLLM 0.32.0+cu129, driver 550.127.05; repository da572cddb38383deae9caef33b8d490e292ef071. No package upgrades, system changes, repository source modifications, or tolerance changes.
+Cleanup: own test processes exited; GPU 1 18 MiB / 0%, no compute process on GPU 1. Repository tracked working tree clean.

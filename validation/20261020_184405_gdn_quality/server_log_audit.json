@@ -1,0 +1,32 @@
+{
+  "default": {
+    "traceback": [],
+    "error_level": [],
+    "preemption": [],
+    "shutdown_warnings": [
+      {
+        "line": 2556,
+        "text": "(APIServer pid=1752728) WARNING 10-20 18:57:45 [utils.py:648] [shutdown] Process manager: force killing remaining processes count=1"
+      },
+      {
+        "line": 2557,
+        "text": "(APIServer pid=1752728) WARNING 10-20 18:57:45 [utils.py:653] [shutdown] Process manager: force killing remaining process StageEngineCoreProc_stage0_replica0 pid 1752883"
+      }
+    ]
+  },
+  "fp32_state": {
+    "traceback": [],
+    "error_level": [],
+    "preemption": [],
+    "shutdown_warnings": [
+      {
+        "line": 2555,
+        "text": "(APIServer pid=1755198) WARNING 10-20 19:06:04 [utils.py:648] [shutdown] Process manager: force killing remaining processes count=1"
+      },
+      {
+        "line": 2556,
+        "text": "(APIServer pid=1755198) WARNING 10-20 19:06:04 [utils.py:653] [shutdown] Process manager: force killing remaining process StageEngineCoreProc_stage0_replica0 pid 1755271"
+      }
+    ]
+  }
+}

@@ -1,0 +1,1 @@
+The initial external plugin module-name filter did not match pytest import naming; no adapter substitution occurred, reproducing original FlashInfer failures. Corrected filter uses test module filename. This attempt is not a real Triton test.

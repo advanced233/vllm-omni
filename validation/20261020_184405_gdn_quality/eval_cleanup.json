@@ -1,0 +1,31 @@
+{
+  "eval_exit": 0,
+  "evaluation_process_remaining": false,
+  "gpu_after": "GPU_PHYSICAL_1, 15 MiB, 0 %",
+  "gpu_compute_apps_after": [],
+  "port_free": true,
+  "source_hash_checks": [
+    {
+      "path": "${PERSONAL_WORKDIR}/github-smoke-audio-20261020/tools/drama3_bench/stream_bench.py",
+      "unchanged": true
+    },
+    {
+      "path": "${PERSONAL_WORKDIR}/github-smoke-audio-20261020/tools/drama3_bench/analyze_audio.py",
+      "unchanged": true
+    },
+    {
+      "path": "${PERSONAL_WORKDIR}/github-smoke-audio-20261020/tools/drama3_bench/eval_quality.py",
+      "unchanged": true
+    },
+    {
+      "path": "${WORKSPACE}/vllm-omni/vllm_omni/benchmarks/data_modules/seed_tts_eval.py",
+      "unchanged": true
+    }
+  ],
+  "timestamp": "2026-10-20T19:29:22+0800",
+  "both_server_cleanups": {
+    "default": true,
+    "fp32_state": true
+  },
+  "clean": true
+}

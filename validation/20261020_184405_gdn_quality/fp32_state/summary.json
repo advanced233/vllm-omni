@@ -1,0 +1,162 @@
+{
+  "label": "quality-fp32_state",
+  "concurrency": 16,
+  "started_at": "2026-10-20T19:02:20+0800",
+  "requests": 1088,
+  "succeeded": 1088,
+  "failed": 0,
+  "failure_examples": [],
+  "duration_s": 215.996,
+  "audio_s_total": 4831.194,
+  "throughput_audio_s_per_s": 22.37,
+  "full_concurrency_window": {
+    "seconds": 213.327,
+    "throughput_audio_s_per_s": 22.4
+  },
+  "ttfa_ms": {
+    "mean": 304.0,
+    "p50": 304.1,
+    "p90": 397.5,
+    "p95": 419.3,
+    "p99": 463.5,
+    "max": 514.0
+  },
+  "rtf": {
+    "mean": 0.7132,
+    "p50": 0.7638,
+    "p90": 0.8564,
+    "p95": 0.871,
+    "p99": 0.9103,
+    "max": 0.9352
+  },
+  "audio_s": {
+    "mean": 4.44,
+    "p50": 4.133,
+    "p90": 6.176,
+    "p95": 7.012,
+    "p99": 12.662,
+    "max": 23.22
+  },
+  "underrun_s_total": 169.648,
+  "longest_wait_ms": {
+    "mean": 93.6,
+    "p50": 55.4,
+    "p90": 217.4,
+    "p95": 269.9,
+    "p99": 811.6,
+    "max": 948.9
+  },
+  "stall": {
+    "0ms": {
+      "streams_stalled": 664,
+      "streams_stalled_pct": 61.03,
+      "events": 1909
+    },
+    "100ms": {
+      "streams_stalled": 396,
+      "streams_stalled_pct": 36.4,
+      "events": 592
+    }
+  },
+  "client": {
+    "loop_lag_ms": {
+      "mean": 0.14,
+      "p50": 0.13,
+      "p90": 0.36,
+      "p95": 0.56,
+      "p99": 0.91,
+      "max": 1.55
+    },
+    "event_loop": "uvloop",
+    "hostname": "HOST_REDACTED",
+    "python": "3.12.13",
+    "aiohttp": "3.14.5"
+  },
+  "workload": {
+    "codes_file": "${NVME_WORKDIR}/bench-validation/20261020_165001_49599d4/ref_codes_en.jsonl",
+    "codes_meta": {
+      "model": "${NVME_WORKDIR}/models/fishaudio/drama-3",
+      "codec_sha256": "74fc41c5a7151c6f350af8bd7e5d6e3accfcc7f3dfbfac23afd35af07052bb2f",
+      "locale": "en",
+      "meta_lst_sha256": "7cd29f701743e6c7033edbca764ddc0b979de8c4f4907eff5e5454682114661f",
+      "rows_written": 1088,
+      "device_name": "NVIDIA A100 80GB PCIe",
+      "vllm_omni_commit": "da572cddb38383deae9caef33b8d490e292ef071"
+    },
+    "ref_mode": "codes",
+    "rows_timed": 1088,
+    "warmups": 8,
+    "shuffle_seed": null,
+    "seed": 0,
+    "extra_body": {},
+    "stream": "raw pcm (stream_format=audio)",
+    "sampling": "server defaults unless set in extra_body"
+  },
+  "server": {
+    "base_url": "http://127.0.0.1:8091",
+    "models": {
+      "object": "list",
+      "data": [
+        {
+          "id": "fishaudio/drama-3",
+          "object": "model",
+          "created": 1792494134,
+          "owned_by": "vllm",
+          "root": "${NVME_WORKDIR}/models/fishaudio/drama-3",
+          "parent": null,
+          "max_model_len": 8192,
+          "permission": [
+            {
+              "id": "modelperm-a686a0113be76a44",
+              "object": "model_permission",
+              "created": 1792494134,
+              "allow_create_engine": false,
+              "allow_sampling": true,
+              "allow_logprobs": true,
+              "allow_search_indices": false,
+              "allow_view": true,
+              "allow_fine_tuning": false,
+              "organization": "*",
+              "group": null,
+              "is_blocking": false
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "meta": {
+    "commit": "da572cddb38383deae9caef33b8d490e292ef071",
+    "tool_commit": "4d87d0f35b77b5d14dd5b381d2fde18f5cad26ab",
+    "mamba_ssm_cache_dtype": "float32",
+    "deploy_sha256": "1d0a6bae534d648d54505fe5f2ca160e02e3cb5d6b50b2628062ecce7a57723b"
+  },
+  "argv": [
+    "${PERSONAL_WORKDIR}/github-smoke-audio-20261020/tools/drama3_bench/stream_bench.py",
+    "--codes",
+    "${NVME_WORKDIR}/bench-validation/20261020_165001_49599d4/ref_codes_en.jsonl",
+    "--ref-mode",
+    "codes",
+    "--concurrency",
+    "16",
+    "--num-prompts",
+    "1088",
+    "--seed",
+    "0",
+    "--num-warmups",
+    "8",
+    "--save-audio",
+    "--label",
+    "quality-fp32_state",
+    "--meta",
+    "commit=da572cddb38383deae9caef33b8d490e292ef071",
+    "--meta",
+    "tool_commit=4d87d0f35b77b5d14dd5b381d2fde18f5cad26ab",
+    "--meta",
+    "mamba_ssm_cache_dtype=float32",
+    "--meta",
+    "deploy_sha256=1d0a6bae534d648d54505fe5f2ca160e02e3cb5d6b50b2628062ecce7a57723b",
+    "--out",
+    "${NVME_WORKDIR}/gdn-quality/20261020_184405/fp32_state"
+  ]
+}

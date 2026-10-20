@@ -1,0 +1,6 @@
+{
+  "collected": 42,
+  "selected": 36,
+  "excluded": 6,
+  "excluded_reason": "GDN FlashInfer parameters and FlashInfer prefill warmup are not supported on A100; retain triton metadata test even though its name contains flashinfer."
+}

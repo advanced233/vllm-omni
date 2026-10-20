@@ -1,0 +1,4 @@
+tests/model_executor/models/fish_omni/test_fish_omni_gdn.py::test_drama3_gdn_core_matches_standard_path[state_dtype0-3-triton]
+tests/model_executor/models/fish_omni/test_fish_omni_gdn.py::test_drama3_gdn_core_matches_standard_path[state_dtype0-0-triton]
+tests/model_executor/models/fish_omni/test_fish_omni_gdn.py::test_drama3_gdn_core_matches_standard_path[state_dtype1-3-triton]
+tests/model_executor/models/fish_omni/test_fish_omni_gdn.py::test_drama3_gdn_core_matches_standard_path[state_dtype1-0-triton]

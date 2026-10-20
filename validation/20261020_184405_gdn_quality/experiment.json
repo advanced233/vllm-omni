@@ -1,0 +1,23 @@
+{
+  "purpose": "A100 kernel tests and GDN state dtype quality comparison",
+  "server_commit": "da572cddb38383deae9caef33b8d490e292ef071",
+  "tool_commit": "4d87d0f35b77b5d14dd5b381d2fde18f5cad26ab",
+  "concurrency": 16,
+  "num_prompts": 1088,
+  "seed_base": 0,
+  "ref_mode": "codes",
+  "num_warmups": 8,
+  "save_audio": true,
+  "only_deploy_difference": "stages[0].mamba_ssm_cache_dtype: bfloat16 -> float32",
+  "gpu_index": 1,
+  "gpu_uuid": "GPU_PHYSICAL_1",
+  "model": "${NVME_WORKDIR}/models/fishaudio/drama-3",
+  "model_revision": "b2b5ee998034b2975720906c815e7fb0e9f007bd",
+  "codes": "${NVME_WORKDIR}/bench-validation/20261020_165001_49599d4/ref_codes_en.jsonl",
+  "dataset_root": "${NVME_WORKDIR}/datasets/seed-tts-eval",
+  "default_yaml_sha256": "b99113e6b2344169a9431686271d2ae9bbaf68b9679347435ad97f44eb3d28f3",
+  "fp32_yaml_sha256": "1d0a6bae534d648d54505fe5f2ca160e02e3cb5d6b50b2628062ecce7a57723b",
+  "formal_b1_run": false,
+  "system_driver_or_cuda_changes": false,
+  "official_cu130_r580_environment": false
+}
