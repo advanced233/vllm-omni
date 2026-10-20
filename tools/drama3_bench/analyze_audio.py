@@ -1,5 +1,15 @@
 #!/usr/bin/env python3
-"""Speaking rate and pauses of saved Drama 3 replies, set against the codec window boundaries.
+"""Stuck takes, speaking rate and pauses of saved Drama 3 replies, set against the codec windows.
+
+Stuck takes: Drama 3 sometimes stops speaking and emits steady low-level noise
+for seconds, often up to the ``max_tokens`` cap (500 frames, 23.22 s). That
+noise can be as loud as quiet speech (-38 to -50 dBFS), so no energy threshold
+separates it; what does is that it is flat. Every 1 s window (0.25 s hop) whose
+10 ms frame levels span less than ``--flat-db`` (p90 - p10) is noise, and a
+reply whose noise runs ``--noise-run`` seconds or more is flagged
+``noise-run``; one that reached the frame cap is flagged ``max-frames``.
+Speech moves by 10-30 dB every syllable: on the first 84 A100 validation
+replies the stuck ones ran 16.5-22.8 s of noise, the rest at most 1.25 s.
 
 Slow speech cannot come from the codec: every frame decodes to 2048 samples
 (~46.4 ms), so the rate is set by how many frames stage 0 samples per word. A
@@ -11,7 +21,9 @@ the nearest window boundary: the observed one when ``requests.jsonl`` has a
 ``chunk_log`` (a new burst of bytes), else the one the deploy's ramp implies.
 
 A single pause edge within the tolerance can be chance (boundaries are 0.3-3 s
-apart); many flagged pauses on boundaries point at the codec stage.
+apart); many flagged pauses on boundaries point at the codec stage. Words per
+second is the target text's word count over the detected speech span, not a
+transcript's, and ``slow`` compares it with the median over every reply given.
 
 Usage:
   python analyze_audio.py results/check_codes results/check_audio --codes ref_codes_en.jsonl
@@ -76,6 +88,27 @@ def speech_and_pauses(
     return first * FRAME_S, (last + 1) * FRAME_S, pauses
 
 
+def noise_run(x: np.ndarray, sr: int, flat_db: float, win_s: float = 1.0, hop_s: float = 0.25) -> tuple[float, float]:
+    """Length and start (s) of the longest stretch covered by flat 1 s windows: noise, not speech."""
+    hop = max(1, int(sr * FRAME_S))
+    n = len(x) // hop
+    if n == 0:
+        return 0.0, 0.0
+    db = 20 * np.log10(np.sqrt(np.mean(x[: n * hop].reshape(n, hop) ** 2, axis=1)) + 1e-9)
+    win, step = int(win_s / FRAME_S), int(hop_s / FRAME_S)
+    flat = np.zeros(n, dtype=bool)
+    for s in range(0, max(1, n - win + 1), step):
+        seg = db[s : s + win]
+        if np.percentile(seg, 90) - np.percentile(seg, 10) < flat_db:
+            flat[s : s + win] = True
+    best = best_start = run = 0
+    for i, f in enumerate(flat):
+        run = run + 1 if f else 0
+        if run > best:
+            best, best_start = run, i - run + 1
+    return best * FRAME_S, best_start * FRAME_S
+
+
 def ramp_boundaries(ramp: list[int], window: int, hop: int, sr: int, total_s: float) -> list[float]:
     bounds, frames, i = [], 0, 0
     while True:
@@ -124,12 +157,16 @@ def analyze_dir(run: Path, args: argparse.Namespace, ref_info: dict[str, dict[st
             source = "ramp"
         speech_s = end - start
         n_words = words(entry["target_text"])
+        noise_s, noise_at = noise_run(x, sr, args.flat_db)
         row = {
             "run": run.name,
             "index": rec["index"],
             "utt_id": rec["utt_id"],
             "seed": rec.get("seed"),
             "audio_s": round(total, 3),
+            "frames": round(len(x) / args.hop),
+            "noise_run_s": round(noise_s, 2),
+            "noise_run_at_s": round(noise_at, 2),
             "speech_s": round(speech_s, 3),
             "lead_s": round(start, 3),
             "tail_s": round(total - end, 3),
@@ -157,6 +194,10 @@ def analyze_dir(run: Path, args: argparse.Namespace, ref_info: dict[str, dict[st
 
 def flag(row: dict[str, Any], median_wps: float | None, args: argparse.Namespace) -> list[str]:
     flags = []
+    if row["noise_run_s"] >= args.noise_run:
+        flags.append("noise-run")
+    if row["frames"] >= args.max_frames:
+        flags.append("max-frames")
     if row["wps"] is not None and median_wps and row["wps"] < args.slow * median_wps:
         flags.append("slow")
     long = [p for p in row["pauses"] if p["len_s"] >= args.long_pause]
@@ -214,7 +255,10 @@ def main() -> int:
     p.add_argument("--min-pause", type=float, default=0.25, help="Shortest silence counted as a pause (s)")
     p.add_argument("--long-pause", type=float, default=0.7, help="Pause length flagged (s)")
     p.add_argument("--long-tail", type=float, default=1.5, help="Trailing silence flagged (s)")
-    p.add_argument("--slow", type=float, default=0.65, help="Flag below this fraction of the run's median rate")
+    p.add_argument("--slow", type=float, default=0.65, help="Flag below this fraction of the median rate")
+    p.add_argument("--flat-db", type=float, default=10.0, help="A 1 s window spanning less than this (dB) is noise")
+    p.add_argument("--noise-run", type=float, default=2.0, help="Noise stretch flagged (s)")
+    p.add_argument("--max-frames", type=int, default=500, help="Frame cap (the deploy's max_tokens)")
     p.add_argument("--rel-db", type=float, default=17.0, help="Quiet: this many dB under the loud frames")
     p.add_argument("--floor-db", type=float, default=-60.0, help="Quiet whatever the margin below this level")
     p.add_argument("--boundary-tol-ms", type=float, default=25.0)
@@ -225,28 +269,43 @@ def main() -> int:
     args = p.parse_args()
 
     ref_info = reference_info(args)
-    rows: list[dict[str, Any]] = []
-    for run in args.runs:
-        run_rows = analyze_dir(Path(run), args, ref_info)
-        rates = [r["wps"] for r in run_rows if r["wps"] is not None]
-        median_wps = statistics.median(rates) if rates else None
-        for r in run_rows:
-            r["flags"] = flag(r, median_wps, args)
-        flagged = sum(bool(r["flags"]) for r in run_rows)
-        print(f"{run}: {len(run_rows)} replies, median {median_wps} words/s, {flagged} flagged")
-        rows.extend(run_rows)
+    per_run = [(run, analyze_dir(Path(run), args, ref_info)) for run in args.runs]
+    rows = [r for _, run_rows in per_run for r in run_rows]
+    # Pooled: a run of one reply is its own median.
+    rates = [r["wps"] for r in rows if r["wps"] is not None and r["noise_run_s"] < args.noise_run]
+    median_wps = statistics.median(rates) if rates else None
+    for r in rows:
+        r["flags"] = flag(r, median_wps, args)
 
-    print("| run | row | seed | audio s | words/s | ref words/s | longest pause (s @ t) | to boundary (ms) | flags |")
-    print("| --- | ---: | ---: | ---: | ---: | ---: | --- | --- | --- |")
+    def counts(group: list[dict[str, Any]]) -> str:
+        n = len(group)
+        stuck = sum("noise-run" in r["flags"] for r in group)
+        capped = sum("max-frames" in r["flags"] for r in group)
+        flagged = sum(bool(r["flags"]) for r in group)
+        pct = f" ({100 * stuck / n:.1f}%)" if n else ""
+        return f"{n} replies, {stuck} noise-run{pct}, {capped} at the {args.max_frames}-frame cap, {flagged} flagged"
+
+    print(f"median {median_wps} words/s over replies without a noise run")
+    for run, run_rows in per_run:
+        print(f"{run}: {counts(run_rows)}")
+    if len(per_run) > 1:
+        print(f"all: {counts(rows)}")
+
+    print(
+        "| run | row | seed | audio s | frames | noise run (s @ t) | words/s | ref words/s "
+        "| longest pause (s @ t) | to boundary (ms) | flags |"
+    )
+    print("| --- | ---: | ---: | ---: | ---: | --- | ---: | ---: | --- | --- | --- |")
     for r in sorted(rows, key=lambda r: (r["index"], r["run"])):
         if not (args.all or r["flags"]):
             continue
         longest = max(r["pauses"], key=lambda q: q["len_s"], default=None)
         pause = f"{longest['len_s']} @ {longest['start_s']}" if longest else "-"
         edges = f"{longest['start_to_boundary_ms']} / {longest['end_to_boundary_ms']}" if longest else "-"
+        noise = f"{r['noise_run_s']} @ {r['noise_run_at_s']}" if r["noise_run_s"] else "-"
         print(
-            f"| {r['run']} | {r['index']} | {r['seed']} | {r['audio_s']} | {r['wps']} | {r.get('ref_wps', '-')} "
-            f"| {pause} | {edges} ({r['boundaries']}) | {', '.join(r['flags']) or '-'} |"
+            f"| {r['run']} | {r['index']} | {r['seed']} | {r['audio_s']} | {r['frames']} | {noise} | {r['wps']} "
+            f"| {r.get('ref_wps', '-')} | {pause} | {edges} ({r['boundaries']}) | {', '.join(r['flags']) or '-'} |"
         )
     if args.json:
         Path(args.json).write_text(json.dumps(rows, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
