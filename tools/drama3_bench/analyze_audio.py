@@ -30,7 +30,7 @@ from typing import Any
 
 import numpy as np
 
-FRAME_S = 0.02
+FRAME_S = 0.01
 
 
 def read_wav(path: Path) -> tuple[np.ndarray, int]:
@@ -49,8 +49,10 @@ def speech_and_pauses(
 ) -> tuple[float, float, list[tuple[float, float]]]:
     """Start and end of the speech, and the silent stretches inside it, in seconds.
 
-    A 20 ms frame is silent when its RMS is ``rel_db`` below the clip's loud
-    frames (95th percentile), and never louder than ``floor_db``.
+    A 10 ms frame is quiet when its RMS is ``rel_db`` below the clip's loud
+    frames (95th percentile), and never louder than ``floor_db``. Drama 3's
+    pauses are low-level noise (around -45 dBFS under speech at -20 to -25),
+    not digital silence, so the default margin is 17 dB.
     """
     hop = max(1, int(sr * FRAME_S))
     n = len(x) // hop
@@ -213,8 +215,8 @@ def main() -> int:
     p.add_argument("--long-pause", type=float, default=0.7, help="Pause length flagged (s)")
     p.add_argument("--long-tail", type=float, default=1.5, help="Trailing silence flagged (s)")
     p.add_argument("--slow", type=float, default=0.65, help="Flag below this fraction of the run's median rate")
-    p.add_argument("--rel-db", type=float, default=35.0)
-    p.add_argument("--floor-db", type=float, default=-60.0)
+    p.add_argument("--rel-db", type=float, default=17.0, help="Quiet: this many dB under the loud frames")
+    p.add_argument("--floor-db", type=float, default=-60.0, help="Quiet whatever the margin below this level")
     p.add_argument("--boundary-tol-ms", type=float, default=25.0)
     p.add_argument("--burst-gap-ms", type=float, default=5.0, help="Gap between reads that starts a new window")
     p.add_argument("--ramp", type=lambda v: [int(x) for x in v.split(",")], default=[6, 8, 12, 16, 24, 32])

@@ -82,7 +82,7 @@ python tools/drama3_bench/analyze_audio.py results/check_codes results/check_aud
 
 `analyze_audio.py` 对每条回复报告：
 - 语速：每秒词数，按去掉首尾静音后的语音时长计算；如果给了参考音频，也报参考音频的语速。
-- 句中停顿：默认 ≥ 0.25 s 才算停顿，≥ 0.7 s 标记为 long-pause。
+- 句中停顿：以 10 ms 为一帧，比响亮帧（第 95 百分位）低 17 dB 以上的帧算安静帧；连续安静 ≥ 0.25 s 算一次停顿，≥ 0.7 s 标记为 long-pause。Drama 3 的停顿不是数字静音，而是 -45 dBFS 左右的底噪（语音本身在 -20 到 -25 dBFS），所以用相对阈值。
 - 停顿两端到最近 codec 窗口边界的距离。`requests.jsonl` 里有 `chunk_log`（本版本起才记录）时，用实际收到的字节突发位置作为边界；没有时按 ramp 推算（6, 8, 12, 16, 24, 32, 之后每 64 帧，每帧 2048 个采样）。
 
 判读方法：
