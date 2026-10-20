@@ -53,6 +53,7 @@ bash tools/drama3_bench/run_sweep.sh
 
 - `SERVER_CMD` 在前台启动服务，脚本把它放进独立进程组。每次运行依次是：等 `/health` 就绪 → 压测 → 停服务（先 SIGINT，不行再 SIGTERM，最后 SIGKILL）→ 等显存降到 `GPU_IDLE_MIB` 以下、端口释放，再开始下一次。
 - `REPEATS_AT="64:3 128:5"` 对应 #8933 的"C64 / C128 are the mean of 3 / 5 runs"。
+- 每次运行的 `summary.json` 里有 `long_takes`：≥ 20 s 的条数（#8933 的跑飞口径）、达到 500 帧上限的条数，以及它们占总音频秒数的比例。卡死句会把底噪也算进 audio-s/s，汇总表里有这两列，比较吞吐时要一起看。
 - `GPU_INDEX` 填 nvidia-smi 看到的物理编号或 UUID，要和 `CUDA_VISIBLE_DEVICES` 指向同一张卡。每次运行的 `gpu.csv` 记录 SM/显存时钟、功耗和功耗上限、温度、利用率、显存，以及降频原因（较新驱动叫 `clocks_event_reasons`，旧驱动叫 `clocks_throttle_reasons`）。
 - `CLIENT_PREFIX` 用来把客户端绑到和服务端不同的 CPU 核上，避免互相抢占。
 - 换 deploy 变体时，在 `SERVER_CMD` 里加 `--deploy-config <yaml>`，同时换一个 `LABEL`。
@@ -112,6 +113,25 @@ python tools/drama3_bench/eval_quality.py results/quality_default \
   - **#9044**：最长一段 RMS < 1e-3（约 -60 dBFS）的 50 ms 连续窗口超过 1 s。注意：Seed-TTS 参考音频本身有 -41 到 -50 dBFS 的底噪，卡死时模型输出的正是这种底噪，所以这个口径几乎数不到卡死句。
 - 输出写到各 run 目录下的 `quality.json`，包含汇总和每一句的转写、WER、SIM、卡死标记、时长比例。终端会打印汇总表、上游口径表和 WER 最高的几句。
 - 1088 句在 A100 上估计要 10–20 分钟（Whisper-large-v3 fp32，未实测），模型加载会占几 GiB 显存。评测时服务要么已经停掉，要么在另一张卡上。
+
+## 7. Profile（未在 fish_omni 上验证过，第一次请小规模试）
+
+profile 和正式性能数据分开跑：profiler 本身有开销，profile 运行的数字不进 B1 表。
+
+1. 开启 profiler。仓库的 `/start_profile`、`/stop_profile` 只有在某个 stage 配了 `profiler_config` 时才会注册（`vllm_omni/entrypoints/serve/profile/utils.py`）。复制一份 deploy yaml，在 stage 0 和 stage 1 下各加一项：
+   - Nsight Systems：`profiler_config: {profiler: cuda}`
+   - torch profiler：`profiler_config: {profiler: torch, torch_profiler_dir: <目录>, torch_profiler_use_gzip: true}`
+
+   启动日志出现 "Profiler endpoints are enabled" 才算生效。也可以先试 `vllm serve ... --profiler-config '{"profiler":"cuda"}'`，看它是否传到了各个 stage。
+2. 用 nsys 启动服务（参数取自 `docs/contributing/profiling.md`）。两个 stage 是子进程，都通过 MPS 共用 GPU，所以要带 `--trace-fork-before-exec=true`。decode 步是整步 CUDA graph 回放，要看到图里每个 kernel，必须带 `--cuda-graph-trace=node`：
+
+   ```bash
+   nsys profile --trace=cuda,nvtx,osrt --trace-fork-before-exec=true --cuda-graph-trace=node \
+       --capture-range=cudaProfilerApi --capture-range-end=repeat -o drama3_c64 \
+       vllm serve <模型> --omni --port 8091 --deploy-config <带 profiler_config 的 yaml>
+   ```
+3. 先用 `stream_bench.py` 以目标并发持续压测，等 20–30 s 进入稳态，再执行 `curl -X POST localhost:8091/start_profile -H 'Content-Type: application/json' -d '{"stages":[0,1]}'`，采 5–10 s 后 `/stop_profile`。trace 文件很大，不要采整轮。
+4. 看什么：stage 0 一个纯 decode 步的总时长，以及其中 Marlin MoE、GDN（decode 递推、因果卷积）、full attention、codebook tower、采样各占多少；含 prefill 的混合步多长、多频繁；stage 1 DAC 的 kernel 和 stage 0 重叠时，stage 0 的 kernel 被拖慢了多少；还有 CPU 侧有没有空隙。
 
 ## 口径（和 #8933 对照）
 

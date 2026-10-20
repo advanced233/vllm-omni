@@ -51,6 +51,7 @@ import aiohttp
 import numpy as np
 
 SAMPLE_WIDTH = 2  # pcm s16le
+FRAME_SAMPLES = 2048  # one Drama 3 codec frame (~46.4 ms at 44.1 kHz)
 DEFAULT_SAMPLE_RATE = 44100
 SAMPLE_RATE_HEADER = "X-Audio-Sample-Rate"
 CHANNELS_HEADER = "X-Audio-Channels"
@@ -257,7 +258,12 @@ def stats(values: list[float], digits: int = 2) -> dict[str, float | None]:
 
 
 def summarize(
-    records: list[dict[str, Any]], start: float, last_dispatch: float, end: float, thresholds_ms: list[float]
+    records: list[dict[str, Any]],
+    start: float,
+    last_dispatch: float,
+    end: float,
+    thresholds_ms: list[float],
+    max_frames: int = 500,
 ) -> dict[str, Any]:
     ok = [r for r in records if r["ok"]]
     total_audio = sum(r["audio_s"] for r in ok)
@@ -299,6 +305,23 @@ def summarize(
         "underrun_s_total": round(sum(sum(r["waits_ms"]) for r in ok) / 1000, 3),
         "longest_wait_ms": stats([max(r["waits_ms"], default=0.0) for r in ok], 1),
         "stall": stall,
+        "long_takes": long_takes(ok, total_audio, max_frames),
+    }
+
+
+def long_takes(ok: list[dict[str, Any]], total_audio: float, max_frames: int) -> dict[str, Any]:
+    """Takes that ran long (most stopped speaking): they add audio seconds without speech.
+
+    20 s is #8933's runaway rule; ``max_frames`` is the deploy's max_tokens.
+    """
+    at_cap = [r for r in ok if r["bytes"] // (SAMPLE_WIDTH * r["channels"] * FRAME_SAMPLES) >= max_frames]
+    long = [r for r in ok if r["audio_s"] >= 20.0]
+    long_audio = sum(r["audio_s"] for r in long)
+    return {
+        "at_least_20s": len(long),
+        "at_least_20s_pct": round(100 * len(long) / len(ok), 2) if ok else None,
+        "at_frame_cap": len(at_cap),
+        "audio_share_pct": round(100 * long_audio / total_audio, 2) if total_audio else None,
     }
 
 
@@ -370,7 +393,7 @@ async def run(args: argparse.Namespace) -> dict[str, Any]:
         await lag_task
 
     records.sort(key=lambda r: r["index"])
-    summary = summarize(records, start, last_dispatch, end, args.stall_thresholds_ms)
+    summary = summarize(records, start, last_dispatch, end, args.stall_thresholds_ms, args.max_frames)
     lag_ms = [x * 1000 for x in lags]
     summary = {
         "label": args.label,
@@ -473,6 +496,7 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     )
     p.add_argument("--timeout", type=float, default=900.0, help="Per-request timeout (s)")
     p.add_argument("--stall-thresholds-ms", type=lambda s: [float(x) for x in s.split(",")], default=[0.0, 100.0])
+    p.add_argument("--max-frames", type=int, default=500, help="The deploy's max_tokens, for counting capped takes")
     p.add_argument("--save-audio", action="store_true", help="Keep every reply as a WAV (for WER / SIM)")
     p.add_argument("--label", default="", help="Free-form run label (e.g. baseline / a100-tuned)")
     p.add_argument("--meta", action="append", default=[], metavar="KEY=VALUE", help="Provenance kept in summary.json")

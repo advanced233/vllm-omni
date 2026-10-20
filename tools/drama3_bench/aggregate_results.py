@@ -25,6 +25,8 @@ COLUMNS = [
     ("RTF (mean)", lambda s: s["rtf"]["mean"], 3),
     ("Stall % (>0 ms)", lambda s: s["stall"].get("0ms", {}).get("streams_stalled_pct"), 2),
     ("Stall % (>100 ms)", lambda s: s["stall"].get("100ms", {}).get("streams_stalled_pct"), 2),
+    ("Takes >= 20 s", lambda s: s.get("long_takes", {}).get("at_least_20s"), 0),
+    ("Their audio %", lambda s: s.get("long_takes", {}).get("audio_share_pct"), 1),
     ("Failed", lambda s: s["failed"], 0),
 ]
 
