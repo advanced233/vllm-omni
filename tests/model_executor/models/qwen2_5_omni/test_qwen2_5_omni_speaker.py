@@ -12,6 +12,7 @@ from types import SimpleNamespace
 import pytest
 import torch
 from torch import nn
+from transformers.models.qwen2_5_omni.configuration_qwen2_5_omni import Qwen2_5OmniToken2WavConfig
 
 from vllm_omni.model_executor.models.qwen2_5_omni.qwen2_5_omni import (
     DEFAULT_SPEAKER,
@@ -105,7 +106,7 @@ def test_code2wav_uses_request_speaker(monkeypatch: pytest.MonkeyPatch) -> None:
 def test_codec_to_audio_selects_requested_voice(keys) -> None:
     model = _bare_model("code2wav")
     model.token2wav = _FakeToken2Wav()
-    model.token2wav_config = SimpleNamespace(dit_config=SimpleNamespace(mel_dim=4, enc_emb_dim=3))
+    model.token2wav_config = Qwen2_5OmniToken2WavConfig(dit_config={"mel_dim": 4, "enc_emb_dim": 3})
     model._token2wav_conds = {key: torch.full((1, 3), float(i)) for i, key in enumerate(keys)}
     model._token2wav_ref_mels = {key: torch.zeros(1, 300, 4) for key in keys}
 
