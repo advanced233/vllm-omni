@@ -9,6 +9,7 @@ import os
 
 import pytest
 
+from tests.helpers.assertions import GENDER_MISMATCH_MESSAGE, _assert_preset_voice_gender_from_audio
 from tests.helpers.mark import hardware_test
 from tests.helpers.media import generate_synthetic_audio, generate_synthetic_image, generate_synthetic_video
 from tests.helpers.runtime import OmniServerParams, dummy_messages_from_mix_data
@@ -151,3 +152,39 @@ def test_text_to_text_001(omni_server, online_client) -> None:
     }
 
     online_client.send_omni_request(request_config, request_num=get_max_batch_size())
+
+
+@pytest.mark.slow
+@pytest.mark.omni
+@hardware_test(res={"cuda": "L4", "rocm": "MI325"}, num_cards=2)
+@pytest.mark.parametrize("omni_server", test_params, indirect=True)
+@pytest.mark.parametrize("speaker", ["Chelsie", "ETHAN"])
+def test_speaker_001(omni_server, online_client, speaker: str) -> None:
+    """
+    Test per-request speaker selection for audio output via OpenAI API.
+    Deploy Setting: default yaml
+    Input Modal: text
+    Output Modal: text + audio in the requested preset voice (case-insensitive name)
+    Datasets: single request
+    """
+    messages = dummy_messages_from_mix_data(system_prompt=get_system_prompt(), content_text=get_prompt())
+    request_config = {
+        "model": omni_server.model,
+        "messages": messages,
+        "stream": False,
+        "speaker": speaker,
+        "key_words": {"text": ["beijing"]},
+    }
+
+    # The gender classifier can misjudge one clip; retry only that check.
+    max_retries = 5
+    for attempt in range(max_retries):
+        try:
+            response = online_client.send_omni_request(request_config)[0]
+            # send_omni_request checks the voice only at advanced run levels.
+            _assert_preset_voice_gender_from_audio(response.audio_bytes, speaker)
+            return
+        except AssertionError as exc:
+            if GENDER_MISMATCH_MESSAGE not in str(exc) or attempt == max_retries - 1:
+                raise
+            print(f"Gender assertion failed, retrying {attempt + 2}/{max_retries}: {exc!r}")
